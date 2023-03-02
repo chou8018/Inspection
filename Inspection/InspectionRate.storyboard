@@ -1,0 +1,1547 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="skt-xn-cU7">
+    <device id="ipad10_2" orientation="landscape" layout="fullscreen" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--จัดเกรดรถเข้าประมูล-->
+        <scene sceneID="kFv-2A-I5L">
+            <objects>
+                <viewController storyboardIdentifier="GradeCarViewController" id="skt-xn-cU7" customClass="GradeCarViewController" customModule="Inspection" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="boG-73-rSn">
+                        <rect key="frame" x="0.0" y="0.0" width="1080" height="1810"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2yB-TB-OtG">
+                                <rect key="frame" x="0.0" y="50" width="1080" height="1760"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ERL-W7-RxM">
+                                        <rect key="frame" x="50" y="50" width="980" height="1350"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="vUe-7f-EH7">
+                                                <rect key="frame" x="0.0" y="0.0" width="980" height="50"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="E Excellence ดีเยี่ยม" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u9g-as-dws">
+                                                        <rect key="frame" x="0.0" y="7" width="980" height="36"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                                        <color key="textColor" name="primary_color"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="S5J-BH-DgG"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="DHa-CZ-wjm">
+                                                <rect key="frame" x="0.0" y="50" width="980" height="50"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="wdi-4L-YVL">
+                                                        <rect key="frame" x="0.0" y="0.0" width="490" height="50"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A2q-Ng-9vT" customClass="CheckBoxUIButton" customModule="Inspection" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="5" width="40" height="40"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="40" id="Yj5-Md-4hi"/>
+                                                                </constraints>
+                                                                <state key="normal" backgroundImage="icon-check-outline"/>
+                                                                <connections>
+                                                                    <action selector="e1checkTapped:" destination="skt-xn-cU7" eventType="touchUpInside" id="iV7-Qv-Eng"/>
+                                                                </connections>
+                                                            </button>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="เลขไมล์ไม่เกิน 20,000 กิโลเมตร" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YPb-Yh-9sK">
+                                                                <rect key="frame" x="60" y="14.5" width="430" height="21.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                                <color key="textColor" name="primary_color"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="A2q-Ng-9vT" firstAttribute="width" secondItem="A2q-Ng-9vT" secondAttribute="height" multiplier="1:1" id="Pn0-yC-RdX"/>
+                                                            <constraint firstAttribute="height" constant="50" id="cKz-6I-5Ec"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="deb-ty-BbT">
+                                                        <rect key="frame" x="490" y="0.0" width="490" height="50"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dwP-at-1Hw" customClass="CheckBoxUIButton" customModule="Inspection" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="5" width="40" height="40"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="40" id="yAx-44-UXb"/>
+                                                                </constraints>
+                                                                <state key="normal" backgroundImage="icon-check-outline"/>
+                                                                <connections>
+                                                                    <action selector="e2checkTapped:" destination="skt-xn-cU7" eventType="touchUpInside" id="BOf-0m-G02"/>
+                                                                </connections>
+                                                            </button>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="ปีจดทะเบียนรถไม่เกิน 1 ปี (ไม่ใช่ปีผลิต)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Onh-ZQ-hem">
+                                                                <rect key="frame" x="60" y="14.5" width="430" height="21.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                                <color key="textColor" name="primary_color"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="dwP-at-1Hw" firstAttribute="width" secondItem="dwP-at-1Hw" secondAttribute="height" multiplier="1:1" id="OPP-Fo-e5f"/>
+                                                            <constraint firstAttribute="height" constant="50" id="qc5-t9-xsC"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="AkD-ft-yzu">
+                                                <rect key="frame" x="0.0" y="100" width="980" height="50"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="3q0-QO-ICU">
+                                                        <rect key="frame" x="0.0" y="0.0" width="490" height="50"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PqC-Ob-jVo" customClass="CheckBoxUIButton" customModule="Inspection" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="5" width="40" height="40"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="40" id="ves-M3-KOP"/>
+                                                                </constraints>
+                                                                <state key="normal" backgroundImage="icon-check-outline"/>
+                                                                <connections>
+                                                                    <action selector="e3checkTapped:" destination="skt-xn-cU7" eventType="touchUpInside" id="Azp-pn-uM7"/>
+                                                                </connections>
+                                                            </button>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="รถอยู่ในสภาพใหม่ ไม่มีริ้วรอย" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="teq-Px-Wej">
+                                                                <rect key="frame" x="60" y="14.5" width="430" height="21.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                                <color key="textColor" name="primary_color"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="PqC-Ob-jVo" firstAttribute="width" secondItem="PqC-Ob-jVo" secondAttribute="height" multiplier="1:1" id="jhN-ql-lUs"/>
+                                                            <constraint firstAttribute="height" constant="50" id="luo-OE-6h3"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="1pK-6k-uz1">
+                                                        <rect key="frame" x="490" y="0.0" width="490" height="50"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YiI-1Q-5gc" customClass="CheckBoxUIButton" customModule="Inspection" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="5" width="40" height="40"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="40" id="Adz-ur-aC7"/>
+                                                                </constraints>
+                                                                <state key="normal" backgroundImage="icon-check-outline"/>
+                                                                <connections>
+                                                                    <action selector="e4checkTapped:" destination="skt-xn-cU7" eventType="touchUpInside" id="hSR-qO-02W"/>
+                                                                </connections>
+                                                            </button>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="ภายในอยู่ในสภาพดี" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Wq-bF-hyr">
+                                                                <rect key="frame" x="60" y="14.5" width="430" height="21.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                                <color key="textColor" name="primary_color"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="YiI-1Q-5gc" firstAttribute="width" secondItem="YiI-1Q-5gc" secondAttribute="height" multiplier="1:1" id="WrI-13-lmn"/>
+                                                            <constraint firstAttribute="height" constant="50" id="y35-p1-0HT"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Q2q-Zv-Ezk">
+                                                <rect key="frame" x="0.0" y="150" width="980" height="50"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uzm-Y3-ktn" customClass="CheckBoxUIButton" customModule="Inspection" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="5" width="40" height="40"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="40" id="Yjp-4c-8FJ"/>
+                                                        </constraints>
+                                                        <state key="normal" backgroundImage="icon-check-outline"/>
+                                                        <connections>
+                                                            <action selector="e5checkTapped:" destination="skt-xn-cU7" eventType="touchUpInside" id="gUc-zm-T7F"/>
+                                                        </connections>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="ไม่มีการทำสี, ไม่มีการซ่อมแซม, ไม่มีการเปลี่ยนชิ้นส่วนตัวถัง" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bXn-i2-rfw">
+                                                        <rect key="frame" x="60" y="14.5" width="920" height="21.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                        <color key="textColor" name="primary_color"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="uzm-Y3-ktn" firstAttribute="width" secondItem="uzm-Y3-ktn" secondAttribute="height" multiplier="1:1" id="DN2-jM-2PD"/>
+                                                    <constraint firstAttribute="height" constant="50" id="m5U-Pq-Rtw"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="SHO-nt-HEB">
+                                                <rect key="frame" x="0.0" y="200" width="980" height="50"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="G Good ดีมาก" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8xS-oz-Frc">
+                                                        <rect key="frame" x="0.0" y="7" width="980" height="36"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                                        <color key="textColor" name="primary_color"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="UaI-Ee-gwd"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="a2o-CX-1kv">
+                                                <rect key="frame" x="0.0" y="250" width="980" height="50"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="8x9-qg-PBY">
+                                                        <rect key="frame" x="0.0" y="0.0" width="490" height="50"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pci-AA-czi" customClass="CheckBoxUIButton" customModule="Inspection" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="5" width="40" height="40"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="40" id="WVD-gC-tjh"/>
+                                                                </constraints>
+                                                                <state key="normal" backgroundImage="icon-check-outline"/>
+                                                                <connections>
+                                                                    <action selector="g1checkTapped:" destination="skt-xn-cU7" eventType="touchUpInside" id="PIW-Fr-1Iq"/>
+                                                                </connections>
+                                                            </button>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="เลขไมล์ไม่เกิน 50,000 กิโลเมตร" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sjZ-11-WXf">
+                                                                <rect key="frame" x="60" y="14.5" width="430" height="21.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                                <color key="textColor" name="primary_color"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="pci-AA-czi" firstAttribute="width" secondItem="pci-AA-czi" secondAttribute="height" multiplier="1:1" id="CYJ-Nr-kd0"/>
+                                                            <constraint firstAttribute="height" constant="50" id="RXH-i3-7fi"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="drK-VY-2FC">
+                                                        <rect key="frame" x="490" y="0.0" width="490" height="50"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JsP-Yk-rTz" customClass="CheckBoxUIButton" customModule="Inspection" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="5" width="40" height="40"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="40" id="31F-4n-Tnc"/>
+                                                                </constraints>
+                                                                <state key="normal" backgroundImage="icon-check-outline"/>
+                                                                <connections>
+                                                                    <action selector="g2checkTapped:" destination="skt-xn-cU7" eventType="touchUpInside" id="cUZ-m6-pgU"/>
+                                                                </connections>
+                                                            </button>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="ปีจดทะเบียนรถไม่เกิน 2 ปี (ไม่ใช่ปีผลิต)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ycG-hT-RE5">
+                                                                <rect key="frame" x="60" y="14.5" width="430" height="21.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                                <color key="textColor" name="primary_color"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="pzd-ey-Yia"/>
+                                                            <constraint firstItem="JsP-Yk-rTz" firstAttribute="width" secondItem="JsP-Yk-rTz" secondAttribute="height" multiplier="1:1" id="xvl-YS-mqI"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Hov-0T-e05">
+                                                <rect key="frame" x="0.0" y="300" width="980" height="50"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="MXg-uZ-Cf9">
+                                                        <rect key="frame" x="0.0" y="0.0" width="490" height="50"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vHv-Mx-tmq" customClass="CheckBoxUIButton" customModule="Inspection" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="5" width="40" height="40"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="40" id="tHb-vC-kQ3"/>
+                                                                </constraints>
+                                                                <state key="normal" backgroundImage="icon-check-outline"/>
+                                                                <connections>
+                                                                    <action selector="g3checkTapped:" destination="skt-xn-cU7" eventType="touchUpInside" id="2ns-7W-RjL"/>
+                                                                </connections>
+                                                            </button>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="มีรอยขีดข่วน, มีรอยบุบ" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C5D-ay-tPx">
+                                                                <rect key="frame" x="60" y="14.5" width="430" height="21.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                                <color key="textColor" name="primary_color"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="Dm5-hz-mye"/>
+                                                            <constraint firstItem="vHv-Mx-tmq" firstAttribute="width" secondItem="vHv-Mx-tmq" secondAttribute="height" multiplier="1:1" id="SHn-11-PNB"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="zgg-85-924">
+                                                        <rect key="frame" x="490" y="0.0" width="490" height="50"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xL7-sC-V9R" customClass="CheckBoxUIButton" customModule="Inspection" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="5" width="40" height="40"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="40" id="WXJ-10-Et0"/>
+                                                                </constraints>
+                                                                <state key="normal" backgroundImage="icon-check-outline"/>
+                                                                <connections>
+                                                                    <action selector="g4checkTapped:" destination="skt-xn-cU7" eventType="touchUpInside" id="AGi-Tx-oL0"/>
+                                                                </connections>
+                                                            </button>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="ไม่มีการซ่อมสีตัวถัง" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o4x-wd-fCV">
+                                                                <rect key="frame" x="60" y="14.5" width="430" height="21.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                                <color key="textColor" name="primary_color"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="wNt-iA-t9Z"/>
+                                                            <constraint firstItem="xL7-sC-V9R" firstAttribute="width" secondItem="xL7-sC-V9R" secondAttribute="height" multiplier="1:1" id="zA7-uZ-ZCj"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ESb-tW-ffw">
+                                                <rect key="frame" x="0.0" y="350" width="980" height="50"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="A Average ปานกลาง" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c1u-jg-7qc">
+                                                        <rect key="frame" x="0.0" y="7" width="980" height="36"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                                        <color key="textColor" name="primary_color"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="bL9-Tt-XnN"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="cBr-We-RdF">
+                                                <rect key="frame" x="0.0" y="400" width="980" height="50"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ehm-i9-VbU">
+                                                        <rect key="frame" x="0.0" y="0.0" width="490" height="50"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Kh-z3-KEj" customClass="CheckBoxUIButton" customModule="Inspection" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="5" width="40" height="40"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="40" id="LtJ-Mx-ynF"/>
+                                                                </constraints>
+                                                                <state key="normal" backgroundImage="icon-check-outline"/>
+                                                                <connections>
+                                                                    <action selector="a1checkTapped:" destination="skt-xn-cU7" eventType="touchUpInside" id="NtM-ia-gzr"/>
+                                                                </connections>
+                                                            </button>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="เลขไมล์ไม่เกิน 100,000 กิโลเมตร" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8OK-dS-PjC">
+                                                                <rect key="frame" x="60" y="14.5" width="430" height="21.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                                <color key="textColor" name="primary_color"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="GlF-pb-SLh"/>
+                                                            <constraint firstItem="2Kh-z3-KEj" firstAttribute="width" secondItem="2Kh-z3-KEj" secondAttribute="height" multiplier="1:1" id="IYc-My-zmA"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="2pA-eI-v2p">
+                                                        <rect key="frame" x="490" y="0.0" width="490" height="50"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YXP-7c-Ywh" customClass="CheckBoxUIButton" customModule="Inspection" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="5" width="40" height="40"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="40" id="BfE-Ag-OSa"/>
+                                                                </constraints>
+                                                                <state key="normal" backgroundImage="icon-check-outline"/>
+                                                                <connections>
+                                                                    <action selector="a2checkTapped:" destination="skt-xn-cU7" eventType="touchUpInside" id="yyY-iP-mqK"/>
+                                                                </connections>
+                                                            </button>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="ปีจดทะเบียนรถไม่เกิน 5 ปี (ไม่ใช่ปีผลิต)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ml-l7-zp2">
+                                                                <rect key="frame" x="60" y="14.5" width="430" height="21.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                                <color key="textColor" name="primary_color"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="YXP-7c-Ywh" firstAttribute="width" secondItem="YXP-7c-Ywh" secondAttribute="height" multiplier="1:1" id="0Pv-Eu-e2a"/>
+                                                            <constraint firstAttribute="height" constant="50" id="tAx-dQ-1Qi"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="xlI-CX-thT">
+                                                <rect key="frame" x="0.0" y="450" width="980" height="50"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="GNE-D7-oE1">
+                                                        <rect key="frame" x="0.0" y="0.0" width="490" height="50"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pQU-8p-ujc" customClass="CheckBoxUIButton" customModule="Inspection" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="5" width="40" height="40"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="40" id="FC5-ng-A9Q"/>
+                                                                </constraints>
+                                                                <state key="normal" backgroundImage="icon-check-outline"/>
+                                                                <connections>
+                                                                    <action selector="a3checkTapped:" destination="skt-xn-cU7" eventType="touchUpInside" id="Gdf-pX-tfp"/>
+                                                                </connections>
+                                                            </button>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="มีการเก็บสี มีรอยบุบ ถลอก" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sv4-Ci-HOp">
+                                                                <rect key="frame" x="60" y="14.5" width="430" height="21.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                                <color key="textColor" name="primary_color"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="pQU-8p-ujc" firstAttribute="width" secondItem="pQU-8p-ujc" secondAttribute="height" multiplier="1:1" id="NY5-hs-boA"/>
+                                                            <constraint firstAttribute="height" constant="50" id="q6Q-AK-uh5"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="GXN-za-Fqk">
+                                                        <rect key="frame" x="490" y="0.0" width="490" height="50"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KYS-TV-LvZ" customClass="CheckBoxUIButton" customModule="Inspection" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="5" width="40" height="40"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="40" id="GcL-2A-8KJ"/>
+                                                                </constraints>
+                                                                <state key="normal" backgroundImage="icon-check-outline"/>
+                                                                <connections>
+                                                                    <action selector="a4checkTapped:" destination="skt-xn-cU7" eventType="touchUpInside" id="sd0-VB-Knr"/>
+                                                                </connections>
+                                                            </button>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="ไม่มีรอยถอดน๊อตหรือชิ้นส่วนอุปกรณ์ตัวถัง" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cO6-nr-NIR">
+                                                                <rect key="frame" x="60" y="14.5" width="430" height="21.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                                <color key="textColor" name="primary_color"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="KYS-TV-LvZ" firstAttribute="width" secondItem="KYS-TV-LvZ" secondAttribute="height" multiplier="1:1" id="dex-6u-HU5"/>
+                                                            <constraint firstAttribute="height" constant="50" id="fhg-7v-gjR"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="54R-xC-RdY">
+                                                <rect key="frame" x="0.0" y="500" width="980" height="50"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="F Fair พอใช้" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="83w-E5-lxr">
+                                                        <rect key="frame" x="0.0" y="7" width="980" height="36"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                                        <color key="textColor" name="primary_color"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="sHJ-pL-LuB"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="6Om-ok-RLt">
+                                                <rect key="frame" x="0.0" y="550" width="980" height="50"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="mOi-jo-jKh">
+                                                        <rect key="frame" x="0.0" y="0.0" width="490" height="50"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kYp-zG-wDO" customClass="CheckBoxUIButton" customModule="Inspection" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="5" width="40" height="40"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="40" id="iuY-tc-INW"/>
+                                                                </constraints>
+                                                                <state key="normal" backgroundImage="icon-check-outline"/>
+                                                                <connections>
+                                                                    <action selector="f1checkTapped:" destination="skt-xn-cU7" eventType="touchUpInside" id="EkA-aS-eLj"/>
+                                                                </connections>
+                                                            </button>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="เลขไมค์เกิน 100,000 กิโลเมตร / ปีจดทะเบียนรถเกิน 5 ปี " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2br-gF-FI5">
+                                                                <rect key="frame" x="60" y="14.5" width="430" height="21.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                                <color key="textColor" name="primary_color"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="2KE-1G-FUr"/>
+                                                            <constraint firstItem="kYp-zG-wDO" firstAttribute="width" secondItem="kYp-zG-wDO" secondAttribute="height" multiplier="1:1" id="8ne-Eg-Ab0"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="EaT-O8-3c8">
+                                                        <rect key="frame" x="490" y="0.0" width="490" height="50"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UHa-uX-ckA" customClass="CheckBoxUIButton" customModule="Inspection" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="5" width="40" height="40"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="40" id="w4Y-JC-VZ0"/>
+                                                                </constraints>
+                                                                <state key="normal" backgroundImage="icon-check-outline"/>
+                                                                <connections>
+                                                                    <action selector="f2checkTapped:" destination="skt-xn-cU7" eventType="touchUpInside" id="bGk-mU-kRD"/>
+                                                                </connections>
+                                                            </button>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="มีรอยถอดน๊อตหรือชิ้นส่วนอุปกรณ์ตัวถัง" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZiL-Ba-qWc">
+                                                                <rect key="frame" x="60" y="14.5" width="430" height="21.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                                <color key="textColor" name="primary_color"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="FVq-sD-3gh"/>
+                                                            <constraint firstItem="UHa-uX-ckA" firstAttribute="width" secondItem="UHa-uX-ckA" secondAttribute="height" multiplier="1:1" id="mxE-S0-3KX"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="rpq-Za-AYk">
+                                                <rect key="frame" x="0.0" y="600" width="980" height="50"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Kxg-Bu-5ec">
+                                                        <rect key="frame" x="0.0" y="0.0" width="490" height="50"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nQE-bS-gnT" customClass="CheckBoxUIButton" customModule="Inspection" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="5" width="40" height="40"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="40" id="Ium-8C-6Tg"/>
+                                                                </constraints>
+                                                                <state key="normal" backgroundImage="icon-check-outline"/>
+                                                                <connections>
+                                                                    <action selector="f3checkTapped:" destination="skt-xn-cU7" eventType="touchUpInside" id="t5X-b7-jZd"/>
+                                                                </connections>
+                                                            </button>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="มีรอยถอดซ่อมหรือเปลี่ยนคานซับแรง" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cHM-lT-qRG">
+                                                                <rect key="frame" x="60" y="14.5" width="430" height="21.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                                <color key="textColor" name="primary_color"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="nQE-bS-gnT" firstAttribute="width" secondItem="nQE-bS-gnT" secondAttribute="height" multiplier="1:1" id="Qur-v1-jS0"/>
+                                                            <constraint firstAttribute="height" constant="50" id="a3G-d8-dpr"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="PPx-Wt-icM">
+                                                        <rect key="frame" x="490" y="0.0" width="490" height="50"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eHc-1B-0Dm" customClass="CheckBoxUIButton" customModule="Inspection" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="5" width="40" height="40"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="40" id="Uc3-lU-oSW"/>
+                                                                </constraints>
+                                                                <state key="normal" backgroundImage="icon-check-outline"/>
+                                                                <connections>
+                                                                    <action selector="f4checkTapped:" destination="skt-xn-cU7" eventType="touchUpInside" id="oj1-6m-Gzl"/>
+                                                                </connections>
+                                                            </button>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="ชนหน้า-หลังถึงคานแต่ไม่ถึงโครงสร้างหลัก" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C1M-SU-DAV">
+                                                                <rect key="frame" x="60" y="14.5" width="430" height="21.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                                <color key="textColor" name="primary_color"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="CQl-UM-sJe"/>
+                                                            <constraint firstItem="eHc-1B-0Dm" firstAttribute="width" secondItem="eHc-1B-0Dm" secondAttribute="height" multiplier="1:1" id="hKD-fa-Ui8"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="gAP-AD-ywp">
+                                                <rect key="frame" x="0.0" y="650" width="980" height="50"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="xOq-N9-Mcf">
+                                                        <rect key="frame" x="0.0" y="0.0" width="490" height="50"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kFT-hF-VU2" customClass="CheckBoxUIButton" customModule="Inspection" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="5" width="40" height="40"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="40" id="1XG-2v-7p5"/>
+                                                                </constraints>
+                                                                <state key="normal" backgroundImage="icon-check-outline"/>
+                                                                <connections>
+                                                                    <action selector="f5checkTapped:" destination="skt-xn-cU7" eventType="touchUpInside" id="f0M-O6-YCj"/>
+                                                                </connections>
+                                                            </button>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="มีการถอด / ซ่อม / เปลี่ยนชิ้นส่วนตัวถัง" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vyH-Sx-HCD">
+                                                                <rect key="frame" x="60" y="14.5" width="430" height="21.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                                <color key="textColor" name="primary_color"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="mHL-YF-j1J"/>
+                                                            <constraint firstItem="kFT-hF-VU2" firstAttribute="width" secondItem="kFT-hF-VU2" secondAttribute="height" multiplier="1:1" id="zRA-1w-Qr0"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="G3h-XQ-zrU">
+                                                        <rect key="frame" x="490" y="0.0" width="490" height="50"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="76T-Sm-rw5" customClass="CheckBoxUIButton" customModule="Inspection" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="5" width="40" height="40"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="40" id="bD9-00-9zQ"/>
+                                                                </constraints>
+                                                                <state key="normal" backgroundImage="icon-check-outline"/>
+                                                                <connections>
+                                                                    <action selector="f6checkTapped:" destination="skt-xn-cU7" eventType="touchUpInside" id="VGP-Rl-yhB"/>
+                                                                </connections>
+                                                            </button>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="มีรอยบุบครูดถึงเนื้อโลหะ" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oHX-pK-PTK">
+                                                                <rect key="frame" x="60" y="14.5" width="430" height="21.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                                <color key="textColor" name="primary_color"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="P4E-Zw-n3U"/>
+                                                            <constraint firstItem="76T-Sm-rw5" firstAttribute="width" secondItem="76T-Sm-rw5" secondAttribute="height" multiplier="1:1" id="tCw-Io-gdh"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Kf9-vX-kCs">
+                                                <rect key="frame" x="0.0" y="700" width="980" height="50"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="hv2-7E-cls">
+                                                        <rect key="frame" x="0.0" y="0.0" width="490" height="50"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NK3-Un-vMt" customClass="CheckBoxUIButton" customModule="Inspection" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="5" width="40" height="40"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="40" id="Ba8-3a-7eF"/>
+                                                                </constraints>
+                                                                <state key="normal" backgroundImage="icon-check-outline"/>
+                                                                <connections>
+                                                                    <action selector="f7checkTapped:" destination="skt-xn-cU7" eventType="touchUpInside" id="Va2-10-9VD"/>
+                                                                </connections>
+                                                            </button>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="รอบตัวรถมีร่องรอยการซ่อม" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZWn-3B-m3k">
+                                                                <rect key="frame" x="60" y="14.5" width="430" height="21.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                                <color key="textColor" name="primary_color"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="kNH-IA-juD"/>
+                                                            <constraint firstItem="NK3-Un-vMt" firstAttribute="width" secondItem="NK3-Un-vMt" secondAttribute="height" multiplier="1:1" id="wFR-Jj-g4a"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="LtS-sM-enh">
+                                                        <rect key="frame" x="490" y="0.0" width="490" height="50"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ayc-xL-Inh" customClass="CheckBoxUIButton" customModule="Inspection" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="5" width="40" height="40"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="40" id="L3Q-am-QvA"/>
+                                                                </constraints>
+                                                                <state key="normal" backgroundImage="icon-check-outline"/>
+                                                                <connections>
+                                                                    <action selector="f8checkTapped:" destination="skt-xn-cU7" eventType="touchUpInside" id="ekL-h9-s3U"/>
+                                                                </connections>
+                                                            </button>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="รถเปลี่ยนเครื่องยนต์ / สี มาและสภาพใช้งานไม่ปกติ" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aev-m8-3sA">
+                                                                <rect key="frame" x="60" y="14.5" width="430" height="21.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                                <color key="textColor" name="primary_color"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="ayc-xL-Inh" firstAttribute="width" secondItem="ayc-xL-Inh" secondAttribute="height" multiplier="1:1" id="2tf-QB-fN2"/>
+                                                            <constraint firstAttribute="height" constant="50" id="uNE-gS-wRc"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="NrT-Ym-ctI">
+                                                <rect key="frame" x="0.0" y="750" width="980" height="50"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="hyD-kr-xBA">
+                                                        <rect key="frame" x="0.0" y="0.0" width="490" height="50"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yMw-VX-HCL" customClass="CheckBoxUIButton" customModule="Inspection" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="5" width="40" height="40"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="40" id="ddK-I6-9fx"/>
+                                                                </constraints>
+                                                                <state key="normal" backgroundImage="icon-check-outline"/>
+                                                                <connections>
+                                                                    <action selector="f9checkTapped:" destination="skt-xn-cU7" eventType="touchUpInside" id="72B-VA-c6T"/>
+                                                                </connections>
+                                                            </button>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="รถเคยติดแก๊สมา" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uiu-Pg-tGh">
+                                                                <rect key="frame" x="60" y="14.5" width="430" height="21.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                                <color key="textColor" name="primary_color"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="28l-j5-vHZ"/>
+                                                            <constraint firstItem="yMw-VX-HCL" firstAttribute="width" secondItem="yMw-VX-HCL" secondAttribute="height" multiplier="1:1" id="R96-yv-S6p"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="1Jk-u6-JDV">
+                                                        <rect key="frame" x="490" y="0.0" width="490" height="50"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3pB-zq-4kO" customClass="CheckBoxUIButton" customModule="Inspection" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="5" width="40" height="40"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="40" id="36Q-GK-vkL"/>
+                                                                </constraints>
+                                                                <state key="normal" backgroundImage="icon-check-outline"/>
+                                                                <connections>
+                                                                    <action selector="f10checTappedk:" destination="skt-xn-cU7" eventType="touchUpInside" id="xbE-eN-sEc"/>
+                                                                </connections>
+                                                            </button>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="รถเคยติดหลังคา / เจาะกระบะ" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tRm-a2-BWd">
+                                                                <rect key="frame" x="60" y="14.5" width="430" height="21.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                                <color key="textColor" name="primary_color"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="217-wC-2we"/>
+                                                            <constraint firstItem="3pB-zq-4kO" firstAttribute="width" secondItem="3pB-zq-4kO" secondAttribute="height" multiplier="1:1" id="kHI-ji-ont"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="klQ-jT-JvV">
+                                                <rect key="frame" x="0.0" y="800" width="980" height="50"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IhM-Xf-u8M" customClass="CheckBoxUIButton" customModule="Inspection" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="5" width="40" height="40"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="40" id="wFH-4k-B2c"/>
+                                                        </constraints>
+                                                        <state key="normal" backgroundImage="icon-check-outline"/>
+                                                        <connections>
+                                                            <action selector="f11checTappedk:" destination="skt-xn-cU7" eventType="touchUpInside" id="wKa-Io-4St"/>
+                                                        </connections>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="รถน้ำเข้ามีสนิมใต้เบาะ / ใต้คอนโซล แต่ไม่ปรากฎระดับน้ำ" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fmN-7W-xYj">
+                                                        <rect key="frame" x="60" y="14.5" width="920" height="21.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                        <color key="textColor" name="primary_color"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="CKV-HQ-P8g"/>
+                                                    <constraint firstItem="IhM-Xf-u8M" firstAttribute="width" secondItem="IhM-Xf-u8M" secondAttribute="height" multiplier="1:1" id="sNS-d3-oF8"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="BE7-P0-GHI">
+                                                <rect key="frame" x="0.0" y="850" width="980" height="50"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="P Poor แย่" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dFp-Rg-jor">
+                                                        <rect key="frame" x="0.0" y="7" width="980" height="36"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                                        <color key="textColor" name="primary_color"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="n3B-4N-17z"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="6D3-0p-xYO">
+                                                <rect key="frame" x="0.0" y="900" width="980" height="50"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="rzC-z9-1Jp">
+                                                        <rect key="frame" x="0.0" y="0.0" width="490" height="50"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B2D-xj-Elf" customClass="CheckBoxUIButton" customModule="Inspection" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="5" width="40" height="40"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="40" id="hsA-Wo-fXX"/>
+                                                                </constraints>
+                                                                <state key="normal" backgroundImage="icon-check-outline"/>
+                                                                <connections>
+                                                                    <action selector="p1checkTapped:" destination="skt-xn-cU7" eventType="touchUpInside" id="BZA-h2-Kag"/>
+                                                                </connections>
+                                                            </button>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="รถชนหนักกระทบโครงสร้างหลักเปลี่ยนคาน" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PWr-Di-sTg">
+                                                                <rect key="frame" x="60" y="14.5" width="430" height="21.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                                <color key="textColor" name="primary_color"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="d5c-s0-3H5"/>
+                                                            <constraint firstItem="B2D-xj-Elf" firstAttribute="width" secondItem="B2D-xj-Elf" secondAttribute="height" multiplier="1:1" id="irF-79-BfY"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="uai-Zw-0cB">
+                                                        <rect key="frame" x="490" y="0.0" width="490" height="50"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rCh-Ya-Pjg" customClass="CheckBoxUIButton" customModule="Inspection" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="5" width="40" height="40"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="40" id="5eN-nU-bIh"/>
+                                                                </constraints>
+                                                                <state key="normal" backgroundImage="icon-check-outline"/>
+                                                                <connections>
+                                                                    <action selector="p2checkTapped:" destination="skt-xn-cU7" eventType="touchUpInside" id="uet-3r-ThI"/>
+                                                                </connections>
+                                                            </button>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="เปลี่ยน / ซ่อม ซุ้มล้อ หรือเบ้าโช๊ค" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WTm-0h-r0J">
+                                                                <rect key="frame" x="60" y="14.5" width="430" height="21.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                                <color key="textColor" name="primary_color"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="d3V-X0-z3I"/>
+                                                            <constraint firstItem="rCh-Ya-Pjg" firstAttribute="width" secondItem="rCh-Ya-Pjg" secondAttribute="height" multiplier="1:1" id="zAL-mO-GCE"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="aXa-KQ-k7i">
+                                                <rect key="frame" x="0.0" y="950" width="980" height="50"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="TkO-Ue-obv">
+                                                        <rect key="frame" x="0.0" y="0.0" width="490" height="50"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aYW-9M-EU5" customClass="CheckBoxUIButton" customModule="Inspection" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="5" width="40" height="40"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="40" id="6ZJ-Cw-4s0"/>
+                                                                </constraints>
+                                                                <state key="normal" backgroundImage="icon-check-outline"/>
+                                                                <connections>
+                                                                    <action selector="p3checkTapped:" destination="skt-xn-cU7" eventType="touchUpInside" id="beD-h5-dRR"/>
+                                                                </connections>
+                                                            </button>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="รอยอารค์เสาประตูมีรอยซ่อม" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uyP-MO-BRy">
+                                                                <rect key="frame" x="60" y="14.5" width="430" height="21.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                                <color key="textColor" name="primary_color"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="58A-XD-0Ek"/>
+                                                            <constraint firstItem="aYW-9M-EU5" firstAttribute="width" secondItem="aYW-9M-EU5" secondAttribute="height" multiplier="1:1" id="hx3-xA-RBs"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="xd3-gQ-Yw6">
+                                                        <rect key="frame" x="490" y="0.0" width="490" height="50"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fim-Uj-ZOr" customClass="CheckBoxUIButton" customModule="Inspection" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="5" width="40" height="40"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="40" id="oOm-Sk-76K"/>
+                                                                </constraints>
+                                                                <state key="normal" backgroundImage="icon-check-outline"/>
+                                                                <connections>
+                                                                    <action selector="p4checkTapped:" destination="skt-xn-cU7" eventType="touchUpInside" id="G77-XX-ubT"/>
+                                                                </connections>
+                                                            </button>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="แชสซีมีรอยซ่อม, ช่วงล่างผุ" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7CQ-mh-DbG">
+                                                                <rect key="frame" x="60" y="14.5" width="430" height="21.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                                <color key="textColor" name="primary_color"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="PEi-Ck-ua9"/>
+                                                            <constraint firstItem="Fim-Uj-ZOr" firstAttribute="width" secondItem="Fim-Uj-ZOr" secondAttribute="height" multiplier="1:1" id="XpW-mO-tjZ"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="BeU-I9-scL">
+                                                <rect key="frame" x="0.0" y="1000" width="980" height="50"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="gxX-Ms-iTF">
+                                                        <rect key="frame" x="0.0" y="0.0" width="490" height="50"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JY1-Hz-dM7" customClass="CheckBoxUIButton" customModule="Inspection" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="5" width="40" height="40"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="40" id="WPU-QU-bOj"/>
+                                                                </constraints>
+                                                                <state key="normal" backgroundImage="icon-check-outline"/>
+                                                                <connections>
+                                                                    <action selector="p5checkTapped:" destination="skt-xn-cU7" eventType="touchUpInside" id="r49-2p-QmV"/>
+                                                                </connections>
+                                                            </button>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="รถชนหนักมา / หลังคาเสียหายมีรอยซ่อม" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pYr-sC-XWp">
+                                                                <rect key="frame" x="60" y="14.5" width="430" height="21.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                                <color key="textColor" name="primary_color"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="JY1-Hz-dM7" firstAttribute="width" secondItem="JY1-Hz-dM7" secondAttribute="height" multiplier="1:1" id="h8d-Ae-4aF"/>
+                                                            <constraint firstAttribute="height" constant="50" id="xoU-iV-Sxe"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="aoM-6i-lH2">
+                                                        <rect key="frame" x="490" y="0.0" width="490" height="50"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s8V-X4-7Qf" customClass="CheckBoxUIButton" customModule="Inspection" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="5" width="40" height="40"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="40" id="JaH-G5-mXx"/>
+                                                                </constraints>
+                                                                <state key="normal" backgroundImage="icon-check-outline"/>
+                                                                <connections>
+                                                                    <action selector="p6checkTapped:" destination="skt-xn-cU7" eventType="touchUpInside" id="5zA-LF-A2p"/>
+                                                                </connections>
+                                                            </button>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="ไม่มีแผ่นเพลท" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="etq-fF-pMb">
+                                                                <rect key="frame" x="60" y="14.5" width="430" height="21.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                                <color key="textColor" name="primary_color"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="UA9-OV-Cgk"/>
+                                                            <constraint firstItem="s8V-X4-7Qf" firstAttribute="width" secondItem="s8V-X4-7Qf" secondAttribute="height" multiplier="1:1" id="tQM-OH-piM"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="7mS-Yw-UgB">
+                                                <rect key="frame" x="0.0" y="1050" width="980" height="50"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="0eC-dN-LJQ">
+                                                        <rect key="frame" x="0.0" y="0.0" width="490" height="50"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1fm-Qp-dBf" customClass="CheckBoxUIButton" customModule="Inspection" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="5" width="40" height="40"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="40" id="uXl-2K-6Oc"/>
+                                                                </constraints>
+                                                                <state key="normal" backgroundImage="icon-check-outline"/>
+                                                                <connections>
+                                                                    <action selector="p7checkTapped:" destination="skt-xn-cU7" eventType="touchUpInside" id="t7c-io-yuS"/>
+                                                                </connections>
+                                                            </button>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="มีการซ่อมห้องท้ายรถยนต์ / กระบะท้ายซ่อมถึงแชสซี" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WH8-Ha-Wsg">
+                                                                <rect key="frame" x="60" y="14.5" width="430" height="21.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                                <color key="textColor" name="primary_color"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="H0h-sT-Ehe"/>
+                                                            <constraint firstItem="1fm-Qp-dBf" firstAttribute="width" secondItem="1fm-Qp-dBf" secondAttribute="height" multiplier="1:1" id="PtO-F0-bd8"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="It5-fE-xVc">
+                                                        <rect key="frame" x="490" y="0.0" width="490" height="50"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EOZ-fW-GAE" customClass="CheckBoxUIButton" customModule="Inspection" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="5" width="40" height="40"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="40" id="2Ht-dO-Z5x"/>
+                                                                </constraints>
+                                                                <state key="normal" backgroundImage="icon-check-outline"/>
+                                                                <connections>
+                                                                    <action selector="p8checkTapped:" destination="skt-xn-cU7" eventType="touchUpInside" id="9Kc-yd-o15"/>
+                                                                </connections>
+                                                            </button>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="รถเคยผ่านน้ำท่วม" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="an6-41-LdS">
+                                                                <rect key="frame" x="60" y="14.5" width="430" height="21.5"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                                <color key="textColor" name="primary_color"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="Gkn-el-dav"/>
+                                                            <constraint firstItem="EOZ-fW-GAE" firstAttribute="width" secondItem="EOZ-fW-GAE" secondAttribute="height" multiplier="1:1" id="fau-3x-h6w"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="6V1-jq-bnL">
+                                                <rect key="frame" x="0.0" y="1100" width="980" height="50"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nQm-SI-XsB" customClass="CheckBoxUIButton" customModule="Inspection" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="5" width="40" height="40"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="40" id="QSU-8K-Ih3"/>
+                                                        </constraints>
+                                                        <state key="normal" backgroundImage="icon-check-outline"/>
+                                                        <connections>
+                                                            <action selector="p9checkTapped:" destination="skt-xn-cU7" eventType="touchUpInside" id="ecg-gH-4Fc"/>
+                                                        </connections>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="มีรอยตัดต่อเชื่อมตัวถังและรอยสนิม / ตัดต่อเลขแชสซี / ตอกเลขเครื่อง และ มีรอยสนิม / รถซ่อมแซมดัดแปลงจากอุบัติเหตุ" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hgE-Yh-rZv">
+                                                        <rect key="frame" x="60" y="1.5" width="920" height="47.5"/>
+                                                        <fontDescription key="fontDescription" name="Thonburi" family="Thonburi" pointSize="18"/>
+                                                        <color key="textColor" name="primary_color"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="nQm-SI-XsB" firstAttribute="width" secondItem="nQm-SI-XsB" secondAttribute="height" multiplier="1:1" id="1Tb-qh-CnB"/>
+                                                    <constraint firstAttribute="height" constant="50" id="T46-C2-CiJ"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Rnw-Mk-YMX">
+                                                <rect key="frame" x="0.0" y="1150" width="980" height="50"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="X" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hIU-3m-dmz">
+                                                        <rect key="frame" x="0.0" y="7" width="980" height="36"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                                        <color key="textColor" name="primary_color"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="cCJ-y9-gyi"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="31c-oq-hiu">
+                                                <rect key="frame" x="0.0" y="1200" width="980" height="50"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tnu-DX-Cxa" customClass="CheckBoxUIButton" customModule="Inspection" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="5" width="40" height="40"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="40" id="w42-Pj-H0D"/>
+                                                        </constraints>
+                                                        <state key="normal" backgroundImage="icon-check-outline"/>
+                                                        <connections>
+                                                            <action selector="x1checkTapped:" destination="skt-xn-cU7" eventType="touchUpInside" id="zAX-0I-Em3"/>
+                                                        </connections>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="รถขับไม่ได้ / เครื่องยนต์มีปัญหา / เกียร์มีปัญหา / ไฮบริดเสีย" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rus-ro-2dz">
+                                                        <rect key="frame" x="60" y="14.5" width="920" height="21.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                        <color key="textColor" name="primary_color"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="Tnu-DX-Cxa" firstAttribute="width" secondItem="Tnu-DX-Cxa" secondAttribute="height" multiplier="1:1" id="DKH-bB-ssW"/>
+                                                    <constraint firstAttribute="height" constant="50" id="K5e-G9-1Mz"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="dUd-dQ-bKW">
+                                                <rect key="frame" x="0.0" y="1250" width="980" height="50"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Y" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NSI-9U-MFR">
+                                                        <rect key="frame" x="0.0" y="7" width="980" height="36"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                                        <color key="textColor" name="primary_color"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="rOO-Cg-nOD"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="mae-S2-AbJ">
+                                                <rect key="frame" x="0.0" y="1300" width="980" height="50"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zBz-yy-bFM" customClass="CheckBoxUIButton" customModule="Inspection" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="5" width="40" height="40"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="40" id="OAR-gE-Ts6"/>
+                                                        </constraints>
+                                                        <state key="normal" backgroundImage="icon-check-outline"/>
+                                                        <connections>
+                                                            <action selector="y1checkTapped:" destination="skt-xn-cU7" eventType="touchUpInside" id="Cot-Z9-gg9"/>
+                                                        </connections>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="รถซาก" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2WG-EL-XEA">
+                                                        <rect key="frame" x="60" y="14.5" width="920" height="21.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                        <color key="textColor" name="primary_color"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="zBz-yy-bFM" firstAttribute="width" secondItem="zBz-yy-bFM" secondAttribute="height" multiplier="1:1" id="PqM-qa-psD"/>
+                                                    <constraint firstAttribute="height" constant="50" id="U12-PW-FGt"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="ERL-W7-RxM" firstAttribute="leading" secondItem="2yB-TB-OtG" secondAttribute="leading" constant="50" id="3Gh-zb-Eav"/>
+                                    <constraint firstItem="ERL-W7-RxM" firstAttribute="centerX" secondItem="2yB-TB-OtG" secondAttribute="centerX" id="8Om-WI-K0v"/>
+                                    <constraint firstAttribute="bottom" secondItem="ERL-W7-RxM" secondAttribute="bottom" constant="300" id="LzK-56-GTF"/>
+                                    <constraint firstAttribute="trailing" secondItem="ERL-W7-RxM" secondAttribute="trailing" constant="50" id="XA6-da-HTu"/>
+                                    <constraint firstItem="ERL-W7-RxM" firstAttribute="top" secondItem="2yB-TB-OtG" secondAttribute="top" constant="50" id="lBg-C8-EtO"/>
+                                </constraints>
+                            </scrollView>
+                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wzk-Qh-PnU" customClass="CustomUIView" customModule="Inspection" customModuleProvider="target">
+                                <rect key="frame" x="960" y="100" width="100" height="100"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QKd-iQ-u5G">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="GRADE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w6D-Zi-9d8">
+                                                <rect key="frame" x="19" y="4.5" width="62" height="21.5"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" name="primary_color"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="0fa-tx-5rx"/>
+                                            <constraint firstItem="w6D-Zi-9d8" firstAttribute="centerY" secondItem="QKd-iQ-u5G" secondAttribute="centerY" id="Lnh-CQ-452"/>
+                                            <constraint firstItem="w6D-Zi-9d8" firstAttribute="centerX" secondItem="QKd-iQ-u5G" secondAttribute="centerX" id="Zde-2R-JgP"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s0c-QS-eTL">
+                                        <rect key="frame" x="42" y="44" width="16" height="42"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
+                                        <color key="textColor" name="primary_color"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="2dq-Td-DfC"/>
+                                    <constraint firstItem="s0c-QS-eTL" firstAttribute="centerX" secondItem="Wzk-Qh-PnU" secondAttribute="centerX" id="BIz-mr-p4d"/>
+                                    <constraint firstItem="QKd-iQ-u5G" firstAttribute="top" secondItem="Wzk-Qh-PnU" secondAttribute="top" id="QUF-W2-bF0"/>
+                                    <constraint firstAttribute="width" constant="100" id="Rs2-q6-6L1"/>
+                                    <constraint firstItem="s0c-QS-eTL" firstAttribute="centerY" secondItem="Wzk-Qh-PnU" secondAttribute="centerY" constant="15" id="bXn-Ye-9cB"/>
+                                    <constraint firstItem="QKd-iQ-u5G" firstAttribute="leading" secondItem="Wzk-Qh-PnU" secondAttribute="leading" id="eeI-lS-QvH"/>
+                                    <constraint firstAttribute="trailing" secondItem="QKd-iQ-u5G" secondAttribute="trailing" id="i2h-gI-aRZ"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" name="primary_color"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="tZf-d4-gLB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="tZf-d4-gLB" firstAttribute="trailing" secondItem="Wzk-Qh-PnU" secondAttribute="trailing" constant="20" id="Off-Gu-loE"/>
+                            <constraint firstItem="2yB-TB-OtG" firstAttribute="trailing" secondItem="tZf-d4-gLB" secondAttribute="trailing" id="Shf-Wr-vje"/>
+                            <constraint firstItem="Wzk-Qh-PnU" firstAttribute="top" secondItem="tZf-d4-gLB" secondAttribute="top" constant="50" id="hkT-NY-fWQ"/>
+                            <constraint firstItem="2yB-TB-OtG" firstAttribute="top" secondItem="tZf-d4-gLB" secondAttribute="top" id="ip9-Mv-xB1"/>
+                            <constraint firstItem="2yB-TB-OtG" firstAttribute="leading" secondItem="tZf-d4-gLB" secondAttribute="leading" id="l9r-wg-DYh"/>
+                            <constraint firstItem="2yB-TB-OtG" firstAttribute="bottom" secondItem="tZf-d4-gLB" secondAttribute="bottom" id="sl9-yO-jCC"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="จัดเกรดรถเข้าประมูล" id="Mfb-bb-zPk">
+                        <barButtonItem key="rightBarButtonItem" title="ต่อไป" id="ryJ-2V-7um">
+                            <connections>
+                                <action selector="printTapped:" destination="7FH-fg-9fB" id="fNd-w3-00C"/>
+                                <segue destination="7FH-fg-9fB" kind="show" id="McO-Bj-vnj"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <size key="freeformSize" width="1080" height="1810"/>
+                    <connections>
+                        <outlet property="a1Chehck" destination="2Kh-z3-KEj" id="AHH-Tg-Oqs"/>
+                        <outlet property="a2Chehck" destination="YXP-7c-Ywh" id="6eU-6Z-N6Q"/>
+                        <outlet property="a3Chehck" destination="pQU-8p-ujc" id="AqH-SL-Kdl"/>
+                        <outlet property="a4Chehck" destination="KYS-TV-LvZ" id="21X-sh-Q69"/>
+                        <outlet property="e1Chehck" destination="A2q-Ng-9vT" id="352-fB-mZR"/>
+                        <outlet property="e2Chehck" destination="dwP-at-1Hw" id="My9-qT-dl6"/>
+                        <outlet property="e3Chehck" destination="PqC-Ob-jVo" id="qAh-cP-euu"/>
+                        <outlet property="e4Chehck" destination="YiI-1Q-5gc" id="8Pm-Ua-hhp"/>
+                        <outlet property="e5Chehck" destination="uzm-Y3-ktn" id="Ss1-0y-LHq"/>
+                        <outlet property="f10Chehck" destination="3pB-zq-4kO" id="XEQ-kc-kVL"/>
+                        <outlet property="f11Chehck" destination="IhM-Xf-u8M" id="l9D-7h-vvN"/>
+                        <outlet property="f1Chehck" destination="kYp-zG-wDO" id="RGn-vU-Oxp"/>
+                        <outlet property="f2Chehck" destination="UHa-uX-ckA" id="BA3-KN-s4d"/>
+                        <outlet property="f3Chehck" destination="nQE-bS-gnT" id="KVo-ek-IfN"/>
+                        <outlet property="f4Chehck" destination="eHc-1B-0Dm" id="ZIZ-eA-gcD"/>
+                        <outlet property="f5Chehck" destination="kFT-hF-VU2" id="tdm-b8-yBp"/>
+                        <outlet property="f6Chehck" destination="76T-Sm-rw5" id="Ja3-so-lgL"/>
+                        <outlet property="f7Chehck" destination="NK3-Un-vMt" id="T8J-mb-vSL"/>
+                        <outlet property="f8Chehck" destination="ayc-xL-Inh" id="TVe-AO-Xjn"/>
+                        <outlet property="f9Chehck" destination="yMw-VX-HCL" id="RgX-pY-aoo"/>
+                        <outlet property="g1Chehck" destination="pci-AA-czi" id="Irf-6d-VF5"/>
+                        <outlet property="g2Chehck" destination="JsP-Yk-rTz" id="eAc-wO-tcz"/>
+                        <outlet property="g3Chehck" destination="vHv-Mx-tmq" id="jmU-WM-t4s"/>
+                        <outlet property="g4Chehck" destination="xL7-sC-V9R" id="KMP-Cl-S4l"/>
+                        <outlet property="gradeLabel" destination="s0c-QS-eTL" id="TKm-rL-RpQ"/>
+                        <outlet property="p1Chehck" destination="B2D-xj-Elf" id="IwI-G5-Xhw"/>
+                        <outlet property="p2Chehck" destination="rCh-Ya-Pjg" id="jvP-jn-du6"/>
+                        <outlet property="p3Chehck" destination="aYW-9M-EU5" id="zf8-sB-GGa"/>
+                        <outlet property="p4Chehck" destination="Fim-Uj-ZOr" id="iNc-le-U5O"/>
+                        <outlet property="p5Chehck" destination="JY1-Hz-dM7" id="ZTK-wt-jrw"/>
+                        <outlet property="p6Chehck" destination="s8V-X4-7Qf" id="gMt-bE-f6O"/>
+                        <outlet property="p7Chehck" destination="1fm-Qp-dBf" id="2eJ-Re-Fi9"/>
+                        <outlet property="p8Chehck" destination="EOZ-fW-GAE" id="rk3-6d-yIQ"/>
+                        <outlet property="p9Chehck" destination="nQm-SI-XsB" id="Vys-hP-Npf"/>
+                        <outlet property="scrollView" destination="2yB-TB-OtG" id="JM1-0N-pJk"/>
+                        <outlet property="x1Chehck" destination="Tnu-DX-Cxa" id="x4d-jM-RPp"/>
+                        <outlet property="y1Chehck" destination="zBz-yy-bFM" id="6lZ-bg-Pfh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Gk5-RB-pd9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1552.7777777777778" y="-226.66666666666666"/>
+        </scene>
+        <!--PDF-->
+        <scene sceneID="Tub-VE-hT2">
+            <objects>
+                <viewControllerPlaceholder storyboardName="PDF" id="CDt-SS-EM6" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="q5t-IZ-pf5"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f6S-aT-fdA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2214" y="-152"/>
+        </scene>
+        <!--สรุป-->
+        <scene sceneID="7bi-Am-yHZ">
+            <objects>
+                <viewController storyboardIdentifier="SummaryCarViewController" id="7FH-fg-9fB" customClass="SummaryCarViewController" customModule="Inspection" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qc0-cZ-dpx">
+                        <rect key="frame" x="0.0" y="0.0" width="1080" height="810"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HjP-47-Xxg">
+                                <rect key="frame" x="0.0" y="50" width="1080" height="760"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="YL6-c5-gl7">
+                                        <rect key="frame" x="50" y="50" width="980" height="300"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="P" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NcB-3c-Y4B">
+                                                <rect key="frame" x="0.0" y="0.0" width="485" height="300"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="300" id="pHy-b6-zVG"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="200"/>
+                                                <color key="textColor" name="primary_color"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="RfV-89-GxQ">
+                                                <rect key="frame" x="495" y="63.5" width="485" height="173.5"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="OtV-QV-zU3">
+                                                        <rect key="frame" x="0.0" y="0.0" width="485" height="44.5"/>
+                                                        <subviews>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Pbz-lI-LK5">
+                                                                <rect key="frame" x="0.0" y="0.0" width="232.5" height="44.5"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="รถยนต์" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x5r-zs-N1V">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="232.5" height="24"/>
+                                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                                        <color key="textColor" name="primary_color"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mitsubishi Mirage 1.2 ปี 2013" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JaV-sH-xOk">
+                                                                        <rect key="frame" x="0.0" y="24" width="232.5" height="20.5"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                        <color key="textColor" name="primary_color"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </stackView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="LvR-vf-ANh">
+                                                                <rect key="frame" x="252.5" y="0.0" width="232.5" height="44.5"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ทะเบียน" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sYk-cH-yyh">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="232.5" height="24"/>
+                                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                                        <color key="textColor" name="primary_color"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ขฉ 5869 ระยอง" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xaK-8V-9eS">
+                                                                        <rect key="frame" x="0.0" y="24" width="232.5" height="20.5"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                        <color key="textColor" name="primary_color"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </stackView>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="DAr-3J-4RJ">
+                                                        <rect key="frame" x="0.0" y="64.5" width="485" height="44.5"/>
+                                                        <subviews>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="mPu-C0-pHf">
+                                                                <rect key="frame" x="0.0" y="0.0" width="232.5" height="44.5"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="หมายเลขตัวถัง" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v8b-y0-tzJ">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="232.5" height="24"/>
+                                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                                        <color key="textColor" name="primary_color"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MMTXA03ADH059866" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ler-Xy-9fA">
+                                                                        <rect key="frame" x="0.0" y="24" width="232.5" height="20.5"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                        <color key="textColor" name="primary_color"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </stackView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="J5T-sd-77j">
+                                                                <rect key="frame" x="252.5" y="0.0" width="232.5" height="44.5"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="หมายเลขเครื่อง" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gcU-tk-Ow6">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="232.5" height="24"/>
+                                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                                        <color key="textColor" name="primary_color"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3AP2UAP1280" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SOC-86-Bff">
+                                                                        <rect key="frame" x="0.0" y="24" width="232.5" height="20.5"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                        <color key="textColor" name="primary_color"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </stackView>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="qDj-3B-tA4">
+                                                        <rect key="frame" x="0.0" y="129" width="485" height="44.5"/>
+                                                        <subviews>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ELZ-UP-Oss">
+                                                                <rect key="frame" x="0.0" y="0.0" width="232.5" height="44.5"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="สี" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3xz-Dk-sFl">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="232.5" height="24"/>
+                                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                                        <color key="textColor" name="primary_color"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ขาว" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pov-dt-2RB">
+                                                                        <rect key="frame" x="0.0" y="24" width="232.5" height="20.5"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                        <color key="textColor" name="primary_color"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </stackView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="Ie3-x2-cUE">
+                                                                <rect key="frame" x="252.5" y="0.0" width="232.5" height="44.5"/>
+                                                                <subviews>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="04M-ze-SQp">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="232.5" height="44.5"/>
+                                                                        <subviews>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="บริษัทที่ส่งมอบ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uad-NJ-wre">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="232.5" height="24"/>
+                                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                                                <color key="textColor" name="primary_color"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="toyoya leasing โตโยต้าลีสซิ่ง" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q4P-6V-HDZ">
+                                                                                <rect key="frame" x="0.0" y="24" width="232.5" height="20.5"/>
+                                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                                <color key="textColor" name="primary_color"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                        </subviews>
+                                                                    </stackView>
+                                                                </subviews>
+                                                            </stackView>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="เกรดสำหรับการประมูล" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Igt-wj-WSl">
+                                        <rect key="frame" x="331.5" y="400" width="185.5" height="24"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <color key="textColor" name="primary_color"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="P Poor แย่" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g88-uA-uCE">
+                                        <rect key="frame" x="537" y="400" width="86.5" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" name="primary_color"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="YL6-c5-gl7" firstAttribute="top" secondItem="HjP-47-Xxg" secondAttribute="top" constant="50" id="23e-lP-Ke4"/>
+                                    <constraint firstItem="Igt-wj-WSl" firstAttribute="centerX" secondItem="HjP-47-Xxg" secondAttribute="centerX" constant="-116" id="55p-SR-FIe"/>
+                                    <constraint firstAttribute="bottom" secondItem="YL6-c5-gl7" secondAttribute="bottom" constant="300" id="CuW-G9-lZ9"/>
+                                    <constraint firstItem="Igt-wj-WSl" firstAttribute="top" secondItem="YL6-c5-gl7" secondAttribute="bottom" constant="50" id="O8g-aw-RJc"/>
+                                    <constraint firstItem="YL6-c5-gl7" firstAttribute="centerX" secondItem="HjP-47-Xxg" secondAttribute="centerX" id="es9-0G-t6S"/>
+                                    <constraint firstItem="g88-uA-uCE" firstAttribute="leading" secondItem="Igt-wj-WSl" secondAttribute="trailing" constant="20" id="gpZ-op-ZQr"/>
+                                    <constraint firstItem="YL6-c5-gl7" firstAttribute="leading" secondItem="HjP-47-Xxg" secondAttribute="leading" constant="50" id="iPy-ty-rjJ"/>
+                                    <constraint firstItem="g88-uA-uCE" firstAttribute="centerY" secondItem="Igt-wj-WSl" secondAttribute="centerY" id="qqV-mZ-Yw2"/>
+                                    <constraint firstAttribute="trailing" secondItem="YL6-c5-gl7" secondAttribute="trailing" constant="50" id="xM0-Bz-kFU"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ZG3-9c-h7A"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="HjP-47-Xxg" firstAttribute="bottom" secondItem="ZG3-9c-h7A" secondAttribute="bottom" id="0dN-8i-fK0"/>
+                            <constraint firstItem="HjP-47-Xxg" firstAttribute="trailing" secondItem="ZG3-9c-h7A" secondAttribute="trailing" id="GY1-gv-5Co"/>
+                            <constraint firstItem="HjP-47-Xxg" firstAttribute="top" secondItem="ZG3-9c-h7A" secondAttribute="top" id="fJp-jy-1um"/>
+                            <constraint firstItem="HjP-47-Xxg" firstAttribute="leading" secondItem="ZG3-9c-h7A" secondAttribute="leading" id="slL-So-7fS"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="สรุป" id="RbC-ej-JlK">
+                        <rightBarButtonItems>
+                            <barButtonItem title="Send Inspection" id="7IP-VI-Nva">
+                                <connections>
+                                    <action selector="saveToIMAT:" destination="7FH-fg-9fB" id="D6T-vz-WVY"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="บันทึก" id="WOy-jt-xTe">
+                                <connections>
+                                    <action selector="printTapped:" destination="7FH-fg-9fB" id="r0Q-jV-u30"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="bodyNumberLabel" destination="ler-Xy-9fA" id="31n-zW-L0j"/>
+                        <outlet property="carDetailLabel" destination="JaV-sH-xOk" id="MSU-Sb-0aL"/>
+                        <outlet property="chassiNumberLabel" destination="SOC-86-Bff" id="xkI-lb-3dV"/>
+                        <outlet property="colorLabel" destination="Pov-dt-2RB" id="mBl-iw-l88"/>
+                        <outlet property="companyLabel" destination="Q4P-6V-HDZ" id="oF8-Ij-gb6"/>
+                        <outlet property="gradeDetailLabel" destination="g88-uA-uCE" id="b38-Kf-Lvr"/>
+                        <outlet property="gradeLabel" destination="NcB-3c-Y4B" id="bdD-1L-iEV"/>
+                        <outlet property="registrationLabel" destination="xaK-8V-9eS" id="uMm-oy-xi0"/>
+                        <outlet property="saveButton" destination="WOy-jt-xTe" id="p7C-sL-CVh"/>
+                        <outlet property="sendButton" destination="7IP-VI-Nva" id="7zW-vf-dYU"/>
+                        <segue destination="CDt-SS-EM6" kind="show" identifier="pdfviewer" id="EXB-yf-Kv2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iAt-dF-fOj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2214" y="-596"/>
+        </scene>
+    </scenes>
+    <designables>
+        <designable name="1fm-Qp-dBf">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="2Kh-z3-KEj">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="3pB-zq-4kO">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="76T-Sm-rw5">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="A2q-Ng-9vT">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="B2D-xj-Elf">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="EOZ-fW-GAE">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="Fim-Uj-ZOr">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="IhM-Xf-u8M">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="JY1-Hz-dM7">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="JsP-Yk-rTz">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="KYS-TV-LvZ">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="NK3-Un-vMt">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="PqC-Ob-jVo">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="Tnu-DX-Cxa">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="UHa-uX-ckA">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="YXP-7c-Ywh">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="YiI-1Q-5gc">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="aYW-9M-EU5">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="ayc-xL-Inh">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="dwP-at-1Hw">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="eHc-1B-0Dm">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="kFT-hF-VU2">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="kYp-zG-wDO">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="nQE-bS-gnT">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="nQm-SI-XsB">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="pQU-8p-ujc">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="pci-AA-czi">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="rCh-Ya-Pjg">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="s8V-X4-7Qf">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="uzm-Y3-ktn">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="vHv-Mx-tmq">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="xL7-sC-V9R">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="yMw-VX-HCL">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="zBz-yy-bFM">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+    </designables>
+    <resources>
+        <image name="icon-check-outline" width="30" height="30"/>
+        <namedColor name="primary_color">
+            <color red="0.050999999046325684" green="0.17599999904632568" blue="0.35699999332427979" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

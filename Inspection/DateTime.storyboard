@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xCW-kB-kU8">
+    <device id="ipad10_2" orientation="landscape" layout="fullscreen" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Date Time View Controller-->
+        <scene sceneID="fTv-PK-fhX">
+            <objects>
+                <viewController storyboardIdentifier="DateTimeViewController" id="xCW-kB-kU8" customClass="DateTimeViewController" customModule="Inspection" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8c6-MA-5to">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="533"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" style="inline" translatesAutoresizingMaskIntoConstraints="NO" id="mS3-W1-uVn">
+                                <rect key="frame" x="0.0" y="33" width="480" height="400"/>
+                                <locale key="locale" localeIdentifier="th"/>
+                                <connections>
+                                    <action selector="dateTimeValueChanged:" destination="xCW-kB-kU8" eventType="valueChanged" id="I68-3h-eQ4"/>
+                                </connections>
+                            </datePicker>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="fXy-Qk-2Gq">
+                                <rect key="frame" x="0.0" y="453" width="480" height="60"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Cj4-nY-aBR">
+                                        <rect key="frame" x="50" y="0.0" width="380" height="60"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Owx-5n-X4W" customClass="CustomUIButton" customModule="Inspection" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="180" height="60"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="180" id="R53-Yt-q1s"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <state key="normal" title="เวลาตอนนี้">
+                                                    <color key="titleColor" name="orange"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="2"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" name="orange"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="nowTimeTapped:" destination="xCW-kB-kU8" eventType="touchUpInside" id="slj-60-cze"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="22F-XS-Pbv" customClass="CustomUIButton" customModule="Inspection" customModuleProvider="target">
+                                                <rect key="frame" x="200" y="0.0" width="180" height="60"/>
+                                                <color key="backgroundColor" name="orange"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <state key="normal" title="ยืนยัน">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="10"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="confirmTapped:" destination="xCW-kB-kU8" eventType="touchUpInside" id="iw6-dl-HHS"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="N7e-bM-1NU"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="8VZ-Uh-BL2"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="mS3-W1-uVn" firstAttribute="trailing" secondItem="8VZ-Uh-BL2" secondAttribute="trailing" id="2g4-w1-Ztr"/>
+                            <constraint firstItem="fXy-Qk-2Gq" firstAttribute="leading" secondItem="8VZ-Uh-BL2" secondAttribute="leading" id="3CX-Jn-Tv6"/>
+                            <constraint firstItem="8VZ-Uh-BL2" firstAttribute="bottom" secondItem="fXy-Qk-2Gq" secondAttribute="bottom" constant="20" id="9yl-i3-PD1"/>
+                            <constraint firstItem="fXy-Qk-2Gq" firstAttribute="centerX" secondItem="8c6-MA-5to" secondAttribute="centerX" id="Fca-95-Cpm"/>
+                            <constraint firstItem="mS3-W1-uVn" firstAttribute="top" secondItem="8VZ-Uh-BL2" secondAttribute="top" constant="20" id="KtM-o0-S1c"/>
+                            <constraint firstItem="fXy-Qk-2Gq" firstAttribute="top" secondItem="mS3-W1-uVn" secondAttribute="bottom" constant="20" id="dde-tD-Xow"/>
+                            <constraint firstItem="8VZ-Uh-BL2" firstAttribute="trailing" secondItem="fXy-Qk-2Gq" secondAttribute="trailing" id="gp8-Mo-1iN"/>
+                            <constraint firstItem="mS3-W1-uVn" firstAttribute="leading" secondItem="8VZ-Uh-BL2" secondAttribute="leading" id="zfy-xY-XDI"/>
+                        </constraints>
+                    </view>
+                    <value key="contentSizeForViewInPopover" type="size" width="480" height="520"/>
+                    <connections>
+                        <outlet property="datePicker" destination="mS3-W1-uVn" id="cNL-J9-Yv5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aNG-3e-vFO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-142.22222222222223" y="106.66666666666666"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="2sV-FD-uU2">
+            <objects>
+                <viewController storyboardIdentifier="ignored_viewcontroller_datetime" id="Fk2-m4-MEf" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8pg-l5-1O7">
+                        <rect key="frame" x="0.0" y="0.0" width="1080" height="810"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="GQs-gq-0kk"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <connections>
+                        <segue destination="xCW-kB-kU8" kind="popoverPresentation" identifier="ignored_segue_datetime" popoverAnchorView="8pg-l5-1O7" id="ebc-mP-P33">
+                            <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                        </segue>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="i8b-4v-kDd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-265" y="-624"/>
+        </scene>
+    </scenes>
+    <designables>
+        <designable name="22F-XS-Pbv">
+            <size key="intrinsicContentSize" width="50" height="36"/>
+        </designable>
+        <designable name="Owx-5n-X4W">
+            <size key="intrinsicContentSize" width="88" height="36"/>
+        </designable>
+    </designables>
+    <resources>
+        <namedColor name="orange">
+            <color red="1" green="0.63899999856948853" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

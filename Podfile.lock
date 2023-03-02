@@ -1,0 +1,38 @@
+PODS:
+  - Alamofire (5.4.1)
+  - KeychainAccess (4.2.2)
+  - ObjectMapper (3.5.3)
+  - RadioGroup (1.4.3):
+    - SweeterSwift
+  - SDWebImage (5.11.0):
+    - SDWebImage/Core (= 5.11.0)
+  - SDWebImage/Core (5.11.0)
+  - SweeterSwift (1.1.4)
+
+DEPENDENCIES:
+  - Alamofire (~> 5.2)
+  - KeychainAccess
+  - ObjectMapper (~> 3.5)
+  - RadioGroup
+  - SDWebImage
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - KeychainAccess
+    - ObjectMapper
+    - RadioGroup
+    - SDWebImage
+    - SweeterSwift
+
+SPEC CHECKSUMS:
+  Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
+  KeychainAccess: c0c4f7f38f6fc7bbe58f5702e25f7bd2f65abf51
+  ObjectMapper: 97111c97e054a6ee25917662106689f0b4127b37
+  RadioGroup: 7015c71759c90dbaae7050f33cfbc1de780e27a7
+  SDWebImage: 7acbb57630ac7db4a495547fb73916ff3e432f6b
+  SweeterSwift: 8a90cf3156f5a1b6f39785c479369a16633b5ea9
+
+PODFILE CHECKSUM: 299c6cce940d87fe783a4fa30d6e4f52380191d7
+
+COCOAPODS: 1.10.1

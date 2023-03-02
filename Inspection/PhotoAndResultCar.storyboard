@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="47o-Qp-Pz8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="47o-Qp-Pz8">
     <device id="ipad10_2" orientation="landscape" layout="fullscreen" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -456,7 +456,7 @@
                                 <rect key="frame" x="120" y="660" width="960" height="80"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="ผู้ตรวจสภาพ - นายขยัน ขันแข็ง" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D1d-Pr-r4Z">
-                                        <rect key="frame" x="352" y="28" width="256" height="24"/>
+                                        <rect key="frame" x="353.5" y="28" width="253.5" height="24"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -473,7 +473,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="120" height="740"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="1sb-sX-ueZ">
-                                        <rect key="frame" x="0.0" y="172" width="120" height="396"/>
+                                        <rect key="frame" x="0.0" y="224" width="120" height="292"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Cj-T4-Dvq">
                                                 <rect key="frame" x="0.0" y="0.0" width="120" height="84"/>
@@ -482,7 +482,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="120" height="84"/>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="รับมอบ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y3G-T5-Xdl">
-                                                        <rect key="frame" x="37.5" y="11" width="45.5" height="18"/>
+                                                        <rect key="frame" x="37.5" y="11" width="45" height="18"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -516,7 +516,7 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="120" height="84"/>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ตรวจสภาพ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g4O-Zr-SUm">
-                                                        <rect key="frame" x="25.5" y="11" width="69.5" height="18"/>
+                                                        <rect key="frame" x="25.5" y="11" width="69" height="18"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -575,58 +575,25 @@
                                                     <constraint firstItem="CwX-Ge-kba" firstAttribute="bottom" secondItem="vQh-u0-H3E" secondAttribute="top" id="iOZ-rw-Pgp"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ntz-4u-CHO">
-                                                <rect key="frame" x="0.0" y="312" width="120" height="84"/>
-                                                <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg-icon-sidebar-inactive" translatesAutoresizingMaskIntoConstraints="NO" id="CiO-ef-sj7">
-                                                        <rect key="frame" x="0.0" y="0.0" width="120" height="84"/>
-                                                    </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Repo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7cb-rP-v60">
-                                                        <rect key="frame" x="41.5" y="11" width="37.5" height="18"/>
-                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="car-icon-sidebar" translatesAutoresizingMaskIntoConstraints="NO" id="Ghw-ic-6Uj">
-                                                        <rect key="frame" x="42" y="29" width="36" height="36"/>
-                                                        <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" secondItem="Ghw-ic-6Uj" secondAttribute="height" multiplier="1:1" id="1q5-6r-kcW"/>
-                                                        </constraints>
-                                                    </imageView>
-                                                </subviews>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="trailing" secondItem="CiO-ef-sj7" secondAttribute="trailing" id="11X-vM-bSE"/>
-                                                    <constraint firstItem="CiO-ef-sj7" firstAttribute="leading" secondItem="ntz-4u-CHO" secondAttribute="leading" id="2yM-gx-rZu"/>
-                                                    <constraint firstItem="7cb-rP-v60" firstAttribute="bottom" secondItem="Ghw-ic-6Uj" secondAttribute="top" id="9xW-D6-dwE"/>
-                                                    <constraint firstItem="Ghw-ic-6Uj" firstAttribute="centerX" secondItem="ntz-4u-CHO" secondAttribute="centerX" id="ABr-60-jsh"/>
-                                                    <constraint firstItem="Ghw-ic-6Uj" firstAttribute="centerY" secondItem="ntz-4u-CHO" secondAttribute="centerY" constant="5" id="NIi-FU-GOg"/>
-                                                    <constraint firstAttribute="bottom" secondItem="CiO-ef-sj7" secondAttribute="bottom" id="Wpj-WQ-xCq"/>
-                                                    <constraint firstItem="7cb-rP-v60" firstAttribute="centerX" secondItem="ntz-4u-CHO" secondAttribute="centerX" id="ZC9-eB-0hp"/>
-                                                    <constraint firstItem="CiO-ef-sj7" firstAttribute="top" secondItem="ntz-4u-CHO" secondAttribute="top" id="eA7-Z9-Gmu"/>
-                                                    <constraint firstItem="Ghw-ic-6Uj" firstAttribute="width" secondItem="ntz-4u-CHO" secondAttribute="width" multiplier="0.3" id="pA7-WZ-eel"/>
-                                                </constraints>
-                                            </view>
                                         </subviews>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zk0-h2-4lV">
-                                        <rect key="frame" x="0.0" y="618" width="120" height="64"/>
+                                        <rect key="frame" x="0.0" y="566" width="120" height="64"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="1UL-AI-i7G">
                                                 <rect key="frame" x="0.0" y="0.0" width="120" height="64"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="8Rs-zd-IIg">
-                                                        <rect key="frame" x="18" y="0.0" width="84.5" height="18"/>
+                                                        <rect key="frame" x="18" y="0.0" width="84" height="18"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="วันที่ตรวจ" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hPY-lV-tyx">
-                                                                <rect key="frame" x="0.0" y="0.0" width="59.5" height="18"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="59" height="18"/>
                                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-pencil" translatesAutoresizingMaskIntoConstraints="NO" id="NlI-fa-JGv">
-                                                                <rect key="frame" x="69.5" y="1.5" width="15" height="15"/>
+                                                                <rect key="frame" x="69" y="1.5" width="15" height="15"/>
                                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" secondItem="NlI-fa-JGv" secondAttribute="height" multiplier="1:1" id="8X5-IH-WCL"/>
@@ -1035,7 +1002,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="รายละเอียด" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RWT-kF-eEA">
-                                                    <rect key="frame" x="195" y="118.5" width="81.5" height="20.5"/>
+                                                    <rect key="frame" x="195" y="118.5" width="81" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" name="primary_color"/>
                                                     <nil key="highlightedColor"/>
@@ -1053,7 +1020,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="749" text="-" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jJH-8h-fEt">
-                                                    <rect key="frame" x="296.5" y="118.5" width="393.5" height="20.5"/>
+                                                    <rect key="frame" x="296" y="118.5" width="394" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" name="primary_color"/>
                                                     <nil key="highlightedColor"/>
@@ -1255,7 +1222,6 @@
                         <outlet property="photoStackView" destination="hPp-zR-dwb" id="1Td-h4-KdH"/>
                         <outlet property="pickUpStackView" destination="4Cj-T4-Dvq" id="aBQ-AE-FUN"/>
                         <outlet property="plateCheckBox" destination="XKG-Zv-oAW" id="cdM-jy-mmn"/>
-                        <outlet property="repoStackView" destination="ntz-4u-CHO" id="tz0-Ak-N8G"/>
                         <outlet property="saveButton" destination="ZrH-vS-Kqv" id="kbX-9I-1aE"/>
                         <outlet property="sendInspectionButton" destination="tdi-ik-o3A" id="wsH-33-Wgk"/>
                         <outlet property="sideCheckBox" destination="zMW-M6-rUW" id="oy1-EC-oJv"/>
@@ -1366,19 +1332,19 @@
     </scenes>
     <designables>
         <designable name="0cy-X3-HVo">
-            <size key="intrinsicContentSize" width="137" height="36"/>
+            <size key="intrinsicContentSize" width="136" height="36"/>
         </designable>
         <designable name="29V-gd-SJY">
-            <size key="intrinsicContentSize" width="147" height="36"/>
+            <size key="intrinsicContentSize" width="149" height="36"/>
         </designable>
         <designable name="2PP-K6-7Ds">
-            <size key="intrinsicContentSize" width="148" height="36"/>
+            <size key="intrinsicContentSize" width="147" height="36"/>
         </designable>
         <designable name="3PY-Kn-khE">
             <size key="intrinsicContentSize" width="50" height="36"/>
         </designable>
         <designable name="A4r-TI-g2H">
-            <size key="intrinsicContentSize" width="64.5" height="25.5"/>
+            <size key="intrinsicContentSize" width="64" height="25.5"/>
         </designable>
         <designable name="FrD-uN-JER">
             <size key="intrinsicContentSize" width="141" height="36"/>
@@ -1387,7 +1353,7 @@
             <size key="intrinsicContentSize" width="30" height="30"/>
         </designable>
         <designable name="Kfk-5z-1Mb">
-            <size key="intrinsicContentSize" width="95.5" height="25.5"/>
+            <size key="intrinsicContentSize" width="95" height="25.5"/>
         </designable>
         <designable name="XKG-Zv-oAW">
             <size key="intrinsicContentSize" width="140" height="36"/>
@@ -1396,16 +1362,16 @@
             <size key="intrinsicContentSize" width="69.5" height="25.5"/>
         </designable>
         <designable name="foM-ZM-EYd">
-            <size key="intrinsicContentSize" width="158.5" height="25.5"/>
+            <size key="intrinsicContentSize" width="158" height="25.5"/>
         </designable>
         <designable name="g5t-l0-duk">
-            <size key="intrinsicContentSize" width="209" height="36"/>
+            <size key="intrinsicContentSize" width="210" height="36"/>
         </designable>
         <designable name="lpc-Xt-5tO">
-            <size key="intrinsicContentSize" width="173" height="36"/>
+            <size key="intrinsicContentSize" width="172" height="36"/>
         </designable>
         <designable name="oSo-Hb-92U">
-            <size key="intrinsicContentSize" width="161" height="36"/>
+            <size key="intrinsicContentSize" width="160" height="36"/>
         </designable>
         <designable name="tlj-Ge-RWP">
             <size key="intrinsicContentSize" width="30" height="36"/>
@@ -1414,7 +1380,7 @@
             <size key="intrinsicContentSize" width="131" height="36"/>
         </designable>
         <designable name="ytI-ce-fRr">
-            <size key="intrinsicContentSize" width="174" height="36"/>
+            <size key="intrinsicContentSize" width="171" height="36"/>
         </designable>
         <designable name="zMW-M6-rUW">
             <size key="intrinsicContentSize" width="129" height="36"/>

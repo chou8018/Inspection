@@ -102,8 +102,7 @@ extension UIViewController {
         case PICKUP_CAR
         case CHECK_CAR
         case PHOTO_CAR
-        case REPO_CAR
-
+        
         var VC : UIViewController {
             switch self {
            
@@ -113,8 +112,6 @@ extension UIViewController {
                 return checkCarViewController
             case .PHOTO_CAR:
                 return photoCarViewController
-            case .REPO_CAR:
-                return repoCarViewController
             }
         }
         
@@ -133,12 +130,6 @@ extension UIViewController {
         var photoCarViewController : PhotoCarViewController {
             let storyboardPhoto = UIStoryboard(name: "PhotoAndResultCar", bundle: nil)
             let photo = storyboardPhoto.instantiateViewController(withIdentifier: "PhotoCarViewController") as! PhotoCarViewController
-            return photo
-        }
-        
-        var repoCarViewController : RepoCarViewController {
-            let storyboardPhoto = UIStoryboard(name: "RepoCar", bundle: nil)
-            let photo = storyboardPhoto.instantiateViewController(withIdentifier: "RepoCarViewController") as! RepoCarViewController
             return photo
         }
     }

@@ -93,7 +93,8 @@ class CheckCarViewController: UIViewController, CheckCarDisplayLogic
     @IBOutlet weak var pickUpStackView: UIView!
     @IBOutlet weak var checkStackView: UIView!
     @IBOutlet weak var photoStackView: UIView!
-    @IBOutlet weak var repoStackView: UIView!
+    
+   
     
     @IBOutlet weak var segmentView: UIView!
     
@@ -197,8 +198,6 @@ class CheckCarViewController: UIViewController, CheckCarDisplayLogic
         photoStackView.isUserInteractionEnabled = true
         photoStackView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(toPhotoCar)))
         
-        repoStackView.isUserInteractionEnabled = true
-        repoStackView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(toRepoCar)))
         
     }
 
@@ -373,9 +372,6 @@ extension CheckCarViewController  {
        
     }
     
-    @objc func toRepoCar() {
-        navigationController?.pushViewController(CarInspectionPage.REPO_CAR.VC,  animated: false)
-    }
     
 }
 

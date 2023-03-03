@@ -277,7 +277,7 @@ struct ApiModel:URLRequestConvertible {
         UAT  http://mapapi-uat.mottoauction.com/
         PROD https://api.mottoauction.com/
      */
-    let base:String = "https://mapapi-uat.mottoauction.com/"
+    let base:String = "https://api.mottoauction.com/"
     let apiKey = "e9ab5c97-019e-4a83-ad6f-b1d571b24d5d"
     
     var path:String
@@ -300,7 +300,6 @@ struct ApiModel:URLRequestConvertible {
         let url = URL(string: isFullpath ? path : base + path )!
         var mutableURLRequest = URLRequest(url: url)
        
-        print("url = \(url.absoluteURL)")
         mutableURLRequest.httpMethod = model.method.rawValue
         mutableURLRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
         mutableURLRequest.setValue("application/json", forHTTPHeaderField: "Accept")

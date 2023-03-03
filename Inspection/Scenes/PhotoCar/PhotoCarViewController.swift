@@ -121,7 +121,7 @@ class PhotoCarViewController: UIViewController, PhotoCarDisplayLogic
     @IBOutlet weak var pickUpStackView: UIView!
     @IBOutlet weak var checkStackView: UIView!
     @IBOutlet weak var photoStackView: UIView!
-    @IBOutlet weak var repoStackView: UIView!
+  
   
     @IBOutlet weak var saveButton: UIBarButtonItem!
     @IBOutlet weak var sendInspectionButton: UIBarButtonItem!
@@ -297,8 +297,7 @@ class PhotoCarViewController: UIViewController, PhotoCarDisplayLogic
         photoStackView.isUserInteractionEnabled = true
         photoStackView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(toPhotoCar)))
         
-        repoStackView.isUserInteractionEnabled = true
-        repoStackView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(toRepoCar)))
+        
     }
     
     //MARK: Title
@@ -644,10 +643,6 @@ extension PhotoCarViewController  {
     }
     
     @objc func toPhotoCar() {
-    }
-    
-    @objc func toRepoCar() {
-        navigationController?.pushViewController(CarInspectionPage.REPO_CAR.VC,  animated: false)
     }
 }
  

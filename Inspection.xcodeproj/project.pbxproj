@@ -10,11 +10,6 @@
 		1E42BEC439AF142146721869 /* Pods_InspectionTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED7F01EFBE20F1FF79AD3938 /* Pods_InspectionTests.framework */; };
 		7B7F1EB825A89CFD60F730D4 /* Pods_Inspection_InspectionUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 450FEF54378985C29D64B3B3 /* Pods_Inspection_InspectionUITests.framework */; };
 		BC4F3FB54F9E0571C9BB828C /* Pods_Inspection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF5A5BE48DF744DDCA6FF8D6 /* Pods_Inspection.framework */; };
-		C29F96DC29B0468B00EA411D /* RepoCar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C29F96DB29B0468B00EA411D /* RepoCar.storyboard */; };
-		C29F96DF29B047B700EA411D /* RepoCarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29F96DE29B047B700EA411D /* RepoCarViewController.swift */; };
-		C29F96E129B049E100EA411D /* RepoCarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29F96E029B049E100EA411D /* RepoCarPresenter.swift */; };
-		C29F96E329B04B6E00EA411D /* RepoCarInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29F96E229B04B6E00EA411D /* RepoCarInteractor.swift */; };
-		C29F96E529B04CDF00EA411D /* RepoCarRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29F96E429B04CDF00EA411D /* RepoCarRouter.swift */; };
 		CE0CBFD72664CE8B00A31068 /* UILabel+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0CBFD62664CE8B00A31068 /* UILabel+extension.swift */; };
 		CE0CBFD926676C5D00A31068 /* UpdateVehicleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0CBFD826676C5D00A31068 /* UpdateVehicleService.swift */; };
 		CE0CBFE1266DC8B700A31068 /* DamagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0CBFDB266DC8B700A31068 /* DamagePresenter.swift */; };
@@ -477,11 +472,6 @@
 		4F3C49B3781456D4F9A64D4D /* Pods-Inspection-InspectionUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Inspection-InspectionUITests.debug.xcconfig"; path = "Target Support Files/Pods-Inspection-InspectionUITests/Pods-Inspection-InspectionUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		55C98B93E31756AF096E1F58 /* Pods-Inspection.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Inspection.release.xcconfig"; path = "Target Support Files/Pods-Inspection/Pods-Inspection.release.xcconfig"; sourceTree = "<group>"; };
 		58D757F7839D6F069EBBF157 /* Pods-Inspection-InspectionUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Inspection-InspectionUITests.release.xcconfig"; path = "Target Support Files/Pods-Inspection-InspectionUITests/Pods-Inspection-InspectionUITests.release.xcconfig"; sourceTree = "<group>"; };
-		C29F96DB29B0468B00EA411D /* RepoCar.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = RepoCar.storyboard; sourceTree = "<group>"; };
-		C29F96DE29B047B700EA411D /* RepoCarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepoCarViewController.swift; sourceTree = "<group>"; };
-		C29F96E029B049E100EA411D /* RepoCarPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepoCarPresenter.swift; sourceTree = "<group>"; };
-		C29F96E229B04B6E00EA411D /* RepoCarInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepoCarInteractor.swift; sourceTree = "<group>"; };
-		C29F96E429B04CDF00EA411D /* RepoCarRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepoCarRouter.swift; sourceTree = "<group>"; };
 		CE0CBFD62664CE8B00A31068 /* UILabel+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+extension.swift"; sourceTree = "<group>"; };
 		CE0CBFD826676C5D00A31068 /* UpdateVehicleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateVehicleService.swift; sourceTree = "<group>"; };
 		CE0CBFDB266DC8B700A31068 /* DamagePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DamagePresenter.swift; sourceTree = "<group>"; };
@@ -981,17 +971,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		C29F96DD29B0474F00EA411D /* RepoCar */ = {
-			isa = PBXGroup;
-			children = (
-				C29F96DE29B047B700EA411D /* RepoCarViewController.swift */,
-				C29F96E029B049E100EA411D /* RepoCarPresenter.swift */,
-				C29F96E229B04B6E00EA411D /* RepoCarInteractor.swift */,
-				C29F96E429B04CDF00EA411D /* RepoCarRouter.swift */,
-			);
-			path = RepoCar;
-			sourceTree = "<group>";
-		};
 		CE0CBFDA266DC82800A31068 /* Damage */ = {
 			isa = PBXGroup;
 			children = (
@@ -1308,7 +1287,6 @@
 				F9D7CD4C25CBA822003E049B /* CheckCar.storyboard */,
 				F9075E6925DCB35D004D4765 /* DateTime.storyboard */,
 				F9D7CD6125CBA9B3003E049B /* PhotoAndResultCar.storyboard */,
-				C29F96DB29B0468B00EA411D /* RepoCar.storyboard */,
 				F931654625E7376000E0F8CD /* InspectionRate.storyboard */,
 				F99583AF25DF9AD5005DD029 /* PDF.storyboard */,
 				F9192E0625F08C9900297E1F /* QRCodeReading.storyboard */,
@@ -1391,7 +1369,6 @@
 				F9E02E3525D134D50003CB9C /* Signature */,
 				F9D7CD7C25CBC9E0003E049B /* SummaryCar */,
 				F9D7CD5125CBA96E003E049B /* PhotoCar */,
-				C29F96DD29B0474F00EA411D /* RepoCar */,
 				F9D7CD3C25CBA7E4003E049B /* CheckCar */,
 				F9D7CD2925CBA50A003E049B /* PickUpCar */,
 				F9A46FAA25CAAABE00D3732E /* Detail */,
@@ -2348,7 +2325,6 @@
 				F931493B25F76BB6004E5F7A /* ModelCode.storyboard in Resources */,
 				F914455025C7F94C00B09FB6 /* Main.storyboard in Resources */,
 				F9075E6A25DCB35D004D4765 /* DateTime.storyboard in Resources */,
-				C29F96DC29B0468B00EA411D /* RepoCar.storyboard in Resources */,
 				F931654725E7376000E0F8CD /* InspectionRate.storyboard in Resources */,
 				F9D7CD4D25CBA822003E049B /* CheckCar.storyboard in Resources */,
 			);
@@ -2641,7 +2617,6 @@
 				F9E02E3C25D134EE0003CB9C /* SignaturePresenter.swift in Sources */,
 				F989FD88265F89E000342895 /* VehicleDeleteDocumentService.swift in Sources */,
 				CE20496C26BA4A510073A528 /* BookInMotorcycle1Presenter.swift in Sources */,
-				C29F96DF29B047B700EA411D /* RepoCarViewController.swift in Sources */,
 				CE20496F26BA4A510073A528 /* BookInMotorcycle1Models.swift in Sources */,
 				F9D7CD3025CBA51D003E049B /* PickUpCarPresenter.swift in Sources */,
 				F957B84A25CA5BB400B8FB3C /* SearchByViewController.swift in Sources */,
@@ -2695,7 +2670,6 @@
 				CE20498826D348E50073A528 /* BookInMotorcycle2Router.swift in Sources */,
 				F957B80F25CA3C5600B8FB3C /* InspectionListViewController.swift in Sources */,
 				F9AAF984261AA7A800A88C14 /* BookInListService.swift in Sources */,
-				C29F96E329B04B6E00EA411D /* RepoCarInteractor.swift in Sources */,
 				F9D7CD3425CBA51D003E049B /* PickUpCarViewController.swift in Sources */,
 				F90BAA432632828C00D5C3FB /* GradeResponse.swift in Sources */,
 				F91445AB25C7FB8100B09FB6 /* LoginRouter.swift in Sources */,
@@ -2725,7 +2699,6 @@
 				F9A46F9925CA922E00D3732E /* ItemListDataSource.swift in Sources */,
 				CE20497B26BA8C020073A528 /* ImageViewerRouter.swift in Sources */,
 				F9D7CD5825CBA984003E049B /* PhotoCarPresenter.swift in Sources */,
-				C29F96E529B04CDF00EA411D /* RepoCarRouter.swift in Sources */,
 				F9A46F9E25CA971700D3732E /* DefaultItemCell.swift in Sources */,
 				F99E9DBE265B74B600CF6435 /* VehicleDocumentResponse.swift in Sources */,
 				F94A048D25DA3A3F00C8EC4C /* ElectronicDeviceCheckRouter.swift in Sources */,
@@ -2881,7 +2854,6 @@
 				F9192DEF25F0732900297E1F /* LoadingView.swift in Sources */,
 				F957B84625CA5BB400B8FB3C /* SearchByPresenter.swift in Sources */,
 				F99E9DC0265B755400CF6435 /* VehicleDocumentService.swift in Sources */,
-				C29F96E129B049E100EA411D /* RepoCarPresenter.swift in Sources */,
 				F94A044125DA39E900C8EC4C /* GearCheckWorker.swift in Sources */,
 				F99DB1FF25C8003F0069F32E /* LandingPageWorker.swift in Sources */,
 				CE95D5BE26F8444300A1538F /* MotorcycleCheckViewController.swift in Sources */,
@@ -3090,6 +3062,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+
 				MARKETING_VERSION = 1.4.6;
 				PRODUCT_BUNDLE_IDENTIFIER = com.motto.auction.inspec;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -3117,6 +3090,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.4.6;
+
 				PRODUCT_BUNDLE_IDENTIFIER = com.motto.auction.inspec;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

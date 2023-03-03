@@ -104,8 +104,7 @@ class PickUpCarViewController: UIViewController, PickUpCarDisplayLogic
     @IBOutlet weak var pickUpStackView: UIView!
     @IBOutlet weak var checkStackView: UIView!
     @IBOutlet weak var photoStackView: UIView!
-    @IBOutlet weak var repoStackView: UIView!
-
+    
     @IBOutlet weak var sendButton: UIBarButtonItem!
     @IBOutlet weak var saveButton: UIBarButtonItem!
     
@@ -283,9 +282,6 @@ class PickUpCarViewController: UIViewController, PickUpCarDisplayLogic
         
         photoStackView.isUserInteractionEnabled = true
         photoStackView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(toPhotoCar)))
-        
-        repoStackView.isUserInteractionEnabled = true
-        repoStackView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(toRepoCar)))
     }
     
     
@@ -449,9 +445,7 @@ extension PickUpCarViewController {
         navigationController?.pushViewController(CarInspectionPage.PHOTO_CAR.VC, animated: false)
     }
     
-    @objc func toRepoCar() {
-        navigationController?.pushViewController(CarInspectionPage.REPO_CAR.VC,  animated: false)
-    }
+    
 }
 
 

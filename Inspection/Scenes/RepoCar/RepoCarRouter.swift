@@ -14,112 +14,69 @@ import UIKit
 
 @objc protocol RepoCarRoutingLogic
 {
-  func routeToshowDateTime(segue: UIStoryboardSegue?)
+    func routeToshowDateTime(segue: UIStoryboardSegue?)
     func routeToUploadProgress(segue: UIStoryboardSegue?)
-    func routeToImageViewerSegue(segue: UIStoryboardSegue?)
 }
 
 protocol RepoCarDataPassing
 {
-  var dataStore: PhotoCarDataStore? { get }
+    var dataStore: RepoCarDataStore? { get }
 }
 
-class RepoCarRouter: NSObject, PhotoCarRoutingLogic, PhotoCarDataPassing
+class RepoCarRouter: NSObject, RepoCarRoutingLogic, RepoCarDataPassing
 {
-  weak var viewController: RepoCarViewController?
-  var dataStore: PhotoCarDataStore?
+    weak var viewController: RepoCarViewController?
+    var dataStore: RepoCarDataStore?
     
-    func routeToImageViewerSegue(segue: UIStoryboardSegue?) {
-        if let segue = segue {
-          let destinationVC = segue.destination as! ImageViewerViewController
-          var destinationDS = destinationVC.router!.dataStore!
-          passDataToImageViewer(source: dataStore!, destination: &destinationDS)
-        } else {
-          let storyboard = UIStoryboard(name: "PhotoAndResultCar", bundle: nil)
-          let destinationVC = storyboard.instantiateViewController(withIdentifier: "ImageViewerViewController") as! ImageViewerViewController
-          var destinationDS = destinationVC.router!.dataStore!
-          passDataToImageViewer(source: dataStore!, destination: &destinationDS)
-          navigateToImageViewer(source: viewController!, destination: destinationVC)
-        }
-    }
-    
-  // MARK: Routing
+    // MARK: Routing
     func routeToshowDateTime(segue: UIStoryboardSegue?)
     {
-      if let segue = segue {
-          print(segue.destination)
-        let destinationVC = segue.destination as! DateTimeViewController
-        var destinationDS = destinationVC.router!.dataStore!
-          passDataToPicker(source: dataStore!, destination: &destinationDS)
-      } else {
-        let storyboard = UIStoryboard(name: "DateTime", bundle: nil)
-        let destinationVC = storyboard.instantiateViewController(withIdentifier: "DateTimeViewController") as! DateTimeViewController
-        var destinationDS = destinationVC.router!.dataStore!
-          passDataToPicker(source: dataStore!, destination: &destinationDS)
-          navigateToPicker(source: viewController!, destination: destinationVC)
-      }
+        if let segue = segue {
+            print(segue.destination)
+            let destinationVC = segue.destination as! DateTimeViewController
+            var destinationDS = destinationVC.router!.dataStore!
+            passDataToPicker(source: dataStore!, destination: &destinationDS)
+        } else {
+            let storyboard = UIStoryboard(name: "DateTime", bundle: nil)
+            let destinationVC = storyboard.instantiateViewController(withIdentifier: "DateTimeViewController") as! DateTimeViewController
+            var destinationDS = destinationVC.router!.dataStore!
+            passDataToPicker(source: dataStore!, destination: &destinationDS)
+            navigateToPicker(source: viewController!, destination: destinationVC)
+        }
     }
     func routeToUploadProgress(segue: UIStoryboardSegue?) {
         if let segue = segue {
             print(segue.destination)
-          let destinationVC = segue.destination as! UploadViewController
-          var destinationDS = destinationVC.router!.dataStore!
+            let destinationVC = segue.destination as! UploadViewController
+            var destinationDS = destinationVC.router!.dataStore!
             passDataToUpload(source: dataStore!, destination: &destinationDS)
         } else {
-          let storyboard = UIStoryboard(name: "PhotoAndResultCar", bundle: nil)
-          let destinationVC = storyboard.instantiateViewController(withIdentifier: "UploadViewController") as! UploadViewController
-          var destinationDS = destinationVC.router!.dataStore!
+            let storyboard = UIStoryboard(name: "PhotoAndResultCar", bundle: nil)
+            let destinationVC = storyboard.instantiateViewController(withIdentifier: "UploadViewController") as! UploadViewController
+            var destinationDS = destinationVC.router!.dataStore!
             passDataToUpload(source: dataStore!, destination: &destinationDS)
             navigateToUpload(source: viewController!, destination: destinationVC)
         }
     }
-  //func routeToSomewhere(segue: UIStoryboardSegue?)
-  //{
-  //  if let segue = segue {
-  //    let destinationVC = segue.destination as! SomewhereViewController
-  //    var destinationDS = destinationVC.router!.dataStore!
-  //    passDataToSomewhere(source: dataStore!, destination: &destinationDS)
-  //  } else {
-  //    let storyboard = UIStoryboard(name: "Main", bundle: nil)
-  //    let destinationVC = storyboard.instantiateViewController(withIdentifier: "SomewhereViewController") as! SomewhereViewController
-  //    var destinationDS = destinationVC.router!.dataStore!
-  //    passDataToSomewhere(source: dataStore!, destination: &destinationDS)
-  //    navigateToSomewhere(source: viewController!, destination: destinationVC)
-  //  }
-  //}
-
-  // MARK: Navigation
-  
-  func navigateToPicker(source: RepoCarViewController, destination: DateTimeViewController)
-  {
-    source.show(destination, sender: nil)
-  }
+    
+    func passDataToPicker(source: RepoCarDataStore, destination: inout DateTimeDataStore)
+    {
+//        let date = source.currentDate ?? Date()
+//        destination.currentDate = date
+    }
+    
+    func navigateToPicker(source: RepoCarViewController, destination: DateTimeViewController)
+    {
+        source.show(destination, sender: nil)
+    }
     
     func navigateToUpload(source: RepoCarViewController, destination: UploadViewController)
     {
-      source.show(destination, sender: nil)
+        source.show(destination, sender: nil)
     }
     
-    func navigateToImageViewer(source: RepoCarViewController, destination: ImageViewerViewController)
+    func passDataToUpload(source: RepoCarDataStore, destination: inout UploadDataStore)
     {
-      source.show(destination, sender: nil)
-    }
-  
-  // MARK: Passing data
-  
-  func passDataToPicker(source: PhotoCarDataStore, destination: inout DateTimeDataStore)
-  {
-    let date = source.currentDate ?? Date()
-    destination.currentDate = date
-  }
-    
-    func passDataToUpload(source: PhotoCarDataStore, destination: inout UploadDataStore)
-    {
-        destination.itemList = source.itemList
-    }
-    
-    func passDataToImageViewer(source: PhotoCarDataStore, destination: inout ImageViewerDataStore)
-    {
-        destination.imageViewer = source.imageViewer
+//        destination.itemList = source.itemList
     }
 }

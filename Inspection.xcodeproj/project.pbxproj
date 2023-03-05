@@ -15,6 +15,10 @@
 		C29F96E129B049E100EA411D /* RepoCarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29F96E029B049E100EA411D /* RepoCarPresenter.swift */; };
 		C29F96E329B04B6E00EA411D /* RepoCarInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29F96E229B04B6E00EA411D /* RepoCarInteractor.swift */; };
 		C29F96E529B04CDF00EA411D /* RepoCarRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29F96E429B04CDF00EA411D /* RepoCarRouter.swift */; };
+		C2C3CB6C29B1DF9D00962E94 /* DeliveryPersonService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C3CB6A29B1DF9D00962E94 /* DeliveryPersonService.swift */; };
+		C2C3CB6D29B1DF9D00962E94 /* DeliveryPersonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C3CB6B29B1DF9D00962E94 /* DeliveryPersonModel.swift */; };
+		C2C3CB6F29B1E0D600962E94 /* RepoCarWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C3CB6E29B1E0D600962E94 /* RepoCarWorker.swift */; };
+		C2C3CB7129B1F87300962E94 /* RepoCarModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2C3CB7029B1F87300962E94 /* RepoCarModels.swift */; };
 		CE0CBFD72664CE8B00A31068 /* UILabel+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0CBFD62664CE8B00A31068 /* UILabel+extension.swift */; };
 		CE0CBFD926676C5D00A31068 /* UpdateVehicleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0CBFD826676C5D00A31068 /* UpdateVehicleService.swift */; };
 		CE0CBFE1266DC8B700A31068 /* DamagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0CBFDB266DC8B700A31068 /* DamagePresenter.swift */; };
@@ -482,6 +486,10 @@
 		C29F96E029B049E100EA411D /* RepoCarPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepoCarPresenter.swift; sourceTree = "<group>"; };
 		C29F96E229B04B6E00EA411D /* RepoCarInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepoCarInteractor.swift; sourceTree = "<group>"; };
 		C29F96E429B04CDF00EA411D /* RepoCarRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepoCarRouter.swift; sourceTree = "<group>"; };
+		C2C3CB6A29B1DF9D00962E94 /* DeliveryPersonService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeliveryPersonService.swift; sourceTree = "<group>"; };
+		C2C3CB6B29B1DF9D00962E94 /* DeliveryPersonModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeliveryPersonModel.swift; sourceTree = "<group>"; };
+		C2C3CB6E29B1E0D600962E94 /* RepoCarWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepoCarWorker.swift; sourceTree = "<group>"; };
+		C2C3CB7029B1F87300962E94 /* RepoCarModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepoCarModels.swift; sourceTree = "<group>"; };
 		CE0CBFD62664CE8B00A31068 /* UILabel+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+extension.swift"; sourceTree = "<group>"; };
 		CE0CBFD826676C5D00A31068 /* UpdateVehicleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateVehicleService.swift; sourceTree = "<group>"; };
 		CE0CBFDB266DC8B700A31068 /* DamagePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DamagePresenter.swift; sourceTree = "<group>"; };
@@ -988,8 +996,19 @@
 				C29F96E029B049E100EA411D /* RepoCarPresenter.swift */,
 				C29F96E229B04B6E00EA411D /* RepoCarInteractor.swift */,
 				C29F96E429B04CDF00EA411D /* RepoCarRouter.swift */,
+				C2C3CB6E29B1E0D600962E94 /* RepoCarWorker.swift */,
+				C2C3CB7029B1F87300962E94 /* RepoCarModels.swift */,
 			);
 			path = RepoCar;
+			sourceTree = "<group>";
+		};
+		C2C3CB6929B1DF2400962E94 /* Repo */ = {
+			isa = PBXGroup;
+			children = (
+				C2C3CB6B29B1DF9D00962E94 /* DeliveryPersonModel.swift */,
+				C2C3CB6A29B1DF9D00962E94 /* DeliveryPersonService.swift */,
+			);
+			path = Repo;
 			sourceTree = "<group>";
 		};
 		CE0CBFDA266DC82800A31068 /* Damage */ = {
@@ -1338,6 +1357,7 @@
 		F914458225C7F9FD00B09FB6 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				C2C3CB6929B1DF2400962E94 /* Repo */,
 				CE53402726859D0D006D0AC6 /* Jato */,
 				CE53401626846921006D0AC6 /* ModelCodeTemplate */,
 				CE534011268458B7006D0AC6 /* FuelType */,
@@ -2551,6 +2571,7 @@
 				CEF1BCF2270E948C0079252C /* BookInMotorBikeService.swift in Sources */,
 				F94A041525DA398E00C8EC4C /* BodyCheckInteractor.swift in Sources */,
 				F91445AC25C7FB8100B09FB6 /* LoginModels.swift in Sources */,
+				C2C3CB7129B1F87300962E94 /* RepoCarModels.swift in Sources */,
 				F914459025C7FA5500B09FB6 /* BaseApi.swift in Sources */,
 				F986435725FA1509004EAB2F /* GradeCarModels.swift in Sources */,
 				CEB11A632682E79000CAEE1C /* CreateModelCodeWorker.swift in Sources */,
@@ -2620,6 +2641,7 @@
 				F957B83425CA49A100B8FB3C /* ItemPendingListModels.swift in Sources */,
 				F989FD8A265F8C7900342895 /* VehicleDeleteDocumentRequest.swift in Sources */,
 				F9D7CD8325CBC9F4003E049B /* SummaryCarPresenter.swift in Sources */,
+				C2C3CB6C29B1DF9D00962E94 /* DeliveryPersonService.swift in Sources */,
 				F9DBA4672600BE4E00EE124F /* StorageLocationModel.swift in Sources */,
 				F96F53BC25D0E03400317ED0 /* CabinCarRouter.swift in Sources */,
 				F9D7CD3525CBA51D003E049B /* PickUpCarInteractor.swift in Sources */,
@@ -2816,6 +2838,7 @@
 				F99DB20025C8003F0069F32E /* LandingPageRouter.swift in Sources */,
 				F931494F25F781D8004E5F7A /* ModelCodeNotFoundCell.swift in Sources */,
 				F914454B25C7F94C00B09FB6 /* SceneDelegate.swift in Sources */,
+				C2C3CB6D29B1DF9D00962E94 /* DeliveryPersonModel.swift in Sources */,
 				F9E02E4125D134EE0003CB9C /* SignatureInteractor.swift in Sources */,
 				F976293E2643C9E000E51903 /* LoginResponse.swift in Sources */,
 				F9075E7925DCB3FE004D4765 /* DateTimeViewController.swift in Sources */,
@@ -2836,6 +2859,7 @@
 				CE0CBFD72664CE8B00A31068 /* UILabel+extension.swift in Sources */,
 				F96F53CC25D0E04100317ED0 /* EngineCarModels.swift in Sources */,
 				F965DF4E260C28FB00CE91E7 /* SpareType.swift in Sources */,
+				C2C3CB6F29B1E0D600962E94 /* RepoCarWorker.swift in Sources */,
 				F97629542643D2FD00E51903 /* KeyChainService.swift in Sources */,
 				F94A047025DA3A2100C8EC4C /* AirCheckModels.swift in Sources */,
 				F99583A325DF9A77005DD029 /* PDFPreviewPresenter.swift in Sources */,

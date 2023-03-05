@@ -91,6 +91,9 @@ enum Router {
     case createInspecMotorBike(_ parameter:Parameters)
     case updateInspecMotorBike(_ parameter:Parameters, _ bookInNumber:String)
     
+    // deliver_person
+    case getDeliveryPerson(_ parameter:Parameters)
+    
     var apiModel : ApiModel {
         switch self {
         
@@ -263,8 +266,10 @@ enum Router {
         case .updateInspecMotorBike(let param, let bookinNo):
             return ApiModel(path: "inspection/api/MotorBikeInspections/Edit/\(bookinNo)/model", method: .put, param: param)
             
+        case .getDeliveryPerson(let param):
+            return ApiModel(path: "connectors/api/repo/deliveryPerson", method: .get, param: param)
+            
         }
-        
     
         
     }

@@ -14,27 +14,15 @@ import UIKit
 
 protocol RepoCarDisplayLogic: AnyObject
 {
-    func displaySomething(viewModel: PhotoCar.Something.ViewModel)
-    func displayReceiverDayTimeInspection(viewModel: PhotoCar.Something.ViewModel)
-    func displayUploadProgress(viewModel: PhotoCar.Something.ViewModel)
-    func displayAlertMessage(viewModel: PhotoCar.Something.ViewModel)
-    
-    func displayErrorFetchList(viewModel: PhotoCar.Something.ViewModel)
-    
-    func displayErrorDelete(viewModel: PhotoCar.Something.ViewModel)
-    
-    func displaySendInsectionIMATSuccess(viewModel: PhotoCar.Something.ViewModel)
-    func displaySendInsectionIMATError(viewModel: PhotoCar.Something.ViewModel)
-    
-    func displayShowImageView(viewModel: PhotoCar.Something.ViewModel)
-    
-    func displayActionEventSuccess(viewModel: PhotoCar.Something.ViewModel)
+    func displaySomething(viewModel: RepoCar.Something.ViewModel)
+    func displayDeliveryPersonDropdown(viewModel: RepoCar.Something.ViewModel)
 }
 
 class RepoCarViewController: UIViewController, RepoCarDisplayLogic
 {
+    
     var interactor: RepoCarBusinessLogic?
-    var router: (NSObjectProtocol & PhotoCarRoutingLogic & PhotoCarDataPassing)?
+    var router: (NSObjectProtocol & RepoCarRoutingLogic & RepoCarDataPassing)?
     
     // MARK: Object lifecycle
     
@@ -79,8 +67,8 @@ class RepoCarViewController: UIViewController, RepoCarDisplayLogic
             if let dateTimePicker = segue.destination as? DateTimeViewController {
                 dateTimePicker.didSelectedDateTimePicker = { [weak self] (dateInspection) in
                     
-                    let request = PhotoCar.Something.Request(dateInspection: dateInspection)
-                    self?.interactor?.setReceiverDateTimeInspection(request: request)
+//                    let request = PhotoCar.Something.Request(dateInspection: dateInspection)
+//                    self?.interactor?.setReceiverDateTimeInspection(request: request)
                 }
             }
         }
@@ -102,34 +90,25 @@ class RepoCarViewController: UIViewController, RepoCarDisplayLogic
     @IBOutlet weak var checkStackView: UIView!
     @IBOutlet weak var photoStackView: UIView!
     @IBOutlet weak var repoStackView: UIView!
-    
-    @IBOutlet weak var saveButton: UIBarButtonItem!
-    @IBOutlet weak var sendInspectionButton: UIBarButtonItem!
-    
     @IBOutlet weak var dateTimeView: UIView!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
-    
-    
-    var dataSource = DataSourceCollectionView()
-    var imagePicker: ImagePicker!
-    
-    
+        
     var sourceSectionName : [(name:String, cb: CheckBoxUIButton)] = []
-    
-    
     
     func doSomething()
     {
-        let request = PhotoCar.Something.Request()
+        let request = RepoCar.Something.Request()
         interactor?.doSomething(request: request)
     }
     
-    func displaySomething(viewModel: PhotoCar.Something.ViewModel)
-    {
-        //nameTextField.text = viewModel.name
+    func displaySomething(viewModel: RepoCar.Something.ViewModel) {
+        
     }
     
+    func displayDeliveryPersonDropdown(viewModel: RepoCar.Something.ViewModel) {
+        
+    }
     
     //MARK: DateTime
     func setUpDateTime(){
@@ -147,37 +126,13 @@ class RepoCarViewController: UIViewController, RepoCarDisplayLogic
         performSegue(withIdentifier: "showDateTime", sender: nil)
     }
     
-    //MARK: IBAction
-    @IBAction func toBackView(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
-    }
     @IBAction func toRootView(_ sender: Any) {
         popToRootViewController(confirm: true)
-    }
-    @IBAction func saveTapped(_ sender: Any) {
-        alert(message: "คุณต้องการบันทึกรูปถ่ายไหม") { [weak self] in
-            let request = PhotoCar.Something.Request()
-            self?.interactor?.confirmPhotoInspection(request: request)
-        }
-    }
-    
-    @IBAction func saveToIMAT(_ sender: Any){
-        print("🔶 save to IMAT")
-        alert(message: "คุณต้องการส่ง\nInspection to IMAT ไหม") { [weak self] in
-            self?.sendToIMAT()
-        }
-    }
-    
-    //MARK: send to IMAT
-    func sendToIMAT(){
-        let request = PhotoCar.Something.Request()
-        interactor?.confirmSendToInspectionIMAT(request: request)
     }
     
     func displaySendInsectionIMATError(viewModel: PhotoCar.Something.ViewModel) {
         guard let errorMessage = viewModel.errorMessage else { return }
         alertErrorMessage(message: errorMessage) { [weak self] in
-            self?.sendToIMAT()
         }
     }
     
@@ -188,28 +143,15 @@ class RepoCarViewController: UIViewController, RepoCarDisplayLogic
             //ignored
         }
     }
-    
-    func displayShowImageView(viewModel: PhotoCar.Something.ViewModel) {
-        
-        //
-        //
-        //   show imageviewer
-        //
-        //
-        performSegue(withIdentifier: "ImageViewerSegue", sender: nil)
-    }
-    
+
     func validateInspectionIMAT(){
-        let request = PhotoCar.Something.Request()
-        interactor?.validateActionSendToInspectionIMAT(request: request)
+//        let request = PhotoCar.Something.Request()
+//        interactor?.validateActionSendToInspectionIMAT(request: request)
     }
-    
     
     func displayActionEventSuccess(viewModel: PhotoCar.Something.ViewModel) {
-        sendInspectionButton.isEnabled = viewModel.isEnableSendToIMAP ?? false
         
     }
-    
     
     func displayUploadProgress(viewModel: PhotoCar.Something.ViewModel) {
         performSegue(withIdentifier: "UploadProgress", sender: nil)
@@ -241,33 +183,24 @@ class RepoCarViewController: UIViewController, RepoCarDisplayLogic
     
     //MARK: Title
     func setTitleName(){
-        switch DataController.shared.bookInType {
-        case .CAR:
-            title = "ถ่ายรูป - รถยนต์"
-        case .MBIKE:
-            title = "ถ่ายรูป - รถจักรยานยนต์"
-        case  .CARWRECK:
-            title = "ถ่ายรูป - ซากรถยนต์"
-        case  .MBIKEWRECK:
-            title = "ถ่ายรูป - ซากรถจักรยานยนต์"
-        }
+        title = "Repo"
     }
     
     func prepareData(){
-        let request = PhotoCar.Something.Request()
-        interactor?.prepareDataSection(request: request)
+//        let request = PhotoCar.Something.Request()
+//        interactor?.prepareDataSection(request: request)
     }
-    func fetchPhotoList(){
-        let request = PhotoCar.Something.Request()
-        interactor?.fetchPhotoList(request: request)
+    func fetchDeliveryList(){
+        let request = RepoCar.Something.Request()
+        interactor?.fetchDeliveryList(request: request)
     }
     
-    func displayErrorFetchList(viewModel: PhotoCar.Something.ViewModel) {
+    func displayErrorFetchList(viewModel: RepoCar.Something.ViewModel) {
         guard let errorMessage = viewModel.errorMessage else { return }
         
         DispatchQueue.main.async { [weak self] in
             self?.alertErrorMessage(message: errorMessage) { [weak self] in
-                self?.fetchPhotoList()
+                self?.fetchDeliveryList()
             }
         }
         
@@ -281,17 +214,7 @@ class RepoCarViewController: UIViewController, RepoCarDisplayLogic
             }
         }
     }
-    
-    func validateActionSendPhoto(){
-        var isCreate = DataController.shared.inspectionCarModel.isCreate
-        
-        let isCarWreck = DataController.shared.bookInType == .CARWRECK || DataController.shared.bookInType == .MBIKEWRECK
-        let vehicleId = DataController.shared.receiverCarModel.vehicleId.trimWhiteSpace
-        if isCarWreck && (!vehicleId.isEmpty) { /// carwreck  & send book-in
-            isCreate = true
-        }
-        saveButton.isEnabled = isCreate
-    }
+
 }
 
 //MARK: ViewController Lift Cycle
@@ -303,13 +226,8 @@ extension RepoCarViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        let dateInspection = DataController.shared.inspectionCarModel.date
-        let request = PhotoCar.Something.Request(dateInspection: dateInspection)
-        interactor?.setReceiverDateTimeInspection(request: request)
-        
         prepareData()
-        fetchPhotoList()
-        validateActionSendPhoto()
+        fetchDeliveryList()
         validateInspectionIMAT()
     }
 }
@@ -344,17 +262,3 @@ extension RepoCarViewController  {
     }
 }
 
-extension RepoCarViewController : ImagePickerPresenter {
-    func didSelectCallback() {
-        showLoading()
-    }
-    
-    func pickImageCallback(image: UIImage?, url: URL?) {
-        guard let image =  image  else { return }
-        
-        let request = PhotoCar.Something.Request(image: image, url: url)
-        interactor?.addPhoto(request: request)
-    }
-    
-    
-}

@@ -31,8 +31,9 @@ class RepoCarPresenter: RepoCarPresentationLogic
         viewController?.displaySomething(viewModel: viewModel)
     }
     
-    func presentDeliveryPersonList(response: RepoCar.Something.Response) {
-        let viewModel = RepoCar.Something.ViewModel()
+    func presentDeliveryPersonList(response: RepoCar.Something.Response) {        
+        guard let list = response.deliveryPersonList else { return }
+        let viewModel = RepoCar.Something.ViewModel(deliveryPersonList: list)
         viewController?.displayDeliveryPersonDropdown(viewModel: viewModel)
     }
     

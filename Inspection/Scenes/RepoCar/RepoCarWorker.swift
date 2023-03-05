@@ -15,7 +15,6 @@ import UIKit
 typealias RepoCarWorkerHandler = (RepoCar.Something.Response) -> ()
 class RepoCarWorker
 {
-    
     func fetchDeliveryPersonList(completion: @escaping RepoCarWorkerHandler){
         showLoading()
         
@@ -26,8 +25,8 @@ class RepoCarWorker
             
             switch results {
                 
-            case .success(let response):
-                let response = RepoCar.Something.Response()
+            case .success(let modelList):
+                let response = RepoCar.Something.Response(deliveryPersonList: modelList)
                 completion(response)
             case .failure(let error):
                 let response = RepoCar.Something.Response(error : error.getMessage)

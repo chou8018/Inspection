@@ -93,7 +93,10 @@ class RepoCarViewController: UIViewController, RepoCarDisplayLogic
     @IBOutlet weak var dateTimeView: UIView!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
-        
+    @IBOutlet weak var deliveryPersonTextField: DropDown!
+    
+    var isFetchList = false
+
     var sourceSectionName : [(name:String, cb: CheckBoxUIButton)] = []
     
     func doSomething()
@@ -107,7 +110,19 @@ class RepoCarViewController: UIViewController, RepoCarDisplayLogic
     }
     
     func displayDeliveryPersonDropdown(viewModel: RepoCar.Something.ViewModel) {
+        guard let list = viewModel.deliveryCodes else { return }
+
+        setValue(to: deliveryPersonTextField, values: list) { [weak self] (selectValue, _, _)  in
+//            DataController.shared.receiverCarModel.receiverPlace = selectValue
+            self?.deliveryPersonTextField.text = selectValue
+        }
         
+        isFetchList = true
+    }
+    
+    func setValue(to textfield:DropDown , values: [String], didSelected:@escaping (_ selectedText: String, _ index: Int , _ id:Int )->() ){
+        textfield.optionArray = values
+        textfield.didSelect(completion: didSelected)
     }
     
     //MARK: DateTime
@@ -226,8 +241,11 @@ extension RepoCarViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        if !isFetchList {
+            fetchDeliveryList()
+        }
+        
         prepareData()
-        fetchDeliveryList()
         validateInspectionIMAT()
     }
 }

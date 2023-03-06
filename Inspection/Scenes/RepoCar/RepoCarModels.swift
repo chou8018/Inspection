@@ -28,6 +28,7 @@ enum RepoCar
         struct ViewModel
         {
             var deliveryPersonList : [DeliveryPersonModel]?
+            var deliveryCodes: [String]?
             var errorMessage:String?
         }
     }

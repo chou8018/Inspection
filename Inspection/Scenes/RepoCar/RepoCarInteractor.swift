@@ -16,6 +16,10 @@ protocol RepoCarBusinessLogic
 {
     func doSomething(request: RepoCar.Something.Request)
     func fetchDeliveryList(request: RepoCar.Something.Request)
+    func setReceiverDateTimeInspection(request: RepoCar.Something.Request)
+    func setDataDateTimeInspection(request: RepoCar.Something.Request)
+    func setWarehouseDateTimeInspection(request: RepoCar.Something.Request)
+
 }
 
 protocol RepoCarDataStore
@@ -25,10 +29,12 @@ protocol RepoCarDataStore
 
 class RepoCarInteractor: RepoCarBusinessLogic, RepoCarDataStore
 {
+    
     var itemList: [DeliveryPersonModel] = []
     var presenter: RepoCarPresentationLogic?
     var worker: RepoCarWorker?
-    
+    var currentDate: Date?
+
     deinit {
         print("🔸🐶 deinit repocar RepoCarInteractor")
     }
@@ -50,12 +56,42 @@ class RepoCarInteractor: RepoCarBusinessLogic, RepoCarDataStore
                 weakself.presenter?.presentDeliveryPersonList(response: response)
             }
         })
+    }
+    
+    func setReceiverDateTimeInspection(request: RepoCar.Something.Request) {
+        let date = request.dateInspection ?? Date()
+        currentDate = date
+
+        let day = DateFormatter().dateFormat(from: date, dateFormat: "dd-MM-yyyy")
+        let time = DateFormatter().dateFormat(from: date, dateFormat: "HH:mm")
+       
+        DataController.shared.inspectionCarModel.date = date
+        DataController.shared.inspectionCarModel.dayString = day
+        DataController.shared.inspectionCarModel.timeString = time
         
+        let dateTuple = (day , time)
+        let response = RepoCar.Something.Response(dayTime: dateTuple)
+        presenter?.presentReceiverDayTimeInspection(response: response)
+    }
+    
+    func setDataDateTimeInspection(request: RepoCar.Something.Request) {
+        presenter?.presentDataDateTimeInspection(response: dateResponse(request: request))
+    }
+    
+    func setWarehouseDateTimeInspection(request: RepoCar.Something.Request) {
+        presenter?.presentWarehouseTimeInspection(response: dateResponse(request: request))
+    }
+    
+    func dateResponse(request: RepoCar.Something.Request) -> RepoCar.Something.Response {
+        let date = request.dateInspection ?? Date()
+        let day = DateFormatter().dateFormat(from: date, dateFormat: "dd-MM-yyyy")
+        let time = DateFormatter().dateFormat(from: date, dateFormat: "HH:mm")
+        let dateTuple = (day , time)
+        let response = RepoCar.Something.Response(dayTime: dateTuple)
+        return response
     }
 }
 
-
 //MARK: extension
 extension RepoCarInteractor {
-    
 }

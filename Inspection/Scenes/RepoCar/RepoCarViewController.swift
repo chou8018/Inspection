@@ -16,11 +16,14 @@ protocol RepoCarDisplayLogic: AnyObject
 {
     func displaySomething(viewModel: RepoCar.Something.ViewModel)
     func displayDeliveryPersonDropdown(viewModel: RepoCar.Something.ViewModel)
+    func displayReceiverDayTimeInspection(viewModel: RepoCar.Something.ViewModel)
+    func displayDataDateTimeInspection(viewModel: RepoCar.Something.ViewModel)
+    func displayWarehouseTimeInspection(viewModel: RepoCar.Something.ViewModel)
+
 }
 
 class RepoCarViewController: UIViewController, RepoCarDisplayLogic
 {
-    
     var interactor: RepoCarBusinessLogic?
     var router: (NSObjectProtocol & RepoCarRoutingLogic & RepoCarDataPassing)?
     
@@ -67,8 +70,14 @@ class RepoCarViewController: UIViewController, RepoCarDisplayLogic
             if let dateTimePicker = segue.destination as? DateTimeViewController {
                 dateTimePicker.didSelectedDateTimePicker = { [weak self] (dateInspection) in
                     
-//                    let request = PhotoCar.Something.Request(dateInspection: dateInspection)
-//                    self?.interactor?.setReceiverDateTimeInspection(request: request)
+                    let request = RepoCar.Something.Request(dateInspection: dateInspection)
+                    if scene == "showDataDateTime" {
+                        self?.interactor?.setDataDateTimeInspection(request: request)
+                    } else if scene == "showWarehouseDateTime" {
+                        self?.interactor?.setWarehouseDateTimeInspection(request: request)
+                    } else {
+                        self?.interactor?.setReceiverDateTimeInspection(request: request)
+                    }
                 }
             }
         }
@@ -95,6 +104,9 @@ class RepoCarViewController: UIViewController, RepoCarDisplayLogic
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var deliveryPersonTextField: DropDown!
     
+    @IBOutlet weak var dataDateLabel: UILabel!
+    @IBOutlet weak var warehouseDateLabel: UILabel!
+
     var isFetchList = false
 
     var sourceSectionName : [(name:String, cb: CheckBoxUIButton)] = []
@@ -131,10 +143,20 @@ class RepoCarViewController: UIViewController, RepoCarDisplayLogic
         dateTimeView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(showDateTime)))
     }
     
-    func displayReceiverDayTimeInspection(viewModel: PhotoCar.Something.ViewModel) {
+    func displayReceiverDayTimeInspection(viewModel: RepoCar.Something.ViewModel) {
         guard let dayTime = viewModel.dayTime else { return }
         self.dateLabel.text = dayTime.day
         self.timeLabel.text = dayTime.time
+    }
+    
+    func displayDataDateTimeInspection(viewModel: RepoCar.Something.ViewModel) {
+        guard let dayTime = viewModel.dayTime else { return }
+        self.dataDateLabel.text = dayTime.day
+    }
+    
+    func displayWarehouseTimeInspection(viewModel: RepoCar.Something.ViewModel) {
+        guard let dayTime = viewModel.dayTime else { return }
+        self.warehouseDateLabel.text = dayTime.day
     }
     
     @objc func showDateTime(){
@@ -240,6 +262,10 @@ extension RepoCarViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        let dateInspection = DataController.shared.inspectionCarModel.date
+        let request = RepoCar.Something.Request(dateInspection: dateInspection)
+        interactor?.setReceiverDateTimeInspection(request: request)
         
         if !isFetchList {
             fetchDeliveryList()

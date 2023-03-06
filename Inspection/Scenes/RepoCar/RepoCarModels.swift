@@ -18,15 +18,18 @@ enum RepoCar
     {
         struct Request
         {
+            var dateInspection: Date?
         }
         
         struct Response
         {
+            var dayTime : (day:String, time:String)?
             var deliveryPersonList : [DeliveryPersonModel]?
             var error : KErrorMessage?
         }
         struct ViewModel
         {
+            var dayTime : (day:String, time:String)?
             var deliveryPersonList : [DeliveryPersonModel]?
             var deliveryCodes: [String]?
             var errorMessage:String?

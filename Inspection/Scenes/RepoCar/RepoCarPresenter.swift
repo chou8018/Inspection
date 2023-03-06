@@ -16,11 +16,14 @@ protocol RepoCarPresentationLogic
 {
     func presentSomething(response: RepoCar.Something.Response)
     func presentDeliveryPersonList(response: RepoCar.Something.Response)
+    func presentReceiverDayTimeInspection(response: RepoCar.Something.Response)
+    func presentDataDateTimeInspection(response: RepoCar.Something.Response)
+    func presentWarehouseTimeInspection(response: RepoCar.Something.Response)
+
 }
 
 class RepoCarPresenter: RepoCarPresentationLogic
 {
-    
     weak var viewController: RepoCarDisplayLogic?
     
     // MARK: Do something
@@ -38,4 +41,18 @@ class RepoCarPresenter: RepoCarPresentationLogic
         viewController?.displayDeliveryPersonDropdown(viewModel: viewModel)
     }
     
+    func presentReceiverDayTimeInspection(response: RepoCar.Something.Response) {
+        let viewModel = RepoCar.Something.ViewModel(dayTime: response.dayTime)
+        viewController?.displayReceiverDayTimeInspection(viewModel: viewModel)
+    }
+    
+    func presentDataDateTimeInspection(response: RepoCar.Something.Response) {
+        let viewModel = RepoCar.Something.ViewModel(dayTime: response.dayTime)
+        viewController?.displayDataDateTimeInspection(viewModel: viewModel)
+    }
+    
+    func presentWarehouseTimeInspection(response: RepoCar.Something.Response) {
+        let viewModel = RepoCar.Something.ViewModel(dayTime: response.dayTime)
+        viewController?.displayWarehouseTimeInspection(viewModel: viewModel)
+    }
 }

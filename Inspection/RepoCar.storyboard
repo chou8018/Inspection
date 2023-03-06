@@ -272,7 +272,7 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="317" height="56"/>
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                 <connections>
-                                                                    <segue destination="1dR-Pu-mPa" kind="popoverPresentation" popoverAnchorView="zSE-jM-Vz1" id="nd8-JZ-MlF">
+                                                                    <segue destination="1dR-Pu-mPa" kind="popoverPresentation" identifier="showDataDateTime" popoverAnchorView="zSE-jM-Vz1" id="nd8-JZ-MlF">
                                                                         <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                                                     </segue>
                                                                 </connections>
@@ -335,7 +335,7 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="317" height="56"/>
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                 <connections>
-                                                                    <segue destination="GKM-k1-W18" kind="popoverPresentation" popoverAnchorView="Y4i-JV-kB7" id="ucL-uo-T3D">
+                                                                    <segue destination="GKM-k1-W18" kind="popoverPresentation" identifier="showWarehouseDateTime" popoverAnchorView="Y4i-JV-kB7" id="ucL-uo-T3D">
                                                                         <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                                                     </segue>
                                                                 </connections>
@@ -626,6 +626,7 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <connections>
                         <outlet property="checkStackView" destination="vjB-G0-l6E" id="Hep-4y-Jw1"/>
+                        <outlet property="dataDateLabel" destination="UFA-Rk-cZk" id="U3M-bx-0Xf"/>
                         <outlet property="dateLabel" destination="aAC-s3-35T" id="9Yc-aA-BCc"/>
                         <outlet property="dateTimeView" destination="Zk0-h2-4lV" id="H9m-Qh-mGx"/>
                         <outlet property="deliveryPersonTextField" destination="T6W-as-FC0" id="AeG-Jk-8aY"/>
@@ -634,6 +635,7 @@
                         <outlet property="pickUpStackView" destination="4Cj-T4-Dvq" id="aBQ-AE-FUN"/>
                         <outlet property="repoStackView" destination="ntz-4u-CHO" id="udh-93-Cg4"/>
                         <outlet property="timeLabel" destination="sj6-Rw-ZCR" id="cRw-sL-iuB"/>
+                        <outlet property="warehouseDateLabel" destination="Za5-dW-fSy" id="QW3-Qg-Erj"/>
                         <segue destination="zzv-M6-2M9" kind="popoverPresentation" identifier="showDateTime" popoverAnchorView="Zk0-h2-4lV" id="MIm-DC-A1x">
                             <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                         </segue>

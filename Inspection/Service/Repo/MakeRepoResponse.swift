@@ -10,13 +10,13 @@ import ObjectMapper
 
 struct MakeRepoResponse : Mappable {
 
-    var vehicleId: String?
+    var vehicleNo: String?
     
     init?(map: Map) {
         
     }
     
     mutating func mapping(map: Map) {
-        self.vehicleId <- map["vehicleId"]
+        self.vehicleNo <- map["vehicleNo"]
     }
 }

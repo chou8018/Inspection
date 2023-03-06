@@ -39,7 +39,7 @@ class BaseApi<Request:BaseMappable , Response:BaseMappable>{
         AF.request(url).responseJSON { (response) in
 
             switch response.result {
-               case .success(let value):
+               case .success(var value):
                     if let httpResponse = response.response, httpResponse.statusCode != 200 {
                         var errorMessage = ""
                         if let errorValue = value as? [String: Any] {
@@ -48,6 +48,9 @@ class BaseApi<Request:BaseMappable , Response:BaseMappable>{
                         }
                         completionHandler(.failure(.httpRespondError(httpResponse, errorMessage)))
                         return
+                    } else if let httpResponse = response.response, httpResponse.statusCode == 200 , let result = value as? String {
+//                        completionHandler(.success(value))
+                        value = ["vehicleNo":result]
                     }
                    guard let castingValue = value as? [String: Any] ,
                          let responseData = Mapper<Response>().map(JSON: castingValue) else {

@@ -74,11 +74,7 @@ class RepoCarInteractor: RepoCarBusinessLogic, RepoCarDataStore
         worker = RepoCarWorker()
         worker?.sendRepo(completion: {[weak self] (response) in
             guard let weakself = self else { return }
-            if let _ = response.error {
-                weakself.presenter?.presentSomething(response: response)
-            }else{
-                weakself.presenter?.presentSendToRepo(response: response)
-            }
+            weakself.presenter?.presentSendToRepo(response: response)
         })
     }
     

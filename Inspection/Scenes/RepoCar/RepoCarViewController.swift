@@ -25,7 +25,24 @@ protocol RepoCarDisplayLogic: AnyObject
 
 class RepoCarViewController: UIViewController, RepoCarDisplayLogic
 {
-    
+    // MARK: Do something
+    @IBOutlet weak var fullName:UILabel!
+    @IBOutlet weak var pickUpStackView: UIView!
+    @IBOutlet weak var checkStackView: UIView!
+    @IBOutlet weak var photoStackView: UIView!
+    @IBOutlet weak var repoStackView: UIView!
+    @IBOutlet weak var dateTimeView: UIView!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var deliveryPersonTextField: DropDown!
+    @IBOutlet weak var dataDateLabel: UILabel!
+    @IBOutlet weak var warehouseDateLabel: UILabel!
+    @IBOutlet weak var oldBuyerTextField:CustomTextField!
+    @IBOutlet weak var deliveryTextField:CustomTextField!
+
+    var isFetchList = false
+
+    var sourceSectionName : [(name:String, cb: CheckBoxUIButton)] = []
     var interactor: RepoCarBusinessLogic?
     var router: (NSObjectProtocol & RepoCarRoutingLogic & RepoCarDataPassing)?
     
@@ -94,27 +111,8 @@ class RepoCarViewController: UIViewController, RepoCarDisplayLogic
         setUpTab()
         setUpDateTime()
         doSomething()
+        fetchDeliveryList()
     }
-    
-    // MARK: Do something
-    @IBOutlet weak var fullName:UILabel!
-    @IBOutlet weak var pickUpStackView: UIView!
-    @IBOutlet weak var checkStackView: UIView!
-    @IBOutlet weak var photoStackView: UIView!
-    @IBOutlet weak var repoStackView: UIView!
-    @IBOutlet weak var dateTimeView: UIView!
-    @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var timeLabel: UILabel!
-    @IBOutlet weak var deliveryPersonTextField: DropDown!
-    @IBOutlet weak var dataDateLabel: UILabel!
-    @IBOutlet weak var warehouseDateLabel: UILabel!
-    @IBOutlet weak var oldBuyerTextField:CustomTextField!
-    @IBOutlet weak var deliveryTextField:CustomTextField!
-
-
-    var isFetchList = false
-
-    var sourceSectionName : [(name:String, cb: CheckBoxUIButton)] = []
     
     func doSomething()
     {
@@ -301,11 +299,7 @@ extension RepoCarViewController {
         let dateInspection = DataController.shared.inspectionCarModel.date
         let request = RepoCar.Something.Request(dateInspection: dateInspection)
         interactor?.setReceiverDateTimeInspection(request: request)
-        
-        if !isFetchList {
-            fetchDeliveryList()
-        }
-        
+                
         prepareData()
         validateInspectionIMAT()
     }
@@ -355,7 +349,7 @@ extension  RepoCarViewController {
         case oldBuyerTextField:
             interactor?.fillOldBuyer(request: RepoCar.Something.Request(oldBuyer: textField.text))
         case deliveryTextField:
-            interactor?.fillDelivery(request: RepoCar.Something.Request(deliveryPerson: textField.text))
+            interactor?.fillDelivery(request: RepoCar.Something.Request(deliveryInputText: textField.text))
         default:
             break
         }

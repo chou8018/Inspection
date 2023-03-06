@@ -271,7 +271,7 @@ enum Router {
             return ApiModel(path: "connectors/api/repo/deliveryPerson", method: .get, param: param)
             
         case .createRepo(let param):
-            return ApiModel(path: "aconnectors/api/repo/carReceive", method: .post, param: param)
+            return ApiModel(path: "connectors/api/repo/carReceive", method: .post, param: param)
         }
         
     }

@@ -40,7 +40,7 @@ class RepoCarWorker
         let model = DataController.shared.repoCarModel
 //        guard let bookinNo = model.bookinNo else { return }
 
-        let request = RepoModelRequest(vehicleNo: model.vehicleNo, contractNo: model.contractNo, dataDate: model.dataDate, warehouseName: model.warehouseName, oldBuyer: model.oldBuyer, deliveryPerson: model.deliveryPerson)
+        let request = RepoModelRequest(vehicleNo: "000000000001460449", contractNo: "004465002095", dataDate: model.dataDate, warehouseName: model.warehouseName, oldBuyer: model.oldBuyer, deliveryPerson: model.deliveryPerson)
 
         print(request.toJSON())
 

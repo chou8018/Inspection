@@ -34,4 +34,31 @@ class RepoCarWorker
             }
         }
     }
+    
+    //MARK: Send Repo
+    func sendRepo(completion: @escaping RepoCarWorkerHandler){
+        let model = DataController.shared.repoCarModel
+//        guard let bookinNo = model.bookinNo else { return }
+
+        let request = RepoModelRequest(vehicleNo: model.vehicleNo, contractNo: model.contractNo, dataDate: model.dataDate, warehouseName: model.warehouseName, oldBuyer: model.oldBuyer, deliveryPerson: model.deliveryPerson)
+
+        print(request.toJSON())
+
+        showLoading()
+        MakeRepoService().callServiceObject(request: request) { results in
+
+            hideLoading()
+
+            switch results {
+
+            case .success(let response):
+                let response = RepoCar.Something.Response(makeRepoResponseModel: response)
+                completion(response)
+            case .failure(let error):
+                let response = RepoCar.Something.Response(error: error.getMessage)
+                completion(response)
+            }
+        }
+        
+    }
 }

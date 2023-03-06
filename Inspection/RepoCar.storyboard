@@ -387,7 +387,7 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wft-Ql-yPt">
                                                         <rect key="frame" x="392" y="0.0" width="480" height="56"/>
                                                         <subviews>
-                                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Old Buyer" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5f8-eY-cNN">
+                                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Old Buyer" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5f8-eY-cNN" customClass="CustomTextField" customModule="Inspection" customModuleProvider="target">
                                                                 <rect key="frame" x="8" y="0.0" width="472" height="56"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                 <textInputTraits key="textInputTraits"/>
@@ -492,7 +492,7 @@
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g9k-2B-kQ6">
                                                                 <rect key="frame" x="256" y="0.0" width="224" height="56"/>
                                                                 <subviews>
-                                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Old Buyer" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YCT-i3-IOH">
+                                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Field" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YCT-i3-IOH" customClass="CustomTextField" customModule="Inspection" customModuleProvider="target">
                                                                         <rect key="frame" x="8" y="0.0" width="216" height="56"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                         <textInputTraits key="textInputTraits"/>
@@ -584,6 +584,9 @@
                                                 <real key="value" value="10"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="sendRepo:" destination="47o-Qp-Pz8" eventType="touchUpInside" id="ISA-iy-aII"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -630,7 +633,9 @@
                         <outlet property="dateLabel" destination="aAC-s3-35T" id="9Yc-aA-BCc"/>
                         <outlet property="dateTimeView" destination="Zk0-h2-4lV" id="H9m-Qh-mGx"/>
                         <outlet property="deliveryPersonTextField" destination="T6W-as-FC0" id="AeG-Jk-8aY"/>
+                        <outlet property="deliveryTextField" destination="YCT-i3-IOH" id="uLi-Ub-V5P"/>
                         <outlet property="fullName" destination="D1d-Pr-r4Z" id="4Qz-8I-Dze"/>
+                        <outlet property="oldBuyerTextField" destination="5f8-eY-cNN" id="Y9a-JP-4Lg"/>
                         <outlet property="photoStackView" destination="hPp-zR-dwb" id="1Td-h4-KdH"/>
                         <outlet property="pickUpStackView" destination="4Cj-T4-Dvq" id="aBQ-AE-FUN"/>
                         <outlet property="repoStackView" destination="ntz-4u-CHO" id="udh-93-Cg4"/>

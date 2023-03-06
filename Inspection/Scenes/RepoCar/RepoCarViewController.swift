@@ -19,11 +19,13 @@ protocol RepoCarDisplayLogic: AnyObject
     func displayReceiverDayTimeInspection(viewModel: RepoCar.Something.ViewModel)
     func displayDataDateTimeInspection(viewModel: RepoCar.Something.ViewModel)
     func displayWarehouseTimeInspection(viewModel: RepoCar.Something.ViewModel)
-
+    func displayErrorSendRepo(viewModel: RepoCar.Something.ViewModel)
+    func displaySuccessSendRepo(viewModel: RepoCar.Something.ViewModel)
 }
 
 class RepoCarViewController: UIViewController, RepoCarDisplayLogic
 {
+    
     var interactor: RepoCarBusinessLogic?
     var router: (NSObjectProtocol & RepoCarRoutingLogic & RepoCarDataPassing)?
     
@@ -88,6 +90,7 @@ class RepoCarViewController: UIViewController, RepoCarDisplayLogic
     {
         super.viewDidLoad()
         setTitleName()
+        setUpTextField()
         setUpTab()
         setUpDateTime()
         doSomething()
@@ -103,9 +106,11 @@ class RepoCarViewController: UIViewController, RepoCarDisplayLogic
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var deliveryPersonTextField: DropDown!
-    
     @IBOutlet weak var dataDateLabel: UILabel!
     @IBOutlet weak var warehouseDateLabel: UILabel!
+    @IBOutlet weak var oldBuyerTextField:CustomTextField!
+    @IBOutlet weak var deliveryTextField:CustomTextField!
+
 
     var isFetchList = false
 
@@ -127,6 +132,8 @@ class RepoCarViewController: UIViewController, RepoCarDisplayLogic
         setValue(to: deliveryPersonTextField, values: list) { [weak self] (selectValue, _, _)  in
 //            DataController.shared.receiverCarModel.receiverPlace = selectValue
             self?.deliveryPersonTextField.text = selectValue
+            let request = RepoCar.Something.Request(deliveryPerson: selectValue)
+            self?.interactor?.selectDelivery(request: request)
         }
         
         isFetchList = true
@@ -167,16 +174,29 @@ class RepoCarViewController: UIViewController, RepoCarDisplayLogic
         popToRootViewController(confirm: true)
     }
     
-    func displaySendInsectionIMATError(viewModel: PhotoCar.Something.ViewModel) {
+    
+    @IBAction func sendRepo(_ sender: UIButton) {
+        print("🔶 send repo ")
+        alert(message: "คุณต้องการส่ง\nsend repo ไหม") { [weak self] in
+            self?.sendToRepo()
+        }
+    }
+    
+    func sendToRepo(){
+        let request = RepoCar.Something.Request()
+        interactor?.confirmSendToRepo(request: request)
+    }
+    
+    func displayErrorSendRepo(viewModel: RepoCar.Something.ViewModel) {
         guard let errorMessage = viewModel.errorMessage else { return }
         alertErrorMessage(message: errorMessage) { [weak self] in
         }
     }
     
-    func displaySendInsectionIMATSuccess(viewModel: PhotoCar.Something.ViewModel) {
-        print("🔶 photo displaySendInsectionIMATSuccess")
+    func displaySuccessSendRepo(viewModel: RepoCar.Something.ViewModel) {
+        print("🔶 repo displaySendRepoSuccess")
         //self.updateVehicleId()
-        alertErrorMessageOKAction(message: "Inspection สำเร็จ") {
+        alertErrorMessageOKAction(message: "Repo สำเร็จ") {
             //ignored
         }
     }
@@ -218,6 +238,18 @@ class RepoCarViewController: UIViewController, RepoCarDisplayLogic
         repoStackView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(toRepoCar)))
     }
     
+    func setUpTextField(){
+        oldBuyerTextField.autocorrectionType = .no
+        deliveryTextField.autocorrectionType = .no
+
+        oldBuyerTextField.delegate = self
+        deliveryTextField.delegate = self
+        
+        addTarget(from: oldBuyerTextField)
+        addTarget(from: deliveryTextField)
+        
+    }
+    
     //MARK: Title
     func setTitleName(){
         title = "Repo"
@@ -252,6 +284,9 @@ class RepoCarViewController: UIViewController, RepoCarDisplayLogic
         }
     }
 
+    fileprivate func addTarget(from textfield: UITextField ){
+        textfield.addTarget(self, action: #selector(textFieldDidChange(_:)),for: .editingChanged)
+    }
 }
 
 //MARK: ViewController Lift Cycle
@@ -304,5 +339,27 @@ extension RepoCarViewController  {
     
     @objc func toRepoCar() {
     }
+}
+
+extension RepoCarViewController : UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+}
+
+extension  RepoCarViewController {
+    @objc func textFieldDidChange(_ textField: UITextField) {
+        //print(textField.text)
+        switch textField {
+        case oldBuyerTextField:
+            interactor?.fillOldBuyer(request: RepoCar.Something.Request(oldBuyer: textField.text))
+        case deliveryTextField:
+            interactor?.fillDelivery(request: RepoCar.Something.Request(deliveryPerson: textField.text))
+        default:
+            break
+        }
+    }
+    
 }
 

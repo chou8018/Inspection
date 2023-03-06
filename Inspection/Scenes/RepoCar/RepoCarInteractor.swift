@@ -19,11 +19,16 @@ protocol RepoCarBusinessLogic
     func setReceiverDateTimeInspection(request: RepoCar.Something.Request)
     func setDataDateTimeInspection(request: RepoCar.Something.Request)
     func setWarehouseDateTimeInspection(request: RepoCar.Something.Request)
+    func confirmSendToRepo(request: RepoCar.Something.Request)
+    func fillOldBuyer(request: RepoCar.Something.Request)
+    func selectDelivery(request: RepoCar.Something.Request)
+    func fillDelivery(request: RepoCar.Something.Request)
 
 }
 
 protocol RepoCarDataStore
 {
+    var currentDate: Date? { get set }
     var itemList : [DeliveryPersonModel] { get set }
 }
 
@@ -34,6 +39,13 @@ class RepoCarInteractor: RepoCarBusinessLogic, RepoCarDataStore
     var presenter: RepoCarPresentationLogic?
     var worker: RepoCarWorker?
     var currentDate: Date?
+    
+    var dataDate:String?
+    var warehouseDate:String?
+    var oldBuyer:String?
+    var deliveryPerson:String?
+    var deliveryInputText:String?
+
 
     deinit {
         print("🔸🐶 deinit repocar RepoCarInteractor")
@@ -45,7 +57,7 @@ class RepoCarInteractor: RepoCarBusinessLogic, RepoCarDataStore
         presenter?.presentSomething(response: response)
     }
     
-    //MARK: Fetch Photo List
+    //MARK: Fetch Delivery List
     func fetchDeliveryList(request: RepoCar.Something.Request) {
         worker = RepoCarWorker()
         worker?.fetchDeliveryPersonList(completion: {[weak self] (response) in
@@ -54,6 +66,18 @@ class RepoCarInteractor: RepoCarBusinessLogic, RepoCarDataStore
                 weakself.presenter?.presentSomething(response: response)
             }else{
                 weakself.presenter?.presentDeliveryPersonList(response: response)
+            }
+        })
+    }
+    
+    func confirmSendToRepo(request: RepoCar.Something.Request) {
+        worker = RepoCarWorker()
+        worker?.sendRepo(completion: {[weak self] (response) in
+            guard let weakself = self else { return }
+            if let _ = response.error {
+                weakself.presenter?.presentSomething(response: response)
+            }else{
+                weakself.presenter?.presentSendToRepo(response: response)
             }
         })
     }
@@ -75,11 +99,17 @@ class RepoCarInteractor: RepoCarBusinessLogic, RepoCarDataStore
     }
     
     func setDataDateTimeInspection(request: RepoCar.Something.Request) {
-        presenter?.presentDataDateTimeInspection(response: dateResponse(request: request))
+        let response = dateResponse(request: request)
+        presenter?.presentDataDateTimeInspection(response: response)
+        self.dataDate = response.dayTime?.day
+        DataController.shared.repoCarModel.dataDate = response.dayTime?.day
     }
     
     func setWarehouseDateTimeInspection(request: RepoCar.Something.Request) {
-        presenter?.presentWarehouseTimeInspection(response: dateResponse(request: request))
+        let response = dateResponse(request: request)
+        presenter?.presentWarehouseTimeInspection(response: response)
+        self.warehouseDate = response.dayTime?.day
+        DataController.shared.repoCarModel.warehouseName = response.dayTime?.day
     }
     
     func dateResponse(request: RepoCar.Something.Request) -> RepoCar.Something.Response {
@@ -89,6 +119,21 @@ class RepoCarInteractor: RepoCarBusinessLogic, RepoCarDataStore
         let dateTuple = (day , time)
         let response = RepoCar.Something.Response(dayTime: dateTuple)
         return response
+    }
+    
+    func fillOldBuyer(request: RepoCar.Something.Request){
+        self.oldBuyer = request.oldBuyer
+        DataController.shared.repoCarModel.oldBuyer = request.oldBuyer
+    }
+    
+    func fillDelivery(request: RepoCar.Something.Request){
+        self.deliveryInputText = request.deliveryInputText
+        DataController.shared.repoCarModel.deliveryInputText = request.deliveryInputText
+    }
+    
+    func selectDelivery(request: RepoCar.Something.Request) {
+        self.deliveryPerson = request.deliveryPerson
+        DataController.shared.repoCarModel.deliveryPerson = request.deliveryPerson
     }
 }
 

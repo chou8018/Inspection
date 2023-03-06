@@ -17,6 +17,7 @@ class DataController {
     var photoCarModel = PhotoCarModel()
     
     var standardMakeList: [StandradMakeModel]?
+    var repoCarModel = RepoCarModel()
 
     var isFromEditView = false
     

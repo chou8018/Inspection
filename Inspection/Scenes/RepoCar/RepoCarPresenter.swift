@@ -19,6 +19,7 @@ protocol RepoCarPresentationLogic
     func presentReceiverDayTimeInspection(response: RepoCar.Something.Response)
     func presentDataDateTimeInspection(response: RepoCar.Something.Response)
     func presentWarehouseTimeInspection(response: RepoCar.Something.Response)
+    func presentSendToRepo(response: RepoCar.Something.Response)
 
 }
 
@@ -39,6 +40,16 @@ class RepoCarPresenter: RepoCarPresentationLogic
         let values = list.map({ $0.code ?? "" })
         let viewModel = RepoCar.Something.ViewModel(deliveryCodes: values)
         viewController?.displayDeliveryPersonDropdown(viewModel: viewModel)
+    }
+    
+    func presentSendToRepo(response: RepoCar.Something.Response) {
+        if let error = response.error {
+            let viewModel = RepoCar.Something.ViewModel(errorMessage : error.message)
+            viewController?.displayErrorSendRepo(viewModel: viewModel)
+        }else{
+            let viewModel = RepoCar.Something.ViewModel()
+            viewController?.displaySuccessSendRepo(viewModel: viewModel)
+        }
     }
     
     func presentReceiverDayTimeInspection(response: RepoCar.Something.Response) {

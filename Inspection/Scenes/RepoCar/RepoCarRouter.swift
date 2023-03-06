@@ -16,10 +16,8 @@ import UIKit
 {
     func routeToshowDateTime(segue: UIStoryboardSegue?)
     func routeToUploadProgress(segue: UIStoryboardSegue?)
-    
     func routeToshowDataDateTime(segue: UIStoryboardSegue?)
     func routeToshowWarehouseDateTime(segue: UIStoryboardSegue?)
-
 }
 
 protocol RepoCarDataPassing
@@ -75,8 +73,8 @@ class RepoCarRouter: NSObject, RepoCarRoutingLogic, RepoCarDataPassing
     
     func passDataToPicker(source: RepoCarDataStore, destination: inout DateTimeDataStore)
     {
-//        let date = source.currentDate ?? Date()
-//        destination.currentDate = date
+        let date = source.currentDate ?? Date()
+        destination.currentDate = date
     }
     
     func navigateToPicker(source: RepoCarViewController, destination: DateTimeViewController)

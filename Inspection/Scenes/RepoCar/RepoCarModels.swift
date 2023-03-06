@@ -19,12 +19,20 @@ enum RepoCar
         struct Request
         {
             var dateInspection: Date?
+            var vehicleNo: String?
+            var contractNo: String?
+            var dataDate: String?
+            var warehouseName: String?
+            var oldBuyer: String?
+            var deliveryPerson: String?
+            var deliveryInputText: String?
         }
         
         struct Response
         {
             var dayTime : (day:String, time:String)?
             var deliveryPersonList : [DeliveryPersonModel]?
+            var makeRepoResponseModel : MakeRepoResponse?
             var error : KErrorMessage?
         }
         struct ViewModel

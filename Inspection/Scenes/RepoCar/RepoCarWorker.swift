@@ -37,10 +37,16 @@ class RepoCarWorker
     
     //MARK: Send Repo
     func sendRepo(completion: @escaping RepoCarWorkerHandler){
-        let model = DataController.shared.repoCarModel
-//        guard let bookinNo = model.bookinNo else { return }
+        let vehicleId = DataController.shared.receiverCarModel.vehicleId
+        let contractNo = DataController.shared.receiverCarModel.contractNumber
+        
+        if vehicleId.isEmpty || contractNo?.isEmpty == true {
+            return
+        }
 
-        let request = RepoModelRequest(vehicleNo: "000000000001460449", contractNo: "004465002095", dataDate: model.dataDate, warehouseName: model.warehouseName, oldBuyer: model.oldBuyer, deliveryPerson: model.deliveryPerson)
+        let model = DataController.shared.repoCarModel
+
+        let request = RepoModelRequest(vehicleNo: vehicleId, contractNo: contractNo, dataDate: model.dataDate, warehouseName: model.warehouseName, oldBuyer: model.oldBuyer, deliveryPerson: model.deliveryPerson)
 
         print(request.toJSON())
 

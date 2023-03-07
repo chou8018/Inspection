@@ -89,6 +89,12 @@ class RepoCarViewController: UIViewController, RepoCarDisplayLogic
             }
             
             if let dateTimePicker = segue.destination as? DateTimeViewController {
+                if scene == "showDataDateTime" || scene == "showWarehouseDateTime" {
+                    DispatchQueue.main.asyncAfter(deadline: .now()+0.01) {
+                        dateTimePicker.datePicker.datePickerMode = .date
+                    }
+                }
+           
                 dateTimePicker.didSelectedDateTimePicker = { [weak self] (dateInspection) in
                     
                     let request = RepoCar.Something.Request(dateInspection: dateInspection)

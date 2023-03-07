@@ -31,6 +31,7 @@ enum Router {
     
     /// book-in list
     case bookInDetail(_ parameter:Parameters , _ bookInNumber:String)
+    case bookInCarDetail(_ parameter:Parameters , _ bookInNumber:String)
     case bookInList(_ parameter:Parameters)
     case bookInListSearch(_ parameter:Parameters )
     
@@ -152,7 +153,8 @@ enum Router {
             return ApiModel(path: "inspection/api/MotorbikeBookIn/BookinSingle/\(bookInNumber)", method: .get)
         ///inspection/api/MotorbikeBookIn/BookinSingle/
         ///inspection/api/bookin/single/
-        
+        case .bookInCarDetail(_, let bookInNumber):
+            return ApiModel(path: "inspection/api/bookin/single/\(bookInNumber)", method: .get)
         //MARK: List
         case .bookInList(_ ):
             return ApiModel(path: "inspection/api/bookin/list", method: .get)

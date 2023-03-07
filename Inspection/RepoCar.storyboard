@@ -475,7 +475,10 @@
                                                                     </view>
                                                                 </subviews>
                                                                 <constraints>
-                                                                    <constraint firstItem="T6W-as-FC0" firstAttribute="leading" secondItem="OXB-J7-zHn" secondAttribute="leading" id="JVM-12-xaY"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="T6W-as-FC0" secondAttribute="trailing" id="B9B-R2-rna"/>
+                                                                    <constraint firstItem="T6W-as-FC0" firstAttribute="top" secondItem="OXB-J7-zHn" secondAttribute="top" id="FD3-X6-ZQ3"/>
+                                                                    <constraint firstItem="T6W-as-FC0" firstAttribute="leading" secondItem="OXB-J7-zHn" secondAttribute="leading" constant="8" id="JVM-12-xaY"/>
+                                                                    <constraint firstItem="sxg-a8-wXE" firstAttribute="top" secondItem="T6W-as-FC0" secondAttribute="bottom" id="vJF-uF-AXk"/>
                                                                 </constraints>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">

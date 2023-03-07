@@ -41,6 +41,8 @@ class RepoCarInteractor: RepoCarBusinessLogic, RepoCarDataStore
     var worker: RepoCarWorker?
     var currentDate: Date?
     
+    var vehicleId:String?
+    var contractNo:String?
     var dataDate:String?
     var warehouseDate:String?
     var oldBuyer:String?
@@ -135,6 +137,11 @@ class RepoCarInteractor: RepoCarBusinessLogic, RepoCarDataStore
     
     func validateField(request: RepoCar.Something.Request){
         
+        vehicleId = DataController.shared.receiverCarModel.vehicleId
+        contractNo = DataController.shared.receiverCarModel.contractNumber
+
+        let vehicleId = vehicleId  != nil && !(vehicleId?.isEmpty ?? false)
+        let contractNo = contractNo  != nil && !(contractNo?.isEmpty ?? false)
         let dataDate = dataDate  != nil && !(dataDate?.isEmpty ?? false)
         let warehouseDate = warehouseDate != nil && !(warehouseDate?.isEmpty ?? false)
         let oldBuyer = oldBuyer != nil && !(oldBuyer?.isEmpty ?? false)
@@ -142,6 +149,8 @@ class RepoCarInteractor: RepoCarBusinessLogic, RepoCarDataStore
         let deliveryInputText = deliveryInputText != nil && !(deliveryInputText?.isEmpty ?? false)
         
         var message : String = ""
+        message += vehicleId ? "" : "vehicleId ไม่ถูกต้อง\n"
+        message += contractNo ? "" : "contractNo ไม่ถูกต้อง\n"
         message += dataDate ? "" : "dataDate ไม่ถูกต้อง\n"
         message += warehouseDate ? "" : "warehouseDate ไม่ถูกต้อง\n"
         message += oldBuyer ? "" : "oldBuyer ไม่ถูกต้อง\n"

@@ -19,3 +19,14 @@ class BookInDetailService : BaseApi<BookInDetailRequest , BookInMotorBikeModelRe
         super.executeObject(request: request, completionHandler)
     }
 }
+
+class BookInCarDetailService : BaseApi<BookInDetailRequest , BookInMotorBikeModelRequest> {
+    
+    override func createUrlReq(_ encRequest: BookInDetailRequest) -> URLRequestConvertible {
+        return Router.bookInCarDetail(encRequest.toJSON(), encRequest.bookInNumber).apiModel
+    }
+    
+    override func callServiceObject(request: BookInDetailRequest, _ completionHandler: @escaping (Result<BookInMotorBikeModelRequest, KError>) -> Void) {
+        super.executeObject(request: request, completionHandler)
+    }
+}

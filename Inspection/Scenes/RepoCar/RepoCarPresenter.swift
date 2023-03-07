@@ -20,7 +20,7 @@ protocol RepoCarPresentationLogic
     func presentDataDateTimeInspection(response: RepoCar.Something.Response)
     func presentWarehouseTimeInspection(response: RepoCar.Something.Response)
     func presentSendToRepo(response: RepoCar.Something.Response)
-
+    func presentValidateField(response: RepoCar.Something.Response)
 }
 
 class RepoCarPresenter: RepoCarPresentationLogic
@@ -65,5 +65,15 @@ class RepoCarPresenter: RepoCarPresentationLogic
     func presentWarehouseTimeInspection(response: RepoCar.Something.Response) {
         let viewModel = RepoCar.Something.ViewModel(dayTime: response.dayTime)
         viewController?.displayWarehouseTimeInspection(viewModel: viewModel)
+    }
+    
+    func presentValidateField(response: RepoCar.Something.Response) {
+        if let validateErrorMessage = response.validateErrorMessage, !validateErrorMessage.trimWhiteSpace.isEmpty {
+            let viewModel = RepoCar.Something.ViewModel(errorMessage: validateErrorMessage)
+            viewController?.displayValidateError(viewModel: viewModel)
+        }else{
+            let viewModel = RepoCar.Something.ViewModel()
+            viewController?.displayValidateSuccess(viewModel: viewModel)
+        }
     }
 }

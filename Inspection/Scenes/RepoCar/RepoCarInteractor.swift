@@ -23,6 +23,7 @@ protocol RepoCarBusinessLogic
     func fillOldBuyer(request: RepoCar.Something.Request)
     func selectDelivery(request: RepoCar.Something.Request)
     func fillDelivery(request: RepoCar.Something.Request)
+    func validateField(request: RepoCar.Something.Request)
 
 }
 
@@ -130,6 +131,26 @@ class RepoCarInteractor: RepoCarBusinessLogic, RepoCarDataStore
     func selectDelivery(request: RepoCar.Something.Request) {
         self.deliveryPerson = request.deliveryPerson
         DataController.shared.repoCarModel.deliveryPerson = request.deliveryPerson
+    }
+    
+    func validateField(request: RepoCar.Something.Request){
+        
+        let dataDate = dataDate  != nil && !(dataDate?.isEmpty ?? false)
+        let warehouseDate = warehouseDate != nil && !(warehouseDate?.isEmpty ?? false)
+        let oldBuyer = oldBuyer != nil && !(oldBuyer?.isEmpty ?? false)
+        let deliveryPerson = deliveryPerson != nil && !(deliveryPerson?.isEmpty ?? false)
+        let deliveryInputText = deliveryInputText != nil && !(deliveryInputText?.isEmpty ?? false)
+        
+        var message : String = ""
+        message += dataDate ? "" : "dataDate ไม่ถูกต้อง\n"
+        message += warehouseDate ? "" : "warehouseDate ไม่ถูกต้อง\n"
+        message += oldBuyer ? "" : "oldBuyer ไม่ถูกต้อง\n"
+        message += deliveryPerson ? "" : "deliveryPerson ไม่ถูกต้อง\n"
+        message += deliveryInputText ? "" : "deliveryInputText ไม่ถูกต้อง\n"
+        
+        let response = RepoCar.Something.Response(validateErrorMessage: message)
+        presenter?.presentValidateField(response : response)
+        
     }
 }
 

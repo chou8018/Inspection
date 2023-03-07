@@ -34,6 +34,8 @@ enum RepoCar
             var deliveryPersonList : [DeliveryPersonModel]?
             var makeRepoResponseModel : MakeRepoResponse?
             var error : KErrorMessage?
+            var validateErrorMessage:String?
+
         }
         struct ViewModel
         {

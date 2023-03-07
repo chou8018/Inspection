@@ -21,6 +21,8 @@ protocol RepoCarDisplayLogic: AnyObject
     func displayWarehouseTimeInspection(viewModel: RepoCar.Something.ViewModel)
     func displayErrorSendRepo(viewModel: RepoCar.Something.ViewModel)
     func displaySuccessSendRepo(viewModel: RepoCar.Something.ViewModel)
+    func displayValidateError(viewModel: RepoCar.Something.ViewModel)
+    func displayValidateSuccess(viewModel: RepoCar.Something.ViewModel)
 }
 
 class RepoCarViewController: UIViewController, RepoCarDisplayLogic
@@ -174,10 +176,8 @@ class RepoCarViewController: UIViewController, RepoCarDisplayLogic
     
     
     @IBAction func sendRepo(_ sender: UIButton) {
-        print("🔶 send repo ")
-        alert(message: "คุณต้องการส่ง\nsend repo ไหม") { [weak self] in
-            self?.sendToRepo()
-        }
+        let request = RepoCar.Something.Request()
+        interactor?.validateField(request: request)
     }
     
     func sendToRepo(){
@@ -196,6 +196,20 @@ class RepoCarViewController: UIViewController, RepoCarDisplayLogic
         //self.updateVehicleId()
         alertErrorMessageOKAction(message: "Repo สำเร็จ") {
             //ignored
+        }
+    }
+    
+    func displayValidateError(viewModel: RepoCar.Something.ViewModel) {
+        guard let errorMessage = viewModel.errorMessage else { return }
+        alertErrorMessageOKAction(message: errorMessage) {
+            //ignhred
+        }
+    }
+    func displayValidateSuccess(viewModel: RepoCar.Something.ViewModel) {
+        print("🔸 displayValidateSuccess")
+        print("🔶 send repo ")
+        alert(message: "คุณต้องการส่ง\nsend repo ไหม") { [weak self] in
+            self?.sendToRepo()
         }
     }
 

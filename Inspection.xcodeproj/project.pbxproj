@@ -3122,7 +3122,7 @@
 				CODE_SIGN_ENTITLEMENTS = Inspection/Inspection.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 37;
+				CURRENT_PROJECT_VERSION = 38;
 				DEVELOPMENT_TEAM = EMFZ5F9LY3;
 				INFOPLIST_FILE = Inspection/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -3130,7 +3130,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4.6;
+				MARKETING_VERSION = 1.5.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.motto.auction.inspec;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -3148,7 +3148,7 @@
 				CODE_SIGN_ENTITLEMENTS = Inspection/Inspection.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 37;
+				CURRENT_PROJECT_VERSION = 38;
 				DEVELOPMENT_TEAM = EMFZ5F9LY3;
 				INFOPLIST_FILE = Inspection/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -3156,7 +3156,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.4.6;
+				MARKETING_VERSION = 1.5.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.motto.auction.inspec;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

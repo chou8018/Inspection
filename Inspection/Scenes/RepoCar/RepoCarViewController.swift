@@ -134,12 +134,16 @@ class RepoCarViewController: UIViewController, RepoCarDisplayLogic
     
     func displayDeliveryPersonDropdown(viewModel: RepoCar.Something.ViewModel) {
         guard let list = viewModel.deliveryCodes else { return }
+        guard let models = viewModel.deliveryPersonList else { return }
 
-        setValue(to: deliveryPersonTextField, values: list) { [weak self] (selectValue, _, _)  in
+        setValue(to: deliveryPersonTextField, values: list) { [weak self] (selectValue, index, _)  in
 //            DataController.shared.receiverCarModel.receiverPlace = selectValue
             self?.deliveryPersonTextField.text = selectValue
+            self?.deliveryTextField.text = models[index].code
+            self?.interactor?.fillDelivery(request: RepoCar.Something.Request(deliveryInputText: models[index].code))
             let request = RepoCar.Something.Request(deliveryPerson: selectValue)
             self?.interactor?.selectDelivery(request: request)
+        
         }
         
         isFetchList = true

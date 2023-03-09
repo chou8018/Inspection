@@ -38,7 +38,7 @@ class RepoCarPresenter: RepoCarPresentationLogic
     func presentDeliveryPersonList(response: RepoCar.Something.Response) {        
         guard let list = response.deliveryPersonList else { return }
         let values = list.map({ $0.detail ?? "" })
-        let viewModel = RepoCar.Something.ViewModel(deliveryCodes: values)
+        let viewModel = RepoCar.Something.ViewModel(deliveryPersonList: list, deliveryCodes: values)
         viewController?.displayDeliveryPersonDropdown(viewModel: viewModel)
     }
     

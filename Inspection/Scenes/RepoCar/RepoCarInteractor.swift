@@ -113,7 +113,7 @@ class RepoCarInteractor: RepoCarBusinessLogic, RepoCarDataStore
     
     func dateResponse(request: RepoCar.Something.Request) -> RepoCar.Something.Response {
         let date = request.dateInspection ?? Date()
-        let day = DateFormatter().dateFormat(from: date, dateFormat: "dd-MM-yyyy")
+        let day = DateFormatter().dateFormat(from: date, dateFormat: "yyyy-MM-dd")
         let time = DateFormatter().dateFormat(from: date, dateFormat: "HH:mm")
         let dateTuple = (day , time)
         let response = RepoCar.Something.Response(dayTime: dateTuple)

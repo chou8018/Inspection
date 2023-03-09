@@ -138,8 +138,8 @@ extension UIViewController {
         
         var repoCarViewController : RepoCarViewController {
             let storyboardPhoto = UIStoryboard(name: "RepoCar", bundle: nil)
-            let photo = storyboardPhoto.instantiateViewController(withIdentifier: "RepoCarViewController") as! RepoCarViewController
-            return photo
+            let repo = storyboardPhoto.instantiateViewController(withIdentifier: "RepoCarViewController") as! RepoCarViewController
+            return repo
         }
     }
     

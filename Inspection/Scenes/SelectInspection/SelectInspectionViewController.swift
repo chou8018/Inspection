@@ -189,7 +189,7 @@ class SelectInspectionViewController: UIViewController, SelectInspectionDisplayL
     }
     
     @objc func showPlace(){
-        performSegue(withIdentifier: "showPlaceSegue", sender: nil)
+//        performSegue(withIdentifier: "showPlaceSegue", sender: nil)
     }
     
     @objc func showPickupCar(){

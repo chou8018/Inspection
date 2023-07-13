@@ -141,6 +141,8 @@ class PhotoCarViewController: UIViewController, PhotoCarDisplayLogic
     @IBOutlet weak var backCheckBox: CheckBoxUIButton!
     @IBOutlet weak var gasTankCheckBox: CheckBoxUIButton!
     @IBOutlet weak var damageCheckBox: CheckBoxUIButton!
+    @IBOutlet weak var oaDocumentCheckBox: CheckBoxUIButton!
+
     @IBOutlet weak var assetCheckBox: CheckBoxUIButton!
     @IBOutlet weak var amountLabel: UILabel!
     @IBOutlet weak var addPhotoView: CustomUIView!
@@ -327,6 +329,7 @@ class PhotoCarViewController: UIViewController, PhotoCarDisplayLogic
         backCheckBox.typecheck = .BACKGROUND
         gasTankCheckBox.typecheck = .BACKGROUND
         damageCheckBox.typecheck = .BACKGROUND
+        oaDocumentCheckBox.typecheck = .BACKGROUND
         assetCheckBox.typecheck = .BACKGROUND
         
        
@@ -340,7 +343,8 @@ class PhotoCarViewController: UIViewController, PhotoCarDisplayLogic
                              (name: "Back(ด้านหลัง) *", cb: backCheckBox),
                              (name: "Gas tank(ถังแก๊ส) *", cb: gasTankCheckBox),
                              (name: "Asset(ทรัพย์สิน) *", cb: assetCheckBox),
-                             (name: "Damage(ความเสียหาย) *", cb: damageCheckBox)
+                             (name: "Damage(ความเสียหาย) *", cb: damageCheckBox),
+                             (name: "OA Document *", cb: oaDocumentCheckBox)
                              ]
         
         for item in sourceSectionName {
@@ -435,6 +439,12 @@ class PhotoCarViewController: UIViewController, PhotoCarDisplayLogic
             weakself.selectButton(selectView: weakself.damageCheckBox)
         }
     }
+    @IBAction func oaDocumentCheckBoxTapped(_ sender: Any) {
+        oaDocumentCheckBox.toggle { [weak self] check in
+            guard let weakself = self else { return }
+            weakself.selectButton(selectView: weakself.oaDocumentCheckBox)
+        }
+    }
     @IBAction func assetCheckBoxTapped(_ sender: Any) {
         assetCheckBox.toggle { [weak self] check in
             guard let weakself = self else { return }
@@ -451,7 +461,7 @@ class PhotoCarViewController: UIViewController, PhotoCarDisplayLogic
         guard let _  = selectView else { return }
         
  
-        let viewList = [frontCheckBox, engineCheckBox, plateCheckBox, chassisCheckBox, interiorCheckBox, trayCheckBox, sideCheckBox, backCheckBox, gasTankCheckBox, assetCheckBox, damageCheckBox]
+        let viewList = [frontCheckBox, engineCheckBox, plateCheckBox, chassisCheckBox, interiorCheckBox, trayCheckBox, sideCheckBox, backCheckBox, gasTankCheckBox, assetCheckBox, damageCheckBox, oaDocumentCheckBox]
         
         let selectionList = viewList.map { (view) -> String in
             view?.check = view == selectView
@@ -477,6 +487,8 @@ class PhotoCarViewController: UIViewController, PhotoCarDisplayLogic
                 name = "Gas_B"
             case damageCheckBox:
                 name = "Damage"
+            case oaDocumentCheckBox:
+                name = "OA_Document"
             case assetCheckBox:
                 name = "Asset"
             default:
@@ -520,7 +532,7 @@ class PhotoCarViewController: UIViewController, PhotoCarDisplayLogic
         //print("Reload Collection View")
         hideLoading()
         
-        let viewList = [frontCheckBox, engineCheckBox, plateCheckBox, chassisCheckBox, interiorCheckBox, trayCheckBox, sideCheckBox, backCheckBox, gasTankCheckBox, assetCheckBox, damageCheckBox]
+        let viewList = [frontCheckBox, engineCheckBox, plateCheckBox, chassisCheckBox, interiorCheckBox, trayCheckBox, sideCheckBox, backCheckBox, gasTankCheckBox, assetCheckBox, damageCheckBox, oaDocumentCheckBox]
         
         DispatchQueue.main.async { [weak self] in
            

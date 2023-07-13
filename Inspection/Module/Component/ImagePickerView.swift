@@ -79,7 +79,7 @@ open class ImagePicker: NSObject {
         // Custom image editor
         config
             .editImageConfiguration
-            .imageStickerContainerView(ImageStickerContainerView())
+            .imageStickerContainerView(nil)
             .canRedo(true)
         
         config.editImageConfiguration.tools.removeAll { $0 == .clip }

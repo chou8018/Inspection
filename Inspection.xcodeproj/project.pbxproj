@@ -10,44 +10,6 @@
 		1E42BEC439AF142146721869 /* Pods_InspectionTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED7F01EFBE20F1FF79AD3938 /* Pods_InspectionTests.framework */; };
 		7B7F1EB825A89CFD60F730D4 /* Pods_Inspection_InspectionUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 450FEF54378985C29D64B3B3 /* Pods_Inspection_InspectionUITests.framework */; };
 		BC4F3FB54F9E0571C9BB828C /* Pods_Inspection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF5A5BE48DF744DDCA6FF8D6 /* Pods_Inspection.framework */; };
-		C21F25642A5FA85F001592C8 /* ImageStickerContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21F25632A5FA85F001592C8 /* ImageStickerContainerView.swift */; };
-		C21F25932A5FA914001592C8 /* ConstraintMultiplierTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21F256D2A5FA914001592C8 /* ConstraintMultiplierTarget.swift */; };
-		C21F25942A5FA914001592C8 /* LayoutConstraintItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21F256E2A5FA914001592C8 /* LayoutConstraintItem.swift */; };
-		C21F25952A5FA914001592C8 /* ConstraintDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21F256F2A5FA914001592C8 /* ConstraintDescription.swift */; };
-		C21F25962A5FA914001592C8 /* ConstraintMakerPriortizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21F25702A5FA914001592C8 /* ConstraintMakerPriortizable.swift */; };
-		C21F25972A5FA914001592C8 /* ConstraintAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21F25712A5FA914001592C8 /* ConstraintAttributes.swift */; };
-		C21F25982A5FA914001592C8 /* ConstraintViewDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21F25722A5FA914001592C8 /* ConstraintViewDSL.swift */; };
-		C21F25992A5FA914001592C8 /* ConstraintPriorityTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21F25732A5FA914001592C8 /* ConstraintPriorityTarget.swift */; };
-		C21F259A2A5FA914001592C8 /* ConstraintInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21F25742A5FA914001592C8 /* ConstraintInsets.swift */; };
-		C21F259B2A5FA914001592C8 /* ConstraintMakerFinalizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21F25752A5FA914001592C8 /* ConstraintMakerFinalizable.swift */; };
-		C21F259C2A5FA914001592C8 /* ConstraintDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21F25762A5FA914001592C8 /* ConstraintDSL.swift */; };
-		C21F259D2A5FA914001592C8 /* ConstraintMakerExtendable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21F25772A5FA914001592C8 /* ConstraintMakerExtendable.swift */; };
-		C21F259E2A5FA914001592C8 /* ConstraintPriority.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21F25782A5FA914001592C8 /* ConstraintPriority.swift */; };
-		C21F259F2A5FA914001592C8 /* ConstraintInsetTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21F25792A5FA914001592C8 /* ConstraintInsetTarget.swift */; };
-		C21F25A02A5FA914001592C8 /* ConstraintDirectionalInsetTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21F257A2A5FA914001592C8 /* ConstraintDirectionalInsetTarget.swift */; };
-		C21F25A12A5FA914001592C8 /* ConstraintMakerRelatable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21F257C2A5FA914001592C8 /* ConstraintMakerRelatable+Extensions.swift */; };
-		C21F25A22A5FA914001592C8 /* ConstraintConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21F257D2A5FA914001592C8 /* ConstraintConfig.swift */; };
-		C21F25A32A5FA914001592C8 /* UILayoutSupport+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21F257E2A5FA914001592C8 /* UILayoutSupport+Extensions.swift */; };
-		C21F25A42A5FA914001592C8 /* ConstraintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21F257F2A5FA914001592C8 /* ConstraintView.swift */; };
-		C21F25A52A5FA914001592C8 /* ConstraintLayoutGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21F25802A5FA914001592C8 /* ConstraintLayoutGuide.swift */; };
-		C21F25A62A5FA914001592C8 /* ConstraintLayoutSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21F25812A5FA914001592C8 /* ConstraintLayoutSupport.swift */; };
-		C21F25A72A5FA914001592C8 /* Typealiases.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21F25822A5FA914001592C8 /* Typealiases.swift */; };
-		C21F25A82A5FA914001592C8 /* ConstraintConstantTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21F25832A5FA914001592C8 /* ConstraintConstantTarget.swift */; };
-		C21F25A92A5FA914001592C8 /* ConstraintOffsetTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21F25842A5FA914001592C8 /* ConstraintOffsetTarget.swift */; };
-		C21F25AA2A5FA914001592C8 /* ConstraintMakerEditable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21F25852A5FA914001592C8 /* ConstraintMakerEditable.swift */; };
-		C21F25AB2A5FA914001592C8 /* ConstraintMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21F25862A5FA914001592C8 /* ConstraintMaker.swift */; };
-		C21F25AC2A5FA914001592C8 /* ConstraintRelation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21F25872A5FA914001592C8 /* ConstraintRelation.swift */; };
-		C21F25AD2A5FA914001592C8 /* ConstraintLayoutGuideDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21F25882A5FA914001592C8 /* ConstraintLayoutGuideDSL.swift */; };
-		C21F25AE2A5FA914001592C8 /* ConstraintView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21F25892A5FA914001592C8 /* ConstraintView+Extensions.swift */; };
-		C21F25AF2A5FA914001592C8 /* ConstraintItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21F258A2A5FA914001592C8 /* ConstraintItem.swift */; };
-		C21F25B02A5FA914001592C8 /* Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21F258B2A5FA914001592C8 /* Constraint.swift */; };
-		C21F25B12A5FA914001592C8 /* Debugging.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21F258C2A5FA914001592C8 /* Debugging.swift */; };
-		C21F25B22A5FA914001592C8 /* ConstraintRelatableTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21F258D2A5FA914001592C8 /* ConstraintRelatableTarget.swift */; };
-		C21F25B32A5FA914001592C8 /* LayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21F258E2A5FA914001592C8 /* LayoutConstraint.swift */; };
-		C21F25B42A5FA914001592C8 /* ConstraintLayoutGuide+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21F258F2A5FA914001592C8 /* ConstraintLayoutGuide+Extensions.swift */; };
-		C21F25B52A5FA914001592C8 /* ConstraintDirectionalInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21F25902A5FA914001592C8 /* ConstraintDirectionalInsets.swift */; };
-		C21F25B62A5FA914001592C8 /* ConstraintLayoutSupportDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21F25912A5FA914001592C8 /* ConstraintLayoutSupportDSL.swift */; };
-		C21F25B72A5FA914001592C8 /* ConstraintMakerRelatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21F25922A5FA914001592C8 /* ConstraintMakerRelatable.swift */; };
 		CE0CBFD72664CE8B00A31068 /* UILabel+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0CBFD62664CE8B00A31068 /* UILabel+extension.swift */; };
 		CE0CBFD926676C5D00A31068 /* UpdateVehicleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0CBFD826676C5D00A31068 /* UpdateVehicleService.swift */; };
 		CE0CBFE1266DC8B700A31068 /* DamagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0CBFDB266DC8B700A31068 /* DamagePresenter.swift */; };
@@ -510,45 +472,6 @@
 		4F3C49B3781456D4F9A64D4D /* Pods-Inspection-InspectionUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Inspection-InspectionUITests.debug.xcconfig"; path = "Target Support Files/Pods-Inspection-InspectionUITests/Pods-Inspection-InspectionUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		55C98B93E31756AF096E1F58 /* Pods-Inspection.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Inspection.release.xcconfig"; path = "Target Support Files/Pods-Inspection/Pods-Inspection.release.xcconfig"; sourceTree = "<group>"; };
 		58D757F7839D6F069EBBF157 /* Pods-Inspection-InspectionUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Inspection-InspectionUITests.release.xcconfig"; path = "Target Support Files/Pods-Inspection-InspectionUITests/Pods-Inspection-InspectionUITests.release.xcconfig"; sourceTree = "<group>"; };
-		C21F25632A5FA85F001592C8 /* ImageStickerContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageStickerContainerView.swift; sourceTree = "<group>"; };
-		C21F256D2A5FA914001592C8 /* ConstraintMultiplierTarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintMultiplierTarget.swift; sourceTree = "<group>"; };
-		C21F256E2A5FA914001592C8 /* LayoutConstraintItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutConstraintItem.swift; sourceTree = "<group>"; };
-		C21F256F2A5FA914001592C8 /* ConstraintDescription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintDescription.swift; sourceTree = "<group>"; };
-		C21F25702A5FA914001592C8 /* ConstraintMakerPriortizable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintMakerPriortizable.swift; sourceTree = "<group>"; };
-		C21F25712A5FA914001592C8 /* ConstraintAttributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintAttributes.swift; sourceTree = "<group>"; };
-		C21F25722A5FA914001592C8 /* ConstraintViewDSL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintViewDSL.swift; sourceTree = "<group>"; };
-		C21F25732A5FA914001592C8 /* ConstraintPriorityTarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintPriorityTarget.swift; sourceTree = "<group>"; };
-		C21F25742A5FA914001592C8 /* ConstraintInsets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintInsets.swift; sourceTree = "<group>"; };
-		C21F25752A5FA914001592C8 /* ConstraintMakerFinalizable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintMakerFinalizable.swift; sourceTree = "<group>"; };
-		C21F25762A5FA914001592C8 /* ConstraintDSL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintDSL.swift; sourceTree = "<group>"; };
-		C21F25772A5FA914001592C8 /* ConstraintMakerExtendable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintMakerExtendable.swift; sourceTree = "<group>"; };
-		C21F25782A5FA914001592C8 /* ConstraintPriority.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintPriority.swift; sourceTree = "<group>"; };
-		C21F25792A5FA914001592C8 /* ConstraintInsetTarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintInsetTarget.swift; sourceTree = "<group>"; };
-		C21F257A2A5FA914001592C8 /* ConstraintDirectionalInsetTarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintDirectionalInsetTarget.swift; sourceTree = "<group>"; };
-		C21F257B2A5FA914001592C8 /* SnapKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SnapKit.h; sourceTree = "<group>"; };
-		C21F257C2A5FA914001592C8 /* ConstraintMakerRelatable+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ConstraintMakerRelatable+Extensions.swift"; sourceTree = "<group>"; };
-		C21F257D2A5FA914001592C8 /* ConstraintConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintConfig.swift; sourceTree = "<group>"; };
-		C21F257E2A5FA914001592C8 /* UILayoutSupport+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILayoutSupport+Extensions.swift"; sourceTree = "<group>"; };
-		C21F257F2A5FA914001592C8 /* ConstraintView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintView.swift; sourceTree = "<group>"; };
-		C21F25802A5FA914001592C8 /* ConstraintLayoutGuide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintLayoutGuide.swift; sourceTree = "<group>"; };
-		C21F25812A5FA914001592C8 /* ConstraintLayoutSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintLayoutSupport.swift; sourceTree = "<group>"; };
-		C21F25822A5FA914001592C8 /* Typealiases.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Typealiases.swift; sourceTree = "<group>"; };
-		C21F25832A5FA914001592C8 /* ConstraintConstantTarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintConstantTarget.swift; sourceTree = "<group>"; };
-		C21F25842A5FA914001592C8 /* ConstraintOffsetTarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintOffsetTarget.swift; sourceTree = "<group>"; };
-		C21F25852A5FA914001592C8 /* ConstraintMakerEditable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintMakerEditable.swift; sourceTree = "<group>"; };
-		C21F25862A5FA914001592C8 /* ConstraintMaker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintMaker.swift; sourceTree = "<group>"; };
-		C21F25872A5FA914001592C8 /* ConstraintRelation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintRelation.swift; sourceTree = "<group>"; };
-		C21F25882A5FA914001592C8 /* ConstraintLayoutGuideDSL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintLayoutGuideDSL.swift; sourceTree = "<group>"; };
-		C21F25892A5FA914001592C8 /* ConstraintView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ConstraintView+Extensions.swift"; sourceTree = "<group>"; };
-		C21F258A2A5FA914001592C8 /* ConstraintItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintItem.swift; sourceTree = "<group>"; };
-		C21F258B2A5FA914001592C8 /* Constraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constraint.swift; sourceTree = "<group>"; };
-		C21F258C2A5FA914001592C8 /* Debugging.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Debugging.swift; sourceTree = "<group>"; };
-		C21F258D2A5FA914001592C8 /* ConstraintRelatableTarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintRelatableTarget.swift; sourceTree = "<group>"; };
-		C21F258E2A5FA914001592C8 /* LayoutConstraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutConstraint.swift; sourceTree = "<group>"; };
-		C21F258F2A5FA914001592C8 /* ConstraintLayoutGuide+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ConstraintLayoutGuide+Extensions.swift"; sourceTree = "<group>"; };
-		C21F25902A5FA914001592C8 /* ConstraintDirectionalInsets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintDirectionalInsets.swift; sourceTree = "<group>"; };
-		C21F25912A5FA914001592C8 /* ConstraintLayoutSupportDSL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintLayoutSupportDSL.swift; sourceTree = "<group>"; };
-		C21F25922A5FA914001592C8 /* ConstraintMakerRelatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintMakerRelatable.swift; sourceTree = "<group>"; };
 		CE0CBFD62664CE8B00A31068 /* UILabel+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+extension.swift"; sourceTree = "<group>"; };
 		CE0CBFD826676C5D00A31068 /* UpdateVehicleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateVehicleService.swift; sourceTree = "<group>"; };
 		CE0CBFDB266DC8B700A31068 /* DamagePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DamagePresenter.swift; sourceTree = "<group>"; };
@@ -1046,59 +969,6 @@
 				ED7F01EFBE20F1FF79AD3938 /* Pods_InspectionTests.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		C21F25622A5FA83A001592C8 /* ZLPhotoBrowser */ = {
-			isa = PBXGroup;
-			children = (
-				C21F25632A5FA85F001592C8 /* ImageStickerContainerView.swift */,
-			);
-			path = ZLPhotoBrowser;
-			sourceTree = "<group>";
-		};
-		C21F256C2A5FA914001592C8 /* SnapKit */ = {
-			isa = PBXGroup;
-			children = (
-				C21F256D2A5FA914001592C8 /* ConstraintMultiplierTarget.swift */,
-				C21F256E2A5FA914001592C8 /* LayoutConstraintItem.swift */,
-				C21F256F2A5FA914001592C8 /* ConstraintDescription.swift */,
-				C21F25702A5FA914001592C8 /* ConstraintMakerPriortizable.swift */,
-				C21F25712A5FA914001592C8 /* ConstraintAttributes.swift */,
-				C21F25722A5FA914001592C8 /* ConstraintViewDSL.swift */,
-				C21F25732A5FA914001592C8 /* ConstraintPriorityTarget.swift */,
-				C21F25742A5FA914001592C8 /* ConstraintInsets.swift */,
-				C21F25752A5FA914001592C8 /* ConstraintMakerFinalizable.swift */,
-				C21F25762A5FA914001592C8 /* ConstraintDSL.swift */,
-				C21F25772A5FA914001592C8 /* ConstraintMakerExtendable.swift */,
-				C21F25782A5FA914001592C8 /* ConstraintPriority.swift */,
-				C21F25792A5FA914001592C8 /* ConstraintInsetTarget.swift */,
-				C21F257A2A5FA914001592C8 /* ConstraintDirectionalInsetTarget.swift */,
-				C21F257B2A5FA914001592C8 /* SnapKit.h */,
-				C21F257C2A5FA914001592C8 /* ConstraintMakerRelatable+Extensions.swift */,
-				C21F257D2A5FA914001592C8 /* ConstraintConfig.swift */,
-				C21F257E2A5FA914001592C8 /* UILayoutSupport+Extensions.swift */,
-				C21F257F2A5FA914001592C8 /* ConstraintView.swift */,
-				C21F25802A5FA914001592C8 /* ConstraintLayoutGuide.swift */,
-				C21F25812A5FA914001592C8 /* ConstraintLayoutSupport.swift */,
-				C21F25822A5FA914001592C8 /* Typealiases.swift */,
-				C21F25832A5FA914001592C8 /* ConstraintConstantTarget.swift */,
-				C21F25842A5FA914001592C8 /* ConstraintOffsetTarget.swift */,
-				C21F25852A5FA914001592C8 /* ConstraintMakerEditable.swift */,
-				C21F25862A5FA914001592C8 /* ConstraintMaker.swift */,
-				C21F25872A5FA914001592C8 /* ConstraintRelation.swift */,
-				C21F25882A5FA914001592C8 /* ConstraintLayoutGuideDSL.swift */,
-				C21F25892A5FA914001592C8 /* ConstraintView+Extensions.swift */,
-				C21F258A2A5FA914001592C8 /* ConstraintItem.swift */,
-				C21F258B2A5FA914001592C8 /* Constraint.swift */,
-				C21F258C2A5FA914001592C8 /* Debugging.swift */,
-				C21F258D2A5FA914001592C8 /* ConstraintRelatableTarget.swift */,
-				C21F258E2A5FA914001592C8 /* LayoutConstraint.swift */,
-				C21F258F2A5FA914001592C8 /* ConstraintLayoutGuide+Extensions.swift */,
-				C21F25902A5FA914001592C8 /* ConstraintDirectionalInsets.swift */,
-				C21F25912A5FA914001592C8 /* ConstraintLayoutSupportDSL.swift */,
-				C21F25922A5FA914001592C8 /* ConstraintMakerRelatable.swift */,
-			);
-			path = SnapKit;
 			sourceTree = "<group>";
 		};
 		CE0CBFDA266DC82800A31068 /* Damage */ = {
@@ -2297,8 +2167,6 @@
 		F9E02E2625D1104D0003CB9C /* Component */ = {
 			isa = PBXGroup;
 			children = (
-				C21F256C2A5FA914001592C8 /* SnapKit */,
-				C21F25622A5FA83A001592C8 /* ZLPhotoBrowser */,
 				F9ABEF8125EE449F00B48D7D /* ImagePickerView.swift */,
 				F92507D425DE553F007D2E57 /* MultilineTextField.swift */,
 				F96D25CF25D397D500A274FF /* iOSDropDown.swift */,
@@ -2591,7 +2459,6 @@
 				F93148B925F1C3EF004E5F7A /* SellerModel.swift in Sources */,
 				F96F539225D0E00400317ED0 /* AboutCarInteractor.swift in Sources */,
 				CE53401E268478B1006D0AC6 /* SearchModelCodeTempleteByCHService.swift in Sources */,
-				C21F25AE2A5FA914001592C8 /* ConstraintView+Extensions.swift in Sources */,
 				F9192E0025F08C1300297E1F /* ReadingQRModels.swift in Sources */,
 				F9D7CD8425CBC9F4003E049B /* SummaryCarWorker.swift in Sources */,
 				F94A048E25DA3A3F00C8EC4C /* ElectronicDeviceCheckModels.swift in Sources */,
@@ -2604,7 +2471,6 @@
 				F957B82625CA495A00B8FB3C /* ItemAllListInteractor.swift in Sources */,
 				F9A7C2A826536F310067D7C5 /* MakeVehicleService.swift in Sources */,
 				CE0CBFE2266DC8B700A31068 /* DamageWorker.swift in Sources */,
-				C21F25B22A5FA914001592C8 /* ConstraintRelatableTarget.swift in Sources */,
 				F957B81025CA3C5600B8FB3C /* InspectionListInteractor.swift in Sources */,
 				F94A047C25DA3A3000C8EC4C /* GaugeCheckPresenter.swift in Sources */,
 				F989FD84265F853D00342895 /* VehicleGetDocumentService.swift in Sources */,
@@ -2627,8 +2493,6 @@
 				F931492F25F76B1D004E5F7A /* ModelCodeWorker.swift in Sources */,
 				F93F2A6325EF5D91003BEB60 /* PhotoCell.swift in Sources */,
 				CE53401C26846CFE006D0AC6 /* SearchModelCodeRequest.swift in Sources */,
-				C21F25A82A5FA914001592C8 /* ConstraintConstantTarget.swift in Sources */,
-				C21F25A92A5FA914001592C8 /* ConstraintOffsetTarget.swift in Sources */,
 				F931490125F71A3D004E5F7A /* UploadWorker.swift in Sources */,
 				F9D7CD5C25CBA984003E049B /* PhotoCarViewController.swift in Sources */,
 				F957B84725CA5BB400B8FB3C /* SearchByWorker.swift in Sources */,
@@ -2647,7 +2511,6 @@
 				F99DB20125C8003F0069F32E /* LandingPageModels.swift in Sources */,
 				F9A5AC1525C90C2D00952FE5 /* PlaceViewController.swift in Sources */,
 				F9D7CD3125CBA51D003E049B /* PickUpCarWorker.swift in Sources */,
-				C21F25A12A5FA914001592C8 /* ConstraintMakerRelatable+Extensions.swift in Sources */,
 				CE53402F26859F13006D0AC6 /* JatoCarModelService.swift in Sources */,
 				F94A047E25DA3A3000C8EC4C /* GaugeCheckRouter.swift in Sources */,
 				CE0CBFE6266DC8B700A31068 /* DamageInteractor.swift in Sources */,
@@ -2660,7 +2523,6 @@
 				F96F539025D0E00400317ED0 /* AboutCarModels.swift in Sources */,
 				CE599CB6268C189E0080C970 /* UpdateModelCodeService.swift in Sources */,
 				F976295A2643E59800E51903 /* BookInPendingListService.swift in Sources */,
-				C21F25952A5FA914001592C8 /* ConstraintDescription.swift in Sources */,
 				F924DDDC2639682F002E4B90 /* InspectionImageDeleteService.swift in Sources */,
 				CEF1BCF2270E948C0079252C /* BookInMotorBikeService.swift in Sources */,
 				F94A041525DA398E00C8EC4C /* BodyCheckInteractor.swift in Sources */,
@@ -2687,7 +2549,6 @@
 				CE20498A26D348E50073A528 /* BookInMotorcycle2ViewController.swift in Sources */,
 				F90BA93626301F2E00D5C3FB /* InspectionUpdateService.swift in Sources */,
 				F9A46FB225CAAADE00D3732E /* DetailWorker.swift in Sources */,
-				C21F25942A5FA914001592C8 /* LayoutConstraintItem.swift in Sources */,
 				F96F537F25D0DFF300317ED0 /* ReceiverCarWorker.swift in Sources */,
 				F957B84B25CA5BB400B8FB3C /* SearchByInteractor.swift in Sources */,
 				CE0CBFD926676C5D00A31068 /* UpdateVehicleService.swift in Sources */,
@@ -2698,22 +2559,18 @@
 				F90BAA542632842900D5C3FB /* GradeDetailService.swift in Sources */,
 				F924DE44263A7A03002E4B90 /* ImageUploadService.swift in Sources */,
 				F94A043225DA39D800C8EC4C /* UnderCarCheckWorker.swift in Sources */,
-				C21F25972A5FA914001592C8 /* ConstraintAttributes.swift in Sources */,
 				F957B82425CA495A00B8FB3C /* ItemAllListModels.swift in Sources */,
-				C21F25982A5FA914001592C8 /* ConstraintViewDSL.swift in Sources */,
 				F957B80D25CA3C5600B8FB3C /* InspectionListRouter.swift in Sources */,
 				F94A046225DA3A1300C8EC4C /* BrakeCheckViewController.swift in Sources */,
 				F957B82525CA495A00B8FB3C /* ItemAllListViewController.swift in Sources */,
 				F931493125F76B1D004E5F7A /* ModelCodeModels.swift in Sources */,
 				F94A046D25DA3A2100C8EC4C /* AirCheckPresenter.swift in Sources */,
-				C21F25992A5FA914001592C8 /* ConstraintPriorityTarget.swift in Sources */,
 				CE95D5BA26F8444300A1538F /* MotorcycleCheckPresenter.swift in Sources */,
 				F96F53AF25D0E02700317ED0 /* SparePartsCarViewController.swift in Sources */,
 				CE5340062684516D006D0AC6 /* DriveService.swift in Sources */,
 				F957B82225CA495A00B8FB3C /* ItemAllListWorker.swift in Sources */,
 				F94A043125DA39D800C8EC4C /* UnderCarCheckPresenter.swift in Sources */,
 				F96F53BF25D0E03400317ED0 /* CabinCarInteractor.swift in Sources */,
-				C21F25AB2A5FA914001592C8 /* ConstraintMaker.swift in Sources */,
 				CE534022268491A0006D0AC6 /* CreateModelCodeRequest.swift in Sources */,
 				F96F539C25D0E01900317ED0 /* ExternalCarPresenter.swift in Sources */,
 				CE20497026BA4A510073A528 /* BookInMotorcycle1ViewController.swift in Sources */,
@@ -2723,11 +2580,9 @@
 				F9A5AC1425C90C2D00952FE5 /* PlaceModels.swift in Sources */,
 				F94A042525DA39C500C8EC4C /* EngineCheckModels.swift in Sources */,
 				F931497325F86F2F004E5F7A /* ModelCarService.swift in Sources */,
-				C21F25B12A5FA914001592C8 /* Debugging.swift in Sources */,
 				CE0CBFE5266DC8B700A31068 /* DamageViewController.swift in Sources */,
 				F957B83525CA49A100B8FB3C /* ItemPendingListViewController.swift in Sources */,
 				CEB11A652682E79000CAEE1C /* CreateModelCodeModels.swift in Sources */,
-				C21F25AA2A5FA914001592C8 /* ConstraintMakerEditable.swift in Sources */,
 				F924DDD726396772002E4B90 /* InspectionImageDeleteRequest.swift in Sources */,
 				F91445A925C7FB8100B09FB6 /* LoginPresenter.swift in Sources */,
 				F9D7CD4525CBA7FE003E049B /* CheckCarRouter.swift in Sources */,
@@ -2739,7 +2594,6 @@
 				F9D7CD3325CBA51D003E049B /* PickUpCarModels.swift in Sources */,
 				F9E02E3E25D134EE0003CB9C /* SignatureRouter.swift in Sources */,
 				F957B83425CA49A100B8FB3C /* ItemPendingListModels.swift in Sources */,
-				C21F25AC2A5FA914001592C8 /* ConstraintRelation.swift in Sources */,
 				F989FD8A265F8C7900342895 /* VehicleDeleteDocumentRequest.swift in Sources */,
 				F9D7CD8325CBC9F4003E049B /* SummaryCarPresenter.swift in Sources */,
 				F9DBA4672600BE4E00EE124F /* StorageLocationModel.swift in Sources */,
@@ -2750,7 +2604,6 @@
 				F9A46FB425CAAADE00D3732E /* DetailModels.swift in Sources */,
 				CE53401826846932006D0AC6 /* ModelCodeTemplateModel.swift in Sources */,
 				F931490025F71A3D004E5F7A /* UploadPresenter.swift in Sources */,
-				C21F25932A5FA914001592C8 /* ConstraintMultiplierTarget.swift in Sources */,
 				CE534013268458C6006D0AC6 /* FuelTypeModel.swift in Sources */,
 				F931490225F71A3D004E5F7A /* UploadRouter.swift in Sources */,
 				F96D25E025D3A48800A274FF /* DataController.swift in Sources */,
@@ -2767,20 +2620,16 @@
 				CE20496F26BA4A510073A528 /* BookInMotorcycle1Models.swift in Sources */,
 				F9D7CD3025CBA51D003E049B /* PickUpCarPresenter.swift in Sources */,
 				F957B84A25CA5BB400B8FB3C /* SearchByViewController.swift in Sources */,
-				C21F25B42A5FA914001592C8 /* ConstraintLayoutGuide+Extensions.swift in Sources */,
 				F9192DFD25F08C1300297E1F /* ReadingQRPresenter.swift in Sources */,
 				F94A044025DA39E900C8EC4C /* GearCheckPresenter.swift in Sources */,
 				F914459125C7FA5500B09FB6 /* Router.swift in Sources */,
 				CE20498926D348E50073A528 /* BookInMotorcycle2Models.swift in Sources */,
 				F99583A625DF9A77005DD029 /* PDFPreviewModels.swift in Sources */,
-				C21F259D2A5FA914001592C8 /* ConstraintMakerExtendable.swift in Sources */,
 				F91EC085261DA66200E9D9F9 /* BookInSearchRequest.swift in Sources */,
 				F94A041325DA398E00C8EC4C /* BodyCheckModels.swift in Sources */,
 				CE0CBFE1266DC8B700A31068 /* DamagePresenter.swift in Sources */,
-				C21F25AD2A5FA914001592C8 /* ConstraintLayoutGuideDSL.swift in Sources */,
 				F931494025F777EE004E5F7A /* ModelCodeNoItemCell.swift in Sources */,
 				F99E9DB426563F4A00CF6435 /* MakeVehicleResponse.swift in Sources */,
-				C21F25AF2A5FA914001592C8 /* ConstraintItem.swift in Sources */,
 				CEF1BCFD2710318F0079252C /* UpdateInspecMotorBikeService.swift in Sources */,
 				F9BDF83725CBE26700321289 /* UINavigationController+extension.swift in Sources */,
 				F94A042625DA39C500C8EC4C /* EngineCheckViewController.swift in Sources */,
@@ -2814,13 +2663,11 @@
 				F9D7CD5B25CBA984003E049B /* PhotoCarModels.swift in Sources */,
 				F931498725F89A0B004E5F7A /* SearchCodeRequest.swift in Sources */,
 				F99E9DBA265B5C6100CF6435 /* VehicleDocumentRequest.swift in Sources */,
-				C21F25A72A5FA914001592C8 /* Typealiases.swift in Sources */,
 				F931497825F86FA9004E5F7A /* ModelCarRequest.swift in Sources */,
 				F94A041025DA398E00C8EC4C /* BodyCheckPresenter.swift in Sources */,
 				F94A045F25DA3A1300C8EC4C /* BrakeCheckWorker.swift in Sources */,
 				F931496925F86E44004E5F7A /* ModelCarModel.swift in Sources */,
 				CE20498826D348E50073A528 /* BookInMotorcycle2Router.swift in Sources */,
-				C21F25A32A5FA914001592C8 /* UILayoutSupport+Extensions.swift in Sources */,
 				F957B80F25CA3C5600B8FB3C /* InspectionListViewController.swift in Sources */,
 				F9AAF984261AA7A800A88C14 /* BookInListService.swift in Sources */,
 				F9D7CD3425CBA51D003E049B /* PickUpCarViewController.swift in Sources */,
@@ -2828,7 +2675,6 @@
 				F91445AB25C7FB8100B09FB6 /* LoginRouter.swift in Sources */,
 				F9A7C29E26521CFE0067D7C5 /* IMatBookInWorker.swift in Sources */,
 				F9E02E4025D134EE0003CB9C /* SignatureViewController.swift in Sources */,
-				C21F25B52A5FA914001592C8 /* ConstraintDirectionalInsets.swift in Sources */,
 				F99DB24E25C8F26A0069F32E /* SelectInspectionWorker.swift in Sources */,
 				F96111862611813B0083A191 /* ReceiverUpdateService.swift in Sources */,
 				F96F53CD25D0E04100317ED0 /* EngineCarViewController.swift in Sources */,
@@ -2838,10 +2684,8 @@
 				CE20497C26BA8C020073A528 /* ImageViewerModels.swift in Sources */,
 				F965DF50260C28FB00CE91E7 /* CabinType.swift in Sources */,
 				CE0CBFEB267099EA00A31068 /* PlantResponse.swift in Sources */,
-				C21F25A22A5FA914001592C8 /* ConstraintConfig.swift in Sources */,
 				CEB11A54267AE52700CAEE1C /* IMatQRCodePDFWorker.swift in Sources */,
 				F94A049025DA3A3F00C8EC4C /* ElectronicDeviceCheckInteractor.swift in Sources */,
-				C21F259A2A5FA914001592C8 /* ConstraintInsets.swift in Sources */,
 				F9D7CD5A25CBA984003E049B /* PhotoCarRouter.swift in Sources */,
 				CE20498626D348E50073A528 /* BookInMotorcycle2Presenter.swift in Sources */,
 				F99583A525DF9A77005DD029 /* PDFPreviewRouter.swift in Sources */,
@@ -2873,13 +2717,11 @@
 				F96F537E25D0DFF300317ED0 /* ReceiverCarPresenter.swift in Sources */,
 				F9D7CD8825CBC9F4003E049B /* SummaryCarInteractor.swift in Sources */,
 				F94A048B25DA3A3F00C8EC4C /* ElectronicDeviceCheckPresenter.swift in Sources */,
-				C21F25962A5FA914001592C8 /* ConstraintMakerPriortizable.swift in Sources */,
 				F9DBA3EC25FEF88400EE124F /* StandradMakeModel.swift in Sources */,
 				F94A046125DA3A1300C8EC4C /* BrakeCheckModels.swift in Sources */,
 				CE53403326859F87006D0AC6 /* JatoVaraintsService.swift in Sources */,
 				F957B82125CA495A00B8FB3C /* ItemAllListPresenter.swift in Sources */,
 				F96F53A125D0E01900317ED0 /* ExternalCarInteractor.swift in Sources */,
-				C21F259B2A5FA914001592C8 /* ConstraintMakerFinalizable.swift in Sources */,
 				F94A046E25DA3A2100C8EC4C /* AirCheckWorker.swift in Sources */,
 				F931493225F76B1D004E5F7A /* ModelCodeViewController.swift in Sources */,
 				F96F53CB25D0E04100317ED0 /* EngineCarRouter.swift in Sources */,
@@ -2894,7 +2736,6 @@
 				F9A5AC1125C90C2D00952FE5 /* PlacePresenter.swift in Sources */,
 				F9A5AC1B25C9283100952FE5 /* ProvinceDataSource.swift in Sources */,
 				F986435525FA1509004EAB2F /* GradeCarWorker.swift in Sources */,
-				C21F25B72A5FA914001592C8 /* ConstraintMakerRelatable.swift in Sources */,
 				F957B81525CA3E8B00B8FB3C /* SegmentControlCustom.swift in Sources */,
 				F931496125F86DB1004E5F7A /* MakeCarModel.swift in Sources */,
 				F96F53BD25D0E03400317ED0 /* CabinCarModels.swift in Sources */,
@@ -2905,7 +2746,6 @@
 				F99DB24D25C8F26A0069F32E /* SelectInspectionPresenter.swift in Sources */,
 				F965DF4B260C28FB00CE91E7 /* VehicleType.swift in Sources */,
 				CE95D5BB26F8444300A1538F /* MotorcycleCheckWorker.swift in Sources */,
-				C21F25A02A5FA914001592C8 /* ConstraintDirectionalInsetTarget.swift in Sources */,
 				F931494A25F77D94004E5F7A /* ModelCodeCell.swift in Sources */,
 				F9DBA3F425FEF93900EE124F /* StandardMakeService.swift in Sources */,
 				F99583A825DF9A77005DD029 /* PDFPreviewInteractor.swift in Sources */,
@@ -2920,8 +2760,6 @@
 				F96F53AE25D0E02700317ED0 /* SparePartsCarModels.swift in Sources */,
 				F9A7C2A526536C480067D7C5 /* VehicleModelRequest.swift in Sources */,
 				F96F539F25D0E01900317ED0 /* ExternalCarModels.swift in Sources */,
-				C21F259E2A5FA914001592C8 /* ConstraintPriority.swift in Sources */,
-				C21F25B62A5FA914001592C8 /* ConstraintLayoutSupportDSL.swift in Sources */,
 				F99DB22D25C80ED80069F32E /* MainNavigationController.swift in Sources */,
 				F96F53AC25D0E02700317ED0 /* SparePartsCarWorker.swift in Sources */,
 				F9DBA40225FF057500EE124F /* StandardColorService.swift in Sources */,
@@ -2933,7 +2771,6 @@
 				CEB11A672682E79000CAEE1C /* CreateModelCodeInteractor.swift in Sources */,
 				F965DF3F260C231F00CE91E7 /* ReceiverModelRequest.swift in Sources */,
 				F94A048125DA3A3000C8EC4C /* GaugeCheckInteractor.swift in Sources */,
-				C21F259C2A5FA914001592C8 /* ConstraintDSL.swift in Sources */,
 				CEF1BCF4270EDBAD0079252C /* UpdateBookInMotorBikeService.swift in Sources */,
 				F97CD1992623F7B7003CED13 /* BaseResponse.swift in Sources */,
 				F9DBA43925FF649C00EE124F /* BodyCarService.swift in Sources */,
@@ -2957,30 +2794,25 @@
 				F9075E7925DCB3FE004D4765 /* DateTimeViewController.swift in Sources */,
 				F931490425F71A3D004E5F7A /* UploadViewController.swift in Sources */,
 				F9BC5E542617171500CC0ED8 /* StandardColorRequest.swift in Sources */,
-				C21F25642A5FA85F001592C8 /* ImageStickerContainerView.swift in Sources */,
 				F94A042425DA39C500C8EC4C /* EngineCheckRouter.swift in Sources */,
 				CE53400E268452DD006D0AC6 /* FuelDeliveryModel.swift in Sources */,
 				F9E02E3F25D134EE0003CB9C /* SignatureModels.swift in Sources */,
 				CE20497926BA8C020073A528 /* ImageViewerPresenter.swift in Sources */,
 				F91445AA25C7FB8100B09FB6 /* LoginWorker.swift in Sources */,
 				CE20497126BA4A510073A528 /* BookInMotorcycle1Interactor.swift in Sources */,
-				C21F25B02A5FA914001592C8 /* Constraint.swift in Sources */,
 				F965DF51260C28FB00CE91E7 /* EngineType.swift in Sources */,
 				F9D7CD8625CBC9F4003E049B /* SummaryCarModels.swift in Sources */,
 				F957B80E25CA3C5600B8FB3C /* InspectionListModels.swift in Sources */,
 				CE53400426844FC4006D0AC6 /* DriveModel.swift in Sources */,
 				F96D25D025D397D500A274FF /* iOSDropDown.swift in Sources */,
-				C21F259F2A5FA914001592C8 /* ConstraintInsetTarget.swift in Sources */,
 				F90BAA7526328C6500D5C3FB /* GradeRequest.swift in Sources */,
 				CE0CBFD72664CE8B00A31068 /* UILabel+extension.swift in Sources */,
 				F96F53CC25D0E04100317ED0 /* EngineCarModels.swift in Sources */,
 				F965DF4E260C28FB00CE91E7 /* SpareType.swift in Sources */,
 				F97629542643D2FD00E51903 /* KeyChainService.swift in Sources */,
 				F94A047025DA3A2100C8EC4C /* AirCheckModels.swift in Sources */,
-				C21F25A42A5FA914001592C8 /* ConstraintView.swift in Sources */,
 				F99583A325DF9A77005DD029 /* PDFPreviewPresenter.swift in Sources */,
 				F96F53A025D0E01900317ED0 /* ExternalCarViewController.swift in Sources */,
-				C21F25B32A5FA914001592C8 /* LayoutConstraint.swift in Sources */,
 				F93F2A7A25EF8626003BEB60 /* LeftAlignedCollectionViewFlowLayout.swift in Sources */,
 				F9075E7525DCB3FE004D4765 /* DateTimePresenter.swift in Sources */,
 				F94A045225DA3A0300C8EC4C /* SteerWheelCheckModels.swift in Sources */,
@@ -2999,7 +2831,6 @@
 				F96F538125D0DFF300317ED0 /* ReceiverCarModels.swift in Sources */,
 				F96F538025D0DFF300317ED0 /* ReceiverCarRouter.swift in Sources */,
 				F94A041225DA398E00C8EC4C /* BodyCheckRouter.swift in Sources */,
-				C21F25A62A5FA914001592C8 /* ConstraintLayoutSupport.swift in Sources */,
 				F924DD0526390C0B002E4B90 /* InspectionImageUploadService.swift in Sources */,
 				CE20497A26BA8C020073A528 /* ImageViewerWorker.swift in Sources */,
 				F961118B2611859F0083A191 /* PickUpCarPDFWorker.swift in Sources */,
@@ -3009,7 +2840,6 @@
 				F957B83225CA49A100B8FB3C /* ItemPendingListWorker.swift in Sources */,
 				CEF1BCFB270FFE7E0079252C /* InspectionMotorBikeDetailService.swift in Sources */,
 				F957B83625CA49A100B8FB3C /* ItemPendingListInteractor.swift in Sources */,
-				C21F25A52A5FA914001592C8 /* ConstraintLayoutGuide.swift in Sources */,
 				F9A46FB525CAAADE00D3732E /* DetailViewController.swift in Sources */,
 				F94924CE2615B5B000E60E17 /* SellerByCodeRequest.swift in Sources */,
 				F986435625FA1509004EAB2F /* GradeCarRouter.swift in Sources */,

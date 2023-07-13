@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 import PhotosUI
-
+import ZLPhotoBrowser
 
 protocol ImagePickerPresenter : AnyObject {
     func didSelectCallback()
@@ -22,11 +22,15 @@ open class ImagePicker: NSObject {
     private weak var presentationController: UIViewController?
     
     weak var delegateImage : ImagePickerPresenter?
-
     
     // Create configuration for photo picker
     var configuration = PHPickerConfiguration()
     
+    // ZLPhotoBrowser
+    var selectedImages: [UIImage] = []
+    let config = ZLPhotoConfiguration.default()
+    let uiConfig = ZLPhotoUIConfiguration.default()
+
     deinit {
         print("🔸🐶 deinit ImagePicker ")
     }
@@ -49,6 +53,40 @@ open class ImagePicker: NSObject {
         // For unlimited selections use 0. Default is 1
         configuration.selectionLimit = 0
        
+        configZLPhotoBrowser()
+    }
+    
+    private func configZLPhotoBrowser() {
+        
+        let minItemSpacing: CGFloat = 2
+        let minLineSpacing: CGFloat = 2
+        
+        uiConfig
+//            .navBarColor(.white)
+//            .navViewBlurEffectOfAlbumList(nil)
+//            .indexLabelBgColor(.black)
+//            .indexLabelTextColor(.white)
+            .minimumInteritemSpacing(minItemSpacing)
+            .minimumLineSpacing(minLineSpacing)
+            .columnCountBlock { Int(ceil($0 / (428.0 / 4))) }
+        
+        if uiConfig.languageType == .arabic {
+            UIView.appearance().semanticContentAttribute = .forceRightToLeft
+        } else {
+            UIView.appearance().semanticContentAttribute = .unspecified
+        }
+        
+        // Custom image editor
+        config
+            .editImageConfiguration
+            .imageStickerContainerView(ImageStickerContainerView())
+            .canRedo(true)
+        
+        config.editImageConfiguration.tools.removeAll { $0 == .clip }
+        config.editImageConfiguration.tools.removeAll { $0 == .imageSticker }
+        config.editImageConfiguration.tools.removeAll { $0 == .mosaic }
+        config.editImageConfiguration.tools.removeAll { $0 == .filter }
+        config.editImageConfiguration.tools.removeAll { $0 == .adjust }
     }
     
     private func action(for type: UIImagePickerController.SourceType, title: String) -> UIAlertAction? {
@@ -80,8 +118,58 @@ open class ImagePicker: NSObject {
             // Set the delegate
             picker.delegate = self
             // Present the picker
-            self.presentationController?.present(picker, animated: true)
+//            self.presentationController?.present(picker, animated: true)
+            self.showImagePicker(false)
         }
+    }
+    
+    func showImagePicker(_ preview: Bool) {
+        
+        config.canSelectAsset { _ in
+            true
+        }
+        
+        config.noAuthorityCallback { type in
+            switch type {
+            case .library:
+                debugPrint("No library authority")
+            case .camera:
+                debugPrint("No camera authority")
+            case .microphone:
+                debugPrint("No microphone authority")
+            }
+        }
+        
+        /// Using this init method, you can continue editing the selected photo
+        let ac = ZLPhotoPreviewSheet(results: nil)
+        
+        ac.selectImageBlock = { [weak self] results, isOriginal in
+            guard let `self` = self else { return }
+            self.selectedImages = results.map { $0.image }
+            debugPrint("images: \(self.selectedImages)")
+            debugPrint("isEdited: \(results.map { $0.isEdited })")
+            debugPrint("isOriginal: \(isOriginal)")
+            
+            self.selectedImages.forEach { (image) in
+                self.delegateImage?.didSelectCallback()
+                self.delegateImage?.pickImageCallback(image: image , url: URL(string: "https://inspecfakeurl.com/image/\(Date().DateToServerFormatString()).jpeg"))
+            }
+        }
+        ac.cancelBlock = {
+            debugPrint("cancel select")
+        }
+        ac.selectImageRequestErrorBlock = { errorAssets, errorIndexs in
+            debugPrint("fetch error assets: \(errorAssets), error indexs: \(errorIndexs)")
+        }
+        
+        if let vc = self.presentationController {
+            if preview {
+                ac.showPreview(animate: true, sender: vc)
+            } else {
+                ac.showPhotoLibrary(sender: vc)
+            }
+        }
+ 
     }
     
     public func present(from sourceView: UIView) {

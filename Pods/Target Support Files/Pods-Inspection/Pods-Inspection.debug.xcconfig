@@ -1,11 +1,11 @@
 ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES
 CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = NO
-FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/Alamofire" "${PODS_CONFIGURATION_BUILD_DIR}/KeychainAccess" "${PODS_CONFIGURATION_BUILD_DIR}/ObjectMapper" "${PODS_CONFIGURATION_BUILD_DIR}/RadioGroup" "${PODS_CONFIGURATION_BUILD_DIR}/SDWebImage" "${PODS_CONFIGURATION_BUILD_DIR}/SweeterSwift"
+FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/Alamofire" "${PODS_CONFIGURATION_BUILD_DIR}/KeychainAccess" "${PODS_CONFIGURATION_BUILD_DIR}/ObjectMapper" "${PODS_CONFIGURATION_BUILD_DIR}/RadioGroup" "${PODS_CONFIGURATION_BUILD_DIR}/SDWebImage" "${PODS_CONFIGURATION_BUILD_DIR}/SweeterSwift" "${PODS_CONFIGURATION_BUILD_DIR}/ZLPhotoBrowser"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/Alamofire/Alamofire.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/KeychainAccess/KeychainAccess.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/ObjectMapper/ObjectMapper.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/RadioGroup/RadioGroup.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/SDWebImage/SDWebImage.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/SweeterSwift/SweeterSwift.framework/Headers"
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/Alamofire/Alamofire.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/KeychainAccess/KeychainAccess.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/ObjectMapper/ObjectMapper.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/RadioGroup/RadioGroup.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/SDWebImage/SDWebImage.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/SweeterSwift/SweeterSwift.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/ZLPhotoBrowser/ZLPhotoBrowser.framework/Headers"
 LD_RUNPATH_SEARCH_PATHS = $(inherited) /usr/lib/swift '@executable_path/Frameworks' '@loader_path/Frameworks'
 LIBRARY_SEARCH_PATHS = $(inherited) "${DT_TOOLCHAIN_DIR}/usr/lib/swift/${PLATFORM_NAME}" /usr/lib/swift
-OTHER_LDFLAGS = $(inherited) -framework "Alamofire" -framework "CFNetwork" -framework "ImageIO" -framework "KeychainAccess" -framework "ObjectMapper" -framework "RadioGroup" -framework "SDWebImage" -framework "SweeterSwift" -weak_framework "SwiftUI"
+OTHER_LDFLAGS = $(inherited) -framework "AVFoundation" -framework "Accelerate" -framework "Alamofire" -framework "CFNetwork" -framework "CoreMotion" -framework "ImageIO" -framework "KeychainAccess" -framework "ObjectMapper" -framework "Photos" -framework "PhotosUI" -framework "RadioGroup" -framework "SDWebImage" -framework "SweeterSwift" -framework "UIKit" -framework "ZLPhotoBrowser" -weak_framework "SwiftUI"
 OTHER_SWIFT_FLAGS = $(inherited) -D COCOAPODS
 PODS_BUILD_DIR = ${BUILD_DIR}
 PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)

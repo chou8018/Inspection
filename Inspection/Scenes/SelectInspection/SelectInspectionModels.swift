@@ -32,6 +32,8 @@ enum SelectInspection
         var storageList : [StorageLocationModel]?
         var plantLocationList : [PlantResponse]?
         var error : KErrorMessage?
+        var locationName : String?
+
     }
     struct ViewModel
     {

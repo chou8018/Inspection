@@ -4392,7 +4392,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="1080" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" directionalLockEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kBq-Uq-YeP">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kBq-Uq-YeP">
                                 <rect key="frame" x="0.0" y="20" width="1080" height="980"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="amn-Ta-9IV">
@@ -4807,7 +4807,7 @@
                                             </stackView>
                                         </subviews>
                                     </stackView>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LRr-be-nEx" customClass="RadioGroup" customModule="RadioGroup">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LRr-be-nEx" customClass="RadioGroup" customModule="RadioGroup">
                                         <rect key="frame" x="280" y="57" width="418" height="46"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" name="primary_color"/>
@@ -4836,7 +4836,7 @@
                                             <action selector="overallValueChange:" destination="vwM-Bc-ykw" eventType="valueChanged" id="8iy-oG-hgl"/>
                                         </connections>
                                     </view>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ejn-rZ-nz9" customClass="RadioGroup" customModule="RadioGroup">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ejn-rZ-nz9" customClass="RadioGroup" customModule="RadioGroup">
                                         <rect key="frame" x="210" y="138" width="418" height="46"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" name="primary_color"/>
@@ -8941,6 +8941,9 @@
         <designable name="L9P-at-vkJ">
             <size key="intrinsicContentSize" width="36.5" height="25.5"/>
         </designable>
+        <designable name="LRr-be-nEx">
+            <size key="intrinsicContentSize" width="418" height="46"/>
+        </designable>
         <designable name="MHF-du-Yhr">
             <size key="intrinsicContentSize" width="65" height="25.5"/>
         </designable>
@@ -9105,6 +9108,9 @@
         </designable>
         <designable name="ejd-cw-J9N">
             <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="ejn-rZ-nz9">
+            <size key="intrinsicContentSize" width="418" height="46"/>
         </designable>
         <designable name="emy-aI-Uid">
             <size key="intrinsicContentSize" width="30" height="30"/>

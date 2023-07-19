@@ -65,6 +65,7 @@ class SelectInspectionInteractor: SelectInspectionBusinessLogic, SelectInspectio
     func fetchLocation(request: SelectInspection.Default.Request) {
         worker = SelectInspectionWorker()
         worker?.fetchLocation(completion: { [weak self] (response) in
+            
             self?.presenter?.presentFetchLocation(response: response)
             self?.locationList = response.storageList
             
@@ -80,9 +81,7 @@ class SelectInspectionInteractor: SelectInspectionBusinessLogic, SelectInspectio
             self?.mappingLocationName()
         })
     }
-    
 
-    
     func fetchPlantLocation(request: SelectInspection.Default.Request) {
         workerReceiver =  ReceiverCarWorker()
         workerReceiver?.getPlantLocation(completion: { [weak self] response in
@@ -105,11 +104,6 @@ class SelectInspectionInteractor: SelectInspectionBusinessLogic, SelectInspectio
                 
                 self?.mappingLocationName()
             }
-            
-            
-            
-            
-           
         })
     }
     
@@ -117,8 +111,9 @@ class SelectInspectionInteractor: SelectInspectionBusinessLogic, SelectInspectio
     
     func setLocationName(request: SelectInspection.Default.Request) {
         self.locationName = request.locationName
-        
-        mappingLocationName()
+        let response = SelectInspection.Default.Response(locationName:locationName)
+        presenter?.presentTextDisplay(response: response)
+//        mappingLocationName()
     }
 
     fileprivate func mappingLocationName(){
@@ -173,13 +168,14 @@ class SelectInspectionInteractor: SelectInspectionBusinessLogic, SelectInspectio
             DataController.shared.receiverCarModel.receiverPlace = storeItem.location
             DataController.shared.receiverCarModel.storePlace = storeItem.location
             
+            
             let response = SelectInspection.Default.Response(selectReceiveName: plantItem,
                                                              selectStoreName: storeItem)
             presenter?.presentTextDisplay(response: response)
+       
         }else{
             print("NOT MATCH")
         }
-        
         
     }
 }

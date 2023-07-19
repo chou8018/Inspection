@@ -390,6 +390,7 @@ extension PickUpCarWorker {
                                          isTyre: model.isTire,
                                          tyreBrand: model.brandTire,
                                          tyreQuality: model.tireQuality?.toInt(),
+                                         isSunroof: model.isSunroof,
                                          damageDesc: model.damageDetail)
         
         //MARK: SpareType Model

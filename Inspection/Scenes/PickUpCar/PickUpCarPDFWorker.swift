@@ -634,6 +634,16 @@ class PickUpCarPDFWorker {
                 
                 let underMagWheel = attrMagWheelPDFSizeRect.maxY + margin
                 
+                //MARK: Sunroof
+                let sunroofValueText = receiverCarModel.isSunroof ?? false ? "มี" : "ไม่มี"
+                let sunroofText = "ซันรูฟ  \(sunroofValueText)"
+                let attrSunroofPDF = weakself.getTitle(mainString: sunroofText, value: sunroofValueText)
+                let attrSunroofPDFSizeRect = weakself.drawString(attrString: attrSunroofPDF,
+                                                        x: margin + 10,
+                                                        y: underMagWheel)
+                let underSunroof = attrSunroofPDFSizeRect.maxY + margin
+
+                
                 //MARK: Damage Detail
                 let damageDetailValue = receiverCarModel.damageDetail?
                                         .pdfValidateString
@@ -642,7 +652,7 @@ class PickUpCarPDFWorker {
                 let attrDamageDetailPDF = weakself.getTitle(mainString: damageDetailText, value: damageDetailValue)
                 let attrDamageDetailPDFSizeRect = weakself.drawString(attrString: attrDamageDetailPDF,
                                                              x: margin + 10,
-                                                             y: underMagWheel)
+                                                             y: underSunroof)
                 
                 
                 let underDamageDetail = attrDamageDetailPDFSizeRect.maxY + margin

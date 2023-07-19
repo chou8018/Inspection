@@ -4396,7 +4396,7 @@
                                 <rect key="frame" x="0.0" y="20" width="1080" height="980"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="amn-Ta-9IV">
-                                        <rect key="frame" x="50" y="50" width="980" height="686"/>
+                                        <rect key="frame" x="50" y="50" width="980" height="767"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DMt-fs-Ie4">
                                                 <rect key="frame" x="0.0" y="0.0" width="980" height="60"/>
@@ -4758,8 +4758,40 @@
                                                     <constraint firstAttribute="height" constant="1" id="mae-Kr-Wnm"/>
                                                 </constraints>
                                             </view>
+                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="WJo-Ag-k7r">
+                                                <rect key="frame" x="0.0" y="486" width="980" height="60"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W9D-7M-NfK" customClass="CheckBoxUIButton" customModule="Inspection" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="10" width="40" height="40"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="W9D-7M-NfK" secondAttribute="height" multiplier="1:1" id="DKd-9a-kUv"/>
+                                                            <constraint firstAttribute="height" constant="40" id="X2p-Mp-H9r"/>
+                                                        </constraints>
+                                                        <state key="normal" backgroundImage="icon-check-outline"/>
+                                                        <connections>
+                                                            <action selector="sumroofTapped:" destination="vwM-Bc-ykw" eventType="touchUpInside" id="gXE-cj-zb1"/>
+                                                        </connections>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="ซันรูฟ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cWk-4S-hvK">
+                                                        <rect key="frame" x="60" y="18" width="920" height="24"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                        <color key="textColor" name="primary_color"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="feu-48-IKc"/>
+                                                </constraints>
+                                            </stackView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wNs-Uy-rDi">
+                                                <rect key="frame" x="0.0" y="556" width="980" height="1"/>
+                                                <color key="backgroundColor" name="gallery"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="1" id="8g8-Hf-XEj"/>
+                                                </constraints>
+                                            </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="JDx-Us-FPi">
-                                                <rect key="frame" x="0.0" y="486" width="980" height="200"/>
+                                                <rect key="frame" x="0.0" y="567" width="980" height="200"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="รายละเอียดร่องรอยความเสียหาย" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wak-L0-uuJ">
                                                         <rect key="frame" x="0.0" y="0.0" width="980" height="24"/>
@@ -4899,6 +4931,7 @@
                         <outlet property="qualityOverallRadio" destination="LRr-be-nEx" id="7xU-A4-HLK"/>
                         <outlet property="scrollView" destination="kBq-Uq-YeP" id="CIe-UO-aUA"/>
                         <outlet property="spoilerCheckBox" destination="g0n-N0-Dv6" id="LWc-x8-xLM"/>
+                        <outlet property="sunroofCheckBox" destination="W9D-7M-NfK" id="Gx8-kZ-Yuu"/>
                         <outlet property="tireCheckBox" destination="Jte-ao-jEH" id="cF3-eJ-scu"/>
                         <outlet property="tireQualityTextField" destination="FiI-LJ-DD7" id="IcF-YN-qZD"/>
                         <outlet property="tireTextField" destination="zW7-dt-gxi" id="fiv-C6-EUK"/>
@@ -9021,6 +9054,9 @@
         </designable>
         <designable name="Vnz-Rb-3Cj">
             <size key="intrinsicContentSize" width="56" height="25.5"/>
+        </designable>
+        <designable name="W9D-7M-NfK">
+            <size key="intrinsicContentSize" width="30" height="30"/>
         </designable>
         <designable name="WTE-II-WmR">
             <size key="intrinsicContentSize" width="56" height="25.5"/>

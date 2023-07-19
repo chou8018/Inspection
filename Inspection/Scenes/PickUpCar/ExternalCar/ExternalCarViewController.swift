@@ -93,7 +93,7 @@ class ExternalCarViewController: UIViewController, ExternalCarDisplayLogic
     @IBOutlet weak var magWheelCheckBox: CheckBoxUIButton!
     @IBOutlet weak var normalWheelCheckBox: CheckBoxUIButton!
     @IBOutlet weak var tireCheckBox: CheckBoxUIButton!
-    
+    @IBOutlet weak var sunroofCheckBox: CheckBoxUIButton!
     
     @IBOutlet weak var magWheelTextField: DropDown!
     @IBOutlet weak var normalWheelTextField: DropDown!
@@ -101,9 +101,6 @@ class ExternalCarViewController: UIViewController, ExternalCarDisplayLogic
     @IBOutlet weak var tireTextField: UITextField!
     @IBOutlet weak var tireQualityTextField: UITextField!
     @IBOutlet weak var damageDetailTextField: MultilineTextField!
-    
-    
-    
     
     func doSomething()
   {
@@ -281,6 +278,14 @@ class ExternalCarViewController: UIViewController, ExternalCarDisplayLogic
             
         }
     }
+    
+    @IBAction func sumroofTapped(_ sender: Any) {
+        sunroofCheckBox.toggle { check in
+            DataController.shared.receiverCarModel.isSunroof = check
+            
+        }
+    }
+    
     @IBAction func magWheelTapped(_ sender: Any) {
         magWheelCheckBox.toggle { [weak self] check in
             if !check {
@@ -345,6 +350,7 @@ class ExternalCarViewController: UIViewController, ExternalCarDisplayLogic
         qualityOverallRadio.selectedIndex = getRadioIndexByValue(from: gradeOverallValue, value: model.externalOverall)
         
         spoilerCheckBox.check = model.isSpoiler ?? false
+        sunroofCheckBox.check = model.isSunroof ?? false
         magWheelCheckBox.check = model.isMagWheel
         normalWheelCheckBox.check = model.isNormalWheel
         tireCheckBox.check = model.isTire ?? false
@@ -363,6 +369,7 @@ class ExternalCarViewController: UIViewController, ExternalCarDisplayLogic
         qualityOverallRadio.setEnableView(isEnable: isEnabled)
         
         spoilerCheckBox.setEnableView(isEnable: isEnabled)
+        sunroofCheckBox.setEnableView(isEnable: isEnabled)
         magWheelCheckBox.setEnableView(isEnable: isEnabled)
         normalWheelCheckBox.setEnableView(isEnable: isEnabled)
         tireCheckBox.setEnableView(isEnable: isEnabled)

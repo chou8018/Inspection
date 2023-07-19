@@ -57,7 +57,7 @@ class PhotoCarInteractor: PhotoCarBusinessLogic, PhotoCarDataStore
     var hasSection:[(String,Int)] = []
     var hasCheckSection:[String:Bool] = [:]
     let sn = ["Front_B", "Engine_B", "Plate_B", "Chassis_B", "Interior_B",
-              "Tray_B", "Side_B", "Back_B", "Gas_B", "Asset", "Damage","OA_Document"]
+              "Tray_B", "Side_B", "Back_B", "Gas_B", "Asset", "Damage","Car_Roof","OA_Document"]
     
     func getSectionNumbe(_ name:String) -> Int {
         return sn.firstIndex(of: name) ?? 0

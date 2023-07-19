@@ -158,6 +158,7 @@ class ReceiverCarModel {
     var externalOverall : String?
     var colorOverall : String?
     var isSpoiler : Bool? { didSet { setEdit(oldValue, value: &isEditExternal) }}
+    var isSunroof : Bool? { didSet { setEdit(oldValue, value: &isEditExternal) }}
     var isMagWheel = false
     var magWheelAmount : String? { didSet { setEdit(oldValue, value: &isEditExternal)}}
     var isNormalWheel = false

@@ -642,7 +642,7 @@
                                 <rect key="frame" x="120" y="0.0" width="250" height="660"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="gcj-Cn-zGY">
-                                        <rect key="frame" x="0.0" y="0.0" width="250" height="613"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="250" height="664"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qf0-a6-j3c">
                                                 <rect key="frame" x="0.0" y="0.0" width="250" height="1"/>
@@ -889,11 +889,11 @@
                                                     <constraint firstAttribute="height" constant="50" id="uR6-AP-XoK"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                                <state key="normal" title="OA Document">
+                                                <state key="normal" title="Car roof(หลังคา)">
                                                     <color key="titleColor" name="primary_color"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="oaDocumentCheckBoxTapped:" destination="47o-Qp-Pz8" eventType="touchUpInside" id="qZe-d2-26O"/>
+                                                    <action selector="carRoofBoxTapped:" destination="47o-Qp-Pz8" eventType="touchUpInside" id="mDX-KN-nzm"/>
                                                 </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gDm-ek-YTG">
@@ -903,17 +903,38 @@
                                                     <constraint firstAttribute="height" constant="1" id="rwf-mq-NRk"/>
                                                 </constraints>
                                             </view>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nCd-uX-hb8" customClass="CheckBoxUIButton" customModule="Inspection" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="613" width="250" height="50"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="7GH-DL-csO"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <state key="normal" title="OA Document">
+                                                    <color key="titleColor" name="primary_color"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="oaDocumentCheckBoxTapped:" destination="47o-Qp-Pz8" eventType="touchUpInside" id="HfP-IA-o7s"/>
+                                                </connections>
+                                            </button>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="28B-Xf-00F">
+                                                <rect key="frame" x="0.0" y="663" width="250" height="1"/>
+                                                <color key="backgroundColor" name="gallery"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="1" id="Ya7-Wi-xDp"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FPs-1r-bj2">
-                                        <rect key="frame" x="0.0" y="0.0" width="1" height="613"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="1" height="664"/>
                                         <color key="backgroundColor" name="gallery"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="1" id="7Rw-QS-xrh"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KkY-jC-fXE">
-                                        <rect key="frame" x="249" y="0.0" width="1" height="613"/>
+                                        <rect key="frame" x="249" y="0.0" width="1" height="664"/>
                                         <color key="backgroundColor" name="gallery"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="1" id="LZI-jD-zBZ"/>
@@ -1229,6 +1250,7 @@
                         <outlet property="amountLabel" destination="feJ-my-I1P" id="8Nd-p4-mpU"/>
                         <outlet property="assetCheckBox" destination="2PP-K6-7Ds" id="amv-el-3mk"/>
                         <outlet property="backCheckBox" destination="0cy-X3-HVo" id="H4B-FO-1jo"/>
+                        <outlet property="carRoofCheckBox" destination="C1k-Cj-TBR" id="KrM-F7-ZeL"/>
                         <outlet property="chassisCheckBox" destination="ytI-ce-fRr" id="tGW-p6-XgU"/>
                         <outlet property="checkStackView" destination="vjB-G0-l6E" id="Hep-4y-Jw1"/>
                         <outlet property="collectionView" destination="j0F-Td-19x" id="vEJ-dV-U2X"/>
@@ -1240,7 +1262,7 @@
                         <outlet property="fullName" destination="D1d-Pr-r4Z" id="4Qz-8I-Dze"/>
                         <outlet property="gasTankCheckBox" destination="oSo-Hb-92U" id="STw-VN-rJR"/>
                         <outlet property="interiorCheckBox" destination="29V-gd-SJY" id="8tB-ij-4Kq"/>
-                        <outlet property="oaDocumentCheckBox" destination="C1k-Cj-TBR" id="5aL-XZ-BiX"/>
+                        <outlet property="oaDocumentCheckBox" destination="nCd-uX-hb8" id="MDz-6g-4xK"/>
                         <outlet property="photoStackView" destination="hPp-zR-dwb" id="1Td-h4-KdH"/>
                         <outlet property="pickUpStackView" destination="4Cj-T4-Dvq" id="aBQ-AE-FUN"/>
                         <outlet property="plateCheckBox" destination="XKG-Zv-oAW" id="cdM-jy-mmn"/>
@@ -1369,7 +1391,7 @@
             <size key="intrinsicContentSize" width="64.5" height="25.5"/>
         </designable>
         <designable name="C1k-Cj-TBR">
-            <size key="intrinsicContentSize" width="131" height="36"/>
+            <size key="intrinsicContentSize" width="149" height="36"/>
         </designable>
         <designable name="FrD-uN-JER">
             <size key="intrinsicContentSize" width="141" height="36"/>
@@ -1394,6 +1416,9 @@
         </designable>
         <designable name="lpc-Xt-5tO">
             <size key="intrinsicContentSize" width="173" height="36"/>
+        </designable>
+        <designable name="nCd-uX-hb8">
+            <size key="intrinsicContentSize" width="131" height="36"/>
         </designable>
         <designable name="oSo-Hb-92U">
             <size key="intrinsicContentSize" width="161" height="36"/>

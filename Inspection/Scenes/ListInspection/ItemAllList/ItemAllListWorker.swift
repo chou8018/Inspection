@@ -230,6 +230,7 @@ class ItemAllListWorker
                 model.isTire = externalType?.isTyre
                 model.tireQuality = externalType?.tyreQuality.toString()
                 model.brandTire = externalType?.tyreBrand
+                model.isSunroof = externalType?.isSunroof
                 model.damageDetail = externalType?.damageDesc
                 
                 //MARK: SparePart

@@ -140,7 +140,7 @@ open class ZLEditImageViewController: UIViewController {
     // 显示马赛克图片的layer的mask
     private var mosaicImageLayerMaskLayer: CAShapeLayer?
     
-    private var selectedTool: ZLEditImageConfiguration.EditTool?
+    private var selectedTool: ZLEditImageConfiguration.EditTool? = .draw
     
     private var selectedAdjustTool: ZLEditImageConfiguration.AdjustTool?
     

@@ -39,8 +39,8 @@ class ZLEditToolCell: UICollectionViewCell {
                 icon.image = .zl.getImage("zl_clip")
                 icon.highlightedImage = .zl.getImage("zl_clip")
             case .imageSticker:
-                icon.image = .zl.getImage("zl_imageSticker")
-                icon.highlightedImage = .zl.getImage("zl_imageSticker")
+                icon.image = .zl.getImage("zl_btn_circle")
+                icon.highlightedImage = .zl.getImage("zl_btn_circle")
             case .textSticker:
                 icon.image = .zl.getImage("zl_textSticker")
                 icon.highlightedImage = .zl.getImage("zl_textSticker")

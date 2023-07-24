@@ -140,7 +140,7 @@ open class ZLEditImageViewController: UIViewController {
     // 显示马赛克图片的layer的mask
     private var mosaicImageLayerMaskLayer: CAShapeLayer?
     
-    private var selectedTool: ZLEditImageConfiguration.EditTool? = .draw
+    private var selectedTool: ZLEditImageConfiguration.EditTool?
     
     private var selectedAdjustTool: ZLEditImageConfiguration.AdjustTool?
     
@@ -841,6 +841,8 @@ open class ZLEditImageViewController: UIViewController {
         filterCollectionView?.isHidden = true
         adjustCollectionView?.isHidden = true
         adjustSlider?.isHidden = true
+        
+        imageStickerContainerIsHidden = true
     }
     
     private func clipBtnClick() {
@@ -881,9 +883,13 @@ open class ZLEditImageViewController: UIViewController {
         ZLPhotoConfiguration.default().editImageConfiguration.imageStickerContainerView?.show(in: view)
         setToolView(show: false)
         imageStickerContainerIsHidden = false
+        selectedTool = .imageSticker
+        drawColorCollectionView?.isHidden = true
     }
     
     private func textStickerBtnClick() {
+        drawColorCollectionView?.isHidden = true
+        selectedTool = .textSticker
         showInputTextVC { [weak self] text, textColor, bgColor in
             self?.addTextStickersView(text, textColor: textColor, bgColor: bgColor)
         }

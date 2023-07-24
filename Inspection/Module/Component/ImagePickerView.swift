@@ -80,7 +80,7 @@ open class ImagePicker: NSObject {
         // Custom image editor
         config
             .editImageConfiguration
-            .imageStickerContainerView(nil)
+            .imageStickerContainerView(ImageStickerContainerView())
             .canRedo(true)
         
         config.editImageConfiguration.tools.removeAll { $0 == .clip }
@@ -88,6 +88,7 @@ open class ImagePicker: NSObject {
         config.editImageConfiguration.tools.removeAll { $0 == .mosaic }
         config.editImageConfiguration.tools.removeAll { $0 == .filter }
         config.editImageConfiguration.tools.removeAll { $0 == .adjust }
+        config.editImageConfiguration.tools.insert(.imageSticker, at: 0)
     }
     
     private func action(for type: UIImagePickerController.SourceType, title: String) -> UIAlertAction? {

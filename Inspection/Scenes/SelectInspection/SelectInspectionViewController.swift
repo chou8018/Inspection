@@ -81,7 +81,7 @@ class SelectInspectionViewController: UIViewController, SelectInspectionDisplayL
   {
     super.viewDidLoad()
     setUp()
-    fetchAllLocations()
+//    fetchAllLocations()
     getLocationName()
   }
   

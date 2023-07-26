@@ -111,9 +111,9 @@ class SelectInspectionInteractor: SelectInspectionBusinessLogic, SelectInspectio
     
     func setLocationName(request: SelectInspection.Default.Request) {
         self.locationName = request.locationName
-//        let response = SelectInspection.Default.Response(locationName:locationName)
-//        presenter?.presentTextDisplay(response: response)
-        mappingLocationName()
+        let response = SelectInspection.Default.Response(locationName:locationName)
+        presenter?.presentTextDisplay(response: response)
+//        mappingLocationName()
     }
 
     fileprivate func mappingLocationName(){

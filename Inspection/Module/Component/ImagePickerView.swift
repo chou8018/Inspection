@@ -118,8 +118,8 @@ open class ImagePicker: NSObject {
             // Set the delegate
             picker.delegate = self
             // Present the picker
-//            self.presentationController?.present(picker, animated: true)
-            self.showImagePicker(false)
+            self.presentationController?.present(picker, animated: true)
+//            self.showImagePicker(false)
         }
     }
     

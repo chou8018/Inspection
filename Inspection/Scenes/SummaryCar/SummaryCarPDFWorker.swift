@@ -550,6 +550,14 @@ class SummaryCarPDFWorker {
                                             x: margin + 10,
                                             y: underRightSideDriver)
             
+            //MARK: Sunroof
+            let sunroofValueText = model.isSunroof ? "มี" : "ไม่มี"
+            let sunroofText = "ซันรูฟ  \(sunroofValueText)"
+            let attrSunroofPDF = weakself.getTitle(mainString: sunroofText, value: sunroofValueText)
+            let _ = weakself.drawString(attrString: attrSunroofPDF,
+                                                             x: centerPosition,
+                                                             y: underRightSideDriver)
+            
             //MARK: Chassis Summary
 //            let chassisSummaryValue = model.bodySummary?
 //                                            .pdfValidateString

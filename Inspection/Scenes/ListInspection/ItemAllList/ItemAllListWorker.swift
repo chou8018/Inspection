@@ -696,6 +696,7 @@ class ItemAllListWorker
                 model.leftSide = carInspectionType?.leftSide
                 model.roof = carInspectionType?.roof
                 model.isDrowned = carInspectionType?.isFlood ?? false
+                model.isSunroof = carInspectionType?.isSunroof ?? false
                 model.bodySummary = carInspectionType?.bodySummary
                 
                 model.inspector = carInspectionType?.inspector

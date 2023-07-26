@@ -247,6 +247,7 @@ extension SummaryCarWorker {
                                         leftSide: model.leftSide,
                                         roof: model.roof,
                                         isFlood: model.isDrowned,
+                                        isSunroof: model.isSunroof,
                                         bodySummary: model.bodySummary,
                                         isEngineWorks: model.isEngineWorks,
                                         fuelSystemId: model.fuelSystemId,

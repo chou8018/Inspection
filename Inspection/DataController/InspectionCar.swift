@@ -25,6 +25,7 @@ class InspectionCarModel {
     var leftSide:  String?
     var roof:  String?
     var isDrowned = false
+    var isSunroof = false
     var bodySummary:  String?
     
     //MARK: Engine Inspection

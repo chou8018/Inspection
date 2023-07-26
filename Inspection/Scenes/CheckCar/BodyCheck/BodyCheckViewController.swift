@@ -91,8 +91,9 @@ class BodyCheckViewController: UIViewController, BodyCheckDisplayLogic
     @IBOutlet weak var roofDropdown: DropDown!
     
     @IBOutlet weak var drownedCheckBox: CheckBoxUIButton!
+    @IBOutlet weak var sunroofCheckBox: CheckBoxUIButton!
+
     @IBOutlet weak var bodySummaryTextField: MultilineTextField!
-    
     
     @IBOutlet weak var provinceTextField: DropDown!
     @IBOutlet weak var registrationTextField: CustomTextField!
@@ -176,10 +177,17 @@ class BodyCheckViewController: UIViewController, BodyCheckDisplayLogic
         }
     }
     
+    @IBAction func sumroofTapped(_ sender: Any) {
+        sunroofCheckBox.toggle { check in
+            DataController.shared.inspectionCarModel.isSunroof = check
+        }
+    }
+    
     func prepareData(){
         let model = DataController.shared.inspectionCarModel
         bodySummaryTextField.text = model.bodySummary
         drownedCheckBox.check = model.isDrowned
+        sunroofCheckBox.check = model.isSunroof
         roofDropdown.selectedByOption = model.roof
         leftSideDropdown.selectedByOption = model.leftSide
         rightSideDriverDropdown.selectedByOption = model.rightSideDriver

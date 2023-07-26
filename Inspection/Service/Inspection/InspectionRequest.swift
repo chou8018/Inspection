@@ -22,6 +22,7 @@ struct InspectionRequest : Mappable {
     var leftSide : String?
     var roof : String?
     var isFlood : Bool?
+    var isSunroof : Bool?
     var bodySummary : String?
     var isEngineWorks : Bool?
     var fuelSystemId : Int?
@@ -95,6 +96,7 @@ struct InspectionRequest : Mappable {
         leftSide : String?,
         roof : String?,
         isFlood : Bool?,
+        isSunroof : Bool?,
         bodySummary : String?,
         isEngineWorks : Bool?,
         fuelSystemId : Int?,
@@ -162,6 +164,7 @@ struct InspectionRequest : Mappable {
         self.leftSide = leftSide ?? ""
         self.roof = roof ?? ""
         self.isFlood = isFlood ?? false
+        self.isSunroof = isSunroof ?? false
         self.bodySummary = bodySummary ?? ""
         self.isEngineWorks = isEngineWorks ?? false
         self.fuelSystemId = fuelSystemId ?? 0
@@ -232,6 +235,7 @@ struct InspectionRequest : Mappable {
         leftSide <- map["leftSide"]
         roof <- map["roof"]
         isFlood <- map["isFlood"]
+        isSunroof <- map["isSunroof"]
         bodySummary <- map["bodySummary"]
         isEngineWorks <- map["isEngineWorks"]
         fuelSystemId <- map["fuelSystemId"]

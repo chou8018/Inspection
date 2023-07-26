@@ -30,6 +30,7 @@ struct CarInspectionType : Mappable {
 	var leftSide : String?
 	var roof : String?
 	var isFlood : Bool?
+    var isSunroof : Bool?
 	var bodySummary : String?
 	var isEngineWorks : Bool?
 	var fuelSystemId : Int?
@@ -105,6 +106,7 @@ struct CarInspectionType : Mappable {
 		leftSide <- map["leftSide"]
 		roof <- map["roof"]
 		isFlood <- map["isFlood"]
+        isSunroof <- map["isSunroof"]
 		bodySummary <- map["bodySummary"]
 		isEngineWorks <- map["isEngineWorks"]
 		fuelSystemId <- map["fuelSystemId"]

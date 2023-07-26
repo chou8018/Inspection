@@ -22,6 +22,7 @@ open class ImagePicker: NSObject {
     private weak var presentationController: UIViewController?
     
     weak var delegateImage : ImagePickerPresenter?
+
     
     // Create configuration for photo picker
     var configuration = PHPickerConfiguration()
@@ -30,7 +31,7 @@ open class ImagePicker: NSObject {
     var selectedImages: [UIImage] = []
     let config = ZLPhotoConfiguration.default()
     let uiConfig = ZLPhotoUIConfiguration.default()
-
+    
     deinit {
         print("🔸🐶 deinit ImagePicker ")
     }
@@ -52,7 +53,7 @@ open class ImagePicker: NSObject {
         configuration.filter = .images
         // For unlimited selections use 0. Default is 1
         configuration.selectionLimit = 0
-       
+        
         configZLPhotoBrowser()
     }
     
@@ -79,7 +80,7 @@ open class ImagePicker: NSObject {
         // Custom image editor
         config
             .editImageConfiguration
-            .imageStickerContainerView(nil)
+            .imageStickerContainerView(ImageStickerContainerView())
             .canRedo(true)
         
         config.editImageConfiguration.tools.removeAll { $0 == .clip }
@@ -87,6 +88,7 @@ open class ImagePicker: NSObject {
         config.editImageConfiguration.tools.removeAll { $0 == .mosaic }
         config.editImageConfiguration.tools.removeAll { $0 == .filter }
         config.editImageConfiguration.tools.removeAll { $0 == .adjust }
+        config.editImageConfiguration.tools.insert(.imageSticker, at: 0)
     }
     
     private func action(for type: UIImagePickerController.SourceType, title: String) -> UIAlertAction? {
@@ -118,8 +120,8 @@ open class ImagePicker: NSObject {
             // Set the delegate
             picker.delegate = self
             // Present the picker
-            self.presentationController?.present(picker, animated: true)
-//            self.showImagePicker(false)
+//            self.presentationController?.present(picker, animated: true)
+            self.showImagePicker(false)
         }
     }
     

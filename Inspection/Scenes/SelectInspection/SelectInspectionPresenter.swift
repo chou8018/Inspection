@@ -28,13 +28,13 @@ class SelectInspectionPresenter: SelectInspectionPresentationLogic
   func presentTextDisplay(response: SelectInspection.Default.Response)
   {
      
-      var resultTextPlace = ""
-      if let locationName = response.locationName {
-          resultTextPlace = "สถานที่รับรถ - \(locationName)"
-      } else {
-          resultTextPlace = "สถานที่รับรถ - \(response.selectStoreName?.location ?? "-")"
-      }
-//    let resultTextPlace = "สถานที่รับรถ - \(response.selectStoreName?.location ?? "-")"
+//      var resultTextPlace = ""
+//      if let locationName = response.locationName {
+//          resultTextPlace = "สถานที่รับรถ - \(locationName)"
+//      } else {
+//          resultTextPlace = "สถานที่รับรถ - \(response.selectStoreName?.location ?? "-")"
+//      }
+    let resultTextPlace = "สถานที่รับรถ - \(response.selectStoreName?.location ?? "-")"
     
     let range2 = (resultTextPlace as NSString).range(of: "สถานที่รับรถ -")
     let attr = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 25),
@@ -49,14 +49,14 @@ class SelectInspectionPresenter: SelectInspectionPresentationLogic
     let viewModel = SelectInspection.Default.ViewModel(resultTextPlace: mutableAttributedString)
     viewController?.displayResultTextPlace(viewModel: viewModel)
     
-      var resultTextPlace2 = ""
-      if let locationName = response.locationName {
-          resultTextPlace2 = "สถานที่ - \(locationName)"
-      } else {
-          resultTextPlace2 = "สถานที่ - \(response.selectReceiveName?.desc_BU ?? "-")  "
-      }
+//      var resultTextPlace2 = ""
+//      if let locationName = response.locationName {
+//          resultTextPlace2 = "สถานที่ - \(locationName)"
+//      } else {
+//          resultTextPlace2 = "สถานที่ - \(response.selectReceiveName?.desc_BU ?? "-")  "
+//      }
       
-//    let resultTextPlace2 = "สถานที่ - \(response.selectReceiveName?.desc_BU ?? "-")  "
+    let resultTextPlace2 = "สถานที่ - \(response.selectReceiveName?.desc_BU ?? "-")  "
 
     let range1 = (resultTextPlace2 as NSString).range(of: "สถานที่ -")
     

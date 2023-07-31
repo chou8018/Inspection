@@ -11,6 +11,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 protocol SelectInspectionBusinessLogic
 {
@@ -18,7 +19,7 @@ protocol SelectInspectionBusinessLogic
     func fetchLocation(request: SelectInspection.Default.Request)
     func fetchPlantLocation(request: SelectInspection.Default.Request)
     
-    func setLocationName(request: SelectInspection.Default.Request)
+    func setLocationName(request: SelectInspection.Default.Request, location: CLLocation?)
 }
 
 protocol SelectInspectionDataStore
@@ -43,6 +44,8 @@ class SelectInspectionInteractor: SelectInspectionBusinessLogic, SelectInspectio
   
     var workerReceiver : ReceiverCarWorker?
     var plantLocationList : [PlantResponse]?
+    
+    let fixedRadius = 10.0
   
   // MARK: Do something
     
@@ -109,14 +112,49 @@ class SelectInspectionInteractor: SelectInspectionBusinessLogic, SelectInspectio
     
     var locationName:String?
     
-    func setLocationName(request: SelectInspection.Default.Request) {
+    func setLocationName(request: SelectInspection.Default.Request, location: CLLocation?) {
         self.locationName = request.locationName
 //        let response = SelectInspection.Default.Response(locationName:locationName)
 //        presenter?.presentTextDisplay(response: response)
-        mappingLocationName()
+        mappingLocationName(location: location)
+    }
+    
+    func randomFloatNumber(lower: Float = 0.01,upper: Float = 0.09) -> Float {
+        return (Float(arc4random()) / Float(UInt32.max)) * (upper - lower) + lower
+    }
+    
+    func minimumMaximum<T: Comparable>(_ array: [T]) -> (minimum: T, maximum: T)? {
+        guard var minimum = array.first else {
+            return nil
+        }
+        var maximum = minimum
+        
+        // if 'array' has an odd number of items, let 'minimum' or 'maximum' deal with the leftover
+        let start = array.count % 2 // 1 if odd, skipping the first element
+        for i in stride(from: start, to: array.count, by: 2) {
+            let pair = (array[i], array[i+1])
+            
+            if pair.0 > pair.1 {
+                if pair.0 > maximum {
+                    maximum = pair.0
+                }
+                if pair.1 < minimum {
+                    minimum = pair.1
+                }
+            } else {
+                if pair.1 > maximum {
+                    maximum = pair.1
+                }
+                if pair.0 < minimum {
+                    minimum = pair.0
+                }
+            }
+        }
+        
+        return (minimum, maximum)
     }
 
-    fileprivate func mappingLocationName(){
+    fileprivate func mappingLocationName(location: CLLocation? = nil){
         guard var locationName = locationName?
                 .replacingOccurrences(of: " ", with: "")
                 .lowercased()
@@ -152,8 +190,6 @@ class SelectInspectionInteractor: SelectInspectionBusinessLogic, SelectInspectio
             return false
         }
         
-      
-        
         if let plantItem = plantModel.first,
            let storeItem = selectModel.first {
             
@@ -177,5 +213,48 @@ class SelectInspectionInteractor: SelectInspectionBusinessLogic, SelectInspectio
             print("NOT MATCH")
         }
         
+        
+        // 114.261278,30.688977 金川
+        var newList = [StorageLocationModel]()
+        for i in 0..<locationList.count {
+            var apiLocationModel = locationList[i]
+            
+            
+            apiLocationModel.lat = NSNumber(value: 30.688977 + randomFloatNumber())
+            apiLocationModel.lon = NSNumber(value: 114.261278 + randomFloatNumber())
+            print("📍LOCATION-lan-lon: \(apiLocationModel.lat?.doubleValue ?? 0) \(apiLocationModel.lon?.doubleValue ?? 0)")
+            newList.append(apiLocationModel)
+        }
+        
+        var rangeLacationList = [StorageLocationModel]()
+        var rangeDoubles: Array<Double> = []
+
+        if let gpsLocation = location {
+            
+            for var apiLocationModel in newList {
+                if let lat = apiLocationModel.lat?.doubleValue , let lon = apiLocationModel.lon?.doubleValue {
+                    let apiLocation = CLLocation(latitude: lat, longitude: lon)
+                    let distance = gpsLocation.distance(from: apiLocation)
+                    
+                    let radius = (distance/1000).rounded()
+                    print(radius, " km")
+                    if radius <= fixedRadius {
+                        apiLocationModel.distance = radius
+                        rangeLacationList.append(apiLocationModel)
+                        rangeDoubles.append(radius)
+                    }
+                    
+                }
+            }
+        }
+        
+        if rangeLacationList.count > 0 {
+            let minLocation = minimumMaximum(rangeLacationList)?.minimum
+            print("📍LOCATION--closest \(minLocation?.distance ?? 0)")
+            
+            let response = SelectInspection.Default.Response(selectReceiveName: nil,selectStoreName: minLocation)
+            presenter?.presentTextDisplay(response: response)
+       
+        }
     }
 }

@@ -11,6 +11,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 protocol SelectInspectionDisplayLogic: AnyObject
 {
@@ -218,14 +219,18 @@ class SelectInspectionViewController: UIViewController, SelectInspectionDisplayL
     
     
     func getLocationName(){
-        LocationManager.shared.getLocationName {[weak self] locationName in
-            self?.setLocationName(locationName)
+        LocationManager.shared.getLocationName {[weak self] locationName,location  in
+            self?.setLocationName(locationName, location: location)
+            
+//            let loc1 = CLLocation(latitude: userLocation.coordinate.latitude, longitude: userLocation.coordinate.longitude)
+//                var distance = loc1.distance(from: loc2)
+//                print((distance/1000).rounded(), " km")
         }
     }
-    func setLocationName(_ locationName:String?){
+    func setLocationName(_ locationName:String?, location: CLLocation?){
         loadingStackView.fadeOut(0.5, onCompletion: { [weak self] in
             let request = SelectInspection.Default.Request(locationName: locationName)
-            self?.interactor?.setLocationName(request: request)
+            self?.interactor?.setLocationName(request: request, location: location)
         })
         
     }

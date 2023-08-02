@@ -24,7 +24,9 @@ struct PlantResponse : Mappable {
     
     
     init?(map: Map) {
-        
+        plant1 <- map["plant1"]
+        desc_BU <- map["desc_BU"]
+        desc_LO <- map["desc_LO"]
     }
     
     mutating func mapping(map: Map) {

@@ -23,6 +23,7 @@ struct StorageLocationModel : Mappable , Comparable {
     var lat: NSNumber?
     var lon: NSNumber?
     var distance: Double = 0
+    var plant: String?
     
     init?(map: Map) {
         
@@ -33,5 +34,6 @@ struct StorageLocationModel : Mappable , Comparable {
         location <- map["location"]
         lat <- map["lat"]
         lon <- map["lon"]
+        plant <- map["plant"]
     }
 }

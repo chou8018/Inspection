@@ -56,18 +56,18 @@ class SelectInspectionPresenter: SelectInspectionPresentationLogic
 //          resultTextPlace2 = "สถานที่ - \(response.selectReceiveName?.desc_BU ?? "-")  "
 //      }
       
-//    let resultTextPlace2 = "สถานที่ - \(response.selectReceiveName?.desc_BU ?? "-")  "
-//
-//    let range1 = (resultTextPlace2 as NSString).range(of: "สถานที่ -")
-//    
-//    let mutableAttributedString2 = NSMutableAttributedString(string: resultTextPlace2,
-//                                                            attributes: attr)
-//    
-//    mutableAttributedString2.addAttribute(NSAttributedString.Key.font,
-//                                         value: UIFont.systemFont(ofSize: 18), range: range1)
-//    
-//    let viewModelPlant = SelectInspection.Default.ViewModel(resultTextPlace: mutableAttributedString2)
-//    viewController?.displayResultTextPlacePlant(viewModel: viewModelPlant)
+    let resultTextPlace2 = "สถานที่ - \(response.selectReceiveName?.desc_BU ?? "-")  "
+
+    let range1 = (resultTextPlace2 as NSString).range(of: "สถานที่ -")
+    
+    let mutableAttributedString2 = NSMutableAttributedString(string: resultTextPlace2,
+                                                            attributes: attr)
+    
+    mutableAttributedString2.addAttribute(NSAttributedString.Key.font,
+                                         value: UIFont.systemFont(ofSize: 18), range: range1)
+    
+      let viewModelPlant = SelectInspection.Default.ViewModel(resultTextPlace: mutableAttributedString2,isCanSelect: response.isCanSelect)
+    viewController?.displayResultTextPlacePlant(viewModel: viewModelPlant)
   
   }
     

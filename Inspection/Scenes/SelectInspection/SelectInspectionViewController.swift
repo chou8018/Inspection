@@ -141,7 +141,9 @@ class SelectInspectionViewController: UIViewController, SelectInspectionDisplayL
         guard let resultText = viewModel.resultTextPlace else { return }
         isFetchPlantLocation = true
         plantLabel.attributedText = resultText
-        
+        placeImageView.isHidden = !viewModel.isCanSelect
+        placeLabel.isUserInteractionEnabled = viewModel.isCanSelect
+        plantLabel.isUserInteractionEnabled = viewModel.isCanSelect
     }
     
     func displayErrorMessage(viewModel: SelectInspection.Default.ViewModel) {

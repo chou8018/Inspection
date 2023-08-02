@@ -12,6 +12,7 @@
 
 import UIKit
 import CoreLocation
+import ObjectMapper
 
 protocol SelectInspectionBusinessLogic
 {
@@ -45,7 +46,7 @@ class SelectInspectionInteractor: SelectInspectionBusinessLogic, SelectInspectio
     var workerReceiver : ReceiverCarWorker?
     var plantLocationList : [PlantResponse]?
     
-    let fixedRadius = 10.0
+    let fixedRadius = 5.0
   
   // MARK: Do something
     
@@ -189,39 +190,15 @@ class SelectInspectionInteractor: SelectInspectionBusinessLogic, SelectInspectio
             }
             return false
         }
-        
-        if let plantItem = plantModel.first,
-           let storeItem = selectModel.first {
-            
-            print("🥕PLANT: \(plantItem.desc_BU ?? "")")
-            print("🥕STORE: \(storeItem.location ?? "")")
-            
-            self.defaultSelectStoreName = storeItem
-            self.defaultSelectReceiveName = plantItem
-            
-            DataController.shared.receiverCarModel.plant = plantItem.plant1
-            
-            DataController.shared.receiverCarModel.receiverPlace = storeItem.location
-            DataController.shared.receiverCarModel.storePlace = storeItem.location
-            
-            
-            let response = SelectInspection.Default.Response(selectReceiveName: plantItem,
-                                                             selectStoreName: storeItem)
-            presenter?.presentTextDisplay(response: response)
-       
-        }else{
-            print("NOT MATCH")
-        }
-        
-        
+    
         // 114.261278,30.688977 金川
         var newList = [StorageLocationModel]()
         for i in 0..<locationList.count {
             var apiLocationModel = locationList[i]
             
-            
             apiLocationModel.lat = NSNumber(value: 30.688977 + randomFloatNumber())
             apiLocationModel.lon = NSNumber(value: 114.261278 + randomFloatNumber())
+            apiLocationModel.plant = "plant \(i)"
             print("📍LOCATION-lan-lon: \(apiLocationModel.lat?.doubleValue ?? 0) \(apiLocationModel.lon?.doubleValue ?? 0)")
             newList.append(apiLocationModel)
         }
@@ -248,13 +225,59 @@ class SelectInspectionInteractor: SelectInspectionBusinessLogic, SelectInspectio
             }
         }
         
+        var plant: String?
+        var receiveLocation: String?
+        var usedPlantItem: PlantResponse?
+        var usedLocationItem: StorageLocationModel?
+        var isCanSelect = false
         if rangeLacationList.count > 0 {
             let minLocation = minimumMaximum(rangeLacationList)?.minimum
             print("📍LOCATION--closest \(minLocation?.distance ?? 0)")
             
-            let response = SelectInspection.Default.Response(selectReceiveName: nil,selectStoreName: minLocation)
-            presenter?.presentTextDisplay(response: response)
-       
+            plant = minLocation?.plant
+            receiveLocation = minLocation?.location
+            usedPlantItem = PlantResponse(map: Map(mappingType: .fromJSON, JSON: ["plant1":"", "desc_BU":plant ?? "", "desc_LO":""]))
+            usedLocationItem = minLocation
+            isCanSelect = false
+        } else {
+            
+            if let plantItem = plantModel.first,
+               let storeItem = selectModel.first {
+                
+                print("🥕PLANT: \(plantItem.desc_BU ?? "")")
+                print("🥕STORE: \(storeItem.location ?? "")")
+                
+                plant = plantItem.plant1
+                receiveLocation = storeItem.location
+                usedPlantItem = plantItem
+                usedLocationItem = storeItem
+                isCanSelect = true
+//                self.defaultSelectStoreName = storeItem
+//                self.defaultSelectReceiveName = plantItem
+//
+//                DataController.shared.receiverCarModel.plant = plantItem.plant1
+//
+//                DataController.shared.receiverCarModel.receiverPlace = storeItem.location
+//                DataController.shared.receiverCarModel.storePlace = storeItem.location
+//
+//
+//                let response = SelectInspection.Default.Response(selectReceiveName: plantItem,
+//                                                                 selectStoreName: storeItem)
+//                presenter?.presentTextDisplay(response: response)
+           
+            }else{
+                print("NOT MATCH")
+            }
         }
+        
+        self.defaultSelectStoreName = usedLocationItem
+        self.defaultSelectReceiveName = usedPlantItem
+        DataController.shared.receiverCarModel.plant = plant
+        DataController.shared.receiverCarModel.receiverPlace = receiveLocation
+        DataController.shared.receiverCarModel.storePlace = receiveLocation
+    
+        let response = SelectInspection.Default.Response(selectReceiveName: usedPlantItem,
+                                                         selectStoreName: usedLocationItem,isCanSelect: isCanSelect)
+        presenter?.presentTextDisplay(response: response)
     }
 }

@@ -230,6 +230,7 @@ class SelectInspectionInteractor: SelectInspectionBusinessLogic, SelectInspectio
         var usedPlantItem: PlantResponse?
         var usedLocationItem: StorageLocationModel?
         var isCanSelect = false
+        
         if rangeLacationList.count > 0 {
             let minLocation = minimumMaximum(rangeLacationList)?.minimum
             print("📍LOCATION--closest \(minLocation?.distance ?? 0)")

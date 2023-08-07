@@ -112,3 +112,25 @@ extension String {
            return try? JSONSerialization.jsonObject(with: data, options: .mutableContainers)
        }
 }
+
+extension String {
+    
+    static func localized(_ key: String, comment defaultValue: String) -> String {
+        
+        if let languageCode = Locale.current.languageCode,
+           let path = Bundle.main.path(forResource: languageCode, ofType: "lproj"),
+           
+            let bundle = Bundle(path: path) {
+            
+            return NSLocalizedString(
+                key,
+                tableName: "Localizable",
+                bundle: bundle,
+                value: NSLocalizedString(key, comment: defaultValue),
+                comment: ""
+            )
+        }
+        
+        return NSLocalizedString(key, comment: defaultValue)
+    }
+}

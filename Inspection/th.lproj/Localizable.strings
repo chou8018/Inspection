@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  Inspection
+
+  Created by wanggao on 2023/8/7.
+  
+*/
+
+// select inspection or list
+"select_inspection_label" = "เริ่มตรวจสภาพ";
+"select_inspection_list_label" = "รายการตรวจ";
+

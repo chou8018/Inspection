@@ -346,6 +346,8 @@
                     <navigationItem key="navigationItem" id="Zeg-ju-gVK"/>
                     <connections>
                         <outlet property="helloNameLabel" destination="mJr-We-4uM" id="OkA-X3-gFF"/>
+                        <outlet property="inspectionLabel" destination="h5r-xU-0MM" id="mwi-if-yVM"/>
+                        <outlet property="listInspectionLabel" destination="OHz-VC-2a5" id="PK0-Uw-iTq"/>
                         <outlet property="listInspectionView" destination="H2l-pA-S4v" id="AHY-eA-SH4"/>
                         <outlet property="startInspectionView" destination="rYx-Ql-njd" id="8xA-fw-hFh"/>
                         <outlet property="versionLabel" destination="gpT-Ad-NYl" id="6hy-sp-dYr"/>

@@ -10,6 +10,7 @@
 		1E42BEC439AF142146721869 /* Pods_InspectionTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED7F01EFBE20F1FF79AD3938 /* Pods_InspectionTests.framework */; };
 		7B7F1EB825A89CFD60F730D4 /* Pods_Inspection_InspectionUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 450FEF54378985C29D64B3B3 /* Pods_Inspection_InspectionUITests.framework */; };
 		BC4F3FB54F9E0571C9BB828C /* Pods_Inspection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF5A5BE48DF744DDCA6FF8D6 /* Pods_Inspection.framework */; };
+		C2AEDD0A2A81385D00BAC131 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C2AEDD082A81385D00BAC131 /* Localizable.strings */; };
 		C2B889332A6A69B600ED3A60 /* ImageStickerContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B889322A6A69B600ED3A60 /* ImageStickerContainerView.swift */; };
 		C2B8895B2A6A69D400ED3A60 /* ConstraintMultiplierTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B889352A6A69D400ED3A60 /* ConstraintMultiplierTarget.swift */; };
 		C2B8895C2A6A69D400ED3A60 /* LayoutConstraintItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B889362A6A69D400ED3A60 /* LayoutConstraintItem.swift */; };
@@ -510,6 +511,8 @@
 		4F3C49B3781456D4F9A64D4D /* Pods-Inspection-InspectionUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Inspection-InspectionUITests.debug.xcconfig"; path = "Target Support Files/Pods-Inspection-InspectionUITests/Pods-Inspection-InspectionUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		55C98B93E31756AF096E1F58 /* Pods-Inspection.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Inspection.release.xcconfig"; path = "Target Support Files/Pods-Inspection/Pods-Inspection.release.xcconfig"; sourceTree = "<group>"; };
 		58D757F7839D6F069EBBF157 /* Pods-Inspection-InspectionUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Inspection-InspectionUITests.release.xcconfig"; path = "Target Support Files/Pods-Inspection-InspectionUITests/Pods-Inspection-InspectionUITests.release.xcconfig"; sourceTree = "<group>"; };
+		C2AEDD092A81385D00BAC131 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		C2AEDD0B2A81397D00BAC131 /* th */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = th; path = th.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C2B889322A6A69B600ED3A60 /* ImageStickerContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageStickerContainerView.swift; sourceTree = "<group>"; };
 		C2B889352A6A69D400ED3A60 /* ConstraintMultiplierTarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintMultiplierTarget.swift; sourceTree = "<group>"; };
 		C2B889362A6A69D400ED3A60 /* LayoutConstraintItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutConstraintItem.swift; sourceTree = "<group>"; };
@@ -1422,6 +1425,7 @@
 				F99583AF25DF9AD5005DD029 /* PDF.storyboard */,
 				F9192E0625F08C9900297E1F /* QRCodeReading.storyboard */,
 				F931493A25F76BB6004E5F7A /* ModelCode.storyboard */,
+				C2AEDD082A81385D00BAC131 /* Localizable.strings */,
 			);
 			path = Inspection;
 			sourceTree = "<group>";
@@ -2428,6 +2432,7 @@
 			knownRegions = (
 				en,
 				Base,
+				th,
 			);
 			mainGroup = F914453C25C7F94C00B09FB6;
 			productRefGroup = F914454625C7F94C00B09FB6 /* Products */;
@@ -2449,6 +2454,7 @@
 				F98BFDD8264B701F0072E05B /* GoogleService-Info.plist in Resources */,
 				F914455525C7F95000B09FB6 /* LaunchScreen.storyboard in Resources */,
 				F99583B025DF9AD5005DD029 /* PDF.storyboard in Resources */,
+				C2AEDD0A2A81385D00BAC131 /* Localizable.strings in Resources */,
 				F9192E0725F08C9900297E1F /* QRCodeReading.storyboard in Resources */,
 				F97F595A25FB61FF001D159F /* CustomProgressView.xib in Resources */,
 				F9D7CD2525CBA344003E049B /* PickUpCar.storyboard in Resources */,
@@ -3080,6 +3086,15 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		C2AEDD082A81385D00BAC131 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C2AEDD092A81385D00BAC131 /* en */,
+				C2AEDD0B2A81397D00BAC131 /* th */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		F914454E25C7F94C00B09FB6 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -3103,6 +3118,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -3164,6 +3180,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

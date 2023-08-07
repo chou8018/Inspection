@@ -71,23 +71,26 @@ class LandingPageViewController: UIViewController, LandingPageDisplayLogic
   {
     super.viewDidLoad()
     
+    setupLanguage()
     setUp()
-    
     fetchStandardMake()
-    
   }
   
   // MARK: Do something
   
-  
-
-    
     @IBOutlet weak var helloNameLabel: UILabel!
     @IBOutlet weak var startInspectionView: CustomUIView!
-    
     @IBOutlet weak var listInspectionView: CustomUIView!
-  
     @IBOutlet weak var versionLabel: UILabel!
+    
+    // translate
+    @IBOutlet weak var inspectionLabel: UILabel!
+    @IBOutlet weak var listInspectionLabel: UILabel!
+    
+    func setupLanguage(){
+        inspectionLabel.text = String.localized("select_inspection_label", comment: "")
+        listInspectionLabel.text = String.localized("select_inspection_list_label", comment: "")
+    }
     
     func fetchStandardMake(){
         

@@ -28,9 +28,9 @@ class SelectInspectionPresenter: SelectInspectionPresentationLogic
   func presentTextDisplay(response: SelectInspection.Default.Response)
   {
      
-    let resultTextPlace = "สถานที่รับรถ - \(response.selectStoreName?.location ?? "-")"
+      let resultTextPlace = "\(String.localized("select_inspection_plant_label")) - \(response.selectStoreName?.location ?? "-")"
     
-    let range2 = (resultTextPlace as NSString).range(of: "สถานที่รับรถ -")
+    let range2 = (resultTextPlace as NSString).range(of: "\(String.localized("select_inspection_plant_label")) -")
     let attr = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 25),
                 NSAttributedString.Key.foregroundColor: UIColor.white]
     
@@ -44,10 +44,10 @@ class SelectInspectionPresenter: SelectInspectionPresentationLogic
     viewController?.displayResultTextPlace(viewModel: viewModel)
     
     
-    let resultTextPlace2 = "สถานที่ - \(response.selectReceiveName?.desc_BU ?? "-")  "
+    let resultTextPlace2 = "\(String.localized("select_inspection_place_label")) - \(response.selectReceiveName?.desc_BU ?? "-")  "
 
 
-    let range1 = (resultTextPlace2 as NSString).range(of: "สถานที่ -")
+    let range1 = (resultTextPlace2 as NSString).range(of: "\(String.localized("select_inspection_place_label")) -")
     
     let mutableAttributedString2 = NSMutableAttributedString(string: resultTextPlace2,
                                                             attributes: attr)
@@ -68,9 +68,9 @@ class SelectInspectionPresenter: SelectInspectionPresentationLogic
             viewController?.displayErrorMessage(viewModel: viewModel)
         }else{
             guard let locationList = response.storageList else { return }
-            let resultTextPlace = "สถานที่รับรถ - \(locationList.first?.location ?? "-")"
+            let resultTextPlace = "\(String.localized("select_inspection_plant_label")) - \(locationList.first?.location ?? "-")"
             
-            let range2 = (resultTextPlace as NSString).range(of: "สถานที่รับรถ -")
+            let range2 = (resultTextPlace as NSString).range(of: "\(String.localized("select_inspection_plant_label")) -")
             let attr = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 25),
                         NSAttributedString.Key.foregroundColor: UIColor.white]
             
@@ -94,10 +94,10 @@ class SelectInspectionPresenter: SelectInspectionPresentationLogic
             viewController?.displayPlantErrorMessage(viewModel: viewModel)
         }else{
             guard let locationList = response.plantLocationList else { return }
-            let resultTextPlace = "สถานที่ - \(locationList.first?.desc_BU ?? "-")  "
+            let resultTextPlace = "\(String.localized("select_inspection_place_label")) - \(locationList.first?.desc_BU ?? "-")  "
 
 
-            let range1 = (resultTextPlace as NSString).range(of: "สถานที่ -")
+            let range1 = (resultTextPlace as NSString).range(of: "\(String.localized("select_inspection_place_label")) -")
             let attr = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 25),
                         NSAttributedString.Key.foregroundColor: UIColor.white]
             

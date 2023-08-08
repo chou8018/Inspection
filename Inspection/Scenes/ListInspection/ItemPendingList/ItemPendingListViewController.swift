@@ -100,7 +100,7 @@ class ItemPendingListViewController: UIViewController, ItemPendingListDisplayLog
     let datasource = PendingListDataSource()
     
     func setUpTableView(){
-        fullName.text = "ผู้ตรวจสภาพ \(DataController.shared.getFullName())"
+        fullName.text = "\(String.localized("select_inspection_inspector_label")) \(DataController.shared.getFullName())"
         
         tableView.dataSource = datasource
         tableView.delegate = datasource
@@ -110,9 +110,6 @@ class ItemPendingListViewController: UIViewController, ItemPendingListDisplayLog
             self?.interactor?.didSelectRow(request: request)
             
         }
-        
-        
-        
     }
     
     func didSelectItemTableView(viewModel: ItemPendingList.Fetch.ViewModel) {

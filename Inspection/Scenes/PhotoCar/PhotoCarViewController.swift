@@ -286,7 +286,7 @@ class PhotoCarViewController: UIViewController, PhotoCarDisplayLogic
     
     //MARK: SetupTab
     func setUpTab(){
-        fullName.text = "ผู้ตรวจสภาพ \(DataController.shared.getFullName())"
+        fullName.text = "\(String.localized("select_inspection_inspector_label")) \(DataController.shared.getFullName())"
         
         pickUpStackView.isUserInteractionEnabled = true
         pickUpStackView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(toPickUpCar)))

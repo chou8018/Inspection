@@ -349,6 +349,7 @@
                         <outlet property="inspectionLabel" destination="h5r-xU-0MM" id="mwi-if-yVM"/>
                         <outlet property="listInspectionLabel" destination="OHz-VC-2a5" id="PK0-Uw-iTq"/>
                         <outlet property="listInspectionView" destination="H2l-pA-S4v" id="AHY-eA-SH4"/>
+                        <outlet property="logOutButton" destination="ELA-FY-b1p" id="O1l-f1-wfH"/>
                         <outlet property="startInspectionView" destination="rYx-Ql-njd" id="8xA-fw-hFh"/>
                         <outlet property="versionLabel" destination="gpT-Ad-NYl" id="6hy-sp-dYr"/>
                         <segue destination="QFF-Yi-Dey" kind="show" identifier="selectInspectionSegue" id="fXa-f3-aXa"/>
@@ -756,15 +757,22 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="backButton" destination="cmJ-0X-ybA" id="Nc0-xl-Y4F"/>
+                        <outlet property="carAccidentLable" destination="YjU-kN-a4p" id="3rO-lD-T5o"/>
+                        <outlet property="carLable" destination="TP6-Ub-EP2" id="e5r-2d-5fY"/>
                         <outlet property="carSelectView" destination="Nit-Jd-WE4" id="VkC-a6-8uj"/>
                         <outlet property="destroyCarSelectView" destination="Xkd-ZZ-w4c" id="fjB-C1-KwS"/>
                         <outlet property="destroyMBSelectView" destination="hOy-K3-Ejp" id="u3H-jv-C5j"/>
                         <outlet property="fullName" destination="7Te-r4-q8r" id="PSs-Bq-MzP"/>
                         <outlet property="loadingStackView" destination="9jd-8M-wmw" id="io4-cE-BOu"/>
+                        <outlet property="mainItem" destination="krH-ZN-UVN" id="4Cp-DX-SV1"/>
+                        <outlet property="motobikeAccidentLable" destination="bsK-UW-0Yt" id="pct-0u-Fbj"/>
+                        <outlet property="motobikeLable" destination="lnN-wR-t4T" id="0Rj-aM-EbS"/>
                         <outlet property="motorbikeSelectView" destination="8BE-4i-ttF" id="3ud-MZ-dMc"/>
                         <outlet property="placeImageView" destination="xLe-Aj-Jmu" id="Uyy-XQ-t2J"/>
                         <outlet property="placeLabel" destination="All-l3-9bZ" id="vyd-zn-06H"/>
                         <outlet property="plantLabel" destination="7tx-5C-dGb" id="5YJ-cU-CKk"/>
+                        <outlet property="selectionVCTitleLable" destination="WRH-ub-7Ym" id="24Y-Px-PRJ"/>
                         <segue destination="zVx-Rw-vae" kind="popoverPresentation" identifier="showPlaceSegue" popoverAnchorView="hAD-1s-qMp" id="kbX-dH-Uob">
                             <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                         </segue>

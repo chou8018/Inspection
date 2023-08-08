@@ -115,7 +115,7 @@ extension String {
 
 extension String {
     
-    static func localized(_ key: String, comment defaultValue: String) -> String {
+    static func localized(_ key: String, comment defaultValue: String = "") -> String {
         
         if let languageCode = Locale.current.languageCode,
            let path = Bundle.main.path(forResource: languageCode, ofType: "lproj"),

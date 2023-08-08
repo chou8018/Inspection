@@ -7,5 +7,57 @@
 */
 
 // select inspection or list
-"select_inspection_label" = "Inspection";
+"select_inspection_label" = "Begin inspection";
 "select_inspection_list_label" = "Inspection list";
+"select_inspection_hello_label" = "Hello";
+"select_inspection_log_out" = "Log out";
+"select_inspection_log_out_dialog_title" = "Log out";
+"select_inspection_log_out_dialog_message" = "Do you wish to log out?";
+"select_inspection_log_out_dialog_no" = "No";
+"select_inspection_log_out_dialog_yes" = "Yes";
+
+// select insepction type
+"select_inspection_title_label" = "Please select type of car for inspection";
+"select_inspection_car_label" = "Car";
+"select_inspection_motobike_label" = "Motorbike";
+"select_inspection_car_salvage_label" = "Car Salvage";
+"select_inspection_motobike_salvage_label" = "Motorbike Salvage";
+"select_inspection_back_to_main_button_title" = "Back";
+"select_inspection_inspector_label" = "Inspector";
+"select_inspection_place_label" = "Place";
+"select_inspection_plant_label" = "Plant";
+
+// main
+"main_title" = "Book-in";
+"main_bar_button_title" = "Main";
+"main_save_button_title" = "Save";
+"main_send_book_button_title" = "Send book-in";
+
+// book-in
+"book-in_deliverer_title" = "Deliverer";
+"book-in_car_details_title" = "Car details";
+"book-in_exterior_title" = "Exterior";
+"book-in_trunk_title" = "Trunk";
+"book-in_interior_title" = "Interior";
+"book-in_engine_room_title" = "Engine room";
+
+// inspection
+"inspection_body_title" = "Body";
+"inspection_engine_title" = "Engine";
+"inspection_suspension_title" = "Suspension";
+"inspection_gear_box_title" = "Gear box";
+"inspection_steering_title" = "Steering";
+"inspection_air_title" = "Air";
+"inspection_brake_title" = "Brake";
+"inspection_lost_title" = "Lost";
+"inspection_electrical_title" = "Electrical";
+
+// photos
+"photos_deliverer_title" = "Deliverer";
+"photos_car_details_title" = "Car details";
+"photos_exterior_title" = "Exterior";
+"photos_trunk_title" = "Trunk";
+"photos_interior_title" = "Interior";
+"photos_engine_room_title" = "Engine room";
+
+

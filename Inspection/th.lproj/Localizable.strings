@@ -9,4 +9,23 @@
 // select inspection or list
 "select_inspection_label" = "เริ่มตรวจสภาพ";
 "select_inspection_list_label" = "รายการตรวจ";
+"select_inspection_hello_label" = "สวัสดี";
+"select_inspection_log_out" = "ลงชื่อออก";
+"select_inspection_log_out_dialog_title" = "ลงชื่อออก";
+"select_inspection_log_out_dialog_message" = "คุณต้องการลงชื่อออกไหม";
+"select_inspection_log_out_dialog_no" = "ยกเลิก";
+"select_inspection_log_out_dialog_yes" = "ยืนยัน";
 
+// select insepction type
+"select_inspection_title_label" = "เลือกรายการที่ต้องการตรวจสภาพ";
+"select_inspection_car_label" = "รถยนต์";
+"select_inspection_motobike_label" = "รถจักรยานยนต์";
+"select_inspection_car_salvage_label" = "ซากรถยนต์";
+"select_inspection_motobike_salvage_label" = "ซากรถจักรยานยนต์";
+"select_inspection_back_to_main_button_title" = "กลับหน้าแรก";
+"select_inspection_inspector_label" = "ผู้ตรวจสภาพ";
+"select_inspection_place_label" = "สถานที่";
+"select_inspection_plant_label" = "สถานที่รับรถ";
+
+// main
+"main_bar_button_title" = "หน้าหลัก";

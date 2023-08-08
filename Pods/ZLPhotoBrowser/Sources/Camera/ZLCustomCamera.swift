@@ -240,7 +240,7 @@ open class ZLCustomCamera: UIViewController {
     
     // 仅支持竖屏
     override public var supportedInterfaceOrientations: UIInterfaceOrientationMask {
-        return .portrait
+        return .all
     }
     
     override public var prefersStatusBarHidden: Bool {

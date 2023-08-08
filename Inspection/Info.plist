@@ -29,6 +29,8 @@
 	<string>จำเป็นจะต้องเข้าถึงกล้องเพื่อถ่ายภาพ</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>จำเป็นจะต้องเข้าถึง location เพื่อใช้กับแอพพลิเคชั่น</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>This app requires access to your microphone</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>จำเป็นจะต้องเข้าถึงรูปภาพและเซฟ</string>
 	<key>NSPhotoLibraryUsageDescription</key>

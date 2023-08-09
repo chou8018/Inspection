@@ -145,6 +145,27 @@
 "car_interior_key_placeholder_label" = "จำนวน";
 "car_interior_others_label" = "อื่นๆ";
 
+// car engine room
+"car_engine_room_condition_label" = "สภาพภายในโดยรวม";
+"car_engine_battery_label" = "แบตเตอรี่";
+"car_engine_ecu_label" = "กล่อง ECU";
+"car_engine_air_compressor_label" = "คอมเพรสเซอร์แอร์";
+"car_engine_drive_system_label" = "ระบบขับเคลื่อน";
+"car_engine_type_label" = "ชนิดเครื่องยนต์";
+"car_engine_benzine_label" = "เบนซิน";
+"car_engine_diesel_label" = "ดีเซล";
+"car_engine_hybrid_benzine_label" = "Hybrid / เบนซิน";
+"car_engine_hybrid_diesel_label" = "Hybrid / ดีเซล";
+"car_engine_fuel_system_label" = "ระบบเชื้อเพลิง";
+"car_engine_injector_label" = "หัวฉีด";
+"car_engine_carburetor_label" = "คาร์บูเรเตอร์";
+"car_engine_gas_label" = "แก๊ส";
+"car_engine_lpg_sequential_injection_label" = "LPG ระบบหัวฉีด";
+"car_engine_lpg_fumigation_system_label" = "LPG ระบบดูด";
+"car_engine_cng_sequential_injection_label" = "CNG/NGV ระบบหัวฉีด";
+"car_engine_cng_fumigation_system_label" = "CNG/NGV ระบบดูด";
+"car_engine_other_in_car_assets_label" = "ทรัพย์สินภายในรถ";
+
 // inspection
 "inspection_body_title" = "Body";
 "inspection_engine_title" = "Engine";

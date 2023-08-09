@@ -145,6 +145,27 @@
 "car_interior_key_placeholder_label" = "Numbers";
 "car_interior_others_label" = "Others";
 
+// car engine room
+"car_engine_room_condition_label" = "Engine room condition";
+"car_engine_battery_label" = "Battery";
+"car_engine_ecu_label" = "ECU";
+"car_engine_air_compressor_label" = "Air compressor";
+"car_engine_drive_system_label" = "Drive system";
+"car_engine_type_label" = "Engine type";
+"car_engine_benzine_label" = "Benzine";
+"car_engine_diesel_label" = "Diesel";
+"car_engine_hybrid_benzine_label" = "Hybrid / Benzine";
+"car_engine_hybrid_diesel_label" = "Hybrid / Diesel";
+"car_engine_fuel_system_label" = "Fuel system";
+"car_engine_injector_label" = "Injector";
+"car_engine_carburetor_label" = "Carburetor";
+"car_engine_gas_label" = "Gas";
+"car_engine_lpg_sequential_injection_label" = "LPG Sequential Injection";
+"car_engine_lpg_fumigation_system_label" = "LPG Fumigation System";
+"car_engine_cng_sequential_injection_label" = "CNG/NGV Sequential Injection";
+"car_engine_cng_fumigation_system_label" = "LCNG/NGV Fumigation System";
+"car_engine_other_in_car_assets_label" = "Other in car assets";
+
 // inspection
 "inspection_body_title" = "Body";
 "inspection_engine_title" = "Engine";

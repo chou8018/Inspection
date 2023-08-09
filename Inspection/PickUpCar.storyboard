@@ -2893,15 +2893,25 @@
                     </view>
                     <size key="freeformSize" width="1080" height="1000"/>
                     <connections>
+                        <outlet property="batteryLabel" destination="Tcl-KT-P9L" id="ljP-7l-X7K"/>
                         <outlet property="betteryBrandTextField" destination="Ao8-uv-iaP" id="GHE-9C-lXf"/>
+                        <outlet property="colorLabel" destination="K0W-wv-fQ7" id="e8J-1o-G7x"/>
                         <outlet property="colorTextField" destination="kk4-pn-31M" id="AL0-Tf-gxc"/>
                         <outlet property="compressorCheckBox" destination="gfa-77-I8h" id="bpu-ez-HY7"/>
+                        <outlet property="compressorLabel" destination="Rwj-5j-Vxe" id="tc3-f6-YYf"/>
                         <outlet property="deiverSystemRadio" destination="7A8-2y-MjI" id="YQV-ni-cwp"/>
+                        <outlet property="driveSystemLabel" destination="8jR-h9-H93" id="D59-qW-HLz"/>
                         <outlet property="ecuCheckBox" destination="iIz-SV-yhc" id="fgY-ZM-Wdi"/>
+                        <outlet property="ecuLabel" destination="HfT-zY-ZP0" id="LTK-Il-fER"/>
+                        <outlet property="engineOverAllLabel" destination="t0n-np-IvB" id="O9G-8Y-hSA"/>
                         <outlet property="engineOverAllTextField" destination="ggq-KT-gnW" id="4ZN-gM-A1n"/>
                         <outlet property="engineOverallRadio" destination="2ZC-8g-Zsn" id="R8g-LW-b3y"/>
+                        <outlet property="engineRoomLabel" destination="ewV-bx-NMX" id="foS-Cc-O1v"/>
+                        <outlet property="engineTypeLabel" destination="WSP-GE-ds1" id="Ppt-aN-HQN"/>
+                        <outlet property="fuelSystemLabel" destination="sJP-k9-hko" id="Gto-lc-QiD"/>
                         <outlet property="fuelSystemRadio" destination="knz-5q-7fB" id="68N-jg-OSb"/>
                         <outlet property="gasCheckBox" destination="F4g-tu-rT6" id="Ab3-WJ-PvV"/>
+                        <outlet property="gasLabel" destination="bWD-8v-CL3" id="x8g-vY-dIK"/>
                         <outlet property="gasRadio" destination="5F6-W3-eMP" id="FTo-x6-zCZ"/>
                         <outlet property="oilSystemRadio" destination="VGE-he-HNH" id="SLn-pL-cNa"/>
                         <outlet property="scrollView" destination="APA-NU-qQq" id="4u3-Hp-4b5"/>

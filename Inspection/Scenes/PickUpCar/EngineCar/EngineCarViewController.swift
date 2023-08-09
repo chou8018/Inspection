@@ -15,113 +15,148 @@ import RadioGroup
 
 protocol EngineCarDisplayLogic: AnyObject
 {
-  func displaySomething(viewModel: EngineCar.Something.ViewModel)
+    func displaySomething(viewModel: EngineCar.Something.ViewModel)
 }
 
-class EngineCarViewController: UIViewController, EngineCarDisplayLogic
+class EngineCarViewController: ViewController, EngineCarDisplayLogic
 {
-  var interactor: EngineCarBusinessLogic?
-  var router: (NSObjectProtocol & EngineCarRoutingLogic & EngineCarDataPassing)?
-
-  // MARK: Object lifecycle
-  
-  override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
-  {
-    super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-    setup()
-  }
-  
-  required init?(coder aDecoder: NSCoder)
-  {
-    super.init(coder: aDecoder)
-    setup()
-  }
-  
-  // MARK: Setup
-  
-  private func setup()
-  {
-    let viewController = self
-    let interactor = EngineCarInteractor()
-    let presenter = EngineCarPresenter()
-    let router = EngineCarRouter()
-    viewController.interactor = interactor
-    viewController.router = router
-    interactor.presenter = presenter
-    presenter.viewController = viewController
-    router.viewController = viewController
-    router.dataStore = interactor
-  }
-  
-  // MARK: Routing
-  
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-  {
-    if let scene = segue.identifier {
-      let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
-      if let router = router, router.responds(to: selector) {
-        router.perform(selector, with: segue)
-      }
-    }
-  }
-  
-  // MARK: View lifecycle
-  
-  override func viewDidLoad()
-  {
-    super.viewDidLoad()
-    setUIView()
-    setUpRadio()
-    setUpCheckBox()
-    doSomething()
-  }
-  
-  // MARK: Do something
-  
-  //@IBOutlet weak var nameTextField: UITextField!
-    @IBOutlet weak var scrollView: UIScrollView!
+    var interactor: EngineCarBusinessLogic?
+    var router: (NSObjectProtocol & EngineCarRoutingLogic & EngineCarDataPassing)?
     
+    // MARK: Object lifecycle
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
+    {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        setup()
+    }
+    
+    required init?(coder aDecoder: NSCoder)
+    {
+        super.init(coder: aDecoder)
+        setup()
+    }
+    
+    // MARK: Setup
+    
+    private func setup()
+    {
+        let viewController = self
+        let interactor = EngineCarInteractor()
+        let presenter = EngineCarPresenter()
+        let router = EngineCarRouter()
+        viewController.interactor = interactor
+        viewController.router = router
+        interactor.presenter = presenter
+        presenter.viewController = viewController
+        router.viewController = viewController
+        router.dataStore = interactor
+    }
+    
+    // MARK: Routing
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if let scene = segue.identifier {
+            let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
+            if let router = router, router.responds(to: selector) {
+                router.perform(selector, with: segue)
+            }
+        }
+    }
+    
+    // MARK: View lifecycle
+    
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
+        setUIView()
+        setUpRadio()
+        setUpCheckBox()
+        doSomething()
+    }
+    
+    // MARK: Do something
+    
+    //@IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var engineOverallRadio: RadioGroup!
     @IBOutlet weak var deiverSystemRadio: RadioGroup!
     @IBOutlet weak var oilSystemRadio: RadioGroup!
     @IBOutlet weak var gasRadio: RadioGroup!
-    
     @IBOutlet weak var colorTextField: CustomTextField!
     @IBOutlet weak var betteryBrandTextField: CustomTextField!
-    
     @IBOutlet weak var engineOverAllTextField: MultilineTextField!
-    
     @IBOutlet weak var ecuCheckBox: CheckBoxUIButton!
     @IBOutlet weak var compressorCheckBox: CheckBoxUIButton!
-    
     @IBOutlet weak var gasCheckBox: CheckBoxUIButton!
     @IBOutlet weak var fuelSystemRadio: RadioGroup!
     
+    // local strings
+    @IBOutlet weak var engineRoomLabel: UILabel!
+    @IBOutlet weak var batteryLabel: UILabel!
+    @IBOutlet weak var colorLabel: UILabel!
+    @IBOutlet weak var ecuLabel: UILabel!
+    @IBOutlet weak var compressorLabel: UILabel!
+    @IBOutlet weak var driveSystemLabel: UILabel!
+    @IBOutlet weak var engineTypeLabel: UILabel!
+    @IBOutlet weak var fuelSystemLabel: UILabel!
+    @IBOutlet weak var gasLabel: UILabel!
+    @IBOutlet weak var engineOverAllLabel: UILabel!
     
-  func doSomething()
-  {
-    let request = EngineCar.Something.Request()
-    interactor?.doSomething(request: request)
-  }
-  
-  func displaySomething(viewModel: EngineCar.Something.ViewModel)
-  {
-    //nameTextField.text = viewModel.name
-  }
+    let string_benzine = String.localized("car_engine_benzine_label")
+    let string_diesel = String.localized("car_engine_diesel_label")
+    let string_hybrid_benzine = String.localized("car_engine_hybrid_benzine_label")
+    let string_hybrid_diesel = String.localized("car_engine_hybrid_diesel_label")
+    let string_injector = String.localized("car_engine_injector_label")
+    let string_carburetor = String.localized("car_engine_carburetor_label")
+    let string_lpg_sequential_injection = String.localized("car_engine_lpg_sequential_injection_label")
+    let string_lpg_fumigation_system = String.localized("car_engine_lpg_fumigation_system_label")
+    let string_cng_sequential_injection = String.localized("car_engine_cng_sequential_injection_label")
+    let string_cng_fumigation_system = String.localized("car_engine_cng_fumigation_system_label")
+
+    override func initLocalString() {
+        super.initLocalString()
+        
+        engineRoomLabel.text = String.localized("car_engine_room_condition_label")
+        batteryLabel.text = String.localized("car_engine_battery_label")
+        betteryBrandTextField.placeholder = String.localized("car_detail_make_label")
+        colorLabel.text = String.localized("car_detail_color_label")
+        colorTextField.placeholder = colorLabel.text
+        ecuLabel.text = String.localized("car_engine_ecu_label")
+        compressorLabel.text = String.localized("car_engine_air_compressor_label")
+        driveSystemLabel.text = String.localized("car_engine_drive_system_label")
+        engineTypeLabel.text = String.localized("car_engine_type_label")
+        fuelSystemLabel.text = String.localized("car_engine_fuel_system_label")
+        gasLabel.text = String.localized("car_engine_gas_label")
+        engineOverAllLabel.text = String.localized("car_engine_other_in_car_assets_label")
+        engineOverAllTextField.placeholder = engineOverAllLabel.text
+    }
+    
+    func doSomething()
+    {
+        let request = EngineCar.Something.Request()
+        interactor?.doSomething(request: request)
+    }
+    
+    func displaySomething(viewModel: EngineCar.Something.ViewModel)
+    {
+        //nameTextField.text = viewModel.name
+    }
     
     //MARK: UIView
     func setUIView(){
         betteryBrandTextField.autocorrectionType = .no
         colorTextField.autocorrectionType = .no
         engineOverAllTextField.autocorrectionType = .no
-       
+        
         betteryBrandTextField.delegate = self
         colorTextField.delegate = self
         engineOverAllTextField.delegate = self
         
         addTarget(from: betteryBrandTextField)
         addTarget(from: colorTextField)
-       
+        
     }
     
     fileprivate func addTarget(from textfield: UITextField ){
@@ -148,7 +183,7 @@ class EngineCarViewController: UIViewController, EngineCarDisplayLogic
             guard let weakself = self else { return }
             if !check {
                 weakself.gasRadio.selectedIndex = -1
-                DataController.shared.receiverCarModel.gasSystem = nil   
+                DataController.shared.receiverCarModel.gasSystem = nil
                 DataController.shared.receiverCarModel.gasTypeId = nil
                 
                 weakself.setFuelType(fuelType: weakself.oilSystemRadio.selectedIndex,
@@ -165,10 +200,10 @@ class EngineCarViewController: UIViewController, EngineCarDisplayLogic
         
         //Color
         engineOverallRadio.attributedTitles = [
-            NSAttributedString(string: "ดี", attributes: attributedString),
-            NSAttributedString(string: "ปานกลาง", attributes: attributedString),
-            NSAttributedString(string: "พอใช้", attributes: attributedString),
-            NSAttributedString(string: "ไม่ดี", attributes: attributedString)
+            NSAttributedString(string: string_good_first, attributes: attributedString),
+            NSAttributedString(string: string_average, attributes: attributedString),
+            NSAttributedString(string: string_fair, attributes: attributedString),
+            NSAttributedString(string: string_poor, attributes: attributedString)
             
         ]
         
@@ -180,23 +215,23 @@ class EngineCarViewController: UIViewController, EngineCarDisplayLogic
         ]
         
         oilSystemRadio.attributedTitles = [
-            NSAttributedString(string: "เบนซิน", attributes: attributedString),
-            NSAttributedString(string: "ดีเซล", attributes: attributedString),
+            NSAttributedString(string: string_benzine, attributes: attributedString),
+            NSAttributedString(string: string_diesel, attributes: attributedString),
             NSAttributedString(string: "EV", attributes: attributedString),
-            NSAttributedString(string: "Hybrid / เบนซิน", attributes: attributedString),
-            NSAttributedString(string: "Hybrid / ดีเซล", attributes: attributedString)
+            NSAttributedString(string: string_hybrid_benzine, attributes: attributedString),
+            NSAttributedString(string: string_hybrid_diesel, attributes: attributedString)
         ]
         
         gasRadio.attributedTitles = [
-            NSAttributedString(string: "LPG ระบบหัวฉีด", attributes: attributedString),
-            NSAttributedString(string: "LPG ระบบดูด", attributes: attributedString),
-            NSAttributedString(string: "CNG/NGV ระบบหัวฉีด", attributes: attributedString),
-            NSAttributedString(string: "CNG/NGV ระบบดูด", attributes: attributedString)
+            NSAttributedString(string: string_lpg_sequential_injection, attributes: attributedString),
+            NSAttributedString(string: string_lpg_fumigation_system, attributes: attributedString),
+            NSAttributedString(string: string_cng_sequential_injection, attributes: attributedString),
+            NSAttributedString(string: string_cng_fumigation_system, attributes: attributedString)
         ]
         
         fuelSystemRadio.attributedTitles = [
-            NSAttributedString(string: "หัวฉีด", attributes: attributedString),
-            NSAttributedString(string: "คาร์บูเรเตอร์", attributes: attributedString),
+            NSAttributedString(string: string_injector, attributes: attributedString),
+            NSAttributedString(string: string_carburetor, attributes: attributedString),
             NSAttributedString(string: "Direct Injection", attributes: attributedString),
             NSAttributedString(string: "N/A", attributes: attributedString)
         ]
@@ -204,7 +239,7 @@ class EngineCarViewController: UIViewController, EngineCarDisplayLogic
     
     //MARK: Engine OverAll
     @IBAction func engineOverallRadioGroupValueChanged(_ sender: Any) {
-        let value = getRadioValue(from: ["ดี", "ปานกลาง", "พอใช้", "ไม่ดี"],
+        let value = getRadioValue(from: [string_good_first, string_average, string_fair, string_poor],
                                   selectIndex: engineOverallRadio.selectedIndex)
         
         DataController.shared.receiverCarModel.engineOverAll = value
@@ -238,7 +273,7 @@ class EngineCarViewController: UIViewController, EngineCarDisplayLogic
     }
     //MARK: OIL
     @IBAction func oilSystemRadioGroupValueChanged(_ sender: Any) {
-        let value = getRadioValue(from: ["เบนซิน", "ดีเซล", "EV", "Hybrid / เบนซิน", "Hybrid / ดีเซล"],
+        let value = getRadioValue(from: [string_benzine, string_diesel, "EV", string_hybrid_benzine, string_hybrid_diesel],
                                   selectIndex: oilSystemRadio.selectedIndex)
         
         DataController.shared.receiverCarModel.oilSystem = value
@@ -251,7 +286,7 @@ class EngineCarViewController: UIViewController, EngineCarDisplayLogic
         oilSystemRadio.setValidateView(true)
     }
     @IBAction func fuelSystemValueChanged(_ sender: Any) {
-        let value = getRadioValue(from: ["หัวฉีด", "คาร์บูเรเตอร์", "Direct Injection", "N/A"],
+        let value = getRadioValue(from: [string_injector, string_carburetor, "Direct Injection", "N/A"],
                                   selectIndex: fuelSystemRadio.selectedIndex)
         DataController.shared.receiverCarModel.fuelDeliveryName = value
         
@@ -276,8 +311,8 @@ class EngineCarViewController: UIViewController, EngineCarDisplayLogic
     @IBAction func gasRadioGroupValueChanged(_ sender: Any) {
         gasCheckBox.check = true
         
-        let value = getRadioValue(from: ["LPG ระบบหัวฉีด", "LPG ระบบดูด",
-                                         "CNG/NGV ระบบหัวฉีด", "CNG/NGV ระบบดูด"],
+        let value = getRadioValue(from: [string_lpg_sequential_injection, string_lpg_fumigation_system,
+                                         string_cng_sequential_injection, string_cng_fumigation_system],
                                   selectIndex: gasRadio.selectedIndex)
         
         DataController.shared.receiverCarModel.gasSystem = value
@@ -286,12 +321,12 @@ class EngineCarViewController: UIViewController, EngineCarDisplayLogic
         let gasTypeId = gasRadio.selectedIndex + 1
         DataController.shared.receiverCarModel.gasTypeId = gasTypeId
         
-
-
+        
+        
         setFuelType(fuelType: oilSystemRadio.selectedIndex, gasSystem: gasRadio.selectedIndex)
-
+        
     }
-
+    
     func setFuelType(fuelType:Int, gasSystem:Int){
         switch fuelType {
         case 0: //"เบนซิน"
@@ -315,8 +350,8 @@ class EngineCarViewController: UIViewController, EngineCarDisplayLogic
             break
         }
         
-    //["เบนซิน", "ดีเซล", "EV", "Hybrid / เบนซิน", "Hybrid / ดีเซล"]
-    //["LPG ระบบหัวฉีด", "LPG ระบบดูด", "CNG/NGV ระบบหัวฉีด", "CNG/NGV ระบบดูด"]
+        //["เบนซิน", "ดีเซล", "EV", "Hybrid / เบนซิน", "Hybrid / ดีเซล"]
+        //["LPG ระบบหัวฉีด", "LPG ระบบดูด", "CNG/NGV ระบบหัวฉีด", "CNG/NGV ระบบดูด"]
         switch gasSystem {
         case 0,1: // LPG
             if fuelType == 0 || fuelType == 3 {
@@ -345,11 +380,11 @@ class EngineCarViewController: UIViewController, EngineCarDisplayLogic
     
     @objc func prepareData(){
         let model = DataController.shared.receiverCarModel
-        let engineRoomOverAllValue = ["ดี", "ปานกลาง", "พอใช้", "ไม่ดี"]
+        let engineRoomOverAllValue = [string_good_first, string_average, string_fair, string_poor]
         let driverSystemValue = ["FWD", "RWD", "4WD", "AWD"]
-        let fuelSystemValue = ["เบนซิน", "ดีเซล", "EV", "Hybrid / เบนซิน", "Hybrid / ดีเซล"]
-        let gasTypeValue = ["LPG ระบบหัวฉีด", "LPG ระบบดูด",
-                            "CNG/NGV ระบบหัวฉีด", "CNG/NGV ระบบดูด"]
+        let fuelSystemValue = [string_benzine, string_diesel, "EV", string_hybrid_benzine, string_diesel]
+        let gasTypeValue = [string_lpg_sequential_injection, string_lpg_fumigation_system,
+                            string_cng_sequential_injection, string_cng_fumigation_system]
         
         engineOverallRadio.selectedIndex = getRadioIndexByValue(from: engineRoomOverAllValue, value: model.engineOverAll)
         
@@ -367,7 +402,7 @@ class EngineCarViewController: UIViewController, EngineCarDisplayLogic
         gasCheckBox.check = model.isGas ?? false
         
         
-        fuelSystemRadio.selectedIndex = getRadioIndexByValue(from : ["หัวฉีด", "คาร์บูเรเตอร์", "Direct Injection", "N/A"], value: DataController.shared.receiverCarModel.fuelDeliveryName)
+        fuelSystemRadio.selectedIndex = getRadioIndexByValue(from : [string_injector, string_carburetor, "Direct Injection", "N/A"], value: DataController.shared.receiverCarModel.fuelDeliveryName)
     }
     
     @objc func updateView(){
@@ -385,7 +420,7 @@ class EngineCarViewController: UIViewController, EngineCarDisplayLogic
         ecuCheckBox.setEnableView(isEnable: isEnable)
         compressorCheckBox.setEnableView(isEnable: isEnable)
         gasCheckBox.setEnableView(isEnable: isEnable)
-    
+        
         oilSystemRadio.setValidateView(model.validFuelType)
     }
     
@@ -419,27 +454,27 @@ extension EngineCarViewController : UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
-         
-      
+        
+        
         return true
     }
 }
 //MARK: keyboard
 extension EngineCarViewController {
-   override func viewWillAppear(_ animated: Bool) {
-       super.viewWillAppear(animated)
-       scrollView.registKeyboardNotification()
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        scrollView.registKeyboardNotification()
+        
         prepareData()
         updateView()
-    
+        
         NotificationCenter.default.addObserver(self, selector: #selector(updateView), name: NSNotification.Name("updateUI"), object: nil)
-   }
-   
-   override func viewDidDisappear(_ animated: Bool) {
-       super.viewDidDisappear(animated)
-       scrollView.resignKeyboardNotification()
+    }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        scrollView.resignKeyboardNotification()
+        
         NotificationCenter.default.removeObserver(self)
-   }
+    }
 }

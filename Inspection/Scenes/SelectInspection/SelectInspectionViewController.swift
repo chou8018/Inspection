@@ -109,7 +109,7 @@ class SelectInspectionViewController: ViewController, SelectInspectionDisplayLog
     override func initLocalString() {
         super.initLocalString()
         
-        mainItem.title = String.localized("main_bar_button_title")
+        mainItem.title = String.localized("main_inspection_bar_button_title")
         selectionVCTitleLable.text = String.localized("select_inspection_title_label")
         carLable.text = String.localized("select_inspection_car_label")
         motobikeLable.text = String.localized("select_inspection_motobike_label")

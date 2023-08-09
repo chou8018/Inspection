@@ -14,7 +14,7 @@ import UIKit
 
 protocol ReceiverCarDisplayLogic: AnyObject
 {
-  func displaySomething(viewModel: ReceiverCar.Something.ViewModel)
+    func displaySomething(viewModel: ReceiverCar.Something.ViewModel)
     func displaySignatureViewModal(viewModel: ReceiverCar.Something.ViewModel)
     func displaySignatureToImageView(viewModel: ReceiverCar.Something.ViewModel)
     func displayPhoneNummber(viewModel: ReceiverCar.Something.ViewModel)
@@ -35,79 +35,79 @@ protocol ReceiverCarDisplayLogic: AnyObject
     func displaySetSellCategoryTextField(viewModel: ReceiverCar.Something.ViewModel)
 }
 
-class ReceiverCarViewController: UIViewController, ReceiverCarDisplayLogic
+class ReceiverCarViewController: ViewController, ReceiverCarDisplayLogic
 {
-  var interactor: ReceiverCarBusinessLogic?
-  var router: (NSObjectProtocol & ReceiverCarRoutingLogic & ReceiverCarDataPassing)?
-
-  // MARK: Object lifecycle
-  
-  override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
-  {
-    super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-    setup()
-  }
-  
-  required init?(coder aDecoder: NSCoder)
-  {
-    super.init(coder: aDecoder)
-    setup()
-  }
-  
-  // MARK: Setup
-  
-  private func setup()
-  {
-    let viewController = self
-    let interactor = ReceiverCarInteractor()
-    let presenter = ReceiverCarPresenter()
-    let router = ReceiverCarRouter()
-    viewController.interactor = interactor
-    viewController.router = router
-    interactor.presenter = presenter
-    presenter.viewController = viewController
-    router.viewController = viewController
-    router.dataStore = interactor
-  }
-  
-  // MARK: Routing
-  
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-  {
-    if let scene = segue.identifier {
-      let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
-      if let router = router, router.responds(to: selector) {
-        router.perform(selector, with: segue)
-      }
-        
-        if let destination = segue.destination as? SignatureViewController {
-            destination.confirmSignature =  { [weak self]  (signatureImage , userType) in
-                let request = ReceiverCar.Something.Request(signatureImage: signatureImage,
-                                                            userType: userType)
-                self?.interactor?.getSignature(request: request)
+    var interactor: ReceiverCarBusinessLogic?
+    var router: (NSObjectProtocol & ReceiverCarRoutingLogic & ReceiverCarDataPassing)?
+    
+    // MARK: Object lifecycle
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
+    {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        setup()
+    }
+    
+    required init?(coder aDecoder: NSCoder)
+    {
+        super.init(coder: aDecoder)
+        setup()
+    }
+    
+    // MARK: Setup
+    
+    private func setup()
+    {
+        let viewController = self
+        let interactor = ReceiverCarInteractor()
+        let presenter = ReceiverCarPresenter()
+        let router = ReceiverCarRouter()
+        viewController.interactor = interactor
+        viewController.router = router
+        interactor.presenter = presenter
+        presenter.viewController = viewController
+        router.viewController = viewController
+        router.dataStore = interactor
+    }
+    
+    // MARK: Routing
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if let scene = segue.identifier {
+            let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
+            if let router = router, router.responds(to: selector) {
+                router.perform(selector, with: segue)
             }
+            
+            if let destination = segue.destination as? SignatureViewController {
+                destination.confirmSignature =  { [weak self]  (signatureImage , userType) in
+                    let request = ReceiverCar.Something.Request(signatureImage: signatureImage,
+                                                                userType: userType)
+                    self?.interactor?.getSignature(request: request)
+                }
+            }
+            
         }
+    }
+    
+    // MARK: View lifecycle
+    
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
+        doSomething()
+        setUpUIView()
         
     }
-  }
-  
-  // MARK: View lifecycle
-  
-  override func viewDidLoad()
-  {
-    super.viewDidLoad()
-    doSomething()
-    setUpUIView()
-
-  }
-  
-  // MARK: Do something
+    
+    // MARK: Do something
     @IBOutlet weak var plantLocationTextField: DropDown!
     @IBOutlet weak var receiverLocationTextField: DropDown!
     @IBOutlet weak var storageLocationTextField: DropDown!
-
     
-  //@IBOutlet weak var nameTextField: UITextField!
+    
+    //@IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var senderNameTextField: CustomTextField!
     @IBOutlet weak var contractNumberTextField: CustomTextField!
@@ -148,32 +148,57 @@ class ReceiverCarViewController: UIViewController, ReceiverCarDisplayLogic
     @IBOutlet weak var sellCateLineView: UIView!
     @IBOutlet weak var sellCateTitleLabel: UILabel!
     
+    // local strings
+    @IBOutlet weak var deliveredByLabel: UILabel!
+    @IBOutlet weak var bookedInByLabel: UILabel!
+    @IBOutlet weak var deliveredByPlacehoderLabel: UILabel!
+    @IBOutlet weak var bookedInByPlacehoderLabel: UILabel!
+
     var isSellerLunch = false
     var isFetchLocation = false
     var isPlantLocation = false
     var isFetchSellCate = false
     
-  func doSomething()
-  {
-    let request = ReceiverCar.Something.Request()
-    interactor?.doSomething(request: request)
-  }
-  
+    override func initLocalString() {
+        super.initLocalString()
+        senderNameTitleLabel.text = String.localized("receiver_car_deliverer_name_label")
+        senderNameTextField.placeholder = String.localized("receiver_car_deliverer_name_placeholder_label")
+        contractTitleLabel.text = String.localized("receiver_car_contract_number_label")
+        contractNumberTextField.placeholder = String.localized("receiver_car_contract_number_label")
+        phoneNumberTitleLabel.text = String.localized("receiver_car_phone_label")
+        companyNameTitleLabel.text = String.localized("receiver_car_seller_name_label")
+        companyNumberTextField.placeholder = String.localized("receiver_car_seller_name_label")
+        plantTitleLabel.text = String.localized("receiver_car_plant_location_label")
+        receiverTitleLabel.text = String.localized("receiver_car_receive_location_label")
+        storeTitleLabel.text = String.localized("receiver_car_storage_location_label")
+        deliveredByLabel.text = String.localized("receiver_car_delivered_by_label")
+        deliveredByPlacehoderLabel.text = String.localized("receiver_car_booked_in_by_placeholder_label")
+        bookedInByLabel.text = String.localized("receiver_car_booked_in_by_label")
+        bookedInByPlacehoderLabel.text = String.localized("receiver_car_booked_in_by_placeholder_label")
+
+    }
+    
+    func doSomething()
+    {
+        let request = ReceiverCar.Something.Request()
+        interactor?.doSomething(request: request)
+    }
+    
     //MARK: Presenter
-  func displaySomething(viewModel: ReceiverCar.Something.ViewModel)
-  {
-    //nameTextField.text = viewModel.name
-  }
+    func displaySomething(viewModel: ReceiverCar.Something.ViewModel)
+    {
+        //nameTextField.text = viewModel.name
+    }
     
     func displaySignatureViewModal(viewModel: ReceiverCar.Something.ViewModel) {
         performSegue(withIdentifier: "signatureSegue", sender: nil)
     }
     
     func displaySignatureToImageView(viewModel: ReceiverCar.Something.ViewModel) {
-
+        
         guard let userType = viewModel.userType else { return }
         switch userType {
-       
+            
         case .SENDER:
             DataController.shared.receiverCarModel.senderSignatureImage = viewModel.signatureImage
             senderUIImageView.image = viewModel.signatureImage
@@ -198,12 +223,12 @@ class ReceiverCarViewController: UIViewController, ReceiverCarDisplayLogic
     func displayMessageErrorNotMatchCompany(viewModel: ReceiverCar.Something.ViewModel) {
         guard let errorMessage = viewModel.errorNotMatchCompanyName,
               let match = viewModel.isMatchCompany else { return }
-
+        
         errorCompanyLabel.isHidden = match ? true : false
         errorCompanyLabel.text = errorMessage
     }
     
- 
+    
     
     @objc func receiverTapped(){
         let request = ReceiverCar.Something.Request(titleName: "ลงชื่อผู้รับมอบ",
@@ -242,7 +267,7 @@ class ReceiverCarViewController: UIViewController, ReceiverCarDisplayLogic
         senderNameTextField.delegate = self
         contractNumberTextField.delegate = self
         phoneNumberTextField.delegate = self
-      
+        
         
         senderNameTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         contractNumberTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
@@ -263,11 +288,11 @@ class ReceiverCarViewController: UIViewController, ReceiverCarDisplayLogic
         
         /// bookInType word
         switch DataController.shared.bookInType {
-       
+            
         case .CAR, .MBIKE:
-            contractTitleLabel.text = "เลขที่สัญญา"
-            contractNumberTextField.placeholder = "เลขที่สัญญา"
-    
+            contractTitleLabel.text = String.localized("receiver_car_contract_number_label")
+            contractNumberTextField.placeholder = String.localized("receiver_car_contract_number_label")
+            
         case .CARWRECK, .MBIKEWRECK:
             contractTitleLabel.text = "เลขที่สัญญา/เลขเคลม"
             contractNumberTextField.placeholder = "เลขที่สัญญา/เลขเคลม"
@@ -283,7 +308,7 @@ class ReceiverCarViewController: UIViewController, ReceiverCarDisplayLogic
     
     func displayLocation(viewModel: ReceiverCar.Something.ViewModel) {
         guard let locationList = viewModel.locationList else { return }
-
+        
         setValue(to: receiverLocationTextField, values: locationList) { [weak self] (selectValue, _, _)  in
             DataController.shared.receiverCarModel.receiverPlace = selectValue
             self?.receiverLocationTextField.text = selectValue
@@ -293,8 +318,8 @@ class ReceiverCarViewController: UIViewController, ReceiverCarDisplayLogic
             DataController.shared.receiverCarModel.storePlace = selectValue
             self?.storageLocationTextField.text = selectValue
         }
-         
-
+        
+        
         isFetchLocation = true
     }
     func displayLocationError(viewModel: ReceiverCar.Something.ViewModel) {
@@ -412,7 +437,7 @@ class ReceiverCarViewController: UIViewController, ReceiverCarDisplayLogic
         sellCateTextField.text = viewModel.sellCategory_BU
     }
     
-  
+    
 }
 
 extension ReceiverCarViewController : UITextFieldDelegate {
@@ -456,7 +481,7 @@ extension ReceiverCarViewController : UITextFieldDelegate {
     @objc func prepareData(){
         let model = DataController.shared.receiverCarModel
         
-       
+        
         senderNameTextField.text = model.nameSender
         contractNumberTextField.text = model.contractNumber
         phoneNumberTextField.text = model.phoneNumber
@@ -468,14 +493,14 @@ extension ReceiverCarViewController : UITextFieldDelegate {
         
         receiverLocationTextField.text =  model.receiverPlace
         storageLocationTextField.text =  model.storePlace
-
-       
+        
+        
     }
     
     @objc func updateView(){
         let model = DataController.shared.receiverCarModel
         let enable = getEnableView()
-
+        
         senderNameTextField.setEnableView(isEnable: enable)
         contractNumberTextField.setEnableView(isEnable: enable)
         phoneNumberTextField.setEnableView(isEnable: enable)
@@ -509,22 +534,22 @@ extension ReceiverCarViewController : UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         
-//        switch textField {
-//        case senderNameTextField:
-//            contractNumberTextField.becomeFirstResponder()
-//
-//        case contractNumberTextField:
-//            phoneNumberTextField.becomeFirstResponder()
-//
-//
-//        default:
-//            return true
-//        }
-      
+        //        switch textField {
+        //        case senderNameTextField:
+        //            contractNumberTextField.becomeFirstResponder()
+        //
+        //        case contractNumberTextField:
+        //            phoneNumberTextField.becomeFirstResponder()
+        //
+        //
+        //        default:
+        //            return true
+        //        }
+        
         return true
     }
 }
- 
+
 extension ReceiverCarViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

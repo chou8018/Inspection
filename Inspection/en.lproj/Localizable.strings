@@ -27,19 +27,37 @@
 "select_inspection_place_label" = "Place";
 "select_inspection_plant_label" = "Plant";
 
-// main
-"main_title" = "Book-in";
-"main_bar_button_title" = "Main";
-"main_save_button_title" = "Save";
-"main_send_book_button_title" = "Send book-in";
+// inspection main
+"main_inspection_title" = "Book-in";
+"main_inspection_bar_button_title" = "Main";
+"main_inspection_save_button_title" = "Save";
+"main_inspection_send_book_button_title" = "Send book-in";
+"main_inspection_bar_button_main_title" = "Main Page";
+"main_inspection_item_book_in_title" = "Book-in";
+"main_inspection_item_inspection_title" = "Inspection";
+"main_inspection_item_photos_title" = "Photos";
 
-// book-in
-"book-in_deliverer_title" = "Deliverer";
-"book-in_car_details_title" = "Car details";
-"book-in_exterior_title" = "Exterior";
-"book-in_trunk_title" = "Trunk";
-"book-in_interior_title" = "Interior";
-"book-in_engine_room_title" = "Engine room";
+// pick up
+"pick_up_deliverer_title" = "Deliverer";
+"pick_up_car_details_title" = "Car details";
+"pick_up_exterior_title" = "Exterior";
+"pick_up_trunk_title" = "Trunk";
+"pick_up_interior_title" = "Interior";
+"pick_up_engine_room_title" = "Engine room";
+
+// receiver car
+"receiver_car_deliverer_name_label" = "Deliverer Name";
+"receiver_car_deliverer_name_placeholder_label" = "Name - Last name";
+"receiver_car_contract_number_label" = "Contract no.";
+"receiver_car_phone_label" = "Phone";
+"receiver_car_seller_name_label" = "Seller Name";
+"receiver_car_seller_name_placeholder_label" = "Seller Name";
+"receiver_car_plant_location_label" = "Plant location";
+"receiver_car_receive_location_label" = "Receive location";
+"receiver_car_storage_location_label" = "Storage location";
+"receiver_car_delivered_by_label" = "Delivered by";
+"receiver_car_booked_in_by_label" = "Booked-in by";
+"receiver_car_booked_in_by_placeholder_label" = "Please sign with in this area";
 
 // inspection
 "inspection_body_title" = "Body";

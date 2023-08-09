@@ -28,7 +28,7 @@ class DataController {
         var bookInValue : [String] {
             switch self {
             case .CAR:
-                return ["ผู้ส่งมอบ","รถยนต์","ภายนอก","ห้องสัมภาระ","ห้องโดยสาร","ห้องเครื่อง"]
+                return [String.localized("pick_up_deliverer_title"),String.localized("pick_up_car_details_title"),String.localized("pick_up_exterior_title"),String.localized("pick_up_trunk_title"),String.localized("pick_up_interior_title"),String.localized("pick_up_engine_room_title")]
             case .MBIKE:
                 return ["ผู้ส่งมอบ","รถจักรยานยนต์","ภายนอก","สภาพเครื่องยนต์"]
             case .CARWRECK:

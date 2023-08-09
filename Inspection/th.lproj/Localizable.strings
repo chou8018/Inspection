@@ -27,5 +27,34 @@
 "select_inspection_place_label" = "สถานที่";
 "select_inspection_plant_label" = "สถานที่รับรถ";
 
-// main
-"main_bar_button_title" = "หน้าหลัก";
+// inspection main
+"main_inspection_title" = "รับมอบ - รถยนต์";
+"main_inspection_bar_button_title" = "หน้าหลัก";
+"main_inspection_save_button_title" = "บันทึก";
+"main_inspection_send_book_button_title" = "Send book-in";
+"main_inspection_bar_button_main_title" = "หน้าหลัก";
+"main_inspection_item_book_in_title" = "รับมอบ";
+"main_inspection_item_inspection_title" = "ตรวจสภาพ";
+"main_inspection_item_photos_title" = "ถ่ายรูป";
+
+// pick up
+"pick_up_deliverer_title" = "ผู้ส่งมอบ";
+"pick_up_car_details_title" = "รถยนต์";
+"pick_up_exterior_title" = "ภายนอก";
+"pick_up_trunk_title" = "ห้องสัมภาระ";
+"pick_up_interior_title" = "ห้องโดยสาร";
+"pick_up_engine_room_title" = "ห้องเครื่อง";
+
+// receiver car
+"receiver_car_deliverer_name_label" = "ผู้ส่งมอบ";
+"receiver_car_deliverer_name_placeholder_label" = "ชื่อ-นามสกุล";
+"receiver_car_contract_number_label" = "เลขที่สัญญา";
+"receiver_car_phone_label" = "เบอร์โทรศัพท์";
+"receiver_car_seller_name_label" = "บริษัทฯ";
+"receiver_car_seller_name_placeholder_label" = "ชื่อบริษัท";
+"receiver_car_plant_location_label" = "สถานที่ ";
+"receiver_car_receive_location_label" = "สถานที่รับรถ";
+"receiver_car_storage_location_label" = "สถานที่เก็บรถ";
+"receiver_car_deliverd_by_label" = "ลงชื่อผู้ส่งมอบ";
+"receiver_car_booked_in_by_label" = "ลงชื่อผู้รับมอบ";
+"receiver_car_booked_in_by_placeholder_label" = "กดภายในกรอบนัพื่อทำการลงชื่อ";

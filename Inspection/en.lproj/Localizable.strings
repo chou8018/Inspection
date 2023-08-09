@@ -85,6 +85,7 @@
 "car_exterior_label" = "Exterior condition";
 "car_exterior_excellent_label" = "Excellent";
 "car_exterior_good_label" = "Good";
+"car_exterior_good_first_label" = "Good";
 "car_exterior_average_label" = "Average";
 "car_exterior_fair_label" = "Fair";
 "car_exterior_poor_label" = "Poor";
@@ -100,6 +101,17 @@
 "car_exterior_make_label" = "Make";
 "car_exterior_condition_label" = "Condition";
 "car_exterior_damages_label" = "Damages Details";
+
+// car trunk
+"car_trunk_luggage_label" = "Luggage compartment condition";
+"car_trunk_remarks_placeholder" = "Remarks";
+"car_trunk_spare_tire_label" = "Spare tire";
+"car_trunk_tools_label" = "Tools";
+"car_trunk_magliner_label" = "Magliner";
+"car_trunk_roof_rag_label" = "Roof rag";
+"car_trunk_jack_label" = "Jack";
+"car_trunk_ev_charger_label" = "EV Charger";
+"car_trunk_other_accessaries_label" = "Other accessaries";
 
 // inspection
 "inspection_body_title" = "Body";

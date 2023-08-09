@@ -2284,7 +2284,7 @@
                                         </subviews>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7H0-66-Rbw" customClass="RadioGroup" customModule="RadioGroup">
-                                        <rect key="frame" x="320" y="55" width="300" height="50"/>
+                                        <rect key="frame" x="350" y="55" width="300" height="50"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" name="primary_color"/>
                                         <constraints>
@@ -2317,10 +2317,10 @@
                                         </connections>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="rzA-s9-atd">
-                                        <rect key="frame" x="640" y="60" width="390" height="40"/>
+                                        <rect key="frame" x="670" y="60" width="360" height="40"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="250" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="หมายเหตุ" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ONv-Ba-sW1" customClass="CustomTextField" customModule="Inspection" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="390" height="39"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="360" height="39"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <textInputTraits key="textInputTraits"/>
                                                 <userDefinedRuntimeAttributes>
@@ -2330,7 +2330,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="09E-ID-tDt">
-                                                <rect key="frame" x="0.0" y="39" width="390" height="1"/>
+                                                <rect key="frame" x="0.0" y="39" width="360" height="1"/>
                                                 <color key="backgroundColor" name="primary_color"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="UVC-Hp-H3t"/>
@@ -2350,7 +2350,7 @@
                                     <constraint firstItem="OMC-s5-fJ2" firstAttribute="centerX" secondItem="ue3-VI-ty1" secondAttribute="centerX" id="UW7-Rb-aEi"/>
                                     <constraint firstAttribute="bottom" secondItem="OMC-s5-fJ2" secondAttribute="bottom" constant="300" id="Z1X-VG-SrS"/>
                                     <constraint firstItem="rzA-s9-atd" firstAttribute="centerY" secondItem="7H0-66-Rbw" secondAttribute="centerY" id="b7p-Tm-Zve"/>
-                                    <constraint firstItem="7H0-66-Rbw" firstAttribute="leading" secondItem="lk7-yf-Xhx" secondAttribute="leading" constant="270" id="djC-7h-UuD"/>
+                                    <constraint firstItem="7H0-66-Rbw" firstAttribute="leading" secondItem="lk7-yf-Xhx" secondAttribute="leading" constant="300" id="djC-7h-UuD"/>
                                     <constraint firstItem="rzA-s9-atd" firstAttribute="leading" secondItem="7H0-66-Rbw" secondAttribute="trailing" constant="20" id="eS5-Gb-gQb"/>
                                     <constraint firstItem="OMC-s5-fJ2" firstAttribute="leading" secondItem="ue3-VI-ty1" secondAttribute="leading" constant="50" id="y1l-8i-FXa"/>
                                 </constraints>
@@ -2371,12 +2371,20 @@
                         <outlet property="cableChargeEVCheckBox" destination="YIz-NW-BQh" id="AWD-2p-Dj0"/>
                         <outlet property="craneCheckBox" destination="5TM-7z-gUX" id="uQP-2u-NG0"/>
                         <outlet property="decorationTextField" destination="27S-gw-R4f" id="tHj-1x-hJj"/>
+                        <outlet property="evChargerLabel" destination="CYS-a6-rqV" id="NA6-iy-MtG"/>
+                        <outlet property="jackLabel" destination="YmC-01-a0S" id="z4y-Iy-vBp"/>
+                        <outlet property="luggageTitleLabel" destination="lk7-yf-Xhx" id="Xue-tJ-Evo"/>
+                        <outlet property="maglinerLabel" destination="yxP-0F-kos" id="TI6-2n-ESM"/>
                         <outlet property="maxlinerCheckBox" destination="73J-K9-S4N" id="nSw-F5-1dB"/>
                         <outlet property="noteSparePartOverAllTextField" destination="ONv-Ba-sW1" id="drY-6H-sPr"/>
+                        <outlet property="otherAccessariesLabel" destination="n9q-Ua-vwd" id="4zV-fO-dTw"/>
+                        <outlet property="roofRagLabel" destination="f9n-xW-Mvd" id="9SV-Eb-YNZ"/>
                         <outlet property="roofreckCheckBox" destination="7Ju-1K-3b7" id="OUG-Jb-dUw"/>
                         <outlet property="scrollView" destination="ue3-VI-ty1" id="X73-UR-gen"/>
+                        <outlet property="spareTireTitleLabel" destination="vVi-IY-Wq0" id="DXp-On-RU1"/>
                         <outlet property="tireSpareCheckBox" destination="PRl-X4-5dz" id="tEF-oS-2BE"/>
                         <outlet property="toolSpareCheckBox" destination="1Sh-s5-uhC" id="Rhc-ED-ZxS"/>
+                        <outlet property="toolsLabel" destination="i4H-xO-BBF" id="BNE-LF-tFt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1IC-I0-SAC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

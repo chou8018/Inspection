@@ -85,6 +85,7 @@
 "car_exterior_label" = "สภาพภายนอกโดยรวม";
 "car_exterior_excellent_label" = "เยี่ยม";
 "car_exterior_good_label" = "ดีมาก";
+"car_exterior_good_first_label" = "ดี";
 "car_exterior_average_label" = "ปานกลาง";
 "car_exterior_fair_label" = "พอใช้";
 "car_exterior_poor_label" = "แย่";
@@ -100,3 +101,33 @@
 "car_exterior_make_label" = "ยี่ห้อ";
 "car_exterior_condition_label" = "สภาพ";
 "car_exterior_damages_label" = "รายละเอียดร่องรอยความเสียหาย";
+
+// car trunk
+"car_trunk_luggage_label" = "สภาพห้องสัมภาระโดยรวม";
+"car_trunk_remarks_placeholder" = "หมายเหตุ";
+"car_trunk_spare_tire_label" = "ยางอะไหล่";
+"car_trunk_tools_label" = "เครื่องมือ";
+"car_trunk_magliner_label" = "แม็กไลน์เนอร์";
+"car_trunk_roof_rag_label" = "แร็คหลังคา";
+"car_trunk_jack_label" = "แม่แรง";
+"car_trunk_ev_charger_label" = "สายชาร์จไฟ EV";
+"car_trunk_other_accessaries_label" = "อุปกรณ์แต่งอื่น ๆ";
+
+// inspection
+"inspection_body_title" = "Body";
+"inspection_engine_title" = "Engine";
+"inspection_suspension_title" = "Suspension";
+"inspection_gear_box_title" = "Gear box";
+"inspection_steering_title" = "Steering";
+"inspection_air_title" = "Air";
+"inspection_brake_title" = "Brake";
+"inspection_lost_title" = "Lost";
+"inspection_electrical_title" = "Electrical";
+
+// photos
+"photos_deliverer_title" = "Deliverer";
+"photos_car_details_title" = "Car details";
+"photos_exterior_title" = "Exterior";
+"photos_trunk_title" = "Trunk";
+"photos_interior_title" = "Interior";
+"photos_engine_room_title" = "Engine room";

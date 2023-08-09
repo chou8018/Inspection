@@ -115,6 +115,7 @@ class ExternalCarViewController: ViewController, ExternalCarDisplayLogic
     
     let string_excellent = String.localized("car_exterior_excellent_label")
     let string_good = String.localized("car_exterior_good_label")
+    let string_good_first = String.localized("car_exterior_good_first_label")
     let string_average = String.localized("car_exterior_average_label")
     let string_fair = String.localized("car_exterior_fair_label")
     let string_poor = String.localized("car_exterior_poor_label")
@@ -266,7 +267,7 @@ class ExternalCarViewController: ViewController, ExternalCarDisplayLogic
         var selectString:String? = nil
         switch qualityColorRadio.selectedIndex {
         case 0:
-            selectString = string_good
+            selectString = string_good_first
         case 1:
             selectString = string_average
         case 2:
@@ -372,7 +373,7 @@ class ExternalCarViewController: ViewController, ExternalCarDisplayLogic
         //MARK: External
         let model = DataController.shared.receiverCarModel
         let gradeOverallValue = [string_excellent,string_good,string_average,string_fair,string_poor,string_as_is,string_salvage]
-        let colorOverallValue = [string_good,string_average,string_fair,string_poor]
+        let colorOverallValue = [string_good_first,string_average,string_fair,string_poor]
         
         qualityColorRadio.selectedIndex = getRadioIndexByValue(from: colorOverallValue, value: model.colorOverall)
         

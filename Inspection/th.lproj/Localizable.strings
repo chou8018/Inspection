@@ -113,6 +113,38 @@
 "car_trunk_ev_charger_label" = "สายชาร์จไฟ EV";
 "car_trunk_other_accessaries_label" = "อุปกรณ์แต่งอื่น ๆ";
 
+// car interior
+"car_interior_condition_label" = "สภาพภายในโดยรวม";
+"car_interior_kilometer_label" = "Kilometer";
+"car_interior_mileage_label" = "Mileage";
+"car_interior_mileage_placeholder_label" = "เลขไมล์";
+"car_interior_fuel_amount_label" = "ปริมาณน้ำมัน";
+"car_interior_gear_label" = "เกียร์";
+"car_interior_airbag_label" = "แอร์แบ็ค";
+"car_interior_gearhead_label" = "หัวเกียร์";
+"car_interior_power_amplifier_label" = "พาวเวอร์แอมป์";
+"car_interior_gear_lock_label" = "ล๊อคเกียร์";
+"car_interior_pre_amplifier_label" = "ปรีแอมป์";
+"car_interior_stereo_label" = "ลำโพง";
+"car_interior_manual_look_label" = "คู่มือ";
+"car_interior_cigarette_lighter_label" = "ที่จุดบุหรี่";
+"car_interior_tax_sign_label" = "ป้ายวงกลม";
+"car_interior_navigator_label" = "เนวิเกเตอร์";
+"car_interior_navigator_in_label" = "เนวิเกเตอร์ในตัว";
+"car_interior_no_cd_label" = "ไม่มี CD";
+"car_interior_no_cd_card_label" = "ไม่มี SD CARD";
+"car_interior_sound_player_label" = " เครื่องเล่น";
+"car_interior_radio_label" = "วิทยุ";
+"car_interior_tape_label" = "เทป";
+"car_interior_cd_dvd_label" = "ซีดี";
+"car_interior_key_label" = "กุญแจ";
+"car_interior_remote_control_label" = "รีโมท";
+"car_interior_remote_key_label" = "กุญแจรีโมท";
+"car_interior_key_immobilizer_label" = "กุญแจ Immobilizer";
+"car_interior_key_label" = "กุญแจ Keyless";
+"car_interior_key_placeholder_label" = "จำนวน";
+"car_interior_others_label" = "อื่นๆ";
+
 // inspection
 "inspection_body_title" = "Body";
 "inspection_engine_title" = "Engine";

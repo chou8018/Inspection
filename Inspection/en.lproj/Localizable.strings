@@ -113,6 +113,38 @@
 "car_trunk_ev_charger_label" = "EV Charger";
 "car_trunk_other_accessaries_label" = "Other accessaries";
 
+// car interior
+"car_interior_condition_label" = "Internior condition";
+"car_interior_kilometer_label" = "Kilometer";
+"car_interior_mileage_label" = "Mileage";
+"car_interior_mileage_placeholder_label" = "mileage";
+"car_interior_fuel_amount_label" = "Fuel amount";
+"car_interior_gear_label" = "Gear";
+"car_interior_airbag_label" = "Airbag";
+"car_interior_gearhead_label" = "Gearhead";
+"car_interior_power_amplifier_label" = "Power Amplifier";
+"car_interior_gear_lock_label" = "Gear lock";
+"car_interior_pre_amplifier_label" = "Pre Amplifier";
+"car_interior_stereo_label" = "Stereo";
+"car_interior_manual_look_label" = "Manual book";
+"car_interior_cigarette_lighter_label" = "Cigarette lighter";
+"car_interior_tax_sign_label" = "Tax sign";
+"car_interior_navigator_label" = "Navigator";
+"car_interior_navigator_in_label" = "Built in Navigator";
+"car_interior_no_cd_label" = "No CD";
+"car_interior_no_cd_card_label" = "No CD Card";
+"car_interior_sound_player_label" = "Sound Player";
+"car_interior_radio_label" = "Radio";
+"car_interior_tape_label" = "Tape";
+"car_interior_cd_dvd_label" = "CD/DVD";
+"car_interior_key_label" = "Key";
+"car_interior_remote_control_label" = "Remote control";
+"car_interior_remote_key_label" = "Remote key";
+"car_interior_key_immobilizer_label" = "Immobilizer";
+"car_interior_key_label" = "Keyless";
+"car_interior_key_placeholder_label" = "Numbers";
+"car_interior_others_label" = "Others";
+
 // inspection
 "inspection_body_title" = "Body";
 "inspection_engine_title" = "Engine";

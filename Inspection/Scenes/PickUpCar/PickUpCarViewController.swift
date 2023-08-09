@@ -31,6 +31,16 @@ protocol PickUpCarDisplayLogic: AnyObject
     
 }
 
+let string_excellent = String.localized("car_exterior_excellent_label")
+let string_good = String.localized("car_exterior_good_label")
+let string_good_first = String.localized("car_exterior_good_first_label")
+let string_average = String.localized("car_exterior_average_label")
+let string_fair = String.localized("car_exterior_fair_label")
+let string_poor = String.localized("car_exterior_poor_label")
+let string_as_is = String.localized("car_exterior_as_is_label")
+let string_salvage = String.localized("car_exterior_salvage_label")
+
+
 class PickUpCarViewController: ViewController, PickUpCarDisplayLogic
 {
     var interactor: PickUpCarBusinessLogic?

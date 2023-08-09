@@ -100,9 +100,6 @@ class SparePartsCarViewController: ViewController, SparePartsCarDisplayLogic
     @IBOutlet weak var jackLabel: UILabel!
     @IBOutlet weak var evChargerLabel: UILabel!
     @IBOutlet weak var otherAccessariesLabel: UILabel!
-    
-    let string_good_first = String.localized("car_exterior_good_first_label")
-    let string_poor = String.localized("car_exterior_poor_label")
 
     override func initLocalString() {
         super.initLocalString()

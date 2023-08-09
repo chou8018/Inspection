@@ -2950,14 +2950,14 @@
                                                 <rect key="frame" x="0.0" y="81" width="980" height="60"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="sqJ-Yr-qKK">
-                                                        <rect key="frame" x="0.0" y="0.0" width="360" height="60"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="410" height="60"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iiX-Xq-e6k" customClass="RadioGroup" customModule="RadioGroup">
-                                                                <rect key="frame" x="0.0" y="0.0" width="210" height="60"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="260" height="60"/>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <color key="tintColor" name="primary_color"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="width" constant="210" id="efx-9g-LVn"/>
+                                                                    <constraint firstAttribute="width" constant="260" id="efx-9g-LVn"/>
                                                                 </constraints>
                                                                 <userDefinedRuntimeAttributes>
                                                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isVertical" value="NO"/>
@@ -2985,7 +2985,7 @@
                                                                 </connections>
                                                             </view>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="0VW-y1-rqZ">
-                                                                <rect key="frame" x="220" y="10" width="140" height="40"/>
+                                                                <rect key="frame" x="270" y="10" width="140" height="40"/>
                                                                 <subviews>
                                                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="เลขไมล์" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aGn-CQ-cE2" customClass="CustomTextField" customModule="Inspection" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="0.0" width="140" height="39"/>
@@ -3016,7 +3016,7 @@
                                                         </constraints>
                                                     </stackView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="ปริมาณน้ำมัน" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2wp-X6-pPj">
-                                                        <rect key="frame" x="370" y="0.0" width="610" height="60"/>
+                                                        <rect key="frame" x="420" y="0.0" width="560" height="60"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                         <color key="textColor" name="primary_color"/>
                                                         <nil key="highlightedColor"/>
@@ -4196,7 +4196,7 @@
                                         </connections>
                                     </view>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="xpR-8d-qp4">
-                                        <rect key="frame" x="550" y="141" width="325" height="60.5"/>
+                                        <rect key="frame" x="600" y="141" width="325" height="60.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="bRr-LG-lGo">
                                                 <rect key="frame" x="0.0" y="0.0" width="325" height="40"/>
@@ -4343,6 +4343,7 @@
                     </view>
                     <size key="freeformSize" width="1080" height="1400"/>
                     <connections>
+                        <outlet property="airBagLabel" destination="Fma-FD-Wxt" id="j44-kJ-zjW"/>
                         <outlet property="airbackCheckBox" destination="rBj-YG-PAd" id="u2T-9s-980"/>
                         <outlet property="amount1OilCheckButton" destination="iUk-cc-l8h" id="6AZ-83-KPB"/>
                         <outlet property="amount2OilCheckButton" destination="t8I-vx-zHh" id="fNQ-hZ-Sz5"/>
@@ -4351,47 +4352,72 @@
                         <outlet property="amountEOilCheckButton" destination="wra-5j-bbf" id="gCw-hc-SYy"/>
                         <outlet property="bookServiceCheckBox" destination="doy-WO-jyh" id="ivL-bZ-T0C"/>
                         <outlet property="brandPlayerTextField" destination="L9P-at-vkJ" id="jch-JB-Pne"/>
+                        <outlet property="builtInNavigatorLabel" destination="91k-UX-C71" id="R9C-RL-Gkd"/>
                         <outlet property="cabinNoteTextField" destination="6kR-6H-cV2" id="e77-hp-Tvk"/>
                         <outlet property="cabinOverallRadio" destination="qpN-cD-95h" id="ect-9F-fKh"/>
                         <outlet property="cdCheckBox" destination="jwv-gq-JYd" id="Vh4-nf-jax"/>
+                        <outlet property="cdDVDLabel" destination="dn5-gb-JEw" id="8nn-lc-U2P"/>
                         <outlet property="cigaretteLighterCheckBox" destination="cCM-vw-jFp" id="Quq-wu-n2p"/>
+                        <outlet property="cigaretteLighterLabel" destination="Ckr-25-OvM" id="mFC-9x-7T3"/>
+                        <outlet property="fuelAmountLabel" destination="2wp-X6-pPj" id="0J7-GQ-4f1"/>
                         <outlet property="gearHeadCheckBox" destination="zYD-wt-Sep" id="AcS-aC-goj"/>
+                        <outlet property="gearLabel" destination="qSD-jy-a5s" id="Npf-VE-tRk"/>
                         <outlet property="gearLockCheckBox" destination="uUK-xA-mih" id="Lxs-bK-wBG"/>
+                        <outlet property="gearLockLabel" destination="ZMJ-my-gKh" id="SGa-3s-KP7"/>
                         <outlet property="gearboxDropDown" destination="fC7-wk-QxG" id="kXb-D4-k3K"/>
                         <outlet property="gearboxLabel" destination="qSD-jy-a5s" id="big-MI-jME"/>
                         <outlet property="gearboxLineView" destination="834-1b-qpo" id="30J-bw-mte"/>
+                        <outlet property="gearheadLabel" destination="8C0-tq-31y" id="pLM-fb-m9Y"/>
                         <outlet property="immobilizarKeyCheckBox" destination="Dvs-PX-QDh" id="agn-T7-D5K"/>
                         <outlet property="immobilizarKeyDropDown" destination="atp-hO-HS2" id="Qqo-V3-lIt"/>
+                        <outlet property="immobilizerLabel" destination="G2d-z1-rnT" id="dsL-4W-Sf2"/>
+                        <outlet property="interniorConditionLabel" destination="4TE-RI-OIb" id="Snx-S4-JCn"/>
                         <outlet property="isInvalidMilesCheckBox" destination="n5O-DH-fRy" id="wXB-as-JTF"/>
                         <outlet property="keyCheckBox" destination="3bT-qk-jd2" id="uNr-b8-3kp"/>
                         <outlet property="keyDropDown" destination="ydI-MP-yxX" id="Ik1-BJ-YYv"/>
+                        <outlet property="keyLabel" destination="s0Q-4m-Sen" id="4Ab-Iq-R6G"/>
+                        <outlet property="keyTitleLabel" destination="cXa-tV-QwN" id="knT-fz-efw"/>
                         <outlet property="keylessKeyCheckBox" destination="FUe-8q-Ggh" id="ANc-Pr-wgJ"/>
                         <outlet property="keylessKeyDropDown" destination="ENC-Wp-xMa" id="1ey-Uh-I4z"/>
+                        <outlet property="keylessLabel" destination="yfC-2e-3NQ" id="mNe-Sp-XML"/>
+                        <outlet property="manualBookLabel" destination="8kP-oS-HtV" id="rsk-hf-UBv"/>
                         <outlet property="manualCheckBox" destination="XxB-k4-Sbp" id="Fqw-oi-ppB"/>
                         <outlet property="mileNumberTextField" destination="aGn-CQ-cE2" id="auO-dk-Nxr"/>
                         <outlet property="milesRadio" destination="iiX-Xq-e6k" id="zl0-ob-Gy2"/>
                         <outlet property="navigatorCheckBox" destination="B1p-Ho-Uai" id="lGI-lA-nnb"/>
+                        <outlet property="navigatorLabel" destination="Fbp-FG-6Lq" id="3ft-yp-Nc9"/>
                         <outlet property="navigatorOnCarCheckBox" destination="cnM-Da-tYj" id="uXX-T0-cBD"/>
                         <outlet property="noCdCheckBox" destination="Mbm-bH-J1Q" id="X2k-7i-1wq"/>
                         <outlet property="noSdCardCheckBox" destination="fgw-0Y-KC9" id="Lyd-Un-oh8"/>
+                        <outlet property="othersLabel" destination="oSr-Il-jni" id="mHz-LZ-Unq"/>
                         <outlet property="playerCDCheckBox" destination="ejd-cw-J9N" id="LNU-j4-VGG"/>
                         <outlet property="playerRadioCheckBox" destination="ukf-CJ-ZMp" id="8e0-ID-5rg"/>
                         <outlet property="playerTapeCheckBox" destination="Zga-n3-k8b" id="JVl-kw-bun"/>
                         <outlet property="playerUSBCheckBox" destination="Vd4-EW-EdM" id="Bvn-04-bVW"/>
                         <outlet property="powerAmpCheckBox" destination="a4q-sk-MJz" id="Abz-Sm-e9F"/>
+                        <outlet property="powerAmplifierLabel" destination="Fiq-C5-MtM" id="13G-NG-4Kd"/>
                         <outlet property="preAmpCheckBox" destination="gR2-VO-KcP" id="Zrs-gO-1Gs"/>
+                        <outlet property="preAmplifierLabel" destination="kAw-pt-vSH" id="z3V-cH-jkr"/>
+                        <outlet property="radioLabel" destination="sf8-EK-BE5" id="6Bh-SB-qgE"/>
                         <outlet property="reasonMileageStackView" destination="pE3-7S-LRn" id="CJ2-yG-EfD"/>
                         <outlet property="reasonMileageTextField" destination="APT-CK-uuI" id="2Yy-3H-ZVr"/>
                         <outlet property="remoteCheckBox" destination="N7k-dx-RHr" id="9Gm-de-Ba4"/>
+                        <outlet property="remoteControlLabel" destination="hwX-gd-x0Q" id="cMY-ct-GKY"/>
                         <outlet property="remoteDropDown" destination="WTE-II-WmR" id="nWL-t2-qEm"/>
                         <outlet property="remoteKeyCheckBox" destination="hhc-2O-asv" id="Y6A-O3-FK2"/>
                         <outlet property="remoteKeyDropDown" destination="OXM-Gu-RtB" id="6wQ-WB-6sx"/>
+                        <outlet property="remoteKeyLabel" destination="fDB-iN-fRv" id="eqt-aQ-g9l"/>
                         <outlet property="scrollView" destination="hGw-ll-Vas" id="4lW-8d-S3j"/>
                         <outlet property="sdCardCheckBox" destination="KmU-cg-eCb" id="ZX8-P8-Hl7"/>
+                        <outlet property="soundPlayerLabel" destination="Q9p-mW-Jeb" id="iPe-Ku-M9Y"/>
                         <outlet property="speakerCheckBox" destination="hWf-Du-rla" id="jPC-Gb-N1h"/>
+                        <outlet property="stereoLabel" destination="lWT-vW-Ezy" id="Tyu-5e-1Av"/>
+                        <outlet property="tapeLabel" destination="pgD-35-kjY" id="ca6-X0-scc"/>
                         <outlet property="taxPlateCheckBox" destination="R86-Wn-7Q3" id="yPy-BI-OTm"/>
                         <outlet property="taxPlateExpiredLabel" destination="mEh-Fd-wAo" id="saB-6O-6GD"/>
                         <outlet property="taxPlateExpiredView" destination="ybt-0B-EHQ" id="SZ2-8u-EMF"/>
+                        <outlet property="taxSignLabel" destination="Qor-5y-FXL" id="7a4-1L-pwV"/>
+                        <outlet property="unableVerifiedLabel" destination="lkH-I1-JYa" id="nkV-XS-W89"/>
                         <segue destination="50M-52-okw" kind="popoverPresentation" identifier="showDateTime" popoverAnchorView="ybt-0B-EHQ" id="Xzh-Fa-dGj">
                             <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                         </segue>
@@ -9207,7 +9233,7 @@
             <size key="intrinsicContentSize" width="30" height="30"/>
         </designable>
         <designable name="iiX-Xq-e6k">
-            <size key="intrinsicContentSize" width="363" height="77"/>
+            <size key="intrinsicContentSize" width="299.5" height="97.5"/>
         </designable>
         <designable name="jYI-1j-kO5">
             <size key="intrinsicContentSize" width="13" height="25.5"/>

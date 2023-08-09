@@ -4907,18 +4907,27 @@
                     </view>
                     <size key="freeformSize" width="1080" height="1000"/>
                     <connections>
+                        <outlet property="alloyUnitLabel" destination="4Kh-Gg-LcZ" id="9DW-le-uAg"/>
+                        <outlet property="alloyWheelLabel" destination="JKB-DG-nH4" id="Vhb-pN-qzq"/>
                         <outlet property="damageDetailTextField" destination="dq7-hF-fMh" id="QIg-0Z-5ED"/>
+                        <outlet property="damagesLabel" destination="wak-L0-uuJ" id="bRn-Dn-Ph4"/>
+                        <outlet property="exteriorTitleLabel" destination="AxS-5j-gSd" id="dGG-7K-ZN3"/>
                         <outlet property="magWheelCheckBox" destination="gOv-OK-Cql" id="uqW-At-MeC"/>
                         <outlet property="magWheelTextField" destination="UvF-Y1-YeX" id="owg-4a-PnL"/>
                         <outlet property="normalWheelCheckBox" destination="Wvq-v7-tmc" id="sFJ-wt-vxv"/>
                         <outlet property="normalWheelTextField" destination="B3g-4Z-ngb" id="JjX-a4-fRn"/>
+                        <outlet property="paintConditionLabel" destination="o6k-WB-nuT" id="ZoL-XX-wkV"/>
                         <outlet property="qualityColorRadio" destination="ejn-rZ-nz9" id="G70-pJ-aoj"/>
                         <outlet property="qualityOverallRadio" destination="LRr-be-nEx" id="7xU-A4-HLK"/>
                         <outlet property="scrollView" destination="kBq-Uq-YeP" id="CIe-UO-aUA"/>
                         <outlet property="spoilerCheckBox" destination="g0n-N0-Dv6" id="LWc-x8-xLM"/>
+                        <outlet property="spoilerLabel" destination="wLh-By-YX1" id="Z2d-X7-d9A"/>
+                        <outlet property="steelUnitLabel" destination="ffK-es-Lty" id="1bI-vQ-lVk"/>
+                        <outlet property="steelWheelLabel" destination="BiC-VY-KY3" id="zXr-sp-L2k"/>
                         <outlet property="tireCheckBox" destination="Jte-ao-jEH" id="cF3-eJ-scu"/>
                         <outlet property="tireQualityTextField" destination="FiI-LJ-DD7" id="IcF-YN-qZD"/>
                         <outlet property="tireTextField" destination="zW7-dt-gxi" id="fiv-C6-EUK"/>
+                        <outlet property="tiresLabel" destination="GTU-Wv-Qjs" id="a6Q-UB-nQx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VZQ-7I-Il6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

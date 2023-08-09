@@ -80,3 +80,23 @@
 "car_detail_unable_to_verified_label" = "ตรวจสอบไม่ได้";
 "car_detail_vin_number_label" = "หมายเลขตัวถัง";
 "car_detail_gas_label" = "เลขถังแก๊ส";
+
+// car exterior
+"car_exterior_label" = "สภาพภายนอกโดยรวม";
+"car_exterior_excellent_label" = "เยี่ยม";
+"car_exterior_good_label" = "ดีมาก";
+"car_exterior_average_label" = "ปานกลาง";
+"car_exterior_fair_label" = "พอใช้";
+"car_exterior_poor_label" = "แย่";
+"car_exterior_as_is_label" = "ตามสภาพ";
+"car_exterior_salvage_label" = "ซาก";
+"car_exterior_paint_label" = "สภาพสีโดยรวม";
+"car_exterior_spoiler_label" = "สปอยเลอร์";
+"car_exterior_alloy_wheel_label" = "ล้อแม็กซ์";
+"car_exterior_amount_label" = "จำนวน";
+"car_exterior_unit_label" = "วง";
+"car_exterior_steel_wheel_label" = "ล้อกระทะ";
+"car_exterior_tires_label" = "ยาง";
+"car_exterior_make_label" = "ยี่ห้อ";
+"car_exterior_condition_label" = "สภาพ";
+"car_exterior_damages_label" = "รายละเอียดร่องรอยความเสียหาย";

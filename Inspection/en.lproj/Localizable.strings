@@ -81,6 +81,26 @@
 "car_detail_vin_number_label" = "Vin. no.";
 "car_detail_gas_label" = "Gas";
 
+// car exterior
+"car_exterior_label" = "Exterior condition";
+"car_exterior_excellent_label" = "Excellent";
+"car_exterior_good_label" = "Good";
+"car_exterior_average_label" = "Average";
+"car_exterior_fair_label" = "Fair";
+"car_exterior_poor_label" = "Poor";
+"car_exterior_as_is_label" = "As is";
+"car_exterior_salvage_label" = "Salvage";
+"car_exterior_paint_label" = "Paint condition";
+"car_exterior_spoiler_label" = "Spoiler/Wing";
+"car_exterior_alloy_wheel_label" = "Alloy wheel";
+"car_exterior_amount_label" = "Amount";
+"car_exterior_unit_label" = "Unit";
+"car_exterior_steel_wheel_label" = "Steel wheel";
+"car_exterior_tires_label" = "Tires";
+"car_exterior_make_label" = "Make";
+"car_exterior_condition_label" = "Condition";
+"car_exterior_damages_label" = "Damages Details";
+
 // inspection
 "inspection_body_title" = "Body";
 "inspection_engine_title" = "Engine";

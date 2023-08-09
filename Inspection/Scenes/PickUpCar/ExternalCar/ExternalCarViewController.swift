@@ -15,74 +15,74 @@ import RadioGroup
 
 protocol ExternalCarDisplayLogic: AnyObject
 {
-  func displaySomething(viewModel: ExternalCar.Something.ViewModel)
+    func displaySomething(viewModel: ExternalCar.Something.ViewModel)
     func displayTireCheckBox(viewModel: ExternalCar.Something.ViewModel)
     func displayMagWheelCheckBox(viewModel: ExternalCar.Something.ViewModel)
     func displayValidateResultTireTextField(viewModel: ExternalCar.Something.ViewModel)
     func displayNormalWheelCheckBox(viewModel: ExternalCar.Something.ViewModel)
 }
 
-class ExternalCarViewController: UIViewController, ExternalCarDisplayLogic
+class ExternalCarViewController: ViewController, ExternalCarDisplayLogic
 {
-  var interactor: ExternalCarBusinessLogic?
-  var router: (NSObjectProtocol & ExternalCarRoutingLogic & ExternalCarDataPassing)?
-
-  // MARK: Object lifecycle
-  
-  override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
-  {
-    super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-    setup()
-  }
-  
-  required init?(coder aDecoder: NSCoder)
-  {
-    super.init(coder: aDecoder)
-    setup()
-  }
-  
-  // MARK: Setup
-  
-  private func setup()
-  {
-    let viewController = self
-    let interactor = ExternalCarInteractor()
-    let presenter = ExternalCarPresenter()
-    let router = ExternalCarRouter()
-    viewController.interactor = interactor
-    viewController.router = router
-    interactor.presenter = presenter
-    presenter.viewController = viewController
-    router.viewController = viewController
-    router.dataStore = interactor
-  }
-  
-  // MARK: Routing
-  
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-  {
-    if let scene = segue.identifier {
-      let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
-      if let router = router, router.responds(to: selector) {
-        router.perform(selector, with: segue)
-      }
+    var interactor: ExternalCarBusinessLogic?
+    var router: (NSObjectProtocol & ExternalCarRoutingLogic & ExternalCarDataPassing)?
+    
+    // MARK: Object lifecycle
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
+    {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        setup()
     }
-  }
-  
-  // MARK: View lifecycle
-  
-  override func viewDidLoad()
-  {
-    super.viewDidLoad()
-    setUIView()
-    setUpDropdown()
-    setUpRadio()
-    doSomething()
-  }
-  
-  // MARK: Do something
-  
-  //@IBOutlet weak var nameTextField: UITextField!
+    
+    required init?(coder aDecoder: NSCoder)
+    {
+        super.init(coder: aDecoder)
+        setup()
+    }
+    
+    // MARK: Setup
+    
+    private func setup()
+    {
+        let viewController = self
+        let interactor = ExternalCarInteractor()
+        let presenter = ExternalCarPresenter()
+        let router = ExternalCarRouter()
+        viewController.interactor = interactor
+        viewController.router = router
+        interactor.presenter = presenter
+        presenter.viewController = viewController
+        router.viewController = viewController
+        router.dataStore = interactor
+    }
+    
+    // MARK: Routing
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if let scene = segue.identifier {
+            let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
+            if let router = router, router.responds(to: selector) {
+                router.perform(selector, with: segue)
+            }
+        }
+    }
+    
+    // MARK: View lifecycle
+    
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
+        setUIView()
+        setUpDropdown()
+        setUpRadio()
+        doSomething()
+    }
+    
+    // MARK: Do something
+    
+    //@IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var scrollView: UIScrollView!
     
     @IBOutlet weak var qualityColorRadio: RadioGroup!
@@ -102,19 +102,54 @@ class ExternalCarViewController: UIViewController, ExternalCarDisplayLogic
     @IBOutlet weak var tireQualityTextField: UITextField!
     @IBOutlet weak var damageDetailTextField: MultilineTextField!
     
+    // local strings
+    @IBOutlet weak var exteriorTitleLabel: UILabel!
+    @IBOutlet weak var paintConditionLabel: UILabel!
+    @IBOutlet weak var spoilerLabel: UILabel!
+    @IBOutlet weak var alloyWheelLabel: UILabel!
+    @IBOutlet weak var steelWheelLabel: UILabel!
+    @IBOutlet weak var alloyUnitLabel: UILabel!
+    @IBOutlet weak var steelUnitLabel: UILabel!
+    @IBOutlet weak var tiresLabel: UILabel!
+    @IBOutlet weak var damagesLabel: UILabel!
     
-    
+    let string_excellent = String.localized("car_exterior_excellent_label")
+    let string_good = String.localized("car_exterior_good_label")
+    let string_average = String.localized("car_exterior_average_label")
+    let string_fair = String.localized("car_exterior_fair_label")
+    let string_poor = String.localized("car_exterior_poor_label")
+    let string_as_is = String.localized("car_exterior_as_is_label")
+    let string_salvage = String.localized("car_exterior_salvage_label")
+
+    override func initLocalString() {
+        super.initLocalString()
+        exteriorTitleLabel.text = String.localized("car_exterior_label")
+        paintConditionLabel.text = String.localized("car_exterior_paint_label")
+        spoilerLabel.text = String.localized("car_exterior_spoiler_label")
+        alloyWheelLabel.text = String.localized("car_exterior_alloy_wheel_label")
+        magWheelTextField.placeholder = String.localized("car_exterior_amount_label")
+        normalWheelTextField.placeholder = String.localized("car_exterior_amount_label")
+        steelWheelLabel.text = String.localized("car_exterior_steel_wheel_label")
+        alloyUnitLabel.text = String.localized("car_exterior_unit_label")
+        steelUnitLabel.text = String.localized("car_exterior_unit_label")
+        tiresLabel.text = String.localized("car_exterior_tires_label")
+        tireTextField.placeholder = String.localized("car_exterior_make_label")
+        tireQualityTextField.placeholder = String.localized("car_exterior_condition_label")
+        damagesLabel.text = String.localized("car_exterior_damages_label")
+        damageDetailTextField.placeholder = damagesLabel.text
+
+    }
     
     func doSomething()
-  {
-    let request = ExternalCar.Something.Request()
-    interactor?.doSomething(request: request)
-  }
-  
-  func displaySomething(viewModel: ExternalCar.Something.ViewModel)
-  {
-    //nameTextField.text = viewModel.name
-  }
+    {
+        let request = ExternalCar.Something.Request()
+        interactor?.doSomething(request: request)
+    }
+    
+    func displaySomething(viewModel: ExternalCar.Something.ViewModel)
+    {
+        //nameTextField.text = viewModel.name
+    }
     //MARK: UIVIEW
     func setUIView() {
         
@@ -149,31 +184,31 @@ class ExternalCarViewController: UIViewController, ExternalCarDisplayLogic
         
         //Color
         qualityColorRadio.attributedTitles = [
-            NSAttributedString(string: "ดี",
+            NSAttributedString(string: string_good,
                                attributes: attributedString),
-            NSAttributedString(string: "ปานกลาง",
+            NSAttributedString(string: string_average,
                                attributes: attributedString),
-            NSAttributedString(string: "พอใช้",
+            NSAttributedString(string: string_fair,
                                attributes: attributedString),
-            NSAttributedString(string: "แย่",
+            NSAttributedString(string: string_poor,
                                attributes: attributedString)
         ]
         
         //overall
         qualityOverallRadio.attributedTitles = [
-            NSAttributedString(string: "เยี่ยม",
+            NSAttributedString(string: string_excellent,
                                attributes: attributedString),
-            NSAttributedString(string: "ดีมาก",
+            NSAttributedString(string: string_good,
                                attributes: attributedString),
-            NSAttributedString(string: "ปานกลาง",
+            NSAttributedString(string: string_average,
                                attributes: attributedString),
-            NSAttributedString(string: "พอใช้",
+            NSAttributedString(string: string_fair,
                                attributes: attributedString),
-            NSAttributedString(string: "แย่",
+            NSAttributedString(string: string_poor,
                                attributes: attributedString),
-            NSAttributedString(string: "ตามสภาพ",
+            NSAttributedString(string: string_as_is,
                                attributes: attributedString),
-            NSAttributedString(string: "ซาก",
+            NSAttributedString(string: string_salvage,
                                attributes: attributedString)
         ]
     }
@@ -181,19 +216,19 @@ class ExternalCarViewController: UIViewController, ExternalCarDisplayLogic
         var selectString:String? = nil
         switch qualityOverallRadio.selectedIndex {
         case 0:
-            selectString = "เยี่ยม"
+            selectString = string_excellent
         case 1:
-            selectString = "ดีมาก"
+            selectString = string_good
         case 2:
-            selectString = "ปานกลาง"
+            selectString = string_average
         case 3:
-            selectString = "พอใช้"
+            selectString = string_fair
         case 4:
-            selectString = "แย่"
+            selectString = string_poor
         case 5:
-            selectString = "ตามสภาพ"
+            selectString = string_as_is
         case 6:
-            selectString = "ซาก"
+            selectString = string_salvage
         default:
             return
         }
@@ -231,13 +266,13 @@ class ExternalCarViewController: UIViewController, ExternalCarDisplayLogic
         var selectString:String? = nil
         switch qualityColorRadio.selectedIndex {
         case 0:
-            selectString = "ดี"
+            selectString = string_good
         case 1:
-            selectString = "ปานกลาง"
+            selectString = string_average
         case 2:
-            selectString = "พอใช้"
+            selectString = string_fair
         case 3:
-            selectString = "แย่"
+            selectString = string_poor
         default:
             return
         }
@@ -331,15 +366,14 @@ class ExternalCarViewController: UIViewController, ExternalCarDisplayLogic
         tireQualityTextField.text = viewModel.validateNumberResult
         DataController.shared.receiverCarModel.tireQuality = viewModel.validateNumberResult
     }
-
+    
     
     @objc func prepareData(){
         //MARK: External
         let model = DataController.shared.receiverCarModel
-        let gradeOverallValue = ["เยี่ยม", "ดีมาก", "ปานกลาง", "พอใช้", "แย่", "ตามสภาพ" ,"ซาก"]
-        let colorOverallValue = ["ดี", "ปานกลาง", "พอใช้" ,"แย่"]
+        let gradeOverallValue = [string_excellent,string_good,string_average,string_fair,string_poor,string_as_is,string_salvage]
+        let colorOverallValue = [string_good,string_average,string_fair,string_poor]
         
-       
         qualityColorRadio.selectedIndex = getRadioIndexByValue(from: colorOverallValue, value: model.colorOverall)
         
         qualityOverallRadio.selectedIndex = getRadioIndexByValue(from: gradeOverallValue, value: model.externalOverall)
@@ -351,7 +385,7 @@ class ExternalCarViewController: UIViewController, ExternalCarDisplayLogic
         
         magWheelTextField.text = model.magWheelAmount
         normalWheelTextField.text = model.normalWheelAmount
-
+        
         tireTextField.text = model.brandTire
         tireQualityTextField.text = model.tireQuality
         damageDetailTextField.text = model.damageDetail
@@ -390,7 +424,7 @@ extension ExternalCarViewController : UITextFieldDelegate {
         //print(textField.text)
         
         switch textField {
-  
+            
         case tireQualityTextField:
             let request = ExternalCar.Something.Request(validateNumber: textField.text)
             self.interactor?.validateNumber(request: request)
@@ -400,39 +434,39 @@ extension ExternalCarViewController : UITextFieldDelegate {
             let request = ExternalCar.Something.Request(tire: textField.text)
             self.interactor?.checkTire(request: request)
             
-        
-        
+            
+            
         default:
             return
         }
-       
+        
     }
     
     
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
-         
-      
+        
+        
         return true
     }
 }
 //MARK: keyboard
 extension ExternalCarViewController {
-   override func viewWillAppear(_ animated: Bool) {
-       super.viewWillAppear(animated)
-       scrollView.registKeyboardNotification()
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        scrollView.registKeyboardNotification()
+        
         prepareData()
         updateView()
-    
+        
         NotificationCenter.default.addObserver(self, selector: #selector(updateView), name: NSNotification.Name("updateUI"), object: nil)
-   }
-   
-   override func viewDidDisappear(_ animated: Bool) {
-       super.viewDidDisappear(animated)
-       scrollView.resignKeyboardNotification()
+    }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        scrollView.resignKeyboardNotification()
+        
         NotificationCenter.default.removeObserver(self)
-   }
+    }
 }

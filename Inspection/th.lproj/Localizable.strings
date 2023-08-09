@@ -58,3 +58,25 @@
 "receiver_car_deliverd_by_label" = "ลงชื่อผู้ส่งมอบ";
 "receiver_car_booked_in_by_label" = "ลงชื่อผู้รับมอบ";
 "receiver_car_booked_in_by_placeholder_label" = "กดภายในกรอบนัพื่อทำการลงชื่อ";
+
+// car detail
+"car_detail_model_code_label" = "รหัสรุ่นรถ";
+"car_detail_search_vehicle_model_button_title" = "ค้นหารุ่นรถ";
+"car_detail_make_label" = "ยี่ห้อรถ";
+"car_detail_bodies_label" = "ประเภทรถ";
+"car_detail_model_label" = "รุ่นรถ";
+"car_detail_variant_label" = "รุ่นย่อย";
+"car_detail_engine_size_label" = "ขนาดเครื่องยนต์";
+"car_detail_year_manu_label" = "ปีผลิต";
+"car_detail_year_regis_label" = "ปีจดทะเบียน";
+"car_detail_year_placeholder_label" = "ปี";
+"car_detail_registration_label" = "หมายเลขทะเบียน";
+"car_detail_no_plate_label" = "ไม่มีแผ่นป้าย";
+"car_detail_red_plate_label" = "ป้ายแดง";
+"car_detail_incorrect_plate_label" = "ป้ายไม่ตรง";
+"car_detail_province_label" = "จังหวัด";
+"car_detail_color_label" = "สีรถ";
+"car_detail_engine_number_label" = "หมายเลขเครื่องยนต์";
+"car_detail_unable_to_verified_label" = "ตรวจสอบไม่ได้";
+"car_detail_vin_number_label" = "หมายเลขตัวถัง";
+"car_detail_gas_label" = "เลขถังแก๊ส";

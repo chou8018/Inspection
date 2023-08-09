@@ -59,6 +59,28 @@
 "receiver_car_booked_in_by_label" = "Booked-in by";
 "receiver_car_booked_in_by_placeholder_label" = "Please sign with in this area";
 
+// car detail
+"car_detail_model_code_label" = "Model code";
+"car_detail_search_vehicle_model_button_title" = "Search";
+"car_detail_make_label" = "Make";
+"car_detail_bodies_label" = "Bodies";
+"car_detail_model_label" = "Model";
+"car_detail_variant_label" = "Variant";
+"car_detail_engine_size_label" = "Engine size";
+"car_detail_year_manu_label" = "Year Manu.";
+"car_detail_year_regis_label" = "Year Regis.";
+"car_detail_year_placeholder_label" = "Year";
+"car_detail_registration_label" = "Registration";
+"car_detail_no_plate_label" = "No plate";
+"car_detail_red_plate_label" = "Red plate";
+"car_detail_incorrect_plate_label" = "Incorrect plate";
+"car_detail_province_label" = "Province";
+"car_detail_color_label" = "Color";
+"car_detail_engine_number_label" = "Engine no.";
+"car_detail_unable_to_verified_label" = "Unable to verified";
+"car_detail_vin_number_label" = "Vin. no.";
+"car_detail_gas_label" = "Gas";
+
 // inspection
 "inspection_body_title" = "Body";
 "inspection_engine_title" = "Engine";

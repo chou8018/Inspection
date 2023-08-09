@@ -1439,16 +1439,16 @@
                                                                 </connections>
                                                             </button>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="250" text="ป้ายแดง" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gom-qM-jpE">
-                                                                <rect key="frame" x="321.5" y="11" width="52" height="18"/>
+                                                                <rect key="frame" x="321.5" y="11" width="80" height="18"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="width" constant="52" id="qse-bu-pe0"/>
+                                                                    <constraint firstAttribute="width" constant="80" id="qse-bu-pe0"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                                 <color key="textColor" name="primary_color"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="250" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d0b-ub-lgU" customClass="CheckBoxUIButton" customModule="Inspection" customModuleProvider="target">
-                                                                <rect key="frame" x="383.5" y="5" width="30" height="30"/>
+                                                                <rect key="frame" x="411.5" y="5" width="30" height="30"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="30" id="7eN-JN-9iu"/>
                                                                 </constraints>
@@ -1458,7 +1458,7 @@
                                                                 </connections>
                                                             </button>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="250" text="ป้ายไม่ตรง" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ENd-OH-zdE">
-                                                                <rect key="frame" x="423.5" y="11" width="66.5" height="18"/>
+                                                                <rect key="frame" x="451.5" y="11" width="66.5" height="18"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="66.5" id="Y2Q-9f-gea"/>
                                                                 </constraints>
@@ -1467,10 +1467,10 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="RT7-S0-AzS">
-                                                                <rect key="frame" x="500" y="0.0" width="600" height="40"/>
+                                                                <rect key="frame" x="528" y="0.0" width="572" height="40"/>
                                                                 <subviews>
                                                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="หมายเหตุ" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GfD-up-RTe" customClass="CustomTextField" customModule="Inspection" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="600" height="39"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="572" height="39"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                                         <textInputTraits key="textInputTraits"/>
                                                                         <userDefinedRuntimeAttributes>
@@ -1480,7 +1480,7 @@
                                                                         </userDefinedRuntimeAttributes>
                                                                     </textField>
                                                                     <view contentMode="scaleToFill" horizontalHuggingPriority="249" translatesAutoresizingMaskIntoConstraints="NO" id="MxI-2Y-uX7">
-                                                                        <rect key="frame" x="0.0" y="39" width="600" height="1"/>
+                                                                        <rect key="frame" x="0.0" y="39" width="572" height="1"/>
                                                                         <color key="backgroundColor" name="primary_color"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="1" id="RSI-rW-h4u"/>
@@ -1959,9 +1959,14 @@
                         <outlet property="colorTitleLabel" destination="oSa-My-cbt" id="TUP-Dg-kZN"/>
                         <outlet property="detailModelCarLabel" destination="Mav-IS-Cht" id="jyZ-Bi-Via"/>
                         <outlet property="engineNumberCheckButton" destination="ain-PF-Fnb" id="CcG-Wz-4Zk"/>
+                        <outlet property="engineNumberLabel" destination="953-vU-pkZ" id="DCm-ts-8lg"/>
                         <outlet property="engineNumberTextField" destination="y3c-08-pC1" id="pQt-IC-j3n"/>
+                        <outlet property="engineUnableToVerifiedLabel" destination="mh4-2O-4Qv" id="ZCt-fS-arX"/>
                         <outlet property="gasCheckButton" destination="0IP-qC-3oZ" id="pcV-j0-tFC"/>
+                        <outlet property="gasNumberLabel" destination="Awj-ZF-Vtz" id="ZDh-yd-hxF"/>
                         <outlet property="gasNumberTextField" destination="ffk-Jl-mc0" id="yUV-B9-Vcw"/>
+                        <outlet property="gasUnableToVerifiedLabel" destination="OmC-4M-YPv" id="5jL-44-N5T"/>
+                        <outlet property="incorrectPlateLabel" destination="ENd-OH-zdE" id="Mk2-w3-cWI"/>
                         <outlet property="mismatchPlateCheckButton" destination="d0b-ub-lgU" id="H7O-hM-x5s"/>
                         <outlet property="modelCarLineView" destination="QRQ-Hc-GsG" id="gVZ-hg-mLZ"/>
                         <outlet property="modelCarTextField" destination="vnt-Xj-ndh" id="3yc-J2-Q2m"/>
@@ -1969,6 +1974,7 @@
                         <outlet property="modelCodeLineView" destination="iHA-MU-dLB" id="mZh-4J-XZy"/>
                         <outlet property="modelCodeTitleLabel" destination="Wee-Yi-agi" id="qgl-pZ-Gqf"/>
                         <outlet property="noPlateCheckButton" destination="caC-pZ-tVr" id="HWC-KX-Wmd"/>
+                        <outlet property="noPlateLabel" destination="gVM-qW-lOo" id="P17-th-SXV"/>
                         <outlet property="noteRegistrationLineView" destination="MxI-2Y-uX7" id="WxX-0e-teo"/>
                         <outlet property="noteRegistrationStackView" destination="RT7-S0-AzS" id="IyC-98-Yy8"/>
                         <outlet property="noteRegistrationTextField" destination="GfD-up-RTe" id="wSh-9I-NQr"/>
@@ -1981,6 +1987,7 @@
                         <outlet property="reasonVINStackView" destination="X4w-Mz-9dO" id="zOJ-2l-XCD"/>
                         <outlet property="reasonVINTextField" destination="dw0-lT-Rjj" id="Via-41-tze"/>
                         <outlet property="redPlateCheckButton" destination="mrW-ZN-sND" id="sqT-DL-Nn3"/>
+                        <outlet property="redPlateLabel" destination="Gom-qM-jpE" id="X4t-vj-j6I"/>
                         <outlet property="registrationLineView" destination="k0Y-0g-I01" id="TUB-Om-ToS"/>
                         <outlet property="registrationTextField" destination="O5f-xD-IVK" id="OMh-32-a2w"/>
                         <outlet property="registrationTitleLabel" destination="oHk-v9-lss" id="Ql1-GI-Lgg"/>
@@ -1994,7 +2001,9 @@
                         <outlet property="typeCarTitleLabel" destination="pci-uy-hdo" id="mid-Gs-WhC"/>
                         <outlet property="validationGasCheckButton" destination="rxh-EU-E9w" id="HdE-7I-TXy"/>
                         <outlet property="vinNumberCheckButton" destination="emy-aI-Uid" id="qUz-KF-qcP"/>
+                        <outlet property="vinNumberLabel" destination="hFM-jt-iCX" id="BOB-Wv-e1o"/>
                         <outlet property="vinNumberTextField" destination="hHD-Za-hP9" id="5nV-KJ-UNK"/>
+                        <outlet property="vinUnableToVerifiedLabel" destination="snl-ts-je1" id="zcj-TN-JDQ"/>
                         <outlet property="yearLineView" destination="opc-aH-FBv" id="QDj-6u-xFE"/>
                         <outlet property="yearRegisterLineView" destination="XC4-8Z-Cz3" id="T9k-fT-G9b"/>
                         <outlet property="yearRegisterTextField" destination="vdL-95-7S8" id="Zsy-P2-UbA"/>

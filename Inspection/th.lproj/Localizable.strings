@@ -206,6 +206,11 @@
 "inspection_engine_nedd_repair_label" = "ต้องซ่อมก่อนใช้งาน";
 "inspection_engine_summary_label" = "สรุปสภาพเครื่องยนต์";
 
+// inspection suspension/under
+"inspection_suspension_drive_shaft_label" = "เพลาขับ";
+"inspection_suspension_label" = "ช่วงล่าง";
+"inspection_suspension_summary_label" = "สรุปสภาพช่วงล่าง";
+
 // photos
 "photos_deliverer_title" = "Deliverer";
 "photos_car_details_title" = "Car details";

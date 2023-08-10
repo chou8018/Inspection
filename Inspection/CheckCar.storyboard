@@ -2039,10 +2039,13 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="driveLabel" destination="wjs-rS-IQd" id="1MV-Fn-jBG"/>
                         <outlet property="driveShaftRadio" destination="Dyn-Y5-ns6" id="9MM-1n-vN8"/>
                         <outlet property="driveShaftTextField" destination="MiV-cm-dRS" id="1NI-Xr-0lh"/>
                         <outlet property="scrollView" destination="Fxs-7m-tQZ" id="MFm-PF-J3q"/>
+                        <outlet property="summaryLabel" destination="Da5-Bv-VwL" id="5zo-qX-tTw"/>
                         <outlet property="summaryUnderCarriageTextField" destination="Z0m-U9-M3l" id="7xr-ZE-t4F"/>
+                        <outlet property="suspensionLabel" destination="Jlu-HH-EHv" id="XeB-jC-W8b"/>
                         <outlet property="underCarriageRadio" destination="2tH-mM-adr" id="VzE-Ck-0A3"/>
                         <outlet property="underCarriageTextField" destination="1lm-8o-aw4" id="vQk-Ve-zTA"/>
                     </connections>

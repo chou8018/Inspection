@@ -13,91 +13,115 @@
 import UIKit
 import RadioGroup
 
+let string_inspection_suspension_leakage = String.localized("inspection_suspension_leakage_label")
+let string_inspection_suspension_other = String.localized("car_interior_others_label")
+
 protocol UnderCarCheckDisplayLogic: AnyObject
 {
-  func displaySomething(viewModel: UnderCarCheck.Something.ViewModel)
+    func displaySomething(viewModel: UnderCarCheck.Something.ViewModel)
 }
 
-class UnderCarCheckViewController: UIViewController, UnderCarCheckDisplayLogic
+class UnderCarCheckViewController: ViewController, UnderCarCheckDisplayLogic
 {
-  var interactor: UnderCarCheckBusinessLogic?
-  var router: (NSObjectProtocol & UnderCarCheckRoutingLogic & UnderCarCheckDataPassing)?
-
-  // MARK: Object lifecycle
-  
-  override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
-  {
-    super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-    setup()
-  }
-  
-  required init?(coder aDecoder: NSCoder)
-  {
-    super.init(coder: aDecoder)
-    setup()
-  }
-  
-  // MARK: Setup
-  
-  private func setup()
-  {
-    let viewController = self
-    let interactor = UnderCarCheckInteractor()
-    let presenter = UnderCarCheckPresenter()
-    let router = UnderCarCheckRouter()
-    viewController.interactor = interactor
-    viewController.router = router
-    interactor.presenter = presenter
-    presenter.viewController = viewController
-    router.viewController = viewController
-    router.dataStore = interactor
-  }
-  
-  // MARK: Routing
-  
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-  {
-    if let scene = segue.identifier {
-      let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
-      if let router = router, router.responds(to: selector) {
-        router.perform(selector, with: segue)
-      }
-    }
-  }
-  
-  // MARK: View lifecycle
-  
-  override func viewDidLoad()
-  {
-    super.viewDidLoad()
-    setUIView()
-    setRadio()
-    doSomething()
-  }
-  
-  // MARK: Do something
-  
-  //@IBOutlet weak var nameTextField: UITextField!
-    @IBOutlet weak var scrollView: UIScrollView!
+    var interactor: UnderCarCheckBusinessLogic?
+    var router: (NSObjectProtocol & UnderCarCheckRoutingLogic & UnderCarCheckDataPassing)?
     
+    // MARK: Object lifecycle
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
+    {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        setup()
+    }
+    
+    required init?(coder aDecoder: NSCoder)
+    {
+        super.init(coder: aDecoder)
+        setup()
+    }
+    
+    // MARK: Setup
+    
+    private func setup()
+    {
+        let viewController = self
+        let interactor = UnderCarCheckInteractor()
+        let presenter = UnderCarCheckPresenter()
+        let router = UnderCarCheckRouter()
+        viewController.interactor = interactor
+        viewController.router = router
+        interactor.presenter = presenter
+        presenter.viewController = viewController
+        router.viewController = viewController
+        router.dataStore = interactor
+    }
+    
+    // MARK: Routing
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if let scene = segue.identifier {
+            let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
+            if let router = router, router.responds(to: selector) {
+                router.perform(selector, with: segue)
+            }
+        }
+    }
+    
+    // MARK: View lifecycle
+    
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
+        setUIView()
+        setRadio()
+        doSomething()
+    }
+    
+    // MARK: Do something
+    
+    //@IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var summaryUnderCarriageTextField: MultilineTextField!
     @IBOutlet weak var underCarriageTextField: CustomTextField!
     @IBOutlet weak var driveShaftTextField: CustomTextField!
-  
     @IBOutlet weak var underCarriageRadio: RadioGroup!
     @IBOutlet weak var driveShaftRadio: RadioGroup!
     
-  func doSomething()
-  {
-    let request = UnderCarCheck.Something.Request()
-    interactor?.doSomething(request: request)
-  }
-  
+    // local strings
+    
+    @IBOutlet weak var driveLabel: UILabel!
+    @IBOutlet weak var suspensionLabel: UILabel!
+    @IBOutlet weak var summaryLabel: UILabel!
+    
+    let option_used_strings: [String] = [string_inspection_engine_working,
+                               string_inspection_engine_not_working,
+                               string_inspection_suspension_leakage,
+                               string_inspection_suspension_other]
+
+    override func initLocalString() {
+        super.initLocalString()
+        
+        driveLabel.text = String.localized("inspection_suspension_drive_shaft_label")
+        driveShaftTextField.placeholder = String.localized("car_interior_others_label")
+        suspensionLabel.text = String.localized("inspection_suspension_label")
+        underCarriageTextField.placeholder = String.localized("car_interior_others_label")
+        summaryLabel.text = String.localized("inspection_suspension_summary_label")
+        summaryUnderCarriageTextField.placeholder = summaryLabel.text
+
+    }
+    
+    func doSomething()
+    {
+        let request = UnderCarCheck.Something.Request()
+        interactor?.doSomething(request: request)
+    }
+    
     //MARK: Presenter
-  func displaySomething(viewModel: UnderCarCheck.Something.ViewModel)
-  {
-    //nameTextField.text = viewModel.name
-  }
+    func displaySomething(viewModel: UnderCarCheck.Something.ViewModel)
+    {
+        //nameTextField.text = viewModel.name
+    }
     
     //MARK: UIView
     func setUIView(){
@@ -114,7 +138,7 @@ class UnderCarCheckViewController: UIViewController, UnderCarCheckDisplayLogic
         
         addTarget(from: underCarriageTextField)
         addTarget(from: driveShaftTextField)
-
+        
     }
     
     fileprivate func addTarget(from textfield: UITextField ){
@@ -124,27 +148,27 @@ class UnderCarCheckViewController: UIViewController, UnderCarCheckDisplayLogic
     //MARK: Radio
     func setRadio(){
         let attributedString = [NSAttributedString.Key.foregroundColor : UIColor.appPrimaryColor]
-         
+        
         underCarriageRadio.attributedTitles = [
             NSAttributedString(
-                string: "ใช้งานได้", attributes: attributedString),
+                string: option_used_strings[0], attributes: attributedString),
             NSAttributedString(
-                string: "ใช้งานไม่ได้", attributes: attributedString),
+                string: option_used_strings[1], attributes: attributedString),
             NSAttributedString(
-                string: "รั่วซึม", attributes: attributedString),
+                string: option_used_strings[2], attributes: attributedString),
             NSAttributedString(
-                string: "อื่นๆ", attributes: attributedString)
+                string: option_used_strings[3], attributes: attributedString)
         ]
         
         driveShaftRadio.attributedTitles = [
             NSAttributedString(
-                string: "ใช้งานได้", attributes: attributedString),
+                string: option_used_strings[0], attributes: attributedString),
             NSAttributedString(
-                string: "ใช้งานไม่ได้", attributes: attributedString),
+                string: option_used_strings[1], attributes: attributedString),
             NSAttributedString(
-                string: "รั่วซึม", attributes: attributedString),
+                string: option_used_strings[2], attributes: attributedString),
             NSAttributedString(
-                string: "อื่นๆ", attributes: attributedString)
+                string: option_used_strings[3], attributes: attributedString)
         ]
     }
     
@@ -156,7 +180,7 @@ class UnderCarCheckViewController: UIViewController, UnderCarCheckDisplayLogic
             driveShaftTextField.disableTextField()
             driveShaftTextField.text = ""
         }
-        DataController.shared.inspectionCarModel.driveShaft = getRadioValue(from: ["ใช้งานได้", "ใช้งานไม่ได้", "รั่วซึม", "อื่นๆ"], selectIndex: driveShaftRadio.selectedIndex)
+        DataController.shared.inspectionCarModel.driveShaft = getRadioValue(from: option_used_strings, selectIndex: driveShaftRadio.selectedIndex)
         
         let driveShaftConditionId = driveShaftRadio.selectedIndex + 1
         DataController.shared.inspectionCarModel.driveShaftConditionId = driveShaftConditionId
@@ -170,7 +194,7 @@ class UnderCarCheckViewController: UIViewController, UnderCarCheckDisplayLogic
             underCarriageTextField.disableTextField()
             underCarriageTextField.text = ""
         }
-        DataController.shared.inspectionCarModel.underCarriage = getRadioValue(from: ["ใช้งานได้", "ใช้งานไม่ได้", "รั่วซึม", "อื่นๆ"], selectIndex: underCarriageRadio.selectedIndex)
+        DataController.shared.inspectionCarModel.underCarriage = getRadioValue(from: option_used_strings, selectIndex: underCarriageRadio.selectedIndex)
         
         let suspensionConditionId = underCarriageRadio.selectedIndex + 1
         DataController.shared.inspectionCarModel.suspensionConditionId = suspensionConditionId
@@ -182,19 +206,19 @@ class UnderCarCheckViewController: UIViewController, UnderCarCheckDisplayLogic
         underCarriageTextField.text = model.underCarriageNoteOther
         driveShaftTextField.text = model.driveShaftNoteOther
         
-        let indexDriveShaft = getRadioIndexByValue(from: ["ใช้งานได้", "ใช้งานไม่ได้", "รั่วซึม", "อื่นๆ"],
+        let indexDriveShaft = getRadioIndexByValue(from: option_used_strings,
                                                    value: model.driveShaft)
         
         driveShaftRadio.selectedIndex = indexDriveShaft
         (indexDriveShaft == 3) ? driveShaftTextField.enableTextField() : driveShaftTextField.disableTextField()
-       
         
-        let indexUnderCarriage = getRadioIndexByValue(from: ["ใช้งานได้", "ใช้งานไม่ได้", "รั่วซึม", "อื่นๆ"],
+        
+        let indexUnderCarriage = getRadioIndexByValue(from: option_used_strings,
                                                       value: model.underCarriage)
         
         underCarriageRadio.selectedIndex = indexUnderCarriage
         (indexUnderCarriage == 3) ? underCarriageTextField.enableTextField() : underCarriageTextField.disableTextField()
-     
+        
         
     }
     
@@ -233,9 +257,9 @@ extension UnderCarCheckViewController : UITextFieldDelegate {
         return true
     }
 }
- 
+
 extension UnderCarCheckViewController {
-   
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

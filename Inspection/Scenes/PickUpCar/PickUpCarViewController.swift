@@ -52,6 +52,9 @@ let string_lpg_fumigation_system = String.localized("car_engine_lpg_fumigation_s
 let string_cng_sequential_injection = String.localized("car_engine_cng_sequential_injection_label")
 let string_cng_fumigation_system = String.localized("car_engine_cng_fumigation_system_label")
 
+let string_inspection_engine_working = String.localized("inspection_engine_working_label")
+let string_inspection_engine_not_working = String.localized("inspection_engine_not_working_label")
+
 class PickUpCarViewController: ViewController, PickUpCarDisplayLogic
 {
     var interactor: PickUpCarBusinessLogic?

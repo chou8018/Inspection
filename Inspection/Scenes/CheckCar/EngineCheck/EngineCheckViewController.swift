@@ -108,8 +108,6 @@ class EngineCheckViewController: ViewController, EngineCheckDisplayLogic
     @IBOutlet weak var needRepairLabel: UILabel!
     @IBOutlet weak var summaryLabel: UILabel!
     
-    let string_inspection_engine_working = String.localized("inspection_engine_working_label")
-    let string_inspection_engine_not_working = String.localized("inspection_engine_not_working_label")
     let string_inspection_oil_lacking = String.localized("inspection_engine_oil_lacking_label")
     let string_inspection_oil_not_lacking = String.localized("inspection_engine_oil_notlacking_label")
 

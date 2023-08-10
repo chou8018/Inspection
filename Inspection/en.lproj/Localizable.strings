@@ -143,7 +143,7 @@
 "car_interior_key_immobilizer_label" = "Immobilizer";
 "car_interior_key_label" = "Keyless";
 "car_interior_key_placeholder_label" = "Numbers";
-"car_interior_others_label" = "Others";
+"car_interior_others_label" = "Other";
 
 // car engine room
 "car_engine_room_condition_label" = "Engine room condition";
@@ -205,6 +205,12 @@
 "inspection_engine_not_smoothly_label" = "Engine doesn't run smoothly";
 "inspection_engine_nedd_repair_label" = "Need repair";
 "inspection_engine_summary_label" = "Summary engine condition";
+
+// inspection suspension/under
+"inspection_suspension_drive_shaft_label" = "Drive shaft";
+"inspection_suspension_label" = "Suspension";
+"inspection_suspension_summary_label" = "Summary suspension condition";
+"inspection_suspension_leakage_label" = "Leakage";
 
 // photos
 "photos_deliverer_title" = "Deliverer";

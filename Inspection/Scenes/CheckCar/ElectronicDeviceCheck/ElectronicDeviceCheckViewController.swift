@@ -14,75 +14,75 @@ import UIKit
 
 protocol ElectronicDeviceCheckDisplayLogic: AnyObject
 {
-  func displaySomething(viewModel: ElectronicDeviceCheck.Something.ViewModel)
+    func displaySomething(viewModel: ElectronicDeviceCheck.Something.ViewModel)
 }
 
-class ElectronicDeviceCheckViewController: UIViewController, ElectronicDeviceCheckDisplayLogic
+class ElectronicDeviceCheckViewController: ViewController, ElectronicDeviceCheckDisplayLogic
 {
-  var interactor: ElectronicDeviceCheckBusinessLogic?
-  var router: (NSObjectProtocol & ElectronicDeviceCheckRoutingLogic & ElectronicDeviceCheckDataPassing)?
-
-  // MARK: Object lifecycle
-  
-  override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
-  {
-    super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-    setup()
-  }
-  
-  required init?(coder aDecoder: NSCoder)
-  {
-    super.init(coder: aDecoder)
-    setup()
-  }
-  
-  // MARK: Setup
-  
-  private func setup()
-  {
-    let viewController = self
-    let interactor = ElectronicDeviceCheckInteractor()
-    let presenter = ElectronicDeviceCheckPresenter()
-    let router = ElectronicDeviceCheckRouter()
-    viewController.interactor = interactor
-    viewController.router = router
-    interactor.presenter = presenter
-    presenter.viewController = viewController
-    router.viewController = viewController
-    router.dataStore = interactor
-  }
-  
-  // MARK: Routing
-  
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-  {
-    if let scene = segue.identifier {
-      let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
-      if let router = router, router.responds(to: selector) {
-        router.perform(selector, with: segue)
-      }
+    var interactor: ElectronicDeviceCheckBusinessLogic?
+    var router: (NSObjectProtocol & ElectronicDeviceCheckRoutingLogic & ElectronicDeviceCheckDataPassing)?
+    
+    // MARK: Object lifecycle
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
+    {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        setup()
     }
-  }
-  
-  // MARK: View lifecycle
-  
-  override func viewDidLoad()
-  {
-    super.viewDidLoad()
-    setUIView()
-    setCheckBox()
-    doSomething()
-  }
-  
-  // MARK: Do something
-  
-  //@IBOutlet weak var nameTextField: UITextField!
+    
+    required init?(coder aDecoder: NSCoder)
+    {
+        super.init(coder: aDecoder)
+        setup()
+    }
+    
+    // MARK: Setup
+    
+    private func setup()
+    {
+        let viewController = self
+        let interactor = ElectronicDeviceCheckInteractor()
+        let presenter = ElectronicDeviceCheckPresenter()
+        let router = ElectronicDeviceCheckRouter()
+        viewController.interactor = interactor
+        viewController.router = router
+        interactor.presenter = presenter
+        presenter.viewController = viewController
+        router.viewController = viewController
+        router.dataStore = interactor
+    }
+    
+    // MARK: Routing
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if let scene = segue.identifier {
+            let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
+            if let router = router, router.responds(to: selector) {
+                router.perform(selector, with: segue)
+            }
+        }
+    }
+    
+    // MARK: View lifecycle
+    
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
+        setUIView()
+        setCheckBox()
+        doSomething()
+    }
+    
+    // MARK: Do something
+    
+    //@IBOutlet weak var nameTextField: UITextField!
     
     @IBOutlet weak var scrollView: UIScrollView!
     
     @IBOutlet weak var summaryElectronicDeviceTextField: MultilineTextField!
     @IBOutlet weak var noteTextField: CustomTextField!
-  
+    
     @IBOutlet weak var frontLightCheckBox: CheckBoxUIButton!
     @IBOutlet weak var turnLightCheckBox: CheckBoxUIButton!
     @IBOutlet weak var backLightCheckBox: CheckBoxUIButton!
@@ -91,24 +91,57 @@ class ElectronicDeviceCheckViewController: UIViewController, ElectronicDeviceChe
     @IBOutlet weak var hooterCheckBox: CheckBoxUIButton!
     @IBOutlet weak var roundGaugeCheckBox: CheckBoxUIButton!
     
-
     @IBOutlet weak var navigatorCheckBox: CheckBoxUIButton!
     @IBOutlet weak var navigatorOnCarCheckBox: CheckBoxUIButton!
     @IBOutlet weak var cdCheckBox: CheckBoxUIButton!
     @IBOutlet weak var noSdCardCheckBox: CheckBoxUIButton!
     @IBOutlet weak var noCdCheckBox: CheckBoxUIButton!
     @IBOutlet weak var sdCardCheckBox: CheckBoxUIButton!
-  
-  func doSomething()
-  {
-    let request = ElectronicDeviceCheck.Something.Request()
-    interactor?.doSomething(request: request)
-  }
-  
-  func displaySomething(viewModel: ElectronicDeviceCheck.Something.ViewModel)
-  {
-    //nameTextField.text = viewModel.name
-  }
+    
+    // local strings
+
+    @IBOutlet weak var headLightLabel: UILabel!
+    @IBOutlet weak var turnLightLabel: UILabel!
+    @IBOutlet weak var tailLightLabel: UILabel!
+    @IBOutlet weak var brakeLabel: UILabel!
+    @IBOutlet weak var batteryLabel: UILabel!
+    @IBOutlet weak var hornLabel: UILabel!
+    @IBOutlet weak var dashboardLabel: UILabel!
+    @IBOutlet weak var navigatorLabel: UILabel!
+    @IBOutlet weak var navigatorInLabel: UILabel!
+    @IBOutlet weak var otherRemarksLabel: UILabel!
+    @IBOutlet weak var summaryLabel: UILabel!
+
+    override func initLocalString() {
+        super.initLocalString()
+    
+        headLightLabel.text = String.localized("inspection_electrical_head_light_label")
+        turnLightLabel.text = String.localized("inspection_electrical_turn_light_label")
+        tailLightLabel.text = String.localized("inspection_electrical_tail_light_label")
+        brakeLabel.text = String.localized("inspection_electrical_brake_light_label")
+        batteryLabel.text = String.localized("inspection_electrical_battery_label")
+        hornLabel.text = String.localized("inspection_electrical_horn_label")
+        dashboardLabel.text = String.localized("inspection_electrical_dashboard_label")
+        navigatorLabel.text = String.localized("car_interior_navigator_label")
+        navigatorInLabel.text = String.localized("car_interior_navigator_in_label")
+        otherRemarksLabel.text = String.localized("inspection_electrical_other_remarks_label")
+        noteTextField.placeholder = otherRemarksLabel.text
+        summaryLabel.text = String.localized("inspection_electrical_summary_label")
+        summaryElectronicDeviceTextField.placeholder = summaryLabel.text
+        noCdCheckBox.setTitle(String.localized("car_interior_no_cd_label"), for: .normal)
+        noSdCardCheckBox.setTitle(String.localized("car_interior_no_cd_card_label"), for: .normal)
+    }
+    
+    func doSomething()
+    {
+        let request = ElectronicDeviceCheck.Something.Request()
+        interactor?.doSomething(request: request)
+    }
+    
+    func displaySomething(viewModel: ElectronicDeviceCheck.Something.ViewModel)
+    {
+        //nameTextField.text = viewModel.name
+    }
     
     //MARK: UIView
     func setUIView(){
@@ -214,7 +247,7 @@ class ElectronicDeviceCheckViewController: UIViewController, ElectronicDeviceChe
             weakself.navigationCheck(checkBox: weakself.noCdCheckBox , check: check)
         }
     }
-   
+    
     func uncheckNavigator(){
         guard !cdCheckBox.check,
               !sdCardCheckBox.check,
@@ -387,7 +420,7 @@ extension ElectronicDeviceCheckViewController : UITextViewDelegate {
         DataController.shared.inspectionCarModel.summaryElectronicDevice = textView.text
     }
 }
- 
+
 
 extension  ElectronicDeviceCheckViewController : UITextFieldDelegate {
     @objc func textFieldDidChange(_ textField: UITextField) {
@@ -409,7 +442,7 @@ extension  ElectronicDeviceCheckViewController : UITextFieldDelegate {
 }
 
 extension ElectronicDeviceCheckViewController {
-   
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

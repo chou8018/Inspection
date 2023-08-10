@@ -172,9 +172,9 @@
 "inspection_suspension_title" = "Suspension";
 "inspection_gear_box_title" = "Gear box";
 "inspection_steering_title" = "Steering";
-"inspection_air_title" = "Air";
 "inspection_brake_title" = "Brake";
-"inspection_lost_title" = "Lost";
+"inspection_air_title" = "Air";
+"inspection_gauges_title" = "Gauges";
 "inspection_electrical_title" = "Electrical";
 
 // body
@@ -211,6 +211,51 @@
 "inspection_suspension_label" = "Suspension";
 "inspection_suspension_summary_label" = "Summary suspension condition";
 "inspection_suspension_leakage_label" = "Leakage";
+
+// inspection gear box
+"inspection_gear_system_label" = "Gear system";
+"inspection_gear_condition_label" = "Gear condition";
+"inspection_gear_drive_shaft_label" = "Drive shaft";
+"inspection_gear_4wd_label" = "Gear 4WD";
+"inspection_gear_summary_label" = "Summary gear condition";
+"inspection_gear_working_label" = "Working";
+"inspection_gear_not_working_label" = "Not working";
+"inspection_gear_complete_label" = "Complete";
+"inspection_gear_incomplete_label" = "Incomplete";
+"inspection_gear_no_drive_shaft_label" = "No drive shaft";
+
+// inspection steering
+"inspection_steering_system_label" = "Steering system";
+"inspection_steering_power_label" = "Power Steering";
+"inspection_steering_summary_label" = "Summary steering condition";
+
+// inspection brake
+"inspection_brake_system_label" = "Brake system";
+"inspection_brake_summary_label" = "Summary brake condition";
+
+// inspection air
+"inspection_air_system_label" = "Air system";
+"inspection_air_compressor_label" = "Compressor";
+"inspection_air_summary_label" = "Summary air condition";
+"inspection_air_cool_label" = "Cool";
+"inspection_air_not_cool_label" = "Not cool";
+
+// inspection gauges
+"inspection_gauges_system_label" = "Gauges system";
+"inspection_gauges_light_label" = "Light display (required)";
+"inspection_gauges_details_placeholder_label" = "Details";
+"inspection_gauges_summary_label" = "Summary gauges condition";
+
+// inspectoin electrical
+"inspection_electrical_head_light_label" = "Head light working";
+"inspection_electrical_turn_light_label" = "Turn light working";
+"inspection_electrical_tail_light_label" = "Tail light working";
+"inspection_electrical_brake_light_label" = "Brake light working";
+"inspection_electrical_battery_label" = "Battery working";
+"inspection_electrical_horn_label" = "Horn working";
+"inspection_electrical_dashboard_label" = "Dashboard working";
+"inspection_electrical_other_remarks_label" = "Other remarks";
+"inspection_electrical_summary_label" = "Summary electrical equipments condition";
 
 // photos
 "photos_deliverer_title" = "Deliverer";

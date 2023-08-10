@@ -172,9 +172,9 @@
 "inspection_suspension_title" = "ช่วงล่าง";
 "inspection_gear_box_title" = "ระบบเกียร์";
 "inspection_steering_title" = "ระบบพวงมาลัย";
-"inspection_air_title" = "ระบบเบรก";
-"inspection_brake_title" = "ระบบแอร์";
-"inspection_lost_title" = "มาตรวัด";
+"inspection_brake_title" = "ระบบเบรก";
+"inspection_air_title" = "ระบบแอร์";
+"inspection_gauges_title" = "มาตรวัด";
 "inspection_electrical_title" = "อุปกรณ์ไฟฟ้า";
 
 // body
@@ -210,6 +210,52 @@
 "inspection_suspension_drive_shaft_label" = "เพลาขับ";
 "inspection_suspension_label" = "ช่วงล่าง";
 "inspection_suspension_summary_label" = "สรุปสภาพช่วงล่าง";
+"inspection_suspension_leakage_label" = "รั่วซึม";
+
+// inspection gear box
+"inspection_gear_system_label" = "ระบบเกียร์";
+"inspection_gear_condition_label" = "สภาพเกียร์";
+"inspection_gear_drive_shaft_label" = "เพลาขับ";
+"inspection_gear_4wd_label" = "เกียร์ 4WD";
+"inspection_gear_summary_label" = "สรุประบบเกียร์";
+"inspection_gear_working_label" = "ขับได้";
+"inspection_gear_not_working_label" = "ชำรุดขับไม่ได้";
+"inspection_gear_complete_label" = "ครบ";
+"inspection_gear_incomplete_label" = "ไม่ครบ";
+"inspection_gear_no_drive_shaft_label" = "ไม่มีเพลาขับ";
+
+// inspection steering
+"inspection_steering_system_label" = "ระบบพวงมาลัย";
+"inspection_steering_power_label" = "พวงมาลัยเพาเวอร์";
+"inspection_steering_summary_label" = "สรุประบบพวงมาลัย";
+
+// inspection brake
+"inspection_brake_system_label" = "ระบบเบรก";
+"inspection_brake_summary_label" = "สรุประบบเบรก";
+
+// inspection air
+"inspection_air_system_label" = "ระบบแอร์";
+"inspection_air_compressor_label" = "คอมเพรสเซอร์";
+"inspection_air_summary_label" = "สรุประบบแอร์";
+"inspection_air_cool_label" = "เย็น";
+"inspection_air_not_cool_label" = "ไม่เย็น";
+
+// inspection gauges
+"inspection_gauges_system_label" = "มาตรวัด";
+"inspection_gauges_light_label" = "ไฟขึ้นโชว์ (ระบุ)";
+"inspection_gauges_details_placeholder_label" = "รายละเอียด";
+"inspection_gauges_summary_label" = "สรุปมาตรวัด";
+
+// inspectoin electrical
+"inspection_electrical_head_light_label" = "ไฟหน้าทำงาน";
+"inspection_electrical_turn_light_label" = "ไฟเลี้ยวทำงาน";
+"inspection_electrical_tail_light_label" = "ไฟท้ายทำงาน";
+"inspection_electrical_brake_light_label" = "ไฟเบรคทำงาน";
+"inspection_electrical_battery_label" = "แบตเตอรี่ทำงาน";
+"inspection_electrical_horn_label" = "แตรทำงาน";
+"inspection_electrical_dashboard_label" = "วัดรอบทำงาน";
+"inspection_electrical_other_remarks_label" = "หมายเหตุอื่น ๆ";
+"inspection_electrical_summary_label" = "สรุปอุปกรณ์ไฟฟ้า";
 
 // photos
 "photos_deliverer_title" = "Deliverer";

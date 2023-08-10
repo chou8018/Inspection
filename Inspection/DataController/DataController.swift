@@ -45,9 +45,9 @@ class DataController {
                         String.localized("inspection_suspension_title"),
                         String.localized("inspection_gear_box_title"),
                         String.localized("inspection_steering_title"),
-                        String.localized("inspection_air_title"),
                         String.localized("inspection_brake_title"),
-                        String.localized("inspection_lost_title"),
+                        String.localized("inspection_air_title"),
+                        String.localized("inspection_gauges_title"),
                         String.localized("inspection_electrical_title")]
             case .MBIKE:
                 return ["สภาพภายนอก"]
@@ -57,9 +57,9 @@ class DataController {
                         String.localized("inspection_suspension_title"),
                         String.localized("inspection_gear_box_title"),
                         String.localized("inspection_steering_title"),
-                        String.localized("inspection_air_title"),
                         String.localized("inspection_brake_title"),
-                        String.localized("inspection_lost_title"),
+                        String.localized("inspection_air_title"),
+                        String.localized("inspection_gauges_title"),
                         String.localized("inspection_electrical_title")]
             case .MBIKEWRECK:
                 return ["สภาพภายนอก"]

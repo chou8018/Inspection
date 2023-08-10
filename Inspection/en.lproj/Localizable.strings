@@ -177,6 +177,35 @@
 "inspection_lost_title" = "Lost";
 "inspection_electrical_title" = "Electrical";
 
+// body
+"inspection_body_registration_number_label" = "Registration no.";
+"inspection_body_chassis_label" = "Chassis";
+"inspection_body_front_label" = "Front";
+"inspection_body_back_label" = "Back";
+"inspection_body_right_label" = "Right";
+"inspection_body_left_label" = "Left";
+"inspection_body_roof_label" = "Roof";
+"inspection_body_flooded_label" = "Flooded";
+"inspection_body_summary_label" = "Summary body conditions";
+
+// inspection engine
+"inspection_engine_label" = "Engine condition";
+"inspection_engine_working_label" = "Working";
+"inspection_engine_not_working_label" = "Not working";
+"inspection_engine_type_label" = "Engine type";
+"inspection_engine_oil_label" = "Engine oil";
+"inspection_engine_oil_lacking_label" = "Lacking";
+"inspection_engine_oil_notlacking_label" = "Not lacking";
+"inspection_engine_general_label" = "General Condition";
+"inspection_engine_function_label" = "Function";
+"inspection_engine_loud_label" = "Loud noice";
+"inspection_engine_oil_leak_label" = "Oil leak";
+"inspection_engine_water_stain_label" = "Water stain from car radiator";
+"inspection_engine_oil_light_label" = "Engine oil light display";
+"inspection_engine_not_smoothly_label" = "Engine doesn't run smoothly";
+"inspection_engine_nedd_repair_label" = "Need repair";
+"inspection_engine_summary_label" = "Summary engine condition";
+
 // photos
 "photos_deliverer_title" = "Deliverer";
 "photos_car_details_title" = "Car details";

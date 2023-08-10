@@ -104,17 +104,6 @@ class EngineCarViewController: ViewController, EngineCarDisplayLogic
     @IBOutlet weak var gasLabel: UILabel!
     @IBOutlet weak var engineOverAllLabel: UILabel!
     
-    let string_benzine = String.localized("car_engine_benzine_label")
-    let string_diesel = String.localized("car_engine_diesel_label")
-    let string_hybrid_benzine = String.localized("car_engine_hybrid_benzine_label")
-    let string_hybrid_diesel = String.localized("car_engine_hybrid_diesel_label")
-    let string_injector = String.localized("car_engine_injector_label")
-    let string_carburetor = String.localized("car_engine_carburetor_label")
-    let string_lpg_sequential_injection = String.localized("car_engine_lpg_sequential_injection_label")
-    let string_lpg_fumigation_system = String.localized("car_engine_lpg_fumigation_system_label")
-    let string_cng_sequential_injection = String.localized("car_engine_cng_sequential_injection_label")
-    let string_cng_fumigation_system = String.localized("car_engine_cng_fumigation_system_label")
-
     override func initLocalString() {
         super.initLocalString()
         

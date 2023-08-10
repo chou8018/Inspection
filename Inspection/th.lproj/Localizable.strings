@@ -167,15 +167,44 @@
 "car_engine_other_in_car_assets_label" = "ทรัพย์สินภายในรถ";
 
 // inspection
-"inspection_body_title" = "Body";
-"inspection_engine_title" = "Engine";
-"inspection_suspension_title" = "Suspension";
-"inspection_gear_box_title" = "Gear box";
-"inspection_steering_title" = "Steering";
-"inspection_air_title" = "Air";
-"inspection_brake_title" = "Brake";
-"inspection_lost_title" = "Lost";
-"inspection_electrical_title" = "Electrical";
+"inspection_body_title" = "ตัวถัง";
+"inspection_engine_title" = "เครื่องยนต์";
+"inspection_suspension_title" = "ช่วงล่าง";
+"inspection_gear_box_title" = "ระบบเกียร์";
+"inspection_steering_title" = "ระบบพวงมาลัย";
+"inspection_air_title" = "ระบบเบรก";
+"inspection_brake_title" = "ระบบแอร์";
+"inspection_lost_title" = "มาตรวัด";
+"inspection_electrical_title" = "อุปกรณ์ไฟฟ้า";
+
+// body
+"inspection_body_registration_number_label" = "หมายเลขทะเบียน";
+"inspection_body_chassis_label" = "แชสซี";
+"inspection_body_front_label" = "ด้านหน้า";
+"inspection_body_back_label" = "ด้านหลัง";
+"inspection_body_right_label" = "ด้านขวา (คนขับ)";
+"inspection_body_left_label" = "ด้านซ้าย";
+"inspection_body_roof_label" = "หลังคา";
+"inspection_body_flooded_label" = "จมน้ำ";
+"inspection_body_summary_label" = "สรุปสภาพตัวถัง";
+
+// inspection engine
+"inspection_engine_label" = "สภาพเครื่องยนต์โดยรวม";
+"inspection_engine_working_label" = "ใช้งานได้";
+"inspection_engine_not_working_label" = "ใช้งานไม่ได้";
+"inspection_engine_type_label" = "ชนิดเครื่องยนต์";
+"inspection_engine_oil_label" = "น้ำมันเครื่อง";
+"inspection_engine_oil_lacking_label" = "ขาด";
+"inspection_engine_oil_notlacking_label" = "ไม่ขาด";
+"inspection_engine_general_label" = "สภาพทั่วไป";
+"inspection_engine_function_label" = "ใช้งานได้";
+"inspection_engine_loud_label" = "เสียงดังผิดปกติ";
+"inspection_engine_oil_leak_label" = "น้ำมันรั่วซึม";
+"inspection_engine_water_stain_label" = "คราบน้ำดันออกจากหม้อพักน้ำ";
+"inspection_engine_oil_light_label" = "ไฟรูปเครื่องโชว์";
+"inspection_engine_not_smoothly_label" = "เครื่องยนต์เดินไม่เรียบ";
+"inspection_engine_nedd_repair_label" = "ต้องซ่อมก่อนใช้งาน";
+"inspection_engine_summary_label" = "สรุปสภาพเครื่องยนต์";
 
 // photos
 "photos_deliverer_title" = "Deliverer";

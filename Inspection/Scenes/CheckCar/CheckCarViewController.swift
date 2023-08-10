@@ -14,112 +14,120 @@ import UIKit
 
 protocol CheckCarDisplayLogic: AnyObject
 {
-  func displaySomething(viewModel: CheckCar.Something.ViewModel)
+    func displaySomething(viewModel: CheckCar.Something.ViewModel)
     func displayReceiverDayTimeInspection(viewModel: CheckCar.Something.ViewModel)
 }
 
-class CheckCarViewController: UIViewController, CheckCarDisplayLogic
+class CheckCarViewController: ViewController, CheckCarDisplayLogic
 {
-  var interactor: CheckCarBusinessLogic?
-  var router: (NSObjectProtocol & CheckCarRoutingLogic & CheckCarDataPassing)?
-
-  // MARK: Object lifecycle
-  
-  override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
-  {
-    super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-    setup()
-  }
-  
-  required init?(coder aDecoder: NSCoder)
-  {
-    super.init(coder: aDecoder)
-    setup()
-  }
-  
-  // MARK: Setup
-  
-  private func setup()
-  {
-    let viewController = self
-    let interactor = CheckCarInteractor()
-    let presenter = CheckCarPresenter()
-    let router = CheckCarRouter()
-    viewController.interactor = interactor
-    viewController.router = router
-    interactor.presenter = presenter
-    presenter.viewController = viewController
-    router.viewController = viewController
-    router.dataStore = interactor
-  }
-  
-  // MARK: Routing
-  
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-  {
-    if let scene = segue.identifier {
-      let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
-      if let router = router, router.responds(to: selector) {
-        router.perform(selector, with: segue)
-      }
-        
-        if let dateTimePicker = segue.destination as? DateTimeViewController {
-            dateTimePicker.didSelectedDateTimePicker = { [weak self] (dateInspection) in
-                
-                let request = CheckCar.Something.Request(dateInspection: dateInspection)
-                self?.interactor?.setReceiverDateTimeInspection(request: request)
-            }
-        }
-        
+    var interactor: CheckCarBusinessLogic?
+    var router: (NSObjectProtocol & CheckCarRoutingLogic & CheckCarDataPassing)?
+    
+    // MARK: Object lifecycle
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
+    {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        setup()
     }
-  }
-  
-  // MARK: View lifecycle
-  
-  override func viewDidLoad()
-  {
-    super.viewDidLoad()
-    setTitleName()
-    setUpTab()
-    segmentSetUp()
-    setUpDateTime()
-    doSomething()
-  }
-  
-  // MARK: Do something
-  
-  //@IBOutlet weak var nameTextField: UITextField!
+    
+    required init?(coder aDecoder: NSCoder)
+    {
+        super.init(coder: aDecoder)
+        setup()
+    }
+    
+    // MARK: Setup
+    
+    private func setup()
+    {
+        let viewController = self
+        let interactor = CheckCarInteractor()
+        let presenter = CheckCarPresenter()
+        let router = CheckCarRouter()
+        viewController.interactor = interactor
+        viewController.router = router
+        interactor.presenter = presenter
+        presenter.viewController = viewController
+        router.viewController = viewController
+        router.dataStore = interactor
+    }
+    
+    // MARK: Routing
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if let scene = segue.identifier {
+            let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
+            if let router = router, router.responds(to: selector) {
+                router.perform(selector, with: segue)
+            }
+            
+            if let dateTimePicker = segue.destination as? DateTimeViewController {
+                dateTimePicker.didSelectedDateTimePicker = { [weak self] (dateInspection) in
+                    
+                    let request = CheckCar.Something.Request(dateInspection: dateInspection)
+                    self?.interactor?.setReceiverDateTimeInspection(request: request)
+                }
+            }
+            
+        }
+    }
+    
+    // MARK: View lifecycle
+    
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
+        setTitleName()
+        setUpTab()
+        segmentSetUp()
+        setUpDateTime()
+        doSomething()
+    }
+    
+    // MARK: Do something
+    
+    //@IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var fullName: UILabel!
     @IBOutlet weak var pickUpStackView: UIView!
     @IBOutlet weak var checkStackView: UIView!
     @IBOutlet weak var photoStackView: UIView!
-    
-   
-    
     @IBOutlet weak var segmentView: UIView!
-    
     @IBOutlet weak var segmentWidthConstraint: NSLayoutConstraint!
-    
     @IBOutlet weak var lineview: UIView!
-    
     @IBOutlet weak var containerView: UIView!
-    
     @IBOutlet weak var scrollView: UIScrollView!
-    
     @IBOutlet weak var dateTimeView: UIView!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     
-  func doSomething()
-  {
-    let request = CheckCar.Something.Request()
-    interactor?.doSomething(request: request)
-  }
-  
-  func displaySomething(viewModel: CheckCar.Something.ViewModel)
-  {
-    //nameTextField.text = viewModel.name
-  }
+    // local string
+    @IBOutlet weak var mainButton: UIBarButtonItem!
+    @IBOutlet weak var saveButton: UIBarButtonItem!
+    @IBOutlet weak var pickupCarLabel: UILabel!
+    @IBOutlet weak var inspectionLabel: UILabel!
+    @IBOutlet weak var photosLabel: UILabel!
+    
+    override func initLocalString() {
+        super.initLocalString()
+        saveButton.title = String.localized("main_inspection_save_button_title")
+        mainButton.title = String.localized("main_inspection_bar_button_main_title")
+        pickupCarLabel.text = String.localized("main_inspection_item_book_in_title")
+        inspectionLabel.text = String.localized("main_inspection_item_inspection_title")
+        photosLabel.text = String.localized("main_inspection_item_photos_title")
+    }
+    
+    func doSomething()
+    {
+        let request = CheckCar.Something.Request()
+        interactor?.doSomething(request: request)
+    }
+    
+    func displaySomething(viewModel: CheckCar.Something.ViewModel)
+    {
+        //nameTextField.text = viewModel.name
+    }
     
     @IBAction func toBackView(_ sender: Any) {
         navigationController?.popViewController(animated: true)
@@ -129,19 +137,19 @@ class CheckCarViewController: UIViewController, CheckCarDisplayLogic
     }
     @IBAction func saveTapped(_ sender: Any){
         switch DataController.shared.bookInType {
-        
+            
         case .CAR, .CARWRECK:
             showGradeCar()
         case .MBIKE, .MBIKEWRECK:
             showSummaryCar()
-       
+            
         }
         
     }
     func showGradeCar(){
         performSegue(withIdentifier: "showGradeCar", sender: nil)
     }
-   
+    
     func showSummaryCar(){
         performSegue(withIdentifier: "showSummaryCar", sender: nil)
     }
@@ -152,7 +160,7 @@ class CheckCarViewController: UIViewController, CheckCarDisplayLogic
         dateTimeView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(showDateTime)))
         
     }
-
+    
     func displayReceiverDayTimeInspection(viewModel: CheckCar.Something.ViewModel) {
         guard let dayTime = viewModel.dayTime else { return }
         self.dateLabel.text = dayTime.day
@@ -164,23 +172,23 @@ class CheckCarViewController: UIViewController, CheckCarDisplayLogic
     
     
     func segmentSetUp(){
-
+        
         segmentView.addSubview(codeSegmented)
         codeSegmented.delegate = self
         
         updateUIView(from: 0)
     }
     
-
+    
     lazy var codeSegmented:SegmentControlCustom  =  {
         let value = DataController.shared.bookInType.inspectionValue
         let codeSegmented = SegmentControlCustom(buttonTitle: value, fontSize: 25.0)
-
+        
         codeSegmented.bgColor = .clear
         codeSegmented.selectorTextColor = UIColor.orangeColor
         codeSegmented.selectorViewColor = UIColor.orangeColor
         codeSegmented.textColor = UIColor.lightGray
-
+        
         return codeSegmented
     }()
     
@@ -199,12 +207,12 @@ class CheckCarViewController: UIViewController, CheckCarDisplayLogic
         
         
     }
-
+    
     //MARK: Title
     func setTitleName(){
         switch DataController.shared.bookInType {
         case .CAR:
-            title = "ตรวจสภาพ - รถยนต์"
+            title = String.localized("main_inspection_item_inspection_title")
         case .MBIKE:
             title = "ตรวจสภาพ - รถจักรยานยนต์"
         case  .CARWRECK:
@@ -221,7 +229,7 @@ class CheckCarViewController: UIViewController, CheckCarDisplayLogic
         
         // Add View Controller as Child View Controller
         //self.add(asChildViewController: viewController)
-
+        
         return viewController
     }()
     private lazy var engineCheck: UIViewController? = {
@@ -229,8 +237,8 @@ class CheckCarViewController: UIViewController, CheckCarDisplayLogic
         var viewController = getViewCOntroller(identifier: "EngineCheckViewController") as! EngineCheckViewController
         
         // Add View Controller as Child View Controller
-//self.add(asChildViewController: viewController)
-
+        //self.add(asChildViewController: viewController)
+        
         return viewController
     }()
     private lazy var underCarCheck: UIViewController? = {
@@ -239,7 +247,7 @@ class CheckCarViewController: UIViewController, CheckCarDisplayLogic
         
         // Add View Controller as Child View Controller
         //self.add(asChildViewController: viewController)
-
+        
         return viewController
     }()
     private lazy var gearCheck: UIViewController? = {
@@ -248,7 +256,7 @@ class CheckCarViewController: UIViewController, CheckCarDisplayLogic
         
         // Add View Controller as Child View Controller
         //self.add(asChildViewController: viewController)
-
+        
         return viewController
     }()
     private lazy var steerWheelCheck: UIViewController? = {
@@ -257,7 +265,7 @@ class CheckCarViewController: UIViewController, CheckCarDisplayLogic
         
         // Add View Controller as Child View Controller
         //self.add(asChildViewController: viewController)
-
+        
         return viewController
     }()
     private lazy var brakeCheck: UIViewController? = {
@@ -266,7 +274,7 @@ class CheckCarViewController: UIViewController, CheckCarDisplayLogic
         
         // Add View Controller as Child View Controller
         //self.add(asChildViewController: viewController)
-
+        
         return viewController
     }()
     private lazy var airCheck: UIViewController? = {
@@ -275,7 +283,7 @@ class CheckCarViewController: UIViewController, CheckCarDisplayLogic
         
         // Add View Controller as Child View Controller
         //self.add(asChildViewController: viewController)
-
+        
         return viewController
     }()
     private lazy var gaugeCheck: UIViewController? = {
@@ -284,7 +292,7 @@ class CheckCarViewController: UIViewController, CheckCarDisplayLogic
         
         // Add View Controller as Child View Controller
         //self.add(asChildViewController: viewController)
-
+        
         return viewController
     }()
     private lazy var electronicDeviceCheck: UIViewController? = {
@@ -293,7 +301,7 @@ class CheckCarViewController: UIViewController, CheckCarDisplayLogic
         
         // Add View Controller as Child View Controller
         //self.add(asChildViewController: viewController)
-
+        
         return viewController
     }()
     
@@ -303,7 +311,7 @@ class CheckCarViewController: UIViewController, CheckCarDisplayLogic
         
         // Add View Controller as Child View Controller
         //self.add(asChildViewController: viewController)
-
+        
         return viewController
     }()
     
@@ -340,12 +348,12 @@ extension CheckCarViewController {
         let request = CheckCar.Something.Request(dateInspection: dateInspection)
         interactor?.setReceiverDateTimeInspection(request: request)
         
-       
+        
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-     
+        
     }
     
 }
@@ -368,14 +376,14 @@ extension CheckCarViewController  {
         }else{
             navigationController?.pushViewController(CarInspectionPage.PHOTO_CAR.VC, animated: false)
         }
-       
+        
     }
     
     
 }
 
 extension CheckCarViewController : CustomSegmentedControlDelegate  {
-
+    
     func change(to index: Int , button : UIButton) {
         updateUIView(from: index)
         
@@ -392,33 +400,33 @@ extension CheckCarViewController : CustomSegmentedControlDelegate  {
                 add(asChildViewController: motorcycleCheck)
             }
             
-
+            
         case 1:
             add(asChildViewController: engineCheck)
-
+            
         case 2:
             add(asChildViewController: underCarCheck)
-
+            
         case 3:
             add(asChildViewController: gearCheck)
-
+            
         case 4:
             add(asChildViewController: steerWheelCheck)
-
+            
         case 5:
             add(asChildViewController: brakeCheck)
-
+            
         case 6:
             add(asChildViewController: airCheck)
-
+            
         case 7:
             add(asChildViewController: gaugeCheck)
-
+            
         case 8:
             add(asChildViewController: electronicDeviceCheck)
         default:
             return
-
+            
         }
     }
     
@@ -430,32 +438,32 @@ extension CheckCarViewController : CustomSegmentedControlDelegate  {
             last.view.removeFromSuperview()
             last.removeFromParent()
         }
-       
+        
         // Add Child View Controller
         addChild(viewController)
-
+        
         // Add Child View as Subview
         containerView.addSubview(viewController.view)
-
+        
         // Configure Child View
         viewController.view.frame = containerView.bounds
         viewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-
+        
         // Notify Child View Controller
         viewController.didMove(toParent: self)
     }
-//    private func remove(asChildViewController viewController: UIViewController) {
-//        guard let viewController = viewController else { return }
-//        // Notify Child View Controller
-//        viewController.willMove(toParent: nil)
-//
-//        // Remove Child View From Superview
-//        viewController.view.removeFromSuperview()
-//
-//        // Notify Child View Controller
-//        viewController.removeFromParent()
-//    }
-
+    //    private func remove(asChildViewController viewController: UIViewController) {
+    //        guard let viewController = viewController else { return }
+    //        // Notify Child View Controller
+    //        viewController.willMove(toParent: nil)
+    //
+    //        // Remove Child View From Superview
+    //        viewController.view.removeFromSuperview()
+    //
+    //        // Notify Child View Controller
+    //        viewController.removeFromParent()
+    //    }
+    
     private func getViewCOntroller(identifier : String) -> UIViewController {
         // Load Storyboard
         let storyboard = UIStoryboard(name: "CheckCar", bundle: Bundle.main)

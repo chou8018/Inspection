@@ -40,6 +40,17 @@ let string_poor = String.localized("car_exterior_poor_label")
 let string_as_is = String.localized("car_exterior_as_is_label")
 let string_salvage = String.localized("car_exterior_salvage_label")
 
+let string_benzine = String.localized("car_engine_benzine_label")
+let string_diesel = String.localized("car_engine_diesel_label")
+let string_hybrid_benzine = String.localized("car_engine_hybrid_benzine_label")
+let string_hybrid_diesel = String.localized("car_engine_hybrid_diesel_label")
+
+let string_injector = String.localized("car_engine_injector_label")
+let string_carburetor = String.localized("car_engine_carburetor_label")
+let string_lpg_sequential_injection = String.localized("car_engine_lpg_sequential_injection_label")
+let string_lpg_fumigation_system = String.localized("car_engine_lpg_fumigation_system_label")
+let string_cng_sequential_injection = String.localized("car_engine_cng_sequential_injection_label")
+let string_cng_fumigation_system = String.localized("car_engine_cng_fumigation_system_label")
 
 class PickUpCarViewController: ViewController, PickUpCarDisplayLogic
 {

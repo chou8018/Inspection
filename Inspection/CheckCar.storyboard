@@ -279,9 +279,14 @@
                         <outlet property="dateLabel" destination="uBs-E0-nnl" id="ex1-ej-zzO"/>
                         <outlet property="dateTimeView" destination="Mtj-01-B0p" id="6br-6N-3Xy"/>
                         <outlet property="fullName" destination="MyJ-U5-ddZ" id="Kkb-XR-ehL"/>
+                        <outlet property="inspectionLabel" destination="KrA-CY-ET2" id="lt8-Bq-kBn"/>
                         <outlet property="lineview" destination="00q-iy-grm" id="nOR-Pp-a00"/>
+                        <outlet property="mainButton" destination="DAa-e2-h3i" id="LuC-cu-qwl"/>
                         <outlet property="photoStackView" destination="QKt-iK-qh7" id="9M6-D6-9f5"/>
+                        <outlet property="photosLabel" destination="91W-3C-RWX" id="7K8-LX-qIV"/>
                         <outlet property="pickUpStackView" destination="69M-5y-C9S" id="me9-CD-bdG"/>
+                        <outlet property="pickupCarLabel" destination="R97-NC-F0J" id="vAk-EJ-5FB"/>
+                        <outlet property="saveButton" destination="g12-x3-tPh" id="g3F-5J-z1z"/>
                         <outlet property="scrollView" destination="RKu-wa-vuV" id="jWt-cE-RBp"/>
                         <outlet property="segmentView" destination="04T-W4-x2v" id="rFj-mL-h3m"/>
                         <outlet property="segmentWidthConstraint" destination="am0-Wh-8ju" id="8AR-mK-3Sy"/>
@@ -851,17 +856,26 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="backLabel" destination="nWO-6c-mGe" id="bT2-7i-93A"/>
                         <outlet property="backSideDropdown" destination="vXw-bi-ElO" id="vhd-lT-bww"/>
                         <outlet property="bodySummaryTextField" destination="ZTi-6I-RNF" id="fAp-MU-Hck"/>
+                        <outlet property="chassisLabel" destination="6QT-Eo-cB4" id="C1F-Tv-Zoo"/>
                         <outlet property="chessisDropdown" destination="ixB-2R-kdz" id="O3t-UK-ojd"/>
                         <outlet property="drownedCheckBox" destination="jgu-GL-y3t" id="xcj-Jl-Wfj"/>
+                        <outlet property="floodedLabel" destination="Udv-or-9vU" id="Qfp-Jm-Wm4"/>
+                        <outlet property="frontLabel" destination="7gl-lJ-Lqf" id="g3E-fd-xV0"/>
                         <outlet property="frontSideDropdown" destination="teV-JF-sME" id="u99-Fh-NoM"/>
+                        <outlet property="leftLabel" destination="QrQ-Xv-Vg3" id="dAK-hL-YGM"/>
                         <outlet property="leftSideDropdown" destination="9Bk-Y7-GPM" id="7Uo-2F-HPS"/>
                         <outlet property="provinceTextField" destination="ieJ-fa-Adm" id="U9f-Bb-wmK"/>
+                        <outlet property="registrationLabel" destination="koQ-vv-d9x" id="dt8-Ez-8G8"/>
                         <outlet property="registrationTextField" destination="r48-3x-VBG" id="PpI-sO-7mJ"/>
+                        <outlet property="rightLabel" destination="Yzw-dr-T0I" id="BeO-ZI-vtW"/>
                         <outlet property="rightSideDriverDropdown" destination="mTR-3d-QHP" id="7wP-zD-qVw"/>
                         <outlet property="roofDropdown" destination="LTl-AM-3dU" id="wPA-sq-rxF"/>
+                        <outlet property="roofLabel" destination="aAy-B5-0Bd" id="xY8-MF-gKG"/>
                         <outlet property="scrollview" destination="tGq-0r-S2P" id="IXC-1y-SCj"/>
+                        <outlet property="summaryLabel" destination="opC-wP-Bmu" id="Ppv-LK-pbU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Lk-ob-Kds" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1583,20 +1597,33 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="1080" height="1000"/>
                     <connections>
+                        <outlet property="bodyEngineLabel" destination="Hih-TO-IpU" id="1JV-ic-LbW"/>
                         <outlet property="engineAbnormalGeneralCheckBox" destination="Y7x-A2-wwg" id="pcp-cO-AkQ"/>
+                        <outlet property="engineNotSmoothlyLabel" destination="4GZ-hx-1GR" id="VzI-es-x6n"/>
+                        <outlet property="engineOilLabel" destination="z3j-jW-0MW" id="1iB-Vd-5LP"/>
+                        <outlet property="engineTypeLabel" destination="aGR-rh-6U9" id="q4e-il-tW4"/>
                         <outlet property="fuelSystemRadio" destination="S44-a1-ieJ" id="JmQ-OA-jsL"/>
+                        <outlet property="fuleLabel" destination="0KW-IV-E37" id="Ir5-hT-OFQ"/>
+                        <outlet property="functionLabel" destination="YEI-1b-yvg" id="RT6-4W-9en"/>
                         <outlet property="gasSystemRadio" destination="ib1-S6-RNv" id="kKR-1d-i72"/>
+                        <outlet property="generalConditionLabel" destination="jtb-ve-GX8" id="g3F-8f-7rT"/>
                         <outlet property="haveOilRadio" destination="txA-et-PYF" id="q0Y-zA-op7"/>
                         <outlet property="leakFuelGeneralCheckBox" destination="6YY-R4-WlI" id="Jny-dq-Eju"/>
+                        <outlet property="loudNoiceLabel" destination="34j-Qh-fX5" id="db6-EC-Xp8"/>
                         <outlet property="machineLightShowGeneralCheckBox" destination="dtD-Bw-jzc" id="nqG-cb-XGs"/>
                         <outlet property="needRepairGeneralCheckBox" destination="guV-MI-aRG" id="gKa-FX-YzC"/>
+                        <outlet property="needRepairLabel" destination="BoX-wK-UtP" id="LBL-Lq-h68"/>
+                        <outlet property="oilLeakLabel" destination="n8g-y7-la4" id="IEV-OU-MJi"/>
+                        <outlet property="oilLightLabel" destination="z4D-N6-IIi" id="Guf-Mk-SQh"/>
                         <outlet property="scrollView" destination="gWJ-k2-As9" id="ZUD-oR-kyB"/>
                         <outlet property="soundAbnormalGeneralCheckBox" destination="GaB-xi-phP" id="qQT-MD-xB3"/>
                         <outlet property="stainWaterGeneralCheckBox" destination="axX-GR-aQ7" id="Dma-7Z-HcT"/>
                         <outlet property="summaryEngineRadio" destination="drX-uc-alg" id="EN5-y8-Vaf"/>
                         <outlet property="summaryEngineTextField" destination="VVW-MG-hhs" id="HOq-IT-Ds0"/>
+                        <outlet property="summaryLabel" destination="TrK-si-MBQ" id="bj3-BT-qK6"/>
                         <outlet property="typeEngineRadio" destination="uTd-ng-56w" id="kuB-V0-N45"/>
                         <outlet property="useableGeneralCheckBox" destination="f74-1k-9GU" id="cOA-D4-kop"/>
+                        <outlet property="waterStainLabel" destination="2aj-la-mO9" id="0K1-jh-d9w"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="svR-yh-ZGB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

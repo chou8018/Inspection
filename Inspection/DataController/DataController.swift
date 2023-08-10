@@ -40,11 +40,27 @@ class DataController {
         var inspectionValue : [String] {
             switch self {
             case .CAR:
-                return ["ตัวถัง","เครื่องยนต์","ช่วงล่าง","ระบบเกียร์","ระบบพวงมาลัย","ระบบเบรก", "ระบบแอร์", "มาตรวัด", "อุปกรณ์ไฟฟ้า"]
+                return [String.localized("inspection_body_title"),
+                        String.localized("inspection_engine_title"),
+                        String.localized("inspection_suspension_title"),
+                        String.localized("inspection_gear_box_title"),
+                        String.localized("inspection_steering_title"),
+                        String.localized("inspection_air_title"),
+                        String.localized("inspection_brake_title"),
+                        String.localized("inspection_lost_title"),
+                        String.localized("inspection_electrical_title")]
             case .MBIKE:
                 return ["สภาพภายนอก"]
             case .CARWRECK:
-                return ["ตัวถัง","เครื่องยนต์","ช่วงล่าง","ระบบเกียร์","ระบบพวงมาลัย","ระบบเบรก", "ระบบแอร์", "มาตรวัด", "อุปกรณ์ไฟฟ้า"]
+                return [String.localized("inspection_body_title"),
+                        String.localized("inspection_engine_title"),
+                        String.localized("inspection_suspension_title"),
+                        String.localized("inspection_gear_box_title"),
+                        String.localized("inspection_steering_title"),
+                        String.localized("inspection_air_title"),
+                        String.localized("inspection_brake_title"),
+                        String.localized("inspection_lost_title"),
+                        String.localized("inspection_electrical_title")]
             case .MBIKEWRECK:
                 return ["สภาพภายนอก"]
                 

@@ -13,8 +13,9 @@
 "select_inspection_log_out" = "ลงชื่อออก";
 "select_inspection_log_out_dialog_title" = "ลงชื่อออก";
 "select_inspection_log_out_dialog_message" = "คุณต้องการลงชื่อออกไหม";
-"select_inspection_log_out_dialog_no" = "ยกเลิก";
-"select_inspection_log_out_dialog_yes" = "ยืนยัน";
+"select_inspection_dialog_no" = "ยกเลิก";
+"select_inspection_dialog_yes" = "ยืนยัน";
+"select_inspection_dialog_ok" = "วันรับรถ";
 
 // select insepction type
 "select_inspection_title_label" = "เลือกรายการที่ต้องการตรวจสภาพ";
@@ -36,6 +37,7 @@
 "main_inspection_item_book_in_title" = "รับมอบ";
 "main_inspection_item_inspection_title" = "ตรวจสภาพ";
 "main_inspection_item_photos_title" = "ถ่ายรูป";
+"main_inspection_car_navigation_photos_title" = "ถ่ายรูป - รถยนต์";
 
 // pick up
 "pick_up_deliverer_title" = "ผู้ส่งมอบ";
@@ -44,6 +46,7 @@
 "pick_up_trunk_title" = "ห้องสัมภาระ";
 "pick_up_interior_title" = "ห้องโดยสาร";
 "pick_up_engine_room_title" = "ห้องเครื่อง";
+"pick_up_date_title" = "Pickup date";
 
 // receiver car
 "receiver_car_deliverer_name_label" = "ผู้ส่งมอบ";
@@ -176,6 +179,7 @@
 "inspection_air_title" = "ระบบแอร์";
 "inspection_gauges_title" = "มาตรวัด";
 "inspection_electrical_title" = "อุปกรณ์ไฟฟ้า";
+"inspection_date_title" = "วันที่ตรวจ";
 
 // body
 "inspection_body_registration_number_label" = "หมายเลขทะเบียน";
@@ -258,9 +262,19 @@
 "inspection_electrical_summary_label" = "สรุปอุปกรณ์ไฟฟ้า";
 
 // photos
-"photos_deliverer_title" = "Deliverer";
-"photos_car_details_title" = "Car details";
-"photos_exterior_title" = "Exterior";
-"photos_trunk_title" = "Trunk";
-"photos_interior_title" = "Interior";
-"photos_engine_room_title" = "Engine room";
+"photos_front_button_title" = "Front (ด้านหน้า)";
+"photos_engine_button_title" = "Engine (เครื่องยนต์)";
+"photos_plate_button_title" = "Plate (แผ่นป้าย)";
+"photos_chassis_button_title" = "Chassis (เลขแชสซี)";
+"photos_interior_button_title" = "Interior (ภายใน)";
+"photos_tray_button_title" = "Tray (ห้องท้าย)";
+"photos_side_button_title" = "Side (ด้านข้าง)";
+"photos_back_button_title" = "Back (ด้านหลัง)";
+"photos_gas_tank_button_title" = "Gas tank (ถังแก๊ส)";
+"photos_asset_button_title" = "Asset (ทรัพย์สิน)";
+"photos_damage_button_title" = "Damage (ความเสียหาย)";
+"photos_numbers_label" = "จำนวนรูป :";
+"photos_photograph_button_title" = "ถ่ายรูป";
+"photos_select_button_title" = "เลือกรูป";
+"photos_delete_head_title" = "คุณต้องการลบ";
+"photos_delete_tail_title" = "ไหม";

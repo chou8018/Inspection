@@ -317,6 +317,7 @@
                         <outlet property="mainButton" destination="EFV-nx-5Eb" id="aUZ-4A-1YL"/>
                         <outlet property="photoStackView" destination="Owq-xl-OrA" id="jYQ-Ha-zcj"/>
                         <outlet property="photosLabel" destination="5F8-LZ-2eK" id="KER-Pz-3j1"/>
+                        <outlet property="pickUpDateLabel" destination="Moa-JD-Ucs" id="rjh-X1-OtT"/>
                         <outlet property="pickUpStackView" destination="nbd-IC-zoU" id="yw7-pc-vQs"/>
                         <outlet property="pickupCarLabel" destination="Tnz-SG-FXf" id="lSP-fL-vsT"/>
                         <outlet property="saveButton" destination="Xqs-3d-h5k" id="gTO-gj-dtV"/>

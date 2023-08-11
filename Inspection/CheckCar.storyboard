@@ -279,6 +279,7 @@
                         <outlet property="dateLabel" destination="uBs-E0-nnl" id="ex1-ej-zzO"/>
                         <outlet property="dateTimeView" destination="Mtj-01-B0p" id="6br-6N-3Xy"/>
                         <outlet property="fullName" destination="MyJ-U5-ddZ" id="Kkb-XR-ehL"/>
+                        <outlet property="inspectionDateLabel" destination="SKG-8T-K5d" id="AIB-Vm-Nbw"/>
                         <outlet property="inspectionLabel" destination="KrA-CY-ET2" id="lt8-Bq-kBn"/>
                         <outlet property="lineview" destination="00q-iy-grm" id="nOR-Pp-a00"/>
                         <outlet property="mainButton" destination="DAa-e2-h3i" id="LuC-cu-qwl"/>
@@ -300,7 +301,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="exW-Ek-CVP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="134" y="110"/>
+            <point key="canvasLocation" x="133.88888888888889" y="109.62962962962962"/>
         </scene>
         <!--GradeCarViewController-->
         <scene sceneID="Mae-wX-cce">
@@ -445,10 +446,10 @@
                                                 <rect key="frame" x="0.0" y="105" width="980" height="340"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ClF-Tq-KId">
-                                                        <rect key="frame" x="0.0" y="0.0" width="135.5" height="340"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="136" height="340"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="แชสซี" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6QT-Eo-cB4">
-                                                                <rect key="frame" x="0.0" y="0.0" width="135.5" height="40"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="136" height="40"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="40" id="TiN-um-Dzd"/>
                                                                 </constraints>
@@ -457,31 +458,31 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="ด้านหน้า" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7gl-lJ-Lqf">
-                                                                <rect key="frame" x="0.0" y="60" width="135.5" height="40"/>
+                                                                <rect key="frame" x="0.0" y="60" width="136" height="40"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                                 <color key="textColor" name="primary_color"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="ด้านหลัง" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nWO-6c-mGe">
-                                                                <rect key="frame" x="0.0" y="120" width="135.5" height="40"/>
+                                                                <rect key="frame" x="0.0" y="120" width="136" height="40"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                                 <color key="textColor" name="primary_color"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="ด้านขวา (คนขับ)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yzw-dr-T0I">
-                                                                <rect key="frame" x="0.0" y="180" width="135.5" height="40"/>
+                                                                <rect key="frame" x="0.0" y="180" width="136" height="40"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                                 <color key="textColor" name="primary_color"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="ด้านซ้าย" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QrQ-Xv-Vg3">
-                                                                <rect key="frame" x="0.0" y="240" width="135.5" height="40"/>
+                                                                <rect key="frame" x="0.0" y="240" width="136" height="40"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                                 <color key="textColor" name="primary_color"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="หลังคา" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aAy-B5-0Bd">
-                                                                <rect key="frame" x="0.0" y="300" width="135.5" height="40"/>
+                                                                <rect key="frame" x="0.0" y="300" width="136" height="40"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                                 <color key="textColor" name="primary_color"/>
                                                                 <nil key="highlightedColor"/>
@@ -489,20 +490,20 @@
                                                         </subviews>
                                                     </stackView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ICI-Ig-wf6">
-                                                        <rect key="frame" x="135.5" y="106" width="100" height="128"/>
+                                                        <rect key="frame" x="136" y="106" width="100" height="128"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="100" id="dVt-dp-nNG"/>
                                                         </constraints>
                                                     </view>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="x6F-OS-NrB">
-                                                        <rect key="frame" x="235.5" y="0.0" width="744.5" height="340"/>
+                                                        <rect key="frame" x="236" y="0.0" width="744" height="340"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="orA-RO-YzS">
-                                                                <rect key="frame" x="0.0" y="0.0" width="744.5" height="40"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="744" height="40"/>
                                                                 <subviews>
                                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="แชสซี" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ixB-2R-kdz" customClass="DropDown" customModule="Inspection" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="744.5" height="39"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="744" height="39"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                                         <textInputTraits key="textInputTraits"/>
                                                                         <userDefinedRuntimeAttributes>
@@ -528,7 +529,7 @@
                                                                         </userDefinedRuntimeAttributes>
                                                                     </textField>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BiK-Pd-C6S">
-                                                                        <rect key="frame" x="0.0" y="39" width="744.5" height="1"/>
+                                                                        <rect key="frame" x="0.0" y="39" width="744" height="1"/>
                                                                         <color key="backgroundColor" name="primary_color"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="1" id="gOk-l2-p34"/>
@@ -540,10 +541,10 @@
                                                                 </constraints>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="s4N-0c-ROQ">
-                                                                <rect key="frame" x="0.0" y="60" width="744.5" height="40"/>
+                                                                <rect key="frame" x="0.0" y="60" width="744" height="40"/>
                                                                 <subviews>
                                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="ด้านหน้า" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="teV-JF-sME" customClass="DropDown" customModule="Inspection" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="744.5" height="39"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="744" height="39"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                                         <textInputTraits key="textInputTraits"/>
                                                                         <userDefinedRuntimeAttributes>
@@ -569,7 +570,7 @@
                                                                         </userDefinedRuntimeAttributes>
                                                                     </textField>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BhM-st-vfh">
-                                                                        <rect key="frame" x="0.0" y="39" width="744.5" height="1"/>
+                                                                        <rect key="frame" x="0.0" y="39" width="744" height="1"/>
                                                                         <color key="backgroundColor" name="primary_color"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="1" id="ytk-xj-QtL"/>
@@ -581,10 +582,10 @@
                                                                 </constraints>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="cTL-aq-Sr0">
-                                                                <rect key="frame" x="0.0" y="120" width="744.5" height="40"/>
+                                                                <rect key="frame" x="0.0" y="120" width="744" height="40"/>
                                                                 <subviews>
                                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="ด้านหลัง" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vXw-bi-ElO" customClass="DropDown" customModule="Inspection" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="744.5" height="39"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="744" height="39"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                                         <textInputTraits key="textInputTraits"/>
                                                                         <userDefinedRuntimeAttributes>
@@ -610,7 +611,7 @@
                                                                         </userDefinedRuntimeAttributes>
                                                                     </textField>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="smk-ac-kYh">
-                                                                        <rect key="frame" x="0.0" y="39" width="744.5" height="1"/>
+                                                                        <rect key="frame" x="0.0" y="39" width="744" height="1"/>
                                                                         <color key="backgroundColor" name="primary_color"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="1" id="eMm-4i-neI"/>
@@ -622,10 +623,10 @@
                                                                 </constraints>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="tmc-IH-akP">
-                                                                <rect key="frame" x="0.0" y="180" width="744.5" height="40"/>
+                                                                <rect key="frame" x="0.0" y="180" width="744" height="40"/>
                                                                 <subviews>
                                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="ด้านขวา (คนขับ)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mTR-3d-QHP" customClass="DropDown" customModule="Inspection" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="744.5" height="39"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="744" height="39"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                                         <textInputTraits key="textInputTraits"/>
                                                                         <userDefinedRuntimeAttributes>
@@ -651,7 +652,7 @@
                                                                         </userDefinedRuntimeAttributes>
                                                                     </textField>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aKh-cD-iGk">
-                                                                        <rect key="frame" x="0.0" y="39" width="744.5" height="1"/>
+                                                                        <rect key="frame" x="0.0" y="39" width="744" height="1"/>
                                                                         <color key="backgroundColor" name="primary_color"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="1" id="UV4-k7-8ZG"/>
@@ -663,10 +664,10 @@
                                                                 </constraints>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="B3K-2p-75R">
-                                                                <rect key="frame" x="0.0" y="240" width="744.5" height="40"/>
+                                                                <rect key="frame" x="0.0" y="240" width="744" height="40"/>
                                                                 <subviews>
                                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="ด้านซ้าย" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Bk-Y7-GPM" customClass="DropDown" customModule="Inspection" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="744.5" height="39"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="744" height="39"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                                         <textInputTraits key="textInputTraits"/>
                                                                         <userDefinedRuntimeAttributes>
@@ -692,7 +693,7 @@
                                                                         </userDefinedRuntimeAttributes>
                                                                     </textField>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i8y-MG-vea">
-                                                                        <rect key="frame" x="0.0" y="39" width="744.5" height="1"/>
+                                                                        <rect key="frame" x="0.0" y="39" width="744" height="1"/>
                                                                         <color key="backgroundColor" name="primary_color"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="1" id="Vte-yg-pqP"/>
@@ -704,10 +705,10 @@
                                                                 </constraints>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="cY5-RF-4Ua">
-                                                                <rect key="frame" x="0.0" y="300" width="744.5" height="40"/>
+                                                                <rect key="frame" x="0.0" y="300" width="744" height="40"/>
                                                                 <subviews>
                                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="หลังคา" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LTl-AM-3dU" customClass="DropDown" customModule="Inspection" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="744.5" height="39"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="744" height="39"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                                         <textInputTraits key="textInputTraits"/>
                                                                         <userDefinedRuntimeAttributes>
@@ -733,7 +734,7 @@
                                                                         </userDefinedRuntimeAttributes>
                                                                     </textField>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XEW-EI-cMy">
-                                                                        <rect key="frame" x="0.0" y="39" width="744.5" height="1"/>
+                                                                        <rect key="frame" x="0.0" y="39" width="744" height="1"/>
                                                                         <color key="backgroundColor" name="primary_color"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="1" id="cgW-Kn-PLm"/>

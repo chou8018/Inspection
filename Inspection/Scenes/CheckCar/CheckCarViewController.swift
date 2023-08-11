@@ -108,7 +108,8 @@ class CheckCarViewController: ViewController, CheckCarDisplayLogic
     @IBOutlet weak var pickupCarLabel: UILabel!
     @IBOutlet weak var inspectionLabel: UILabel!
     @IBOutlet weak var photosLabel: UILabel!
-    
+    @IBOutlet weak var inspectionDateLabel: UILabel!
+
     override func initLocalString() {
         super.initLocalString()
         saveButton.title = String.localized("main_inspection_save_button_title")
@@ -116,6 +117,8 @@ class CheckCarViewController: ViewController, CheckCarDisplayLogic
         pickupCarLabel.text = String.localized("main_inspection_item_book_in_title")
         inspectionLabel.text = String.localized("main_inspection_item_inspection_title")
         photosLabel.text = String.localized("main_inspection_item_photos_title")
+        inspectionDateLabel.text = String.localized("inspection_date_title")
+
     }
     
     func doSomething()

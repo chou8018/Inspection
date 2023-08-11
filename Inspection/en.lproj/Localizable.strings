@@ -13,8 +13,9 @@
 "select_inspection_log_out" = "Log out";
 "select_inspection_log_out_dialog_title" = "Log out";
 "select_inspection_log_out_dialog_message" = "Do you wish to log out?";
-"select_inspection_log_out_dialog_no" = "No";
-"select_inspection_log_out_dialog_yes" = "Yes";
+"select_inspection_dialog_no" = "No";
+"select_inspection_dialog_yes" = "Yes";
+"select_inspection_dialog_ok" = "Ok";
 
 // select insepction type
 "select_inspection_title_label" = "Please select type of car for inspection";
@@ -36,6 +37,7 @@
 "main_inspection_item_book_in_title" = "Book-in";
 "main_inspection_item_inspection_title" = "Inspection";
 "main_inspection_item_photos_title" = "Photos";
+"main_inspection_car_navigation_photos_title" = "Photos";
 
 // pick up
 "pick_up_deliverer_title" = "Deliverer";
@@ -44,6 +46,7 @@
 "pick_up_trunk_title" = "Trunk";
 "pick_up_interior_title" = "Interior";
 "pick_up_engine_room_title" = "Engine room";
+"pick_up_date_title" = "Date";
 
 // receiver car
 "receiver_car_deliverer_name_label" = "Deliverer Name";
@@ -176,6 +179,7 @@
 "inspection_air_title" = "Air";
 "inspection_gauges_title" = "Gauges";
 "inspection_electrical_title" = "Electrical";
+"inspection_date_title" = "Date";
 
 // body
 "inspection_body_registration_number_label" = "Registration no.";
@@ -258,11 +262,22 @@
 "inspection_electrical_summary_label" = "Summary electrical equipments condition";
 
 // photos
-"photos_deliverer_title" = "Deliverer";
-"photos_car_details_title" = "Car details";
-"photos_exterior_title" = "Exterior";
-"photos_trunk_title" = "Trunk";
-"photos_interior_title" = "Interior";
-"photos_engine_room_title" = "Engine room";
+"photos_front_button_title" = "Front";
+"photos_engine_button_title" = "Engine";
+"photos_plate_button_title" = "Plate";
+"photos_chassis_button_title" = "Chassis";
+"photos_interior_button_title" = "Interior";
+"photos_tray_button_title" = "Trunk/Tray";
+"photos_side_button_title" = "Side";
+"photos_back_button_title" = "Back";
+"photos_gas_tank_button_title" = "Gas tank";
+"photos_asset_button_title" = "Asset";
+"photos_damage_button_title" = "Damage";
+"photos_numbers_label" = "Photos :";
+"photos_photograph_button_title" = "Photograph";
+"photos_select_button_title" = "Select Picture";
+"photos_delete_head_title" = "To delete";
+"photos_delete_tail_title" = "?";
+
 
 

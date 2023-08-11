@@ -115,11 +115,11 @@ class LandingPageViewController: ViewController, LandingPageDisplayLogic
     @IBAction func logoutTapped(_ sender: Any) {
         let message = String.localized("select_inspection_log_out_dialog_message")
         let alertController = UIAlertController(title: String.localized("select_inspection_log_out_dialog_title"), message: message, preferredStyle: .alert)
-        let confirmAction = UIAlertAction(title: String.localized("select_inspection_log_out_dialog_yes"), style: .destructive, handler: {[weak self]  _ in
+        let confirmAction = UIAlertAction(title: String.localized("select_inspection_dialog_yes"), style: .destructive, handler: {[weak self]  _ in
             DataController.shared.clearLogin()
             self?.performLogin()
         })
-        let cancelAction = UIAlertAction(title: String.localized("select_inspection_log_out_dialog_no"), style: .default, handler: {  _ in
+        let cancelAction = UIAlertAction(title: String.localized("select_inspection_dialog_no"), style: .default, handler: {  _ in
 
         })
         

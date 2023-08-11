@@ -177,14 +177,14 @@ open class ImagePicker: NSObject {
     public func present(from sourceView: UIView) {
         let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         
-        if let action = self.action(for: .camera, title: "ถ่ายรูป") {
+        if let action = self.action(for: .camera, title: String.localized("photos_photograph_button_title")) {
             alertController.addAction(action)
         }
 
 //        if let action = self.action(for: .photoLibrary, title: "เลือกรูป") {
 //            alertController.addAction(action)
 //        }
-        if let action = self.actionPH(for: .photoLibrary, title: "เลือกรูป") {
+        if let action = self.actionPH(for: .photoLibrary, title: String.localized("photos_select_button_title")) {
             alertController.addAction(action)
         }
         

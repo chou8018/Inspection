@@ -58,10 +58,10 @@ extension UIViewController {
                cancel: (() -> Void)? = nil ) {
     
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let confirmAction = UIAlertAction(title: "ตกลง", style: .default, handler: {  _ in
+        let confirmAction = UIAlertAction(title: String.localized("select_inspection_dialog_ok"), style: .default, handler: {  _ in
             confirm()
         })
-        let cancelAction = UIAlertAction(title: "ยกเลิก", style: .default, handler: {  _ in
+        let cancelAction = UIAlertAction(title: String.localized("select_inspection_dialog_no"), style: .default, handler: {  _ in
             cancel?()
         })
         

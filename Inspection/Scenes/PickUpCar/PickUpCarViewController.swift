@@ -144,6 +144,7 @@ class PickUpCarViewController: ViewController, PickUpCarDisplayLogic
     @IBOutlet weak var pickupCarLabel: UILabel!
     @IBOutlet weak var inspectionLabel: UILabel!
     @IBOutlet weak var photosLabel: UILabel!
+    @IBOutlet weak var pickUpDateLabel: UILabel!
     
     override func initLocalString() {
         super.initLocalString()
@@ -152,6 +153,7 @@ class PickUpCarViewController: ViewController, PickUpCarDisplayLogic
         pickupCarLabel.text = String.localized("main_inspection_item_book_in_title")
         inspectionLabel.text = String.localized("main_inspection_item_inspection_title")
         photosLabel.text = String.localized("main_inspection_item_photos_title")
+        pickUpDateLabel.text = String.localized("pick_up_date_title")
 
     }
     

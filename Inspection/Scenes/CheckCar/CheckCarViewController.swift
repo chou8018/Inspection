@@ -217,11 +217,11 @@ class CheckCarViewController: ViewController, CheckCarDisplayLogic
         case .CAR:
             title = String.localized("main_inspection_item_inspection_title")
         case .MBIKE:
-            title = "ตรวจสภาพ - รถจักรยานยนต์"
+            title = String.localized("motorbike_inspection_navigation_title")
         case  .CARWRECK:
-            title = "ตรวจสภาพ - ซากรถยนต์"
+            title = String.localized("car_salvage_inspection_navigation_title")
         case .MBIKEWRECK:
-            title = "ตรวจสภาพ - ซากรถจักรยานยนต์"
+            title = String.localized("motorbike_salvage_inspection_navigation_title")
         }
     }
     

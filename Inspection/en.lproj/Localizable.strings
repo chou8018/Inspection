@@ -16,6 +16,7 @@
 "select_inspection_dialog_no" = "No";
 "select_inspection_dialog_yes" = "Yes";
 "select_inspection_dialog_ok" = "Ok";
+"select_inspection_dialog_try" = "Try again";
 
 // select insepction type
 "select_inspection_title_label" = "Please select type of car for inspection";
@@ -23,7 +24,7 @@
 "select_inspection_motobike_label" = "Motorbike";
 "select_inspection_car_salvage_label" = "Car Salvage";
 "select_inspection_motobike_salvage_label" = "Motorbike Salvage";
-"select_inspection_back_to_main_button_title" = "Back";
+"select_inspection_back_to_main_button_title" = "Back to Home Page";
 "select_inspection_inspector_label" = "Inspector";
 "select_inspection_place_label" = "Place";
 "select_inspection_plant_label" = "Plant";
@@ -38,6 +39,18 @@
 "main_inspection_item_inspection_title" = "Inspection";
 "main_inspection_item_photos_title" = "Photos";
 "main_inspection_car_navigation_photos_title" = "Photos";
+"main_inspection_back_to_main_title" = "Do you want to go home?";
+"main_inspection_leave_edit_page_title" = "Do you want to leave the page?";
+
+"motorbike_pick_up_navigation_title" = "Motorbike - Book-in";
+"motorbike_inspection_navigation_title" = "Motorbike - Inspection";
+"motorbike_photos_navigation_title" = "Motorbike - Photos";
+"car_salvage_pick_up_navigation_title" = "Car Salvage - Book-in";
+"car_salvage_inspection_navigation_title" = "Car Salvage - Inspection";
+"car_salvage_photos_navigation_title" = "Car Salvage - Photos";
+"motorbike_salvage_pick_up_navigation_title" = "Motorbike Salvage - Book-in";
+"motorbike_salvage_inspection_navigation_title" = "Motorbike Salvage - Inspection";
+"motorbike_salvage_photos_navigation_title" = "Motorbike Salvage - Photos";
 
 // pick up
 "pick_up_deliverer_title" = "Deliverer";
@@ -47,6 +60,10 @@
 "pick_up_interior_title" = "Interior";
 "pick_up_engine_room_title" = "Engine room";
 "pick_up_date_title" = "Date";
+
+// car salvage
+"car_salvage_details_title" = "Car wreckage";
+"car_salvage_deliverer_contract_number" = "Contract No./Claim No.";
 
 // receiver car
 "receiver_car_deliverer_name_label" = "Deliverer Name";
@@ -209,6 +226,9 @@
 "inspection_engine_not_smoothly_label" = "Engine doesn't run smoothly";
 "inspection_engine_nedd_repair_label" = "Need repair";
 "inspection_engine_summary_label" = "Summary engine condition";
+
+// motorbike
+"motorbike_inspection_engine_label" = "Engine condition";
 
 // inspection suspension/under
 "inspection_suspension_drive_shaft_label" = "Drive shaft";

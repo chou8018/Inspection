@@ -15,7 +15,8 @@
 "select_inspection_log_out_dialog_message" = "คุณต้องการลงชื่อออกไหม";
 "select_inspection_dialog_no" = "ยกเลิก";
 "select_inspection_dialog_yes" = "ยืนยัน";
-"select_inspection_dialog_ok" = "วันรับรถ";
+"select_inspection_dialog_ok" = "ตกลง";
+"select_inspection_dialog_try" = "ลองใหม่";
 
 // select insepction type
 "select_inspection_title_label" = "เลือกรายการที่ต้องการตรวจสภาพ";
@@ -38,6 +39,18 @@
 "main_inspection_item_inspection_title" = "ตรวจสภาพ";
 "main_inspection_item_photos_title" = "ถ่ายรูป";
 "main_inspection_car_navigation_photos_title" = "ถ่ายรูป - รถยนต์";
+"main_inspection_back_to_main_title" = "คุณต้องการกลับหน้าหลักไหม";
+"main_inspection_leave_edit_page_title" = "คุณต้องการกลับหน้ารายการไหม";
+
+"motorbike_pick_up_navigation_title" = "รับมอบ - รถจักรยานยนต์";
+"motorbike_inspection_navigation_title" = "ตรวจสภาพ - รถจักรยานยนต์";
+"motorbike_photos_navigation_title" = "ถ่ายรูป - รถจักรยานยนต์";
+"car_salvage_pick_up_navigation_title" = "รับมอบ - ซากรถยนต์";
+"car_salvage_inspection_navigation_title" = "ตรวจสภาพ - ซากรถยนต์";
+"car_salvage_photos_navigation_title" = "ถ่ายรูป - ซากรถยนต์";
+"motorbike_salvage_pick_up_navigation_title" = "รับมอบ - ซากรถจักรยานต์";
+"motorbike_salvage_inspection_navigation_title" = "ตรวจสภาพ - ซากรถจักรยานยนต์";
+"motorbike_salvage_photos_navigation_title" = "ถ่ายรูป - ซากรถจักรยานยนต์";
 
 // pick up
 "pick_up_deliverer_title" = "ผู้ส่งมอบ";
@@ -46,7 +59,11 @@
 "pick_up_trunk_title" = "ห้องสัมภาระ";
 "pick_up_interior_title" = "ห้องโดยสาร";
 "pick_up_engine_room_title" = "ห้องเครื่อง";
-"pick_up_date_title" = "Pickup date";
+"pick_up_date_title" = "วันรับรถ";
+
+// car salvage
+"car_salvage_details_title" = "รถซาก";
+"car_salvage_deliverer_contract_number" = "เลขที่สัญญา/เลขเคลม";
 
 // receiver car
 "receiver_car_deliverer_name_label" = "ผู้ส่งมอบ";
@@ -209,6 +226,9 @@
 "inspection_engine_not_smoothly_label" = "เครื่องยนต์เดินไม่เรียบ";
 "inspection_engine_nedd_repair_label" = "ต้องซ่อมก่อนใช้งาน";
 "inspection_engine_summary_label" = "สรุปสภาพเครื่องยนต์";
+
+// motorbike
+"motorbike_inspection_engine_label" = "สภาพเครื่องยนต์";
 
 // inspection suspension/under
 "inspection_suspension_drive_shaft_label" = "เพลาขับ";

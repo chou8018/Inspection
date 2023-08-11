@@ -401,11 +401,11 @@ class PickUpCarViewController: ViewController, PickUpCarDisplayLogic
         case .CAR:
             title = String.localized("main_inspection_title")
         case .MBIKE:
-            title = "รับมอบ - รถจักรยานยนต์"
+            title = String.localized("motorbike_pick_up_navigation_title")
         case  .CARWRECK:
-            title = "รับมอบ - ซากรถยนต์"
+            title = String.localized("car_salvage_pick_up_navigation_title")
         case  .MBIKEWRECK:
-            title = "รับมอบ - ซากรถจักรยานต์"
+            title = String.localized("motorbike_salvage_pick_up_navigation_title")
         }
     }
     

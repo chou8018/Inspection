@@ -338,11 +338,11 @@ class PhotoCarViewController: ViewController, PhotoCarDisplayLogic
         case .CAR:
             title = String.localized("main_inspection_car_navigation_photos_title")
         case .MBIKE:
-            title = "ถ่ายรูป - รถจักรยานยนต์"
+            title = String.localized("motorbike_photos_navigation_title")
         case  .CARWRECK:
-            title = "ถ่ายรูป - ซากรถยนต์"
+            title = String.localized("car_salvage_photos_navigation_title")
         case  .MBIKEWRECK:
-            title = "ถ่ายรูป - ซากรถจักรยานยนต์"
+            title = String.localized("motorbike_salvage_photos_navigation_title")
         }
     }
     

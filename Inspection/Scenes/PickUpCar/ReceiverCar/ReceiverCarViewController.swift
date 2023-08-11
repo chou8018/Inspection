@@ -294,8 +294,8 @@ class ReceiverCarViewController: ViewController, ReceiverCarDisplayLogic
             contractNumberTextField.placeholder = String.localized("receiver_car_contract_number_label")
             
         case .CARWRECK, .MBIKEWRECK:
-            contractTitleLabel.text = "เลขที่สัญญา/เลขเคลม"
-            contractNumberTextField.placeholder = "เลขที่สัญญา/เลขเคลม"
+            contractTitleLabel.text = String.localized("car_salvage_deliverer_contract_number")
+            contractNumberTextField.placeholder = contractTitleLabel.text
         }
         
     }

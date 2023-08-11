@@ -30,11 +30,11 @@ class DataController {
             case .CAR:
                 return [String.localized("pick_up_deliverer_title"),String.localized("pick_up_car_details_title"),String.localized("pick_up_exterior_title"),String.localized("pick_up_trunk_title"),String.localized("pick_up_interior_title"),String.localized("pick_up_engine_room_title")]
             case .MBIKE:
-                return ["ผู้ส่งมอบ","รถจักรยานยนต์","ภายนอก","สภาพเครื่องยนต์"]
+                return [String.localized("pick_up_deliverer_title"),String.localized("select_inspection_motobike_label"),String.localized("pick_up_exterior_title"),String.localized("motorbike_inspection_engine_label")]
             case .CARWRECK:
-                return ["ผู้ส่งมอบ","รถซาก","ภายนอก","ห้องสัมภาระ","ห้องโดยสาร","ห้องเครื่อง"]
+                return [String.localized("pick_up_deliverer_title"),String.localized("car_salvage_details_title"),String.localized("pick_up_exterior_title"),String.localized("pick_up_trunk_title"),String.localized("pick_up_interior_title"),String.localized("pick_up_engine_room_title")]
             case .MBIKEWRECK:
-                return ["ผู้ส่งมอบ","ซากรถจักรยานยนต์","ภายนอก","สภาพเครื่องยนต์"]
+                return [String.localized("pick_up_deliverer_title"),String.localized("select_inspection_motobike_salvage_label"),String.localized("pick_up_exterior_title"),String.localized("motorbike_inspection_engine_label")]
             }
         }
         var inspectionValue : [String] {

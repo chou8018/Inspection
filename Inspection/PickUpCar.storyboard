@@ -7748,30 +7748,58 @@
                     </view>
                     <size key="freeformSize" width="1080" height="2500"/>
                     <connections>
+                        <outlet property="backDiskBrakePumpLabel" destination="xg3-Rp-kLV" id="43t-jd-uHM"/>
+                        <outlet property="backFootestLabel" destination="u8x-2H-Z5e" id="8VK-KI-rgj"/>
+                        <outlet property="backShockAbsorberLabel" destination="FzQ-U5-zs0" id="s2C-Pe-3A3"/>
+                        <outlet property="backTitleLabel" destination="65a-Wz-uKO" id="TMX-ka-nbK"/>
+                        <outlet property="backTurnLightLeftLabel" destination="5nK-xr-qJh" id="Zuh-Lx-D25"/>
+                        <outlet property="backTurnRightRightLabel" destination="pCa-UG-HBg" id="o7Z-6P-la9"/>
                         <outlet property="batteryDropdown" destination="MHF-du-Yhr" id="lg4-8z-XzL"/>
+                        <outlet property="batteryLabel" destination="5XF-It-Fgm" id="Wx4-fq-WJd"/>
                         <outlet property="bodyCladdingLDropDown" destination="u6p-Oo-xy3" id="5tb-Pc-dZm"/>
                         <outlet property="bodyCladdingRDropDown" destination="NEJ-tw-0Ta" id="TGi-b7-wif"/>
                         <outlet property="cdiBoxDropdown" destination="3tR-Yb-yyy" id="2yu-Du-c3a"/>
+                        <outlet property="cdiLabel" destination="3iZ-XW-4E7" id="QB5-eY-5E0"/>
                         <outlet property="chainCoverDropdown" destination="6IL-Ao-UV1" id="EWx-Pk-d0i"/>
+                        <outlet property="chainGuardLabel" destination="ovz-eh-QDw" id="LmV-Nn-O6v"/>
+                        <outlet property="compartmentLeftLabel" destination="l4x-b7-DhG" id="wKx-eR-P0z"/>
+                        <outlet property="compartmentRightLabel" destination="8O6-e7-gKs" id="dMv-Et-TuW"/>
+                        <outlet property="dashboardLabel" destination="zuA-pL-C2N" id="qth-M4-2AO"/>
+                        <outlet property="diskBrakeOilCanisterLabel" destination="J8x-Hy-cv7" id="M98-Dc-rpY"/>
+                        <outlet property="diskBrakeOilLabel" destination="btQ-X9-OUe" id="gYv-SW-rws"/>
+                        <outlet property="diskBrakePumpLabel" destination="zxN-sc-BPO" id="cI9-QF-7l9"/>
+                        <outlet property="doubleLabel" destination="8K7-mR-01Y" id="ON5-XD-fJV"/>
                         <outlet property="doubleStandDropDown" destination="MSR-hi-iVy" id="3Di-qw-b1y"/>
                         <outlet property="exhaustPipeDropDown" destination="7Et-z9-cBd" id="xmj-42-FwA"/>
+                        <outlet property="exhaustPipeLabel" destination="aUV-54-PBS" id="4V0-7x-JiH"/>
+                        <outlet property="footrestLabel" destination="kvO-A9-Rnc" id="TND-f3-sp2"/>
                         <outlet property="frontBrakeDropdown" destination="Gj1-aH-6yC" id="bfe-nh-ePb"/>
+                        <outlet property="frontBrakeLabel" destination="lTs-hz-e4e" id="N1g-PH-0iT"/>
                         <outlet property="frontBrakeRadio" destination="CFr-Hs-Iqf" id="Fl5-u2-RDf"/>
                         <outlet property="frontFenderDropDown" destination="y7I-Ze-wQJ" id="qe9-4J-zad"/>
+                        <outlet property="frontFerderLabel" destination="14T-uk-zSa" id="4DA-Yi-vP7"/>
                         <outlet property="frontFootRestDropDown" destination="GiL-bI-tAT" id="f7y-bo-dNc"/>
                         <outlet property="frontLightDropDown" destination="UFW-lc-ZXD" id="e2d-T8-OWe"/>
                         <outlet property="frontOilTankDiscBrakesDropdown" destination="HmR-tN-uHQ" id="13N-F1-hn5"/>
                         <outlet property="frontPumpDiscBrakesDropdown" destination="G1u-Ne-n3I" id="RVA-On-6c4"/>
                         <outlet property="frontShockupDropdown" destination="o5u-WM-Egr" id="UH9-xK-zfQ"/>
                         <outlet property="frontTireDropDown" destination="mtN-QX-NFC" id="ENO-C4-vNp"/>
+                        <outlet property="frontTireLabel" destination="cF2-DB-Zcw" id="fO7-VO-KtU"/>
+                        <outlet property="frontTitleLabel" destination="99o-Hr-fZn" id="jbN-Yo-lNj"/>
                         <outlet property="frontTurnSignalLDropDown" destination="NfV-Zp-AEG" id="tfI-ym-oT4"/>
                         <outlet property="frontTurnSignalRDropDown" destination="313-L7-ZLL" id="L1y-To-76e"/>
                         <outlet property="frontWheelDropdown" destination="PPd-vB-GOO" id="jAF-cM-NSp"/>
                         <outlet property="frontWheelRadio" destination="rw8-XS-nZm" id="tgj-pb-Kie"/>
+                        <outlet property="gasTankLabel" destination="FW1-48-TbN" id="5So-1Z-Md1"/>
+                        <outlet property="handBrakeLeftLabel" destination="xVw-PR-Cxj" id="5cE-aK-Ktu"/>
+                        <outlet property="handBrakeRightLabel" destination="yEB-4z-Qbf" id="aDI-Yj-5aG"/>
                         <outlet property="handBreakLDropDown" destination="6cX-B9-apo" id="DhN-gx-vwj"/>
                         <outlet property="handBreakRDropDown" destination="fJT-JH-O8n" id="ZIL-Lk-Cm5"/>
                         <outlet property="handClutchDropDown" destination="rEI-DV-Ehy" id="Rxi-QL-gLh"/>
+                        <outlet property="handClutchLabel" destination="aGr-tF-LCY" id="pNQ-K1-TIf"/>
+                        <outlet property="headLightLabel" destination="ffT-lx-PCb" id="KG0-9Q-h8M"/>
                         <outlet property="maskDropDown" destination="t9O-Ar-kVm" id="WhR-UF-aoc"/>
+                        <outlet property="maskLabel" destination="x91-c5-Gdv" id="bdm-C1-Ijc"/>
                         <outlet property="milesDisplayDropDown" destination="pze-cV-ogP" id="0ha-hR-rgQ"/>
                         <outlet property="mirrorLDropDown" destination="qcz-fJ-pED" id="Mtg-x9-fUY"/>
                         <outlet property="mirrorRDropDown" destination="X1P-8F-xSd" id="eHm-Sm-wYH"/>
@@ -7779,9 +7807,12 @@
                         <outlet property="multiPurposeRDropDown" destination="90t-MY-llb" id="CDH-ob-QKQ"/>
                         <outlet property="oilTankDropdown" destination="bH0-Pd-vgx" id="aVg-Vj-hPX"/>
                         <outlet property="otherNoteTextField" destination="eX9-XK-b7C" id="gdm-ay-6S5"/>
+                        <outlet property="othersLabel" destination="Dyz-aG-W0o" id="wj4-Dm-DnD"/>
                         <outlet property="rearBrakeDropdown" destination="dwn-Pe-FyU" id="POf-yG-h3O"/>
+                        <outlet property="rearBrakeLabel" destination="fF9-Fh-6Tk" id="AzC-nq-kyu"/>
                         <outlet property="rearBrakeRadio" destination="lzm-gR-twe" id="2vd-4l-4tp"/>
                         <outlet property="rearFenderDropDown" destination="Kil-Ph-q9o" id="wvF-KA-P6S"/>
+                        <outlet property="rearFenderLabel" destination="yfy-EB-znu" id="PZ7-pr-6sv"/>
                         <outlet property="rearFootRestDropDown" destination="SEw-cr-bmd" id="vjA-Pb-oqa"/>
                         <outlet property="rearLightDropDown" destination="fYz-jz-cE1" id="uRH-oC-P9J"/>
                         <outlet property="rearOilTankDiscBrakesDropdown" destination="rl7-VA-Tb0" id="dMp-rM-feL"/>
@@ -7789,23 +7820,42 @@
                         <outlet property="rearSeatRackDropDown" destination="qFM-GA-ZBC" id="afJ-af-0cZ"/>
                         <outlet property="rearShockupDropdown" destination="rFq-98-CJ2" id="6v1-CH-ATd"/>
                         <outlet property="rearTireDropDown" destination="xnp-3Y-keH" id="ZkZ-3r-ksS"/>
+                        <outlet property="rearTireLabel" destination="gWx-K4-WgB" id="vN6-Gd-Tsp"/>
                         <outlet property="rearTurnSignalLDropDown" destination="mJj-l9-ztU" id="ZA7-7e-In0"/>
                         <outlet property="rearTurnSignalRDropDown" destination="Iao-2I-JSC" id="YW1-84-vMQ"/>
                         <outlet property="rearWheelDropdown" destination="4or-KB-slc" id="1Ps-2P-whK"/>
                         <outlet property="rearWheelRadio" destination="Aw1-qp-Cen" id="QMT-oc-urK"/>
                         <outlet property="scrollView" destination="vxm-UE-2oV" id="oDn-xf-DhN"/>
                         <outlet property="seatDropDown" destination="RzJ-vJ-B2t" id="iPu-rj-5ov"/>
+                        <outlet property="seatIronFrameLabel" destination="YwZ-hL-vNc" id="KmL-jS-bbB"/>
+                        <outlet property="seatLabel" destination="avo-Yd-bL2" id="kxO-th-Ar2"/>
+                        <outlet property="selectRearTireLabel" destination="SZr-7r-hZH" id="pyY-y7-xO6"/>
+                        <outlet property="shockAbsorberLabel" destination="y4R-K7-aWH" id="ePC-S9-gHR"/>
+                        <outlet property="sideLeftLabel" destination="dy6-bB-bIB" id="tWA-ic-VJL"/>
+                        <outlet property="sideMirrorLeftLabel" destination="FCP-CM-sdn" id="Msc-eO-kIP"/>
+                        <outlet property="sideMirrorRightLabel" destination="7tB-kO-1Lg" id="10X-Zm-L2h"/>
+                        <outlet property="sideRightLabel" destination="5hP-5s-dRj" id="b02-B8-xJ5"/>
                         <outlet property="sideStandDropDown" destination="BSU-9r-wTo" id="B6r-EN-rDz"/>
+                        <outlet property="singleStandLabel" destination="k87-XX-0fR" id="6BC-Bq-dsS"/>
+                        <outlet property="startPedalLabel" destination="ryF-Ox-hk5" id="DCr-6c-hYj"/>
                         <outlet property="starterLeverDropDown" destination="eaC-Yi-csX" id="sP0-Eo-awE"/>
+                        <outlet property="tailLightLabel" destination="CZx-XR-JTc" id="gj4-Ih-nlh"/>
+                        <outlet property="tireLabel" destination="eDh-TU-Jx0" id="ffh-ou-OQ2"/>
                         <outlet property="toolSpareDropdown" destination="rpU-yC-r7L" id="eGd-aH-hPL"/>
+                        <outlet property="toolsLabel" destination="SlL-lC-OaU" id="wAm-Sb-Lon"/>
+                        <outlet property="turnLightLeftLabel" destination="e9r-qI-k6s" id="fFi-io-ZR3"/>
+                        <outlet property="turnLightRightLabel" destination="tml-4r-uec" id="ONP-Ch-e1t"/>
+                        <outlet property="uBoxLabel" destination="Clr-gb-HWU" id="CNr-Gu-Iu3"/>
                         <outlet property="uboxDropdown" destination="ucI-HF-oyn" id="BeI-gM-JFg"/>
                         <outlet property="windScreenLDropDown" destination="6Se-Z9-du4" id="cFa-fh-3ho"/>
                         <outlet property="windScreenRDropDown" destination="phO-uf-smO" id="gyh-Rs-gz6"/>
+                        <outlet property="windShieldLeftLabel" destination="yIL-4O-b7P" id="2iD-48-JWk"/>
+                        <outlet property="windShieldRightLabel" destination="uCf-QL-rNx" id="DYh-9i-BXy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ibl-Je-rIb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-56" y="2456"/>
+            <point key="canvasLocation" x="-56.111111111111107" y="2455.5555555555552"/>
         </scene>
         <!--Book In Motorcycle2 View Controller-->
         <scene sceneID="UvD-R4-WHx">

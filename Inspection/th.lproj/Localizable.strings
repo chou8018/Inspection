@@ -230,6 +230,52 @@
 // motorbike
 "motorbike_inspection_engine_label" = "สภาพเครื่องยนต์";
 
+// motorbike exterior
+"motorbike_exterior_turn_light_l_label" = "ไฟเลี้ยวหน้า L";
+"motorbike_exterior_turn_light_r_label" = "ไฟเลี้ยวหน้า R";
+"motorbike_exterior_side_mirror_l_label" = "กระจก L";
+"motorbike_exterior_side_mirror_r_label" = "กระจก R";
+"motorbike_exterior_hand_brake_l_label" = "มือเบรค L";
+"motorbike_exterior_hand_brake_r_label" = "มือเบรค R";
+"motorbike_exterior_wind_shield_l_label" = "บังลม L";
+"motorbike_exterior_wind_shield_r_label" = "บังลม R";
+"motorbike_exterior_side_l_label" = "กาบข้าง L";
+"motorbike_exterior_side_r_label" = "กาบข้าง R";
+"motorbike_exterior_head_light_label" = "ไฟหน้า";
+"motorbike_exterior_maks_label" = "หน้ากาก";
+"motorbike_exterior_dashboard_label" = "เรือนไมล์";
+"motorbike_exterior_disk_brake_oil_canister_label" = "กระปุกน้ำมันดิสเบรคหน้า";
+"motorbike_exterior_hand_clutch_label" = "มือครัช";
+"motorbike_exterior_disk_brake_pump_label" = "ปั้มดิสเบรคหน้า";
+"motorbike_exterior_front_fender_label" = "บังโคลนหน้า";
+"motorbike_exterior_start_pedal_label" = "คันสตาร์ท";
+"motorbike_exterior_shock_absorber_label" = "โช๊คหน้า";
+"motorbike_exterior_footrest_r/l_label" = "พักเท้าหน้า R/L";
+"motorbike_exterior_tire_label" = "ยางหน้า";
+"motorbike_exterior_compartment_r_label" = "ช่องอเนกประสงค์ R";
+"motorbike_exterior_compartment_l_label" = "ช่องอเนกประสงค์ L";
+"motorbike_exterior_double_stand_label" = "ขาตั้งคู่";
+"motorbike_exterior_single_stand_label" = "ขาตั้งเดี่ยว";
+"motorbike_exterior_tail_light_label" = "ไฟท้าย";
+"motorbike_exterior_seat_iron_frame_label" = "โครงเหล็กท้ายเบาะ";
+"motorbike_exterior_rear_fender_label" = "บังโคลนท้าย";
+"motorbike_exterior_exhaust_pipe_label" = "ท่อไอเสีย";
+"motorbike_exterior_chain_guard_label" = "บังโซ่";
+"motorbike_exterior_seat_label" = "เบาะ";
+"motorbike_exterior_rear_tire_label" = "ยางหลัง";
+"motorbike_exterior_cdi_label" = "กล่องควบคุม (CDI)";
+"motorbike_exterior_front_tire_label" = "ล้อหน้า";
+"motorbike_exterior_spokes_label" = "ซี่ลวด";
+"motorbike_exterior_alloy_label" = "แม็กซ์";
+"motorbike_exterior_front_brake_label" = "เบรคหน้า";
+"motorbike_exterior_disk_label" = "ดิส";
+"motorbike_exterior_drum_label" = "ดรั้ม";
+"motorbike_exterior_rear_brake_label" = "เบรคหลัง";
+"motorbike_exterior_choice_label" = "ตัวเลือก";
+"motorbike_exterior_scratches_label" = "ครูด";
+"motorbike_exterior_fragmented_label" = "แตก";
+"motorbike_exterior_no_label" = "ไม่มี";
+
 // inspection suspension/under
 "inspection_suspension_drive_shaft_label" = "เพลาขับ";
 "inspection_suspension_label" = "ช่วงล่าง";

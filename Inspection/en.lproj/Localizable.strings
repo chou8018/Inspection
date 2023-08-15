@@ -163,7 +163,7 @@
 "car_interior_key_immobilizer_label" = "Immobilizer";
 "car_interior_key_label" = "Keyless";
 "car_interior_key_placeholder_label" = "Numbers";
-"car_interior_others_label" = "Other";
+"car_interior_others_label" = "Others";
 
 // car engine room
 "car_engine_room_condition_label" = "Engine room condition";
@@ -227,8 +227,54 @@
 "inspection_engine_nedd_repair_label" = "Need repair";
 "inspection_engine_summary_label" = "Summary engine condition";
 
-// motorbike
+// motorbike engine
 "motorbike_inspection_engine_label" = "Engine condition";
+
+// motorbike exterior
+"motorbike_exterior_turn_light_l_label" = "Turn light L";
+"motorbike_exterior_turn_light_r_label" = "Turn light R";
+"motorbike_exterior_side_mirror_l_label" = "Side mirror L";
+"motorbike_exterior_side_mirror_r_label" = "Side mirror R";
+"motorbike_exterior_hand_brake_l_label" = "Hand brake L";
+"motorbike_exterior_hand_brake_r_label" = "Hand brake R";
+"motorbike_exterior_wind_shield_l_label" = "Wind shield L";
+"motorbike_exterior_wind_shield_r_label" = "Wind shield R";
+"motorbike_exterior_side_l_label" = "Side L";
+"motorbike_exterior_side_r_label" = "Side R";
+"motorbike_exterior_head_light_label" = "Head light";
+"motorbike_exterior_maks_label" = "Mask";
+"motorbike_exterior_dashboard_label" = "Dashboard";
+"motorbike_exterior_disk_brake_oil_canister_label" = "Disk brake oil canister";
+"motorbike_exterior_hand_clutch_label" = "Hand clutch";
+"motorbike_exterior_disk_brake_pump_label" = "Disk brake pump";
+"motorbike_exterior_front_fender_label" = "Front fender";
+"motorbike_exterior_start_pedal_label" = "Start pedal";
+"motorbike_exterior_shock_absorber_label" = "Shock absorber";
+"motorbike_exterior_footrest_r/l_label" = "Footrest R/L";
+"motorbike_exterior_tire_label" = "Tire";
+"motorbike_exterior_compartment_r_label" = "Compartment R";
+"motorbike_exterior_compartment_l_label" = "Compartment L";
+"motorbike_exterior_double_stand_label" = "Double Stand";
+"motorbike_exterior_single_stand_label" = "Single stand";
+"motorbike_exterior_tail_light_label" = "Tail light";
+"motorbike_exterior_seat_iron_frame_label" = "Seat iron frame";
+"motorbike_exterior_rear_fender_label" = "Rear fender";
+"motorbike_exterior_exhaust_pipe_label" = "Exhaust pipe";
+"motorbike_exterior_chain_guard_label" = "Chain guard";
+"motorbike_exterior_seat_label" = "Seat";
+"motorbike_exterior_rear_tire_label" = "Rear tire";
+"motorbike_exterior_cdi_label" = "CDI";
+"motorbike_exterior_front_tire_label" = "Front tire";
+"motorbike_exterior_spokes_label" = "Spokes";
+"motorbike_exterior_alloy_label" = "Alloy";
+"motorbike_exterior_front_brake_label" = "Front brake";
+"motorbike_exterior_disk_label" = "Disk";
+"motorbike_exterior_drum_label" = "Drum";
+"motorbike_exterior_rear_brake_label" = "Rear brake";
+"motorbike_exterior_choice_label" = "Choice";
+"motorbike_exterior_scratches_label" = "Scratches";
+"motorbike_exterior_fragmented_label" = "Fragmented";
+"motorbike_exterior_no_label" = "No";
 
 // inspection suspension/under
 "inspection_suspension_drive_shaft_label" = "Drive shaft";
@@ -298,6 +344,7 @@
 "photos_select_button_title" = "Select Picture";
 "photos_delete_head_title" = "To delete";
 "photos_delete_tail_title" = "?";
+
 
 
 

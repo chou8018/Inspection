@@ -376,3 +376,25 @@
 "photos_select_button_title" = "เลือกรูป";
 "photos_delete_head_title" = "คุณต้องการลบ";
 "photos_delete_tail_title" = "ไหม";
+
+// mode code
+"mode_code_title_label" = "ค้นหารุ่น";
+"mode_code_search_chassis_label" = "หมายเลขแชสซี";
+"mode_code_fill_information_label" = "กรอกข้อมูล";
+"mode_code_conduct_search_label" = "เพื่อทำการค้นหา";
+"mode_code_want_choose_label" = "คุณต้องการเลือก";
+"mode_code_edit_label" = "แก้ไข";
+
+// create model
+"create_model_chassis_number_label" = "หมายเลขแชสซี";
+"create_model_build_year_label" = "ปีผลิต";
+"create_model_variants_label" = "รุ่นย่อย";
+"create_model_mode_label" = "รุ่น";
+"create_model_body_label" = "ประเภทรถ";
+"create_model_fuel_delivery_label" = "ระบบเชื้อเพลิง";
+"create_model_fuel_type_label" = "เชื้อเพลิง";
+"create_model_gearbox_label" = "เกียร์";
+"create_model_gear_label" = "จำนวนเกียร์";
+"create_model_drive_label" = "ระบบขับเคลื่อน";
+"create_model_engine_capacity_label" = "ขนาดเครื่องยนต์";
+"create_model_back_label" = "กลับ";

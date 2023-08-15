@@ -377,6 +377,28 @@
 "photos_delete_head_title" = "To delete";
 "photos_delete_tail_title" = "?";
 
+// mode code
+"mode_code_title_label" = "Search model";
+"mode_code_search_chassis_label" = "Search chassis";
+"mode_code_fill_information_label" = "Fill in the information";
+"mode_code_conduct_search_label" = "conduct a search";
+"mode_code_want_choose_label" = "Do you want to choose";
+"mode_code_edit_label" = "Edit";
+
+// create model
+"create_model_chassis_number_label" = "Chassis Number";
+"create_model_build_year_label" = "Build Year";
+"create_model_mode_label" = "Mode";
+"create_model_variants_label" = "Variants";
+"create_model_body_label" = "Body";
+"create_model_fuel_delivery_label" = "FuelDelivery";
+"create_model_fuel_type_label" = "FuelType";
+"create_model_gearbox_label" = "Gearbox";
+"create_model_gear_label" = "Gear";
+"create_model_drive_label" = "Drive";
+"create_model_engine_capacity_label" = "Engine Capacity";
+"create_model_back_label" = "Back";
+
 
 
 

@@ -7875,16 +7875,16 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="980" height="60"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="สภาพรถ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dcz-nk-6Ss">
-                                                        <rect key="frame" x="0.0" y="0.0" width="120" height="60"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="150" height="60"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="120" id="WrV-tl-QDl"/>
+                                                            <constraint firstAttribute="width" constant="150" id="WrV-tl-QDl"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                         <color key="textColor" name="primary_color"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VDT-7m-Kln" customClass="RadioGroup" customModule="RadioGroup">
-                                                        <rect key="frame" x="140" y="0.0" width="600" height="60"/>
+                                                        <rect key="frame" x="170" y="0.0" width="600" height="60"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <color key="tintColor" name="primary_color"/>
                                                         <constraints>
@@ -7916,7 +7916,7 @@
                                                         </connections>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kjU-Vb-QB2">
-                                                        <rect key="frame" x="760" y="0.0" width="220" height="60"/>
+                                                        <rect key="frame" x="790" y="0.0" width="190" height="60"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </view>
                                                 </subviews>
@@ -7947,14 +7947,14 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="sVk-MJ-f7j">
-                                                                <rect key="frame" x="140" y="0.0" width="355" height="60"/>
+                                                                <rect key="frame" x="140" y="0.0" width="380" height="60"/>
                                                                 <subviews>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VWf-Dq-a8P" customClass="RadioGroup" customModule="RadioGroup">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="215" height="60"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="240" height="60"/>
                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <color key="tintColor" name="primary_color"/>
                                                                         <constraints>
-                                                                            <constraint firstAttribute="width" constant="215" id="p0k-Wu-NBn"/>
+                                                                            <constraint firstAttribute="width" constant="240" id="p0k-Wu-NBn"/>
                                                                         </constraints>
                                                                         <userDefinedRuntimeAttributes>
                                                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isVertical" value="NO"/>
@@ -7982,7 +7982,7 @@
                                                                         </connections>
                                                                     </view>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="0kw-LE-U6D">
-                                                                        <rect key="frame" x="235" y="10" width="120" height="40"/>
+                                                                        <rect key="frame" x="260" y="10" width="120" height="40"/>
                                                                         <subviews>
                                                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="เลขไมล์" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eAD-NW-pMU" customClass="CustomTextField" customModule="Inspection" customModuleProvider="target">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="120" height="39"/>
@@ -8010,7 +8010,7 @@
                                                                 </subviews>
                                                             </stackView>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z0k-Iy-sWB">
-                                                                <rect key="frame" x="515" y="0.0" width="465" height="60"/>
+                                                                <rect key="frame" x="540" y="0.0" width="440" height="60"/>
                                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             </view>
                                                         </subviews>
@@ -8153,16 +8153,16 @@
                                                 <rect key="frame" x="0.0" y="284" width="980" height="60"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="สภาพเกียร์" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="azq-jp-FoT">
-                                                        <rect key="frame" x="0.0" y="0.0" width="120" height="60"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="140" height="60"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="120" id="bgQ-HH-bJB"/>
+                                                            <constraint firstAttribute="width" constant="140" id="bgQ-HH-bJB"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                         <color key="textColor" name="primary_color"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vB8-5e-LQS" customClass="RadioGroup" customModule="RadioGroup">
-                                                        <rect key="frame" x="140" y="0.0" width="250" height="60"/>
+                                                        <rect key="frame" x="160" y="0.0" width="250" height="60"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <color key="tintColor" name="primary_color"/>
                                                         <constraints>
@@ -8194,7 +8194,7 @@
                                                         </connections>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mop-La-XKj">
-                                                        <rect key="frame" x="410" y="0.0" width="570" height="60"/>
+                                                        <rect key="frame" x="430" y="0.0" width="550" height="60"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </view>
                                                 </subviews>
@@ -8869,32 +8869,48 @@
                     </view>
                     <size key="freeformSize" width="1080" height="1400"/>
                     <connections>
+                        <outlet property="brakeLabel" destination="mBh-bx-BUl" id="jF4-aK-64G"/>
                         <outlet property="breakConditionRadio" destination="PQp-oX-OFQ" id="RCv-Wz-hyw"/>
                         <outlet property="carConditionRadio" destination="VDT-7m-Kln" id="sCg-3Z-xqR"/>
                         <outlet property="engineConditionRadio" destination="4Qg-0T-jGF" id="u8Y-f8-5Wz"/>
+                        <outlet property="engineLabel" destination="Rjs-D7-VsP" id="vjd-Tv-O9m"/>
+                        <outlet property="footStartLabel" destination="3pU-7O-IV3" id="lof-oP-sOo"/>
                         <outlet property="fuelDeliveryRadio" destination="iQN-Fn-P57" id="Szg-zX-H2S"/>
+                        <outlet property="fuelLabel" destination="BQd-OQ-gs6" id="tjN-mC-DlC"/>
+                        <outlet property="gearConditionLabel" destination="azq-jp-FoT" id="fYg-4l-KaD"/>
                         <outlet property="gearConditionRadio" destination="vB8-5e-LQS" id="X4W-Mm-ZT9"/>
+                        <outlet property="gearOption1Label" destination="1f8-sw-x3X" id="45H-1u-nWd"/>
+                        <outlet property="gearOption2Label" destination="nok-q2-uv9" id="wUQ-uK-BAA"/>
+                        <outlet property="gearOption3Label" destination="Mxn-ii-Cfk" id="EqE-hX-yZZ"/>
+                        <outlet property="gearOption4Label" destination="QAP-Xz-9qd" id="DkN-j4-odL"/>
+                        <outlet property="gearTitleLabel" destination="avk-p6-ACK" id="LLn-G8-yvC"/>
                         <outlet property="gearboxDropDown" destination="Wcu-eh-5ZS" id="7lS-iB-raV"/>
                         <outlet property="gearboxLabel" destination="15Q-Qg-zv8" id="fH1-Fj-JWp"/>
                         <outlet property="gearboxLineView" destination="Kd3-As-dOx" id="Pgf-yJ-5R4"/>
                         <outlet property="handStartCheckBox" destination="fLu-E2-8i7" id="WSv-q0-zzr"/>
+                        <outlet property="handStartLabel" destination="dqJ-Tx-0ZC" id="4OY-P2-pUh"/>
                         <outlet property="immobilizarKeyCheckBox" destination="gJf-P3-1ud" id="PdP-zd-b2U"/>
                         <outlet property="immobilizarKeyDropDown" destination="mm8-Yj-Wne" id="PEL-Y2-a6d"/>
                         <outlet property="isInvalidMilesCheckBox" destination="qTn-h7-Uyh" id="Q9R-Pe-fTD"/>
                         <outlet property="keyCheckBox" destination="6Cy-dA-mXD" id="jHG-JU-rdM"/>
                         <outlet property="keyDropDown" destination="Crb-9b-k9k" id="zCq-4e-T7m"/>
                         <outlet property="kickStartCheckBox" destination="coR-HO-Nb7" id="dNm-Wx-nCi"/>
+                        <outlet property="mileageLabel" destination="ukg-o6-0mG" id="dMl-KW-nuH"/>
                         <outlet property="milesRadio" destination="VWf-Dq-a8P" id="aJt-xk-R9t"/>
                         <outlet property="milesTextFIeld" destination="eAD-NW-pMU" id="1ba-vs-g22"/>
+                        <outlet property="motorbikeConditionLabel" destination="dcz-nk-6Ss" id="6vj-Nf-01t"/>
                         <outlet property="noteMultilineTextField" destination="59l-mq-SgL" id="GyE-9R-rwC"/>
+                        <outlet property="othersLabel" destination="fXf-an-Fpw" id="Ek6-UG-dRW"/>
                         <outlet property="reasonMileageStackView" destination="U0p-HF-SDD" id="0ju-9N-MRE"/>
                         <outlet property="reasonMileageTextField" destination="ydb-6B-ghz" id="qrq-t9-207"/>
                         <outlet property="registrationPlateCheckBox" destination="9Ta-k9-je0" id="O6Y-i2-GEa"/>
+                        <outlet property="registrationPlateLabel" destination="4m1-lF-t0N" id="WjL-o6-0Xk"/>
                         <outlet property="remoteCheckBox" destination="dsZ-Qf-KUK" id="iH3-hB-Jgx"/>
                         <outlet property="remoteDropDown" destination="SkV-Nl-i3Z" id="VeO-HB-RsH"/>
                         <outlet property="remoteKeyCheckBox" destination="Byi-UV-bNr" id="QpA-9B-ZOx"/>
                         <outlet property="remoteKeyDropDown" destination="urX-m9-ZdT" id="DMd-iA-gIY"/>
                         <outlet property="scrollView" destination="fns-ap-rII" id="8TK-aq-28h"/>
+                        <outlet property="unverifiedLabel" destination="nYF-nJ-drO" id="DjC-NP-akp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i5S-o6-Obt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -9132,7 +9148,7 @@
             <size key="intrinsicContentSize" width="418" height="46"/>
         </designable>
         <designable name="VWf-Dq-a8P">
-            <size key="intrinsicContentSize" width="254.5" height="259.5"/>
+            <size key="intrinsicContentSize" width="279.5" height="239.5"/>
         </designable>
         <designable name="VZa-6H-Qv8">
             <size key="intrinsicContentSize" width="108.5" height="25.5"/>

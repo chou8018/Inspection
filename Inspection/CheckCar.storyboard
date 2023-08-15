@@ -4191,12 +4191,21 @@
                     <size key="freeformSize" width="1080" height="1810"/>
                     <connections>
                         <outlet property="batteryDamageTextField" destination="1Yv-W5-X15" id="2t0-si-6Gf"/>
+                        <outlet property="batteryLabel" destination="p2H-F8-S2V" id="8Yw-lL-pbg"/>
                         <outlet property="cdiDamageTextField" destination="ZgP-PG-9YS" id="vWX-XY-XDp"/>
+                        <outlet property="cdiLabel" destination="dEL-Gp-ujw" id="djB-HZ-eFQ"/>
+                        <outlet property="electricLabel" destination="Hxe-lX-XGl" id="GOH-UD-s8O"/>
                         <outlet property="electricStartDamageTextField" destination="Vut-Of-pKW" id="khX-Ze-VrS"/>
+                        <outlet property="engineType1Label" destination="jxS-zr-16W" id="xPY-AF-oOa"/>
+                        <outlet property="engineType2Label" destination="iMq-7i-seN" id="brr-pQ-shu"/>
+                        <outlet property="engineType3Label" destination="gGk-xM-bKU" id="clQ-e0-rNa"/>
+                        <outlet property="engineType4Label" destination="Q1U-z8-q60" id="2jK-ku-hiy"/>
+                        <outlet property="engineTypeLabel" destination="1xq-4u-mnQ" id="3Kn-Mw-Se3"/>
                         <outlet property="exteriorDamageTextView" destination="NF8-CW-8zt" id="sdJ-dC-eaf"/>
                         <outlet property="frontTreadDepth" destination="fL2-2P-NRY" id="Jm0-kh-RTJ"/>
                         <outlet property="fuelDeliveryDamageTextField" destination="2f1-vQ-eXw" id="LCi-vi-lu5"/>
                         <outlet property="fuelDeliveryRadio" destination="agX-KO-VzK" id="rSr-mT-dML"/>
+                        <outlet property="fuelSystemLabel" destination="n1y-Nd-mCP" id="odQ-bw-dNP"/>
                         <outlet property="immobilizarKeyCheckBox" destination="tgm-Xn-vbc" id="4qq-dO-9xR"/>
                         <outlet property="isBatteryCheckBox" destination="Z4P-FV-EVR" id="zRv-g9-k73"/>
                         <outlet property="isCDICheckBox" destination="6ej-zC-v8S" id="8rR-OD-hdM"/>
@@ -4208,16 +4217,30 @@
                         <outlet property="isRequireAttention" destination="N3q-8F-Jsy" id="f9p-bw-ZKL"/>
                         <outlet property="isServiceable" destination="TV9-vv-a7L" id="VDJ-Pf-jQU"/>
                         <outlet property="isWillNotStart" destination="nuz-38-oct" id="VDC-Xi-XYx"/>
+                        <outlet property="key1Label" destination="pyg-K3-vdW" id="hy2-KJ-dbR"/>
+                        <outlet property="key2Label" destination="iXk-cQ-T8q" id="UJj-ru-1RB"/>
+                        <outlet property="key3Label" destination="Vbb-hp-OYp" id="0mw-FJ-3ol"/>
+                        <outlet property="key4Label" destination="Z8f-zo-D2a" id="tuT-fn-qMi"/>
                         <outlet property="keyCheckBox" destination="0e9-qG-p0F" id="pth-Vs-QZl"/>
+                        <outlet property="keyLabel" destination="g2H-dX-kLC" id="whM-5r-LGw"/>
                         <outlet property="odometerDamageTextField" destination="e8d-z5-lp0" id="WfN-bg-EOH"/>
+                        <outlet property="odometerLabel" destination="CGm-3D-Y4L" id="MRG-kt-hHR"/>
                         <outlet property="pedelStartDamageTextField" destination="hJr-JB-XlU" id="Sfz-AX-OKc"/>
                         <outlet property="plateDamageTextField" destination="9nL-fH-dNw" id="0oA-9d-Rbn"/>
+                        <outlet property="plateLabel" destination="pWm-pC-rlP" id="led-1o-HYU"/>
                         <outlet property="provinceTextField" destination="AZ7-0k-UEO" id="RdG-6P-21d"/>
                         <outlet property="rearTreadDepth" destination="tpm-kJ-9ud" id="AYu-LV-keE"/>
+                        <outlet property="registrationNumberLabel" destination="Ucg-BM-vYh" id="2La-6i-uRM"/>
                         <outlet property="registrationTextField" destination="naP-kd-fiD" id="Muk-Iw-YoZ"/>
                         <outlet property="remoteCheckBox" destination="EHu-qd-xPm" id="P1b-wR-dKf"/>
                         <outlet property="remoteKeyCheckBox" destination="dgO-Wy-b7v" id="llH-St-zVA"/>
                         <outlet property="scrollView" destination="fq9-g3-HNT" id="x8A-xe-ZE2"/>
+                        <outlet property="startPedalLabel" destination="ZaQ-zy-BBn" id="TMS-lS-Z0a"/>
+                        <outlet property="summaryLabel" destination="LMP-Nb-qWc" id="L5b-Ed-ncZ"/>
+                        <outlet property="tyreFlabel" destination="QGp-fj-5Vb" id="gZo-Ql-wjb"/>
+                        <outlet property="tyreLabel" destination="Lej-Uo-N31" id="HLZ-JY-zGX"/>
+                        <outlet property="tyreRLabel" destination="fM9-WO-3LI" id="zkP-FW-xDg"/>
+                        <outlet property="underTyreLabel" destination="7vz-Mj-ebm" id="cvy-AQ-9nx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KuW-qD-FHM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

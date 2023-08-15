@@ -227,9 +227,6 @@
 "inspection_engine_nedd_repair_label" = "ต้องซ่อมก่อนใช้งาน";
 "inspection_engine_summary_label" = "สรุปสภาพเครื่องยนต์";
 
-// motorbike
-"motorbike_inspection_engine_label" = "สภาพเครื่องยนต์";
-
 // motorbike exterior
 "motorbike_exterior_turn_light_l_label" = "ไฟเลี้ยวหน้า L";
 "motorbike_exterior_turn_light_r_label" = "ไฟเลี้ยวหน้า R";
@@ -275,6 +272,41 @@
 "motorbike_exterior_scratches_label" = "ครูด";
 "motorbike_exterior_fragmented_label" = "แตก";
 "motorbike_exterior_no_label" = "ไม่มี";
+
+// motorbike
+"motorbike_inspection_engine_label" = "สภาพเครื่องยนต์";
+"motorbike_inspection_engine_condition_label" = "สภาพรถ";
+"motorbike_inspection_engine_unverified_label" = "ตรวจสอบเลขไมล์ไม่ได้";
+"motorbike_inspection_engine_hand_start_label" = "สตาร์ทมือ";
+"motorbike_inspection_engine_foot_start_label" = "สตาร์ทเท้า";
+"motorbike_inspection_engine_registration_plate_label" = "แผ่นป้ายทะเบียน";
+"motorbike_inspection_engine_kilometer_label" = "กิโลเมตร";
+"motorbike_inspection_engine_mile_label" = "ไมล์";
+"motorbike_inspection_engine_need_repair_label" = "ต้องซ่อม";
+"motorbike_inspection_engine_working_label" = "สตาร์ทติด";
+"motorbike_inspection_engine_not_working_label" = "สตาร์ทไม่ติด";
+"motorbike_inspection_engine_mileage_placeholder" = "เลขไมล์";
+
+// motorbike inspection exterior
+"motorbike_inspection_exterior_label" = "สภาพภายนอก";
+"motorbike_inspection_exterior_serviced_label" = "เช็คสภาพตามอายุการใช้งาน";
+"motorbike_inspection_exterior_battery_label" = "Battery / แบตเตอรี่";
+"motorbike_inspection_exterior_cdi_label" = "CDI / กล่องควบคุมการจุดระเบิด";
+"motorbike_inspection_exterior_electric_label" = "Electric Start / สตาร์ทมื";
+"motorbike_inspection_exterior_pedal_label" = "Start pedal / คันสตาร์ท";
+"motorbike_inspection_exterior_odometer_label" = "Odometer / เรือนไมล์";
+"motorbike_inspection_exterior_plate_label" = "Plate / แผ่นป้ายทะเบียน";
+"motorbike_inspection_exterior_tyre_label" = "Tyre / ยาง (mm.)";
+"motorbike_inspection_exterior_tyre_f_label" = "F / หน้า";
+"motorbike_inspection_exterior_tyre_r_label" = "R / หลัง";
+"motorbike_inspection_exterior_under_tyre_label" = "*ประเมิณความลึกดอกยางโดยประมาณ ซึ่งวัดจากจุดศูนย์กลางของยาง";
+"motorbike_inspection_exterior_engine_type_label" = "Engine / เครื่องยนต์";
+"motorbike_inspection_exterior_serviced_label" = "Serviceable for age / เช็คสภาพตามอายุการใช้งาน";
+"motorbike_inspection_exterior_not_working_label" = "Will not start / สตาร์ทไม่ติด";
+"motorbike_inspection_exterior_need_repair_label" = "Requires Attention / ต้องทำการซ่อมแซม";
+"motorbike_inspection_exterior_missing_label" = "Missing / สูญหาย";
+"motorbike_inspection_exterior_damage_summary_label" = "ความเสียหายภายนอก";
+"motorbike_inspection_exterior_head_placeholder_label" = "ความเสียหาย ";
 
 // inspection suspension/under
 "inspection_suspension_drive_shaft_label" = "เพลาขับ";

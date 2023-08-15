@@ -50,7 +50,7 @@ class DataController {
                         String.localized("inspection_gauges_title"),
                         String.localized("inspection_electrical_title")]
             case .MBIKE:
-                return ["สภาพภายนอก"]
+                return [String.localized("motorbike_inspection_exterior_label")]
             case .CARWRECK:
                 return [String.localized("inspection_body_title"),
                         String.localized("inspection_engine_title"),
@@ -62,7 +62,7 @@ class DataController {
                         String.localized("inspection_gauges_title"),
                         String.localized("inspection_electrical_title")]
             case .MBIKEWRECK:
-                return ["สภาพภายนอก"]
+                return [String.localized("motorbike_inspection_exterior_label")]
                 
             }
         }

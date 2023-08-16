@@ -50,6 +50,8 @@
 "main_inspection_car_navigation_photos_title" = "ถ่ายรูป - รถยนต์";
 "main_inspection_back_to_main_title" = "คุณต้องการกลับหน้าหลักไหม";
 "main_inspection_leave_edit_page_title" = "คุณต้องการกลับหน้ารายการไหม";
+"main_inspection_save_vehicle_title" = "คุณต้องการบันทึกรายการรับมอบรถไหม";
+"main_inspection_edit_list_title" = "คุณต้องการแก้ไขรายการไหม";
 
 "motorbike_pick_up_navigation_title" = "รับมอบ - รถจักรยานยนต์";
 "motorbike_inspection_navigation_title" = "ตรวจสภาพ - รถจักรยานยนต์";
@@ -430,4 +432,46 @@
 "car_pick_up_valid_field_color_label" = "สี";
 "car_pick_up_valid_field_remark_tips_label" = "หมายเหตุป้ายทะเบียน ความยาวเกินกำหนด 100 ตัวอักษร";
 
+// car grade
+"car_grade_title_label" = "จัดเกรดรถเข้าประมูล";
+"car_grade_excellence_label" = "E Excellence ดีเยี่ยม";
+"car_grade_excellence_option1_label" = "เลขไมล์ไม่เกิน 20,000 กิโลเมตร";
+"car_grade_excellence_option2_label" = "ปีจดทะเบียนรถไม่เกิน 1 ปี (ไม่ใช่ปีผลิต)";
+"car_grade_excellence_option3_label" = "รถอยู่ในสภาพใหม่ ไม่มีริ้วรอย";
+"car_grade_excellence_option4_label" = "ภายในอยู่ในสภาพดี";
+"car_grade_excellence_option5_label" = "ไม่มีการทำสี, ไม่มีการซ่อมแซม, ไม่มีการเปลี่ยนชิ้นส่วนตัวถัง";
+"car_grade_good_label" = "G Good ดีมาก";
+"car_grade_good_option1_label" = "เลขไมล์ไม่เกิน 50,000 กิโลเมตร";
+"car_grade_good_option2_label" = "ปีจดทะเบียนรถไม่เกิน 2 ปี (ไม่ใช่ปีผลิต)";
+"car_grade_good_option3_label" = "มีรอยขีดข่วน, มีรอยบุบ";
+"car_grade_good_option4_label" = "ไม่มีการซ่อมสีตัวถัง";
+"car_grade_average_label" = "A Average ปานกลาง";
+"car_grade_average_option1_label" = "เลขไมล์ไม่เกิน 100,000 กิโลเมตร";
+"car_grade_average_option2_label" = "ปีจดทะเบียนรถไม่เกิน 5 ปี (ไม่ใช่ปีผลิต)";
+"car_grade_average_option3_label" = "มีการเก็บสี มีรอยบุบ ถลอก";
+"car_grade_average_option4_label" = "ไม่มีรอยถอดน๊อตหรือชิ้นส่วนอุปกรณ์ตัวถัง";
+"car_grade_fair_label" = "F Fair พอใช้";
+"car_grade_fair_option1_label" = "เลขไมค์เกิน 100,000 กิโลเมตร / ปีจดทะเบียนรถเกิน 5 ปี";
+"car_grade_fair_option2_label" = "มีรอยถอดน๊อตหรือชิ้นส่วนอุปกรณ์ตัวถัง";
+"car_grade_fair_option3_label" = "มีรอยถอดซ่อมหรือเปลี่ยนคานซับแรง";
+"car_grade_fair_option4_label" = "ชนหน้า-หลังถึงคานแต่ไม่ถึงโครงสร้างหลั";
+"car_grade_fair_option5_label" = "มีการถอด / ซ่อม / เปลี่ยนชิ้นส่วนตัวถัง";
+"car_grade_fair_option6_label" = "มีรอยบุบครูดถึงเนื้อโลหะ";
+"car_grade_fair_option7_label" = "รอบตัวรถมีร่องรอยการซ่อม";
+"car_grade_fair_option8_label" = "รถเปลี่ยนเครื่องยนต์ / สี มาและสภาพใช้งานไม่ปกติ";
+"car_grade_fair_option9_label" = "รถเคยติดแก๊สมา";
+"car_grade_fair_option10_label" = "รถเคยติดหลังคา / เจาะกระบะ";
+"car_grade_fair_option11_label" = "รถน้ำเข้ามีสนิมใต้เบาะ / ใต้คอนโซล แต่ไม่ปรากฎระดับน้";
+"car_grade_poor_label" = "P Poor แย่";
+"car_grade_poor_option1_label" = "รถชนหนักกระทบโครงสร้างหลักเปลี่ยนคาน";
+"car_grade_poor_option2_label" = "เปลี่ยน / ซ่อม ซุ้มล้อ หรือเบ้าโช๊ค";
+"car_grade_poor_option3_label" = "รอยอารค์เสาประตูมีรอยซ่อม";
+"car_grade_poor_option4_label" = "แชสซีมีรอยซ่อม, ช่วงล่างผุ";
+"car_grade_poor_option5_label" = "รถชนหนักมา / หลังคาเสียหายมีรอยซ่อม";
+"car_grade_poor_option6_label" = "ไม่มีแผ่นเพลท";
+"car_grade_poor_option7_label" = "มีการซ่อมห้องท้ายรถยนต์ / กระบะท้ายซ่อมถึงแชสซี";
+"car_grade_poor_option8_label" = "รถเคยผ่านน้ำท่วม";
+"car_grade_poor_option9_label" = "มีรอยตัดต่อเชื่อมตัวถังและรอยสนิม / ตัดต่อเลขแชสซี / ตอกเลขเครื่อง และ มีรอยสนิม / รถซ่อมแซมดัดแปลงจากอุบัติเหตุ";
+"car_grade_x_label" = "รถขับไม่ได้ / เครื่องยนต์มีปัญหา / เกียร์มีปัญหา / ไฮบริดเสีย";
+"car_grade_next_button_title" = "ต่อไป";
 

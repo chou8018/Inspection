@@ -50,6 +50,8 @@
 "main_inspection_car_navigation_photos_title" = "Photos";
 "main_inspection_back_to_main_title" = "Do you want to go home?";
 "main_inspection_leave_edit_page_title" = "Do you want to leave the page?";
+"main_inspection_save_vehicle_title" = "Do you want to save your vehicle?";
+"main_inspection_edit_list_title" = "Do you want to edit the list?";
 
 "motorbike_pick_up_navigation_title" = "Motorbike - Book-in";
 "motorbike_inspection_navigation_title" = "Motorbike - Inspection";
@@ -429,10 +431,51 @@
 "car_pick_up_valid_field_submodel_label" = "Submodel";
 "car_pick_up_valid_field_color_label" = "Color";
 "car_pick_up_valid_field_remark_tips_label" = "License Plate Remark: More than 100 characters";
-"car_pick_up_valid_field_sender_name_label" = "Sender Name";
-"car_pick_up_valid_field_sender_name_label" = "Sender Name";
-"car_pick_up_valid_field_sender_name_label" = "Sender Name";
-"car_pick_up_valid_field_sender_name_label" = "Sender Name";
+
+// car grade
+"car_grade_title_label" = "Grade the auction vehicles";
+"car_grade_excellence_label" = "E Excellence";
+"car_grade_excellence_option1_label" = "The mileage does not exceed 20000 kilometers";
+"car_grade_excellence_option2_label" = "Registration year not exceeding 1 year (non manufacturing year)";
+"car_grade_excellence_option3_label" = "This car is brand new and has no wrinkles";
+"car_grade_excellence_option4_label" = "The internal condition is good";
+"car_grade_excellence_option5_label" = "No paint, no maintenance, no replacement of body parts";
+"car_grade_good_label" = "G Good";
+"car_grade_good_option1_label" = "The mileage does not exceed 50000 kilometers";
+"car_grade_good_option2_label" = "Registration year not exceeding 2 years (non manufacturing year)";
+"car_grade_good_option3_label" = "There are scratches and dents";
+"car_grade_good_option4_label" = "No body paint repairs";
+"car_grade_average_label" = "A Average";
+"car_grade_average_option1_label" = "The mileage does not exceed 100000 kilometers";
+"car_grade_average_option2_label" = "Registration year not exceeding 5 years (non manufacturing year)";
+"car_grade_average_option3_label" = "Color collection, dents, scratches";
+"car_grade_average_option4_label" = "No signs of nut or body component disassembly";
+"car_grade_fair_label" = "F Fair";
+"car_grade_fair_option1_label" = "The microphone number exceeds 100000 kilometers per year/the car registration has been over 5 years.";
+"car_grade_fair_option2_label" = "Detachable nuts or body components";
+"car_grade_fair_option3_label" = "There are traces of disassembly, repair, or replacement of the force lining beam";
+"car_grade_fair_option4_label" = "The front and rear bumpers reach the crossbeam, but do not reach the rear structure";
+"car_grade_fair_option5_label" = "TDisassembly/repair/replacement of body components";
+"car_grade_fair_option6_label" = "There are dents on the metal";
+"car_grade_fair_option7_label" = "There are repair marks around the car";
+"car_grade_fair_option8_label" = "Engine/color changes and abnormal usage conditions";
+"car_grade_fair_option9_label" = "There is gasoline on the car";
+"car_grade_fair_option10_label" = "The car is trapped on the roof/pickup truck";
+"car_grade_fair_option11_label" = "Rust under the seat/console, but not displayed on the water level";
+"car_grade_poor_label" = "P Poor";
+"car_grade_poor_option1_label" = "Heavy impact core structure replacement beam";
+"car_grade_poor_option2_label" = "Replace/repair wheel arches or shock absorbers";
+"car_grade_poor_option3_label" = "The ark on the gatepost has been repaired";
+"car_grade_poor_option4_label" = "The chassis has repair marks and the suspension is rotten";
+"car_grade_poor_option5_label" = "Crash/the roof is broken";
+"car_grade_poor_option6_label" = "No sheet";
+"car_grade_poor_option7_label" = "Tailgate/Tailgate repair to chassis";
+"car_grade_poor_option8_label" = "Cars once crossed floods";
+"car_grade_poor_option9_label" = "Body welding and rust/chassis number/machine number and rust/accident modified vehicle";
+"car_grade_x_label" = "Unable to drive/engine malfunction/transmission malfunction/hybrid vehicle malfunction";
+"car_grade_next_button_title" = "Next";
+
+
 
 
 

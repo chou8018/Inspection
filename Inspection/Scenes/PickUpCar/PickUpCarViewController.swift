@@ -176,7 +176,7 @@ class PickUpCarViewController: ViewController, PickUpCarDisplayLogic
     }
     func displayRequiteFieldSuccess(viewModel: PickUpCar.Something.ViewModel) {
         let fromEdit = DataController.shared.isFromEditView
-        let message = fromEdit ? "คุณต้องการแก้ไขรายการไหม" : "คุณต้องการบันทึกรายการรับมอบรถไหม"
+        let message = fromEdit ? String.localized("main_inspection_edit_list_title") : String.localized("main_inspection_save_vehicle_title")
         alert(message: message) { [weak self] in
             //send to server
             self?.confirmSendDataReceiver()

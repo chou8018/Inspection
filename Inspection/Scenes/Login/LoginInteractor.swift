@@ -40,7 +40,7 @@ class LoginInteractor: LoginBusinessLogic, LoginDataStore
     worker = LoginWorker()
     worker?.login(username: username, password: password, completion: {[weak self] (response) in
         if let _ = response.error {
-            let kError = KError.commonError(message: "username หรือ password\nไม่ถูกต้อง").getMessage
+            let kError = KError.commonError(message: "username \(String.localized("login_or_label")) password\n\(String.localized("login_not_correct_label"))").getMessage
             let response = Login.getLogin.Response(error: kError)
             self?.presenter?.presetResultLogin(response: response)
         }else{
@@ -63,8 +63,8 @@ class LoginInteractor: LoginBusinessLogic, LoginDataStore
         let validPassworwd =  !password.isEmpty
         
         var message : String = ""
-        message += validUsername ? "" : "username ไม่ถูกต้อง\n"
-        message += validPassworwd ? "" : "password ไม่ถูกต้อง\n"
+        message += validUsername ? "" : "username \(String.localized("login_not_correct_label"))\n"
+        message += validPassworwd ? "" : "password \(String.localized("login_not_correct_label"))\n"
         
         let response = Login.getLogin.Response(validateErrorMessage: message)
         presenter?.presentValidateField(response: response)

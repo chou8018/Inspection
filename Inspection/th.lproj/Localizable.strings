@@ -6,6 +6,15 @@
   
 */
 
+// login
+"login_title_label" = "ลงชื่อเข้าใช้";
+"login_user_name_placeholder" = "ชื่อผู้ใช้";
+"login_password_placeholder" = "รหัสผ่าน";
+"login_error_name_or_password_message_label" = "เกิดข้อผิดพลาด - ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง";
+"login_tips_message_label" = "พบปัญหาในการลงชื่อเข้าใช้? กรุณาติดต่อ ______";
+"login_or_label" = "หรือ";
+"login_not_correct_label" = "ไม่ถูกต้อง";
+
 // select inspection or list
 "select_inspection_label" = "เริ่มตรวจสภาพ";
 "select_inspection_list_label" = "รายการตรวจ";
@@ -411,3 +420,14 @@
 "inspection_list_status_label" = "สถานะ";
 "inspection_list_pending_no_data_label" = "ไม่รายการตรววจค้าง";
 "inspection_list_vin_number_label" = "หมายเลข VIN";
+
+// pick up car valid field
+"car_pick_up_valid_field_sender_name_label" = "ชื่อผู้ส่ง";
+"car_pick_up_valid_field_brand_label" = "ยี่ห้อรถยนต์";
+"car_pick_up_valid_field_type_label" = "ประเภทรถยนต์";
+"car_pick_up_valid_field_model_label" = "รุ่นรถยนต์";
+"car_pick_up_valid_field_submodel_label" = "รุ่นย่อยรถยนต์";
+"car_pick_up_valid_field_color_label" = "สี";
+"car_pick_up_valid_field_remark_tips_label" = "หมายเหตุป้ายทะเบียน ความยาวเกินกำหนด 100 ตัวอักษร";
+
+

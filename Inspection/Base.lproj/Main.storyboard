@@ -167,8 +167,11 @@
                     <connections>
                         <outlet property="errorLabel" destination="VbD-2V-ID3" id="V2X-JY-wll"/>
                         <outlet property="eyeImageView" destination="U39-CS-Uya" id="mMQ-Wx-uUv"/>
+                        <outlet property="loginButton" destination="QuH-IZ-Oy5" id="Oes-hh-xIp"/>
+                        <outlet property="loginTitleLabel" destination="MRe-vw-krS" id="YJC-Td-sbn"/>
                         <outlet property="passwordTextField" destination="qa3-br-uIL" id="vKe-6P-QcP"/>
                         <outlet property="scrollView" destination="6hy-iU-ipH" id="476-kT-QXM"/>
+                        <outlet property="tipsMessageLabel" destination="lY8-y6-TPM" id="uU1-wp-b7N"/>
                         <outlet property="usernameTextField" destination="N0f-Rk-KqG" id="Sdv-JV-4rf"/>
                         <outlet property="versionLabel" destination="haf-qL-5Kn" id="Tcx-VR-je4"/>
                     </connections>
@@ -946,10 +949,14 @@
                     </view>
                     <value key="contentSizeForViewInPopover" type="size" width="700" height="460"/>
                     <connections>
+                        <outlet property="cancelButton" destination="XQR-fC-qe8" id="fg5-Uh-Djt"/>
+                        <outlet property="okButton" destination="PnP-6B-OR2" id="qdE-dO-Zm0"/>
                         <outlet property="placeReceivePicker" destination="qxp-t9-g5r" id="eGz-wg-7Sr"/>
                         <outlet property="placeStorePicker" destination="UCK-by-Vxp" id="UXR-eE-r5G"/>
+                        <outlet property="receiveLocationTitleLabel" destination="NuD-bb-F8u" id="tuL-DB-DYl"/>
                         <outlet property="searchBarReceiver" destination="aag-ue-ctT" id="1Ut-cr-5Pp"/>
                         <outlet property="searchBarStorage" destination="fmR-eu-xNX" id="WLi-7C-Hb5"/>
+                        <outlet property="storeLocationTitleLabel" destination="uuO-17-Sa2" id="7Fp-dM-FxD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lbv-Mn-8UK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

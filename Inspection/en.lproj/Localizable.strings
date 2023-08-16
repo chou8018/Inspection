@@ -6,6 +6,15 @@
   
 */
 
+// login
+"login_title_label" = "Login";
+"login_user_name_placeholder" = "user name";
+"login_password_placeholder" = "password";
+"login_error_name_or_password_message_label" = "Error - Incorrect username or password";
+"login_tips_message_label" = "Encountered a problem logging in? Please contact ______";
+"login_or_label" = "or";
+"login_not_correct_label" = "not correct";
+
 // select inspection or list
 "select_inspection_label" = "Begin inspection";
 "select_inspection_list_label" = "Inspection list";
@@ -411,6 +420,20 @@
 "inspection_list_status_label" = "Status";
 "inspection_list_pending_no_data_label" = "There are no pending projects";
 "inspection_list_vin_number_label" = "VIN no.";
+
+// pick up car valid field
+"car_pick_up_valid_field_sender_name_label" = "Sender Name";
+"car_pick_up_valid_field_brand_label" = "Car brand";
+"car_pick_up_valid_field_type_label" = "Vehicle type";
+"car_pick_up_valid_field_model_label" = "Car model";
+"car_pick_up_valid_field_submodel_label" = "Submodel";
+"car_pick_up_valid_field_color_label" = "Color";
+"car_pick_up_valid_field_remark_tips_label" = "License Plate Remark: More than 100 characters";
+"car_pick_up_valid_field_sender_name_label" = "Sender Name";
+"car_pick_up_valid_field_sender_name_label" = "Sender Name";
+"car_pick_up_valid_field_sender_name_label" = "Sender Name";
+"car_pick_up_valid_field_sender_name_label" = "Sender Name";
+
 
 
 

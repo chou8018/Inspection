@@ -398,3 +398,16 @@
 "create_model_drive_label" = "ระบบขับเคลื่อน";
 "create_model_engine_capacity_label" = "ขนาดเครื่องยนต์";
 "create_model_back_label" = "กลับ";
+
+// inspection list
+"inspection_list_title_label" = "รายการ";
+"inspection_list_all_title_label" = "รายการทั้งหมด";
+"inspection_list_pending_label" = "รายการตรวจค้าง";
+"inspection_list_car_registration_label" = "ทะเบียนรถ";
+"inspection_list_car_registration_placeholder_label" = "หมายเลข";
+"inspection_list_registration_number_label" = "ทะเบียน";
+"inspection_list_search_label" = "ค้นหา";
+"inspection_list_book_in_number_label" = "หมายเลข Book-In";
+"inspection_list_status_label" = "สถานะ";
+"inspection_list_pending_no_data_label" = "ไม่รายการตรววจค้าง";
+"inspection_list_vin_number_label" = "หมายเลข VIN";

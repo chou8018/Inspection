@@ -399,6 +399,19 @@
 "create_model_engine_capacity_label" = "Engine Capacity";
 "create_model_back_label" = "Back";
 
+// inspection list
+"inspection_list_title_label" = "List";
+"inspection_list_all_title_label" = "All inspection list";
+"inspection_list_pending_label" = "Pending inspection";
+"inspection_list_car_registration_label" = "Car's registration";
+"inspection_list_car_registration_placeholder_label" = "Car's registration";
+"inspection_list_registration_number_label" = "Registration no.";
+"inspection_list_search_label" = "Search";
+"inspection_list_book_in_number_label" = "Book-in no.";
+"inspection_list_status_label" = "Status";
+"inspection_list_pending_no_data_label" = "There are no pending projects";
+"inspection_list_vin_number_label" = "VIN no.";
+
 
 
 

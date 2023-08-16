@@ -401,6 +401,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="backButtonItem" destination="3Ow-Jx-gQJ" id="HMW-kM-G1R"/>
                         <outlet property="containerView" destination="0vQ-pe-oOs" id="ovx-wc-w3Z"/>
                         <outlet property="segmentView" destination="s98-uN-FUj" id="H88-JH-lMV"/>
                     </connections>
@@ -1143,6 +1144,9 @@
                                                 <constraint firstItem="Ybn-7p-bfB" firstAttribute="centerX" secondItem="xet-Mm-k2u" secondAttribute="centerX" id="ukP-5t-cHy"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="noDataLabel" destination="Ybn-7p-bfB" id="ZwN-TC-iXz"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -1165,7 +1169,13 @@
                     <connections>
                         <outlet property="fullName" destination="GRE-NV-ff8" id="m4a-6A-3o2"/>
                         <outlet property="headerRowView" destination="D5p-gS-TcL" id="5b4-vH-4UK"/>
+                        <outlet property="makeTitleLabel" destination="t9C-38-4la" id="moX-VE-wl6"/>
+                        <outlet property="modelTitleLabel" destination="C1h-Iz-MoU" id="FhK-aB-hWo"/>
+                        <outlet property="registrationNumberTitleLabel" destination="bMB-dT-usw" id="O34-Q5-wR1"/>
+                        <outlet property="statusTitleLabel" destination="Bf8-7e-w7r" id="aS8-UO-cPV"/>
                         <outlet property="tableView" destination="JuB-v8-s1J" id="jYR-ha-hwZ"/>
+                        <outlet property="variantTitleLabel" destination="t88-g3-ha5" id="cyK-qa-PZd"/>
+                        <outlet property="yearTitleLabel" destination="1Rl-9u-kPj" id="oad-3a-4Pn"/>
                         <segue destination="nVK-1l-4CN" kind="show" identifier="EditView" id="BPD-Q3-H2P"/>
                         <segue destination="EeE-1u-Q6x" kind="presentation" identifier="descriptionSegue" modalPresentationStyle="formSheet" id="w7d-3F-FcD"/>
                         <segue destination="D9w-oN-SLN" kind="show" identifier="ViewPDF" id="2TK-C2-p0l"/>
@@ -1414,7 +1424,9 @@ PDF</string>
                         <outlet property="closeImageView" destination="DCI-gn-pXc" id="vYn-tB-sw0"/>
                         <outlet property="detailLabel" destination="TQm-35-Kfw" id="QE6-TX-XlB"/>
                         <outlet property="editButton" destination="7KX-vG-jHx" id="DY1-QJ-SCf"/>
+                        <outlet property="engineKeyLabel" destination="MN8-nQ-461" id="aU6-zy-ZXy"/>
                         <outlet property="imageView" destination="evn-vS-18z" id="Piy-X0-0Ld"/>
+                        <outlet property="vinKeyLabel" destination="H0C-q5-zCT" id="vg1-sp-tzr"/>
                         <outlet property="vinLabel" destination="QwV-PF-9AV" id="A8A-XZ-ECF"/>
                     </connections>
                 </viewController>
@@ -1781,12 +1793,16 @@ PDF</string>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bookInNumberTitleLabel" destination="NTA-bH-QiH" id="3zR-rr-7yd"/>
+                        <outlet property="detailsTitleLabel" destination="6pU-eH-vOn" id="eM3-06-geR"/>
                         <outlet property="headerRowView" destination="Fhr-dQ-Y6f" id="Vgb-SN-81a"/>
                         <outlet property="qrcodeButtonView" destination="FjT-rI-isf" id="3fm-se-pSO"/>
+                        <outlet property="registrationNumberTitleLabel" destination="dBA-bp-h0c" id="syd-xt-S1V"/>
                         <outlet property="searchButtonView" destination="994-71-eFu" id="ydg-Q4-Oj5"/>
                         <outlet property="searchByLabel" destination="jUe-ea-Mxw" id="7CR-tg-fVX"/>
                         <outlet property="searchByView" destination="h6r-2T-Kty" id="hoc-ve-YAg"/>
                         <outlet property="searchImageView" destination="oLh-fc-IAW" id="Kwx-P5-g3B"/>
+                        <outlet property="searchLabel" destination="UE1-Nh-z9t" id="8Ux-Hj-VJt"/>
                         <outlet property="searchTextField" destination="2ub-LT-mx7" id="toV-XF-BsK"/>
                         <outlet property="searchView" destination="TCm-n0-77O" id="sxt-xc-xWw"/>
                         <outlet property="tableView" destination="wio-5B-FtD" id="ohu-gP-V2Z"/>
@@ -1862,7 +1878,7 @@ PDF</string>
     <inferredMetricsTieBreakers>
         <segue reference="2t1-mN-E54"/>
         <segue reference="KDj-tG-aBP"/>
-        <segue reference="w7d-3F-FcD"/>
+        <segue reference="kEF-ac-3NC"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="car-icon" width="150" height="57.5"/>

@@ -33,7 +33,7 @@ class SearchByInteractor: SearchByBusinessLogic, SearchByDataStore
   //var name: String = ""
   
   // MARK: Do something
-    private var searchList = ["ทะเบียนรถ", "VIN", "หมายเลขเครื่องยนต์"]
+    private var searchList = [String.localized("inspection_list_car_registration_label"), "VIN", String.localized("car_detail_engine_number_label")]
   
 
   func fetchDataPicker(request: SearchBy.Picker.Request)
@@ -52,11 +52,11 @@ class SearchByInteractor: SearchByBusinessLogic, SearchByDataStore
     
     func getSearchTypeModel(from row : Int) -> SearchBy.TYPE {
         switch searchList[row] {
-        case "ทะเบียนรถ" :
+        case String.localized("inspection_list_car_registration_label") :
             return .REGISTRATION_CAR
         case "VIN" :
             return .VIN
-        case "หมายเลขเครื่องยนต์":
+        case String.localized("car_detail_engine_number_label"):
             return .ENGINE_NUMBER
 
         default:

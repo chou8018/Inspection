@@ -455,6 +455,8 @@
                     <connections>
                         <outlet property="canvas" destination="S0Q-sl-HEi" id="59q-dL-bT5"/>
                         <outlet property="confirmButton" destination="561-Da-bAK" id="tuW-I7-UFj"/>
+                        <outlet property="registrationAreaLabel" destination="ChI-LN-oW9" id="KIX-GG-ifY"/>
+                        <outlet property="resignButton" destination="8wb-BW-ooS" id="Hrv-Qd-dN4"/>
                         <outlet property="signatureImageView" destination="ji5-UY-eqM" id="Vnl-R7-t6x"/>
                         <outlet property="titleLabel" destination="ylT-Ze-Heu" id="Gen-9N-MON"/>
                     </connections>

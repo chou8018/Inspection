@@ -1452,16 +1452,23 @@
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
+                        <outlet property="auctionLevelKeyLabel" destination="Igt-wj-WSl" id="qBY-EX-YC8"/>
                         <outlet property="bodyNumberLabel" destination="ler-Xy-9fA" id="31n-zW-L0j"/>
                         <outlet property="carDetailLabel" destination="JaV-sH-xOk" id="MSU-Sb-0aL"/>
                         <outlet property="chassiNumberLabel" destination="SOC-86-Bff" id="xkI-lb-3dV"/>
+                        <outlet property="colorKeyLabel" destination="3xz-Dk-sFl" id="mxM-Nh-yfF"/>
                         <outlet property="colorLabel" destination="Pov-dt-2RB" id="mBl-iw-l88"/>
                         <outlet property="companyLabel" destination="Q4P-6V-HDZ" id="oF8-Ij-gb6"/>
+                        <outlet property="deliveryCompanyKeyLabel" destination="Uad-NJ-wre" id="WjZ-uT-7Me"/>
+                        <outlet property="detailKeyLabel" destination="x5r-zs-N1V" id="2QY-AT-pIO"/>
                         <outlet property="gradeDetailLabel" destination="g88-uA-uCE" id="b38-Kf-Lvr"/>
                         <outlet property="gradeLabel" destination="NcB-3c-Y4B" id="bdD-1L-iEV"/>
                         <outlet property="registrationLabel" destination="xaK-8V-9eS" id="uMm-oy-xi0"/>
+                        <outlet property="registrationNumberKeyLabel" destination="sYk-cH-yyh" id="6on-qV-4Zd"/>
                         <outlet property="saveButton" destination="WOy-jt-xTe" id="p7C-sL-CVh"/>
                         <outlet property="sendButton" destination="7IP-VI-Nva" id="7zW-vf-dYU"/>
+                        <outlet property="serialNumberKeyLabel" destination="gcU-tk-Ow6" id="SG7-Uz-I3N"/>
+                        <outlet property="vinNumberKeyLabel" destination="v8b-y0-tzJ" id="u7t-0V-ztF"/>
                         <segue destination="CDt-SS-EM6" kind="show" identifier="pdfviewer" id="EXB-yf-Kv2"/>
                     </connections>
                 </viewController>

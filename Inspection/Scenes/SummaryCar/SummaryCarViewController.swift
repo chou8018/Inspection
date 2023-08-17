@@ -14,7 +14,7 @@ import UIKit
 
 protocol SummaryCarDisplayLogic: AnyObject
 {
-  func displayGrade(viewModel: SummaryCar.Something.ViewModel)
+    func displayGrade(viewModel: SummaryCar.Something.ViewModel)
     func performPDF(viewModel: SummaryCar.Something.ViewModel)
     func displayResponseService(viewModel: SummaryCar.Something.ViewModel)
     func displayAlertMessage(viewModel: SummaryCar.Something.ViewModel)
@@ -29,67 +29,67 @@ protocol SummaryCarDisplayLogic: AnyObject
     
 }
 
-class SummaryCarViewController: UIViewController, SummaryCarDisplayLogic
+class SummaryCarViewController: ViewController, SummaryCarDisplayLogic
 {
-  var interactor: SummaryCarBusinessLogic?
-  var router: (NSObjectProtocol & SummaryCarRoutingLogic & SummaryCarDataPassing)?
-
-  // MARK: Object lifecycle
-  
-  override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
-  {
-    super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-    setup()
-  }
-  
-  required init?(coder aDecoder: NSCoder)
-  {
-    super.init(coder: aDecoder)
-    setup()
-  }
-  
-  // MARK: Setup
-  
-  private func setup()
-  {
-    let viewController = self
-    let interactor = SummaryCarInteractor()
-    let presenter = SummaryCarPresenter()
-    let router = SummaryCarRouter()
-    viewController.interactor = interactor
-    viewController.router = router
-    interactor.presenter = presenter
-    presenter.viewController = viewController
-    router.viewController = viewController
-    router.dataStore = interactor
-  }
-  
-  // MARK: Routing
-  
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-  {
-    if let scene = segue.identifier {
-      let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
-      if let router = router, router.responds(to: selector) {
-        router.perform(selector, with: segue)
-      }
-    }
-  }
-  
-  // MARK: View lifecycle
-  
-  override func viewDidLoad()
-  {
-    super.viewDidLoad()
-    doSomething()
+    var interactor: SummaryCarBusinessLogic?
+    var router: (NSObjectProtocol & SummaryCarRoutingLogic & SummaryCarDataPassing)?
     
-  }
-  
-  // MARK: Do something
+    // MARK: Object lifecycle
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
+    {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        setup()
+    }
+    
+    required init?(coder aDecoder: NSCoder)
+    {
+        super.init(coder: aDecoder)
+        setup()
+    }
+    
+    // MARK: Setup
+    
+    private func setup()
+    {
+        let viewController = self
+        let interactor = SummaryCarInteractor()
+        let presenter = SummaryCarPresenter()
+        let router = SummaryCarRouter()
+        viewController.interactor = interactor
+        viewController.router = router
+        interactor.presenter = presenter
+        presenter.viewController = viewController
+        router.viewController = viewController
+        router.dataStore = interactor
+    }
+    
+    // MARK: Routing
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if let scene = segue.identifier {
+            let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
+            if let router = router, router.responds(to: selector) {
+                router.perform(selector, with: segue)
+            }
+        }
+    }
+    
+    // MARK: View lifecycle
+    
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
+        doSomething()
+        
+    }
+    
+    // MARK: Do something
     @IBOutlet weak var sendButton: UIBarButtonItem!
     @IBOutlet weak var saveButton: UIBarButtonItem!
     
-  //@IBOutlet weak var nameTextField: UITextField!
+    //@IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var gradeLabel: UILabel!
     @IBOutlet weak var gradeDetailLabel: UILabel!
     
@@ -99,17 +99,41 @@ class SummaryCarViewController: UIViewController, SummaryCarDisplayLogic
     @IBOutlet weak var registrationLabel: UILabel!
     @IBOutlet weak var colorLabel: UILabel!
     @IBOutlet weak var companyLabel: UILabel!
+    
+    // local strings
+    @IBOutlet weak var detailKeyLabel: UILabel!
+    @IBOutlet weak var registrationNumberKeyLabel: UILabel!
+    @IBOutlet weak var vinNumberKeyLabel: UILabel!
+    @IBOutlet weak var serialNumberKeyLabel: UILabel!
+    @IBOutlet weak var colorKeyLabel: UILabel!
+    @IBOutlet weak var deliveryCompanyKeyLabel: UILabel!
+    @IBOutlet weak var auctionLevelKeyLabel: UILabel!
+    
+    override func initLocalString() {
+        super.initLocalString()
+        
+        self.title = String.localized("car_grade_conclusion_title")
+        saveButton.title = String.localized("main_inspection_save_button_title")
+        detailKeyLabel.text = String.localized("pick_up_car_details_title")
+        registrationNumberKeyLabel.text = String.localized("inspection_list_registration_number_label")
+        vinNumberKeyLabel.text = String.localized("car_detail_vin_number_label")
+        serialNumberKeyLabel.text = String.localized("car_grade_serial_number_title")
+        colorKeyLabel.text = String.localized("car_pick_up_valid_field_color_label")
+        deliveryCompanyKeyLabel.text = String.localized("car_grade_delivery_company_title")
+        auctionLevelKeyLabel.text = String.localized("car_grade_auction_level_title")
+    }
+    
     func doSomething()
-  {
-    let request = SummaryCar.Something.Request()
-    interactor?.evaluateGrade(request: request)
-  }
-  
+    {
+        let request = SummaryCar.Something.Request()
+        interactor?.evaluateGrade(request: request)
+    }
+    
     //MARK: Prepare data
     func displayGrade(viewModel: SummaryCar.Something.ViewModel) {
         gradeLabel.text = viewModel.grade ?? "-"
         gradeDetailLabel.text = viewModel.gradeDetail
-
+        
         carDetailLabel.text = viewModel.carName
         chassiNumberLabel.text = viewModel.engine
         bodyNumberLabel.text = viewModel.vinNumber
@@ -147,10 +171,10 @@ class SummaryCarViewController: UIViewController, SummaryCarDisplayLogic
     
     func displayResponseService(viewModel: SummaryCar.Something.ViewModel) {
         //response service
-       
+        
         let request = SummaryCar.Something.Request()
         interactor?.showPDF(request: request)
-    
+        
     }
     
     //MARK: DisplayError
@@ -199,7 +223,7 @@ class SummaryCarViewController: UIViewController, SummaryCarDisplayLogic
             //ignored
         }
     }
- 
+    
     
 }
 

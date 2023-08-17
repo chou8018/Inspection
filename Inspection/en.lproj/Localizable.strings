@@ -474,8 +474,17 @@
 "car_grade_poor_option9_label" = "Body welding and rust/chassis number/machine number and rust/accident modified vehicle";
 "car_grade_x_label" = "Unable to drive/engine malfunction/transmission malfunction/hybrid vehicle malfunction";
 "car_grade_next_button_title" = "Next";
+"car_grade_conclusion_title" = "Conclusion";
+"car_grade_serial_number_title" = "Serial no.";
+"car_grade_delivery_company_title" = "Delivery Company";
+"car_grade_auction_level_title" = "Auction level";
 
+// signature
+"car_signature_registration_area_label" = "Registration Area";
+"car_signature_resign_button_title" = "Delete to re sign";
 
+// date time
+"car_date_time_current_button_title" = "Current time";
 
 
 

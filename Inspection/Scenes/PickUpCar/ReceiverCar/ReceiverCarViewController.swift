@@ -231,13 +231,13 @@ class ReceiverCarViewController: ViewController, ReceiverCarDisplayLogic
     
     
     @objc func receiverTapped(){
-        let request = ReceiverCar.Something.Request(titleName: "ลงชื่อผู้รับมอบ",
+        let request = ReceiverCar.Something.Request(titleName: String.localized("receiver_car_booked_in_by_label"),
                                                     signatureImage: receiverUIImageView.image ,
                                                     userType: .RECEIVER)
         interactor?.signatureViewTap(request: request)
     }
     @objc func senderTapped(){
-        let request = ReceiverCar.Something.Request(titleName: "ลงชื่อผู้ส่งมอบ",
+        let request = ReceiverCar.Something.Request(titleName: String.localized("receiver_car_delivered_by_label"),
                                                     signatureImage: senderUIImageView.image ,
                                                     userType: .SENDER)
         interactor?.signatureViewTap(request: request)

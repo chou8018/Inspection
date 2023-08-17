@@ -86,7 +86,7 @@
 "receiver_car_plant_location_label" = "สถานที่ ";
 "receiver_car_receive_location_label" = "สถานที่รับรถ";
 "receiver_car_storage_location_label" = "สถานที่เก็บรถ";
-"receiver_car_deliverd_by_label" = "ลงชื่อผู้ส่งมอบ";
+"receiver_car_delivered_by_label" = "ลงชื่อผู้ส่งมอบ";
 "receiver_car_booked_in_by_label" = "ลงชื่อผู้รับมอบ";
 "receiver_car_booked_in_by_placeholder_label" = "กดภายในกรอบนัพื่อทำการลงชื่อ";
 
@@ -474,4 +474,15 @@
 "car_grade_poor_option9_label" = "มีรอยตัดต่อเชื่อมตัวถังและรอยสนิม / ตัดต่อเลขแชสซี / ตอกเลขเครื่อง และ มีรอยสนิม / รถซ่อมแซมดัดแปลงจากอุบัติเหตุ";
 "car_grade_x_label" = "รถขับไม่ได้ / เครื่องยนต์มีปัญหา / เกียร์มีปัญหา / ไฮบริดเสีย";
 "car_grade_next_button_title" = "ต่อไป";
+"car_grade_conclusion_title" = "สรุป";
+"car_grade_serial_number_title" = "หมายเลขเครื่อง";
+"car_grade_delivery_company_title" = "บริษัทที่ส่งมอบ";
+"car_grade_auction_level_title" = "เกรดสำหรับการประมูล";
+
+// signature
+"car_signature_registration_area_label" = "พื่นที่สำหรับลงชื่อ";
+"car_signature_resign_button_title" = "ลบเพื่อลงชื่อใหม่";
+
+// date time
+"car_date_time_current_button_title" = "เวลาตอนนี้";
 

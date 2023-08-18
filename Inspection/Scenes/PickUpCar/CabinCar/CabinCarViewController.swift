@@ -235,6 +235,7 @@ class CabinCarViewController: ViewController, CabinCarDisplayLogic
         immobilizarKeyDropDown.placeholder = keyDropDown.placeholder
         keylessKeyDropDown.placeholder = keyDropDown.placeholder
         cabinNoteTextField.placeholder = othersLabel.text
+        reasonMileageTextField.placeholder = String.localized("car_detail_reason_placeholder")
     }
     
     func doSomething()

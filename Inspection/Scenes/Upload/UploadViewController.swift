@@ -14,7 +14,7 @@ import UIKit
 
 protocol UploadDisplayLogic: AnyObject
 {
-  func displayUploaded(viewModel: Upload.Something.ViewModel)
+    func displayUploaded(viewModel: Upload.Something.ViewModel)
     func displayErrorMessage(viewModel: Upload.Something.ViewModel)
     func displayProgressUploads(viewModel: Upload.Something.ViewModel)
     func displayCreateProgressView(viewModel: Upload.Something.ViewModel)
@@ -24,92 +24,102 @@ protocol UploadDisplayLogic: AnyObject
     func displayErrorUpdateStatus(viewModel: Upload.Something.ViewModel)
 }
 
-class UploadViewController: UIViewController, UploadDisplayLogic
+class UploadViewController: ViewController, UploadDisplayLogic
 {
-  var interactor: UploadBusinessLogic?
-  var router: (NSObjectProtocol & UploadRoutingLogic & UploadDataPassing)?
-
-  // MARK: Object lifecycle
-  
-  override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
-  {
-    super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-    setup()
-  }
-  
-  required init?(coder aDecoder: NSCoder)
-  {
-    super.init(coder: aDecoder)
-    setup()
-  }
-  
-  // MARK: Setup
-  
-  private func setup()
-  {
-    let viewController = self
-    let interactor = UploadInteractor()
-    let presenter = UploadPresenter()
-    let router = UploadRouter()
-    viewController.interactor = interactor
-    viewController.router = router
-    interactor.presenter = presenter
-    presenter.viewController = viewController
-    router.viewController = viewController
-    router.dataStore = interactor
-  }
-  
-  // MARK: Routing
-  
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-  {
-    if let scene = segue.identifier {
-      let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
-      if let router = router, router.responds(to: selector) {
-        router.perform(selector, with: segue)
-      }
+    var interactor: UploadBusinessLogic?
+    var router: (NSObjectProtocol & UploadRoutingLogic & UploadDataPassing)?
+    
+    // MARK: Object lifecycle
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
+    {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        setup()
     }
-  }
+    
+    required init?(coder aDecoder: NSCoder)
+    {
+        super.init(coder: aDecoder)
+        setup()
+    }
+    
+    // MARK: Setup
+    
+    private func setup()
+    {
+        let viewController = self
+        let interactor = UploadInteractor()
+        let presenter = UploadPresenter()
+        let router = UploadRouter()
+        viewController.interactor = interactor
+        viewController.router = router
+        interactor.presenter = presenter
+        presenter.viewController = viewController
+        router.viewController = viewController
+        router.dataStore = interactor
+    }
+    
+    // MARK: Routing
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if let scene = segue.identifier {
+            let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
+            if let router = router, router.responds(to: selector) {
+                router.perform(selector, with: segue)
+            }
+        }
+    }
     deinit {
         print("🔸🐶 deinit UploadViewController ")
     }
-  // MARK: View lifecycle
-  
-  override func viewDidLoad()
-  {
-    super.viewDidLoad()
-    upload()
-  }
-  
-  // MARK: Do something
-  
-  //@IBOutlet weak var nameTextField: UITextField!
+    // MARK: View lifecycle
+    
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
+        upload()
+    }
+    
+    // MARK: Do something
+    
+    //@IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var titleLabel : UILabel!
     @IBOutlet weak var stackView : UIStackView!
+    
+    // local strings
+    @IBOutlet weak var centerTitleItem: UINavigationItem!
+    
+    override func initLocalString() {
+        super.initLocalString()
+        
+        titleLabel.text = String.localized("photos_navigation_upload_title")
+        centerTitleItem.title = String.localized("photos_upload_title")
+    }
     
     var lastIndex:Int {
         return self.stackView.arrangedSubviews.count
     }
     
-  func upload()
-  {
-    let request = Upload.Something.Request()
-    interactor?.uploadPhoto(request: request)
-  }
-  
-  func displayUploaded(viewModel: Upload.Something.ViewModel)
-  {
-    //nameTextField.text = viewModel.name
-  }
+    func upload()
+    {
+        let request = Upload.Something.Request()
+        interactor?.uploadPhoto(request: request)
+    }
+    
+    func displayUploaded(viewModel: Upload.Something.ViewModel)
+    {
+        //nameTextField.text = viewModel.name
+    }
     //MARK: displayErrorMessage
     func displayErrorMessage(viewModel: Upload.Something.ViewModel) {
         guard let errorMessage = viewModel.errorMessage,
               let name = viewModel.modelPhotoImage?.name else { return }
-
+        
         guard let progressView = stackView.arrangedSubviews
-                .filter({ ($0 as? CustomProgressView) != nil })
-                .map({ $0 as! CustomProgressView })
-                .filter({ ($0.model?.name ?? "") == name  }).first else { return }
+            .filter({ ($0 as? CustomProgressView) != nil })
+            .map({ $0 as! CustomProgressView })
+            .filter({ ($0.model?.name ?? "") == name  }).first else { return }
         
         DispatchQueue.main.async {
             progressView.error = errorMessage
@@ -147,9 +157,9 @@ class UploadViewController: UIViewController, UploadDisplayLogic
         print("\(name) \(progress)")
         
         guard let progressView = stackView.arrangedSubviews
-                .filter({ ($0 as? CustomProgressView) != nil })
-                .map({ $0 as! CustomProgressView })
-                .filter({ ($0.model?.name ?? "") == name  }).first else { return }
+            .filter({ ($0 as? CustomProgressView) != nil })
+            .map({ $0 as! CustomProgressView })
+            .filter({ ($0.model?.name ?? "") == name  }).first else { return }
         
         DispatchQueue.main.async {
             progressView.progress = progress
@@ -173,7 +183,7 @@ class UploadViewController: UIViewController, UploadDisplayLogic
         alert(message: message) {[weak self] in
             self?.navigationController?.popViewController(animated: true)
         }
-
+        
     }
     
     func displayErrorUpdateStatus(viewModel: Upload.Something.ViewModel) {

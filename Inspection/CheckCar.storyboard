@@ -1609,6 +1609,7 @@
                         <outlet property="fuelSystemRadio" destination="S44-a1-ieJ" id="JmQ-OA-jsL"/>
                         <outlet property="fuleLabel" destination="0KW-IV-E37" id="Ir5-hT-OFQ"/>
                         <outlet property="functionLabel" destination="YEI-1b-yvg" id="RT6-4W-9en"/>
+                        <outlet property="gasLabel" destination="7Ta-YM-MIS" id="r4S-LJ-grr"/>
                         <outlet property="gasSystemRadio" destination="ib1-S6-RNv" id="kKR-1d-i72"/>
                         <outlet property="generalConditionLabel" destination="jtb-ve-GX8" id="g3F-8f-7rT"/>
                         <outlet property="haveOilRadio" destination="txA-et-PYF" id="q0Y-zA-op7"/>

@@ -1288,6 +1288,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="อัพโหลด" id="L8l-t4-fKI"/>
                     <connections>
+                        <outlet property="centerTitleItem" destination="L8l-t4-fKI" id="6Bx-sx-bQL"/>
                         <outlet property="stackView" destination="Ce5-SD-jUU" id="9Ss-Ti-7Rx"/>
                         <outlet property="titleLabel" destination="gaB-Ap-Vjd" id="iem-jt-jf0"/>
                     </connections>

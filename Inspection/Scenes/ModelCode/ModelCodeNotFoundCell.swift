@@ -9,9 +9,13 @@ import UIKit
 
 class ModelCodeNotFoundCell: UITableViewCell {
 
+    @IBOutlet weak var noDataMessageLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        noDataMessageLabel.text = String.localized("mode_code_no_data_message_label")
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

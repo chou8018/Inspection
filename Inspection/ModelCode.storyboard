@@ -424,6 +424,9 @@
                                                 <constraint firstItem="nlo-Tp-uul" firstAttribute="centerY" secondItem="ba4-3X-vPd" secondAttribute="centerY" id="7im-WX-6eP"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="noDataMessageLabel" destination="nlo-Tp-uul" id="tcU-X3-YZ9"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>

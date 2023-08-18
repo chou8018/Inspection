@@ -61,7 +61,7 @@ class SummaryCarInteractor: SummaryCarBusinessLogic, SummaryCarDataStore
     let notValidateEngineCar = receiverModel.isInValidEngineNumber ?? false
     let reasonInvalidEngineNumber = "\(receiverModel.reasonInValidEngineNumber?.pdfValidateString2 ?? "-")"
     let engineNumber2 = "\(receiverModel.engineNumber?.pdfValidateString ?? "-")"
-    var engine = notValidateEngineCar ? "ตรวจสอบไม่ได้  " : ""
+      var engine = notValidateEngineCar ? "\(String.localized("car_detail_unable_to_verified_label"))  " : ""
     engine += notValidateEngineCar ? reasonInvalidEngineNumber : engineNumber2
     
     
@@ -69,7 +69,7 @@ class SummaryCarInteractor: SummaryCarBusinessLogic, SummaryCarDataStore
     let notValidateVinNumber = receiverModel.isInValidVinNumber ?? false
     let reasonInValidVinNumber = "\(receiverModel.reasonInValidVinNumber?.pdfValidateString2 ?? "")"
     let vinNumber2 = "\(receiverModel.vinNumber?.pdfValidateString ?? "-")"
-    var vinNumber = notValidateVinNumber ? "ตรวจสอบไม่ได้  " : ""
+      var vinNumber = notValidateVinNumber ? "\(String.localized("car_detail_unable_to_verified_label"))  " : ""
     vinNumber += notValidateVinNumber ?  reasonInValidVinNumber : vinNumber2
     
     

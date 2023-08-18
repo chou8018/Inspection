@@ -221,6 +221,7 @@ class AboutCarViewController: ViewController, AboutCarDisplayLogic
         noPlateLabel.text = String.localized("car_detail_no_plate_label")
         redPlateLabel.text = String.localized("car_detail_red_plate_label")
         incorrectPlateLabel.text = String.localized("car_detail_incorrect_plate_label")
+        noteRegistrationTextField.placeholder = String.localized("car_trunk_remarks_placeholder")
         colorTitleLabel.text = String.localized("car_detail_color_label")
         colorTextField.placeholder = colorTitleLabel.text
         provinceTextField.placeholder = String.localized("car_detail_province_label")
@@ -234,6 +235,9 @@ class AboutCarViewController: ViewController, AboutCarDisplayLogic
         gasNumberTextField.placeholder = gasNumberLabel.text
         gasUnableToVerifiedLabel.text = String.localized("car_detail_unable_to_verified_label")
 
+        reasonEngineTextField.placeholder = String.localized("car_detail_reason_placeholder")
+        reasonVINTextField.placeholder = String.localized("car_detail_reason_placeholder")
+        reasonGasTankTextField.placeholder = String.localized("car_detail_reason_placeholder")
     }
     
     func doSomething()

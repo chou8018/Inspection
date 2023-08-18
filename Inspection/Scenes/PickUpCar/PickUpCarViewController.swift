@@ -223,7 +223,7 @@ class PickUpCarViewController: ViewController, PickUpCarDisplayLogic
     
     @IBAction func saveToIMAT(_ sender: Any){
         print("🔶 save to IMAT")
-        alert(message: "คุณต้องการส่ง\nBook-In to IMAT ไหม") { [weak self] in
+        alert(message: String.localized("pick_up_send_book_in_confirm_title")) { [weak self] in
             self?.sendToIMAT()
         }
         
@@ -258,7 +258,7 @@ class PickUpCarViewController: ViewController, PickUpCarDisplayLogic
     }
     func displayIMATSuccess(viewModel: PickUpCar.Something.ViewModel) {
         print("❤️🐶 displayIMATSuccess for updateUI")
-        alert(message: "ต้องการปริ้น IMAT QRCode ไหม", title: "Book-In สำเร็จ") { [weak self] in
+        alert(message: String.localized("pick_up_send_book_in_succeeded_subtitle"), title: String.localized("pick_up_send_book_in_succeeded_title")) { [weak self] in
             self?.createIMATQRCode()
         } cancel: {
             // cacel

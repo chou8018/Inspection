@@ -225,7 +225,7 @@ class PhotoCarViewController: ViewController, PhotoCarDisplayLogic
         popToRootViewController(confirm: true)
     }
     @IBAction func saveTapped(_ sender: Any) {
-        alert(message: "คุณต้องการบันทึกรูปถ่ายไหม") { [weak self] in
+        alert(message: String.localized("photos_save_confirm_title")) { [weak self] in
             let request = PhotoCar.Something.Request()
             self?.interactor?.confirmPhotoInspection(request: request)
         }

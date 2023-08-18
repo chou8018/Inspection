@@ -109,7 +109,7 @@ class PhotoCarPresenter: PhotoCarPresentationLogic
         
         let vehicleId = DataController.shared.receiverCarModel.vehicleId.trimWhiteSpace
         if vehicleId.isEmpty {
-            let alertPhotoMessage = "กรุณาทำการ Send Book-in ก่อน"
+            let alertPhotoMessage = String.localized("photos_send_book_in_first_title")
             let viewModel = PhotoCar.Something.ViewModel(alertPhotoMessage : alertPhotoMessage)
             viewController?.displayAlertMessage(viewModel: viewModel)
             return

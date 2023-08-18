@@ -71,6 +71,10 @@
 "pick_up_interior_title" = "Interior";
 "pick_up_engine_room_title" = "Engine room";
 "pick_up_date_title" = "Date";
+"pick_up_send_book_in_confirm_title" = "Do you want to send\nBook-In to IMAT ?";
+"pick_up_send_book_in_succeeded_title" = "Book-In Succeeded";
+"pick_up_send_book_in_succeeded_subtitle" = "Do you need to print IMAT QRCode ?";
+"pick_up_send_book_in_succeeded" = "Succeeded";
 
 // car salvage
 "car_salvage_details_title" = "Car wreckage";
@@ -111,6 +115,7 @@
 "car_detail_unable_to_verified_label" = "Unable to verified";
 "car_detail_vin_number_label" = "Vin. no.";
 "car_detail_gas_label" = "Gas";
+"car_detail_reason_placeholder" = "Reason";
 
 // car exterior
 "car_exterior_label" = "Exterior condition";
@@ -172,7 +177,7 @@
 "car_interior_remote_control_label" = "Remote control";
 "car_interior_remote_key_label" = "Remote key";
 "car_interior_key_immobilizer_label" = "Immobilizer";
-"car_interior_key_label" = "Keyless";
+"car_interior_keyless_label" = "Keyless";
 "car_interior_key_placeholder_label" = "Numbers";
 "car_interior_others_label" = "Others";
 
@@ -242,6 +247,7 @@
 "inspection_engine_not_smoothly_label" = "Engine doesn't run smoothly";
 "inspection_engine_nedd_repair_label" = "Need repair";
 "inspection_engine_summary_label" = "Summary engine condition";
+"inspection_engine_gas_label" = "Gas";
 
 // motorbike exterior
 "motorbike_exterior_turn_light_l_label" = "Turn light L";
@@ -392,6 +398,10 @@
 "photos_select_button_title" = "Select Picture";
 "photos_delete_head_title" = "To delete";
 "photos_delete_tail_title" = "?";
+"photos_save_confirm_title" = "Do you want to save the photo?";
+"photos_send_book_in_first_title" = "Please Send Book-in first";
+"photos_navigation_upload_title" = "Upload";
+"photos_upload_title" = "Upload";
 
 // mode code
 "mode_code_title_label" = "Search model";
@@ -400,6 +410,7 @@
 "mode_code_conduct_search_label" = "conduct a search";
 "mode_code_want_choose_label" = "Do you want to choose";
 "mode_code_edit_label" = "Edit";
+"mode_code_no_data_message_label" = "Unable to find vehicle model";
 
 // create model
 "create_model_chassis_number_label" = "Chassis Number";
@@ -484,6 +495,9 @@
 "car_grade_serial_number_title" = "Serial no.";
 "car_grade_delivery_company_title" = "Delivery Company";
 "car_grade_auction_level_title" = "Auction level";
+"car_grade_auction_no_driven_title" = "Can not be driven";
+"car_grade_auction_save_confirm_title" = "Do you want to record the vehicle inspection form?";
+"car_grade_send_inspection_title" = "Do you want to send Inspection to IMAT ?";
 
 // signature
 "car_signature_registration_area_label" = "Registration Area";

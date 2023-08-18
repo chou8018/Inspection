@@ -37,19 +37,19 @@ class SummaryCarPresenter: SummaryCarPresentationLogic
     var gradeDetailValue = ""
     switch grade {
     case "E":
-        gradeDetailValue = "E Excellence ดีเยี่ยม"
+        gradeDetailValue = String.localized("car_grade_excellence_label")
     case "G":
-        gradeDetailValue = "G Good ดีมาก"
+        gradeDetailValue = String.localized("car_grade_good_label")
     case "A":
-        gradeDetailValue = "A Average ปานกลาง"
+        gradeDetailValue = String.localized("car_grade_average_label")
     case "F":
-        gradeDetailValue = "F Fair พอใช้"
+        gradeDetailValue = String.localized("car_grade_fair_label")
     case "P":
-        gradeDetailValue = "P Poor แย่"
+        gradeDetailValue = String.localized("car_grade_poor_label")
     case "X":
-        gradeDetailValue = "X รถขับไม่ได้"
+        gradeDetailValue = "X \(String.localized("car_grade_auction_no_driven_title"))"
     case "Y":
-        gradeDetailValue = "Y รถซาก"
+        gradeDetailValue = "Y \(String.localized("car_salvage_details_title"))"
     default:
         break
     }

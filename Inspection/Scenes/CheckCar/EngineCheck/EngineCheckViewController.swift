@@ -107,6 +107,7 @@ class EngineCheckViewController: ViewController, EngineCheckDisplayLogic
     @IBOutlet weak var engineNotSmoothlyLabel: UILabel!
     @IBOutlet weak var needRepairLabel: UILabel!
     @IBOutlet weak var summaryLabel: UILabel!
+    @IBOutlet weak var gasLabel: UILabel!
     
     let string_inspection_oil_lacking = String.localized("inspection_engine_oil_lacking_label")
     let string_inspection_oil_not_lacking = String.localized("inspection_engine_oil_notlacking_label")
@@ -128,7 +129,7 @@ class EngineCheckViewController: ViewController, EngineCheckDisplayLogic
         needRepairLabel.text = String.localized("inspection_engine_nedd_repair_label")
         summaryLabel.text = String.localized("inspection_engine_summary_label")
         summaryEngineTextField.placeholder = summaryLabel.text
-
+        gasLabel.text = String.localized("inspection_engine_gas_label")
     }
     
     func doSomething()

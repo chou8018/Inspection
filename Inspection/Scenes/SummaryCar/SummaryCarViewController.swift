@@ -154,13 +154,13 @@ class SummaryCarViewController: ViewController, SummaryCarDisplayLogic
     
     @IBAction func saveToIMAT(_ sender: Any){
         print("🔶 save to IMAT")
-        alert(message: "คุณต้องการส่ง\nInspection to IMAT ไหม") { [weak self] in
+        alert(message: String.localized("car_grade_send_inspection_title")) { [weak self] in
             self?.sendToIMAT()
         }
     }
     
     @IBAction func printTapped(_ sender: Any) {
-        alert(message: "คุณต้องการบันทึกรายการตรวจสภาพรถยนต์ไหม") { [weak self] in
+        alert(message: String.localized("car_grade_auction_save_confirm_title")) { [weak self] in
             self?.sendToServer()
         }
     }
@@ -219,7 +219,7 @@ class SummaryCarViewController: ViewController, SummaryCarDisplayLogic
     
     func displaySendInsectionIMATSuccess(viewModel: SummaryCar.Something.ViewModel) {
         print("🔶 displaySendInsectionIMATSuccess")
-        alertErrorMessageOKAction(message: "Inspection สำเร็จ") {
+        alertErrorMessageOKAction(message: "Inspection \(String.localized("pick_up_send_book_in_succeeded"))") {
             //ignored
         }
     }

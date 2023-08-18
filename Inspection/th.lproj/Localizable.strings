@@ -71,6 +71,10 @@
 "pick_up_interior_title" = "ห้องโดยสาร";
 "pick_up_engine_room_title" = "ห้องเครื่อง";
 "pick_up_date_title" = "วันรับรถ";
+"pick_up_send_book_in_confirm_title" = "คุณต้องการส่ง\nBook-In to IMAT ไหม";
+"pick_up_send_book_in_succeeded_title" = "Book-In สำเร็จ";
+"อัพโหลด" = "ต้องการปริ้น IMAT QRCode ไหม";
+"pick_up_send_book_in_succeeded" = "สำเร็จ";
 
 // car salvage
 "car_salvage_details_title" = "รถซาก";
@@ -111,6 +115,7 @@
 "car_detail_unable_to_verified_label" = "ตรวจสอบไม่ได้";
 "car_detail_vin_number_label" = "หมายเลขตัวถัง";
 "car_detail_gas_label" = "เลขถังแก๊ส";
+"car_detail_reason_placeholder" = "เหตุผล";
 
 // car exterior
 "car_exterior_label" = "สภาพภายนอกโดยรวม";
@@ -172,7 +177,7 @@
 "car_interior_remote_control_label" = "รีโมท";
 "car_interior_remote_key_label" = "กุญแจรีโมท";
 "car_interior_key_immobilizer_label" = "กุญแจ Immobilizer";
-"car_interior_key_label" = "กุญแจ Keyless";
+"car_interior_keyless_label" = "กุญแจ Keyless";
 "car_interior_key_placeholder_label" = "จำนวน";
 "car_interior_others_label" = "อื่นๆ";
 
@@ -242,6 +247,7 @@
 "inspection_engine_not_smoothly_label" = "เครื่องยนต์เดินไม่เรียบ";
 "inspection_engine_nedd_repair_label" = "ต้องซ่อมก่อนใช้งาน";
 "inspection_engine_summary_label" = "สรุปสภาพเครื่องยนต์";
+"inspection_engine_gas_label" = "แก็ส";
 
 // motorbike exterior
 "motorbike_exterior_turn_light_l_label" = "ไฟเลี้ยวหน้า L";
@@ -392,6 +398,10 @@
 "photos_select_button_title" = "เลือกรูป";
 "photos_delete_head_title" = "คุณต้องการลบ";
 "photos_delete_tail_title" = "ไหม";
+"photos_save_confirm_title" = "คุณต้องการบันทึกรูปถ่ายไหม";
+"photos_send_book_in_first_title" = "กรุณาทำการ Send Book-in ก่อน";
+"photos_navigation_upload_title" = "อัพโหลด";
+"photos_upload_title" = "กำลังอัพโหลด";
 
 // mode code
 "mode_code_title_label" = "ค้นหารุ่น";
@@ -400,6 +410,7 @@
 "mode_code_conduct_search_label" = "เพื่อทำการค้นหา";
 "mode_code_want_choose_label" = "คุณต้องการเลือก";
 "mode_code_edit_label" = "แก้ไข";
+"mode_code_no_data_message_label" = "ไม่พบรุ่นรถยนต์";
 
 // create model
 "create_model_chassis_number_label" = "หมายเลขแชสซี";
@@ -484,6 +495,9 @@
 "car_grade_serial_number_title" = "หมายเลขเครื่อง";
 "car_grade_delivery_company_title" = "บริษัทที่ส่งมอบ";
 "car_grade_auction_level_title" = "เกรดสำหรับการประมูล";
+"car_grade_auction_no_driven_title" = "รถขับไม่ได้";
+"car_grade_auction_save_confirm_title" = "คุณต้องการบันทึกรายการตรวจสภาพรถยนต์ไหม";
+"car_grade_send_inspection_title" = "คุณต้องการส่ง\nInspection to IMAT ไหม";
 
 // signature
 "car_signature_registration_area_label" = "พื่นที่สำหรับลงชื่อ";

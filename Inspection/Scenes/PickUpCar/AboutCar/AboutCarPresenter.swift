@@ -95,6 +95,11 @@ class AboutCarPresenter: AboutCarPresentationLogic
         }else{
             guard let colorList = response.colorList else { return }
             var values = colorList.map({ ("\($0.colour_BU ?? "") (\($0.colour_LO ?? ""))") })
+            
+            if !DataController.shared.isThaiLanguage() {
+                values = colorList.map({ ("\($0.colour_BU ?? "")") })
+            }
+            
             values = values.sorted(by: { $0 < $1 })
             let viewModel = AboutCar.Something.ViewModel(colorList: values)
             viewController?.displayColorCarDropdown(viewModel: viewModel)
@@ -109,7 +114,10 @@ class AboutCarPresenter: AboutCarPresentationLogic
             viewController?.displayShowProvinceError(viewModel: viewModel)
         }else{
             guard let provinceList = response.provinceList else { return }
-            let values = provinceList.map({ $0.desc_LO ?? "" })
+            var values = provinceList.map({ $0.desc_LO ?? "" })
+            if !DataController.shared.isThaiLanguage() {
+                values = provinceList.map({ $0.desc_BU ?? "" })
+            }
             let viewModel = AboutCar.Something.ViewModel(provinceList: values)
             viewController?.displayProvinceDropdown(viewModel: viewModel)
         }

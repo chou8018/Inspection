@@ -160,7 +160,11 @@ class BodyCheckViewController: ViewController, BodyCheckDisplayLogic
     
     //MARK: Dropdown
     func setUpDropdown(){
-        let values = ["ปกติ","ซ่อมมาเล็กน้อย","ซ่อมมาปานกลาง","ซ่อมมาหนัก","ผุ"]
+        let values = [String.localized("inspection_body_chassis_type_normal"),
+                      String.localized("inspection_body_chassis_type_slight_repair"),
+                      String.localized("inspection_body_chassis_type_moderate_repair"),
+                      String.localized("inspection_body_chassis_type_hard_repair"),
+                      String.localized("inspection_body_chassis_type_rotting")]
         
         setValue(to: chessisDropdown, values: values) { [weak self] (selectValue, _, _)  in
             DataController.shared.inspectionCarModel.chessis = selectValue

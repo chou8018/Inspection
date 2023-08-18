@@ -219,6 +219,11 @@
 "inspection_body_roof_label" = "หลังคา";
 "inspection_body_flooded_label" = "จมน้ำ";
 "inspection_body_summary_label" = "สรุปสภาพตัวถัง";
+"inspection_body_chassis_type_normal" = "ปกติ";
+"inspection_body_chassis_type_slight_repair" = "ซ่อมมาเล็กน้อย";
+"inspection_body_chassis_type_moderate_repair" = "ซ่อมมาปานกลาง";
+"inspection_body_chassis_type_hard_repair" = "ซ่อมมาหนัก";
+"inspection_body_chassis_type_rotting" = "ผุ";
 
 // inspection engine
 "inspection_engine_label" = "สภาพเครื่องยนต์โดยรวม";

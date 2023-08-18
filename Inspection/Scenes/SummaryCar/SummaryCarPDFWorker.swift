@@ -992,7 +992,7 @@ class SummaryCarPDFWorker {
          
             //MARK: FrontLight
             let frontLightValue = model.isFrontLight ? string_inspection_pdf_work : string_inspection_pdf_not_work
-            let frontLightString = "ไฟหน้า  \(frontLightValue)"
+            let frontLightString = "\(String.localized("motorbike_exterior_head_light_label"))  \(frontLightValue)"
             let attrFrontLightValuePDF = weakself.getTitle(mainString: frontLightString,
                                                     value: frontLightValue)
             let frontLightRect = weakself.drawString(attrString: attrFrontLightValuePDF,

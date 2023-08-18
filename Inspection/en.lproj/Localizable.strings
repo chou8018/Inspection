@@ -148,7 +148,7 @@
 "car_interior_condition_label" = "Internior condition";
 "car_interior_kilometer_label" = "Kilometer";
 "car_interior_mileage_label" = "Mileage";
-"car_interior_mileage_placeholder_label" = "mileage";
+"car_interior_mileage_placeholder_label" = "Mileage";
 "car_interior_fuel_amount_label" = "Fuel amount";
 "car_interior_gear_label" = "Gear";
 "car_interior_airbag_label" = "Airbag";
@@ -219,6 +219,11 @@
 "inspection_body_roof_label" = "Roof";
 "inspection_body_flooded_label" = "Flooded";
 "inspection_body_summary_label" = "Summary body conditions";
+"inspection_body_chassis_type_normal" = "Normal";
+"inspection_body_chassis_type_slight_repair" = "Slight repair";
+"inspection_body_chassis_type_moderate_repair" = "Moderate repair";
+"inspection_body_chassis_type_hard_repair" = "Hard to repair";
+"inspection_body_chassis_type_rotting" = "Rotting";
 
 // inspection engine
 "inspection_engine_label" = "Engine condition";
@@ -228,7 +233,7 @@
 "inspection_engine_oil_label" = "Engine oil";
 "inspection_engine_oil_lacking_label" = "Lacking";
 "inspection_engine_oil_notlacking_label" = "Not lacking";
-"inspection_engine_general_label" = "General Condition";
+"inspection_engine_general_label" = "General condition";
 "inspection_engine_function_label" = "Function";
 "inspection_engine_loud_label" = "Loud noice";
 "inspection_engine_oil_leak_label" = "Oil leak";
@@ -543,7 +548,7 @@
 "car_inspection_pdf_title_label" = "Vehicle Inspection Form / Inspection Report";
 "car_inspection_pdf_date_label" = "Inspection date";
 "car_inspection_pdf_model_code_label" = "Model code";
-"car_inspection_pdf_inspector_name_label" = "Inspector Name";
+"car_inspection_pdf_inspector_name_label" = "Inspector name";
 "car_inspection_pdf_edit_label" = "Edit";
 "car_inspection_pdf_body_condition_label" = "Body condition";
 "car_inspection_pdf_right_side_label" = "Right side (driver)";
@@ -552,7 +557,7 @@
 "car_inspection_pdf_steer_system_label" = "Steering system";
 "car_inspection_pdf_yes_label" = "Yes";
 "car_inspection_pdf_no_label" = "No";
-"car_inspection_pdf_power_steer_label" = "power steering";
+"car_inspection_pdf_power_steer_label" = "Power steering";
 "car_inspection_pdf_work_label" = "Work";
 "car_inspection_pdf_not_work_label" = "Not Work";
 "car_inspection_pdf_turn_signal_label" = "Turn signal";

@@ -10,6 +10,9 @@ import UIKit
 
 typealias responseInspectionPDFHandler = (_ response:SummaryCar.Something.Response) -> ()
 
+let string_inspection_pdf_work = String.localized("car_inspection_pdf_work_label")
+let string_inspection_pdf_not_work = String.localized("car_inspection_pdf_not_work_label")
+
 class SummaryCarPDFWorker {
     deinit {
         print("🔸🐶 deinit SummaryCarPDFWorker")
@@ -24,68 +27,68 @@ class SummaryCarPDFWorker {
         //MARK:Height Text Summary
         let chassisSummaryValue = model.bodySummary?
                                         .pdfValidateString
-                                        .pdfReFormString(title: "สรุปสภาพตัวถัง  ") ?? "-"
-        let chassisSummaryMainString = "สรุปสภาพตัวถัง  \(chassisSummaryValue)"
+                                        .pdfReFormString(title: "\(String.localized("inspection_body_summary_label"))  ") ?? "-"
+        let chassisSummaryMainString = "\(String.localized("inspection_body_summary_label"))  \(chassisSummaryValue)"
         
         hightText += getHeightText(chassisSummaryMainString)
         
         let engineSummaryValue = model.summaryEngine?
                                     .pdfValidateString
-                                    .pdfReFormString(title: "สรุปสภาพเครื่องยนต์  ") ?? "-"
-        let engineSummaryMainString = "สรุปสภาพเครื่องยนต์  \(engineSummaryValue)"
+                                    .pdfReFormString(title: "\(String.localized("inspection_engine_summary_label"))  ") ?? "-"
+        let engineSummaryMainString = "\(String.localized("inspection_engine_summary_label"))  \(engineSummaryValue)"
         
         hightText += getHeightText(engineSummaryMainString)
         
         let underCarriageSummaryValue = model.summaryUnderCarriage?
                                     .pdfValidateString
-                                    .pdfReFormString(title: "สรุปสภาพช่วงล่าง  ") ?? "-"
-        let underCarriageSummaryMainString = "สรุปสภาพช่วงล่าง  \(underCarriageSummaryValue)"
+                                    .pdfReFormString(title: "\(String.localized("inspection_suspension_summary_label"))  ") ?? "-"
+        let underCarriageSummaryMainString = "\(String.localized("inspection_suspension_summary_label"))  \(underCarriageSummaryValue)"
         
         hightText += getHeightText(underCarriageSummaryMainString)
         
         
         let gearSummaryValue = model.summaryGearSystem?
                                     .pdfValidateString
-                                    .pdfReFormString(title: "สรุประบบเกียร์  ") ?? "-"
-        let gearSummaryMainString = "สรุประบบเกียร์  \(gearSummaryValue)"
+                                    .pdfReFormString(title: "\(String.localized("inspection_gear_summary_label"))  ") ?? "-"
+        let gearSummaryMainString = "\(String.localized("inspection_gear_summary_label"))  \(gearSummaryValue)"
         
         hightText += getHeightText(gearSummaryMainString)
         
         
         let steerWheelSummaryValue = model.summarySteerWheelSystem?
                                     .pdfValidateString
-                                    .pdfReFormString(title: "สรุประบบพวงมาลัย  ") ?? "-"
-        let steerWheelSummaryMainString = "สรุประบบพวงมาลัย  \(steerWheelSummaryValue)"
+                                    .pdfReFormString(title: "\(String.localized("inspection_steering_summary_label"))  ") ?? "-"
+        let steerWheelSummaryMainString = "\(String.localized("inspection_steering_summary_label"))  \(steerWheelSummaryValue)"
         
         hightText += getHeightText(steerWheelSummaryMainString)
         
         
         let brakSystemSummaryValue = model.summarysBrakeSystem?
                                     .pdfValidateString
-                                    .pdfReFormString(title: "สรุประบบเบรก  ") ?? "-"
-        let brakSystemSummaryMainString = "สรุประบบเบรก  \(brakSystemSummaryValue)"
+                                    .pdfReFormString(title: "\(String.localized("inspection_brake_summary_label"))  ") ?? "-"
+        let brakSystemSummaryMainString = "\(String.localized("inspection_brake_summary_label"))  \(brakSystemSummaryValue)"
         
         hightText += getHeightText(brakSystemSummaryMainString)
         
         
         let airSummaryValue = model.summaryAirSystem?
                                     .pdfValidateString
-                                    .pdfReFormString(title: "สรุประบบแอร์  ") ?? "-"
-        let airSummaryMainString = "สรุประบบแอร์  \(airSummaryValue)"
+                                    .pdfReFormString(title: "\(String.localized("inspection_air_summary_label"))  ") ?? "-"
+        let airSummaryMainString = "\(String.localized("inspection_air_summary_label"))  \(airSummaryValue)"
         
         hightText += getHeightText(airSummaryMainString)
         
         let gaugeSummaryValue = model.summaryGaugeSystem?
                                     .pdfValidateString
-                                    .pdfReFormString(title: "สรุปมาตรวัด  ") ?? "-"
-        let gaugeSummaryString = "สรุปมาตรวัด  \(gaugeSummaryValue)"
+                                    .pdfReFormString(title: "\(String.localized("inspection_gauges_summary_label"))  ") ?? "-"
+        let gaugeSummaryString = "\(String.localized("inspection_gauges_summary_label"))  \(gaugeSummaryValue)"
         
         hightText += getHeightText(gaugeSummaryString)
         
         let elecSummaryValue = model.summaryElectronicDevice?
                                     .pdfValidateString
-                                    .pdfReFormString(title: "สรุปอุปกรณ์ไฟฟ้า  ") ?? "-"
-        let elecSummaryString = "สรุปอุปกรณ์ไฟฟ้า  \(elecSummaryValue)"
+                                    .pdfReFormString(title: "\(String.localized("inspection_electrical_summary_label"))  ") ?? "-"
+        let elecSummaryString = "\(String.localized("inspection_electrical_summary_label"))  \(elecSummaryValue)"
         
         hightText += getHeightText(elecSummaryString)
         
@@ -143,7 +146,7 @@ class SummaryCarPDFWorker {
             logo.draw(in: CGRect(x: margin + 10, y: margin + 10,
                                  width: logoWidth, height: CGFloat(logoWidth/150*31)))
             //MARK: Title
-            let title = "ใบตรวจสภาพรถยนต์ / Inspection Report"
+            let title = String.localized("car_inspection_pdf_title_label")
             let titleAttr = [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 15),
                              NSAttributedString.Key.backgroundColor: UIColor.black,
                              NSAttributedString.Key.foregroundColor: UIColor.white]
@@ -162,7 +165,7 @@ class SummaryCarPDFWorker {
             
             //MARK: Day Inspection
             let dayValue = "\(model.dayString?.pdfValidateString ?? "-")"
-            let dayTitle = "วันที่ตรวจสภาพ  \(dayValue)"
+            let dayTitle = "\(String.localized("car_inspection_pdf_date_label"))  \(dayValue)"
             let attrDayPDF = weakself.getTitle(mainString: dayTitle, value: dayValue, size: 12)
             let stringDayPDFRect = weakself.drawString(attrString: attrDayPDF,
                                                x: (CGFloat(pageWidth) - attrDayPDF.size().width) - (margin + 10),
@@ -216,7 +219,7 @@ class SummaryCarPDFWorker {
                                             isTable: true)
             
             //MARK: Brand
-            let attrBrandPDF = weakself.getTitle(mainString: "ยี่ห้อรถ", value: "")
+            let attrBrandPDF = weakself.getTitle(mainString: String.localized("car_detail_make_label"), value: "")
             let _ = weakself.drawString(attrString: attrBrandPDF,
                                             x: mapPoint["v1"]!,
                                             y: mapPoint["h2"]!,
@@ -231,7 +234,7 @@ class SummaryCarPDFWorker {
                                             isTable: true)
             
             //MARK: Engine
-            let attrEnginePDF = weakself.getTitle(mainString: "หมายเลขเครื่อง", value: "")
+            let attrEnginePDF = weakself.getTitle(mainString: String.localized("car_grade_serial_number_title"), value: "")
             let _ = weakself.drawString(attrString: attrEnginePDF,
                                             x: mapPoint["v1"]!,
                                             y: mapPoint["h3"]!,
@@ -244,7 +247,7 @@ class SummaryCarPDFWorker {
             let notValidateEngineCar = receiverModel.isInValidEngineNumber ?? false
             let reasonInvalidEngineNumber = "\(receiverModel.reasonInValidEngineNumber?.pdfValidateString2 ?? "-")"
             let engineNumber2 = "\(receiverModel.engineNumber?.pdfValidateString ?? "-")"
-            var engineNumber = notValidateEngineCar ? "ตรวจสอบไม่ได้  " : ""
+            var engineNumber = notValidateEngineCar ? "\(String.localized("car_detail_unable_to_verified_label"))  " : ""
             engineNumber += notValidateEngineCar ? reasonInvalidEngineNumber : engineNumber2
             
             let attrEngineValuePDF = weakself.getTitle(mainString: engineNumber, value: engineNumber)
@@ -254,7 +257,7 @@ class SummaryCarPDFWorker {
                                             isTable: true)
             
             //MARK: VIN
-            let attrVINPDF = weakself.getTitle(mainString: "หมายเลขตัวถัง", value: "")
+            let attrVINPDF = weakself.getTitle(mainString: String.localized("car_detail_vin_number_label"), value: "")
             let _ = weakself.drawString(attrString: attrVINPDF,
                                             x: mapPoint["v1"]!,
                                             y: mapPoint["h4"]!,
@@ -266,7 +269,7 @@ class SummaryCarPDFWorker {
             let notValidateVinNumber = receiverModel.isInValidVinNumber ?? false
             let reasonInValidVinNumber = "\(receiverModel.reasonInValidVinNumber?.pdfValidateString2 ?? "")"
             let vinNumber2 = "\(receiverModel.vinNumber?.pdfValidateString ?? "-")"
-            var vinNumber = notValidateVinNumber ? "ตรวจสอบไม่ได้  " : ""
+            var vinNumber = notValidateVinNumber ? "\(String.localized("car_detail_unable_to_verified_label"))  " : ""
             vinNumber += notValidateVinNumber ?  reasonInValidVinNumber : vinNumber2
             
             let attrVINValuePDF = weakself.getTitle(mainString: vinNumber, value: vinNumber)
@@ -276,7 +279,7 @@ class SummaryCarPDFWorker {
                                             isTable: true)
             
             //MARK: Code model
-            let attrCodeModelPDF = weakself.getTitle(mainString: "รหัสรุ่น", value: "")
+            let attrCodeModelPDF = weakself.getTitle(mainString: String.localized("car_inspection_pdf_model_code_label"), value: "")
             let _ = weakself.drawString(attrString: attrCodeModelPDF,
                                             x: mapPoint["v1"]!,
                                             y: mapPoint["h5"]!,
@@ -291,7 +294,7 @@ class SummaryCarPDFWorker {
                                             isTable: true)
             
             //MARK: Gas
-            let attrGasPDF = weakself.getTitle(mainString: "เลขถังแก๊ส", value: "")
+            let attrGasPDF = weakself.getTitle(mainString: String.localized("car_detail_gas_label"), value: "")
             let _ = weakself.drawString(attrString: attrGasPDF,
                                             x: mapPoint["v1"]!,
                                             y: mapPoint["h6"]!,
@@ -302,7 +305,7 @@ class SummaryCarPDFWorker {
             let notValidateGasNumber = receiverModel.isInValidGasNumber ?? false
             let reasonInValidGasNumber = "\(receiverModel.reasonInValidGasNumber?.pdfValidateString2 ?? "")"
             let gasNumber2 = "\(receiverModel.gasNumber?.pdfValidateString ?? "-")"
-            var gasNumber = notValidateGasNumber ? "ตรวจสอบไม่ได้  " : ""
+            var gasNumber = notValidateGasNumber ? "\(String.localized("car_detail_unable_to_verified_label"))  " : ""
             gasNumber += notValidateGasNumber ? reasonInValidGasNumber : gasNumber2
             
             
@@ -313,7 +316,7 @@ class SummaryCarPDFWorker {
                                             isTable: true)
             
             //MARK: Name inspection
-            let attrNamePDF = weakself.getTitle(mainString: "ชื่อผู้ตรวจ", value: "")
+            let attrNamePDF = weakself.getTitle(mainString: String.localized("car_inspection_pdf_inspector_name_label"), value: "")
             let _ = weakself.drawString(attrString: attrNamePDF,
                                             x: mapPoint["v1"]!,
                                             y: mapPoint["h7"]!,
@@ -343,7 +346,7 @@ class SummaryCarPDFWorker {
                                             isTable: true)
             
             //MARK: Model
-            let attrModelPDF = weakself.getTitle(mainString: "รุ่น", value: "")
+            let attrModelPDF = weakself.getTitle(mainString: String.localized("create_model_mode_label"), value: "")
             let _ = weakself.drawString(attrString: attrModelPDF,
                                             x: mapPoint["v3"]!,
                                             y: mapPoint["h2"]!,
@@ -360,7 +363,7 @@ class SummaryCarPDFWorker {
                                             isTable: true)
             
             //MARK: Registration
-            let attrRegistrationPDF = weakself.getTitle(mainString: "ทะเบียน", value: "")
+            let attrRegistrationPDF = weakself.getTitle(mainString: String.localized("inspection_list_registration_number_label"), value: "")
             let _ = weakself.drawString(attrString: attrRegistrationPDF,
                                             x: mapPoint["v3"]!,
                                             y: mapPoint["h3"]!,
@@ -390,7 +393,7 @@ class SummaryCarPDFWorker {
                                             isTable: true)
             
             //MARK: Miles
-            let attrMilesPDF = weakself.getTitle(mainString: "เลขไมล์", value: "")
+            let attrMilesPDF = weakself.getTitle(mainString: String.localized("car_interior_mileage_placeholder_label"), value: "")
             let _ = weakself.drawString(attrString: attrMilesPDF,
                                             x: mapPoint["v3"]!,
                                             y: mapPoint["h4"]!,
@@ -405,7 +408,7 @@ class SummaryCarPDFWorker {
                                             isTable: true)
             
             //MARK: Color
-            let attrColorPDF = weakself.getTitle(mainString: "สี", value: "")
+            let attrColorPDF = weakself.getTitle(mainString: String.localized("car_pick_up_valid_field_color_label"), value: "")
             let _ = weakself.drawString(attrString: attrColorPDF,
                                             x: mapPoint["v3"]!,
                                             y: mapPoint["h5"]!,
@@ -421,7 +424,7 @@ class SummaryCarPDFWorker {
             
             
             //MARK: Driver System
-            let attrDriverSystemPDF = weakself.getTitle(mainString: "ระบบขับเคลื่อน", value: "")
+            let attrDriverSystemPDF = weakself.getTitle(mainString: String.localized("car_engine_drive_system_label"), value: "")
             let _ = weakself.drawString(attrString: attrDriverSystemPDF,
                                             x: mapPoint["v3"]!,
                                             y: mapPoint["h6"]!,
@@ -438,7 +441,7 @@ class SummaryCarPDFWorker {
             
             if let inspector = inspector {
                 //MARK: EditBy
-                let attrEditBy = weakself.getTitle(mainString: "แก้ไขโดย", value: "")
+                let attrEditBy = weakself.getTitle(mainString: String.localized("car_inspection_pdf_edit_label"), value: "")
                 let _ = weakself.drawString(attrString: attrEditBy,
                                                 x: mapPoint["v3"]!,
                                                 y: mapPoint["h7"]!,
@@ -460,7 +463,7 @@ class SummaryCarPDFWorker {
           //MARK: Chassis Header
           let underGasSystem = insoectionRect.maxY + margin + margin
             
-          let chassisTitle = "สภาพตัวถัง\t\t\t\t"
+            let chassisTitle = "\(String.localized("car_inspection_pdf_body_condition_label"))\t\t\t\t"
           let chassisTitleAttr = [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 12),
                            NSAttributedString.Key.backgroundColor: UIColor.black,
                            NSAttributedString.Key.foregroundColor: UIColor.white]
@@ -481,7 +484,7 @@ class SummaryCarPDFWorker {
             
             //MARK: Chassis
             let chassisValue = model.chessis?.pdfValidateString ?? "-"
-            let chassisMainString = "แชสซี  \(chassisValue)"
+            let chassisMainString = "\(String.localized("inspection_body_chassis_label"))  \(chassisValue)"
             let attrChassisValuePDF = weakself.getTitle(mainString: chassisMainString,
                                                     value: chassisValue)
             let _ = weakself.drawString(attrString: attrChassisValuePDF,
@@ -490,7 +493,7 @@ class SummaryCarPDFWorker {
             
             //MARK: FrontSide
             let frontSideValue = model.frontSide?.pdfValidateString ?? "-"
-            let frontSideMainString = "ด้านหน้า  \(frontSideValue)"
+            let frontSideMainString = "\(String.localized("inspection_body_front_label"))  \(frontSideValue)"
             let attrFrontSideValuePDF = weakself.getTitle(mainString: frontSideMainString,
                                                     value: frontSideValue)
             let frontSideRect = weakself.drawString(attrString: attrFrontSideValuePDF,
@@ -499,7 +502,7 @@ class SummaryCarPDFWorker {
             
             //MARK: BackSide
             let backSideValue = model.backSide?.pdfValidateString ?? "-"
-            let backSideMainString = "ด้านหลัง  \(backSideValue)"
+            let backSideMainString = "\(String.localized("inspection_body_back_label"))  \(backSideValue)"
             let attrBackSideValuePDF = weakself.getTitle(mainString: backSideMainString,
                                                     value: backSideValue)
             let _ = weakself.drawString(attrString: attrBackSideValuePDF,
@@ -513,7 +516,7 @@ class SummaryCarPDFWorker {
             
             //MARK: RightSideDriver
             let rightSideDriverValue = model.rightSideDriver?.pdfValidateString ?? "-"
-            let rightSideDriverMainString = "ด้านขวา(คนขับ)  \(rightSideDriverValue)"
+            let rightSideDriverMainString = "\(String.localized("car_inspection_pdf_right_side_label"))  \(rightSideDriverValue)"
             let attrRightSideDriverValuePDF = weakself.getTitle(mainString: rightSideDriverMainString, value: rightSideDriverValue)
             let RightSideDriverRect = weakself.drawString(attrString: attrRightSideDriverValuePDF,
                                             x: margin + 10,
@@ -521,7 +524,7 @@ class SummaryCarPDFWorker {
             
             //MARK: LeftSide
             let leftSideValue = model.leftSide?.pdfValidateString ?? "-"
-            let leftSideMainString = "ด้านซ้าย  \(leftSideValue)"
+            let leftSideMainString = "\(String.localized("inspection_body_left_label"))  \(leftSideValue)"
             let attrLeftSideValuePDF = weakself.getTitle(mainString: leftSideMainString,
                                                     value: leftSideValue)
             let _ = weakself.drawString(attrString: attrLeftSideValuePDF,
@@ -530,7 +533,7 @@ class SummaryCarPDFWorker {
             
             //MARK: Roof
             let roofValue = model.roof?.pdfValidateString ?? "-"
-            let roofMainString = "หลังคา  \(roofValue)"
+            let roofMainString = "\(String.localized("inspection_body_roof_label"))  \(roofValue)"
             let attrRoofValuePDF = weakself.getTitle(mainString: roofMainString,
                                                     value: roofValue)
             let _ = weakself.drawString(attrString: attrRoofValuePDF,
@@ -542,8 +545,8 @@ class SummaryCarPDFWorker {
             
             
             //MARK: Drown
-            let drownValue = model.isDrowned ? " จมน้ำ " : " ไม่จมน้ำ "
-            let drownMainString = "จมน้ำ  \(drownValue)"
+            let drownValue = model.isDrowned ? " \(String.localized("inspection_body_flooded_label")) " : " \(String.localized("car_inspection_pdf_no_drown_label")) "
+            let drownMainString = "\(String.localized("inspection_body_flooded_label"))  \(drownValue)"
             let attrDrownValuePDF = weakself.getTitle(mainString: drownMainString,
                                                     value: drownValue)
             let drownRect = weakself.drawString(attrString: attrDrownValuePDF,
@@ -566,7 +569,7 @@ class SummaryCarPDFWorker {
             //MARK: Engine Header
             let underchassisSummary = chassisSummaryRect.maxY + margin
               
-            let engineTitle = "สภาพเครื่องยนต์\t\t\t"
+            let engineTitle = "\(String.localized("motorbike_inspection_engine_label"))\t\t\t"
             let engineTitleAttr = [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 12),
                              NSAttributedString.Key.backgroundColor: UIColor.black,
                              NSAttributedString.Key.foregroundColor: UIColor.white]
@@ -587,7 +590,7 @@ class SummaryCarPDFWorker {
             
             //MARK: EngineOverall Condition
             let engineOverallValue = model.engineOverall?.pdfValidateString ?? "-"
-            let engineOverallMainString = "สภาพเครื่องยนต์โดยรวม  \(engineOverallValue)"
+            let engineOverallMainString = "\(String.localized("inspection_engine_label"))  \(engineOverallValue)"
             let attrEngineOverallValuePDF = weakself.getTitle(mainString: engineOverallMainString,
                                                     value: engineOverallValue)
             let _ = weakself.drawString(attrString: attrEngineOverallValuePDF,
@@ -596,7 +599,7 @@ class SummaryCarPDFWorker {
             
           //MARK: Engine Type
             let engineTypeValue = model.typeEngine?.pdfValidateString ?? "-"
-            let engineTypeMainString = "ชนิดเครื่องยนต์  \(engineTypeValue)"
+            let engineTypeMainString = "\(String.localized("inspection_engine_type_label"))  \(engineTypeValue)"
             let attrEngineTypeValuePDF = weakself.getTitle(mainString: engineTypeMainString,
                                                     value: engineTypeValue)
             let _ = weakself.drawString(attrString: attrEngineTypeValuePDF,
@@ -605,7 +608,7 @@ class SummaryCarPDFWorker {
             
             //MARK: Oil Engine
             let oilEngineValue = model.oilEngine?.pdfValidateString ?? "-"
-            let oilEngineMainString = "น้ำมันเครื่อง  \(oilEngineValue)"
+            let oilEngineMainString = "\(String.localized("inspection_engine_oil_label"))  \(oilEngineValue)"
             let attrOilEngineValuePDF = weakself.getTitle(mainString: oilEngineMainString,
                                                       value: oilEngineValue)
             let oilEngineRect = weakself.drawString(attrString: attrOilEngineValuePDF,
@@ -616,7 +619,7 @@ class SummaryCarPDFWorker {
             
             //MARK: FuelSystem
             let fuelSystemValue = model.fuelSystem?.pdfValidateString ?? "-"
-            let fuelSystemMainString = "ระบบเชื้อเพลิง  \(fuelSystemValue)"
+            let fuelSystemMainString = "\(String.localized("car_engine_fuel_system_label"))  \(fuelSystemValue)"
             let attrFuelSystemValuePDF = weakself.getTitle(mainString: fuelSystemMainString,
                                                     value: fuelSystemValue)
             let _ = weakself.drawString(attrString: attrFuelSystemValuePDF,
@@ -625,7 +628,7 @@ class SummaryCarPDFWorker {
             
             //MARK: GasFuelSystem
             let gasFuelSystemValue = model.gasSystem?.pdfValidateString ?? "-"
-            let gasFuelSystemMainString = "แก๊ส  \(gasFuelSystemValue)"
+            let gasFuelSystemMainString = "\(String.localized("car_engine_gas_label"))  \(gasFuelSystemValue)"
             let attrGasfuelSystemValuePDF = weakself.getTitle(mainString: gasFuelSystemMainString,
                                                     value: gasFuelSystemValue)
             let gasFuelSystemRect = weakself.drawString(attrString: attrGasfuelSystemValuePDF,
@@ -633,14 +636,14 @@ class SummaryCarPDFWorker {
                                             y: underOil)
             
             //MARK: GereralCondition
-            var gereralConditionValue = "\(model.useableGeneral ? "ใช้งานได้" : "")  "
-            gereralConditionValue += "\(model.soundAbnormalGeneral ? "เสียงดังผิดปรติ" : "")  "
-            gereralConditionValue += "\(model.leakFuelGeneral ? "น้ำมันรั่วซึม" : "")  "
-            gereralConditionValue += "\(model.stainWaterGeneral ? "คราบน้ำดันออกจากหม้อพักน้ำ" : "")  "
-            gereralConditionValue += "\(model.machineLightShowGeneral ? "ไฟรูปเครื่องโชว์" : "")  "
-            gereralConditionValue += "\(model.engineAbnormalGeneral ? "เครื่องยนต์เดินไม่เรียบ" : "")  "
-            gereralConditionValue += "\(model.needRepairGeneral ? "ต้องซ่อมก่อนใช้งาน" : "")  "
-            let gereralConditionMainString = "สภาพทั่วไป  \(gereralConditionValue.pdfValidateString)"
+            var gereralConditionValue = "\(model.useableGeneral ? String.localized("inspection_engine_working_label") : "")  "
+            gereralConditionValue += "\(model.soundAbnormalGeneral ? String.localized("car_inspection_pdf_loud_sound_label") : "")  "
+            gereralConditionValue += "\(model.leakFuelGeneral ? String.localized("inspection_engine_oil_leak_label") : "")  "
+            gereralConditionValue += "\(model.stainWaterGeneral ? String.localized("inspection_engine_water_stain_label") : "")  "
+            gereralConditionValue += "\(model.machineLightShowGeneral ? String.localized("inspection_engine_oil_light_label") : "")  "
+            gereralConditionValue += "\(model.engineAbnormalGeneral ? String.localized("inspection_engine_not_smoothly_label") : "")  "
+            gereralConditionValue += "\(model.needRepairGeneral ? String.localized("inspection_engine_nedd_repair_label") : "")  "
+            let gereralConditionMainString = "\(String.localized("inspection_engine_general_label"))  \(gereralConditionValue.pdfValidateString)"
             let attrGereralConditionValuePDF = weakself.getTitle(mainString: gereralConditionMainString, value: gereralConditionValue)
             let gereralConditionRect = weakself.drawString(attrString: attrGereralConditionValuePDF,
                                             x: margin + 10,
@@ -661,7 +664,7 @@ class SummaryCarPDFWorker {
             //MARK: Undercarriage Header
             let underEngineSummary = engineSummaryRect.maxY + margin
               
-            let underCarTitle = "ช่วงล่าง\t\t\t\t"
+            let underCarTitle = "\(String.localized("inspection_suspension_label"))\t\t\t\t"
             let underCarTitleAttr = [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 12),
                              NSAttributedString.Key.backgroundColor: UIColor.black,
                              NSAttributedString.Key.foregroundColor: UIColor.white]
@@ -683,7 +686,7 @@ class SummaryCarPDFWorker {
             //MARK: DriveShaft
             var driveShaftValue = "\(model.driveShaft?.pdfValidateString ?? "-")  "
             driveShaftValue += "\(model.driveShaftNoteOther?.pdfValidateString2 ?? "")"
-            let driveShaftMainString = "เพลาขับ  \(driveShaftValue)"
+            let driveShaftMainString = "\(String.localized("inspection_suspension_drive_shaft_label"))  \(driveShaftValue)"
             let attrDriveShaftValuePDF = weakself.getTitle(mainString: driveShaftMainString,
                                                     value: driveShaftValue)
             let _ = weakself.drawString(attrString: attrDriveShaftValuePDF,
@@ -693,7 +696,7 @@ class SummaryCarPDFWorker {
             //MARK: UnderCarriage
             var underCarriageValue = "\(model.underCarriage?.pdfValidateString ?? "-")  "
             underCarriageValue += "\(model.underCarriageNoteOther?.pdfValidateString2 ?? "")"
-            let underCarriageMainString = "ช่วงล่าง  \(underCarriageValue)"
+            let underCarriageMainString = "\(String.localized("inspection_suspension_label"))  \(underCarriageValue)"
             let attrUnderCarriageValuePDF = weakself.getTitle(mainString: underCarriageMainString,
                                                     value: underCarriageValue)
             let underCarriageRect = weakself.drawString(attrString: attrUnderCarriageValuePDF,
@@ -714,7 +717,7 @@ class SummaryCarPDFWorker {
             //MARK: GearSystem Header
             let underUnderCarriageSummary = underCarriageSummaryRect.maxY + margin
               
-            let gearSystemTitle = "ระบบเกียร์\t\t\t\t"
+            let gearSystemTitle = "\(String.localized("inspection_gear_system_label"))\t\t\t\t"
             let gearSystemTitleAttr = [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 12),
                              NSAttributedString.Key.backgroundColor: UIColor.black,
                              NSAttributedString.Key.foregroundColor: UIColor.white]
@@ -734,7 +737,7 @@ class SummaryCarPDFWorker {
             
             //MARK: GearSystem
             let gearSystemValue = model.gearSystem?.pdfValidateString ?? "-"
-            let gearSystemMainString = "ระบบเกียร์  \(gearSystemValue)"
+            let gearSystemMainString = "\(String.localized("inspection_gear_system_label"))  \(gearSystemValue)"
             let attrGearSystemValuePDF = weakself.getTitle(mainString: gearSystemMainString,
                                                     value: gearSystemValue)
             let _ = weakself.drawString(attrString: attrGearSystemValuePDF,
@@ -743,7 +746,7 @@ class SummaryCarPDFWorker {
             
             //MARK: GearCondition
             let gearConditionValue = model.statusGear?.pdfValidateString ?? "-"
-            let gearConditionMainString = "สภาพเกียร์  \(gearConditionValue)"
+            let gearConditionMainString = "\(String.localized("inspection_gear_condition_label"))  \(gearConditionValue)"
             let attrGearConditionValuePDF = weakself.getTitle(mainString: gearConditionMainString,
                                                     value: gearConditionValue)
             let _ = weakself.drawString(attrString: attrGearConditionValuePDF,
@@ -752,7 +755,7 @@ class SummaryCarPDFWorker {
             
             //MARK: DriveShaftGear
             let driveShaftGearValue = model.driveShaftGear?.pdfValidateString ?? "-"
-            let driveShaftGearMainString = "เพลาขับ  \(driveShaftGearValue)"
+            let driveShaftGearMainString = "\(String.localized("inspection_gear_drive_shaft_label"))  \(driveShaftGearValue)"
             let attrDriveShaftGearValuePDF = weakself.getTitle(mainString: driveShaftGearMainString,
                                                     value: driveShaftGearValue)
             let driveShaftGearRect = weakself.drawString(attrString: attrDriveShaftGearValuePDF,
@@ -760,8 +763,8 @@ class SummaryCarPDFWorker {
                                             y: underGearSystemHeader)
             
             //MARK: 4WD
-            let gear4WDValue = model.isGear4WD ? "มี" : "ไม่มี"
-            let gear4WDMainString = "เกียร์​ 4WD  \(gear4WDValue)"
+            let gear4WDValue = model.isGear4WD ? string_pdf_yes : string_pdf_no
+            let gear4WDMainString = "\(String.localized("inspection_gear_4wd_label"))  \(gear4WDValue)"
             let attrGear4WDValuePDF = weakself.getTitle(mainString: gear4WDMainString,
                                                     value: gear4WDValue)
             let gear4WDValueRect = weakself.drawString(attrString: attrGear4WDValuePDF,
@@ -783,7 +786,7 @@ class SummaryCarPDFWorker {
             //MARK: SteerWheel Header
             let underGearSummary = gearSummaryValueRect.maxY + margin
               
-            let SteerWheelTitle = "ระบบพวงมาลัย\t\t\t"
+            let SteerWheelTitle = "\(String.localized("inspection_steering_system_label"))\t\t\t"
             let SteerWheelTitleAttr = [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 12),
                              NSAttributedString.Key.backgroundColor: UIColor.black,
                              NSAttributedString.Key.foregroundColor: UIColor.white]
@@ -805,7 +808,7 @@ class SummaryCarPDFWorker {
             
             //MARK: SteerWheelSystem
             let steerWheelValue = model.steerWheelSystem?.pdfValidateString ?? "-"
-            let steerWheelMainString = "ระบบพวงมาลัย​  \(steerWheelValue)"
+            let steerWheelMainString = "\(String.localized("car_inspection_pdf_steer_system_label"))  \(steerWheelValue)"
             let attrSteerWheelValuePDF = weakself.getTitle(mainString: steerWheelMainString,
                                                     value: steerWheelValue)
             let _ = weakself.drawString(attrString: attrSteerWheelValuePDF,
@@ -813,8 +816,8 @@ class SummaryCarPDFWorker {
                                             y: underSteerWheelHeader)
             
             //MARK: SteerWheelPOWER
-            let steerWheelSystemValue = model.isSteerWheelPower ?  "ใช่" : "ไม่ใช่"
-            let steerWheelSystemMainString = "พวงมาลัย​พาวเวอร์  \(steerWheelSystemValue)"
+            let steerWheelSystemValue = model.isSteerWheelPower ?  String.localized("car_inspection_pdf_yes_label") : String.localized("car_inspection_pdf_no_label")
+            let steerWheelSystemMainString = "\(String.localized("car_inspection_pdf_power_steer_label"))  \(steerWheelSystemValue)"
             let attrSteerWheelSystemValuePDF = weakself.getTitle(mainString: steerWheelSystemMainString, value: steerWheelSystemValue)
             let steerWheelSystemRect = weakself.drawString(attrString: attrSteerWheelSystemValuePDF,
                                             x: centerPosition,
@@ -831,7 +834,7 @@ class SummaryCarPDFWorker {
             //MARK: Brake Header
             let underSteerWheel = steerWheelSummaryValueRect.maxY + margin
             
-            let brakeHeaderTitle = "ระบบเบรก\t\t\t\t"
+            let brakeHeaderTitle = "\(String.localized("inspection_brake_system_label"))\t\t\t\t"
             let brakeHeaderTitleAttr = [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 12),
                              NSAttributedString.Key.backgroundColor: UIColor.black,
                              NSAttributedString.Key.foregroundColor: UIColor.white]
@@ -850,7 +853,7 @@ class SummaryCarPDFWorker {
             
             //MARK: BrakSystem
             let brakeSystemValue = model.brakeSystem?.pdfValidateString ?? "-"
-            let brakeSystemMainString = "ระบบเบรก  \(brakeSystemValue)"
+            let brakeSystemMainString = "\(String.localized("inspection_brake_system_label"))  \(brakeSystemValue)"
             let attrBrakSystemValuePDF = weakself.getTitle(mainString: brakeSystemMainString,
                                                     value: brakeSystemValue)
             let brakSystemRect = weakself.drawString(attrString: attrBrakSystemValuePDF,
@@ -870,7 +873,7 @@ class SummaryCarPDFWorker {
             //MARK: Air Header
             let underBrake = steerBrakSystemSummaryRect.maxY + margin
             
-            let airHeaderTitle = "ระบบแอร์\t\t\t\t\t"
+            let airHeaderTitle = "\(String.localized("inspection_air_system_label"))\t\t\t\t\t"
             let airHeaderTitleAttr = [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 12),
                              NSAttributedString.Key.backgroundColor: UIColor.black,
                              NSAttributedString.Key.foregroundColor: UIColor.white]
@@ -889,7 +892,7 @@ class SummaryCarPDFWorker {
             
             //MARK: AirSystem
             let airSystemValue = model.airSystem?.pdfValidateString ?? "-"
-            let airSystemString = "ระบบแอร์  \(airSystemValue)"
+            let airSystemString = "\(String.localized("inspection_air_system_label"))  \(airSystemValue)"
             let attrAirSystemValuePDF = weakself.getTitle(mainString: airSystemString,
                                                     value: airSystemValue)
             let airSystemRect = weakself.drawString(attrString: attrAirSystemValuePDF,
@@ -897,8 +900,8 @@ class SummaryCarPDFWorker {
                                             y: underAirHeader)
             
             //MARK: Compressor Air
-            let compressorValue = model.isCompresser ? "มี" : "ไม่มี"
-            let compressorString = "คอมเพรสเซอร์  \(compressorValue)"
+            let compressorValue = model.isCompresser ? string_pdf_yes : string_pdf_no
+            let compressorString = "\(String.localized("inspection_air_compressor_label"))  \(compressorValue)"
             let attrCompressorValuePDF = weakself.getTitle(mainString: compressorString,
                                                     value: compressorValue)
             let _ = weakself.drawString(attrString: attrCompressorValuePDF,
@@ -920,7 +923,7 @@ class SummaryCarPDFWorker {
             //MARK: GaugeSystem
             let underAirSummary = airSummaryRect.maxY + margin
             
-            let gaugeHeaderTitle = "มาตรวัด\t\t\t\t"
+            let gaugeHeaderTitle = "\(String.localized("inspection_gauges_system_label"))\t\t\t\t"
             let gaugeHeaderTitleAttr = [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 12),
                              NSAttributedString.Key.backgroundColor: UIColor.black,
                              NSAttributedString.Key.foregroundColor: UIColor.white]
@@ -939,7 +942,7 @@ class SummaryCarPDFWorker {
             
             //MARK: GaugeSystem
             let gaugeSystemValue = model.gaugeSystem?.pdfValidateString ?? "-"
-            let gaugeSystemString = "มาตรวัด  \(gaugeSystemValue)"
+            let gaugeSystemString = "\(String.localized("inspection_gauges_system_label"))  \(gaugeSystemValue)"
             let attrGaugeSystemValuePDF = weakself.getTitle(mainString: gaugeSystemString,
                                                     value: gaugeSystemValue)
             let gaugeSystemRect = weakself.drawString(attrString: attrGaugeSystemValuePDF,
@@ -948,7 +951,7 @@ class SummaryCarPDFWorker {
             
             //MARK: MachineLightShow
             let machineLightShowValue = model.machineLightShow?.pdfValidateString ?? "-"
-            let machineLightShowString = "ไฟขึ้นโชว์(ระบุ)  \(machineLightShowValue)"
+            let machineLightShowString = "\(String.localized("inspection_gauges_light_label"))  \(machineLightShowValue)"
             let attrMachineLightShowValuePDF = weakself.getTitle(mainString: machineLightShowString,
                                                     value: machineLightShowValue)
             let _ = weakself.drawString(attrString: attrMachineLightShowValuePDF,
@@ -969,7 +972,7 @@ class SummaryCarPDFWorker {
             //MARK: ElectronicSystem
             let underGaugeSummary = gaugeSummaryRect.maxY + margin
             
-            let electronicHeaderTitle = "อุปกรณ์ไฟฟ้า\t\t\t"
+            let electronicHeaderTitle = "\(String.localized("inspection_electrical_title"))\t\t\t"
             let electronicHeaderTitleAttr = [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 12),
                              NSAttributedString.Key.backgroundColor: UIColor.black,
                              NSAttributedString.Key.foregroundColor: UIColor.white]
@@ -988,7 +991,7 @@ class SummaryCarPDFWorker {
             
          
             //MARK: FrontLight
-            let frontLightValue = model.isFrontLight ? "ทำงาน" : "ไม่ทำงาน"
+            let frontLightValue = model.isFrontLight ? string_inspection_pdf_work : string_inspection_pdf_not_work
             let frontLightString = "ไฟหน้า  \(frontLightValue)"
             let attrFrontLightValuePDF = weakself.getTitle(mainString: frontLightString,
                                                     value: frontLightValue)
@@ -997,8 +1000,8 @@ class SummaryCarPDFWorker {
                                             y: underElectronicHeader)
             
             //MARK: TurnLight
-            let turnLightValue = model.isTurnLight ? "ทำงาน" : "ไม่ทำงาน"
-            let turnLightString = "ไฟเลี้ยว  \(turnLightValue)"
+            let turnLightValue = model.isTurnLight ? string_inspection_pdf_work : string_inspection_pdf_not_work
+            let turnLightString = "\(String.localized("car_inspection_pdf_turn_signal_label"))  \(turnLightValue)"
             let attrTurnLightValuePDF = weakself.getTitle(mainString: turnLightString,
                                                     value: turnLightValue)
             let _ = weakself.drawString(attrString: attrTurnLightValuePDF,
@@ -1006,8 +1009,8 @@ class SummaryCarPDFWorker {
                                             y: underElectronicHeader)
             
             //MARK: BackLight
-            let backLightValue = model.isBackLight ? "ทำงาน" : "ไม่ทำงาน"
-            let backLightString = "ไฟท้าย  \(backLightValue)"
+            let backLightValue = model.isBackLight ? string_inspection_pdf_work : string_inspection_pdf_not_work
+            let backLightString = "\(String.localized("motorbike_exterior_tail_light_label"))  \(backLightValue)"
             let attrBackLightValuePDF = weakself.getTitle(mainString: backLightString,
                                                     value: backLightValue)
             let _ = weakself.drawString(attrString: attrBackLightValuePDF,
@@ -1017,8 +1020,8 @@ class SummaryCarPDFWorker {
             let underFrontLight = frontLightRect.maxY + margin
            
             //MARK: brakeLight
-            let brakeLightValue = model.isBrakeLight ? "ทำงาน" : "ไม่ทำงาน"
-            let brakeLightString = "ไฟเบรก  \(brakeLightValue)"
+            let brakeLightValue = model.isBrakeLight ? string_inspection_pdf_work : string_inspection_pdf_not_work
+            let brakeLightString = "\(String.localized("Brake light"))  \(brakeLightValue)"
             let attrBrakeLightValuePDF = weakself.getTitle(mainString: brakeLightString,
                                                     value: brakeLightValue)
             let brakeLightRect = weakself.drawString(attrString: attrBrakeLightValuePDF,
@@ -1026,8 +1029,8 @@ class SummaryCarPDFWorker {
                                             y: underFrontLight)
             
             //MARK: Bettery
-            let betteryValue = model.isBettery ? "ทำงาน" : "ไม่ทำงาน"
-            let betteryString = "แบตเตอรี่  \(betteryValue)"
+            let betteryValue = model.isBettery ? string_inspection_pdf_work : string_inspection_pdf_not_work
+            let betteryString = "\(String.localized("car_engine_battery_label"))  \(betteryValue)"
             let attrBetteryValuePDF = weakself.getTitle(mainString: betteryString,
                                                     value: betteryValue)
             let _ = weakself.drawString(attrString: attrBetteryValuePDF,
@@ -1035,8 +1038,8 @@ class SummaryCarPDFWorker {
                                             y: underFrontLight)
             
             //MARK: Hooter
-            let hooterValue = model.isHooter ? "ทำงาน" : "ไม่ทำงาน"
-            let hooterString = "แตร  \(hooterValue)"
+            let hooterValue = model.isHooter ? string_inspection_pdf_work : string_inspection_pdf_not_work
+            let hooterString = "\(String.localized("car_inspection_pdf_horn_label"))  \(hooterValue)"
             let attrHooterValuePDF = weakself.getTitle(mainString: hooterString,
                                                     value: hooterValue)
             let _ = weakself.drawString(attrString: attrHooterValuePDF,
@@ -1044,8 +1047,8 @@ class SummaryCarPDFWorker {
                                             y: underFrontLight)
             
             //MARK: RoundGauge
-            let roundGaugeValue = model.isRoundGauge ? "ทำงาน" : "ไม่ทำงาน"
-            let roundGaugeString = "วัดรอบ  \(roundGaugeValue)"
+            let roundGaugeValue = model.isRoundGauge ? string_inspection_pdf_work : string_inspection_pdf_not_work
+            let roundGaugeString = "\(String.localized("car_inspection_pdf_tholos_label"))  \(roundGaugeValue)"
             let attrRoundGaugeValuePDF = weakself.getTitle(mainString: roundGaugeString,
                                                     value: roundGaugeValue)
             let _ = weakself.drawString(attrString: attrRoundGaugeValuePDF,
@@ -1053,13 +1056,13 @@ class SummaryCarPDFWorker {
                                             y: brakeLightRect.maxY + margin)
             
             //MARK: Navigator
-            var navigatorValue = "\(model.isNavigator ? "มี" : "ไม่มี")  "
-            navigatorValue += "\(model.isNavigatorOnCar ? "เนวิเกเตอร์ในตัว" : "")  "
+            var navigatorValue = "\(model.isNavigator ? string_pdf_yes : string_pdf_no)  "
+            navigatorValue += "\(model.isNavigatorOnCar ? String.localized("car_interior_navigator_in_label") : "")  "
             navigatorValue += "\(model.isCd ? "CD" : "")  "
             navigatorValue += "\(model.isSDCard ? "SD CARD" : "")  "
-            navigatorValue += "\(model.isNoCd ? "ไม่มี CD" : "")  "
-            navigatorValue += "\(model.isNoSdCard ? "ไม่มี SD CARD" : "")  "
-            let navigatorString = "เนวิเกเตอร์  \(navigatorValue)"
+            navigatorValue += "\(model.isNoCd ? String.localized("car_interior_no_cd_label") : "")  "
+            navigatorValue += "\(model.isNoSdCard ? String.localized("car_interior_no_cd_card_label") : "")  "
+            let navigatorString = "\(String.localized("car_interior_navigator_label"))  \(navigatorValue)"
             let attrNavigatorValuePDF = weakself.getTitle(mainString: navigatorString,
                                                     value: navigatorValue)
             let navigatorRect = weakself.drawString(attrString: attrNavigatorValuePDF,
@@ -1068,7 +1071,7 @@ class SummaryCarPDFWorker {
             
             //MARK: Note
             let noteValue = model.note?.pdfValidateString ?? "-"
-            let noteString = "หมายเหตุอื่นๆ  \(noteValue)"
+            let noteString = "\(String.localized("car_inspection_pdf_other_comments_label"))  \(noteValue)"
             let attrNoteValuePDF = weakself.getTitle(mainString: noteString,
                                                     value: noteValue)
             let noteRect = weakself.drawString(attrString: attrNoteValuePDF,
@@ -1091,7 +1094,7 @@ class SummaryCarPDFWorker {
             if isDamagePhoto {
                 let underElecSummary = elecSummaryValueRect.maxY + margin
                 
-                let damageDesc = "รูปความเสียหาย"
+                let damageDesc = String.localized("car_inspection_pdf_damaged_photos_label")
                 let attrDamageDescValuePDF = weakself.getTitle(mainString: damageDesc,
                                                                value: damageDesc, size: 20.0)
                 let damageCenter = CGFloat(pageWidth/2) - (attrDamageDescValuePDF.size().width/2)

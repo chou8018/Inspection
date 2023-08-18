@@ -1706,6 +1706,9 @@ PDF</string>
                                                 <constraint firstItem="a7M-eq-Qen" firstAttribute="centerX" secondItem="28u-0a-VzU" secondAttribute="centerX" id="kTV-U3-tBB"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="tipsMessageLabel" destination="a7M-eq-Qen" id="8IS-7B-bbG"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NotFoundCell" id="cMC-NN-N7W" customClass="NotFoundCell" customModule="Inspection" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="153.5" width="1366" height="43.5"/>

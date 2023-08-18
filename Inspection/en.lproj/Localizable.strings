@@ -422,6 +422,7 @@
 "inspection_list_status_label" = "Status";
 "inspection_list_pending_no_data_label" = "There are no pending projects";
 "inspection_list_vin_number_label" = "VIN no.";
+"inspection_list_tip_message_label" = "Fill in the information and press the search button to search";
 
 // pick up car valid field
 "car_pick_up_valid_field_sender_name_label" = "Sender Name";
@@ -485,6 +486,110 @@
 
 // date time
 "car_date_time_current_button_title" = "Current time";
+
+// car pdf
+"car_pdf_title_label" = "Car receipt / Vehicle Receiving Report";
+"car_pdf_primitive_label" = "Primitive";
+"car_pdf_copy_label" = "Copy";
+"car_pdf_receipt_number_label" = "Receipt no.";
+"car_pdf_pick_up_date_label" = "Pickup date";
+"car_pdf_pick_up_time_label" = "Time";
+"car_pdf_me_label" = "Me";
+"car_pdf_company_delivery_label" = "Delivery of Company Vehicles";
+"car_pdf_autograph_label" = "Sign";
+"car_pdf_telephone_number_label" = "Tel no.";
+"car_pdf_during_editing_label" = "During editing";
+"car_pdf_delivered_follows_label" = "The (automotive supplier) has delivered the vehicle to the representative of Moto Auction (Thailand) Co., Ltd., as follows:";
+"car_pdf_receiver_and_supplier_label" = "Motto Auction (Thailand) Co., Ltd. represents \"Car receiver\" and \"Car supplier\"";
+"car_pdf_detail_information_label" = "Car supplierJoint inspection of the condition and detailed information of vehicle registration numbers";
+"car_pdf_already_said_label" = "I have already said so";
+"car_pdf_ensure_label" = "And ensure that the above information is accurate and true in all aspects";
+"car_pdf_receiver_label" = "Car receiver";
+"car_pdf_recipient_label" = "Recipient";
+"car_pdf_cabin_condition_label" = "Cabin condition";
+"car_pdf_validity_period_label" = "Validity period";
+"car_pdf_other_accessories_label" = "Other accessories";
+"car_pdf_engine_condition_label" = "The condition of the engine room";
+"car_pdf_type_label" = "Type";
+"car_pdf_pasting_peel_label" = "Place for stick VIN rubbing tape";
+"car_pdf_yes_label" = "Yes";
+"car_pdf_no_label" = "No";
+"car_pdf_print_button_title" = "Print";
+
+// motorbike pdf
+"motorbike_pdf_title_label" = "Motorcycle inspection receipt/record";
+"motorbike_pdf_hours_label" = "Hours.";
+"motorbike_pdf_rear_turn_lamp_label_l" = "Rear turn signal lamp L";
+"motorbike_pdf_rear_turn_lamp_label_r" = "Rear turn signal lamp R";
+"motorbike_pdf_r_flank_lamp_label" = "Flank R";
+"motorbike_pdf_rest_legs_label" = "Rest your hind legs";
+"motorbike_pdf_konstak_label" = "Konstak";
+"motorbike_pdf_rear_wheel_label" = "Rear wheel";
+"motorbike_pdf_rear_brake_pump_label" = "Rear disc brake pump";
+"motorbike_pdf_rear_brake_cylinder_label" = "Rear disc brake cylinder";
+"motorbike_pdf_rear_shock_label" = "Rear shock absorber";
+"motorbike_pdf_tank_label" = "Tank";
+"motorbike_pdf_fuel_system_label" = "Fuel supply system";
+"motorbike_pdf_brake_label" = "Brake";
+"motorbike_pdf_flower_label" = "Flower";
+"motorbike_pdf_clutch_label" = "Clutch hand";
+"motorbike_pdf_good_label" = "Good";
+"motorbike_pdf_average_label" = "Average";
+"motorbike_pdf_fair_label" = "Fair";
+"motorbike_pdf_poor_label" = "Poor";
+"motorbike_pdf_scrap_label" = "Scrap";
+
+// car inspection pdf
+"car_inspection_pdf_title_label" = "Vehicle Inspection Form / Inspection Report";
+"car_inspection_pdf_date_label" = "Inspection date";
+"car_inspection_pdf_model_code_label" = "Model code";
+"car_inspection_pdf_inspector_name_label" = "Inspector Name";
+"car_inspection_pdf_edit_label" = "Edit";
+"car_inspection_pdf_body_condition_label" = "Body condition";
+"car_inspection_pdf_right_side_label" = "Right side (driver)";
+"car_inspection_pdf_no_drown_label" = "No drown";
+"car_inspection_pdf_loud_sound_label" = "Loud sound";
+"car_inspection_pdf_steer_system_label" = "Steering system";
+"car_inspection_pdf_yes_label" = "Yes";
+"car_inspection_pdf_no_label" = "No";
+"car_inspection_pdf_power_steer_label" = "power steering";
+"car_inspection_pdf_work_label" = "Work";
+"car_inspection_pdf_not_work_label" = "Not Work";
+"car_inspection_pdf_turn_signal_label" = "Turn signal";
+"car_inspection_pdf_brake_light_label" = "Brake light";
+"car_inspection_pdf_horn_label" = "Horn";
+"car_inspection_pdf_tholos_label" = "Tholos";
+"car_inspection_pdf_other_comments_label" = "Other comments";
+"car_inspection_pdf_damaged_photos_label" = "Damaged photos";
+
+// motorbike inspection pdf
+"motorbike_inspection_pdf_checklist_label" = "Motorcycle Inspection Checklist / Inspection Report";
+"motorbike_inspection_ignition_box_label" = "Ignition control box";
+"motorbike_inspection_page_label" = "Page";
+"motorbike_inspection_behind_label" = "Behind";
+"motorbike_inspection_depth_label" = "Tread depth";
+"motorbike_inspection_ordinary_key_label" = "Ordinary key";
+"motorbike_inspection_remote_control_label" = "Remote control";
+"motorbike_inspection_repaired_label" = "It must be repaired";
+"motorbike_inspection_missing_label" = "Missing";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

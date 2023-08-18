@@ -253,7 +253,7 @@
 "motorbike_exterior_maks_label" = "หน้ากาก";
 "motorbike_exterior_dashboard_label" = "เรือนไมล์";
 "motorbike_exterior_disk_brake_oil_canister_label" = "กระปุกน้ำมันดิสเบรคหน้า";
-"motorbike_exterior_hand_clutch_label" = "มือครัช";
+"motorbike_exterior_hand_clutch_label" = "ไฟเลี้ยวหน้า";
 "motorbike_exterior_disk_brake_pump_label" = "ปั้มดิสเบรคหน้า";
 "motorbike_exterior_front_fender_label" = "บังโคลนหน้า";
 "motorbike_exterior_start_pedal_label" = "คันสตาร์ท";
@@ -422,6 +422,7 @@
 "inspection_list_status_label" = "สถานะ";
 "inspection_list_pending_no_data_label" = "ไม่รายการตรววจค้าง";
 "inspection_list_vin_number_label" = "หมายเลข VIN";
+"inspection_list_tip_message_label" = "กรอกข้อมูลและกดปุ่มค้นหาเพื่อทำการค้นหา";
 
 // pick up car valid field
 "car_pick_up_valid_field_sender_name_label" = "ชื่อผู้ส่ง";
@@ -486,3 +487,88 @@
 // date time
 "car_date_time_current_button_title" = "เวลาตอนนี้";
 
+// car pdf
+"car_pdf_title_label" = "ใบรับมอบรถยนต์ / Vehicle Receiving Report";
+"car_pdf_primitive_label" = "ต้นฉบับ";
+"car_pdf_copy_label" = "สำเนา";
+"car_pdf_receipt_number_label" = "เลขที่ใบรับมอบรถ";
+"car_pdf_pick_up_date_label" = "วันที่รับรถ";
+"car_pdf_pick_up_time_label" = "เวลา";
+"car_pdf_me_label" = "ข้าพเจ้า";
+"car_pdf_company_delivery_label" = "ผู้รับมอบอำนาจในการส่งมอบรถของบริษัท";
+"car_pdf_autograph_label" = "ลงชื่อ";
+"car_pdf_telephone_number_label" = "เบอร์โทร.";
+"car_pdf_during_editing_label" = "แก้ไขเมื่อ";
+"car_pdf_delivered_follows_label" = "(ผู้ส่งมอบรถยนต์) ได้ส่งมอบรถยนต์ให้แก่ตัวแทนของบริษัท มอตโต้ อ๊อคชั่น (ประเทศไทย) จำกัด ดังนี้";
+"car_pdf_receiver_and_supplier_label" = "ตัวแทนของบริษัท มอตโต้ อ๊อคชั่น (ประเทศไทย) จำกัด \"ผู้รับมอบรถยนต์\" และ \"ผู้ส่งมอบรถยนต์\"";
+"car_pdf_detail_information_label" = "ได้ร่วมกันตรวจสอบสภาพและรายละเอียดรถยนต์หมายเลขทะเบียน";
+"car_pdf_already_said_label" = "ดังกล่าวเรียบร้อยแล้ว";
+"car_pdf_ensure_label" = "และขอรับรองว่าข้อมูลตามที่ระบุไว้ในข้างต้นนั้นถูกต้องตรงกับความเป็นจริงทุกประการ ลงชื่อ";
+"car_pdf_receiver_label" = "ผู้รับมอบรถยนต์";
+"car_pdf_recipient_label" = "ผู้รับมอบ";
+"car_pdf_cabin_condition_label" = "สภาพภายในห้องโดยสาร";
+"car_pdf_validity_period_label" = "วันหมดอายุ";
+"car_pdf_other_accessories_label" = "อุปกรณ์แต่งอื่นๆ";
+"car_pdf_engine_condition_label" = "สภาพภายในห้องเครื่อง";
+"car_pdf_type_label" = "ประเภท";
+"car_pdf_pasting_peel_label" = "ที่ว่างสำหรับติดกระดาษลอกลาย / place for stick VIN rubbing tape";
+"car_pdf_yes_label" = "มี";
+"car_pdf_no_label" = "ไม่มี";
+"car_pdf_print_button_title" = "พิมพ์";
+
+// motorbike pdf
+"motorbike_pdf_title_label" = "ใบรับมอบ/บันทึกการตรวจสภาพรถจักรยานยนต์";
+"motorbike_pdf_hours_label" = "น.";
+"motorbike_pdf_rear_turn_lamp_label_l" = "ไฟเลี้ยวหลัง L";
+"motorbike_pdf_rear_turn_lamp_label_r" = "ไฟเลี้ยวหลัง R";
+"motorbike_pdf_r_flank_lamp_label" = "กาบข้าง R";
+"motorbike_pdf_rest_legs_label" = "พักเท้าหลัง";
+"motorbike_pdf_konstak_label" = "คันสตาร์ค";
+"motorbike_pdf_rear_wheel_label" = "ล้อหลัง";
+"motorbike_pdf_rear_brake_pump_label" = "ปั้มดิสเบรคหลัง";
+"motorbike_pdf_rear_brake_cylinder_label" = "กระปุกน้ำมันดิสเบรคหลัง";
+"motorbike_pdf_rear_shock_label" = "โช๊คหลัง";
+"motorbike_pdf_tank_label" = "ถังน้ำมัน";
+"motorbike_pdf_fuel_system_label" = "ระบบจ่ายเชื้อเพลิง";
+"motorbike_pdf_brake_label" = "เบรค";
+"motorbike_pdf_clutch_label" = "มือครัช";
+"motorbike_pdf_flower_label" = "ดอก";
+"motorbike_pdf_good_label" = "Good / ดี";
+"motorbike_pdf_average_label" = "Average / ปานกลาง";
+"motorbike_pdf_fair_label" = "Fair / พอใช้";
+"motorbike_pdf_poor_label" = "Poor / แย่";
+"motorbike_pdf_scrap_label" = "Scrap / ซาก";
+
+// car inspection pdf
+"car_inspection_pdf_title_label" = "ใบตรวจสภาพรถยนต์ / Inspection Report";
+"car_inspection_pdf_date_label" = "วันที่ตรวจสภาพ";
+"car_inspection_pdf_model_code_label" = "รหัสรุ่น";
+"car_inspection_pdf_inspector_name_label" = "ชื่อผู้ตรวจ";
+"car_inspection_pdf_edit_label" = "แก้ไขโดย";
+"car_inspection_pdf_body_condition_label" = "สภาพตัวถัง";
+"car_inspection_pdf_right_side_label" = "ด้านขวา(คนขับ)";
+"car_inspection_pdf_no_drown_label" = "ไม่จมน้ำ";
+"car_inspection_pdf_loud_sound_label" = "สียงดังผิดปรติ";
+"car_inspection_pdf_steer_system_label" = "ระบบพวงมาลัย​";
+"car_inspection_pdf_yes_label" = "ใช่";
+"car_inspection_pdf_no_label" = "ไม่ใช่";
+"car_inspection_pdf_power_steer_label" = "พวงมาลัย​พาวเวอร์";
+"car_inspection_pdf_work_label" = "ทำงาน";
+"car_inspection_pdf_not_work_label" = "ไม่ทำงาน";
+"car_inspection_pdf_turn_signal_label" = "ไฟเลี้ยว";
+"car_inspection_pdf_brake_light_label" = "ไฟเบรก";
+"car_inspection_pdf_horn_label" = "แตร";
+"car_inspection_pdf_tholos_label" = "วัดรอบ";
+"car_inspection_pdf_other_comments_label" = "หมายเหตุอื่นๆ";
+"car_inspection_pdf_damaged_photos_label" = "รูปความเสียหาย";
+
+// motorbike inspection pdf
+"motorbike_inspection_pdf_checklist_label" = "ใบตรวจสภาพรถจักรยานยนต์ / Inspection Report";
+"motorbike_inspection_ignition_box_label" = "กล่องควมคุมการจุดระเบิด";
+"motorbike_inspection_page_label" = "หน้า";
+"motorbike_inspection_behind_label" = "หลัง";
+"motorbike_inspection_depth_label" = "ความลึกดอกยาง";
+"motorbike_inspection_ordinary_key_label" = "กุญแจธรรมดา";
+"motorbike_inspection_remote_control_label" = "รีโมท";
+"motorbike_inspection_repaired_label" = "ต้องทำการซ่อมแซม";
+"motorbike_inspection_missing_label" = "สูญหาย";

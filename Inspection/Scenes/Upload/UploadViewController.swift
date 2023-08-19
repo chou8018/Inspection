@@ -125,7 +125,7 @@ class UploadViewController: ViewController, UploadDisplayLogic
             progressView.error = errorMessage
         }
         
-        titleLabel.text = "อัพโหลดไฟล์ล้มเหลว ลองใหม่อีกครั้ง"
+        titleLabel.text = String.localized("car_upload_failed_label")
         titleLabel.textColor = .errorColor
     }
     

@@ -269,7 +269,7 @@ class AboutCarViewController: ViewController, AboutCarDisplayLogic
             DataController.shared.inspectionCarModel.registrationProvince = check ? "-" : ""
             
             ///registration plate
-            DataController.shared.receiverCarModel.registrationPlate = check ? "ไม่มีแผ่นป้าย" : ""
+            DataController.shared.receiverCarModel.registrationPlate = check ? String.localized("car_detail_no_plate_label") : ""
             
             if check {
                 self?.redPlateCheckButton.check = false
@@ -296,7 +296,7 @@ class AboutCarViewController: ViewController, AboutCarDisplayLogic
             DataController.shared.inspectionCarModel.registrationProvince = check ? "-" : ""
             
             ///registration plate
-            DataController.shared.receiverCarModel.registrationPlate = check ? "ป้ายแดง" : ""
+            DataController.shared.receiverCarModel.registrationPlate = check ? String.localized("car_detail_red_plate_label") : ""
             
             if check {
                 self?.noPlateCheckButton.check = false
@@ -324,7 +324,7 @@ class AboutCarViewController: ViewController, AboutCarDisplayLogic
             DataController.shared.inspectionCarModel.registrationProvince = check ? "-" : ""
             
             ///registration plate
-            DataController.shared.receiverCarModel.registrationPlate = check ? "ป้ายไม่ตรง" : ""
+            DataController.shared.receiverCarModel.registrationPlate = check ? String.localized("car_detail_incorrect_plate_label") : ""
             
             if check {
                 self?.noPlateCheckButton.check = false
@@ -470,11 +470,11 @@ class AboutCarViewController: ViewController, AboutCarDisplayLogic
             case "D":
                 fuelDeliveryName = "Direct Injection" // direct injection
             case "I":
-                fuelDeliveryName = "หัวฉีด" // injection
+                fuelDeliveryName = String.localized("car_engine_injector_label") // injection
             case "N":
-                fuelDeliveryName = "คาร์บูเรเตอร์" // naturally aspirated
+                fuelDeliveryName = String.localized("car_engine_carburetor_label") // naturally aspirated
             case "T":
-                fuelDeliveryName = "เทอร์โบ" // turbo
+                fuelDeliveryName = String.localized("car_engine_turbocharger_label") // turbo
             default:
                 fuelDeliveryName = "N/A"
             }
@@ -800,11 +800,11 @@ class AboutCarViewController: ViewController, AboutCarDisplayLogic
         if let registrationPlate = model.registrationPlate, !registrationPlate.trimWhiteSpace.isEmpty {
             
             switch registrationPlate {
-            case "ไม่มีแผ่นป้าย":
+            case String.localized("car_detail_no_plate_label"):
                 noPlateCheckButton.check = true
-            case "ป้ายแดง":
+            case String.localized("car_detail_red_plate_label"):
                 redPlateCheckButton.check = true
-            case "ป้ายไม่ตรง":
+            case String.localized("car_detail_incorrect_plate_label"):
                 mismatchPlateCheckButton.check = true
             default:
                 break

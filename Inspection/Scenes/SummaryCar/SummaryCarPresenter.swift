@@ -84,7 +84,7 @@ class SummaryCarPresenter: SummaryCarPresentationLogic
     }
     
     func presentAlertMessage(response: SummaryCar.Something.Response) {
-        let alertMessage = "กรุณาบันทึกรับมอบรถก่อน"
+        let alertMessage = String.localized("car_pdf_save_vehicle_title")
         let viewModel = SummaryCar.Something.ViewModel(alertMessage: alertMessage)
         viewController?.displayAlertMessage(viewModel: viewModel)
     }

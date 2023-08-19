@@ -93,6 +93,8 @@
 "receiver_car_delivered_by_label" = "ลงชื่อผู้ส่งมอบ";
 "receiver_car_booked_in_by_label" = "ลงชื่อผู้รับมอบ";
 "receiver_car_booked_in_by_placeholder_label" = "กดภายในกรอบนัพื่อทำการลงชื่อ";
+"receiver_car_phone_number_is_incorrect_label" = "The phone number is incorrect";
+"receiver_car_company_no_list_label" = "ชื่อบริษัทไม่มีในรายกา";
 
 // car detail
 "car_detail_model_code_label" = "รหัสรุ่นรถ";
@@ -201,6 +203,7 @@
 "car_engine_cng_sequential_injection_label" = "CNG/NGV ระบบหัวฉีด";
 "car_engine_cng_fumigation_system_label" = "CNG/NGV ระบบดูด";
 "car_engine_other_in_car_assets_label" = "ทรัพย์สินภายในรถ";
+"car_engine_turbocharger_label" = "เทอร์โบ";
 
 // inspection
 "inspection_body_title" = "ตัวถัง";
@@ -402,6 +405,8 @@
 "photos_send_book_in_first_title" = "กรุณาทำการ Send Book-in ก่อน";
 "photos_navigation_upload_title" = "อัพโหลด";
 "photos_upload_title" = "กำลังอัพโหลด";
+"photos_check_title" = "กรุณาทำการตรวจสภาพก่อน";
+"photos_add_title" = "กรุณาเพิ่มรูปถ่าย";
 
 // mode code
 "mode_code_title_label" = "ค้นหารุ่น";
@@ -439,6 +444,7 @@
 "inspection_list_pending_no_data_label" = "ไม่รายการตรววจค้าง";
 "inspection_list_vin_number_label" = "หมายเลข VIN";
 "inspection_list_tip_message_label" = "กรอกข้อมูลและกดปุ่มค้นหาเพื่อทำการค้นหา";
+"inspection_list_not_good_label" = "ไม่ดี";
 
 // pick up car valid field
 "car_pick_up_valid_field_sender_name_label" = "ชื่อผู้ส่ง";
@@ -534,6 +540,7 @@
 "car_pdf_yes_label" = "มี";
 "car_pdf_no_label" = "ไม่มี";
 "car_pdf_print_button_title" = "พิมพ์";
+"car_pdf_save_vehicle_title" = "กรุณาบันทึกรับมอบรถก่อน";
 
 // motorbike pdf
 "motorbike_pdf_title_label" = "ใบรับมอบ/บันทึกการตรวจสภาพรถจักรยานยนต์";
@@ -591,3 +598,7 @@
 "motorbike_inspection_remote_control_label" = "รีโมท";
 "motorbike_inspection_repaired_label" = "ต้องทำการซ่อมแซม";
 "motorbike_inspection_missing_label" = "สูญหาย";
+
+// car upload
+"car_upload_successful_label" = "อัพโหลดสำเร็จ";
+"car_upload_failed_label" = "อัพโหลดไฟล์ล้มเหลว ลองใหม่อีกครั้ง";

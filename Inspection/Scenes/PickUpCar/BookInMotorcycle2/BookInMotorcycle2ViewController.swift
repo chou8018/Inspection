@@ -13,6 +13,12 @@
 import UIKit
 import RadioGroup
 
+let string_key_label = String.localized("car_interior_key_label")
+let string_remote_key_label = String.localized("car_interior_remote_key_label")
+let string_remote_control_key_label = String.localized("car_interior_remote_control_label")
+let string_immobilizer_key_label = String.localized("car_interior_key_immobilizer_label")
+let string_keyless_label = String.localized("car_interior_keyless_label")
+
 protocol BookInMotorcycle2DisplayLogic: AnyObject
 {
     func displaySomething(viewModel: BookInMotorcycle2.Something.ViewModel)
@@ -379,12 +385,12 @@ class BookInMotorcycle2ViewController: ViewController, BookInMotorcycle2DisplayL
         keyCheckBox.toggle { [weak self] check in
             if !check {
                 DataController.shared.inspectionCarModel.isKey = false
-                DataController.shared.receiverCarModel.removeKeys(type: "กุญแจ")
+                DataController.shared.receiverCarModel.removeKeys(type: string_key_label)
                 self?.keyDropDown.text = ""
                 self?.uncheckKeys()
             }else{
                 DataController.shared.receiverCarModel.isKeys = true
-                DataController.shared.receiverCarModel.addKeys(type: "กุญแจ")
+                DataController.shared.receiverCarModel.addKeys(type: string_key_label)
             }
         }
     }
@@ -393,12 +399,12 @@ class BookInMotorcycle2ViewController: ViewController, BookInMotorcycle2DisplayL
         remoteKeyCheckBox.toggle { [weak self] check in
             if !check {
                 DataController.shared.inspectionCarModel.isRemoteKey = false
-                DataController.shared.receiverCarModel.removeKeys(type: "กุญแจรีโมท")
+                DataController.shared.receiverCarModel.removeKeys(type: string_remote_key_label)
                 self?.remoteKeyDropDown.text = ""
                 self?.uncheckKeys()
             }else{
                 DataController.shared.receiverCarModel.isKeys = true
-                DataController.shared.receiverCarModel.addKeys(type: "กุญแจรีโมท")
+                DataController.shared.receiverCarModel.addKeys(type: string_remote_key_label)
             }
         }
     }
@@ -407,12 +413,12 @@ class BookInMotorcycle2ViewController: ViewController, BookInMotorcycle2DisplayL
         remoteCheckBox.toggle { [weak self] check in
             if !check {
                 DataController.shared.inspectionCarModel.isRemote = false
-                DataController.shared.receiverCarModel.removeKeys(type: "รีโมท")
+                DataController.shared.receiverCarModel.removeKeys(type: string_remote_control_key_label)
                 self?.remoteDropDown.text = ""
                 self?.uncheckKeys()
             }else{
                 DataController.shared.receiverCarModel.isKeys = true
-                DataController.shared.receiverCarModel.addKeys(type: "รีโมท")
+                DataController.shared.receiverCarModel.addKeys(type: string_remote_control_key_label)
             }
         }
     }
@@ -420,12 +426,12 @@ class BookInMotorcycle2ViewController: ViewController, BookInMotorcycle2DisplayL
         immobilizarKeyCheckBox.toggle { [weak self] check in
             if !check {
                 DataController.shared.inspectionCarModel.isImmobilizarKey = false
-                DataController.shared.receiverCarModel.removeKeys(type: "กุญแจ Immobilizer")
+                DataController.shared.receiverCarModel.removeKeys(type: string_immobilizer_key_label)
                 self?.immobilizarKeyDropDown.text = ""
                 self?.uncheckKeys()
             }else{
                 DataController.shared.receiverCarModel.isKeys = true
-                DataController.shared.receiverCarModel.addKeys(type: "กุญแจ Immobilizer")
+                DataController.shared.receiverCarModel.addKeys(type: string_immobilizer_key_label)
             }
             
         }
@@ -485,7 +491,7 @@ class BookInMotorcycle2ViewController: ViewController, BookInMotorcycle2DisplayL
         keyDropDown.didSelect { [weak self] (selected, _, _) in
             
             DataController.shared.receiverCarModel.isKeys = true
-            DataController.shared.receiverCarModel.addKeys(type: "กุญแจ", amount: selected)
+            DataController.shared.receiverCarModel.addKeys(type: string_key_label, amount: selected)
             DataController.shared.inspectionCarModel.isKey = true
             
             self?.keyDropDown.text = selected
@@ -498,7 +504,7 @@ class BookInMotorcycle2ViewController: ViewController, BookInMotorcycle2DisplayL
             
             
             DataController.shared.receiverCarModel.isKeys = true
-            DataController.shared.receiverCarModel.addKeys(type: "รีโมท", amount: selected)
+            DataController.shared.receiverCarModel.addKeys(type: string_remote_control_key_label, amount: selected)
             DataController.shared.inspectionCarModel.isRemote = true
             
             self?.remoteDropDown.text = selected
@@ -511,7 +517,7 @@ class BookInMotorcycle2ViewController: ViewController, BookInMotorcycle2DisplayL
         remoteKeyDropDown.didSelect { [weak self] (selected, _, _) in
             
             DataController.shared.receiverCarModel.isKeys = true
-            DataController.shared.receiverCarModel.addKeys(type: "กุญแจรีโมท", amount: selected)
+            DataController.shared.receiverCarModel.addKeys(type: string_remote_key_label, amount: selected)
             DataController.shared.inspectionCarModel.isRemoteKey = true
             
             self?.remoteKeyDropDown.text = selected
@@ -525,7 +531,7 @@ class BookInMotorcycle2ViewController: ViewController, BookInMotorcycle2DisplayL
         immobilizarKeyDropDown.didSelect { [weak self] (selected, _, _) in
             
             DataController.shared.receiverCarModel.isKeys = true
-            DataController.shared.receiverCarModel.addKeys(type: "กุญแจ Immobilizer", amount: selected)
+            DataController.shared.receiverCarModel.addKeys(type: string_immobilizer_key_label, amount: selected)
             DataController.shared.inspectionCarModel.isImmobilizarKey = true
             
             self?.immobilizarKeyDropDown.text = selected
@@ -622,11 +628,11 @@ class BookInMotorcycle2ViewController: ViewController, BookInMotorcycle2DisplayL
         milesTextFIeld.text = model.miles
         milesRadio.selectedIndex = getRadioIndexByValue(from: typeMilesValue, value: model.typeMiles)
         ///key
-        let numberOfKey = model.mapKeys?["กุญแจ"] as? String
-        let numberOfKeyRemote = model.mapKeys?["กุญแจรีโมท"] as? String
-        let numberOfRemote = model.mapKeys?["รีโมท"] as? String
-        let numberOfImmobilizer = model.mapKeys?["กุญแจ Immobilizer"] as? String
-        let numberOfKeyless = model.mapKeys?["กุญแจ Keyless"] as? String
+        let numberOfKey = model.mapKeys?[string_key_label] as? String
+        let numberOfKeyRemote = model.mapKeys?[string_remote_key_label] as? String
+        let numberOfRemote = model.mapKeys?[string_remote_control_key_label] as? String
+        let numberOfImmobilizer = model.mapKeys?[string_immobilizer_key_label] as? String
+        let numberOfKeyless = model.mapKeys?[String.localized("car_interior_keyless_label")] as? String
         
         let checkKey = (numberOfKey?.toInt() ?? 0) > 0
         let checkRemote = (numberOfRemote?.toInt() ?? 0) > 0

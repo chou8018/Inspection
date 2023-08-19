@@ -233,7 +233,7 @@ class PhotoCarViewController: ViewController, PhotoCarDisplayLogic
     
     @IBAction func saveToIMAT(_ sender: Any){
         print("🔶 save to IMAT")
-        alert(message: "คุณต้องการส่ง\nInspection to IMAT ไหม") { [weak self] in
+        alert(message: String.localized("car_grade_send_inspection_title")) { [weak self] in
             self?.sendToIMAT()
         }
     }
@@ -254,7 +254,7 @@ class PhotoCarViewController: ViewController, PhotoCarDisplayLogic
     func displaySendInsectionIMATSuccess(viewModel: PhotoCar.Something.ViewModel) {
         print("🔶 photo displaySendInsectionIMATSuccess")
         //self.updateVehicleId()
-        alertErrorMessageOKAction(message: "Inspection สำเร็จ") {
+        alertErrorMessageOKAction(message: "Inspection \(String.localized("pick_up_send_book_in_succeeded"))") {
             //ignored
         }
     }

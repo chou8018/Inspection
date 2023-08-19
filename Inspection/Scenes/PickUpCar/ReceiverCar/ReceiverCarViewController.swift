@@ -453,7 +453,7 @@ extension ReceiverCarViewController : UITextFieldDelegate {
             DataController.shared.receiverCarModel.companyName = textField.text
             DataController.shared.receiverCarModel.sellerCode = nil
             errorCompanyLabel.isHidden =  false
-            errorCompanyLabel.text = "ชื่อบริษัทไม่มีในรายการ"
+            errorCompanyLabel.text = String.localized("receiver_car_company_no_list_label")
             
         case senderNameTextField:
             DataController.shared.receiverCarModel.nameSender = textField.text

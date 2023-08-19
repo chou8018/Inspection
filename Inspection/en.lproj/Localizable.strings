@@ -93,6 +93,8 @@
 "receiver_car_delivered_by_label" = "Delivered by";
 "receiver_car_booked_in_by_label" = "Booked-in by";
 "receiver_car_booked_in_by_placeholder_label" = "Please sign with in this area";
+"receiver_car_phone_number_is_incorrect_label" = "The phone number is incorrect";
+"receiver_car_company_no_list_label" = "The company name is not on the list";
 
 // car detail
 "car_detail_model_code_label" = "Model code";
@@ -201,6 +203,7 @@
 "car_engine_cng_sequential_injection_label" = "CNG/NGV Sequential Injection";
 "car_engine_cng_fumigation_system_label" = "LCNG/NGV Fumigation System";
 "car_engine_other_in_car_assets_label" = "Other in car assets";
+"car_engine_turbocharger_label" = "Turbocharger";
 
 // inspection
 "inspection_body_title" = "Body";
@@ -402,6 +405,8 @@
 "photos_send_book_in_first_title" = "Please Send Book-in first";
 "photos_navigation_upload_title" = "Upload";
 "photos_upload_title" = "Upload";
+"photos_check_title" = "Please check first";
+"photos_add_title" = "Please add photos";
 
 // mode code
 "mode_code_title_label" = "Search model";
@@ -439,6 +444,7 @@
 "inspection_list_pending_no_data_label" = "There are no pending projects";
 "inspection_list_vin_number_label" = "VIN no.";
 "inspection_list_tip_message_label" = "Fill in the information and press the search button to search";
+"inspection_list_not_good_label" = "Not good";
 
 // pick up car valid field
 "car_pick_up_valid_field_sender_name_label" = "Sender Name";
@@ -534,6 +540,7 @@
 "car_pdf_yes_label" = "Yes";
 "car_pdf_no_label" = "No";
 "car_pdf_print_button_title" = "Print";
+"car_pdf_save_vehicle_title" = "Please save your vehicle first";
 
 // motorbike pdf
 "motorbike_pdf_title_label" = "Motorcycle inspection receipt/record";
@@ -591,6 +598,12 @@
 "motorbike_inspection_remote_control_label" = "Remote control";
 "motorbike_inspection_repaired_label" = "It must be repaired";
 "motorbike_inspection_missing_label" = "Missing";
+
+// car upload
+"car_upload_successful_label" = "Upload successful";
+"car_upload_failed_label" = "File upload failed. Please try again.";
+
+
 
 
 

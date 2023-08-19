@@ -520,7 +520,7 @@ class CabinCarViewController: ViewController, CabinCarDisplayLogic
             self?.taxPlateExpiredView.isHidden = !check
             DataController.shared.receiverCarModel.isTaxPlate = check
             if !check {
-                self?.taxPlateExpiredLabel.text = "วันหมดอายุ"
+                self?.taxPlateExpiredLabel.text = String.localized("car_pdf_validity_period_label")
                 self?.taxPlateExpiredLabel.textColor = .galleryColor
                 DataController.shared.receiverCarModel.dateExpiredTaxPlate = ""
             }
@@ -532,12 +532,12 @@ class CabinCarViewController: ViewController, CabinCarDisplayLogic
     @IBAction func keyTapped(_ sender: Any) {
         keyCheckBox.toggle { [weak self] check in
             if !check {
-                DataController.shared.receiverCarModel.removeKeys(type: "กุญแจ")
+                DataController.shared.receiverCarModel.removeKeys(type: string_key_label)
                 self?.keyDropDown.text = ""
                 self?.uncheckKeys()
             }else{
                 DataController.shared.receiverCarModel.isKeys = true
-                DataController.shared.receiverCarModel.addKeys(type: "กุญแจ")
+                DataController.shared.receiverCarModel.addKeys(type: string_key_label)
             }
         }
     }
@@ -545,24 +545,24 @@ class CabinCarViewController: ViewController, CabinCarDisplayLogic
     @IBAction func remoteKeyTapped(_ sender: Any) {
         remoteKeyCheckBox.toggle { [weak self] check in
             if !check {
-                DataController.shared.receiverCarModel.removeKeys(type: "กุญแจรีโมท")
+                DataController.shared.receiverCarModel.removeKeys(type: string_remote_key_label)
                 self?.remoteKeyDropDown.text = ""
                 self?.uncheckKeys()
             }else{
                 DataController.shared.receiverCarModel.isKeys = true
-                DataController.shared.receiverCarModel.addKeys(type: "กุญแจรีโมท")
+                DataController.shared.receiverCarModel.addKeys(type: string_remote_key_label)
             }
         }
     }
     @IBAction func keylessKeyTapped(_ sender: Any) {
         keylessKeyCheckBox.toggle { [weak self] check in
             if !check {
-                DataController.shared.receiverCarModel.removeKeys(type: "กุญแจ Keyless")
+                DataController.shared.receiverCarModel.removeKeys(type: string_keyless_label)
                 self?.keylessKeyDropDown.text = ""
                 self?.uncheckKeys()
             }else{
                 DataController.shared.receiverCarModel.isKeys = true
-                DataController.shared.receiverCarModel.addKeys(type: "กุญแจ Keyless")
+                DataController.shared.receiverCarModel.addKeys(type: string_keyless_label)
             }
         }
     }
@@ -570,24 +570,24 @@ class CabinCarViewController: ViewController, CabinCarDisplayLogic
     @IBAction func remoteTapped(_ sender: Any) {
         remoteCheckBox.toggle { [weak self] check in
             if !check {
-                DataController.shared.receiverCarModel.removeKeys(type: "รีโมท")
+                DataController.shared.receiverCarModel.removeKeys(type: string_remote_control_key_label)
                 self?.remoteDropDown.text = ""
                 self?.uncheckKeys()
             }else{
                 DataController.shared.receiverCarModel.isKeys = true
-                DataController.shared.receiverCarModel.addKeys(type: "รีโมท")
+                DataController.shared.receiverCarModel.addKeys(type: string_remote_control_key_label)
             }
         }
     }
     @IBAction func immobilizerKeyTapped(_ sender: Any) {
         immobilizarKeyCheckBox.toggle { [weak self] check in
             if !check {
-                DataController.shared.receiverCarModel.removeKeys(type: "กุญแจ Immobilizer")
+                DataController.shared.receiverCarModel.removeKeys(type: string_immobilizer_key_label)
                 self?.immobilizarKeyDropDown.text = ""
                 self?.uncheckKeys()
             }else{
                 DataController.shared.receiverCarModel.isKeys = true
-                DataController.shared.receiverCarModel.addKeys(type: "กุญแจ Immobilizer")
+                DataController.shared.receiverCarModel.addKeys(type: string_immobilizer_key_label)
             }
             
         }
@@ -857,7 +857,7 @@ class CabinCarViewController: ViewController, CabinCarDisplayLogic
         keyDropDown.didSelect { [weak self] (selected, _, _) in
             
             DataController.shared.receiverCarModel.isKeys = true
-            DataController.shared.receiverCarModel.addKeys(type: "กุญแจ", amount: selected)
+            DataController.shared.receiverCarModel.addKeys(type: string_key_label, amount: selected)
             
             self?.keyDropDown.text = selected
             
@@ -869,7 +869,7 @@ class CabinCarViewController: ViewController, CabinCarDisplayLogic
             
             
             DataController.shared.receiverCarModel.isKeys = true
-            DataController.shared.receiverCarModel.addKeys(type: "รีโมท", amount: selected)
+            DataController.shared.receiverCarModel.addKeys(type: string_remote_control_key_label, amount: selected)
             
             self?.remoteDropDown.text = selected
             
@@ -881,7 +881,7 @@ class CabinCarViewController: ViewController, CabinCarDisplayLogic
         remoteKeyDropDown.didSelect { [weak self] (selected, _, _) in
             
             DataController.shared.receiverCarModel.isKeys = true
-            DataController.shared.receiverCarModel.addKeys(type: "กุญแจรีโมท", amount: selected)
+            DataController.shared.receiverCarModel.addKeys(type: string_remote_key_label, amount: selected)
             
             self?.remoteKeyDropDown.text = selected
             
@@ -893,7 +893,7 @@ class CabinCarViewController: ViewController, CabinCarDisplayLogic
         keylessKeyDropDown.didSelect { [weak self] (selected, _, _) in
             
             DataController.shared.receiverCarModel.isKeys = true
-            DataController.shared.receiverCarModel.addKeys(type: "กุญแจ Keyless", amount: selected)
+            DataController.shared.receiverCarModel.addKeys(type: string_keyless_label, amount: selected)
             
             self?.keylessKeyDropDown.text = selected
             
@@ -905,7 +905,7 @@ class CabinCarViewController: ViewController, CabinCarDisplayLogic
         immobilizarKeyDropDown.didSelect { [weak self] (selected, _, _) in
             
             DataController.shared.receiverCarModel.isKeys = true
-            DataController.shared.receiverCarModel.addKeys(type: "กุญแจ Immobilizer", amount: selected)
+            DataController.shared.receiverCarModel.addKeys(type: string_immobilizer_key_label, amount: selected)
             
             self?.immobilizarKeyDropDown.text = selected
             
@@ -975,11 +975,11 @@ class CabinCarViewController: ViewController, CabinCarDisplayLogic
         noCdCheckBox.check = model.isNoCd ?? false
         
         ///key
-        let numberOfKey = model.mapKeys?["กุญแจ"] as? String
-        let numberOfKeyRemote = model.mapKeys?["กุญแจรีโมท"] as? String
-        let numberOfRemote = model.mapKeys?["รีโมท"] as? String
-        let numberOfImmobilizer = model.mapKeys?["กุญแจ Immobilizer"] as? String
-        let numberOfKeyless = model.mapKeys?["กุญแจ Keyless"] as? String
+        let numberOfKey = model.mapKeys?[string_key_label] as? String
+        let numberOfKeyRemote = model.mapKeys?[string_remote_key_label] as? String
+        let numberOfRemote = model.mapKeys?[string_remote_control_key_label] as? String
+        let numberOfImmobilizer = model.mapKeys?[string_immobilizer_key_label] as? String
+        let numberOfKeyless = model.mapKeys?[string_keyless_label] as? String
         
         let checkKey = (numberOfKey?.toInt() ?? 0) > 0
         let checkRemote = (numberOfRemote?.toInt() ?? 0) > 0
@@ -1011,7 +1011,7 @@ class CabinCarViewController: ViewController, CabinCarDisplayLogic
         /// expire date
         taxPlateExpiredView.isHidden = !(model.isTaxPlate ?? false)
         let dateExpired = model.dateExpiredTaxPlate ?? ""
-        taxPlateExpiredLabel.text = dateExpired.isEmpty ? "วันหมดอายุ" : dateExpired
+        taxPlateExpiredLabel.text = dateExpired.isEmpty ? String.localized("") : dateExpired
         taxPlateExpiredLabel.textColor = dateExpired.isEmpty ? .galleryColor : .appPrimaryColor
         
         isInvalidMilesCheckBox.check = (model.isInvalidMileage ?? false)

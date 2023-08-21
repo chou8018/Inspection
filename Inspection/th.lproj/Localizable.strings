@@ -153,8 +153,8 @@
 
 // car interior
 "car_interior_condition_label" = "สภาพภายในโดยรวม";
-"car_interior_kilometer_label" = "Kilometer";
-"car_interior_mileage_label" = "Mileage";
+"car_interior_kilometer_label" = "กิโลเมตร";
+"car_interior_mileage_label" = "ไมล์";
 "car_interior_mileage_placeholder_label" = "เลขไมล์";
 "car_interior_fuel_amount_label" = "ปริมาณน้ำมัน";
 "car_interior_gear_label" = "เกียร์";

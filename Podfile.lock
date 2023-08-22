@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (5.4.1)
+  - EasyTipView (2.1.0)
   - KeychainAccess (4.2.2)
   - ObjectMapper (3.5.3)
   - RadioGroup (1.4.3):
@@ -14,6 +15,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 5.2)
+  - EasyTipView
   - KeychainAccess
   - ObjectMapper (~> 3.5)
   - RadioGroup
@@ -23,6 +25,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
+    - EasyTipView
     - KeychainAccess
     - ObjectMapper
     - RadioGroup
@@ -32,6 +35,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
+  EasyTipView: a92b6edc377b81c5ac18e9fd35d5ee78e9409488
   KeychainAccess: c0c4f7f38f6fc7bbe58f5702e25f7bd2f65abf51
   ObjectMapper: 97111c97e054a6ee25917662106689f0b4127b37
   RadioGroup: 7015c71759c90dbaae7050f33cfbc1de780e27a7
@@ -39,6 +43,6 @@ SPEC CHECKSUMS:
   SweeterSwift: 8a90cf3156f5a1b6f39785c479369a16633b5ea9
   ZLPhotoBrowser: ea6b3c04cb40d65e17c55f636cf1739c12953fef
 
-PODFILE CHECKSUM: 0ba28d437b59fc8a7ae237196761277d7ca58232
+PODFILE CHECKSUM: a54afb5adbfcc1d890789b380b33b6499738fc4d
 
 COCOAPODS: 1.12.0

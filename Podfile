@@ -15,6 +15,7 @@ target 'Inspection' do
   #pod 'Firebase/Messaging'
   #pod 'SDWebImageWebPCoder'
   pod 'ZLPhotoBrowser'
+  pod 'EasyTipView'
 
   target 'InspectionTests' do
     inherit! :search_paths

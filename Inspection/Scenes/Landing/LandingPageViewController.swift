@@ -188,6 +188,8 @@ class LandingPageViewController: ViewController, LandingPageDisplayLogic
         }
         sender.setTitle(showText, for: .normal)
         initLocalString()
+        
+        DataController.shared.showTipView(sender: sender, superView: self.view, message: "Change to \(showText) language successed!")
     }
 }
 

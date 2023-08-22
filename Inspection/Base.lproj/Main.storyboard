@@ -308,9 +308,37 @@
                                             <action selector="logoutTapped:" destination="Da4-Bi-DDH" eventType="touchUpInside" id="DMH-bL-hnS"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eUi-Qb-i1X" customClass="CustomUIButton" customModule="Inspection" customModuleProvider="target">
+                                        <rect key="frame" x="1216" y="15" width="100" height="60"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="72s-9T-8bY"/>
+                                            <constraint firstAttribute="height" constant="60" id="szC-aS-1oG"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="EN">
+                                            <color key="titleColor" name="bittersweet"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" name="bittersweet"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="switchLanguage:" destination="Da4-Bi-DDH" eventType="touchUpInside" id="nIb-8Z-Tew"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="eUi-Qb-i1X" firstAttribute="top" secondItem="wAE-v4-b2x" secondAttribute="top" constant="15" id="30A-wQ-bOG"/>
                                     <constraint firstItem="ELA-FY-b1p" firstAttribute="centerX" secondItem="wAE-v4-b2x" secondAttribute="centerX" id="Ecz-0G-F6m"/>
+                                    <constraint firstItem="eUi-Qb-i1X" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="H3x-q8-F9R" secondAttribute="trailing" constant="8" symbolic="YES" id="Qhu-xR-9nK"/>
                                     <constraint firstAttribute="trailing" secondItem="Kak-EJ-Ta6" secondAttribute="trailing" constant="100" id="UMz-CJ-jhq"/>
                                     <constraint firstAttribute="bottom" secondItem="ELA-FY-b1p" secondAttribute="bottom" constant="100" id="YrA-OJ-Xtv"/>
                                     <constraint firstItem="Kak-EJ-Ta6" firstAttribute="centerX" secondItem="wAE-v4-b2x" secondAttribute="centerX" id="Yrb-43-xmS"/>
@@ -333,7 +361,9 @@
                             <constraint firstItem="NuH-BN-OGg" firstAttribute="bottom" secondItem="wAE-v4-b2x" secondAttribute="bottom" id="0gU-Av-Jo9"/>
                             <constraint firstItem="NuH-BN-OGg" firstAttribute="bottom" secondItem="gpT-Ad-NYl" secondAttribute="bottom" constant="50" id="864-Hk-plo"/>
                             <constraint firstItem="NuH-BN-OGg" firstAttribute="trailing" secondItem="gpT-Ad-NYl" secondAttribute="trailing" constant="50" id="Cbe-5m-iig"/>
+                            <constraint firstItem="gpT-Ad-NYl" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="NuH-BN-OGg" secondAttribute="leading" symbolic="YES" id="GAo-xp-g49"/>
                             <constraint firstItem="wAE-v4-b2x" firstAttribute="leading" secondItem="NuH-BN-OGg" secondAttribute="leading" id="Hah-ku-t60"/>
+                            <constraint firstItem="eUi-Qb-i1X" firstAttribute="trailing" secondItem="gpT-Ad-NYl" secondAttribute="trailing" id="ZtA-u2-jc2"/>
                             <constraint firstItem="NuH-BN-OGg" firstAttribute="trailing" secondItem="wAE-v4-b2x" secondAttribute="trailing" id="ka8-Qg-9zD"/>
                             <constraint firstItem="wAE-v4-b2x" firstAttribute="top" secondItem="NuH-BN-OGg" secondAttribute="top" id="rOG-jQ-lWY"/>
                         </constraints>
@@ -354,6 +384,7 @@
                         <outlet property="listInspectionView" destination="H2l-pA-S4v" id="AHY-eA-SH4"/>
                         <outlet property="logOutButton" destination="ELA-FY-b1p" id="O1l-f1-wfH"/>
                         <outlet property="startInspectionView" destination="rYx-Ql-njd" id="8xA-fw-hFh"/>
+                        <outlet property="switchLanguageButton" destination="eUi-Qb-i1X" id="o9j-Ek-2uP"/>
                         <outlet property="versionLabel" destination="gpT-Ad-NYl" id="6hy-sp-dYr"/>
                         <segue destination="QFF-Yi-Dey" kind="show" identifier="selectInspectionSegue" id="fXa-f3-aXa"/>
                         <segue destination="9pd-GF-F6h" kind="show" identifier="inspectionListSegue" id="XAh-Am-A8C"/>
@@ -1877,6 +1908,9 @@ PDF</string>
         </designable>
         <designable name="cmJ-0X-ybA">
             <size key="intrinsicContentSize" width="106" height="36"/>
+        </designable>
+        <designable name="eUi-Qb-i1X">
+            <size key="intrinsicContentSize" width="30" height="36"/>
         </designable>
         <designable name="enR-G0-8RK">
             <size key="intrinsicContentSize" width="66" height="48"/>

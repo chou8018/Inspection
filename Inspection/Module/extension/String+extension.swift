@@ -117,11 +117,25 @@ extension String {
     
     static func localized(_ key: String, comment defaultValue: String = "") -> String {
         
-        if let languageCode = Locale.current.languageCode,
-           let path = Bundle.main.path(forResource: languageCode, ofType: "lproj"),
-           
-            let bundle = Bundle(path: path) {
-            
+        if let language = UserDefaults.getCurrentLanguage() {
+            var languageCode = "en"
+            if language == "EN" {
+                languageCode = "en"
+            } else {
+                languageCode = "th"
+            }
+            return localizedWithLanguageCode(key: key, defaultValue: defaultValue, languageCode: languageCode)
+        } else {
+            if let languageCode = Locale.current.languageCode {
+                return localizedWithLanguageCode(key: key, defaultValue: defaultValue, languageCode: languageCode)
+            }
+        }
+        
+        return NSLocalizedString(key, comment: defaultValue)
+    }
+    
+    static func localizedWithLanguageCode(key: String ,defaultValue: String , languageCode: String) -> String {
+        if let path = Bundle.main.path(forResource: languageCode, ofType: "lproj"),let bundle = Bundle(path: path) {
             return NSLocalizedString(
                 key,
                 tableName: "Localizable",
@@ -130,7 +144,6 @@ extension String {
                 comment: ""
             )
         }
-        
         return NSLocalizedString(key, comment: defaultValue)
     }
     

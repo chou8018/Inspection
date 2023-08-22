@@ -86,12 +86,24 @@ class LandingPageViewController: ViewController, LandingPageDisplayLogic
     @IBOutlet weak var inspectionLabel: UILabel!
     @IBOutlet weak var listInspectionLabel: UILabel!
     @IBOutlet weak var logOutButton: CustomUIButton!
-    
+    @IBOutlet weak var switchLanguageButton: CustomUIButton!
+
     override func initLocalString() {
         super.initLocalString()
         inspectionLabel.text = String.localized("select_inspection_label")
         listInspectionLabel.text = String.localized("select_inspection_list_label")
         logOutButton.setTitle(String.localized("select_inspection_log_out"), for: .normal)
+        updateUI()
+        
+        if let language = UserDefaults.getCurrentLanguage() {
+            switchLanguageButton.setTitle(language, for: .normal)
+        } else {
+            if DataController.shared.isThaiLanguage() {
+                switchLanguageButton.setTitle("TH", for: .normal)
+            } else {
+                switchLanguageButton.setTitle("EN", for: .normal)
+            }
+        }
     }
     
     func fetchStandardMake(){
@@ -152,6 +164,30 @@ class LandingPageViewController: ViewController, LandingPageDisplayLogic
 
     func performLogin(){
         performSegue(withIdentifier: "performLogin", sender: nil)
+    }
+    
+    @IBAction func switchLanguage(_ sender: CustomUIButton) {
+        
+        var showText = ""
+        if let language = UserDefaults.getCurrentLanguage() {
+            if language == "EN" {
+                UserDefaults.saveCurrentLanguage(value: "TH")
+                showText = "TH"
+            } else {
+                UserDefaults.saveCurrentLanguage(value: "EN")
+                showText = "EN"
+            }
+        } else {
+            if DataController.shared.isThaiLanguage() {
+                UserDefaults.saveCurrentLanguage(value: "EN")
+                showText = "EN"
+            } else {
+                UserDefaults.saveCurrentLanguage(value: "TH")
+                showText = "TH"
+            }
+        }
+        sender.setTitle(showText, for: .normal)
+        initLocalString()
     }
 }
 

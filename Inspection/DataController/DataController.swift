@@ -125,6 +125,7 @@ class DataController {
     
     func clearLogin() {
         KeyChainService.shared.clearData()
+        UserDefaults.removeCurrentLanguage()
     }
     
     func getVersion() -> String {

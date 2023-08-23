@@ -95,14 +95,10 @@ class LandingPageViewController: ViewController, LandingPageDisplayLogic
         logOutButton.setTitle(String.localized("select_inspection_log_out"), for: .normal)
         updateUI()
         
-        if let language = UserDefaults.getCurrentLanguage() {
-            switchLanguageButton.setTitle(language, for: .normal)
+        if DataController.shared.isThaiLanguage() {
+            switchLanguageButton.setTitle("TH", for: .normal)
         } else {
-            if DataController.shared.isThaiLanguage() {
-                switchLanguageButton.setTitle("TH", for: .normal)
-            } else {
-                switchLanguageButton.setTitle("EN", for: .normal)
-            }
+            switchLanguageButton.setTitle("EN", for: .normal)
         }
     }
     
@@ -169,22 +165,12 @@ class LandingPageViewController: ViewController, LandingPageDisplayLogic
     @IBAction func switchLanguage(_ sender: CustomUIButton) {
         
         var showText = ""
-        if let language = UserDefaults.getCurrentLanguage() {
-            if language == "EN" {
-                UserDefaults.saveCurrentLanguage(value: "TH")
-                showText = "TH"
-            } else {
-                UserDefaults.saveCurrentLanguage(value: "EN")
-                showText = "EN"
-            }
+        if DataController.shared.isThaiLanguage() {
+            UserDefaults.saveCurrentLanguage(value: "EN")
+            showText = "EN"
         } else {
-            if DataController.shared.isThaiLanguage() {
-                UserDefaults.saveCurrentLanguage(value: "EN")
-                showText = "EN"
-            } else {
-                UserDefaults.saveCurrentLanguage(value: "TH")
-                showText = "TH"
-            }
+            UserDefaults.saveCurrentLanguage(value: "TH")
+            showText = "TH"
         }
         sender.setTitle(showText, for: .normal)
         initLocalString()

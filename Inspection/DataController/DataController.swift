@@ -134,10 +134,18 @@ class DataController {
     }
     
     func isThaiLanguage() -> Bool {
-        if let languageCode = Locale.current.languageCode, languageCode == "thai" {
-            return true
+        
+        if let language = UserDefaults.getCurrentLanguage() {
+            if language == "TH" {
+                return true
+            }
+            return false
+        } else {
+            if let languageCode = Locale.current.languageCode, languageCode == "thai" {
+                return true
+            }
+            return false
         }
-        return false
     }
     
     func showTipView(sender: UIView, superView: UIView? , message: String) {

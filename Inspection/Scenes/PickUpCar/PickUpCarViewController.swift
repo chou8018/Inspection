@@ -145,7 +145,18 @@ class PickUpCarViewController: ViewController, PickUpCarDisplayLogic
     @IBOutlet weak var inspectionLabel: UILabel!
     @IBOutlet weak var photosLabel: UILabel!
     @IBOutlet weak var pickUpDateLabel: UILabel!
+    @IBOutlet weak var mainScrollview: UIScrollView!
     
+    var lastFrame = CGRectZero
+    let item0OffsetY = 0
+    let item1OffsetY = 1240
+    let item2OffsetY = 1240 + 1254
+    let item2MotorbikeOffsetY = 1240 + 1254
+    let item3OffsetY = 1240 + 1254 + 780
+    let item3MotorbikeOffsetY = 1240 + 1254 + 1900
+    let item4OffsetY = 1240 + 1254 + 780 + 800
+    let item5OffsetY = 1240 + 1254 + 780 + 800 + 1400
+
     override func initLocalString() {
         super.initLocalString()
         saveButton.title = String.localized("main_inspection_save_button_title")
@@ -270,27 +281,28 @@ class PickUpCarViewController: ViewController, PickUpCarDisplayLogic
         
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
     func confirmSendDataReceiver(){
         let request = PickUpCar.Something.Request(methodReceiver: .POST)
         self.interactor?.confirmSendDataReceiverCar(request: request)
     }
     
-    
     func segmentSetUp(){
         
         segmentView.addSubview(codeSegmented)
         codeSegmented.delegate = self
-        updateUIView(from: 0)
+        
+        switch DataController.shared.bookInType {
+        case .CAR, .CARWRECK:
+            for i in 0..<6 {
+                updateUIView(from: i)
+            }
+        case .MBIKE, .MBIKEWRECK:
+            for i in 0..<4 {
+                updateUIView(from: i)
+            }
+        }
+
     }
-    
     
     lazy var codeSegmented:SegmentControlCustom  =  {
         
@@ -486,9 +498,41 @@ extension PickUpCarViewController {
 
 extension PickUpCarViewController : CustomSegmentedControlDelegate  {
     func change(to index: Int , button : UIButton) {
-        updateUIView(from: index)
+//        updateUIView(from: index)
+//        scrollView.scrollToView(view: button, animated: true)
         
-        scrollView.scrollToView(view: button, animated: true)
+        var offsetY = 0
+        switch index {
+        case 0:
+            offsetY = 0
+        case 1:
+            offsetY = item1OffsetY
+        case 2:
+            switch DataController.shared.bookInType {
+            case .CAR, .CARWRECK:
+                offsetY = item2OffsetY
+            case .MBIKE, .MBIKEWRECK:
+                offsetY = item2MotorbikeOffsetY
+            }
+            
+        case 3:
+            switch DataController.shared.bookInType {
+            case .CAR, .CARWRECK:
+                offsetY = item3OffsetY
+            case .MBIKE, .MBIKEWRECK:
+                offsetY = item3MotorbikeOffsetY
+            }
+            
+        case 4:
+            offsetY = item4OffsetY
+        case 5:
+            offsetY = item5OffsetY
+        default:
+            return
+            
+        }
+        
+        mainScrollview.setContentOffset(CGPoint(x: 0, y: offsetY), animated: true)
     }
     
     
@@ -532,23 +576,45 @@ extension PickUpCarViewController : CustomSegmentedControlDelegate  {
     
     private func add(asChildViewController viewController: UIViewController?) {
         guard let viewController = viewController else { return }
-        if let last = children.last {
-            last.willMove(toParent: nil)
-            last.view.removeFromSuperview()
-            last.removeFromParent()
-        }
+        
+//        var lastFrame = containerView.bounds
+//        if let last = children.last {
+//            last.willMove(toParent: nil)
+//            last.view.removeFromSuperview()
+//            last.removeFromParent()
+//        }
         // Add Child View Controller
         addChild(viewController)
         
         // Add Child View as Subview
-        containerView.addSubview(viewController.view)
-        
+//        containerView.addSubview(viewController.view)
+        mainScrollview.addSubview(viewController.view)
+        let spaceHeight = 0.0
+        if viewController is ReceiverCarViewController {
+            lastFrame = CGRect(x: 0, y: 0, width: mainScrollview.width, height: 1240 - spaceHeight)
+        } else if viewController is AboutCarViewController {
+            lastFrame = CGRect(x: 0, y: lastFrame.maxY, width: mainScrollview.width, height: 1254 - spaceHeight)
+        } else if viewController is ExternalCarViewController {
+            lastFrame = CGRect(x: 0, y: lastFrame.maxY, width: mainScrollview.width, height: 780 - spaceHeight)
+        } else if viewController is BookInMotorcycle1ViewController {
+            lastFrame = CGRect(x: 0, y: lastFrame.maxY, width: mainScrollview.width, height: 1900 - spaceHeight)
+        } else if viewController is SparePartsCarViewController {
+            lastFrame = CGRect(x: 0, y: lastFrame.maxY, width: mainScrollview.width, height: 800 - spaceHeight)
+        } else if viewController is BookInMotorcycle2ViewController {
+            lastFrame = CGRect(x: 0, y: lastFrame.maxY, width: mainScrollview.width, height: 1220 - spaceHeight)
+        } else if viewController is CabinCarViewController {
+            lastFrame = CGRect(x: 0, y: lastFrame.maxY, width: mainScrollview.width, height: 1400 - spaceHeight)
+        } else if viewController is EngineCarViewController {
+            lastFrame = CGRect(x: 0, y: lastFrame.maxY, width: mainScrollview.width, height: 930 - spaceHeight)
+        }
+        mainScrollview.contentSize = CGSize(width: containerView.width, height: lastFrame.maxY)
         // Configure Child View
-        viewController.view.frame = containerView.bounds
-        viewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+//        viewController.view.frame = containerView.bounds
+        viewController.view.frame = CGRect(x: 0, y: lastFrame.minY, width: containerView.width, height: lastFrame.height)
+//        viewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         
         // Notify Child View Controller
-        viewController.didMove(toParent: self)
+//        viewController.didMove(toParent: self)
     }
     //    private func remove(asChildViewController viewController: UIViewController) {
     //        // Notify Child View Controller

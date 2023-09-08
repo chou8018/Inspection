@@ -169,8 +169,11 @@ class ReceiverCarViewController: ViewController, ReceiverCarDisplayLogic
         companyNameTitleLabel.text = String.localized("receiver_car_seller_name_label")
         companyNumberTextField.placeholder = String.localized("receiver_car_seller_name_label")
         plantTitleLabel.text = String.localized("receiver_car_plant_location_label")
+        plantLocationTextField.placeholder = plantTitleLabel.text
         receiverTitleLabel.text = String.localized("receiver_car_receive_location_label")
+        receiverLocationTextField.placeholder = receiverTitleLabel.text
         storeTitleLabel.text = String.localized("receiver_car_storage_location_label")
+        storageLocationTextField.placeholder = storeTitleLabel.text
         deliveredByLabel.text = String.localized("receiver_car_delivered_by_label")
         deliveredByPlacehoderLabel.text = String.localized("receiver_car_booked_in_by_placeholder_label")
         bookedInByLabel.text = String.localized("receiver_car_booked_in_by_label")

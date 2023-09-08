@@ -183,9 +183,11 @@ class SelectInspectionViewController: ViewController, SelectInspectionDisplayLog
         
         placeLabel.isUserInteractionEnabled = true
         placeLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(showPlace)))
+        placeLabel.text = "\(String.localized("select_inspection_place_label")) -"
         
         plantLabel.isUserInteractionEnabled = true
         plantLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(showPlace)))
+        plantLabel.text = "\(String.localized("select_inspection_plant_label")) -"
         
         placeImageView.isUserInteractionEnabled = true
         placeImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(showPlace)))

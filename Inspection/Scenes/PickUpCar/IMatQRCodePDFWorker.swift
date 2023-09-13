@@ -208,7 +208,9 @@ class IMatQRCodePDFWorker {
                                             width: qrSquareSize, height: qrSquareSize))
                 
             }else{
-                let qrString = "\(receiverNumber.trimWhiteSpace)"
+                let chassisNumber = receiverCarModel.vinNumber?.trimWhiteSpace ?? ""
+                let engineNumber = receiverCarModel.engineNumber?.trimWhiteSpace ?? ""
+                let qrString = "IMAT NO. \(receiverNumber.trimWhiteSpace)\nChassis NO. \(chassisNumber)\nEngine NO. \(engineNumber)"
                 if let qrcode = weakself.generateQRCode(from: qrString) {
 
 //                    qrcode.draw(in: CGRect(x: centerPosition - 60 ,
@@ -230,7 +232,7 @@ class IMatQRCodePDFWorker {
                                             y: mapPoint["h0"]!,
                                             isTable: true)
                 
-                let attrIMATPDF = weakself.getTitle(mainString: qrString,
+                let attrIMATPDF = weakself.getTitle(mainString: receiverNumber.trimWhiteSpace,
                                                     value: "",
                                                     textColor: .black)
                 let _ = weakself.drawString(attrString: attrIMATPDF,

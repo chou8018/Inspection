@@ -208,9 +208,14 @@ class IMatQRCodePDFWorker {
                                             width: qrSquareSize, height: qrSquareSize))
                 
             }else{
-                let chassisNumber = receiverCarModel.vinNumber?.trimWhiteSpace ?? ""
-                let engineNumber = receiverCarModel.engineNumber?.trimWhiteSpace ?? ""
-                let qrString = "IMAT NO. \(receiverNumber.trimWhiteSpace)\nChassis NO. \(chassisNumber)\nEngine NO. \(engineNumber)"
+                var qrString = "IMAT NO. \(receiverNumber.trimWhiteSpace)"
+                if let chassisNumber = receiverCarModel.vinNumber?.trimWhiteSpace ,chassisNumber.count > 0 {
+                    qrString += "\nChassis NO. \(chassisNumber)"
+                }
+                if let engineNumber = receiverCarModel.engineNumber?.trimWhiteSpace ,engineNumber.count > 0 {
+                    qrString += "\nEngine NO. \(engineNumber)"
+                }
+         
                 if let qrcode = weakself.generateQRCode(from: qrString) {
 
 //                    qrcode.draw(in: CGRect(x: centerPosition - 60 ,

@@ -14,74 +14,74 @@ import UIKit
 
 protocol LoginDisplayLogic: AnyObject
 {
-  func displayResultLogin(viewModel: Login.getLogin.ViewModel)
+    func displayResultLogin(viewModel: Login.getLogin.ViewModel)
     func displayValidateErrorMessage(viewModel: Login.getLogin.ViewModel)
     func displayValidateSuccess(viewModel: Login.getLogin.ViewModel)
     
     func displayErrorLogin(viewModel: Login.getLogin.ViewModel)
 }
 
-class LoginViewController: UIViewController, LoginDisplayLogic
+class LoginViewController: ViewController, LoginDisplayLogic
 {
-  var interactor: LoginBusinessLogic?
-  var router: (NSObjectProtocol & LoginRoutingLogic & LoginDataPassing)?
-
-  // MARK: Object lifecycle
-  
-  override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
-  {
-    super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-    setup()
-  }
-  
-  required init?(coder aDecoder: NSCoder)
-  {
-    super.init(coder: aDecoder)
-    setup()
-  }
-  
-  // MARK: Setup
-  
-  private func setup()
-  {
-    let viewController = self
-    let interactor = LoginInteractor()
-    let presenter = LoginPresenter()
-    let router = LoginRouter()
-    viewController.interactor = interactor
-    viewController.router = router
-    interactor.presenter = presenter
-    presenter.viewController = viewController
-    router.viewController = viewController
-    router.dataStore = interactor
-  }
-  
-  // MARK: Routing
-  
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-  {
-    if let scene = segue.identifier {
-      let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
-      if let router = router, router.responds(to: selector) {
-        router.perform(selector, with: segue)
-      }
-    }
-  }
-  
-  // MARK: View lifecycle
-  
-  override func viewDidLoad()
-  {
-    super.viewDidLoad()
+    var interactor: LoginBusinessLogic?
+    var router: (NSObjectProtocol & LoginRoutingLogic & LoginDataPassing)?
     
-
-    setUpUIView()
-   
-  }
-   
-  // MARK: Do something
-  
-  //@IBOutlet weak var nameTextField: UITextField!
+    // MARK: Object lifecycle
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
+    {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        setup()
+    }
+    
+    required init?(coder aDecoder: NSCoder)
+    {
+        super.init(coder: aDecoder)
+        setup()
+    }
+    
+    // MARK: Setup
+    
+    private func setup()
+    {
+        let viewController = self
+        let interactor = LoginInteractor()
+        let presenter = LoginPresenter()
+        let router = LoginRouter()
+        viewController.interactor = interactor
+        viewController.router = router
+        interactor.presenter = presenter
+        presenter.viewController = viewController
+        router.viewController = viewController
+        router.dataStore = interactor
+    }
+    
+    // MARK: Routing
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if let scene = segue.identifier {
+            let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
+            if let router = router, router.responds(to: selector) {
+                router.perform(selector, with: segue)
+            }
+        }
+    }
+    
+    // MARK: View lifecycle
+    
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
+        
+        
+        setUpUIView()
+        
+    }
+    
+    // MARK: Do something
+    
+    //@IBOutlet weak var nameTextField: UITextField!
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var passwordTextField: CustomTextField!
@@ -91,12 +91,31 @@ class LoginViewController: UIViewController, LoginDisplayLogic
     
     @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var versionLabel: UILabel!
-    func doSomething()
-  {
     
-  }
-  
+    // local strings
+    
+    @IBOutlet weak var loginTitleLabel: UILabel!
+    @IBOutlet weak var loginButton: CustomUIButton!
+    @IBOutlet weak var tipsMessageLabel: UILabel!
+    
+    override func initLocalString() {
+        super.initLocalString()
+        
+        loginTitleLabel.text = String.localized("login_title_label")
+        usernameTextField.placeholder = String.localized("login_user_name_placeholder")
+        passwordTextField.placeholder = String.localized("login_password_placeholder")
 
+        loginButton.setTitle(String.localized("login_title_label"), for: .normal)
+        errorLabel.text = String.localized("login_error_name_or_password_message_label")
+        tipsMessageLabel.text = String.localized("login_tips_message_label")
+    }
+    
+    func doSomething()
+    {
+        
+    }
+    
+    
     func login(){
         let request = Login.getLogin.Request(username: usernameTextField.text!,
                                              password: passwordTextField.text!)
@@ -105,7 +124,7 @@ class LoginViewController: UIViewController, LoginDisplayLogic
     @IBAction func validateLogin(_ sender:Any){
         login()
     }
-   
+    
     func displayValidateErrorMessage(viewModel: Login.getLogin.ViewModel) {
         guard let errorMessage = viewModel.errorMessage else { return }
         alertErrorMessageOKAction(message: errorMessage) {
@@ -129,7 +148,7 @@ class LoginViewController: UIViewController, LoginDisplayLogic
     func displayResultLogin(viewModel: Login.getLogin.ViewModel) {
         dismiss(animated: true, completion: nil)
     }
-
+    
     
     func setUpUIView(){
         versionLabel.text = DataController.shared.getVersion()
@@ -144,7 +163,7 @@ class LoginViewController: UIViewController, LoginDisplayLogic
         
         usernameTextField.autocorrectionType = .no
         passwordTextField.autocorrectionType = .no
-       
+        
         usernameTextField.withImage(direction: .Left,
                                     image: UIImage(systemName: "person.fill")!,
                                     tintColor: .white,
@@ -186,7 +205,7 @@ extension LoginViewController {
         scrollView.resignKeyboardNotification()
     }
     
-   
+    
 }
 
 extension LoginViewController : UITextFieldDelegate {

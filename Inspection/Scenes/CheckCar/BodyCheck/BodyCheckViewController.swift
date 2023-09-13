@@ -14,103 +14,131 @@ import UIKit
 
 protocol BodyCheckDisplayLogic: AnyObject
 {
-  func displaySomething(viewModel: BodyCheck.Something.ViewModel)
+    func displaySomething(viewModel: BodyCheck.Something.ViewModel)
     func displayProvinceDropdown(viewModel: BodyCheck.Something.ViewModel)
     func displayShowProvinceError(viewModel: BodyCheck.Something.ViewModel)
     
 }
 
-class BodyCheckViewController: UIViewController, BodyCheckDisplayLogic
+class BodyCheckViewController: ViewController, BodyCheckDisplayLogic
 {
-  var interactor: BodyCheckBusinessLogic?
-  var router: (NSObjectProtocol & BodyCheckRoutingLogic & BodyCheckDataPassing)?
-
-  // MARK: Object lifecycle
-  
-  override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
-  {
-    super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-    setup()
-  }
-  
-  required init?(coder aDecoder: NSCoder)
-  {
-    super.init(coder: aDecoder)
-    setup()
-  }
-  
-  // MARK: Setup
-  
-  private func setup()
-  {
-    let viewController = self
-    let interactor = BodyCheckInteractor()
-    let presenter = BodyCheckPresenter()
-    let router = BodyCheckRouter()
-    viewController.interactor = interactor
-    viewController.router = router
-    interactor.presenter = presenter
-    presenter.viewController = viewController
-    router.viewController = viewController
-    router.dataStore = interactor
-  }
-  
-  // MARK: Routing
-  
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-  {
-    if let scene = segue.identifier {
-      let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
-      if let router = router, router.responds(to: selector) {
-        router.perform(selector, with: segue)
-      }
+    var interactor: BodyCheckBusinessLogic?
+    var router: (NSObjectProtocol & BodyCheckRoutingLogic & BodyCheckDataPassing)?
+    
+    // MARK: Object lifecycle
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
+    {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        setup()
     }
-  }
-  
-  // MARK: View lifecycle
-  
-  override func viewDidLoad()
-  {
-    super.viewDidLoad()
-    setUIView()
-    setUpDropdown()
-    doSomething()
-  }
-  
-  // MARK: Do something
-  
-  //@IBOutlet weak var nameTextField: UITextField!
+    
+    required init?(coder aDecoder: NSCoder)
+    {
+        super.init(coder: aDecoder)
+        setup()
+    }
+    
+    // MARK: Setup
+    
+    private func setup()
+    {
+        let viewController = self
+        let interactor = BodyCheckInteractor()
+        let presenter = BodyCheckPresenter()
+        let router = BodyCheckRouter()
+        viewController.interactor = interactor
+        viewController.router = router
+        interactor.presenter = presenter
+        presenter.viewController = viewController
+        router.viewController = viewController
+        router.dataStore = interactor
+    }
+    
+    // MARK: Routing
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if let scene = segue.identifier {
+            let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
+            if let router = router, router.responds(to: selector) {
+                router.perform(selector, with: segue)
+            }
+        }
+    }
+    
+    // MARK: View lifecycle
+    
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
+        setUIView()
+        setUpDropdown()
+        doSomething()
+    }
+    
+    // MARK: Do something
+    
+    //@IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var scrollview: UIScrollView!
-    
-    
     @IBOutlet weak var chessisDropdown: DropDown!
     @IBOutlet weak var frontSideDropdown: DropDown!
     @IBOutlet weak var backSideDropdown: DropDown!
     @IBOutlet weak var rightSideDriverDropdown: DropDown!
     @IBOutlet weak var leftSideDropdown: DropDown!
     @IBOutlet weak var roofDropdown: DropDown!
-    
     @IBOutlet weak var drownedCheckBox: CheckBoxUIButton!
     @IBOutlet weak var bodySummaryTextField: MultilineTextField!
-    
-    
     @IBOutlet weak var provinceTextField: DropDown!
     @IBOutlet weak var registrationTextField: CustomTextField!
     
     var isGetProvinceLunch = false
     
-  func doSomething()
-  {
-    let request = BodyCheck.Something.Request()
-    interactor?.doSomething(request: request)
-  }
-  
+    // local strings
+    @IBOutlet weak var registrationLabel: UILabel!
+    @IBOutlet weak var chassisLabel: UILabel!
+    @IBOutlet weak var frontLabel: UILabel!
+    @IBOutlet weak var backLabel: UILabel!
+    @IBOutlet weak var rightLabel: UILabel!
+    @IBOutlet weak var leftLabel: UILabel!
+    @IBOutlet weak var roofLabel: UILabel!
+    @IBOutlet weak var floodedLabel: UILabel!
+    @IBOutlet weak var summaryLabel: UILabel!
+    
+    override func initLocalString() {
+        super.initLocalString()
+        
+        registrationLabel.text = String.localized("inspection_body_registration_number_label")
+        provinceTextField.placeholder = String.localized("car_detail_province_label")
+        chassisLabel.text = String.localized("inspection_body_chassis_label")
+        chessisDropdown.placeholder = chassisLabel.text
+        frontLabel.text = String.localized("inspection_body_front_label")
+        frontSideDropdown.placeholder = frontLabel.text
+        backLabel.text = String.localized("inspection_body_back_label")
+        backSideDropdown.placeholder = backLabel.text
+        rightLabel.text = String.localized("inspection_body_right_label")
+        rightSideDriverDropdown.placeholder = rightLabel.text
+        leftLabel.text = String.localized("inspection_body_left_label")
+        leftSideDropdown.placeholder = leftLabel.text
+        roofLabel.text = String.localized("inspection_body_roof_label")
+        roofDropdown.placeholder = roofLabel.text
+        floodedLabel.text = String.localized("inspection_body_flooded_label")
+        summaryLabel.text = String.localized("inspection_body_summary_label")
+        bodySummaryTextField.placeholder = summaryLabel.text
+    }
+    
+    func doSomething()
+    {
+        let request = BodyCheck.Something.Request()
+        interactor?.doSomething(request: request)
+    }
+    
     //MARK: Display Presenter
     
-  func displaySomething(viewModel: BodyCheck.Something.ViewModel)
-  {
-    //nameTextField.text = viewModel.name
-  }
+    func displaySomething(viewModel: BodyCheck.Something.ViewModel)
+    {
+        //nameTextField.text = viewModel.name
+    }
     
     //MARK:UIView
     func setUIView(){
@@ -132,7 +160,11 @@ class BodyCheckViewController: UIViewController, BodyCheckDisplayLogic
     
     //MARK: Dropdown
     func setUpDropdown(){
-        let values = ["ปกติ","ซ่อมมาเล็กน้อย","ซ่อมมาปานกลาง","ซ่อมมาหนัก","ผุ"]
+        let values = [String.localized("inspection_body_chassis_type_normal"),
+                      String.localized("inspection_body_chassis_type_slight_repair"),
+                      String.localized("inspection_body_chassis_type_moderate_repair"),
+                      String.localized("inspection_body_chassis_type_hard_repair"),
+                      String.localized("inspection_body_chassis_type_rotting")]
         
         setValue(to: chessisDropdown, values: values) { [weak self] (selectValue, _, _)  in
             DataController.shared.inspectionCarModel.chessis = selectValue
@@ -248,13 +280,13 @@ extension BodyCheckViewController : UITextViewDelegate {
 extension BodyCheckViewController : UITextFieldDelegate {
     @objc func textFieldDidChange(_ textField: UITextField) {
         //print(textField.text)
-    
+        
         switch textField {
-         
+            
         case provinceTextField:
             DataController.shared.inspectionCarModel.registrationProvince = textField.text
             print("registrationProvince: \(textField.text ?? "")")
-        
+            
         case registrationTextField:
             DataController.shared.inspectionCarModel.registration = textField.text
             print("registration: \(textField.text ?? "")")
@@ -266,14 +298,14 @@ extension BodyCheckViewController : UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
-         
-      
+        
+        
         return true
     }
     
     
 }
- 
+
 extension BodyCheckViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

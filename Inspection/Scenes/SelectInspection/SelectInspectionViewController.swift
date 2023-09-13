@@ -14,101 +14,118 @@ import UIKit
 
 protocol SelectInspectionDisplayLogic: AnyObject
 {
-  func displayResultTextPlace(viewModel: SelectInspection.Default.ViewModel)
+    func displayResultTextPlace(viewModel: SelectInspection.Default.ViewModel)
     func displayResultTextPlacePlant(viewModel: SelectInspection.Default.ViewModel)
     func displayErrorMessage(viewModel: SelectInspection.Default.ViewModel)
     func displayPlantErrorMessage(viewModel: SelectInspection.Default.ViewModel)
 }
 
-class SelectInspectionViewController: UIViewController, SelectInspectionDisplayLogic
+class SelectInspectionViewController: ViewController, SelectInspectionDisplayLogic
 {
-  var interactor: SelectInspectionBusinessLogic?
-  var router: (NSObjectProtocol & SelectInspectionRoutingLogic & SelectInspectionDataPassing)?
-
-  // MARK: Object lifecycle
-  
-  override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
-  {
-    super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-    setup()
-  }
-  
-  required init?(coder aDecoder: NSCoder)
-  {
-    super.init(coder: aDecoder)
-    setup()
-  }
-  
-  // MARK: Setup
-  
-  private func setup()
-  {
-    let viewController = self
-    let interactor = SelectInspectionInteractor()
-    let presenter = SelectInspectionPresenter()
-    let router = SelectInspectionRouter()
-    viewController.interactor = interactor
-    viewController.router = router
-    interactor.presenter = presenter
-    presenter.viewController = viewController
-    router.viewController = viewController
-    router.dataStore = interactor
-  }
-  
-  // MARK: Routing
-  
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-  {
-    if let scene = segue.identifier {
-      let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
-      if let router = router, router.responds(to: selector) {
-        router.perform(selector, with: segue)
-      }
-        
-        if let destination = segue.destination as? PlaceViewController {
-            destination.confirmPlace =  { [weak self] (receive , store ) in
-                let request = SelectInspection.Default.Request(selectReceiveName: receive,
-                                                               selectStoreName: store)
-                self?.interactor?.comfirmPlace(request: request)
+    var interactor: SelectInspectionBusinessLogic?
+    var router: (NSObjectProtocol & SelectInspectionRoutingLogic & SelectInspectionDataPassing)?
+    
+    // MARK: Object lifecycle
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
+    {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        setup()
+    }
+    
+    required init?(coder aDecoder: NSCoder)
+    {
+        super.init(coder: aDecoder)
+        setup()
+    }
+    
+    // MARK: Setup
+    
+    private func setup()
+    {
+        let viewController = self
+        let interactor = SelectInspectionInteractor()
+        let presenter = SelectInspectionPresenter()
+        let router = SelectInspectionRouter()
+        viewController.interactor = interactor
+        viewController.router = router
+        interactor.presenter = presenter
+        presenter.viewController = viewController
+        router.viewController = viewController
+        router.dataStore = interactor
+    }
+    
+    // MARK: Routing
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if let scene = segue.identifier {
+            let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
+            if let router = router, router.responds(to: selector) {
+                router.perform(selector, with: segue)
+            }
+            
+            if let destination = segue.destination as? PlaceViewController {
+                destination.confirmPlace =  { [weak self] (receive , store ) in
+                    let request = SelectInspection.Default.Request(selectReceiveName: receive,
+                                                                   selectStoreName: store)
+                    self?.interactor?.comfirmPlace(request: request)
+                }
             }
         }
     }
-  }
-  
-  // MARK: View lifecycle
-  
-  override func viewDidLoad()
-  {
-    super.viewDidLoad()
-    setUp()
-    fetchAllLocations()
-    getLocationName()
-  }
-  
-  // MARK: Do something
-  
-  
-
-    @IBOutlet weak var fullName: UILabel!
     
+    // MARK: View lifecycle
+    
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
+        setUp()
+        fetchAllLocations()
+        getLocationName()
+    }
+    
+    // MARK: Do something
+    
+    @IBOutlet weak var fullName: UILabel!
     @IBOutlet weak var plantLabel: UILabel!
     @IBOutlet weak var placeLabel: UILabel!
     @IBOutlet weak var placeImageView: UIImageView!
     @IBOutlet weak var carSelectView: CustomUIView!
-    
     @IBOutlet weak var motorbikeSelectView: CustomUIView!
     @IBOutlet weak var destroyCarSelectView: CustomUIView!
     @IBOutlet weak var destroyMBSelectView: CustomUIView!
-    
     @IBOutlet weak var loadingStackView:UIStackView!
     
+    // local string
+    @IBOutlet weak var mainItem: UIBarButtonItem!
+    @IBOutlet weak var selectionVCTitleLable: UILabel!
+    @IBOutlet weak var carLable: UILabel!
+    @IBOutlet weak var motobikeLable: UILabel!
+    @IBOutlet weak var carAccidentLable: UILabel!
+    @IBOutlet weak var motobikeAccidentLable: UILabel!
+    @IBOutlet weak var backButton: CustomUIButton!
+    
+    override func initLocalString() {
+        super.initLocalString()
+        
+        mainItem.title = String.localized("main_inspection_bar_button_title")
+        selectionVCTitleLable.text = String.localized("select_inspection_title_label")
+        carLable.text = String.localized("select_inspection_car_label")
+        motobikeLable.text = String.localized("select_inspection_motobike_label")
+        carAccidentLable.text = String.localized("select_inspection_car_salvage_label")
+        motobikeAccidentLable.text = String.localized("select_inspection_motobike_salvage_label")
+        backButton.setTitle(String.localized("select_inspection_back_to_main_button_title"), for: .normal)
+        
+    }
+    
     func fetchLocation()
-  {
+    {
         
         let request = SelectInspection.Default.Request()
         interactor?.fetchLocation(request: request)
-  }
-
+    }
+    
     func fetchPlantLocation(){
         let request = SelectInspection.Default.Request()
         interactor?.fetchPlantLocation(request: request)
@@ -127,10 +144,10 @@ class SelectInspectionViewController: UIViewController, SelectInspectionDisplayL
             fetchPlantLocation()
         }
     }
-  
-  
-    func displayResultTextPlace(viewModel: SelectInspection.Default.ViewModel) {
     
+    
+    func displayResultTextPlace(viewModel: SelectInspection.Default.ViewModel) {
+        
         guard let resultText = viewModel.resultTextPlace else { return }
         isFetchLocation = true
         placeLabel.attributedText = resultText
@@ -162,13 +179,15 @@ class SelectInspectionViewController: UIViewController, SelectInspectionDisplayL
     }
     //MARK: SetUo
     func setUp(){
-        fullName.text = "ผู้ตรวจสภาพ \(DataController.shared.getFullName())"
+        fullName.text = "\(String.localized("select_inspection_inspector_label")) \(DataController.shared.getFullName())"
         
         placeLabel.isUserInteractionEnabled = true
         placeLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(showPlace)))
+        placeLabel.text = "\(String.localized("select_inspection_place_label")) -"
         
         plantLabel.isUserInteractionEnabled = true
         plantLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(showPlace)))
+        plantLabel.text = "\(String.localized("select_inspection_plant_label")) -"
         
         placeImageView.isUserInteractionEnabled = true
         placeImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(showPlace)))
@@ -229,5 +248,5 @@ class SelectInspectionViewController: UIViewController, SelectInspectionDisplayL
         })
         
     }
-
+    
 }

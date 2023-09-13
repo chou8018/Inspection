@@ -243,10 +243,10 @@ enum Router {
             return ApiModel(path: "auction/api/standard/modeltemplate/modelupdate/model", method: .put, param: param)
             
         case .getJatoVaraints(_ , let model_BU):
-            return ApiModel(path: "auction/api/standard/jatoVariant/\(model_BU)", method: .get)
+            return ApiModel(path: "auction/api/standard/matVariant/\(model_BU)", method: .get)
             
         case .getJatoModel(_ ):
-            return ApiModel(path: "auction/api/standard/jatomodel", method: .get)
+            return ApiModel(path: "auction/api/standard/matModel", method: .get)
             
         case .bookInMotorBike(let param):
             return ApiModel(path: "inspection/api/MotorbikeBookIns/Create/model", method: .post, param: param)
@@ -277,7 +277,7 @@ struct ApiModel:URLRequestConvertible {
         UAT  http://mapapi-uat.mottoauction.com/
         PROD https://api.mottoauction.com/
      */
-    let base:String = "https://api.mottoauction.com/"
+    let base:String = "https://mapapi-uat.mottoauction.com/"
     let apiKey = "e9ab5c97-019e-4a83-ad6f-b1d571b24d5d"
     
     var path:String

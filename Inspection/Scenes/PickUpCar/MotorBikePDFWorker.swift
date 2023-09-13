@@ -56,7 +56,7 @@ class MotorBikePDFWorker {
                 logo.draw(in: CGRect(x: margin + 10, y: margin + 10,
                                      width: logoWidth, height: CGFloat(logoWidth/150*31)))
                 //MARK: Title
-                let title = "ใบรับมอบ/บันทึกการตรวจสภาพรถจักรยานยนต์"
+                let title = String.localized("motorbike_pdf_title_label")
                 let titleAttr = [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 15),
                                  NSAttributedString.Key.backgroundColor: UIColor.black,
                                  NSAttributedString.Key.foregroundColor: UIColor.white]
@@ -82,9 +82,9 @@ class MotorBikePDFWorker {
                 //MARK: Copy
                 var copyName = "ต้นฉบับ"
                 if numberOfPage == 1 {
-                    copyName = "สำเนา"
+                    copyName = String.localized("car_pdf_copy_label")
                 }else{
-                    copyName = "ต้นฉบับ"
+                    copyName = String.localized("car_pdf_primitive_label")
                 }
                 let attrCopySpec = weakself.getTitle(mainString: copyName, value: "",
                                                      fontSize: 12)
@@ -116,7 +116,7 @@ class MotorBikePDFWorker {
                 
                 //MARK: ReceiverRunNumber
                 let receiverNumberValue = model.bookinNo?.pdfValidateString ?? "-"
-                let receiverNumberTitle = "เลขที่ใบรับมอบรถ  \(receiverNumberValue)"
+                let receiverNumberTitle = "\(String.localized("car_pdf_receipt_number_label"))  \(receiverNumberValue)"
                 let attrReceiverNumber = weakself.getTitle(mainString: receiverNumberTitle, value: receiverNumberValue)
                 let stringReceiverNumberRect = weakself.drawString(attrString: attrReceiverNumber,
                                                           x: margin + 10,
@@ -125,7 +125,7 @@ class MotorBikePDFWorker {
                 
                 //MARK: ContractNumber
                 let contractValue = model.contractNumber?.pdfValidateString ?? "-"
-                let contractTitle = "เลขที่สัญญา  \(contractValue)"
+                let contractTitle = "\(String.localized("receiver_car_contract_number_label"))  \(contractValue)"
                 let attrContractPDF = weakself.getTitle(mainString: contractTitle, value: contractValue )
                 let _ = weakself.drawString(attrString: attrContractPDF,
                                                        x: centerPosition,
@@ -134,7 +134,7 @@ class MotorBikePDFWorker {
                 
                 //MARK: DayReceiver
                 let dayValue = model.dayString?.pdfValidateString ?? "-"
-                let dayTitle = "วันที่รับรถ  \(dayValue)"
+                let dayTitle = "\(String.localized("car_pdf_pick_up_date_label"))  \(dayValue)"
                 let attrDayPDF = weakself.getTitle(mainString: dayTitle, value: dayValue)
                 let _ = weakself.drawString(attrString: attrDayPDF,
                                                   x: trailingPosition,
@@ -145,8 +145,8 @@ class MotorBikePDFWorker {
                 let underReceiverRunNumber =  stringReceiverNumberRect.maxY + margin
               
                 //MARK: TimeReceiver
-                let timeValue = "\(model.timeString?.pdfValidateString ?? "-") น."
-                let timeTitle = "เวลา  \(timeValue)"
+                let timeValue = "\(model.timeString?.pdfValidateString ?? "-") \(String.localized("motorbike_pdf_hours_label"))"
+                let timeTitle = "\(String.localized("car_pdf_pick_up_time_label"))  \(timeValue)"
                 let attrTimePDF = weakself.getTitle(mainString: timeTitle, value: timeValue)
                 let stringTimePDFRect = weakself.drawString(attrString: attrTimePDF,
                                                    x: margin + 10,
@@ -156,7 +156,7 @@ class MotorBikePDFWorker {
                 
                 //MARK: Place Receiver
                 let placeValue = model.receiverPlace?.pdfValidateString ?? "-"
-                let placeTitle = "สถานที่รับรถ  \(placeValue)"
+                let placeTitle = "\(String.localized("receiver_car_receive_location_label"))  \(placeValue)"
                 let attrPlaceReceiverCarPDF = weakself.getTitle(mainString: placeTitle, value: placeValue)
                 let _ = weakself.drawString(attrString: attrPlaceReceiverCarPDF,
                                                                x: centerPosition,
@@ -177,7 +177,7 @@ class MotorBikePDFWorker {
               
                 //MARK: Sender Name
                 let sender1Value = model.nameSender?.pdfValidateString ?? "-"
-                let sender1Title = "ข้าพเจ้า  \(sender1Value)"
+                let sender1Title = "\(String.localized("car_pdf_me_label"))  \(sender1Value)"
                 let attrSenderNamePDF  = weakself.getTitle(mainString: sender1Title, value: sender1Value)
                 let stringSenderNamePDFRect = weakself.drawString(attrString: attrSenderNamePDF,
                                                          x: margin + 10,
@@ -186,7 +186,7 @@ class MotorBikePDFWorker {
                 
                 //MARK: Company
                 let companyValue = model.companyName?.pdfValidateString ?? "-"
-                let companyTitle = "ผู้รับมอบอำนาจในการส่งมอบรถของบริษัท  \(companyValue)"
+                let companyTitle = "\(String.localized("car_pdf_company_delivery_label"))  \(companyValue)"
                 let attrCompanyPDF = weakself.getTitle(mainString: companyTitle, value: companyValue)
                 let _ = weakself.drawString(attrString: attrCompanyPDF,
                                                       x: centerPosition,
@@ -198,7 +198,7 @@ class MotorBikePDFWorker {
 
                 //MARK: SenderName2
                 let senderValue = model.nameSender?.pdfValidateString ?? "-"
-                let senderTitle = "ลงชื่อ  \(senderValue)"
+                let senderTitle = "\(String.localized("car_pdf_autograph_label"))  \(senderValue)"
                 let attrSenderName2PDF  = weakself.getTitle(mainString: senderTitle, value: senderValue)
                 let stringSenderName2PDFRect = weakself.drawString(attrString: attrSenderName2PDF,
                                                           x: margin + 10,
@@ -207,7 +207,7 @@ class MotorBikePDFWorker {
                 
                 //MARK: Phone
                 let phoneValue = model.phoneNumber?.pdfValidateString ?? "-"
-                let phoneTitle = "เบอร์โทร.  \(phoneValue)"
+                let phoneTitle = "\(String.localized("car_pdf_telephone_number_label"))  \(phoneValue)"
                 let attrPhonePDF = weakself.getTitle(mainString: phoneTitle, value: phoneValue)
                 let _ = weakself.drawString(attrString: attrPhonePDF,
                                                     x: stringSenderName2PDFRect.maxX + 5,
@@ -215,7 +215,7 @@ class MotorBikePDFWorker {
                 
                 
                 //MARK: Latest Update Date
-                let latestUpdateDateTitle = "แก้ไขเมื่อ  \(latestUpdateDate)"
+                let latestUpdateDateTitle = "\(String.localized("car_pdf_during_editing_label"))  \(latestUpdateDate)"
                 let attrlatestUpdateDatePDF = weakself.getTitle(mainString: latestUpdateDateTitle, value: latestUpdateDate)
                 let _ = weakself.drawString(attrString: attrlatestUpdateDatePDF,
                                                     x: centerPosition,
@@ -238,7 +238,7 @@ class MotorBikePDFWorker {
               
      
                 //MARK: Model Car
-                let attrModelCarTitlePDF = weakself.getTitle(mainString: "รุ่น/รุ่นย่อย", value: "")
+                let attrModelCarTitlePDF = weakself.getTitle(mainString: "\(String.localized("create_model_mode_label"))/\(String.localized("car_detail_variant_label"))", value: "")
                 let _ = weakself.drawString(attrString: attrModelCarTitlePDF,
                                                             x: mapPoint["v1"]!,
                                                             y: mapPoint["h2"]!,
@@ -281,11 +281,11 @@ class MotorBikePDFWorker {
                 
                 if let isInValid = model.isInvalidMileage, (isInValid == true) {
                     let reason  = model.invalidMileageReason?.pdfValidateString2 ?? ""
-                    milesValueR = "ตรวจสอบไม่ได้ \(reason)"
+                    milesValueR = "\(String.localized("car_detail_unable_to_verified_label")) \(reason)"
                     
                 }
                 
-                let attrMileageTitlePDF = weakself.getTitle(mainString: "เลขไมล์", value: "")
+                let attrMileageTitlePDF = weakself.getTitle(mainString: String.localized("car_interior_mileage_placeholder_label"), value: "")
                 let _ = weakself.drawString(attrString: attrMileageTitlePDF,
                                                            x: mapPoint["v3"]!,
                                                            y: mapPoint["h3"]!,
@@ -315,7 +315,7 @@ class MotorBikePDFWorker {
                 }
                 
                 
-                let attrCodeModelTitlePDF = weakself.getTitle(mainString: "เกียร์", value: "")
+                let attrCodeModelTitlePDF = weakself.getTitle(mainString: String.localized("car_interior_gear_label"), value: "")
                 let _ = weakself.drawString(attrString: attrCodeModelTitlePDF,
                                                              x: mapPoint["v1"]!,
                                                              y: mapPoint["h4"]!,
@@ -333,7 +333,7 @@ class MotorBikePDFWorker {
                 
                 
                 //MARK: engineNumberCar
-                let attrEngineNumberTitlePDF = weakself.getTitle(mainString: "หมายเลขเครื่อง", value: "")
+                let attrEngineNumberTitlePDF = weakself.getTitle(mainString: String.localized("car_grade_serial_number_title"), value: "")
                 let _ = weakself.drawString(attrString: attrEngineNumberTitlePDF,
                                                                 x: mapPoint["v1"]!,
                                                                 y: mapPoint["h5"]!,
@@ -344,7 +344,7 @@ class MotorBikePDFWorker {
                 let notValidateEngineCar = model.isInValidEngineNumber ?? false
                 let reasonInvalidEngineNumber = "\(model.reasonInValidEngineNumber?.pdfValidateString2 ?? "-")"
                 let engineNumber2 = "\(model.engineNumber?.pdfValidateString ?? "-")"
-                var engineNumber = notValidateEngineCar ? "ตรวจสอบไม่ได้  " : ""
+                var engineNumber = notValidateEngineCar ? "\(String.localized("car_detail_unable_to_verified_label"))  " : ""
                 engineNumber += notValidateEngineCar ? reasonInvalidEngineNumber : engineNumber2
                 let attrEngineNumberValuePDF = weakself.getTitle(mainString: engineNumber.uppercased(),
                                                         value: "", textColor: .darkGray)
@@ -359,7 +359,7 @@ class MotorBikePDFWorker {
                  
                 
                 //MARK: brand
-                let attrBrandTitlePDF = weakself.getTitle(mainString: "ยี่ห้อ", value: "")
+                let attrBrandTitlePDF = weakself.getTitle(mainString: String.localized("car_exterior_make_label"), value: "")
                 let _ = weakself.drawString(attrString: attrBrandTitlePDF,
                                                          x: mapPoint["v3"]!,
                                                          y: mapPoint["h1"]!,
@@ -386,8 +386,8 @@ class MotorBikePDFWorker {
                 
                 //MARK: CC Value
                 var capacityCarText = "\(model.engineCapacity?.pdfValidateString ?? "-")  "
-                capacityCarText += "\tปีผลิต \(model.year?.pdfValidateString ?? "-")  "
-                capacityCarText += "ปีจดทะเบียน \(model.registrationYear?.pdfValidateString ?? "-")"
+                capacityCarText += "\t\(String.localized("create_model_build_year_label")) \(model.year?.pdfValidateString ?? "-")  "
+                capacityCarText += "\(String.localized("car_detail_year_regis_label")) \(model.registrationYear?.pdfValidateString ?? "-")"
                 let attrCCValuePDF = weakself.getTitle(mainString: capacityCarText.uppercased(),
                                               value: "", textColor: .darkGray)
                 let _ = weakself.drawString(attrString: attrCCValuePDF,
@@ -396,7 +396,7 @@ class MotorBikePDFWorker {
                                                       isTable: true)
                  
                 //MARK: Registration
-                let attrRegistrationTitlePDF = weakself.getTitle(mainString: "หมายเลขทะเบียน", value: "")
+                let attrRegistrationTitlePDF = weakself.getTitle(mainString: String.localized("car_detail_registration_label"), value: "")
                 let _ = weakself.drawString(attrString: attrRegistrationTitlePDF,
                                                                 x: mapPoint["v1"]!,
                                                                 y: mapPoint["h1"]!,
@@ -438,7 +438,7 @@ class MotorBikePDFWorker {
                 
                 
                 //MARK: VIN
-                let attrVinTitlePDF = weakself.getTitle(mainString: "หมายเลขตัวถัง", value: "")
+                let attrVinTitlePDF = weakself.getTitle(mainString: String.localized("car_detail_vin_number_label"), value: "")
                 let _ = weakself.drawString(attrString: attrVinTitlePDF,
                                                        x: mapPoint["v3"]!,
                                                        y: mapPoint["h4"]!,
@@ -448,7 +448,7 @@ class MotorBikePDFWorker {
                 let notValidateVinNumber = model.isInValidVinNumber ?? false
                 let reasonInValidVinNumber = "\(model.reasonInValidVinNumber?.pdfValidateString2 ?? "")"
                 let vinNumber2 = "\(model.vinNumber?.pdfValidateString ?? "-")"
-                var vinNumber = notValidateVinNumber ? "ตรวจสอบไม่ได้  " : ""
+                var vinNumber = notValidateVinNumber ? "\(String.localized("car_detail_unable_to_verified_label"))  " : ""
                 vinNumber += notValidateVinNumber ?  reasonInValidVinNumber : vinNumber2
                 let attrVinValuePDF = weakself.getTitle(mainString: vinNumber.uppercased(),
                                                value: "", textColor: .darkGray)
@@ -459,7 +459,7 @@ class MotorBikePDFWorker {
                  
                 
                 //MARK: Annotation
-                let attrGasNumberTitlePDF = weakself.getTitle(mainString: "หมายเหตุ", value: "")
+                let attrGasNumberTitlePDF = weakself.getTitle(mainString: String.localized("car_trunk_remarks_placeholder"), value: "")
                 let _ = weakself.drawString(attrString: attrGasNumberTitlePDF,
                                                              x: mapPoint["v3"]!,
                                                              y: mapPoint["h5"]!,
@@ -482,14 +482,14 @@ class MotorBikePDFWorker {
                 let underReceiverText5 = underTable + 10
                   
                 //MARK: 🔸Draw Signature
-                let sig1ValueText = "ลงชื่อ___________________________ผู้ส่งมอบ"
+                let sig1ValueText = "\(String.localized("car_pdf_autograph_label"))___________________________\(String.localized("pick_up_deliverer_title"))"
                 let sig1ValueTextPDF = weakself.getTitle(mainString: sig1ValueText, value: "")
                 let sig1ValueTextPDFRect = weakself.drawString(attrString: sig1ValueTextPDF,
                                                              x: centerPosition,
                                                              y: underReceiverText5 + (margin + 2))
                 
                 //MARK: 🔸Draw Signature
-                let sig2ValueText = "ลงชื่อ___________________________ผู้รับมอบ"
+                let sig2ValueText = "\(String.localized("car_pdf_autograph_label"))___________________________\(String.localized("car_pdf_recipient_label"))"
                 let sig2ValueTextPDF = weakself.getTitle(mainString: sig2ValueText, value: "")
                 let _ = weakself.drawString(attrString: sig2ValueTextPDF,
                                                              x: trailingPosition,
@@ -512,213 +512,213 @@ class MotorBikePDFWorker {
 //                    print("point ▻\(k)  pos ▻\(v)")
 //                }
 
-                setTextWithPosition(title: "ไฟเลี้ยวหลัง R",
+                setTextWithPosition(title: String.localized("motorbike_pdf_rear_turn_lamp_label_r"),
                                     value: model.rearTurnSignalR?.pdfValidateString ?? "-",
                                     titleX: mapPoint2["v1"]!, titleY: mapPoint2["h1"]!,
                                     valueX: mapPoint2["v2"]!, valueY: mapPoint2["h1"]!)
                 
-                setTextWithPosition(title: "กาบข้าง R",
+                setTextWithPosition(title: String.localized("motorbike_pdf_r_flank_lamp_label"),
                                     value: model.bodyCladdingR?.pdfValidateString ?? "-",
                                     titleX: mapPoint2["v1"]!, titleY: mapPoint2["h2"]!,
                                     valueX: mapPoint2["v2"]!, valueY: mapPoint2["h2"]!)
                 
-                setTextWithPosition(title: "ท่อไอเสีย",
+                setTextWithPosition(title: String.localized("motorbike_exterior_exhaust_pipe_label"),
                                     value: model.exhaustPipe?.pdfValidateString ?? "-",
                                     titleX: mapPoint2["v1"]!, titleY: mapPoint2["h3"]!,
                                     valueX: mapPoint2["v2"]!, valueY: mapPoint2["h3"]!)
                 
-                setTextWithPosition(title: "พักเท้าหลัง R/L",
+                setTextWithPosition(title: "\(String.localized("motorbike_pdf_rest_legs_label")) R/L",
                                     value: model.rearFootRest?.pdfValidateString ?? "-",
                                     titleX: mapPoint2["v1"]!, titleY: mapPoint2["h4"]!,
                                     valueX: mapPoint2["v2"]!, valueY: mapPoint2["h4"]!)
                 
-                setTextWithPosition(title: "คันสตาร์ค",
+                setTextWithPosition(title: String.localized("motorbike_pdf_konstak_label"),
                                     value: model.starterLever?.pdfValidateString ?? "-",
                                     titleX: mapPoint2["v1"]!, titleY: mapPoint2["h5"]!,
                                     valueX: mapPoint2["v2"]!, valueY: mapPoint2["h5"]!)
                 
-                setTextWithPosition(title: "พักเท้าหน้า R/L",
+                setTextWithPosition(title: String.localized("motorbike_exterior_footrest_r/l_label"),
                                     value: model.frontFootRest?.pdfValidateString ?? "-",
                                     titleX: mapPoint2["v1"]!, titleY: mapPoint2["h6"]!,
                                     valueX: mapPoint2["v2"]!, valueY: mapPoint2["h6"]!)
                 
                 
-                setTextWithPosition(title: "ขาตั้งเดี่ยว",
+                setTextWithPosition(title: String.localized("motorbike_exterior_single_stand_label"),
                                     value: model.sideStand?.pdfValidateString ?? "-",
                                     titleX: mapPoint2["v1"]!, titleY: mapPoint2["h7"]!,
                                     valueX: mapPoint2["v2"]!, valueY: mapPoint2["h7"]!)
                 
-                setTextWithPosition(title: "ขาตั้งคู่",
+                setTextWithPosition(title: String.localized("motorbike_exterior_double_stand_label"),
                                     value: model.doubleStand?.pdfValidateString ?? "-",
                                     titleX: mapPoint2["v1"]!, titleY: mapPoint2["h8"]!,
                                     valueX: mapPoint2["v2"]!, valueY: mapPoint2["h8"]!)
                 
-                setTextWithPosition(title: "บังลม R",
+                setTextWithPosition(title: String.localized("motorbike_exterior_wind_shield_r_label"),
                                     value: model.windScreenR?.pdfValidateString ?? "-",
                                     titleX: mapPoint2["v1"]!, titleY: mapPoint2["h9"]!,
                                     valueX: mapPoint2["v2"]!, valueY: mapPoint2["h9"]!)
                 
-                setTextWithPosition(title: "ช่องอเนกประสงค์ R",
+                setTextWithPosition(title: String.localized("motorbike_exterior_compartment_r_label"),
                                     value: model.multiPurposeR?.pdfValidateString ?? "-",
                                     titleX: mapPoint2["v1"]!, titleY: mapPoint2["h10"]!,
                                     valueX: mapPoint2["v2"]!, valueY: mapPoint2["h10"]!)
                 
-                setTextWithPosition(title: "กระจก R",
+                setTextWithPosition(title: String.localized("motorbike_exterior_side_mirror_r_label"),
                                     value: model.mirrorR?.pdfValidateString ?? "-",
                                     titleX: mapPoint2["v1"]!, titleY: mapPoint2["h11"]!,
                                     valueX: mapPoint2["v2"]!, valueY: mapPoint2["h11"]!)
                 
-                setTextWithPosition(title: "มือเบรค R",
+                setTextWithPosition(title: String.localized("motorbike_exterior_hand_brake_r_label"),
                                     value: model.handBreakR?.pdfValidateString ?? "-",
                                     titleX: mapPoint2["v1"]!, titleY: mapPoint2["h12"]!,
                                     valueX: mapPoint2["v2"]!, valueY: mapPoint2["h12"]!)
                 
-                setTextWithPosition(title: "เรือนไมล์",
+                setTextWithPosition(title: String.localized("motorbike_exterior_dashboard_label"),
                                     value: model.milesDisplay?.pdfValidateString ?? "-",
                                     titleX: mapPoint2["v1"]!, titleY: mapPoint2["h13"]!,
                                     valueX: mapPoint2["v2"]!, valueY: mapPoint2["h13"]!)
                 
-                setTextWithPosition(title: "หน้ากาก",
+                setTextWithPosition(title: String.localized("motorbike_exterior_maks_label"),
                                     value: model.mask?.pdfValidateString ?? "-",
                                     titleX: mapPoint2["v1"]!, titleY: mapPoint2["h14"]!,
                                     valueX: mapPoint2["v2"]!, valueY: mapPoint2["h14"]!)
                 
-                setTextWithPosition(title: "ไฟหน้า",
+                setTextWithPosition(title: String.localized("motorbike_exterior_head_light_label"),
                                     value: model.frontLight?.pdfValidateString ?? "-",
                                     titleX: mapPoint2["v1"]!, titleY: mapPoint2["h15"]!,
                                     valueX: mapPoint2["v2"]!, valueY: mapPoint2["h15"]!)
                 
-                setTextWithPosition(title: "ไฟเลี้ยวหน้า R",
+                setTextWithPosition(title: String.localized("motorbike_exterior_turn_light_r_label"),
                                     value: model.frontTurnSignalR?.pdfValidateString ?? "-",
                                     titleX: mapPoint2["v1"]!, titleY: mapPoint2["h16"]!,
                                     valueX: mapPoint2["v2"]!, valueY: mapPoint2["h16"]!)
                 
-                setTextWithPosition(title: "บังโคลนหน้า",
+                setTextWithPosition(title: String.localized("motorbike_exterior_front_fender_label"),
                                     value: model.frontFender?.pdfValidateString ?? "-",
                                     titleX: mapPoint2["v1"]!, titleY: mapPoint2["h17"]!,
                                     valueX: mapPoint2["v2"]!, valueY: mapPoint2["h17"]!)
                 
-                setTextWithPosition(title: "ล้อหน้า",
+                setTextWithPosition(title: String.localized("motorbike_exterior_front_tire_label"),
                                     value: "\(model.frontWheel?.pdfValidateString ?? "-")  \t\t\(model.frontWheelType?.pdfValidateString2 ?? "")",
                                     titleX: mapPoint2["v1"]!, titleY: mapPoint2["h18"]!,
                                     valueX: mapPoint2["v2"]!, valueY: mapPoint2["h18"]!)
                 
-                setTextWithPosition(title: "ยางหน้า",
+                setTextWithPosition(title: String.localized("motorbike_exterior_tire_label"),
                                     value: model.frontTire?.pdfValidateString ?? "-",
                                     titleX: mapPoint2["v1"]!, titleY: mapPoint2["h19"]!,
                                     valueX: mapPoint2["v2"]!, valueY: mapPoint2["h19"]!)
                 
-                setTextWithPosition(title: "เบรคหน้า",
+                setTextWithPosition(title: String.localized("motorbike_exterior_front_brake_label"),
                                     value: "\(model.frontBrake?.pdfValidateString ?? "-")  \t\t\(model.frontBrakeType?.pdfValidateString2 ?? "")",
                                     titleX: mapPoint2["v1"]!, titleY: mapPoint2["h20"]!,
                                     valueX: mapPoint2["v2"]!, valueY: mapPoint2["h20"]!)
               
-                setTextWithPosition(title: "ปั้มดิสเบรคหน้า",
+                setTextWithPosition(title: String.localized("motorbike_exterior_disk_brake_pump_label"),
                                     value: model.frontPumpDiscBrakes?.pdfValidateString ?? "-",
                                     titleX: mapPoint2["v1"]!, titleY: mapPoint2["h21"]!,
                                     valueX: mapPoint2["v2"]!, valueY: mapPoint2["h21"]!)
                 
-                setTextWithPosition(title: "กระปุกน้ำมันดิสเบรคหน้า",
+                setTextWithPosition(title: String.localized("motorbike_exterior_disk_brake_oil_canister_label"),
                                     value: model.frontOilTankDiscBrakes?.pdfValidateString ?? "-",
                                     titleX: mapPoint2["v1"]!, titleY: mapPoint2["h22"]!,
                                     valueX: mapPoint2["v2"]!, valueY: mapPoint2["h22"]!)
                 
-                setTextWithPosition(title: "โช๊คหน้า",
+                setTextWithPosition(title: String.localized("motorbike_exterior_shock_absorber_label"),
                                     value: model.frontShockup?.pdfValidateString ?? "-",
                                     titleX: mapPoint2["v1"]!, titleY: mapPoint2["h23"]!,
                                     valueX: mapPoint2["v2"]!, valueY: mapPoint2["h23"]!)
                 
-                setTextWithPosition(title: "บังโซ่",
+                setTextWithPosition(title: String.localized("motorbike_exterior_chain_guard_label"),
                                     value: model.chainCover?.pdfValidateString ?? "-",
                                     titleX: mapPoint2["v1"]!, titleY: mapPoint2["h24"]!,
                                     valueX: mapPoint2["v2"]!, valueY: mapPoint2["h24"]!)
                 
-                setTextWithPosition(title: "มือเบรค L",
+                setTextWithPosition(title: String.localized("motorbike_exterior_hand_brake_l_label"),
                                     value: model.handBreakL?.pdfValidateString ?? "-",
                                     titleX: mapPoint2["v3"]!, titleY: mapPoint2["h1"]!,
                                     valueX: mapPoint2["v4"]!, valueY: mapPoint2["h1"]!)
                 
-                setTextWithPosition(title: "มือครัช",
+                setTextWithPosition(title: String.localized("motorbike_pdf_clutch_label"),
                                     value: model.handClutch?.pdfValidateString ?? "-",
                                     titleX: mapPoint2["v3"]!, titleY: mapPoint2["h2"]!,
                                     valueX: mapPoint2["v4"]!, valueY: mapPoint2["h2"]!)
                 
-                setTextWithPosition(title: "ไฟเลี้ยวหน้า L",
+                setTextWithPosition(title: String.localized("motorbike_exterior_turn_light_l_label"),
                                     value: model.frontTurnSignalL?.pdfValidateString ?? "-",
                                     titleX: mapPoint2["v3"]!, titleY: mapPoint2["h3"]!,
                                     valueX: mapPoint2["v4"]!, valueY: mapPoint2["h3"]!)
                 
-                setTextWithPosition(title: "กระจก L",
+                setTextWithPosition(title:String.localized("motorbike_exterior_side_mirror_l_label"),
                                     value: model.mirrorL?.pdfValidateString ?? "-",
                                     titleX: mapPoint2["v3"]!, titleY: mapPoint2["h4"]!,
                                     valueX: mapPoint2["v4"]!, valueY: mapPoint2["h4"]!)
                 
-                setTextWithPosition(title: "บังลม L",
+                setTextWithPosition(title: String.localized("motorbike_exterior_wind_shield_l_label"),
                                     value: model.windScreenL?.pdfValidateString ?? "-",
                                     titleX: mapPoint2["v3"]!, titleY: mapPoint2["h5"]!,
                                     valueX: mapPoint2["v4"]!, valueY: mapPoint2["h5"]!)
                 
-                setTextWithPosition(title: "กาบข้าง L",
+                setTextWithPosition(title: String.localized("motorbike_exterior_side_l_label"),
                                     value: model.bodyCladdingL?.pdfValidateString ?? "-",
                                     titleX: mapPoint2["v3"]!, titleY: mapPoint2["h6"]!,
                                     valueX: mapPoint2["v4"]!, valueY: mapPoint2["h6"]!)
                 
-                setTextWithPosition(title: "เบาะ",
+                                    setTextWithPosition(title: String.localized("motorbike_exterior_seat_label"),
                                     value: model.seat?.pdfValidateString ?? "-",
                                     titleX: mapPoint2["v3"]!, titleY: mapPoint2["h7"]!,
                                     valueX: mapPoint2["v4"]!, valueY: mapPoint2["h7"]!)
                 
-                setTextWithPosition(title: "โครงเหล็กท้ายเบาะ",
+                setTextWithPosition(title: String.localized("motorbike_exterior_seat_iron_frame_label"),
                                     value: model.rearSeatRack?.pdfValidateString ?? "-",
                                     titleX: mapPoint2["v3"]!, titleY: mapPoint2["h8"]!,
                                     valueX: mapPoint2["v4"]!, valueY: mapPoint2["h8"]!)
                 
-                setTextWithPosition(title: "ไฟเลี้ยวหลัง L",
+                setTextWithPosition(title: String.localized("motorbike_pdf_rear_turn_lamp_label_l"),
                                     value: model.rearTurnSignalL?.pdfValidateString ?? "-",
                                     titleX: mapPoint2["v3"]!, titleY: mapPoint2["h9"]!,
                                     valueX: mapPoint2["v4"]!, valueY: mapPoint2["h9"]!)
                 
-                setTextWithPosition(title: "ไฟท้าย",
+                setTextWithPosition(title: String.localized("motorbike_exterior_tail_light_label"),
                                     value: model.rearLight?.pdfValidateString ?? "-",
                                     titleX: mapPoint2["v3"]!, titleY: mapPoint2["h10"]!,
                                     valueX: mapPoint2["v4"]!, valueY: mapPoint2["h10"]!)
                 
-                setTextWithPosition(title: "บังโคลนท้าย",
+                setTextWithPosition(title: String.localized("motorbike_exterior_rear_fender_label"),
                                     value: model.rearFender?.pdfValidateString ?? "-",
                                     titleX: mapPoint2["v3"]!, titleY: mapPoint2["h11"]!,
                                     valueX: mapPoint2["v4"]!, valueY: mapPoint2["h11"]!)
                 
-                setTextWithPosition(title: "ช่องอเนกประสงค์ L",
+                setTextWithPosition(title: String.localized("motorbike_exterior_compartment_l_label"),
                                     value: model.multiPurposeL?.pdfValidateString ?? "-",
                                     titleX: mapPoint2["v3"]!, titleY: mapPoint2["h12"]!,
                                     valueX: mapPoint2["v4"]!, valueY: mapPoint2["h12"]!)
                 
-                setTextWithPosition(title: "ล้อหลัง",
+                setTextWithPosition(title: String.localized("motorbike_pdf_rear_wheel_label"),
                                     value: "\(model.rearWheel?.pdfValidateString ?? "-") \t\t\(model.rearWheelType?.pdfValidateString2 ?? "")",
                                     titleX: mapPoint2["v3"]!, titleY: mapPoint2["h13"]!,
                                     valueX: mapPoint2["v4"]!, valueY: mapPoint2["h13"]!)
                 
-                setTextWithPosition(title: "ยางหลัง",
+                setTextWithPosition(title: String.localized("motorbike_exterior_rear_tire_label"),
                                     value: model.rearTire?.pdfValidateString ?? "-",
                                     titleX: mapPoint2["v3"]!, titleY: mapPoint2["h14"]!,
                                     valueX: mapPoint2["v4"]!, valueY: mapPoint2["h14"]!)
                 
-                setTextWithPosition(title: "เบรคหลัง",
+                setTextWithPosition(title: String.localized("motorbike_exterior_rear_brake_label"),
                                     value: "\(model.rearBrake?.pdfValidateString ?? "-") \t\t\(model.rearBrakeType?.pdfValidateString2 ?? "")",
                                     titleX: mapPoint2["v3"]!, titleY: mapPoint2["h15"]!,
                                     valueX: mapPoint2["v4"]!, valueY: mapPoint2["h15"]!)
                 
-                setTextWithPosition(title: "ปั้มดิสเบรคหลัง",
+                setTextWithPosition(title: String.localized("motorbike_pdf_rear_brake_pump_label"),
                                     value: model.rearPumpDiscBrakes?.pdfValidateString ?? "-",
                                     titleX: mapPoint2["v3"]!, titleY: mapPoint2["h16"]!,
                                     valueX: mapPoint2["v4"]!, valueY: mapPoint2["h16"]!)
                 
-                setTextWithPosition(title: "กระปุกน้ำมันดิสเบรคหลัง",
+                setTextWithPosition(title: String.localized("motorbike_pdf_rear_brake_cylinder_label"),
                                     value: model.rearOilTankDiscBrakes?.pdfValidateString ?? "-",
                                     titleX: mapPoint2["v3"]!, titleY: mapPoint2["h17"]!,
                                     valueX: mapPoint2["v4"]!, valueY: mapPoint2["h17"]!)
                 
-                setTextWithPosition(title: "โช๊คหลัง",
+                setTextWithPosition(title: String.localized("motorbike_pdf_rear_shock_label"),
                                     value: model.rearShockup?.pdfValidateString ?? "-",
                                     titleX: mapPoint2["v3"]!, titleY: mapPoint2["h18"]!,
                                     valueX: mapPoint2["v4"]!, valueY: mapPoint2["h18"]!)
@@ -728,67 +728,67 @@ class MotorBikePDFWorker {
                                     titleX: mapPoint2["v3"]!, titleY: mapPoint2["h19"]!,
                                     valueX: mapPoint2["v4"]!, valueY: mapPoint2["h19"]!)
                 
-                setTextWithPosition(title: "ถังน้ำมัน",
+                setTextWithPosition(title: String.localized("motorbike_pdf_tank_label"),
                                     value: model.oilTank?.pdfValidateString ?? "-",
                                     titleX: mapPoint2["v3"]!, titleY: mapPoint2["h20"]!,
                                     valueX: mapPoint2["v4"]!, valueY: mapPoint2["h20"]!)
                 
-                setTextWithPosition(title: "แบตเตอรี่",
+                setTextWithPosition(title: String.localized("car_engine_battery_label"),
                                     value: model.battery?.pdfValidateString ?? "-",
                                     titleX: mapPoint2["v3"]!, titleY: mapPoint2["h21"]!,
                                     valueX: mapPoint2["v4"]!, valueY: mapPoint2["h21"]!)
                 
-                setTextWithPosition(title: "กล่องควบคุม (CDI)",
+                setTextWithPosition(title: String.localized("motorbike_exterior_cdi_label"),
                                     value: model.cdiBox?.pdfValidateString ?? "-",
                                     titleX: mapPoint2["v3"]!, titleY: mapPoint2["h22"]!,
                                     valueX: mapPoint2["v4"]!, valueY: mapPoint2["h22"]!)
                 
-                setTextWithPosition(title: "เครื่องมือ",
+                setTextWithPosition(title: String.localized("car_trunk_tools_label"),
                                     value: model.toolSpare?.pdfValidateString ?? "-",
                                     titleX: mapPoint2["v3"]!, titleY: mapPoint2["h23"]!,
                                     valueX: mapPoint2["v4"]!, valueY: mapPoint2["h23"]!)
                 
                 
                 
-                setTextWithPosition(title: "สตาร์ทมือ",
-                                    value: model.isHandStart ?? false ? "มี" : "ไม่มี",
+                setTextWithPosition(title: String.localized("motorbike_inspection_engine_hand_start_label"),
+                                    value: model.isHandStart ?? false ? string_pdf_yes : string_pdf_no,
                                     titleX: mapPoint2["v3"]!, titleY: mapPoint2["h24"]!,
                                     valueX: mapPoint2["v4"]!, valueY: mapPoint2["h24"]!)
                 
-                setTextWithPosition(title: "สตาร์ทเท้า",
-                                    value: model.isKickStart ?? false ? "มี" : "ไม่มี",
+                setTextWithPosition(title: String.localized("motorbike_inspection_engine_foot_start_label"),
+                                    value: model.isKickStart ?? false ? string_pdf_yes : string_pdf_no,
                                     titleX: mapPoint2["v1"]!, titleY: mapPoint2["h25"]!,
                                     valueX: mapPoint2["v2"]!, valueY: mapPoint2["h25"]!)
                 
-                setTextWithPosition(title: "แผ่นป้ายทะเบียน",
-                                    value: model.isRegistrationPlate ?? false ? "มี" : "ไม่มี",
+                setTextWithPosition(title: String.localized("motorbike_inspection_engine_registration_plate_label"),
+                                    value: model.isRegistrationPlate ?? false ? string_pdf_yes : string_pdf_no,
                                     titleX: mapPoint2["v3"]!, titleY: mapPoint2["h25"]!,
                                     valueX: mapPoint2["v4"]!, valueY: mapPoint2["h25"]!)
                 
-                setTextWithPosition(title: "ระบบจ่ายเชื้อเพลิง",
+                setTextWithPosition(title: String.localized("motorbike_pdf_fuel_system_label"),
                                     value: model.fuelDeliveryName?.pdfValidateString2 ?? "-",
                                     titleX: mapPoint2["v1"]!, titleY: mapPoint2["h26"]!,
                                     valueX: mapPoint2["v2"]!, valueY: mapPoint2["h26"]!)
                 
-                setTextWithPosition(title: "เครื่องยนต์",
+                setTextWithPosition(title: String.localized("inspection_engine_title"),
                                     value: model.engineCondition?.pdfValidateString2 ?? "-",
                                     titleX: mapPoint2["v3"]!, titleY: mapPoint2["h26"]!,
                                     valueX: mapPoint2["v4"]!, valueY: mapPoint2["h26"]!)
                 
-                setTextWithPosition(title: "เกียร์",
+                setTextWithPosition(title: String.localized("create_model_gearbox_label"),
                                     value: model.gearCondition?.pdfValidateString2 ?? "-",
                                     titleX: mapPoint2["v1"]!, titleY: mapPoint2["h27"]!,
                                     valueX: mapPoint2["v2"]!, valueY: mapPoint2["h27"]!)
                 
-                setTextWithPosition(title: "เบรค",
+                setTextWithPosition(title: String.localized("motorbike_pdf_brake_label"),
                                     value: model.brakeCondition?.pdfValidateString2 ?? "-",
                                     titleX: mapPoint2["v3"]!, titleY: mapPoint2["h27"]!,
                                     valueX: mapPoint2["v4"]!, valueY: mapPoint2["h27"]!)
                 
                 
                 //MARK: Keys
-                setTextWithPosition(title: "กุญแจ",
-                                    value: "\(model.itemKeys2) ดอก",
+                setTextWithPosition(title: String.localized("car_interior_key_label"),
+                                    value: "\(model.itemKeys2) \(String.localized("motorbike_pdf_flower_label"))",
                                     titleX: mapPoint2["v1"]!, titleY: mapPoint2["h28"]!,
                                     valueX: mapPoint2["v2"]!, valueY: mapPoint2["h28"]!)
                
@@ -796,20 +796,20 @@ class MotorBikePDFWorker {
                 var redBookCondition = "-"
                 switch model.redBookCondition?.uppercased() {
                 case "G":
-                    redBookCondition = "Good / ดี"
+                    redBookCondition = String.localized("motorbike_pdf_good_label")
                 case "A":
-                    redBookCondition = "Average / ปานกลาง"
+                    redBookCondition = String.localized("motorbike_pdf_average_label")
                 case "F":
-                    redBookCondition = "Fair / พอใช้"
+                    redBookCondition = String.localized("motorbike_pdf_fair_label")
                 case "P":
-                    redBookCondition = "Poor / แย่"
+                    redBookCondition = String.localized("motorbike_pdf_poor_label")
                 case "Y":
-                    redBookCondition = "Scrap / ซาก"
+                    redBookCondition = String.localized("motorbike_pdf_scrap_label")
                 default:
                     break
                 }
                 
-                setTextWithPosition(title: "สภาพรถ",
+                setTextWithPosition(title: String.localized("motorbike_inspection_engine_condition_label"),
                                     value: redBookCondition,
                                     titleX: mapPoint2["v3"]!, titleY: mapPoint2["h28"]!,
                                     valueX: mapPoint2["v4"]!, valueY: mapPoint2["h28"]!)
@@ -822,8 +822,8 @@ class MotorBikePDFWorker {
                 
                 let noteOtherValue = model.otherNote?
                                     .pdfValidateString
-                                    .pdfReFormString(title: "อื่นๆ ")  ?? "-"
-                let noteOtherText = "อื่นๆ  \(noteOtherValue)"
+                                    .pdfReFormString(title: "\(String.localized("car_interior_others_label")) ")  ?? "-"
+                let noteOtherText = "\(String.localized("car_interior_others_label"))  \(noteOtherValue)"
                 
                 let attrNoteOtherPDF = weakself.getTitle(mainString: noteOtherText, value: noteOtherValue)
                 let attrNoteOtherPDFSizeRect = weakself.drawString(attrString: attrNoteOtherPDF,
@@ -838,7 +838,7 @@ class MotorBikePDFWorker {
                                endY: underNote)
                 
                 //MARK: vin rubbing
-                let vinRubbingText = "ที่ว่างสำหรับติดกระดาษลอกลาย / place for stick VIN rubbing tape"
+                let vinRubbingText = String.localized("car_pdf_pasting_peel_label")
                 let attrVinRubbingPDFTitle = weakself.getTitle(mainString: vinRubbingText,
                                                          value: "")
                 let _ = weakself.drawString(attrString: attrVinRubbingPDFTitle,

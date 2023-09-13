@@ -355,7 +355,7 @@ extension ReceiverCarModel {
         guard let item = mapKeys, item.count > 0 else { return "" }
         return item.reduce("", { (result, item) -> String in
             if let value = item.value as? String , value.toInt() > 0{
-                return result + "  • \(item.key) \(item.value) ดอก"
+                return result + "  • \(item.key) \(item.value) \(String.localized("motorbike_pdf_flower_label"))"
             }else{
                 return result
             }

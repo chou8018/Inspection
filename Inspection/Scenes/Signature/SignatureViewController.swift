@@ -14,90 +14,103 @@ import UIKit
 
 protocol SignatureDisplayLogic: AnyObject
 {
-  func displaySomething(viewModel: Signature.Something.ViewModel)
+    func displaySomething(viewModel: Signature.Something.ViewModel)
     func displayTitle(viewModel: Signature.Something.ViewModel)
     func getSignature(viewModel: Signature.Something.ViewModel)
     var confirmSignature : ((UIImage? , Signature.USER?) -> Void)? { get set }
 }
 
-class SignatureViewController: UIViewController, SignatureDisplayLogic
+class SignatureViewController: ViewController, SignatureDisplayLogic
 {
     
     
-  var interactor: SignatureBusinessLogic?
-  var router: (NSObjectProtocol & SignatureRoutingLogic & SignatureDataPassing)?
+    var interactor: SignatureBusinessLogic?
+    var router: (NSObjectProtocol & SignatureRoutingLogic & SignatureDataPassing)?
     var confirmSignature: ((UIImage?, Signature.USER?) -> Void)?
     
-  // MARK: Object lifecycle
-  
-  override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
-  {
-    super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-    setup()
-  }
-  
-  required init?(coder aDecoder: NSCoder)
-  {
-    super.init(coder: aDecoder)
-    setup()
-  }
-  
-  // MARK: Setup
-  
-  private func setup()
-  {
-    let viewController = self
-    let interactor = SignatureInteractor()
-    let presenter = SignaturePresenter()
-    let router = SignatureRouter()
-    viewController.interactor = interactor
-    viewController.router = router
-    interactor.presenter = presenter
-    presenter.viewController = viewController
-    router.viewController = viewController
-    router.dataStore = interactor
-  }
-  
-  // MARK: Routing
-  
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-  {
-    if let scene = segue.identifier {
-      let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
-      if let router = router, router.responds(to: selector) {
-        router.perform(selector, with: segue)
-      }
+    // MARK: Object lifecycle
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
+    {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        setup()
     }
-  }
-  
-  // MARK: View lifecycle
-  
-  override func viewDidLoad()
-  {
-    super.viewDidLoad()
-    setupViews()
-    doSomething()
-  }
-  
-  // MARK: Do something
-  
-  //@IBOutlet weak var nameTextField: UITextField!
+    
+    required init?(coder aDecoder: NSCoder)
+    {
+        super.init(coder: aDecoder)
+        setup()
+    }
+    
+    // MARK: Setup
+    
+    private func setup()
+    {
+        let viewController = self
+        let interactor = SignatureInteractor()
+        let presenter = SignaturePresenter()
+        let router = SignatureRouter()
+        viewController.interactor = interactor
+        viewController.router = router
+        interactor.presenter = presenter
+        presenter.viewController = viewController
+        router.viewController = viewController
+        router.dataStore = interactor
+    }
+    
+    // MARK: Routing
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if let scene = segue.identifier {
+            let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
+            if let router = router, router.responds(to: selector) {
+                router.perform(selector, with: segue)
+            }
+        }
+    }
+    
+    // MARK: View lifecycle
+    
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
+        setupViews()
+        doSomething()
+    }
+    
+    // MARK: Do something
+    
+    //@IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var canvas : Canvas!
     @IBOutlet weak var titleLabel : UILabel!
     @IBOutlet weak var confirmButton : UIButton!
     @IBOutlet weak var signatureImageView: UIImageView!
     
-  func doSomething()
-  {
-    let request = Signature.Something.Request()
-    interactor?.setUpTitle(request: request)
-  }
-  
-  func displaySomething(viewModel: Signature.Something.ViewModel)
-  {
-    //nameTextField.text = viewModel.name
-  }
-
+    // local strings
+    @IBOutlet weak var registrationAreaLabel: UILabel!
+    @IBOutlet weak var resignButton: CustomUIButton!
+    
+    override func initLocalString() {
+        super.initLocalString()
+        
+        titleLabel.text = String.localized("receiver_car_delivered_by_label")
+        registrationAreaLabel.text = String.localized("car_signature_registration_area_label")
+        resignButton.setTitle(String.localized("car_signature_resign_button_title"), for: .normal)
+        confirmButton.setTitle(String.localized("select_inspection_dialog_yes"), for: .normal)
+    }
+    
+    func doSomething()
+    {
+        let request = Signature.Something.Request()
+        interactor?.setUpTitle(request: request)
+    }
+    
+    func displaySomething(viewModel: Signature.Something.ViewModel)
+    {
+        //nameTextField.text = viewModel.name
+    }
+    
     func displayTitle(viewModel: Signature.Something.ViewModel) {
         self.titleLabel.text = viewModel.titleName
         
@@ -114,7 +127,7 @@ class SignatureViewController: UIViewController, SignatureDisplayLogic
         confirmSignature?(viewModel.signatureImage , viewModel.user)
         dismiss(animated: true, completion: nil)
     }
-
+    
     
     func setupViews(){
         canvas.onDraw = { [weak self]  in

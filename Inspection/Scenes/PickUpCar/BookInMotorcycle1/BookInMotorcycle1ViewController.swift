@@ -16,69 +16,69 @@ import RadioGroup
 
 protocol BookInMotorcycle1DisplayLogic: AnyObject
 {
-  func displaySomething(viewModel: BookInMotorcycle1.Something.ViewModel)
+    func displaySomething(viewModel: BookInMotorcycle1.Something.ViewModel)
 }
 
-class BookInMotorcycle1ViewController: UIViewController, BookInMotorcycle1DisplayLogic
+class BookInMotorcycle1ViewController: ViewController, BookInMotorcycle1DisplayLogic
 {
-  var interactor: BookInMotorcycle1BusinessLogic?
-  var router: (NSObjectProtocol & BookInMotorcycle1RoutingLogic & BookInMotorcycle1DataPassing)?
-
-  // MARK: Object lifecycle
-  
-  override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
-  {
-    super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-    setup()
-  }
-  
-  required init?(coder aDecoder: NSCoder)
-  {
-    super.init(coder: aDecoder)
-    setup()
-  }
-  
-  // MARK: Setup
-  
-  private func setup()
-  {
-    let viewController = self
-    let interactor = BookInMotorcycle1Interactor()
-    let presenter = BookInMotorcycle1Presenter()
-    let router = BookInMotorcycle1Router()
-    viewController.interactor = interactor
-    viewController.router = router
-    interactor.presenter = presenter
-    presenter.viewController = viewController
-    router.viewController = viewController
-    router.dataStore = interactor
-  }
-  
-  // MARK: Routing
-  
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-  {
-    if let scene = segue.identifier {
-      let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
-      if let router = router, router.responds(to: selector) {
-        router.perform(selector, with: segue)
-      }
+    var interactor: BookInMotorcycle1BusinessLogic?
+    var router: (NSObjectProtocol & BookInMotorcycle1RoutingLogic & BookInMotorcycle1DataPassing)?
+    
+    // MARK: Object lifecycle
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
+    {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        setup()
     }
-  }
-  
-  // MARK: View lifecycle
-  
-  override func viewDidLoad()
-  {
-    super.viewDidLoad()
-    setUpRadio()
-    setDropdown()
-    setUITextField()
-  }
-  
-  // MARK: Do something
-  
-  //@IBOutlet weak var nameTextField: UITextField!
+    
+    required init?(coder aDecoder: NSCoder)
+    {
+        super.init(coder: aDecoder)
+        setup()
+    }
+    
+    // MARK: Setup
+    
+    private func setup()
+    {
+        let viewController = self
+        let interactor = BookInMotorcycle1Interactor()
+        let presenter = BookInMotorcycle1Presenter()
+        let router = BookInMotorcycle1Router()
+        viewController.interactor = interactor
+        viewController.router = router
+        interactor.presenter = presenter
+        presenter.viewController = viewController
+        router.viewController = viewController
+        router.dataStore = interactor
+    }
+    
+    // MARK: Routing
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if let scene = segue.identifier {
+            let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
+            if let router = router, router.responds(to: selector) {
+                router.perform(selector, with: segue)
+            }
+        }
+    }
+    
+    // MARK: View lifecycle
+    
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
+        setUpRadio()
+        setDropdown()
+        setUITextField()
+    }
+    
+    // MARK: Do something
+    
+    //@IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var frontWheelRadio: RadioGroup!
     @IBOutlet weak var frontBrakeRadio: RadioGroup!
@@ -136,21 +136,184 @@ class BookInMotorcycle1ViewController: UIViewController, BookInMotorcycle1Displa
     
     @IBOutlet weak var otherNoteTextField: MultilineTextField!
     
-  func doSomething()
-  {
-    let request = BookInMotorcycle1.Something.Request()
-    interactor?.doSomething(request: request)
-  }
-  
-  func displaySomething(viewModel: BookInMotorcycle1.Something.ViewModel)
-  {
-    //nameTextField.text = viewModel.name
-  }
-   
+    // local strings
+    @IBOutlet weak var frontTitleLabel: UILabel!
+    @IBOutlet weak var turnLightLeftLabel: UILabel!
+    @IBOutlet weak var turnLightRightLabel: UILabel!
+    @IBOutlet weak var sideMirrorLeftLabel: UILabel!
+    @IBOutlet weak var sideMirrorRightLabel: UILabel!
+    @IBOutlet weak var handBrakeLeftLabel: UILabel!
+    @IBOutlet weak var handBrakeRightLabel: UILabel!
+    @IBOutlet weak var windShieldLeftLabel: UILabel!
+    @IBOutlet weak var windShieldRightLabel: UILabel!
+    @IBOutlet weak var sideLeftLabel: UILabel!
+    @IBOutlet weak var sideRightLabel: UILabel!
+    @IBOutlet weak var headLightLabel: UILabel!
+    @IBOutlet weak var maskLabel: UILabel!
+    @IBOutlet weak var dashboardLabel: UILabel!
+    @IBOutlet weak var diskBrakeOilCanisterLabel: UILabel!
+    @IBOutlet weak var handClutchLabel: UILabel!
+    @IBOutlet weak var diskBrakePumpLabel: UILabel!
+    @IBOutlet weak var frontFerderLabel: UILabel!
+    @IBOutlet weak var startPedalLabel: UILabel!
+    @IBOutlet weak var shockAbsorberLabel: UILabel!
+    @IBOutlet weak var footrestLabel: UILabel!
+    @IBOutlet weak var tireLabel: UILabel!
+    @IBOutlet weak var compartmentRightLabel: UILabel!
+    @IBOutlet weak var compartmentLeftLabel: UILabel!
+    @IBOutlet weak var doubleLabel: UILabel!
+    @IBOutlet weak var singleStandLabel: UILabel!
+    @IBOutlet weak var backTitleLabel: UILabel!
+    @IBOutlet weak var backTurnLightLeftLabel: UILabel!
+    @IBOutlet weak var backTurnRightRightLabel: UILabel!
+    @IBOutlet weak var tailLightLabel: UILabel!
+    @IBOutlet weak var seatIronFrameLabel: UILabel!
+    @IBOutlet weak var rearFenderLabel: UILabel!
+    @IBOutlet weak var backFootestLabel: UILabel!
+    @IBOutlet weak var exhaustPipeLabel: UILabel!
+    @IBOutlet weak var chainGuardLabel: UILabel!
+    @IBOutlet weak var seatLabel: UILabel!
+    @IBOutlet weak var backDiskBrakePumpLabel: UILabel!
+    @IBOutlet weak var diskBrakeOilLabel: UILabel!
+    @IBOutlet weak var backShockAbsorberLabel: UILabel!
+    @IBOutlet weak var rearTireLabel: UILabel!
+    @IBOutlet weak var gasTankLabel: UILabel!
+    @IBOutlet weak var uBoxLabel: UILabel!
+    @IBOutlet weak var cdiLabel: UILabel!
+    @IBOutlet weak var batteryLabel: UILabel!
+    @IBOutlet weak var toolsLabel: UILabel!
+    @IBOutlet weak var frontTireLabel: UILabel!
+    @IBOutlet weak var selectRearTireLabel: UILabel!
+    @IBOutlet weak var frontBrakeLabel: UILabel!
+    @IBOutlet weak var rearBrakeLabel: UILabel!
+    @IBOutlet weak var othersLabel: UILabel!
+    
+    let strings_motorbike_exterior_spokes_alloy = [String.localized("motorbike_exterior_spokes_label"), String.localized("motorbike_exterior_alloy_label")]
+
+    let strings_motorbike_exterior_disk_drum = [String.localized("motorbike_exterior_disk_label"), String.localized("motorbike_exterior_drum_label")]
+    
+    let strings_motorbike_exterior_options_select = [String.localized("car_exterior_fair_label"), String.localized("motorbike_exterior_scratches_label"), String.localized("motorbike_exterior_fragmented_label"), String.localized("motorbike_exterior_no_label")]
+    
+    override func initLocalString() {
+        super.initLocalString()
+        
+        frontTitleLabel.text = String.localized("inspection_body_front_label")
+        turnLightLeftLabel.text = String.localized("motorbike_exterior_turn_light_l_label")
+        turnLightRightLabel.text = String.localized("motorbike_exterior_turn_light_r_label")
+        sideMirrorLeftLabel.text = String.localized("motorbike_exterior_side_mirror_l_label")
+        sideMirrorRightLabel.text = String.localized("motorbike_exterior_side_mirror_r_label")
+        handBrakeLeftLabel.text = String.localized("motorbike_exterior_hand_brake_l_label")
+        handBrakeRightLabel.text = String.localized("motorbike_exterior_hand_brake_r_label")
+        windShieldLeftLabel.text = String.localized("motorbike_exterior_wind_shield_l_label")
+        windShieldRightLabel.text = String.localized("motorbike_exterior_wind_shield_r_label")
+        sideLeftLabel.text = String.localized("motorbike_exterior_side_l_label")
+        sideRightLabel.text = String.localized("motorbike_exterior_side_r_label")
+        headLightLabel.text = String.localized("motorbike_exterior_head_light_label")
+        maskLabel.text = String.localized("motorbike_exterior_maks_label")
+        dashboardLabel.text = String.localized("motorbike_exterior_dashboard_label")
+        diskBrakeOilCanisterLabel.text = String.localized("motorbike_exterior_disk_brake_oil_canister_label")
+        handClutchLabel.text = String.localized("motorbike_exterior_hand_clutch_label")
+        diskBrakePumpLabel.text = String.localized("motorbike_exterior_disk_brake_pump_label")
+        frontFerderLabel.text = String.localized("motorbike_exterior_front_fender_label")
+        startPedalLabel.text = String.localized("motorbike_exterior_start_pedal_label")
+        shockAbsorberLabel.text = String.localized("motorbike_exterior_shock_absorber_label")
+        footrestLabel.text = String.localized("motorbike_exterior_footrest_r/l_label")
+        tireLabel.text = String.localized("motorbike_exterior_tire_label")
+        compartmentRightLabel.text = String.localized("motorbike_exterior_compartment_r_label")
+        compartmentLeftLabel.text = String.localized("motorbike_exterior_compartment_l_label")
+        doubleLabel.text = String.localized("motorbike_exterior_double_stand_label")
+        singleStandLabel.text = String.localized("motorbike_exterior_single_stand_label")
+        backTitleLabel.text = String.localized("inspection_body_back_label")
+        backTurnLightLeftLabel.text = String.localized("motorbike_exterior_turn_light_l_label")
+        backTurnRightRightLabel.text = String.localized("motorbike_exterior_turn_light_r_label")
+        tailLightLabel.text = String.localized("motorbike_exterior_tail_light_label")
+        seatIronFrameLabel.text = String.localized("motorbike_exterior_seat_iron_frame_label")
+        rearFenderLabel.text = String.localized("motorbike_exterior_rear_fender_label")
+        backFootestLabel.text = String.localized("motorbike_exterior_footrest_r/l_label")
+        exhaustPipeLabel.text = String.localized("motorbike_exterior_exhaust_pipe_label")
+        chainGuardLabel.text = String.localized("motorbike_exterior_chain_guard_label")
+        seatLabel.text = String.localized("motorbike_exterior_seat_label")
+        backDiskBrakePumpLabel.text = String.localized("motorbike_exterior_disk_brake_pump_label")
+        diskBrakeOilLabel.text = String.localized("motorbike_exterior_disk_brake_oil_canister_label")
+        backShockAbsorberLabel.text = String.localized("motorbike_exterior_shock_absorber_label")
+        rearTireLabel.text = String.localized("motorbike_exterior_rear_tire_label")
+        gasTankLabel.text = String.localized("photos_gas_tank_button_title")
+        cdiLabel.text = String.localized("motorbike_exterior_cdi_label")
+        batteryLabel.text = String.localized("car_engine_battery_label")
+        toolsLabel.text = String.localized("car_trunk_tools_label")
+        frontTireLabel.text = String.localized("motorbike_exterior_front_tire_label")
+        selectRearTireLabel.text = String.localized("motorbike_exterior_rear_tire_label")
+        frontBrakeLabel.text = String.localized("motorbike_exterior_front_brake_label")
+        rearBrakeLabel.text = String.localized("motorbike_exterior_rear_brake_label")
+        othersLabel.text = String.localized("car_interior_others_label")
+
+        frontTurnSignalLDropDown.placeholder = String.localized("motorbike_exterior_choice_label")
+        frontTurnSignalRDropDown.placeholder = String.localized("motorbike_exterior_choice_label")
+        mirrorLDropDown.placeholder = String.localized("motorbike_exterior_choice_label")
+        mirrorRDropDown.placeholder = String.localized("motorbike_exterior_choice_label")
+        handBreakLDropDown.placeholder = String.localized("motorbike_exterior_choice_label")
+        handBreakRDropDown.placeholder = String.localized("motorbike_exterior_choice_label")
+        windScreenLDropDown.placeholder = String.localized("motorbike_exterior_choice_label")
+        windScreenRDropDown.placeholder = String.localized("motorbike_exterior_choice_label")
+        bodyCladdingLDropDown.placeholder = String.localized("motorbike_exterior_choice_label")
+        bodyCladdingRDropDown.placeholder = String.localized("motorbike_exterior_choice_label")
+        frontLightDropDown.placeholder = String.localized("motorbike_exterior_choice_label")
+        maskDropDown.placeholder = String.localized("motorbike_exterior_choice_label")
+        milesDisplayDropDown.placeholder = String.localized("motorbike_exterior_choice_label")
+        frontPumpDiscBrakesDropdown.placeholder = String.localized("motorbike_exterior_choice_label")
+        frontLightDropDown.placeholder = String.localized("motorbike_exterior_choice_label")
+        handClutchDropDown.placeholder = String.localized("motorbike_exterior_choice_label")
+        frontOilTankDiscBrakesDropdown.placeholder = String.localized("motorbike_exterior_choice_label")
+        frontFenderDropDown.placeholder = String.localized("motorbike_exterior_choice_label")
+        starterLeverDropDown.placeholder = String.localized("motorbike_exterior_choice_label")
+        frontShockupDropdown.placeholder = String.localized("motorbike_exterior_choice_label")
+        frontFootRestDropDown.placeholder = String.localized("motorbike_exterior_choice_label")
+        frontTireDropDown.placeholder = String.localized("motorbike_exterior_choice_label")
+        multiPurposeLDropDown.placeholder = String.localized("motorbike_exterior_choice_label")
+        multiPurposeRDropDown.placeholder = String.localized("motorbike_exterior_choice_label")
+        doubleStandDropDown.placeholder = String.localized("motorbike_exterior_choice_label")
+        sideStandDropDown.placeholder = String.localized("motorbike_exterior_choice_label")
+        rearTurnSignalLDropDown.placeholder = String.localized("motorbike_exterior_choice_label")
+        rearTurnSignalRDropDown.placeholder = String.localized("motorbike_exterior_choice_label")
+        rearLightDropDown.placeholder = String.localized("motorbike_exterior_choice_label")
+        rearSeatRackDropDown.placeholder = String.localized("motorbike_exterior_choice_label")
+        rearFenderDropDown.placeholder = String.localized("motorbike_exterior_choice_label")
+        rearFootRestDropDown.placeholder = String.localized("motorbike_exterior_choice_label")
+        exhaustPipeDropDown.placeholder = String.localized("motorbike_exterior_choice_label")
+        chainCoverDropdown.placeholder = String.localized("motorbike_exterior_choice_label")
+        seatDropDown.placeholder = String.localized("motorbike_exterior_choice_label")
+        rearPumpDiscBrakesDropdown.placeholder = String.localized("motorbike_exterior_choice_label")
+        rearOilTankDiscBrakesDropdown.placeholder = String.localized("motorbike_exterior_choice_label")
+        rearShockupDropdown.placeholder = String.localized("motorbike_exterior_choice_label")
+        rearTireDropDown.placeholder = String.localized("motorbike_exterior_choice_label")
+        oilTankDropdown.placeholder = String.localized("motorbike_exterior_choice_label")
+        uboxDropdown.placeholder = String.localized("motorbike_exterior_choice_label")
+        cdiBoxDropdown.placeholder = String.localized("motorbike_exterior_choice_label")
+        batteryDropdown.placeholder = String.localized("motorbike_exterior_choice_label")
+        toolSpareDropdown.placeholder = String.localized("motorbike_exterior_choice_label")
+        frontWheelDropdown.placeholder = String.localized("motorbike_exterior_choice_label")
+        rearWheelDropdown.placeholder = String.localized("motorbike_exterior_choice_label")
+        frontBrakeDropdown.placeholder = String.localized("motorbike_exterior_choice_label")
+        rearBrakeDropdown.placeholder = String.localized("motorbike_exterior_choice_label")
+        otherNoteTextField.placeholder = String.localized("car_interior_others_label")
+
+    }
+    
+    func doSomething()
+    {
+        let request = BookInMotorcycle1.Something.Request()
+        interactor?.doSomething(request: request)
+    }
+    
+    func displaySomething(viewModel: BookInMotorcycle1.Something.ViewModel)
+    {
+        //nameTextField.text = viewModel.name
+    }
+    
     //MARK:Dropdown
     func setDropdown(){
-        let values = ["พอใช้", "ครูด", "แตก", "ไม่มี"]
-
+        let values = strings_motorbike_exterior_options_select
+        
         setValue(to: rearTurnSignalRDropDown, values: values) {[weak self] (selectValue)  in
             self?.rearTurnSignalRDropDown.text = selectValue
             DataController.shared.receiverCarModel.rearTurnSignalR = selectValue
@@ -357,28 +520,28 @@ class BookInMotorcycle1ViewController: UIViewController, BookInMotorcycle1Displa
         let attributedString = [NSAttributedString.Key.foregroundColor : UIColor.appPrimaryColor]
         
         frontWheelRadio.attributedTitles = [
-            NSAttributedString(string: "ซี่ลวด",
+            NSAttributedString(string: strings_motorbike_exterior_spokes_alloy[0],
                                attributes: attributedString),
-            NSAttributedString(string: "แม็กซ์",
+            NSAttributedString(string: strings_motorbike_exterior_spokes_alloy[1],
                                attributes: attributedString)
         ]
-     
+        
         frontBrakeRadio.attributedTitles = [
-            NSAttributedString(string: "ดิส",
+            NSAttributedString(string: strings_motorbike_exterior_disk_drum[0],
                                attributes: attributedString),
-            NSAttributedString(string: "ดรั้ม",
+            NSAttributedString(string: strings_motorbike_exterior_disk_drum[1],
                                attributes: attributedString)
         ]
         rearWheelRadio.attributedTitles = [
-            NSAttributedString(string: "ซี่ลวด",
+            NSAttributedString(string: strings_motorbike_exterior_spokes_alloy[0],
                                attributes: attributedString),
-            NSAttributedString(string: "แม็กซ์",
+            NSAttributedString(string: strings_motorbike_exterior_spokes_alloy[1],
                                attributes: attributedString)
         ]
         rearBrakeRadio.attributedTitles = [
-            NSAttributedString(string: "ดิส",
+            NSAttributedString(string: strings_motorbike_exterior_disk_drum[0],
                                attributes: attributedString),
-            NSAttributedString(string: "ดรั้ม",
+            NSAttributedString(string: strings_motorbike_exterior_disk_drum[1],
                                attributes: attributedString)
         ]
     }
@@ -386,25 +549,25 @@ class BookInMotorcycle1ViewController: UIViewController, BookInMotorcycle1Displa
         var selectString:String? = nil
         switch frontWheelRadio.selectedIndex {
         case 0:
-            selectString = "ซี่ลวด"
+            selectString = strings_motorbike_exterior_spokes_alloy[0]
         case 1:
-            selectString = "แม็กซ์"
-        
+            selectString = strings_motorbike_exterior_spokes_alloy[1]
+            
         default:
             return
         }
         print("🔸 frontWheel \(selectString)")
         DataController.shared.receiverCarModel.frontWheelType = selectString
     }
-      
+    
     @IBAction func frontBrakeValueChange(_ sender: Any) {
         var selectString:String? = nil
         switch frontBrakeRadio.selectedIndex {
         case 0:
-            selectString = "ดิส"
+            selectString = strings_motorbike_exterior_disk_drum[0]
         case 1:
-            selectString = "ดรั้ม"
-        
+            selectString = strings_motorbike_exterior_disk_drum[1]
+            
         default:
             return
         }
@@ -416,10 +579,10 @@ class BookInMotorcycle1ViewController: UIViewController, BookInMotorcycle1Displa
         var selectString:String? = nil
         switch rearWheelRadio.selectedIndex {
         case 0:
-            selectString = "ซี่ลวด"
+            selectString = strings_motorbike_exterior_spokes_alloy[0]
         case 1:
-            selectString = "แม็กซ์"
-        
+            selectString = strings_motorbike_exterior_spokes_alloy[1]
+            
         default:
             return
         }
@@ -431,10 +594,10 @@ class BookInMotorcycle1ViewController: UIViewController, BookInMotorcycle1Displa
         var selectString:String? = nil
         switch rearBrakeRadio.selectedIndex {
         case 0:
-            selectString = "ดิส"
+            selectString = strings_motorbike_exterior_disk_drum[0]
         case 1:
-            selectString = "ดรั้ม"
-        
+            selectString = strings_motorbike_exterior_disk_drum[1]
+            
         default:
             return
         }
@@ -443,15 +606,15 @@ class BookInMotorcycle1ViewController: UIViewController, BookInMotorcycle1Displa
     }
     
     
-     //MARK:UITextField
-     func setUITextField(){
+    //MARK:UITextField
+    func setUITextField(){
         otherNoteTextField.autocorrectionType = .no
         otherNoteTextField.delegate = self
-     }
+    }
     
     func prepareData(){
-        let wheelValue = ["ซี่ลวด", "แม็กซ์"]
-        let brakeValue = ["ดิส", "ดรั้ม"]
+        let wheelValue = strings_motorbike_exterior_spokes_alloy
+        let brakeValue = strings_motorbike_exterior_disk_drum
         let model = DataController.shared.receiverCarModel
         frontWheelRadio.selectedIndex = getRadioIndexByValue(from: wheelValue, value: model.frontWheelType)
         
@@ -461,7 +624,7 @@ class BookInMotorcycle1ViewController: UIViewController, BookInMotorcycle1Displa
         
         rearBrakeRadio.selectedIndex = getRadioIndexByValue(from: brakeValue, value: model.rearBrakeType)
         
-
+        
         rearTurnSignalRDropDown.text = model.rearTurnSignalR
         bodyCladdingRDropDown.text = model.bodyCladdingR
         exhaustPipeDropDown.text = model.exhaustPipe
@@ -516,19 +679,19 @@ class BookInMotorcycle1ViewController: UIViewController, BookInMotorcycle1Displa
 
 //MARK: keyboard
 extension BookInMotorcycle1ViewController {
-   override func viewWillAppear(_ animated: Bool) {
-       super.viewWillAppear(animated)
-       scrollView.registKeyboardNotification()
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        scrollView.registKeyboardNotification()
+        
         prepareData()
-
-   }
-   
-   override func viewDidDisappear(_ animated: Bool) {
-       super.viewDidDisappear(animated)
-       scrollView.resignKeyboardNotification()
+        
+    }
     
-   }
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        scrollView.resignKeyboardNotification()
+        
+    }
 }
 
 //MARK: TextView Delegate
@@ -541,7 +704,7 @@ extension BookInMotorcycle1ViewController : UITextViewDelegate {
     
     //MARK: set all
     func setSelectionAll(with selectValue:String){
-    
+        
         rearTurnSignalRDropDown.text = selectValue
         DataController.shared.receiverCarModel.rearTurnSignalR = selectValue
         

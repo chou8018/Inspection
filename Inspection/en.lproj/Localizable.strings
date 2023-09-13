@@ -1,0 +1,629 @@
+/* 
+  Localizable.strings
+  Inspection
+
+  Created by wanggao on 2023/8/7.
+  
+*/
+
+// login
+"login_title_label" = "Login";
+"login_user_name_placeholder" = "user name";
+"login_password_placeholder" = "password";
+"login_error_name_or_password_message_label" = "Error - Incorrect username or password";
+"login_tips_message_label" = "Encountered a problem logging in? Please contact ______";
+"login_or_label" = "or";
+"login_not_correct_label" = "not correct";
+
+// select inspection or list
+"select_inspection_label" = "Begin inspection";
+"select_inspection_list_label" = "Inspection list";
+"select_inspection_hello_label" = "Hello";
+"select_inspection_log_out" = "Log out";
+"select_inspection_log_out_dialog_title" = "Log out";
+"select_inspection_log_out_dialog_message" = "Do you wish to log out?";
+"select_inspection_dialog_no" = "No";
+"select_inspection_dialog_yes" = "Yes";
+"select_inspection_dialog_ok" = "Ok";
+"select_inspection_dialog_try" = "Try again";
+
+// select insepction type
+"select_inspection_title_label" = "Please select type of car for inspection";
+"select_inspection_car_label" = "Car";
+"select_inspection_motobike_label" = "Motorbike";
+"select_inspection_car_salvage_label" = "Car Salvage";
+"select_inspection_motobike_salvage_label" = "Motorbike Salvage";
+"select_inspection_back_to_main_button_title" = "Back to Home Page";
+"select_inspection_inspector_label" = "Inspector";
+"select_inspection_place_label" = "Place";
+"select_inspection_plant_label" = "Plant";
+
+// inspection main
+"main_inspection_title" = "Book-in";
+"main_inspection_bar_button_title" = "Main";
+"main_inspection_save_button_title" = "Save";
+"main_inspection_send_book_button_title" = "Send book-in";
+"main_inspection_bar_button_main_title" = "Main Page";
+"main_inspection_item_book_in_title" = "Book-in";
+"main_inspection_item_inspection_title" = "Inspection";
+"main_inspection_item_photos_title" = "Photos";
+"main_inspection_car_navigation_photos_title" = "Photos";
+"main_inspection_back_to_main_title" = "Do you want to go home?";
+"main_inspection_leave_edit_page_title" = "Do you want to leave the page?";
+"main_inspection_save_vehicle_title" = "Do you want to save your vehicle?";
+"main_inspection_edit_list_title" = "Do you want to edit the list?";
+
+"motorbike_pick_up_navigation_title" = "Motorbike - Book-in";
+"motorbike_inspection_navigation_title" = "Motorbike - Inspection";
+"motorbike_photos_navigation_title" = "Motorbike - Photos";
+"car_salvage_pick_up_navigation_title" = "Car Salvage - Book-in";
+"car_salvage_inspection_navigation_title" = "Car Salvage - Inspection";
+"car_salvage_photos_navigation_title" = "Car Salvage - Photos";
+"motorbike_salvage_pick_up_navigation_title" = "Motorbike Salvage - Book-in";
+"motorbike_salvage_inspection_navigation_title" = "Motorbike Salvage - Inspection";
+"motorbike_salvage_photos_navigation_title" = "Motorbike Salvage - Photos";
+
+// pick up
+"pick_up_deliverer_title" = "Deliverer";
+"pick_up_car_details_title" = "Car details";
+"pick_up_exterior_title" = "Exterior";
+"pick_up_trunk_title" = "Trunk";
+"pick_up_interior_title" = "Interior";
+"pick_up_engine_room_title" = "Engine room";
+"pick_up_date_title" = "Date";
+"pick_up_send_book_in_confirm_title" = "Do you want to send\nBook-In to IMAT ?";
+"pick_up_send_book_in_succeeded_title" = "Book-In Succeeded";
+"pick_up_send_book_in_succeeded_subtitle" = "Do you need to print IMAT QRCode ?";
+"pick_up_send_book_in_succeeded" = "Succeeded";
+
+// car salvage
+"car_salvage_details_title" = "Car wreckage";
+"car_salvage_deliverer_contract_number" = "Contract No./Claim No.";
+
+// receiver car
+"receiver_car_deliverer_name_label" = "Deliverer Name";
+"receiver_car_deliverer_name_placeholder_label" = "Name - Last name";
+"receiver_car_contract_number_label" = "Contract no.";
+"receiver_car_phone_label" = "Phone";
+"receiver_car_seller_name_label" = "Seller Name";
+"receiver_car_seller_name_placeholder_label" = "Seller Name";
+"receiver_car_plant_location_label" = "Plant location";
+"receiver_car_receive_location_label" = "Receive location";
+"receiver_car_storage_location_label" = "Storage location";
+"receiver_car_delivered_by_label" = "Delivered by";
+"receiver_car_booked_in_by_label" = "Booked-in by";
+"receiver_car_booked_in_by_placeholder_label" = "Please sign with in this area";
+"receiver_car_phone_number_is_incorrect_label" = "The phone number is incorrect";
+"receiver_car_company_no_list_label" = "The company name is not on the list";
+
+// car detail
+"car_detail_model_code_label" = "Model code";
+"car_detail_search_vehicle_model_button_title" = "Search";
+"car_detail_make_label" = "Make";
+"car_detail_bodies_label" = "Bodies";
+"car_detail_model_label" = "Model";
+"car_detail_variant_label" = "Variant";
+"car_detail_engine_size_label" = "Engine size";
+"car_detail_year_manu_label" = "Year Manu.";
+"car_detail_year_regis_label" = "Year Regis.";
+"car_detail_year_placeholder_label" = "Year";
+"car_detail_registration_label" = "Registration";
+"car_detail_no_plate_label" = "No plate";
+"car_detail_red_plate_label" = "Red plate";
+"car_detail_incorrect_plate_label" = "Incorrect plate";
+"car_detail_province_label" = "Province";
+"car_detail_color_label" = "Color";
+"car_detail_engine_number_label" = "Engine no.";
+"car_detail_unable_to_verified_label" = "Unable to verified";
+"car_detail_vin_number_label" = "Vin. no.";
+"car_detail_gas_label" = "Gas";
+"car_detail_reason_placeholder" = "Reason";
+
+// car exterior
+"car_exterior_label" = "Exterior condition";
+"car_exterior_excellent_label" = "Excellent";
+"car_exterior_good_label" = "Good";
+"car_exterior_good_first_label" = "Good";
+"car_exterior_average_label" = "Average";
+"car_exterior_fair_label" = "Fair";
+"car_exterior_poor_label" = "Poor";
+"car_exterior_as_is_label" = "As is";
+"car_exterior_salvage_label" = "Salvage";
+"car_exterior_paint_label" = "Paint condition";
+"car_exterior_spoiler_label" = "Spoiler/Wing";
+"car_exterior_alloy_wheel_label" = "Alloy wheel";
+"car_exterior_amount_label" = "Amount";
+"car_exterior_unit_label" = "Unit";
+"car_exterior_steel_wheel_label" = "Steel wheel";
+"car_exterior_tires_label" = "Tires";
+"car_exterior_make_label" = "Make";
+"car_exterior_condition_label" = "Condition";
+"car_exterior_damages_label" = "Damages Details";
+
+// car trunk
+"car_trunk_luggage_label" = "Luggage compartment condition";
+"car_trunk_remarks_placeholder" = "Remarks";
+"car_trunk_spare_tire_label" = "Spare tire";
+"car_trunk_tools_label" = "Tools";
+"car_trunk_magliner_label" = "Magliner";
+"car_trunk_roof_rag_label" = "Roof rag";
+"car_trunk_jack_label" = "Jack";
+"car_trunk_ev_charger_label" = "EV Charger";
+"car_trunk_other_accessaries_label" = "Other accessaries";
+
+// car interior
+"car_interior_condition_label" = "Internior condition";
+"car_interior_kilometer_label" = "Kilometer";
+"car_interior_mileage_label" = "Mileage";
+"car_interior_mileage_placeholder_label" = "Mileage";
+"car_interior_fuel_amount_label" = "Fuel amount";
+"car_interior_gear_label" = "Gear";
+"car_interior_airbag_label" = "Airbag";
+"car_interior_gearhead_label" = "Gearhead";
+"car_interior_power_amplifier_label" = "Power Amplifier";
+"car_interior_gear_lock_label" = "Gear lock";
+"car_interior_pre_amplifier_label" = "Pre Amplifier";
+"car_interior_stereo_label" = "Stereo";
+"car_interior_manual_look_label" = "Manual book";
+"car_interior_cigarette_lighter_label" = "Cigarette lighter";
+"car_interior_tax_sign_label" = "Tax sign";
+"car_interior_navigator_label" = "Navigator";
+"car_interior_navigator_in_label" = "Built in Navigator";
+"car_interior_no_cd_label" = "No CD";
+"car_interior_no_cd_card_label" = "No CD Card";
+"car_interior_sound_player_label" = "Sound Player";
+"car_interior_radio_label" = "Radio";
+"car_interior_tape_label" = "Tape";
+"car_interior_cd_dvd_label" = "CD/DVD";
+"car_interior_key_label" = "Key";
+"car_interior_remote_control_label" = "Remote control";
+"car_interior_remote_key_label" = "Remote key";
+"car_interior_key_immobilizer_label" = "Immobilizer";
+"car_interior_keyless_label" = "Keyless";
+"car_interior_key_placeholder_label" = "Numbers";
+"car_interior_others_label" = "Others";
+
+// car engine room
+"car_engine_room_condition_label" = "Engine room condition";
+"car_engine_battery_label" = "Battery";
+"car_engine_ecu_label" = "ECU";
+"car_engine_air_compressor_label" = "Air compressor";
+"car_engine_drive_system_label" = "Drive system";
+"car_engine_type_label" = "Engine type";
+"car_engine_benzine_label" = "Benzine";
+"car_engine_diesel_label" = "Diesel";
+"car_engine_hybrid_benzine_label" = "Hybrid / Benzine";
+"car_engine_hybrid_diesel_label" = "Hybrid / Diesel";
+"car_engine_fuel_system_label" = "Fuel system";
+"car_engine_injector_label" = "Injector";
+"car_engine_carburetor_label" = "Carburetor";
+"car_engine_gas_label" = "Gas";
+"car_engine_lpg_sequential_injection_label" = "LPG Sequential Injection";
+"car_engine_lpg_fumigation_system_label" = "LPG Fumigation System";
+"car_engine_cng_sequential_injection_label" = "CNG/NGV Sequential Injection";
+"car_engine_cng_fumigation_system_label" = "LCNG/NGV Fumigation System";
+"car_engine_other_in_car_assets_label" = "Other in car assets";
+"car_engine_turbocharger_label" = "Turbocharger";
+
+// inspection
+"inspection_body_title" = "Body";
+"inspection_engine_title" = "Engine";
+"inspection_suspension_title" = "Suspension";
+"inspection_gear_box_title" = "Gear box";
+"inspection_steering_title" = "Steering";
+"inspection_brake_title" = "Brake";
+"inspection_air_title" = "Air";
+"inspection_gauges_title" = "Gauges";
+"inspection_electrical_title" = "Electrical";
+"inspection_date_title" = "Date";
+
+// body
+"inspection_body_registration_number_label" = "Registration no.";
+"inspection_body_chassis_label" = "Chassis";
+"inspection_body_front_label" = "Front";
+"inspection_body_back_label" = "Back";
+"inspection_body_right_label" = "Right";
+"inspection_body_left_label" = "Left";
+"inspection_body_roof_label" = "Roof";
+"inspection_body_flooded_label" = "Flooded";
+"inspection_body_summary_label" = "Summary body conditions";
+"inspection_body_chassis_type_normal" = "Normal";
+"inspection_body_chassis_type_slight_repair" = "Slight repair";
+"inspection_body_chassis_type_moderate_repair" = "Moderate repair";
+"inspection_body_chassis_type_hard_repair" = "Hard to repair";
+"inspection_body_chassis_type_rotting" = "Rotting";
+
+// inspection engine
+"inspection_engine_label" = "Engine condition";
+"inspection_engine_working_label" = "Working";
+"inspection_engine_not_working_label" = "Not working";
+"inspection_engine_type_label" = "Engine type";
+"inspection_engine_oil_label" = "Engine oil";
+"inspection_engine_oil_lacking_label" = "Lacking";
+"inspection_engine_oil_notlacking_label" = "Not lacking";
+"inspection_engine_general_label" = "General condition";
+"inspection_engine_function_label" = "Function";
+"inspection_engine_loud_label" = "Loud noice";
+"inspection_engine_oil_leak_label" = "Oil leak";
+"inspection_engine_water_stain_label" = "Water stain from car radiator";
+"inspection_engine_oil_light_label" = "Engine oil light display";
+"inspection_engine_not_smoothly_label" = "Engine doesn't run smoothly";
+"inspection_engine_nedd_repair_label" = "Need repair";
+"inspection_engine_summary_label" = "Summary engine condition";
+"inspection_engine_gas_label" = "Gas";
+
+// motorbike exterior
+"motorbike_exterior_turn_light_l_label" = "Turn light L";
+"motorbike_exterior_turn_light_r_label" = "Turn light R";
+"motorbike_exterior_side_mirror_l_label" = "Side mirror L";
+"motorbike_exterior_side_mirror_r_label" = "Side mirror R";
+"motorbike_exterior_hand_brake_l_label" = "Hand brake L";
+"motorbike_exterior_hand_brake_r_label" = "Hand brake R";
+"motorbike_exterior_wind_shield_l_label" = "Wind shield L";
+"motorbike_exterior_wind_shield_r_label" = "Wind shield R";
+"motorbike_exterior_side_l_label" = "Side L";
+"motorbike_exterior_side_r_label" = "Side R";
+"motorbike_exterior_head_light_label" = "Head light";
+"motorbike_exterior_maks_label" = "Mask";
+"motorbike_exterior_dashboard_label" = "Dashboard";
+"motorbike_exterior_disk_brake_oil_canister_label" = "Disk brake oil canister";
+"motorbike_exterior_hand_clutch_label" = "Hand clutch";
+"motorbike_exterior_disk_brake_pump_label" = "Disk brake pump";
+"motorbike_exterior_front_fender_label" = "Front fender";
+"motorbike_exterior_start_pedal_label" = "Start pedal";
+"motorbike_exterior_shock_absorber_label" = "Shock absorber";
+"motorbike_exterior_footrest_r/l_label" = "Footrest R/L";
+"motorbike_exterior_tire_label" = "Tire";
+"motorbike_exterior_compartment_r_label" = "Compartment R";
+"motorbike_exterior_compartment_l_label" = "Compartment L";
+"motorbike_exterior_double_stand_label" = "Double Stand";
+"motorbike_exterior_single_stand_label" = "Single stand";
+"motorbike_exterior_tail_light_label" = "Tail light";
+"motorbike_exterior_seat_iron_frame_label" = "Seat iron frame";
+"motorbike_exterior_rear_fender_label" = "Rear fender";
+"motorbike_exterior_exhaust_pipe_label" = "Exhaust pipe";
+"motorbike_exterior_chain_guard_label" = "Chain guard";
+"motorbike_exterior_seat_label" = "Seat";
+"motorbike_exterior_rear_tire_label" = "Rear tire";
+"motorbike_exterior_cdi_label" = "CDI";
+"motorbike_exterior_front_tire_label" = "Front tire";
+"motorbike_exterior_spokes_label" = "Spokes";
+"motorbike_exterior_alloy_label" = "Alloy";
+"motorbike_exterior_front_brake_label" = "Front brake";
+"motorbike_exterior_disk_label" = "Disk";
+"motorbike_exterior_drum_label" = "Drum";
+"motorbike_exterior_rear_brake_label" = "Rear brake";
+"motorbike_exterior_choice_label" = "Choice";
+"motorbike_exterior_scratches_label" = "Scratch";
+"motorbike_exterior_fragmented_label" = "Broken";
+"motorbike_exterior_no_label" = "None exist";
+
+// motorbike engine
+"motorbike_inspection_engine_label" = "Engine condition";
+"motorbike_inspection_engine_condition_label" = "Motorbike condition";
+"motorbike_inspection_engine_unverified_label" = "Unverified";
+"motorbike_inspection_engine_hand_start_label" = "Hand Start";
+"motorbike_inspection_engine_foot_start_label" = "Foot Start";
+"motorbike_inspection_engine_registration_plate_label" = "Registration plate";
+"motorbike_inspection_engine_kilometer_label" = "Kilometer";
+"motorbike_inspection_engine_mile_label" = "Mile";
+"motorbike_inspection_engine_need_repair_label" = "Need repair";
+"motorbike_inspection_engine_working_label" = "Working";
+"motorbike_inspection_engine_not_working_label" = "Not working";
+"motorbike_inspection_engine_mileage_placeholder" = "Mileage";
+
+// motorbike inspection exterior
+"motorbike_inspection_exterior_label" = "Exterior";
+"motorbike_inspection_exterior_serviced_label" = "Serviced on periodic maintenance";
+"motorbike_inspection_exterior_battery_label" = "Battery";
+"motorbike_inspection_exterior_cdi_label" = "CDI";
+"motorbike_inspection_exterior_electric_label" = "Electric Start";
+"motorbike_inspection_exterior_pedal_label" = "Start pedal";
+"motorbike_inspection_exterior_odometer_label" = "Odometer";
+"motorbike_inspection_exterior_plate_label" = "Plate";
+"motorbike_inspection_exterior_tyre_label" = "Tyre(mm.)";
+"motorbike_inspection_exterior_tyre_f_label" = "F";
+"motorbike_inspection_exterior_tyre_r_label" = "R";
+"motorbike_inspection_exterior_under_tyre_label" = "*Estimate the tread depth in units of tire center";
+"motorbike_inspection_exterior_engine_type_label" = "Engine";
+"motorbike_inspection_exterior_serviced_label" = "Serviced on periodic maintenance";
+"motorbike_inspection_exterior_not_working_label" = "Not working";
+"motorbike_inspection_exterior_need_repair_label" = "Need repair";
+"motorbike_inspection_exterior_missing_label" = "Missing";
+"motorbike_inspection_exterior_damage_summary_label" = "Damage summary";
+"motorbike_inspection_exterior_head_placeholder_label" = "Damage ";
+
+// inspection suspension/under
+"inspection_suspension_drive_shaft_label" = "Drive shaft";
+"inspection_suspension_label" = "Suspension";
+"inspection_suspension_summary_label" = "Summary suspension condition";
+"inspection_suspension_leakage_label" = "Leakage";
+
+// inspection gear box
+"inspection_gear_system_label" = "Gear system";
+"inspection_gear_condition_label" = "Gear condition";
+"inspection_gear_drive_shaft_label" = "Drive shaft";
+"inspection_gear_4wd_label" = "Gear 4WD";
+"inspection_gear_summary_label" = "Summary gear condition";
+"inspection_gear_working_label" = "Working";
+"inspection_gear_not_working_label" = "Not working";
+"inspection_gear_complete_label" = "Complete";
+"inspection_gear_incomplete_label" = "Incomplete";
+"inspection_gear_no_drive_shaft_label" = "No drive shaft";
+
+// inspection steering
+"inspection_steering_system_label" = "Steering system";
+"inspection_steering_power_label" = "Power Steering";
+"inspection_steering_summary_label" = "Summary steering condition";
+
+// inspection brake
+"inspection_brake_system_label" = "Brake system";
+"inspection_brake_summary_label" = "Summary brake condition";
+
+// inspection air
+"inspection_air_system_label" = "Air system";
+"inspection_air_compressor_label" = "Compressor";
+"inspection_air_summary_label" = "Summary air condition";
+"inspection_air_cool_label" = "Cool";
+"inspection_air_not_cool_label" = "Not cool";
+
+// inspection gauges
+"inspection_gauges_system_label" = "Gauges system";
+"inspection_gauges_light_label" = "Light display (required)";
+"inspection_gauges_details_placeholder_label" = "Details";
+"inspection_gauges_summary_label" = "Summary gauges condition";
+
+// inspectoin electrical
+"inspection_electrical_head_light_label" = "Head light working";
+"inspection_electrical_turn_light_label" = "Turn light working";
+"inspection_electrical_tail_light_label" = "Tail light working";
+"inspection_electrical_brake_light_label" = "Brake light working";
+"inspection_electrical_battery_label" = "Battery working";
+"inspection_electrical_horn_label" = "Horn working";
+"inspection_electrical_dashboard_label" = "Dashboard working";
+"inspection_electrical_other_remarks_label" = "Other remarks";
+"inspection_electrical_summary_label" = "Summary electrical equipments condition";
+
+// photos
+"photos_front_button_title" = "Front";
+"photos_engine_button_title" = "Engine";
+"photos_plate_button_title" = "Plate";
+"photos_chassis_button_title" = "Chassis";
+"photos_interior_button_title" = "Interior";
+"photos_tray_button_title" = "Trunk/Tray";
+"photos_side_button_title" = "Side";
+"photos_back_button_title" = "Back";
+"photos_gas_tank_button_title" = "Gas tank";
+"photos_asset_button_title" = "Asset";
+"photos_damage_button_title" = "Damage";
+"photos_numbers_label" = "Photos :";
+"photos_photograph_button_title" = "Photograph";
+"photos_select_button_title" = "Select Picture";
+"photos_delete_head_title" = "To delete";
+"photos_delete_tail_title" = "?";
+"photos_save_confirm_title" = "Do you want to save the photo?";
+"photos_send_book_in_first_title" = "Please Send Book-in first";
+"photos_navigation_upload_title" = "Upload";
+"photos_upload_title" = "Upload";
+"photos_check_title" = "Please check first";
+"photos_add_title" = "Please add photos";
+
+// mode code
+"mode_code_title_label" = "Search model";
+"mode_code_search_chassis_label" = "Search chassis";
+"mode_code_fill_information_label" = "Fill in the information";
+"mode_code_conduct_search_label" = "conduct a search";
+"mode_code_want_choose_label" = "Do you want to choose";
+"mode_code_edit_label" = "Edit";
+"mode_code_no_data_message_label" = "Unable to find vehicle model";
+
+// create model
+"create_model_chassis_number_label" = "Chassis Number";
+"create_model_build_year_label" = "Build Year";
+"create_model_mode_label" = "Mode";
+"create_model_variants_label" = "Variants";
+"create_model_body_label" = "Body";
+"create_model_fuel_delivery_label" = "FuelDelivery";
+"create_model_fuel_type_label" = "FuelType";
+"create_model_gearbox_label" = "Gearbox";
+"create_model_gear_label" = "Gear";
+"create_model_drive_label" = "Drive";
+"create_model_engine_capacity_label" = "Engine Capacity";
+"create_model_back_label" = "Back";
+
+// inspection list
+"inspection_list_title_label" = "List";
+"inspection_list_all_title_label" = "All inspection list";
+"inspection_list_pending_label" = "Pending inspection";
+"inspection_list_car_registration_label" = "Car's registration";
+"inspection_list_car_registration_placeholder_label" = "Car's registration";
+"inspection_list_registration_number_label" = "Registration no.";
+"inspection_list_search_label" = "Search";
+"inspection_list_book_in_number_label" = "Book-in no.";
+"inspection_list_status_label" = "Status";
+"inspection_list_pending_no_data_label" = "There are no pending projects";
+"inspection_list_vin_number_label" = "VIN no.";
+"inspection_list_tip_message_label" = "Fill in the information and press the search button to search";
+"inspection_list_not_good_label" = "Not good";
+
+// pick up car valid field
+"car_pick_up_valid_field_sender_name_label" = "Sender Name";
+"car_pick_up_valid_field_brand_label" = "Car brand";
+"car_pick_up_valid_field_type_label" = "Vehicle type";
+"car_pick_up_valid_field_model_label" = "Car model";
+"car_pick_up_valid_field_submodel_label" = "Submodel";
+"car_pick_up_valid_field_color_label" = "Color";
+"car_pick_up_valid_field_remark_tips_label" = "License Plate Remark: More than 100 characters";
+
+// car grade
+"car_grade_title_label" = "Grade the auction vehicles";
+"car_grade_excellence_label" = "E Excellence";
+"car_grade_excellence_option1_label" = "The mileage does not exceed 20000 kilometers";
+"car_grade_excellence_option2_label" = "Registration year not exceeding 1 year (non manufacturing year)";
+"car_grade_excellence_option3_label" = "This car is brand new and has no wrinkles";
+"car_grade_excellence_option4_label" = "The internal condition is good";
+"car_grade_excellence_option5_label" = "No paint, no maintenance, no replacement of body parts";
+"car_grade_good_label" = "G Good";
+"car_grade_good_option1_label" = "The mileage does not exceed 50000 kilometers";
+"car_grade_good_option2_label" = "Registration year not exceeding 2 years (non manufacturing year)";
+"car_grade_good_option3_label" = "There are scratches and dents";
+"car_grade_good_option4_label" = "No body paint repairs";
+"car_grade_average_label" = "A Average";
+"car_grade_average_option1_label" = "The mileage does not exceed 100000 kilometers";
+"car_grade_average_option2_label" = "Registration year not exceeding 5 years (non manufacturing year)";
+"car_grade_average_option3_label" = "Color collection, dents, scratches";
+"car_grade_average_option4_label" = "No signs of nut or body component disassembly";
+"car_grade_fair_label" = "F Fair";
+"car_grade_fair_option1_label" = "The microphone number exceeds 100000 kilometers per year/the car registration has been over 5 years.";
+"car_grade_fair_option2_label" = "Detachable nuts or body components";
+"car_grade_fair_option3_label" = "There are traces of disassembly, repair, or replacement of the force lining beam";
+"car_grade_fair_option4_label" = "The front and rear bumpers reach the crossbeam, but do not reach the rear structure";
+"car_grade_fair_option5_label" = "TDisassembly/repair/replacement of body components";
+"car_grade_fair_option6_label" = "There are dents on the metal";
+"car_grade_fair_option7_label" = "There are repair marks around the car";
+"car_grade_fair_option8_label" = "Engine/color changes and abnormal usage conditions";
+"car_grade_fair_option9_label" = "There is gasoline on the car";
+"car_grade_fair_option10_label" = "The car is trapped on the roof/pickup truck";
+"car_grade_fair_option11_label" = "Rust under the seat/console, but not displayed on the water level";
+"car_grade_poor_label" = "P Poor";
+"car_grade_poor_option1_label" = "Heavy impact core structure replacement beam";
+"car_grade_poor_option2_label" = "Replace/repair wheel arches or shock absorbers";
+"car_grade_poor_option3_label" = "The ark on the gatepost has been repaired";
+"car_grade_poor_option4_label" = "The chassis has repair marks and the suspension is rotten";
+"car_grade_poor_option5_label" = "Crash/the roof is broken";
+"car_grade_poor_option6_label" = "No sheet";
+"car_grade_poor_option7_label" = "Tailgate/Tailgate repair to chassis";
+"car_grade_poor_option8_label" = "Cars once crossed floods";
+"car_grade_poor_option9_label" = "Body welding and rust/chassis number/machine number and rust/accident modified vehicle";
+"car_grade_x_label" = "Unable to drive/engine malfunction/transmission malfunction/hybrid vehicle malfunction";
+"car_grade_next_button_title" = "Next";
+"car_grade_conclusion_title" = "Conclusion";
+"car_grade_serial_number_title" = "Serial no.";
+"car_grade_delivery_company_title" = "Delivery Company";
+"car_grade_auction_level_title" = "Auction level";
+"car_grade_auction_no_driven_title" = "Can not be driven";
+"car_grade_auction_save_confirm_title" = "Do you want to record the vehicle inspection form?";
+"car_grade_send_inspection_title" = "Do you want to send Inspection to IMAT ?";
+
+// signature
+"car_signature_registration_area_label" = "Registration Area";
+"car_signature_resign_button_title" = "Delete to re sign";
+
+// date time
+"car_date_time_current_button_title" = "Current time";
+
+// car pdf
+"car_pdf_title_label" = "Car receipt / Vehicle Receiving Report";
+"car_pdf_primitive_label" = "Primitive";
+"car_pdf_copy_label" = "Copy";
+"car_pdf_receipt_number_label" = "Receipt no.";
+"car_pdf_pick_up_date_label" = "Pickup date";
+"car_pdf_pick_up_time_label" = "Time";
+"car_pdf_me_label" = "Me";
+"car_pdf_company_delivery_label" = "Delivery of Company Vehicles";
+"car_pdf_autograph_label" = "Sign";
+"car_pdf_telephone_number_label" = "Tel no.";
+"car_pdf_during_editing_label" = "During editing";
+"car_pdf_delivered_follows_label" = "The (automotive supplier) has delivered the vehicle to the representative of Moto Auction (Thailand) Co., Ltd., as follows:";
+"car_pdf_receiver_and_supplier_label" = "Motto Auction (Thailand) Co., Ltd. represents \"Car receiver\" and \"Car supplier\"";
+"car_pdf_detail_information_label" = "Car supplierJoint inspection of the condition and detailed information of vehicle registration numbers";
+"car_pdf_already_said_label" = "I have already said so";
+"car_pdf_ensure_label" = "And ensure that the above information is accurate and true in all aspects";
+"car_pdf_receiver_label" = "Car receiver";
+"car_pdf_recipient_label" = "Recipient";
+"car_pdf_cabin_condition_label" = "Cabin condition";
+"car_pdf_validity_period_label" = "Validity period";
+"car_pdf_other_accessories_label" = "Other accessories";
+"car_pdf_engine_condition_label" = "The condition of the engine room";
+"car_pdf_type_label" = "Type";
+"car_pdf_pasting_peel_label" = "Place for stick VIN rubbing tape";
+"car_pdf_yes_label" = "Yes";
+"car_pdf_no_label" = "No";
+"car_pdf_print_button_title" = "Print";
+"car_pdf_save_vehicle_title" = "Please save your vehicle first";
+
+// motorbike pdf
+"motorbike_pdf_title_label" = "Motorcycle inspection receipt/record";
+"motorbike_pdf_hours_label" = "Hours.";
+"motorbike_pdf_rear_turn_lamp_label_l" = "Rear turn signal lamp L";
+"motorbike_pdf_rear_turn_lamp_label_r" = "Rear turn signal lamp R";
+"motorbike_pdf_r_flank_lamp_label" = "Flank R";
+"motorbike_pdf_rest_legs_label" = "Rest your hind legs";
+"motorbike_pdf_konstak_label" = "Konstak";
+"motorbike_pdf_rear_wheel_label" = "Rear wheel";
+"motorbike_pdf_rear_brake_pump_label" = "Rear disc brake pump";
+"motorbike_pdf_rear_brake_cylinder_label" = "Rear disc brake cylinder";
+"motorbike_pdf_rear_shock_label" = "Rear shock absorber";
+"motorbike_pdf_tank_label" = "Tank";
+"motorbike_pdf_fuel_system_label" = "Fuel supply system";
+"motorbike_pdf_brake_label" = "Brake";
+"motorbike_pdf_flower_label" = "Flower";
+"motorbike_pdf_clutch_label" = "Clutch hand";
+"motorbike_pdf_good_label" = "Good";
+"motorbike_pdf_average_label" = "Average";
+"motorbike_pdf_fair_label" = "Fair";
+"motorbike_pdf_poor_label" = "Poor";
+"motorbike_pdf_scrap_label" = "Scrap";
+
+// car inspection pdf
+"car_inspection_pdf_title_label" = "Vehicle Inspection Form / Inspection Report";
+"car_inspection_pdf_date_label" = "Inspection date";
+"car_inspection_pdf_model_code_label" = "Model code";
+"car_inspection_pdf_inspector_name_label" = "Inspector name";
+"car_inspection_pdf_edit_label" = "Edit";
+"car_inspection_pdf_body_condition_label" = "Body condition";
+"car_inspection_pdf_right_side_label" = "Right side (driver)";
+"car_inspection_pdf_no_drown_label" = "No drown";
+"car_inspection_pdf_loud_sound_label" = "Loud sound";
+"car_inspection_pdf_steer_system_label" = "Steering system";
+"car_inspection_pdf_yes_label" = "Yes";
+"car_inspection_pdf_no_label" = "No";
+"car_inspection_pdf_power_steer_label" = "Power steering";
+"car_inspection_pdf_work_label" = "Work";
+"car_inspection_pdf_not_work_label" = "Not Work";
+"car_inspection_pdf_turn_signal_label" = "Turn signal";
+"car_inspection_pdf_brake_light_label" = "Brake light";
+"car_inspection_pdf_horn_label" = "Horn";
+"car_inspection_pdf_tholos_label" = "Tholos";
+"car_inspection_pdf_other_comments_label" = "Other comments";
+"car_inspection_pdf_damaged_photos_label" = "Damaged photos";
+
+// motorbike inspection pdf
+"motorbike_inspection_pdf_checklist_label" = "Motorcycle Inspection Checklist / Inspection Report";
+"motorbike_inspection_ignition_box_label" = "Ignition control box";
+"motorbike_inspection_page_label" = "Page";
+"motorbike_inspection_behind_label" = "Behind";
+"motorbike_inspection_depth_label" = "Tread depth";
+"motorbike_inspection_ordinary_key_label" = "Ordinary key";
+"motorbike_inspection_remote_control_label" = "Remote control";
+"motorbike_inspection_repaired_label" = "It must be repaired";
+"motorbike_inspection_missing_label" = "Missing";
+
+// car upload
+"car_upload_successful_label" = "Upload successful";
+"car_upload_failed_label" = "File upload failed. Please try again.";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

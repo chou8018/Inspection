@@ -14,7 +14,7 @@ import UIKit
 
 protocol ItemAllListDisplayLogic: AnyObject
 {
-  func displayTextSearchByType(viewModel: ItemAllList.SearchType.ViewModel)
+    func displayTextSearchByType(viewModel: ItemAllList.SearchType.ViewModel)
     func displayResultSearchToTableView(viewModel: ItemAllList.SearchType.ViewModel)
     func didSelectItemTableView(viewModel: ItemAllList.SearchType.ViewModel)
     
@@ -28,93 +28,93 @@ protocol ItemAllListDisplayLogic: AnyObject
     func displayReloadSearch(viewModel: ItemAllList.SearchType.ViewModel)
 }
 
-class ItemAllListViewController: UIViewController, ItemAllListDisplayLogic
+class ItemAllListViewController: ViewController, ItemAllListDisplayLogic
 {
-  var interactor: ItemAllListBusinessLogic?
-  var router: (NSObjectProtocol & ItemAllListRoutingLogic & ItemAllListDataPassing)?
-
-  // MARK: Object lifecycle
-  
-  override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
-  {
-    super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-    setup()
-  }
-  
-  required init?(coder aDecoder: NSCoder)
-  {
-    super.init(coder: aDecoder)
-    setup()
-  }
-  
-  // MARK: Setup
-  
-  private func setup()
-  {
-    let viewController = self
-    let interactor = ItemAllListInteractor()
-    let presenter = ItemAllListPresenter()
-    let router = ItemAllListRouter()
-    viewController.interactor = interactor
-    viewController.router = router
-    interactor.presenter = presenter
-    presenter.viewController = viewController
-    router.viewController = viewController
-    router.dataStore = interactor
-  }
-  
-  // MARK: Routing
-  
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-  {
-    if let scene = segue.identifier {
-      let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
-      if let router = router, router.responds(to: selector) {
-        router.perform(selector, with: segue)
-      }
-        
-        if let destination = segue.destination as? SearchByViewController {
-            destination.selectSearchType = {[weak self] type in
-                let request = ItemAllList.SearchType.Request(selectSearchBy: type)
-                self?.interactor?.selectSearchType(request: request)
+    var interactor: ItemAllListBusinessLogic?
+    var router: (NSObjectProtocol & ItemAllListRoutingLogic & ItemAllListDataPassing)?
+    
+    // MARK: Object lifecycle
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
+    {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        setup()
+    }
+    
+    required init?(coder aDecoder: NSCoder)
+    {
+        super.init(coder: aDecoder)
+        setup()
+    }
+    
+    // MARK: Setup
+    
+    private func setup()
+    {
+        let viewController = self
+        let interactor = ItemAllListInteractor()
+        let presenter = ItemAllListPresenter()
+        let router = ItemAllListRouter()
+        viewController.interactor = interactor
+        viewController.router = router
+        interactor.presenter = presenter
+        presenter.viewController = viewController
+        router.viewController = viewController
+        router.dataStore = interactor
+    }
+    
+    // MARK: Routing
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if let scene = segue.identifier {
+            let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
+            if let router = router, router.responds(to: selector) {
+                router.perform(selector, with: segue)
             }
-        }
-        
-        if let destinationQR = segue.destination as? ReadingQRViewController {
-            destinationQR.callbackQRCode = {[weak self] qrCodeBookInValue in
-                let request = ItemAllList.SearchType.Request(qrCodeBookInValue: qrCodeBookInValue)
-                self?.interactor?.fetchBookinDetail(request: request, type: .DETAIL)
-                
+            
+            if let destination = segue.destination as? SearchByViewController {
+                destination.selectSearchType = {[weak self] type in
+                    let request = ItemAllList.SearchType.Request(selectSearchBy: type)
+                    self?.interactor?.selectSearchType(request: request)
+                }
             }
-        }
-        
-        if let destinationQR = segue.destination as? DetailViewController {
-            destinationQR.callbackSelectOption = {[weak self] option in
-                let request = ItemAllList.SearchType.Request()
-                self?.interactor?.fetchBookinDetail(request: request, type: option)
+            
+            if let destinationQR = segue.destination as? ReadingQRViewController {
+                destinationQR.callbackQRCode = {[weak self] qrCodeBookInValue in
+                    let request = ItemAllList.SearchType.Request(qrCodeBookInValue: qrCodeBookInValue)
+                    self?.interactor?.fetchBookinDetail(request: request, type: .DETAIL)
+                    
+                }
+            }
+            
+            if let destinationQR = segue.destination as? DetailViewController {
+                destinationQR.callbackSelectOption = {[weak self] option in
+                    let request = ItemAllList.SearchType.Request()
+                    self?.interactor?.fetchBookinDetail(request: request, type: option)
+                }
             }
         }
     }
-  }
-  
-  // MARK: View lifecycle
-  
-  override func viewDidLoad()
-  {
-    super.viewDidLoad()
-    setUpView()
     
-    setUpTableView()
-    setUpTextFieldSearch()
+    // MARK: View lifecycle
     
-    fetchPicker()
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
+        setUpView()
+        
+        setUpTableView()
+        setUpTextFieldSearch()
+        
+        fetchPicker()
+        
+        
+    }
     
+    // MARK: Do something
     
-  }
-  
-  // MARK: Do something
-  
-  //@IBOutlet weak var nameTextField: UITextField!
+    //@IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var searchView: CustomUIView!
     @IBOutlet weak var searchByView: CustomUIView!
     @IBOutlet weak var searchTextField: UITextField!
@@ -128,9 +128,22 @@ class ItemAllListViewController: UIViewController, ItemAllListDisplayLogic
     @IBOutlet weak var searchButtonView: CustomUIView!
     var  dataSource = ItemListDataSource()
     
-    
-    
-    
+    // local strings
+    @IBOutlet weak var searchLabel: UILabel!
+    @IBOutlet weak var detailsTitleLabel: UILabel!
+    @IBOutlet weak var registrationNumberTitleLabel: UILabel!
+    @IBOutlet weak var bookInNumberTitleLabel: UILabel!
+
+    override func initLocalString() {
+        super.initLocalString()
+        
+        searchByLabel.text = String.localized("inspection_list_car_registration_label")
+        searchTextField.placeholder = String.localized("inspection_list_car_registration_placeholder_label")
+        searchLabel.text = String.localized("inspection_list_search_label")
+        detailsTitleLabel.text = String.localized("inspection_gauges_details_placeholder_label")
+        registrationNumberTitleLabel.text = String.localized("inspection_list_registration_number_label")
+        bookInNumberTitleLabel.text = String.localized("inspection_list_book_in_number_label")
+    }
     
     //MARK: SetUpView
     func setUpView(){
@@ -179,20 +192,20 @@ class ItemAllListViewController: UIViewController, ItemAllListDisplayLogic
         let request = ItemAllList.SearchType.Request()
         interactor?.fetchSearchTypePicker(request: request)
     }
-  
+    
     //MARK: interactor fetchDefault
     func fetchDefaultItemList() {
         let request = ItemAllList.SearchType.Request()
         interactor?.defaultItemList(request: request)
     }
     
-   //MARK: interactor search
+    //MARK: interactor search
     @objc func search(){
         searchTextField.resignFirstResponder()
         let request = ItemAllList.SearchType.Request(keyword: searchTextField.text!)
         interactor?.searchItemList(request: request)
     }
-   
+    
     //MARK: Display SearchBy
     func displayTextSearchByType(viewModel: ItemAllList.SearchType.ViewModel) {
         searchByLabel.text = viewModel.searchByText

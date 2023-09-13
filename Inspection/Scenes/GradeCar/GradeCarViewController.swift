@@ -14,68 +14,68 @@ import UIKit
 
 protocol GradeCarDisplayLogic: AnyObject
 {
-  func displaySomething(viewModel: GradeCar.Something.ViewModel)
+    func displaySomething(viewModel: GradeCar.Something.ViewModel)
     func displayGradeResult(viewModel: GradeCar.Something.ViewModel)
 }
 
-class GradeCarViewController: UIViewController, GradeCarDisplayLogic
+class GradeCarViewController: ViewController, GradeCarDisplayLogic
 {
-  var interactor: GradeCarBusinessLogic?
-  var router: (NSObjectProtocol & GradeCarRoutingLogic & GradeCarDataPassing)?
-
-  // MARK: Object lifecycle
-  
-  override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
-  {
-    super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-    setup()
-  }
-  
-  required init?(coder aDecoder: NSCoder)
-  {
-    super.init(coder: aDecoder)
-    setup()
-  }
-  
-  // MARK: Setup
-  
-  private func setup()
-  {
-    let viewController = self
-    let interactor = GradeCarInteractor()
-    let presenter = GradeCarPresenter()
-    let router = GradeCarRouter()
-    viewController.interactor = interactor
-    viewController.router = router
-    interactor.presenter = presenter
-    presenter.viewController = viewController
-    router.viewController = viewController
-    router.dataStore = interactor
-  }
-  
-  // MARK: Routing
-  
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-  {
-    if let scene = segue.identifier {
-      let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
-      if let router = router, router.responds(to: selector) {
-        router.perform(selector, with: segue)
-      }
+    var interactor: GradeCarBusinessLogic?
+    var router: (NSObjectProtocol & GradeCarRoutingLogic & GradeCarDataPassing)?
+    
+    // MARK: Object lifecycle
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
+    {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        setup()
     }
-  }
-  
-  // MARK: View lifecycle
-  
-  override func viewDidLoad()
-  {
-    super.viewDidLoad()
-    doSomething()
-  }
-  
-  // MARK: Do something
-  
-  //@IBOutlet weak var nameTextField: UITextField!
+    
+    required init?(coder aDecoder: NSCoder)
+    {
+        super.init(coder: aDecoder)
+        setup()
+    }
+    
+    // MARK: Setup
+    
+    private func setup()
+    {
+        let viewController = self
+        let interactor = GradeCarInteractor()
+        let presenter = GradeCarPresenter()
+        let router = GradeCarRouter()
+        viewController.interactor = interactor
+        viewController.router = router
+        interactor.presenter = presenter
+        presenter.viewController = viewController
+        router.viewController = viewController
+        router.dataStore = interactor
+    }
+    
+    // MARK: Routing
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if let scene = segue.identifier {
+            let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
+            if let router = router, router.responds(to: selector) {
+                router.perform(selector, with: segue)
+            }
+        }
+    }
+    
+    // MARK: View lifecycle
+    
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
+        doSomething()
+    }
+    
+    // MARK: Do something
+    
+    //@IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var scrollView : UIScrollView!
     
     // exellence
@@ -130,17 +130,116 @@ class GradeCarViewController: UIViewController, GradeCarDisplayLogic
     // result
     @IBOutlet weak var gradeLabel : UILabel!
     
-  
-  func doSomething()
-  {
-    let request = GradeCar.Something.Request()
-    interactor?.doSomething(request: request)
-  }
-  //MARK: Presenter
-  func displaySomething(viewModel: GradeCar.Something.ViewModel)
-  {
-    //nameTextField.text = viewModel.name
-  }
+    // local strings
+    @IBOutlet weak var eTitleLabel: UILabel!
+    @IBOutlet weak var eOption1Label: UILabel!
+    @IBOutlet weak var eOption2Label: UILabel!
+    @IBOutlet weak var eOption3Label: UILabel!
+    @IBOutlet weak var eOption4Label: UILabel!
+    @IBOutlet weak var eOption5Label: UILabel!
+    
+    @IBOutlet weak var gTitleLabel: UILabel!
+    @IBOutlet weak var gOption1Label: UILabel!
+    @IBOutlet weak var gOption2Label: UILabel!
+    @IBOutlet weak var gOption3Label: UILabel!
+    @IBOutlet weak var gOption4Label: UILabel!
+    
+    @IBOutlet weak var aTitleLabel: UILabel!
+    @IBOutlet weak var aOption1Label: UILabel!
+    @IBOutlet weak var aOption2Label: UILabel!
+    @IBOutlet weak var aOption3Label: UILabel!
+    @IBOutlet weak var aOption4Label: UILabel!
+    
+    @IBOutlet weak var fTitleLabel: UILabel!
+    @IBOutlet weak var fOption1Label: UILabel!
+    @IBOutlet weak var fOption2Label: UILabel!
+    @IBOutlet weak var fOption3Label: UILabel!
+    @IBOutlet weak var fOption4Label: UILabel!
+    @IBOutlet weak var fOption5Label: UILabel!
+    @IBOutlet weak var fOption6Label: UILabel!
+    @IBOutlet weak var fOption7Label: UILabel!
+    @IBOutlet weak var fOption8Label: UILabel!
+    @IBOutlet weak var fOption9Label: UILabel!
+    @IBOutlet weak var fOption10Label: UILabel!
+    @IBOutlet weak var fOption11Label: UILabel!
+    
+    @IBOutlet weak var pTitleLabel: UILabel!
+    @IBOutlet weak var pOption1Label: UILabel!
+    @IBOutlet weak var pOption2Label: UILabel!
+    @IBOutlet weak var pOption3Label: UILabel!
+    @IBOutlet weak var pOption4Label: UILabel!
+    @IBOutlet weak var pOption5Label: UILabel!
+    @IBOutlet weak var pOption6Label: UILabel!
+    @IBOutlet weak var pOption7Label: UILabel!
+    @IBOutlet weak var pOption8Label: UILabel!
+    @IBOutlet weak var pOption9Label: UILabel!
+    
+    @IBOutlet weak var xOptionLabel: UILabel!
+    @IBOutlet weak var yOptionLabel: UILabel!
+    @IBOutlet weak var rightButtonItem: UIBarButtonItem!
+    
+    override func initLocalString() {
+        super.initLocalString()
+        self.title = String.localized("car_grade_title_label")
+        rightButtonItem.title = String.localized("car_grade_next_button_title")
+        eTitleLabel.text = String.localized("car_grade_excellence_label")
+        eOption1Label.text = String.localized("car_grade_excellence_option1_label")
+        eOption2Label.text = String.localized("car_grade_excellence_option2_label")
+        eOption3Label.text = String.localized("car_grade_excellence_option3_label")
+        eOption4Label.text = String.localized("car_grade_excellence_option4_label")
+        eOption5Label.text = String.localized("car_grade_excellence_option5_label")
+
+        gTitleLabel.text = String.localized("car_grade_good_label")
+        gOption1Label.text = String.localized("car_grade_good_option1_label")
+        gOption2Label.text = String.localized("car_grade_good_option2_label")
+        gOption3Label.text = String.localized("car_grade_good_option3_label")
+        gOption4Label.text = String.localized("car_grade_good_option4_label")
+        
+        aTitleLabel.text = String.localized("car_grade_average_label")
+        aOption1Label.text = String.localized("car_grade_average_option1_label")
+        aOption2Label.text = String.localized("car_grade_average_option2_label")
+        aOption3Label.text = String.localized("car_grade_average_option3_label")
+        aOption4Label.text = String.localized("car_grade_average_option4_label")
+        
+        fTitleLabel.text = String.localized("car_grade_fair_label")
+        fOption1Label.text = String.localized("car_grade_fair_option1_label")
+        fOption2Label.text = String.localized("car_grade_fair_option2_label")
+        fOption3Label.text = String.localized("car_grade_fair_option3_label")
+        fOption4Label.text = String.localized("car_grade_fair_option4_label")
+        fOption5Label.text = String.localized("car_grade_fair_option5_label")
+        fOption6Label.text = String.localized("car_grade_fair_option6_label")
+        fOption7Label.text = String.localized("car_grade_fair_option7_label")
+        fOption8Label.text = String.localized("car_grade_fair_option8_label")
+        fOption9Label.text = String.localized("car_grade_fair_option9_label")
+        fOption10Label.text = String.localized("car_grade_fair_option10_label")
+        fOption11Label.text = String.localized("car_grade_fair_option11_label")
+        
+        pTitleLabel.text = String.localized("car_grade_poor_label")
+        pOption1Label.text = String.localized("car_grade_poor_option1_label")
+        pOption2Label.text = String.localized("car_grade_poor_option2_label")
+        pOption3Label.text = String.localized("car_grade_poor_option3_label")
+        pOption4Label.text = String.localized("car_grade_poor_option4_label")
+        pOption5Label.text = String.localized("car_grade_poor_option5_label")
+        pOption6Label.text = String.localized("car_grade_poor_option6_label")
+        pOption7Label.text = String.localized("car_grade_poor_option7_label")
+        pOption8Label.text = String.localized("car_grade_poor_option8_label")
+        pOption9Label.text = String.localized("car_grade_poor_option9_label")
+
+        xOptionLabel.text = String.localized("car_grade_x_label")
+        yOptionLabel.text = String.localized("car_salvage_details_title")
+
+    }
+
+    func doSomething()
+    {
+        let request = GradeCar.Something.Request()
+        interactor?.doSomething(request: request)
+    }
+    //MARK: Presenter
+    func displaySomething(viewModel: GradeCar.Something.ViewModel)
+    {
+        //nameTextField.text = viewModel.name
+    }
     func displayGradeResult(viewModel: GradeCar.Something.ViewModel) {
         gradeLabel.text = viewModel.grade
     }
@@ -236,45 +335,45 @@ class GradeCarViewController: UIViewController, GradeCarDisplayLogic
         x1Chehck.check = model.x1Chehck
         y1Chehck.check = model.y1Chehck
         
-
+        
         let request = GradeCar.Something.Request(e1Chehck:   e1Chehck.check,
-                                                e2Chehck:   e2Chehck.check,
-                                                e3Chehck:   e3Chehck.check,
-                                                e4Chehck:   e4Chehck.check,
-                                                e5Chehck:   e5Chehck.check,
-                                                g1Chehck:   g1Chehck.check,
-                                                g2Chehck:   g2Chehck.check,
-                                                g3Chehck:   g3Chehck.check,
-                                                g4Chehck:   g4Chehck.check,
-                                                a1Chehck:   a1Chehck.check,
-                                                a2Chehck:   a2Chehck.check,
-                                                a3Chehck:   a3Chehck.check,
-                                                a4Chehck:   a4Chehck.check,
-                                                f1Chehck:   f1Chehck.check,
-                                                f2Chehck:   f2Chehck.check,
-                                                f3Chehck:   f3Chehck.check,
-                                                f4Chehck:   f4Chehck.check,
-                                                f5Chehck:   f5Chehck.check,
-                                                f6Chehck:   f6Chehck.check,
-                                                f7Chehck:   f7Chehck.check,
-                                                f8Chehck:   f8Chehck.check,
-                                                f9Chehck:   f9Chehck.check,
-                                                f10Chehck: f10Chehck.check,
-                                                f11Chehck: f11Chehck.check,
-                                                p1Chehck:   p1Chehck.check,
-                                                p2Chehck:   p2Chehck.check,
-                                                p3Chehck:   p3Chehck.check,
-                                                p4Chehck:   p4Chehck.check,
-                                                p5Chehck:   p5Chehck.check,
-                                                p6Chehck:   p6Chehck.check,
-                                                p7Chehck:   p7Chehck.check,
-                                                p8Chehck:   p8Chehck.check,
-                                                p9Chehck:   p9Chehck.check,
-                                                x1Chehck:   x1Chehck.check,
-                                                y1Chehck:   y1Chehck.check)
-    
+                                                 e2Chehck:   e2Chehck.check,
+                                                 e3Chehck:   e3Chehck.check,
+                                                 e4Chehck:   e4Chehck.check,
+                                                 e5Chehck:   e5Chehck.check,
+                                                 g1Chehck:   g1Chehck.check,
+                                                 g2Chehck:   g2Chehck.check,
+                                                 g3Chehck:   g3Chehck.check,
+                                                 g4Chehck:   g4Chehck.check,
+                                                 a1Chehck:   a1Chehck.check,
+                                                 a2Chehck:   a2Chehck.check,
+                                                 a3Chehck:   a3Chehck.check,
+                                                 a4Chehck:   a4Chehck.check,
+                                                 f1Chehck:   f1Chehck.check,
+                                                 f2Chehck:   f2Chehck.check,
+                                                 f3Chehck:   f3Chehck.check,
+                                                 f4Chehck:   f4Chehck.check,
+                                                 f5Chehck:   f5Chehck.check,
+                                                 f6Chehck:   f6Chehck.check,
+                                                 f7Chehck:   f7Chehck.check,
+                                                 f8Chehck:   f8Chehck.check,
+                                                 f9Chehck:   f9Chehck.check,
+                                                 f10Chehck: f10Chehck.check,
+                                                 f11Chehck: f11Chehck.check,
+                                                 p1Chehck:   p1Chehck.check,
+                                                 p2Chehck:   p2Chehck.check,
+                                                 p3Chehck:   p3Chehck.check,
+                                                 p4Chehck:   p4Chehck.check,
+                                                 p5Chehck:   p5Chehck.check,
+                                                 p6Chehck:   p6Chehck.check,
+                                                 p7Chehck:   p7Chehck.check,
+                                                 p8Chehck:   p8Chehck.check,
+                                                 p9Chehck:   p9Chehck.check,
+                                                 x1Chehck:   x1Chehck.check,
+                                                 y1Chehck:   y1Chehck.check)
+        
         interactor?.prapareCheck(request : request)
- 
+        
     }
 }
 

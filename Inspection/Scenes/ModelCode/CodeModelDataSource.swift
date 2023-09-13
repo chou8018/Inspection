@@ -71,7 +71,7 @@ class CodeModelDataSource : NSObject,  UITableViewDelegate, UITableViewDataSourc
     
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let contextItem = UIContextualAction(style: .normal, title: "แก้ไข") { [weak self]
+        let contextItem = UIContextualAction(style: .normal, title: String.localized("mode_code_edit_label")) { [weak self]
             (contextualAction, view, boolValue) in
 
             guard let weakself = self else{ return }

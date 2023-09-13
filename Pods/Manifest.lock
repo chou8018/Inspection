@@ -8,6 +8,9 @@ PODS:
     - SDWebImage/Core (= 5.11.0)
   - SDWebImage/Core (5.11.0)
   - SweeterSwift (1.1.4)
+  - ZLPhotoBrowser (4.4.2):
+    - ZLPhotoBrowser/Core (= 4.4.2)
+  - ZLPhotoBrowser/Core (4.4.2)
 
 DEPENDENCIES:
   - Alamofire (~> 5.2)
@@ -15,6 +18,7 @@ DEPENDENCIES:
   - ObjectMapper (~> 3.5)
   - RadioGroup
   - SDWebImage
+  - ZLPhotoBrowser
 
 SPEC REPOS:
   trunk:
@@ -24,6 +28,7 @@ SPEC REPOS:
     - RadioGroup
     - SDWebImage
     - SweeterSwift
+    - ZLPhotoBrowser
 
 SPEC CHECKSUMS:
   Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
@@ -32,7 +37,8 @@ SPEC CHECKSUMS:
   RadioGroup: 7015c71759c90dbaae7050f33cfbc1de780e27a7
   SDWebImage: 7acbb57630ac7db4a495547fb73916ff3e432f6b
   SweeterSwift: 8a90cf3156f5a1b6f39785c479369a16633b5ea9
+  ZLPhotoBrowser: ea6b3c04cb40d65e17c55f636cf1739c12953fef
 
-PODFILE CHECKSUM: 299c6cce940d87fe783a4fa30d6e4f52380191d7
+PODFILE CHECKSUM: 0ba28d437b59fc8a7ae237196761277d7ca58232
 
-COCOAPODS: 1.11.3
+COCOAPODS: 1.12.0

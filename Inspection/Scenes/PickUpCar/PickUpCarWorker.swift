@@ -462,11 +462,11 @@ extension PickUpCarWorker {
                                       registrationNote: model.registrationNote)
         print(vehicleType.toJSON())
 
-        let numberOfKey = model.mapKeys?["กุญแจ"] as? String
-        let numberOfKeyRemote = model.mapKeys?["กุญแจรีโมท"] as? String
-        let numberOfRemote = model.mapKeys?["รีโมท"] as? String
-        let numberOfImmobilizer = model.mapKeys?["กุญแจ Immobilizer"] as? String
-        let numberOfKeyless = model.mapKeys?["กุญแจ Keyless"] as? String
+        let numberOfKey = model.mapKeys?[String.localized("car_interior_key_label")] as? String
+        let numberOfKeyRemote = model.mapKeys?[String.localized("car_interior_remote_key_label")] as? String
+        let numberOfRemote = model.mapKeys?[String.localized("car_interior_remote_control_label")] as? String
+        let numberOfImmobilizer = model.mapKeys?[String.localized("car_interior_key_immobilizer_label")] as? String
+        let numberOfKeyless = model.mapKeys?[String.localized("car_interior_keyless_label")] as? String
         let keyOptionType = KeyOptionType(numberOfKey: numberOfKey?.toInt(),
                                           numberOfRemote: numberOfRemote?.toInt(),
                                           numberOfKeyRemote: numberOfKeyRemote?.toInt(),

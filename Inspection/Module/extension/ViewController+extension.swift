@@ -33,7 +33,7 @@ extension UIViewController {
             let foundItemList = nav.viewControllers.filter({ $0 is InspectionListViewController})
 
             if confirm {
-                alert(message: "คุณต้องการกลับหน้ารายการไหม", title: title) { [weak self] in
+                alert(message: String.localized("main_inspection_leave_edit_page_title"), title: title) { [weak self] in
                     if let vc  = foundItemList.first {
                         DataController.shared.clear()
                         self?.navigationController?.popToViewController(vc, animated: true)
@@ -43,7 +43,7 @@ extension UIViewController {
                 }
             }
         }else{
-            alert(message: "คุณต้องการกลับหน้าหลักไหม", title: title) { [weak self] in
+            alert(message: String.localized("main_inspection_back_to_main_title"), title: title) { [weak self] in
                 DataController.shared.clear()
                 self?.navigationController?.popToRootViewController(animated: true)
                 
@@ -58,10 +58,10 @@ extension UIViewController {
                cancel: (() -> Void)? = nil ) {
     
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let confirmAction = UIAlertAction(title: "ตกลง", style: .default, handler: {  _ in
+        let confirmAction = UIAlertAction(title: String.localized("select_inspection_dialog_ok"), style: .default, handler: {  _ in
             confirm()
         })
-        let cancelAction = UIAlertAction(title: "ยกเลิก", style: .default, handler: {  _ in
+        let cancelAction = UIAlertAction(title: String.localized("select_inspection_dialog_no"), style: .default, handler: {  _ in
             cancel?()
         })
         
@@ -73,10 +73,10 @@ extension UIViewController {
     func alertErrorMessage(message: String, title: String = "", _ retry: @escaping () -> Void) {
         
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let tryAction = UIAlertAction(title: "ลองใหม่", style: .default, handler: {  _ in
+        let tryAction = UIAlertAction(title: String.localized("select_inspection_dialog_try"), style: .default, handler: {  _ in
             retry()
         })
-        let cancelAction = UIAlertAction(title: "ยกเลิก", style: .default, handler: {  _ in
+        let cancelAction = UIAlertAction(title: String.localized("select_inspection_dialog_no"), style: .default, handler: {  _ in
                 //ignored
         })
         alertController.addAction(cancelAction)
@@ -88,7 +88,7 @@ extension UIViewController {
     func alertErrorMessageOKAction(message: String, title: String = "", _ action: @escaping () -> Void) {
         
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "ตกลง", style: .default, handler: {  _ in
+        let okAction = UIAlertAction(title: String.localized("select_inspection_dialog_ok"), style: .default, handler: {  _ in
             action()
         })
         alertController.addAction(okAction)
@@ -133,6 +133,5 @@ extension UIViewController {
             return photo
         }
     }
-    
     
 }

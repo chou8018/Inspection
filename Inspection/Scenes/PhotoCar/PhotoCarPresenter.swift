@@ -88,7 +88,7 @@ class PhotoCarPresenter: PhotoCarPresentationLogic
         guard let isPhoto = response.isPhoto else { return }
         
         guard let _ = DataController.shared.receiverCarModel.bookinNo else {
-            let alertPhotoMessage = "กรุณาบันทึกรับมอบรถก่อน"
+            let alertPhotoMessage = String.localized("car_pdf_save_vehicle_title")
             let viewModel = PhotoCar.Something.ViewModel(alertPhotoMessage : alertPhotoMessage)
             viewController?.displayAlertMessage(viewModel: viewModel)
             return
@@ -100,7 +100,7 @@ class PhotoCarPresenter: PhotoCarPresentationLogic
         if !isCarWreck {
             let isCreateInspection = DataController.shared.inspectionCarModel.isCreate
             if !isCreateInspection {
-                let alertPhotoMessage = "กรุณาทำการตรวจสภาพก่อน"
+                let alertPhotoMessage = String.localized("photos_check_title")
                 let viewModel = PhotoCar.Something.ViewModel(alertPhotoMessage : alertPhotoMessage)
                 viewController?.displayAlertMessage(viewModel: viewModel)
                 return
@@ -109,7 +109,7 @@ class PhotoCarPresenter: PhotoCarPresentationLogic
         
         let vehicleId = DataController.shared.receiverCarModel.vehicleId.trimWhiteSpace
         if vehicleId.isEmpty {
-            let alertPhotoMessage = "กรุณาทำการ Send Book-in ก่อน"
+            let alertPhotoMessage = String.localized("photos_send_book_in_first_title")
             let viewModel = PhotoCar.Something.ViewModel(alertPhotoMessage : alertPhotoMessage)
             viewController?.displayAlertMessage(viewModel: viewModel)
             return
@@ -119,7 +119,7 @@ class PhotoCarPresenter: PhotoCarPresentationLogic
             let viewModel = PhotoCar.Something.ViewModel()
             viewController?.displayUploadProgress(viewModel: viewModel)
         }else{
-            let viewModel = PhotoCar.Something.ViewModel(alertPhotoMessage : "กรุณาเพิ่มรูปถ่าย")
+            let viewModel = PhotoCar.Something.ViewModel(alertPhotoMessage : String.localized("photos_add_title"))
             viewController?.displayAlertMessage(viewModel: viewModel)
         }
         

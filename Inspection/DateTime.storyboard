@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xCW-kB-kU8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xCW-kB-kU8">
     <device id="ipad10_2" orientation="landscape" layout="fullscreen" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -14,18 +15,18 @@
             <objects>
                 <viewController storyboardIdentifier="DateTimeViewController" id="xCW-kB-kU8" customClass="DateTimeViewController" customModule="Inspection" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8c6-MA-5to">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="533"/>
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="538"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" style="inline" translatesAutoresizingMaskIntoConstraints="NO" id="mS3-W1-uVn">
-                                <rect key="frame" x="0.0" y="33" width="480" height="400"/>
+                                <rect key="frame" x="0.0" y="33" width="480" height="405"/>
                                 <locale key="locale" localeIdentifier="th"/>
                                 <connections>
                                     <action selector="dateTimeValueChanged:" destination="xCW-kB-kU8" eventType="valueChanged" id="I68-3h-eQ4"/>
                                 </connections>
                             </datePicker>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="fXy-Qk-2Gq">
-                                <rect key="frame" x="0.0" y="453" width="480" height="60"/>
+                                <rect key="frame" x="0.0" y="458" width="480" height="60"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Cj4-nY-aBR">
                                         <rect key="frame" x="50" y="0.0" width="380" height="60"/>
@@ -92,8 +93,10 @@
                             <constraint firstItem="mS3-W1-uVn" firstAttribute="leading" secondItem="8VZ-Uh-BL2" secondAttribute="leading" id="zfy-xY-XDI"/>
                         </constraints>
                     </view>
-                    <value key="contentSizeForViewInPopover" type="size" width="480" height="520"/>
+                    <value key="contentSizeForViewInPopover" type="size" width="480" height="525"/>
                     <connections>
+                        <outlet property="confirmButton" destination="22F-XS-Pbv" id="5Fu-Gg-8Yy"/>
+                        <outlet property="currentTimeButton" destination="Owx-5n-X4W" id="ehh-gA-MEC"/>
                         <outlet property="datePicker" destination="mS3-W1-uVn" id="cNL-J9-Yv5"/>
                     </connections>
                 </viewController>

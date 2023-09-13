@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="skt-xn-cU7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="skt-xn-cU7">
     <device id="ipad10_2" orientation="landscape" layout="fullscreen" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -18,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2yB-TB-OtG">
-                                <rect key="frame" x="0.0" y="50" width="1080" height="1760"/>
+                                <rect key="frame" x="0.0" y="70" width="1080" height="1740"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ERL-W7-RxM">
                                         <rect key="frame" x="50" y="50" width="980" height="1350"/>
@@ -1083,7 +1084,7 @@
                                 </constraints>
                             </scrollView>
                             <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wzk-Qh-PnU" customClass="CustomUIView" customModule="Inspection" customModuleProvider="target">
-                                <rect key="frame" x="960" y="100" width="100" height="100"/>
+                                <rect key="frame" x="960" y="120" width="100" height="100"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QKd-iQ-u5G">
                                         <rect key="frame" x="0.0" y="0.0" width="100" height="30"/>
@@ -1158,11 +1159,22 @@
                         <outlet property="a2Chehck" destination="YXP-7c-Ywh" id="6eU-6Z-N6Q"/>
                         <outlet property="a3Chehck" destination="pQU-8p-ujc" id="AqH-SL-Kdl"/>
                         <outlet property="a4Chehck" destination="KYS-TV-LvZ" id="21X-sh-Q69"/>
+                        <outlet property="aOption1Label" destination="8OK-dS-PjC" id="2aB-Bv-xMd"/>
+                        <outlet property="aOption2Label" destination="4Ml-l7-zp2" id="n5b-ln-ihN"/>
+                        <outlet property="aOption3Label" destination="sv4-Ci-HOp" id="bCB-Mg-bse"/>
+                        <outlet property="aOption4Label" destination="cO6-nr-NIR" id="V1c-dc-NsM"/>
+                        <outlet property="aTitleLabel" destination="c1u-jg-7qc" id="YQx-eY-TdW"/>
                         <outlet property="e1Chehck" destination="A2q-Ng-9vT" id="352-fB-mZR"/>
                         <outlet property="e2Chehck" destination="dwP-at-1Hw" id="My9-qT-dl6"/>
                         <outlet property="e3Chehck" destination="PqC-Ob-jVo" id="qAh-cP-euu"/>
                         <outlet property="e4Chehck" destination="YiI-1Q-5gc" id="8Pm-Ua-hhp"/>
                         <outlet property="e5Chehck" destination="uzm-Y3-ktn" id="Ss1-0y-LHq"/>
+                        <outlet property="eOption1Label" destination="YPb-Yh-9sK" id="ZxO-kO-gTe"/>
+                        <outlet property="eOption2Label" destination="Onh-ZQ-hem" id="vRG-pL-kOH"/>
+                        <outlet property="eOption3Label" destination="teq-Px-Wej" id="yjd-TL-mqi"/>
+                        <outlet property="eOption4Label" destination="8Wq-bF-hyr" id="ICm-1B-dFE"/>
+                        <outlet property="eOption5Label" destination="bXn-i2-rfw" id="5ed-fF-4sW"/>
+                        <outlet property="eTitleLabel" destination="u9g-as-dws" id="djG-w8-ad4"/>
                         <outlet property="f10Chehck" destination="3pB-zq-4kO" id="XEQ-kc-kVL"/>
                         <outlet property="f11Chehck" destination="IhM-Xf-u8M" id="l9D-7h-vvN"/>
                         <outlet property="f1Chehck" destination="kYp-zG-wDO" id="RGn-vU-Oxp"/>
@@ -1174,10 +1186,27 @@
                         <outlet property="f7Chehck" destination="NK3-Un-vMt" id="T8J-mb-vSL"/>
                         <outlet property="f8Chehck" destination="ayc-xL-Inh" id="TVe-AO-Xjn"/>
                         <outlet property="f9Chehck" destination="yMw-VX-HCL" id="RgX-pY-aoo"/>
+                        <outlet property="fOption10Label" destination="tRm-a2-BWd" id="Qhc-vC-IVK"/>
+                        <outlet property="fOption11Label" destination="fmN-7W-xYj" id="rjT-8w-v6y"/>
+                        <outlet property="fOption1Label" destination="2br-gF-FI5" id="Tve-gB-D1l"/>
+                        <outlet property="fOption2Label" destination="ZiL-Ba-qWc" id="d7O-qB-kE9"/>
+                        <outlet property="fOption3Label" destination="cHM-lT-qRG" id="M0X-4d-64a"/>
+                        <outlet property="fOption4Label" destination="C1M-SU-DAV" id="sj0-xN-I50"/>
+                        <outlet property="fOption5Label" destination="vyH-Sx-HCD" id="r1j-fQ-quO"/>
+                        <outlet property="fOption6Label" destination="oHX-pK-PTK" id="wia-ug-HJz"/>
+                        <outlet property="fOption7Label" destination="ZWn-3B-m3k" id="eq7-Hd-b8Z"/>
+                        <outlet property="fOption8Label" destination="aev-m8-3sA" id="NMJ-K0-IK6"/>
+                        <outlet property="fOption9Label" destination="uiu-Pg-tGh" id="rlt-PK-Y33"/>
+                        <outlet property="fTitleLabel" destination="83w-E5-lxr" id="0TK-lq-vIL"/>
                         <outlet property="g1Chehck" destination="pci-AA-czi" id="Irf-6d-VF5"/>
                         <outlet property="g2Chehck" destination="JsP-Yk-rTz" id="eAc-wO-tcz"/>
                         <outlet property="g3Chehck" destination="vHv-Mx-tmq" id="jmU-WM-t4s"/>
                         <outlet property="g4Chehck" destination="xL7-sC-V9R" id="KMP-Cl-S4l"/>
+                        <outlet property="gOption1Label" destination="sjZ-11-WXf" id="IHk-VR-GJJ"/>
+                        <outlet property="gOption2Label" destination="ycG-hT-RE5" id="fo7-V8-sQy"/>
+                        <outlet property="gOption3Label" destination="C5D-ay-tPx" id="2gp-J5-P92"/>
+                        <outlet property="gOption4Label" destination="o4x-wd-fCV" id="uMz-Ml-zZc"/>
+                        <outlet property="gTitleLabel" destination="8xS-oz-Frc" id="Uuf-lt-a2Z"/>
                         <outlet property="gradeLabel" destination="s0c-QS-eTL" id="TKm-rL-RpQ"/>
                         <outlet property="p1Chehck" destination="B2D-xj-Elf" id="IwI-G5-Xhw"/>
                         <outlet property="p2Chehck" destination="rCh-Ya-Pjg" id="jvP-jn-du6"/>
@@ -1188,9 +1217,22 @@
                         <outlet property="p7Chehck" destination="1fm-Qp-dBf" id="2eJ-Re-Fi9"/>
                         <outlet property="p8Chehck" destination="EOZ-fW-GAE" id="rk3-6d-yIQ"/>
                         <outlet property="p9Chehck" destination="nQm-SI-XsB" id="Vys-hP-Npf"/>
+                        <outlet property="pOption1Label" destination="PWr-Di-sTg" id="Gsr-0h-h81"/>
+                        <outlet property="pOption2Label" destination="WTm-0h-r0J" id="bIJ-13-plw"/>
+                        <outlet property="pOption3Label" destination="uyP-MO-BRy" id="U9D-4f-5MJ"/>
+                        <outlet property="pOption4Label" destination="7CQ-mh-DbG" id="UdC-Yo-h73"/>
+                        <outlet property="pOption5Label" destination="pYr-sC-XWp" id="kUx-Hb-ie5"/>
+                        <outlet property="pOption6Label" destination="etq-fF-pMb" id="iPs-2r-Na2"/>
+                        <outlet property="pOption7Label" destination="WH8-Ha-Wsg" id="gNt-Pb-OG1"/>
+                        <outlet property="pOption8Label" destination="an6-41-LdS" id="Ui5-48-sPf"/>
+                        <outlet property="pOption9Label" destination="hgE-Yh-rZv" id="cdT-oF-rjY"/>
+                        <outlet property="pTitleLabel" destination="dFp-Rg-jor" id="Ppl-44-HYr"/>
+                        <outlet property="rightButtonItem" destination="ryJ-2V-7um" id="2TC-tQ-WSB"/>
                         <outlet property="scrollView" destination="2yB-TB-OtG" id="JM1-0N-pJk"/>
                         <outlet property="x1Chehck" destination="Tnu-DX-Cxa" id="x4d-jM-RPp"/>
+                        <outlet property="xOptionLabel" destination="Rus-ro-2dz" id="or6-Uk-dew"/>
                         <outlet property="y1Chehck" destination="zBz-yy-bFM" id="6lZ-bg-Pfh"/>
+                        <outlet property="yOptionLabel" destination="2WG-EL-XEA" id="t7h-cg-3mf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gk5-RB-pd9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1216,7 +1258,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HjP-47-Xxg">
-                                <rect key="frame" x="0.0" y="50" width="1080" height="760"/>
+                                <rect key="frame" x="0.0" y="70" width="1080" height="740"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="YL6-c5-gl7">
                                         <rect key="frame" x="50" y="50" width="980" height="300"/>
@@ -1360,13 +1402,13 @@
                                         </subviews>
                                     </stackView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="เกรดสำหรับการประมูล" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Igt-wj-WSl">
-                                        <rect key="frame" x="331.5" y="400" width="185.5" height="24"/>
+                                        <rect key="frame" x="330" y="400" width="188.5" height="24"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                         <color key="textColor" name="primary_color"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="P Poor แย่" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g88-uA-uCE">
-                                        <rect key="frame" x="537" y="400" width="86.5" height="24"/>
+                                        <rect key="frame" x="538.5" y="400" width="86" height="24"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <color key="textColor" name="primary_color"/>
                                         <nil key="highlightedColor"/>
@@ -1410,16 +1452,23 @@
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
+                        <outlet property="auctionLevelKeyLabel" destination="Igt-wj-WSl" id="qBY-EX-YC8"/>
                         <outlet property="bodyNumberLabel" destination="ler-Xy-9fA" id="31n-zW-L0j"/>
                         <outlet property="carDetailLabel" destination="JaV-sH-xOk" id="MSU-Sb-0aL"/>
                         <outlet property="chassiNumberLabel" destination="SOC-86-Bff" id="xkI-lb-3dV"/>
+                        <outlet property="colorKeyLabel" destination="3xz-Dk-sFl" id="mxM-Nh-yfF"/>
                         <outlet property="colorLabel" destination="Pov-dt-2RB" id="mBl-iw-l88"/>
                         <outlet property="companyLabel" destination="Q4P-6V-HDZ" id="oF8-Ij-gb6"/>
+                        <outlet property="deliveryCompanyKeyLabel" destination="Uad-NJ-wre" id="WjZ-uT-7Me"/>
+                        <outlet property="detailKeyLabel" destination="x5r-zs-N1V" id="2QY-AT-pIO"/>
                         <outlet property="gradeDetailLabel" destination="g88-uA-uCE" id="b38-Kf-Lvr"/>
                         <outlet property="gradeLabel" destination="NcB-3c-Y4B" id="bdD-1L-iEV"/>
                         <outlet property="registrationLabel" destination="xaK-8V-9eS" id="uMm-oy-xi0"/>
+                        <outlet property="registrationNumberKeyLabel" destination="sYk-cH-yyh" id="6on-qV-4Zd"/>
                         <outlet property="saveButton" destination="WOy-jt-xTe" id="p7C-sL-CVh"/>
                         <outlet property="sendButton" destination="7IP-VI-Nva" id="7zW-vf-dYU"/>
+                        <outlet property="serialNumberKeyLabel" destination="gcU-tk-Ow6" id="SG7-Uz-I3N"/>
+                        <outlet property="vinNumberKeyLabel" destination="v8b-y0-tzJ" id="u7t-0V-ztF"/>
                         <segue destination="CDt-SS-EM6" kind="show" identifier="pdfviewer" id="EXB-yf-Kv2"/>
                     </connections>
                 </viewController>

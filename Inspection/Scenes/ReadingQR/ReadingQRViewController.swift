@@ -219,8 +219,8 @@ extension ReadingQRViewController :  AVCaptureMetadataOutputObjectsDelegate  {
             })
 
         }else{
-            let ac = UIAlertController(title: "", message: "QRCode ไม่ถูกต้อง", preferredStyle: .alert)
-            ac.addAction(UIAlertAction(title: "ตกลง", style: .default){ (alertAction) in
+            let ac = UIAlertController(title: "", message: "QRCode \(String.localized("login_not_correct_label"))", preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: String.localized("select_inspection_dialog_ok"), style: .default){ (alertAction) in
                 if (self.captureSession?.isRunning == false) {
                     self.captureSession.startRunning()
                 }

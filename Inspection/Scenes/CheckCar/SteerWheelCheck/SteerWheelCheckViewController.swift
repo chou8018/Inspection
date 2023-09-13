@@ -15,94 +15,107 @@ import RadioGroup
 
 protocol SteerWheelCheckDisplayLogic: AnyObject
 {
-  func displaySomething(viewModel: SteerWheelCheck.Something.ViewModel)
+    func displaySomething(viewModel: SteerWheelCheck.Something.ViewModel)
 }
 
-class SteerWheelCheckViewController: UIViewController, SteerWheelCheckDisplayLogic
+class SteerWheelCheckViewController: ViewController, SteerWheelCheckDisplayLogic
 {
-  var interactor: SteerWheelCheckBusinessLogic?
-  var router: (NSObjectProtocol & SteerWheelCheckRoutingLogic & SteerWheelCheckDataPassing)?
-
-  // MARK: Object lifecycle
-  
-  override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
-  {
-    super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-    setup()
-  }
-  
-  required init?(coder aDecoder: NSCoder)
-  {
-    super.init(coder: aDecoder)
-    setup()
-  }
-  
-  // MARK: Setup
-  
-  private func setup()
-  {
-    let viewController = self
-    let interactor = SteerWheelCheckInteractor()
-    let presenter = SteerWheelCheckPresenter()
-    let router = SteerWheelCheckRouter()
-    viewController.interactor = interactor
-    viewController.router = router
-    interactor.presenter = presenter
-    presenter.viewController = viewController
-    router.viewController = viewController
-    router.dataStore = interactor
-  }
-  
-  // MARK: Routing
-  
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-  {
-    if let scene = segue.identifier {
-      let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
-      if let router = router, router.responds(to: selector) {
-        router.perform(selector, with: segue)
-      }
+    var interactor: SteerWheelCheckBusinessLogic?
+    var router: (NSObjectProtocol & SteerWheelCheckRoutingLogic & SteerWheelCheckDataPassing)?
+    
+    // MARK: Object lifecycle
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
+    {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        setup()
     }
-  }
-  
-  // MARK: View lifecycle
-  
-  override func viewDidLoad()
-  {
-    super.viewDidLoad()
-    setUIView()
-    setRadio()
-    doSomething()
-  }
-  
-  // MARK: Do something
-  
-  //@IBOutlet weak var nameTextField: UITextField!
+    
+    required init?(coder aDecoder: NSCoder)
+    {
+        super.init(coder: aDecoder)
+        setup()
+    }
+    
+    // MARK: Setup
+    
+    private func setup()
+    {
+        let viewController = self
+        let interactor = SteerWheelCheckInteractor()
+        let presenter = SteerWheelCheckPresenter()
+        let router = SteerWheelCheckRouter()
+        viewController.interactor = interactor
+        viewController.router = router
+        interactor.presenter = presenter
+        presenter.viewController = viewController
+        router.viewController = viewController
+        router.dataStore = interactor
+    }
+    
+    // MARK: Routing
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if let scene = segue.identifier {
+            let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
+            if let router = router, router.responds(to: selector) {
+                router.perform(selector, with: segue)
+            }
+        }
+    }
+    
+    // MARK: View lifecycle
+    
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
+        setUIView()
+        setRadio()
+        doSomething()
+    }
+    
+    // MARK: Do something
+    
+    //@IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var steerWheelPowerCheckBox: CheckBoxUIButton!
-    
     @IBOutlet weak var steerWheelSystemRadio: RadioGroup!
     @IBOutlet weak var summarysteerWheelSystemTextField: MultilineTextField!
     
-  func doSomething()
-  {
-    let request = SteerWheelCheck.Something.Request()
-    interactor?.doSomething(request: request)
-  }
-  
-  func displaySomething(viewModel: SteerWheelCheck.Something.ViewModel)
-  {
-    //nameTextField.text = viewModel.name
-  }
+    // local strings
+    @IBOutlet weak var steeringSystemLabel: UILabel!
+    @IBOutlet weak var powerLabel: UILabel!
+    @IBOutlet weak var summaryLabel: UILabel!
+
+    override func initLocalString() {
+        super.initLocalString()
+        
+        steeringSystemLabel.text = String.localized("inspection_steering_system_label")
+        powerLabel.text = String.localized("inspection_steering_power_label")
+        summaryLabel.text = String.localized("inspection_steering_summary_label")
+        summarysteerWheelSystemTextField.placeholder = summaryLabel.text
+    }
+    
+    func doSomething()
+    {
+        let request = SteerWheelCheck.Something.Request()
+        interactor?.doSomething(request: request)
+    }
+    
+    func displaySomething(viewModel: SteerWheelCheck.Something.ViewModel)
+    {
+        //nameTextField.text = viewModel.name
+    }
     
     //MARK: UIView
     func setUIView(){
         summarysteerWheelSystemTextField.autocorrectionType = .no
         summarysteerWheelSystemTextField.delegate = self
-
+        
     }
     
-   
+    
     //MARK: Checkbox
     @IBAction func steerWheelPowerTapped(_ sender: Any) {
         steerWheelPowerCheckBox.toggle { check in
@@ -113,16 +126,16 @@ class SteerWheelCheckViewController: UIViewController, SteerWheelCheckDisplayLog
     //MARK: Radio
     func setRadio(){
         let attributedString = [NSAttributedString.Key.foregroundColor : UIColor.appPrimaryColor]
-         
+        
         steerWheelSystemRadio.attributedTitles = [
             NSAttributedString(
-                string: "ใช้งานได้", attributes: attributedString),
+                string: string_inspection_engine_working, attributes: attributedString),
             NSAttributedString(
-                string: "ใช้งานไม่ได้", attributes: attributedString)
+                string: string_inspection_engine_not_working, attributes: attributedString)
         ]
     }
     @IBAction func steerWheelSystemValueChanged(_ sender: Any) {
-        let value = getRadioValue(from: ["ใช้งานได้", "ใช้งานไม่ได้"],
+        let value = getRadioValue(from: [string_inspection_engine_working, string_inspection_engine_not_working],
                                   selectIndex: steerWheelSystemRadio.selectedIndex)
         
         DataController.shared.inspectionCarModel.steerWheelSystem = value
@@ -135,7 +148,7 @@ class SteerWheelCheckViewController: UIViewController, SteerWheelCheckDisplayLog
         let model = DataController.shared.inspectionCarModel
         summarysteerWheelSystemTextField.text = model.summarySteerWheelSystem
         steerWheelPowerCheckBox.check = model.isSteerWheelPower
-        steerWheelSystemRadio.selectedIndex = getRadioIndexByValue(from: ["ใช้งานได้", "ใช้งานไม่ได้"],
+        steerWheelSystemRadio.selectedIndex = getRadioIndexByValue(from: [string_inspection_engine_working, string_inspection_engine_not_working],
                                                                    value: model.steerWheelSystem)
         
     }

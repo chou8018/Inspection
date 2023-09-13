@@ -16,83 +16,91 @@ import PDFKit
 
 protocol PDFPreviewDisplayLogic: AnyObject
 {
-  func displayPDF(viewModel: PDFPreview.Something.ViewModel)
+    func displayPDF(viewModel: PDFPreview.Something.ViewModel)
     func printPDF(viewModel: PDFPreview.Something.ViewModel)
 }
 
-class PDFPreviewViewController: UIViewController, PDFPreviewDisplayLogic
+class PDFPreviewViewController: ViewController, PDFPreviewDisplayLogic
 {
-  var interactor: PDFPreviewBusinessLogic?
-  var router: (NSObjectProtocol & PDFPreviewRoutingLogic & PDFPreviewDataPassing)?
-
-  // MARK: Object lifecycle
-  
-  override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
-  {
-    super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-    setup()
-  }
-  
-  required init?(coder aDecoder: NSCoder)
-  {
-    super.init(coder: aDecoder)
-    setup()
-  }
-  
-  // MARK: Setup
-  
-  private func setup()
-  {
-    let viewController = self
-    let interactor = PDFPreviewInteractor()
-    let presenter = PDFPreviewPresenter()
-    let router = PDFPreviewRouter()
-    viewController.interactor = interactor
-    viewController.router = router
-    interactor.presenter = presenter
-    presenter.viewController = viewController
-    router.viewController = viewController
-    router.dataStore = interactor
-  }
-  
-  // MARK: Routing
-  
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-  {
-    if let scene = segue.identifier {
-      let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
-      if let router = router, router.responds(to: selector) {
-        router.perform(selector, with: segue)
-      }
+    var interactor: PDFPreviewBusinessLogic?
+    var router: (NSObjectProtocol & PDFPreviewRoutingLogic & PDFPreviewDataPassing)?
+    
+    // local strings
+    @IBOutlet weak var printButtonItem: UIBarButtonItem!
+    
+    override func initLocalString() {
+        super.initLocalString()
+        printButtonItem.title = String.localized("car_pdf_print_button_title")
     }
-  }
-  
-  // MARK: View lifecycle
-  
-  override func viewDidLoad()
-  {
-    super.viewDidLoad()
-    previewPDFGenerate()
-  }
-  
-  // MARK: Do something
-  
-  //@IBOutlet weak var nameTextField: UITextField!
-  
-  func previewPDFGenerate()
-  {
-    let request = PDFPreview.Something.Request()
-    interactor?.previewPDFGenerate(request: request)
-  }
-  
-  func displayPDF(viewModel: PDFPreview.Something.ViewModel)
-  {
-    guard let documentData = viewModel.documentData else { return }
-    let pdfView = PDFView(frame: self.view.frame)
-    pdfView.document = PDFDocument(data: documentData)
-    pdfView.autoScales = true
-    self.view.addSubview(pdfView)
-  }
+    
+    // MARK: Object lifecycle
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
+    {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        setup()
+    }
+    
+    required init?(coder aDecoder: NSCoder)
+    {
+        super.init(coder: aDecoder)
+        setup()
+    }
+    
+    // MARK: Setup
+    
+    private func setup()
+    {
+        let viewController = self
+        let interactor = PDFPreviewInteractor()
+        let presenter = PDFPreviewPresenter()
+        let router = PDFPreviewRouter()
+        viewController.interactor = interactor
+        viewController.router = router
+        interactor.presenter = presenter
+        presenter.viewController = viewController
+        router.viewController = viewController
+        router.dataStore = interactor
+    }
+    
+    // MARK: Routing
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if let scene = segue.identifier {
+            let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
+            if let router = router, router.responds(to: selector) {
+                router.perform(selector, with: segue)
+            }
+        }
+    }
+    
+    // MARK: View lifecycle
+    
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
+        previewPDFGenerate()
+    }
+    
+    // MARK: Do something
+    
+    //@IBOutlet weak var nameTextField: UITextField!
+    
+    func previewPDFGenerate()
+    {
+        let request = PDFPreview.Something.Request()
+        interactor?.previewPDFGenerate(request: request)
+    }
+    
+    func displayPDF(viewModel: PDFPreview.Something.ViewModel)
+    {
+        guard let documentData = viewModel.documentData else { return }
+        let pdfView = PDFView(frame: self.view.frame)
+        pdfView.document = PDFDocument(data: documentData)
+        pdfView.autoScales = true
+        self.view.addSubview(pdfView)
+    }
     @IBAction func printTapped(_ sender: Any) {
         let request = PDFPreview.Something.Request()
         interactor?.printPDF(request: request)
@@ -106,19 +114,19 @@ class PDFPreviewViewController: UIViewController, PDFPreviewDisplayLogic
             printInfo.jobName = pdfName
             printInfo.outputType = .photo
             printInfo.orientation = .portrait
-
+            
             let printController = UIPrintInteractionController.shared
             printController.printInfo = printInfo
             printController.showsNumberOfCopies = true
             printController.printingItem = documentData
-
+            
             printController.present(animated: true) { (controller, completed, error) in
-                    if(!completed && error != nil){
-                        print("Print failed - %@", error!.localizedDescription)
-                    }  else if(completed) {
-                        print("Print succeeded")
-                    }
+                if(!completed && error != nil){
+                    print("Print failed - %@", error!.localizedDescription)
+                }  else if(completed) {
+                    print("Print succeeded")
                 }
+            }
         }
     }
 }

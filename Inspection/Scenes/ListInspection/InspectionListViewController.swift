@@ -14,81 +14,90 @@ import UIKit
 
 protocol InspectionListDisplayLogic: AnyObject
 {
-  func displaySomething(viewModel: InspectionList.Something.ViewModel)
+    func displaySomething(viewModel: InspectionList.Something.ViewModel)
 }
 
-class InspectionListViewController: UIViewController, InspectionListDisplayLogic
+class InspectionListViewController: ViewController, InspectionListDisplayLogic
 {
-  var interactor: InspectionListBusinessLogic?
-  var router: (NSObjectProtocol & InspectionListRoutingLogic & InspectionListDataPassing)?
-
-  // MARK: Object lifecycle
-  
-  override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
-  {
-    super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-    setup()
-  }
-  
-  required init?(coder aDecoder: NSCoder)
-  {
-    super.init(coder: aDecoder)
-    setup()
-  }
-  
-  // MARK: Setup
-  
-  private func setup()
-  {
-    let viewController = self
-    let interactor = InspectionListInteractor()
-    let presenter = InspectionListPresenter()
-    let router = InspectionListRouter()
-    viewController.interactor = interactor
-    viewController.router = router
-    interactor.presenter = presenter
-    presenter.viewController = viewController
-    router.viewController = viewController
-    router.dataStore = interactor
-  }
-  
-  // MARK: Routing
-  
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-  {
-    if let scene = segue.identifier {
-      let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
-      if let router = router, router.responds(to: selector) {
-        router.perform(selector, with: segue)
-      }
+    var interactor: InspectionListBusinessLogic?
+    var router: (NSObjectProtocol & InspectionListRoutingLogic & InspectionListDataPassing)?
+    
+    // MARK: Object lifecycle
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
+    {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        setup()
     }
-  }
-  
-  // MARK: View lifecycle
-  
-  override func viewDidLoad()
-  {
-    super.viewDidLoad()
-    segmentSetUp()
-    doSomething()
-  }
-  
-  // MARK: Do something
-  
-  //@IBOutlet weak var nameTextField: UITextField!
-  
+    
+    required init?(coder aDecoder: NSCoder)
+    {
+        super.init(coder: aDecoder)
+        setup()
+    }
+    
+    // MARK: Setup
+    
+    private func setup()
+    {
+        let viewController = self
+        let interactor = InspectionListInteractor()
+        let presenter = InspectionListPresenter()
+        let router = InspectionListRouter()
+        viewController.interactor = interactor
+        viewController.router = router
+        interactor.presenter = presenter
+        presenter.viewController = viewController
+        router.viewController = viewController
+        router.dataStore = interactor
+    }
+    
+    // MARK: Routing
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if let scene = segue.identifier {
+            let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
+            if let router = router, router.responds(to: selector) {
+                router.perform(selector, with: segue)
+            }
+        }
+    }
+    
+    // MARK: View lifecycle
+    
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
+        segmentSetUp()
+        doSomething()
+    }
+    
+    // MARK: Do something
+    
+    //@IBOutlet weak var nameTextField: UITextField!
+    
     @IBOutlet weak var segmentView: UIView!
     @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var backButtonItem: UIBarButtonItem!
+    // local strings
     
-  func doSomething()
-  {
-    let request = InspectionList.Something.Request()
-    interactor?.doSomething(request: request)
-  }
-  func displaySomething(viewModel: InspectionList.Something.ViewModel)
-  {
-    //nameTextField.text = viewModel.name
-  }
+    override func initLocalString() {
+        super.initLocalString()
+        
+        self.title = String.localized("inspection_list_title_label")
+        backButtonItem.title = String.localized("main_inspection_bar_button_main_title")
+    }
+    
+    func doSomething()
+    {
+        let request = InspectionList.Something.Request()
+        interactor?.doSomething(request: request)
+    }
+    func displaySomething(viewModel: InspectionList.Something.ViewModel)
+    {
+        //nameTextField.text = viewModel.name
+    }
     
     
     func segmentSetUp(){
@@ -97,10 +106,10 @@ class InspectionListViewController: UIViewController, InspectionListDisplayLogic
         updateUIView(from: 0)
     }
     
-
+    
     lazy var codeSegmented:SegmentControlCustom  =  {
-        let codeSegmented = SegmentControlCustom(frame: CGRect(x: 0, y: 0, width: segmentView.frame.width, height: 40), buttonTitle: ["รายการทั้งหมด","รายการตรวจค้าง"] ,fontSize: 30.0)
-      
+        let codeSegmented = SegmentControlCustom(frame: CGRect(x: 0, y: 0, width: segmentView.frame.width, height: 40), buttonTitle: [String.localized("inspection_list_all_title_label"),String.localized("inspection_list_pending_label")] ,fontSize: 30.0)
+        
         codeSegmented.bgColor = .clear
         codeSegmented.selectorTextColor = UIColor.orangeColor
         codeSegmented.selectorViewColor = UIColor.orangeColor
@@ -108,22 +117,22 @@ class InspectionListViewController: UIViewController, InspectionListDisplayLogic
         return codeSegmented
     }()
     private lazy var itemAllListViewController: ItemAllListViewController? = {
-  
+        
         var viewController = getViewCOntroller(identifier: "ItemAllListViewController") as! ItemAllListViewController
         
         // Add View Controller as Child View Controller
         //self.add(asChildViewController: viewController)
-
+        
         return viewController
     }()
-
+    
     private lazy var itemPendingListViewController: ItemPendingListViewController? = {
         
         var viewController = getViewCOntroller(identifier: "ItemPendingListViewController") as! ItemPendingListViewController
         
         // Add View Controller as Child View Controller
         //self.add(asChildViewController: viewController)
-
+        
         return viewController
     }()
     
@@ -145,27 +154,27 @@ class InspectionListViewController: UIViewController, InspectionListDisplayLogic
         }
         // Add Child View Controller
         addChild(viewController)
-
+        
         // Add Child View as Subview
         containerView.addSubview(viewController.view)
-
+        
         // Configure Child View
         viewController.view.frame = containerView.bounds
         viewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-
+        
         // Notify Child View Controller
         viewController.didMove(toParent: self)
     }
-//    private func remove(asChildViewController viewController: UIViewController) {
-//        // Notify Child View Controller
-//        viewController.willMove(toParent: nil)
-//
-//        // Remove Child View From Superview
-//        viewController.view.removeFromSuperview()
-//
-//        // Notify Child View Controller
-//        viewController.removeFromParent()
-//    }
+    //    private func remove(asChildViewController viewController: UIViewController) {
+    //        // Notify Child View Controller
+    //        viewController.willMove(toParent: nil)
+    //
+    //        // Remove Child View From Superview
+    //        viewController.view.removeFromSuperview()
+    //
+    //        // Notify Child View Controller
+    //        viewController.removeFromParent()
+    //    }
     private func updateUIView(from index: Int){
         if index == 0 {
             add(asChildViewController: itemAllListViewController)
@@ -184,7 +193,7 @@ class InspectionListViewController: UIViewController, InspectionListDisplayLogic
     }
 }
 extension InspectionListViewController : CustomSegmentedControlDelegate {
- 
+    
     func change(to index: Int , button : UIButton) {
         updateUIView(from: index)
         
@@ -200,6 +209,6 @@ extension InspectionListViewController  {
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-    
+        
     }
 }

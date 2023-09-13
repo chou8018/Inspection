@@ -14,7 +14,7 @@ import UIKit
 
 protocol CreateModelCodeDisplayLogic: AnyObject
 {
-  func displaySomething(viewModel: CreateModelCode.Something.ViewModel)
+    func displaySomething(viewModel: CreateModelCode.Something.ViewModel)
     func displayMakeList(viewModel: CreateModelCode.Something.ViewModel)
     func displayErrorMakeList(viewModel: CreateModelCode.Something.ViewModel)
     
@@ -58,65 +58,65 @@ protocol CreateModelCodeDisplayLogic: AnyObject
     func displayFillDataFromEditModel(viewModel: CreateModelCode.Something.ViewModel)
 }
 
-class CreateModelCodeViewController: UIViewController, CreateModelCodeDisplayLogic
+class CreateModelCodeViewController: ViewController, CreateModelCodeDisplayLogic
 {
-  var interactor: CreateModelCodeBusinessLogic?
-  var router: (NSObjectProtocol & CreateModelCodeRoutingLogic & CreateModelCodeDataPassing)?
-
-  // MARK: Object lifecycle
-  
-  override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
-  {
-    super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-    setup()
-  }
-  
-  required init?(coder aDecoder: NSCoder)
-  {
-    super.init(coder: aDecoder)
-    setup()
-  }
-  
-  // MARK: Setup
-  
-  private func setup()
-  {
-    let viewController = self
-    let interactor = CreateModelCodeInteractor()
-    let presenter = CreateModelCodePresenter()
-    let router = CreateModelCodeRouter()
-    viewController.interactor = interactor
-    viewController.router = router
-    interactor.presenter = presenter
-    presenter.viewController = viewController
-    router.viewController = viewController
-    router.dataStore = interactor
-  }
-  
-  // MARK: Routing
-  
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-  {
-    if let scene = segue.identifier {
-      let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
-      if let router = router, router.responds(to: selector) {
-        router.perform(selector, with: segue)
-      }
+    var interactor: CreateModelCodeBusinessLogic?
+    var router: (NSObjectProtocol & CreateModelCodeRoutingLogic & CreateModelCodeDataPassing)?
+    
+    // MARK: Object lifecycle
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
+    {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        setup()
     }
-  }
-  
-  // MARK: View lifecycle
-  
-  override func viewDidLoad()
-  {
-    super.viewDidLoad()
-    doSomething()
-    setUpTextField()
-  }
-  
-  // MARK: Do something
-  
-  //@IBOutlet weak var nameTextField: UITextField!
+    
+    required init?(coder aDecoder: NSCoder)
+    {
+        super.init(coder: aDecoder)
+        setup()
+    }
+    
+    // MARK: Setup
+    
+    private func setup()
+    {
+        let viewController = self
+        let interactor = CreateModelCodeInteractor()
+        let presenter = CreateModelCodePresenter()
+        let router = CreateModelCodeRouter()
+        viewController.interactor = interactor
+        viewController.router = router
+        interactor.presenter = presenter
+        presenter.viewController = viewController
+        router.viewController = viewController
+        router.dataStore = interactor
+    }
+    
+    // MARK: Routing
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if let scene = segue.identifier {
+            let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
+            if let router = router, router.responds(to: selector) {
+                router.perform(selector, with: segue)
+            }
+        }
+    }
+    
+    // MARK: View lifecycle
+    
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
+        doSomething()
+        setUpTextField()
+    }
+    
+    // MARK: Do something
+    
+    //@IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var scrollView: UIScrollView!
     
     @IBOutlet weak var modelCodeTextField:CustomTextField!
@@ -139,17 +139,52 @@ class CreateModelCodeViewController: UIViewController, CreateModelCodeDisplayLog
     
     @IBOutlet weak var createBtn:CustomUIButton!
     @IBOutlet weak var updateBtn:CustomUIButton!
-  
-  func doSomething()
-  {
-    let request = CreateModelCode.Something.Request()
-    interactor?.doSomething(request: request)
-  }
-  
-  func displaySomething(viewModel: CreateModelCode.Something.ViewModel)
-  {
-    //nameTextField.text = viewModel.name
-  }
+    
+    // local strings
+    
+    @IBOutlet weak var chassisNumberLabel: UILabel!
+    @IBOutlet weak var makeLabel: UILabel!
+    @IBOutlet weak var buildYearLabel: UILabel!
+    @IBOutlet weak var modelEngLabel: UILabel!
+    @IBOutlet weak var modelThaiLabel: UILabel!
+    @IBOutlet weak var variantsLabel: UILabel!
+    @IBOutlet weak var bodyLabel: UILabel!
+    @IBOutlet weak var fuelDeliveryLabel: UILabel!
+    @IBOutlet weak var fuelTypeLabel: UILabel!
+    @IBOutlet weak var gearboxLabel: UILabel!
+    @IBOutlet weak var gearLabel: UILabel!
+    @IBOutlet weak var driveLabel: UILabel!
+    @IBOutlet weak var engineCapacityLabel: UILabel!
+    
+    override func initLocalString() {
+        super.initLocalString()
+        
+        chassisNumberLabel.text = String.localized("create_model_chassis_number_label")
+        makeLabel.text = String.localized("car_exterior_make_label")
+        buildYearLabel.text = String.localized("create_model_build_year_label")
+        modelEngLabel.text = "\(String.localized("create_model_mode_label")) Eng"
+        modelThaiLabel.text = "\(String.localized("create_model_mode_label")) Thai"
+        variantsLabel.text = String.localized("create_model_variants_label")
+        bodyLabel.text = String.localized("create_model_body_label")
+        fuelDeliveryLabel.text = String.localized("create_model_fuel_delivery_label")
+        fuelTypeLabel.text = String.localized("create_model_fuel_type_label")
+        gearboxLabel.text = String.localized("create_model_gearbox_label")
+        gearLabel.text = String.localized("create_model_gear_label")
+        driveLabel.text = String.localized("create_model_drive_label")
+        engineCapacityLabel.text = String.localized("create_model_engine_capacity_label")
+
+    }
+    
+    func doSomething()
+    {
+        let request = CreateModelCode.Something.Request()
+        interactor?.doSomething(request: request)
+    }
+    
+    func displaySomething(viewModel: CreateModelCode.Something.ViewModel)
+    {
+        //nameTextField.text = viewModel.name
+    }
     
     
     func setUpTextField(){
@@ -217,7 +252,7 @@ class CreateModelCodeViewController: UIViewController, CreateModelCodeDisplayLog
         print("🔸 displayValidateSuccess")
         guard let modelCodeType = viewModel.modelCodeType else { return }
         switch modelCodeType {
-
+            
         case .CREATE:
             print("🔸 create model code")
             self.createModelCode()
@@ -225,7 +260,7 @@ class CreateModelCodeViewController: UIViewController, CreateModelCodeDisplayLog
             print("🔸 update model code")
             self.updateModelCode()
         }
-
+        
     }
     
     
@@ -266,7 +301,7 @@ class CreateModelCodeViewController: UIViewController, CreateModelCodeDisplayLog
         guard let bodyList_bu = viewModel.bodyList_bu else { return }
         
         isFetchBodyCar = true
-
+        
         setValue(to: bodyDropdown, values: bodyList_bu) { [weak self] (selectValue, _, _) in
             self?.bodyDropdown.text = selectValue
             
@@ -283,7 +318,7 @@ class CreateModelCodeViewController: UIViewController, CreateModelCodeDisplayLog
             self?.fetchAPI()
         }
     }
-  
+    
     
     
     //MARK: Drive
@@ -300,7 +335,7 @@ class CreateModelCodeViewController: UIViewController, CreateModelCodeDisplayLog
     func displayDriveList(viewModel: CreateModelCode.Something.ViewModel) {
         guard let driveList_bu = viewModel.driveList_bu else { return }
         isFetchDrive = true
-       
+        
         setValue(to: driveDropdown, values: driveList_bu) { [weak self] (selectValue, _, _) in
             self?.driveDropdown.text = selectValue
             
@@ -372,7 +407,7 @@ class CreateModelCodeViewController: UIViewController, CreateModelCodeDisplayLog
     func displayFuelTypeList(viewModel: CreateModelCode.Something.ViewModel) {
         guard let fuelTypeList_bu = viewModel.fuelTypeList_bu else { return }
         isFetchFuelType = true
-      
+        
         setValue(to: fuelTypeDropdown, values: fuelTypeList_bu) { [weak self] (selectValue, _, _) in
             self?.fuelTypeDropdown.text = selectValue
             
@@ -538,13 +573,13 @@ class CreateModelCodeViewController: UIViewController, CreateModelCodeDisplayLog
     
     func checkLoadFinish(){
         if isFetchMakeCar  && isFetchBodyCar && isFetchjatoModelCar && isFetchjatoVaraints && isFetchDrive && isFetchGearBox && isFetchFuelType && isfetchDelivery {
-      
+            
             print("🔸 fetch data success 🔸")
             
             let reqeust = CreateModelCode.Something.Request()
             interactor?.fillDataFromEditModel(request: reqeust)
         }
-      
+        
     }
     //MARK: display EditModel
     func displayFillDataFromEditModel(viewModel: CreateModelCode.Something.ViewModel) {
@@ -626,13 +661,13 @@ extension CreateModelCodeViewController {
         scrollView.registKeyboardNotification()
         
         fetchAPI()
-   }
-   
-   override func viewDidDisappear(_ animated: Bool) {
-       super.viewDidDisappear(animated)
-       scrollView.resignKeyboardNotification()
+    }
     
-   }
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        scrollView.resignKeyboardNotification()
+        
+    }
 }
 
 extension CreateModelCodeViewController : UITextFieldDelegate {

@@ -37,7 +37,11 @@ class BodyCheckPresenter: BodyCheckPresentationLogic
             viewController?.displayShowProvinceError(viewModel: viewModel)
         }else{
             guard let provinceList = response.provinceList else { return }
-            let values = provinceList.map({ $0.desc_LO ?? "" })
+            
+            var values = provinceList.map({ $0.desc_LO ?? "" })
+            if !DataController.shared.isThaiLanguage() {
+                values = provinceList.map({ $0.desc_BU ?? "" })
+            }
             let viewModel = BodyCheck.Something.ViewModel(provinceList: values)
             viewController?.displayProvinceDropdown(viewModel: viewModel)
         }

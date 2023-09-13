@@ -14,7 +14,7 @@ import UIKit
 
 protocol ItemPendingListDisplayLogic: AnyObject
 {
-  func displayResultTableView(viewModel: ItemPendingList.Fetch.ViewModel)
+    func displayResultTableView(viewModel: ItemPendingList.Fetch.ViewModel)
     
     func didSelectItemTableView(viewModel: ItemPendingList.Fetch.ViewModel)
     func displayShowDetail(viewModel: ItemPendingList.Fetch.ViewModel)
@@ -22,85 +22,104 @@ protocol ItemPendingListDisplayLogic: AnyObject
     
     func displayBookInDetail(viewModel: ItemPendingList.Fetch.ViewModel)
     func displayErrorGetBookInDetail(viewModel: ItemPendingList.Fetch.ViewModel)
- 
+    
     func displayErrorFetchItem(viewModel: ItemPendingList.Fetch.ViewModel)
 }
 
-class ItemPendingListViewController: UIViewController, ItemPendingListDisplayLogic
+class ItemPendingListViewController: ViewController, ItemPendingListDisplayLogic
 {
-  var interactor: ItemPendingListBusinessLogic?
-  var router: (NSObjectProtocol & ItemPendingListRoutingLogic & ItemPendingListDataPassing)?
-
-  // MARK: Object lifecycle
-  
-  override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
-  {
-    super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-    setup()
-  }
-  
-  required init?(coder aDecoder: NSCoder)
-  {
-    super.init(coder: aDecoder)
-    setup()
-  }
-  
-  // MARK: Setup
-  
-  private func setup()
-  {
-    let viewController = self
-    let interactor = ItemPendingListInteractor()
-    let presenter = ItemPendingListPresenter()
-    let router = ItemPendingListRouter()
-    viewController.interactor = interactor
-    viewController.router = router
-    interactor.presenter = presenter
-    presenter.viewController = viewController
-    router.viewController = viewController
-    router.dataStore = interactor
-  }
-  
-  // MARK: Routing
-  
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-  {
-    if let scene = segue.identifier {
-      let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
-      if let router = router, router.responds(to: selector) {
-        router.perform(selector, with: segue)
-      }
-        
-        if let destinationQR = segue.destination as? DetailViewController {
-            destinationQR.callbackSelectOption = {[weak self] option in
-                let request = ItemPendingList.Fetch.Request()
-                self?.interactor?.fetchBookinDetail(request: request, type: option)
+    var interactor: ItemPendingListBusinessLogic?
+    var router: (NSObjectProtocol & ItemPendingListRoutingLogic & ItemPendingListDataPassing)?
+    
+    // MARK: Object lifecycle
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
+    {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        setup()
+    }
+    
+    required init?(coder aDecoder: NSCoder)
+    {
+        super.init(coder: aDecoder)
+        setup()
+    }
+    
+    // MARK: Setup
+    
+    private func setup()
+    {
+        let viewController = self
+        let interactor = ItemPendingListInteractor()
+        let presenter = ItemPendingListPresenter()
+        let router = ItemPendingListRouter()
+        viewController.interactor = interactor
+        viewController.router = router
+        interactor.presenter = presenter
+        presenter.viewController = viewController
+        router.viewController = viewController
+        router.dataStore = interactor
+    }
+    
+    // MARK: Routing
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if let scene = segue.identifier {
+            let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
+            if let router = router, router.responds(to: selector) {
+                router.perform(selector, with: segue)
+            }
+            
+            if let destinationQR = segue.destination as? DetailViewController {
+                destinationQR.callbackSelectOption = {[weak self] option in
+                    let request = ItemPendingList.Fetch.Request()
+                    self?.interactor?.fetchBookinDetail(request: request, type: option)
+                }
             }
         }
     }
-  }
-  
-  // MARK: View lifecycle
-  
-  override func viewDidLoad()
-  {
-    super.viewDidLoad()
-    setUpTableView()
     
+    // MARK: View lifecycle
     
-  }
-  
-  // MARK: Do something
-  
-  //@IBOutlet weak var nameTextField: UITextField!
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
+        setUpTableView()
+        
+        
+    }
+    
+    // MARK: Do something
+    
+    //@IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var fullName: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var headerRowView: CustomUIView!
     
     let datasource = PendingListDataSource()
     
+    // local strings
+    @IBOutlet weak var registrationNumberTitleLabel: UILabel!
+    @IBOutlet weak var makeTitleLabel: UILabel!
+    @IBOutlet weak var modelTitleLabel: UILabel!
+    @IBOutlet weak var variantTitleLabel: UILabel!
+    @IBOutlet weak var yearTitleLabel: UILabel!
+    @IBOutlet weak var statusTitleLabel: UILabel!
+
+    override func initLocalString() {
+        super.initLocalString()
+        
+        registrationNumberTitleLabel.text = String.localized("inspection_list_registration_number_label")
+        makeTitleLabel.text = String.localized("car_exterior_make_label")
+        modelTitleLabel.text = String.localized("create_model_mode_label")
+        variantTitleLabel.text = String.localized("car_detail_variant_label")
+        yearTitleLabel.text = String.localized("car_detail_year_placeholder_label")
+        statusTitleLabel.text = String.localized("inspection_list_status_label")
+    }
+    
     func setUpTableView(){
-        fullName.text = "ผู้ตรวจสภาพ \(DataController.shared.getFullName())"
+        fullName.text = "\(String.localized("select_inspection_inspector_label")) \(DataController.shared.getFullName())"
         
         tableView.dataSource = datasource
         tableView.delegate = datasource
@@ -110,9 +129,6 @@ class ItemPendingListViewController: UIViewController, ItemPendingListDisplayLog
             self?.interactor?.didSelectRow(request: request)
             
         }
-        
-        
-        
     }
     
     func didSelectItemTableView(viewModel: ItemPendingList.Fetch.ViewModel) {
@@ -124,14 +140,14 @@ class ItemPendingListViewController: UIViewController, ItemPendingListDisplayLog
     func displayShowPdfViewer(viewModel: ItemPendingList.Fetch.ViewModel) {
         performSegue(withIdentifier: "ViewPDF", sender: nil)
     }
-   
     
-  func displayResultTableView(viewModel: ItemPendingList.Fetch.ViewModel)
-  {
-    datasource.itemList = viewModel.itemList ?? []
-    datasource.tableType = viewModel.tableType ?? .NotFound
-    tableView.reloadData()
-  }
+    
+    func displayResultTableView(viewModel: ItemPendingList.Fetch.ViewModel)
+    {
+        datasource.itemList = viewModel.itemList ?? []
+        datasource.tableType = viewModel.tableType ?? .NotFound
+        tableView.reloadData()
+    }
     
     func displayBookInDetail(viewModel: ItemPendingList.Fetch.ViewModel) {
         let request = ItemPendingList.Fetch.Request()
@@ -162,7 +178,7 @@ class ItemPendingListViewController: UIViewController, ItemPendingListDisplayLog
 extension ItemPendingListViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-     
+        
         fetchPendingList()
     }
 }

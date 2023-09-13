@@ -20,74 +20,74 @@ enum Selection{
 }
 protocol DetailDisplayLogic: AnyObject
 {
-  func displayDetail(viewModel: Detail.Model.ViewModel)
+    func displayDetail(viewModel: Detail.Model.ViewModel)
     var callbackSelectOption: ((Selection)->Void)? { get set }
 }
 
-class DetailViewController: UIViewController, DetailDisplayLogic
+class DetailViewController: ViewController, DetailDisplayLogic
 {
-  var interactor: DetailBusinessLogic?
-  var router: (NSObjectProtocol & DetailRoutingLogic & DetailDataPassing)?
+    var interactor: DetailBusinessLogic?
+    var router: (NSObjectProtocol & DetailRoutingLogic & DetailDataPassing)?
     var callbackSelectOption: ((Selection)->Void)?
-  // MARK: Object lifecycle
-  
-  override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
-  {
-    super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-    setup()
-  }
-  
-  required init?(coder aDecoder: NSCoder)
-  {
-    super.init(coder: aDecoder)
-    setup()
-  }
-  
-  // MARK: Setup
-  
-  private func setup()
-  {
-    let viewController = self
-    let interactor = DetailInteractor()
-    let presenter = DetailPresenter()
-    let router = DetailRouter()
-    viewController.interactor = interactor
-    viewController.router = router
-    interactor.presenter = presenter
-    presenter.viewController = viewController
-    router.viewController = viewController
-    router.dataStore = interactor
-  }
-  
-  // MARK: Routing
-  
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-  {
-    if let scene = segue.identifier {
-      let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
-      if let router = router, router.responds(to: selector) {
-        router.perform(selector, with: segue)
-      }
+    // MARK: Object lifecycle
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
+    {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        setup()
     }
-  }
-  
-  // MARK: View lifecycle
-  
-  override func viewDidLoad()
-  {
-    super.viewDidLoad()
-    doSomething()
-    setUIView()
-  }
-  
-  // MARK: Do something
-  
-  //@IBOutlet weak var nameTextField: UITextField!
+    
+    required init?(coder aDecoder: NSCoder)
+    {
+        super.init(coder: aDecoder)
+        setup()
+    }
+    
+    // MARK: Setup
+    
+    private func setup()
+    {
+        let viewController = self
+        let interactor = DetailInteractor()
+        let presenter = DetailPresenter()
+        let router = DetailRouter()
+        viewController.interactor = interactor
+        viewController.router = router
+        interactor.presenter = presenter
+        presenter.viewController = viewController
+        router.viewController = viewController
+        router.dataStore = interactor
+    }
+    
+    // MARK: Routing
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if let scene = segue.identifier {
+            let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
+            if let router = router, router.responds(to: selector) {
+                router.perform(selector, with: segue)
+            }
+        }
+    }
+    
+    // MARK: View lifecycle
+    
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
+        doSomething()
+        setUIView()
+    }
+    
+    // MARK: Do something
+    
+    //@IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var carRegistrationLabel: UILabel!
     @IBOutlet weak var detailLabel: UILabel!
     
-
+    
     @IBOutlet weak var chassisNumberLabel: UILabel!
     @IBOutlet weak var vinLabel: UILabel!
     
@@ -95,29 +95,41 @@ class DetailViewController: UIViewController, DetailDisplayLogic
     
     @IBOutlet weak var editButton: CustomUIButton!
     
+    // local strings
+    @IBOutlet weak var vinKeyLabel: UILabel!
+    @IBOutlet weak var engineKeyLabel: UILabel!
+
+    override func initLocalString() {
+        super.initLocalString()
+        
+        vinKeyLabel.text = String.localized("inspection_list_vin_number_label")
+        engineKeyLabel.text = String.localized("car_detail_engine_number_label")
+        editButton.setTitle(String.localized("mode_code_edit_label"), for: .normal)
+    }
+    
     func doSomething()
-  {
-    let request = Detail.Model.Request()
-    interactor?.showDetail(request: request)
-  }
+    {
+        let request = Detail.Model.Request()
+        interactor?.showDetail(request: request)
+    }
     
     
     func setUIView(){
         closeImageView.isUserInteractionEnabled = true
         closeImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissView)))
     }
-  
+    
     @objc func dismissView(){
         dismiss(animated: true, completion: nil)
     }
     
-  func displayDetail(viewModel: Detail.Model.ViewModel)
-  {
-    detailLabel.text = viewModel.detail
-    carRegistrationLabel.text = viewModel.registration
-    vinLabel.text = viewModel.vin
-    chassisNumberLabel.text = viewModel.chassisNumber
-  }
+    func displayDetail(viewModel: Detail.Model.ViewModel)
+    {
+        detailLabel.text = viewModel.detail
+        carRegistrationLabel.text = viewModel.registration
+        vinLabel.text = viewModel.vin
+        chassisNumberLabel.text = viewModel.chassisNumber
+    }
     @IBAction func editTapped(_ sender: Any) {
         dismiss(animated: true) { [weak self] in
             self?.callbackSelectOption?(.DETAIL)

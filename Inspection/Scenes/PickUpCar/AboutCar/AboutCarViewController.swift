@@ -16,7 +16,7 @@ import UIKit
 
 protocol AboutCarDisplayLogic: AnyObject
 {
-  func displaySomething(viewModel: AboutCar.Something.ViewModel)
+    func displaySomething(viewModel: AboutCar.Something.ViewModel)
     func displayDropdownYear(viewModel: AboutCar.Something.ViewModel)
     func displayGasCheckBox(viewModel: AboutCar.Something.ViewModel)
     func displayCapacityNumberResult(viewModel: AboutCar.Something.ViewModel)
@@ -34,88 +34,88 @@ protocol AboutCarDisplayLogic: AnyObject
     func displayShowProvinceError(viewModel: AboutCar.Something.ViewModel)
     
     func displayShowBodyCarError(viewModel: AboutCar.Something.ViewModel)
-   
+    
     func displayfillBodySelected(viewModel: AboutCar.Something.ViewModel)
     func displayfillMakeSelected(viewModel: AboutCar.Something.ViewModel)
     
     func displayShowVaraintError(viewModel: AboutCar.Something.ViewModel)
     func displayVaraintDropdown(viewModel: AboutCar.Something.ViewModel)
     
-   
+    
 }
 
-class AboutCarViewController: UIViewController, AboutCarDisplayLogic
+class AboutCarViewController: ViewController, AboutCarDisplayLogic
 {
-  var interactor: AboutCarBusinessLogic?
-  var router: (NSObjectProtocol & AboutCarRoutingLogic & AboutCarDataPassing)?
-
-  // MARK: Object lifecycle
-  
-  override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
-  {
-    super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-    setup()
-  }
-  
-  required init?(coder aDecoder: NSCoder)
-  {
-    super.init(coder: aDecoder)
-    setup()
-  }
-  
-  // MARK: Setup
-  
-  private func setup()
-  {
-    let viewController = self
-    let interactor = AboutCarInteractor()
-    let presenter = AboutCarPresenter()
-    let router = AboutCarRouter()
-    viewController.interactor = interactor
-    viewController.router = router
-    interactor.presenter = presenter
-    presenter.viewController = viewController
-    router.viewController = viewController
-    router.dataStore = interactor
-  }
-  
-  // MARK: Routing
-  
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-  {
-    if let scene = segue.identifier {
-      let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
-      if let router = router, router.responds(to: selector) {
-        router.perform(selector, with: segue)
-      }
-        
-
-        if let destination = segue.destination as? ModelCodeNavViewController {
-            destination.callbackModelCode = { [weak self] model in
-                print("🔸 ModelCodeNavViewController Callback \(model)")
-                
-                let request = AboutCar.Something.Request(searchCodeModel: model)
-                self?.interactor?.receiverModelCode(request: request)
+    var interactor: AboutCarBusinessLogic?
+    var router: (NSObjectProtocol & AboutCarRoutingLogic & AboutCarDataPassing)?
+    
+    // MARK: Object lifecycle
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
+    {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        setup()
+    }
+    
+    required init?(coder aDecoder: NSCoder)
+    {
+        super.init(coder: aDecoder)
+        setup()
+    }
+    
+    // MARK: Setup
+    
+    private func setup()
+    {
+        let viewController = self
+        let interactor = AboutCarInteractor()
+        let presenter = AboutCarPresenter()
+        let router = AboutCarRouter()
+        viewController.interactor = interactor
+        viewController.router = router
+        interactor.presenter = presenter
+        presenter.viewController = viewController
+        router.viewController = viewController
+        router.dataStore = interactor
+    }
+    
+    // MARK: Routing
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if let scene = segue.identifier {
+            let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
+            if let router = router, router.responds(to: selector) {
+                router.perform(selector, with: segue)
+            }
+            
+            
+            if let destination = segue.destination as? ModelCodeNavViewController {
+                destination.callbackModelCode = { [weak self] model in
+                    print("🔸 ModelCodeNavViewController Callback \(model)")
+                    
+                    let request = AboutCar.Something.Request(searchCodeModel: model)
+                    self?.interactor?.receiverModelCode(request: request)
+                }
             }
         }
     }
-  }
-  
-  // MARK: View lifecycle
-  
-  override func viewDidLoad()
-  {
-    super.viewDidLoad()
-    setUpTextField()
-    doSomething()
     
-    setUpYearCar()
+    // MARK: View lifecycle
     
-  }
-  
-  // MARK: Do something
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
+        setUpTextField()
+        doSomething()
+        
+        setUpYearCar()
+        
+    }
+    
+    // MARK: Do something
     @IBOutlet weak var scrollView : UIScrollView!
-  
+    
     @IBOutlet weak var engineNumberCheckButton : CheckBoxUIButton!
     @IBOutlet weak var vinNumberCheckButton : CheckBoxUIButton!
     @IBOutlet weak var validationGasCheckButton: CheckBoxUIButton!
@@ -130,7 +130,7 @@ class AboutCarViewController: UIViewController, AboutCarDisplayLogic
     @IBOutlet weak var colorTextField: DropDown!
     @IBOutlet weak var codeModelTextField: DropDown!
     @IBOutlet weak var yearRegisterTextField: DropDown!
-
+    
     @IBOutlet weak var detailModelCarLabel: UILabel!
     
     @IBOutlet weak var subModelCarTextField: DropDown!
@@ -182,24 +182,76 @@ class AboutCarViewController: UIViewController, AboutCarDisplayLogic
     @IBOutlet weak var redPlateCheckButton: CheckBoxUIButton!
     @IBOutlet weak var mismatchPlateCheckButton: CheckBoxUIButton!
     
+    // local strings
+    @IBOutlet weak var noPlateLabel: UILabel!
+    @IBOutlet weak var redPlateLabel: UILabel!
+    @IBOutlet weak var incorrectPlateLabel: UILabel!
+    @IBOutlet weak var engineNumberLabel: UILabel!
+    @IBOutlet weak var engineUnableToVerifiedLabel: UILabel!
+    @IBOutlet weak var vinNumberLabel: UILabel!
+    @IBOutlet weak var vinUnableToVerifiedLabel: UILabel!
+    @IBOutlet weak var gasNumberLabel: UILabel!
+    @IBOutlet weak var gasUnableToVerifiedLabel: UILabel!
+    
     var isMakeCarLunch = false
     var isGetColorLunch = false
     var isGetProvinceLunch = false
     var isGetTypeCar = false
     
+    override func initLocalString() {
+        super.initLocalString()
+        modelCodeTitleLabel.text = String.localized("car_detail_model_code_label")
+        codeModelTextField.placeholder = modelCodeTitleLabel.text
+        searchModelCar.setTitle(String.localized("car_detail_search_vehicle_model_button_title"), for: .normal)
+        brandTitleLabel.text = String.localized("car_detail_make_label")
+        brandTextfield.placeholder = brandTitleLabel.text
+        typeCarTitleLabel.text = String.localized("car_detail_bodies_label")
+        typeCarTextField.placeholder = typeCarTitleLabel.text
+        modelCarTitleLabel.text = String.localized("car_detail_model_label")
+        modelCarTextField.placeholder = modelCarTitleLabel.text
+        subModelCarTitleLabel.text = String.localized("car_detail_variant_label")
+        subModelCarTextField.placeholder = subModelCarTitleLabel.text
+        capacityTitleLabel.text = String.localized("car_detail_engine_size_label")
+        capacityTextField.placeholder = capacityTitleLabel.text
+        yearTitleLabel.text = String.localized("car_detail_year_manu_label")
+        yearTextField.placeholder = String.localized("car_detail_year_placeholder_label")
+        yearRegisterTitleLabel.text = String.localized("car_detail_year_regis_label")
+        yearRegisterTextField.placeholder = String.localized("car_detail_year_placeholder_label")
+        registrationTitleLabel.text = String.localized("car_detail_registration_label")
+        noPlateLabel.text = String.localized("car_detail_no_plate_label")
+        redPlateLabel.text = String.localized("car_detail_red_plate_label")
+        incorrectPlateLabel.text = String.localized("car_detail_incorrect_plate_label")
+        noteRegistrationTextField.placeholder = String.localized("car_trunk_remarks_placeholder")
+        colorTitleLabel.text = String.localized("car_detail_color_label")
+        colorTextField.placeholder = colorTitleLabel.text
+        provinceTextField.placeholder = String.localized("car_detail_province_label")
+        engineNumberLabel.text = String.localized("car_detail_engine_number_label")
+        engineNumberTextField.placeholder = engineNumberLabel.text
+        engineUnableToVerifiedLabel.text = String.localized("car_detail_unable_to_verified_label")
+        vinNumberLabel.text = String.localized("car_detail_vin_number_label")
+        vinNumberTextField.placeholder = vinNumberLabel.text
+        vinUnableToVerifiedLabel.text = String.localized("car_detail_unable_to_verified_label")
+        gasNumberLabel.text = String.localized("car_detail_gas_label")
+        gasNumberTextField.placeholder = gasNumberLabel.text
+        gasUnableToVerifiedLabel.text = String.localized("car_detail_unable_to_verified_label")
+
+        reasonEngineTextField.placeholder = String.localized("car_detail_reason_placeholder")
+        reasonVINTextField.placeholder = String.localized("car_detail_reason_placeholder")
+        reasonGasTankTextField.placeholder = String.localized("car_detail_reason_placeholder")
+    }
     
     func doSomething()
-  {
-    let request = AboutCar.Something.Request()
-    interactor?.doSomething(request: request)
-  }
-  
+    {
+        let request = AboutCar.Something.Request()
+        interactor?.doSomething(request: request)
+    }
+    
     
     //MARK: Presenter
-  func displaySomething(viewModel: AboutCar.Something.ViewModel)
-  {
-    //nameTextField.text = viewModel.name
-  }
+    func displaySomething(viewModel: AboutCar.Something.ViewModel)
+    {
+        //nameTextField.text = viewModel.name
+    }
     
     //MARK: CHECKBOX
     
@@ -217,7 +269,7 @@ class AboutCarViewController: UIViewController, AboutCarDisplayLogic
             DataController.shared.inspectionCarModel.registrationProvince = check ? "-" : ""
             
             ///registration plate
-            DataController.shared.receiverCarModel.registrationPlate = check ? "ไม่มีแผ่นป้าย" : ""
+            DataController.shared.receiverCarModel.registrationPlate = check ? String.localized("car_detail_no_plate_label") : ""
             
             if check {
                 self?.redPlateCheckButton.check = false
@@ -229,7 +281,7 @@ class AboutCarViewController: UIViewController, AboutCarDisplayLogic
             }
         }
     }
-     
+    
     @IBAction func redPlateCheckTapped(_ sender: Any) {
         redPlateCheckButton.toggle { [weak self] (check) in
             self?.noteRegistrationStackView.isHidden = !check
@@ -244,7 +296,7 @@ class AboutCarViewController: UIViewController, AboutCarDisplayLogic
             DataController.shared.inspectionCarModel.registrationProvince = check ? "-" : ""
             
             ///registration plate
-            DataController.shared.receiverCarModel.registrationPlate = check ? "ป้ายแดง" : ""
+            DataController.shared.receiverCarModel.registrationPlate = check ? String.localized("car_detail_red_plate_label") : ""
             
             if check {
                 self?.noPlateCheckButton.check = false
@@ -272,7 +324,7 @@ class AboutCarViewController: UIViewController, AboutCarDisplayLogic
             DataController.shared.inspectionCarModel.registrationProvince = check ? "-" : ""
             
             ///registration plate
-            DataController.shared.receiverCarModel.registrationPlate = check ? "ป้ายไม่ตรง" : ""
+            DataController.shared.receiverCarModel.registrationPlate = check ? String.localized("car_detail_incorrect_plate_label") : ""
             
             if check {
                 self?.noPlateCheckButton.check = false
@@ -308,13 +360,13 @@ class AboutCarViewController: UIViewController, AboutCarDisplayLogic
         vinNumberCheckButton.toggle { [weak self] check in
             DataController.shared.receiverCarModel.isInValidVinNumber = check
             self?.reasonVINStackView.isHidden = !check
-
+            
             self?.vinNumberTextField.setEnableView(isEnable: !check)
             
             if !check {
                 self?.reasonVINTextField.text = ""
                 
-               
+                
                 DataController.shared.receiverCarModel.reasonInValidVinNumber  = ""
                 print("🔸 remove reaseon invalid vin ")
             }else{
@@ -378,11 +430,11 @@ class AboutCarViewController: UIViewController, AboutCarDisplayLogic
         detailModelCarLabel.isHidden = false
         detailModelCarLabel.text = viewModel.discriptionModelSelect
         DataController.shared.receiverCarModel.detailModel = viewModel.discriptionModelSelect
-
+        
         /// make car
         interactor?.setMakeCode(request: AboutCar.Something.Request(makeCode: viewModel.make))
         //brandTextfield.text = viewModel.make
-
+        
         /// model car
         modelCarTextField.text = viewModel.model
         DataController.shared.receiverCarModel.modelCar = viewModel.model
@@ -410,7 +462,7 @@ class AboutCarViewController: UIViewController, AboutCarDisplayLogic
         DataController.shared.receiverCarModel.fuelType = viewModel.fuelType
         
         DataController.shared.receiverCarModel.gearbox = viewModel.gearbox
-
+        
         
         if let fuelDelivery = viewModel.fuelDelivery {
             var fuelDeliveryName = ""
@@ -418,11 +470,11 @@ class AboutCarViewController: UIViewController, AboutCarDisplayLogic
             case "D":
                 fuelDeliveryName = "Direct Injection" // direct injection
             case "I":
-                fuelDeliveryName = "หัวฉีด" // injection
+                fuelDeliveryName = String.localized("car_engine_injector_label") // injection
             case "N":
-                fuelDeliveryName = "คาร์บูเรเตอร์" // naturally aspirated
+                fuelDeliveryName = String.localized("car_engine_carburetor_label") // naturally aspirated
             case "T":
-                fuelDeliveryName = "เทอร์โบ" // turbo
+                fuelDeliveryName = String.localized("car_engine_turbocharger_label") // turbo
             default:
                 fuelDeliveryName = "N/A"
             }
@@ -442,7 +494,7 @@ class AboutCarViewController: UIViewController, AboutCarDisplayLogic
     func displayfillBodySelected(viewModel: AboutCar.Something.ViewModel) {
         typeCarTextField.text = viewModel.body_bu
     }
-     
+    
     
     //MARK: Make
     func getMakeCar(){
@@ -456,7 +508,7 @@ class AboutCarViewController: UIViewController, AboutCarDisplayLogic
             self?.loadRetryApi()
         }
     }
-
+    
     func displayMakeCarDropdown(viewModel: AboutCar.Something.ViewModel) {
         
         guard let values = viewModel.makeList else { return }
@@ -552,7 +604,7 @@ class AboutCarViewController: UIViewController, AboutCarDisplayLogic
         setValue(to: colorTextField, values: values) { [weak self] (selectValue, _, _) in
             DataController.shared.receiverCarModel.colorCar = selectValue
             self?.colorTextField.text = selectValue
-           
+            
             let request = AboutCar.Something.Request(colorCar: selectValue)
             self?.interactor?.setColour1(request: request)
         }
@@ -650,7 +702,7 @@ class AboutCarViewController: UIViewController, AboutCarDisplayLogic
         yearRegisterTextField.autocorrectionType = .no
         provinceTextField.autocorrectionType = .no
         colorTextField.autocorrectionType = .no
-//        codeModelTextField.autocorrectionType = .no
+        //        codeModelTextField.autocorrectionType = .no
         
         reasonEngineTextField.autocorrectionType = .no
         reasonVINTextField.autocorrectionType = .no
@@ -691,15 +743,15 @@ class AboutCarViewController: UIViewController, AboutCarDisplayLogic
         addTarget(from: yearRegisterTextField)
         addTarget(from: provinceTextField)
         addTarget(from: colorTextField)
-//        addTarget(from: codeModelTextField)
-
+        //        addTarget(from: codeModelTextField)
+        
         
         detailModelCarLabel.isHidden = true
         
         ///config search by prefix name
         colorTextField.isPrefix = true
     }
-
+    
     fileprivate func addTarget(from textfield: UITextField ){
         textfield.addTarget(self, action: #selector(textFieldDidChange(_:)),for: .editingChanged)
     }
@@ -728,7 +780,7 @@ class AboutCarViewController: UIViewController, AboutCarDisplayLogic
     
     @objc func prepareData(){
         let model = DataController.shared.receiverCarModel
-          
+        
         engineNumberCheckButton.check = model.isInValidEngineNumber ?? false
         vinNumberCheckButton.check = model.isInValidVinNumber ?? false
         validationGasCheckButton.check = model.isInValidGasNumber ?? false
@@ -748,11 +800,11 @@ class AboutCarViewController: UIViewController, AboutCarDisplayLogic
         if let registrationPlate = model.registrationPlate, !registrationPlate.trimWhiteSpace.isEmpty {
             
             switch registrationPlate {
-            case "ไม่มีแผ่นป้าย":
+            case String.localized("car_detail_no_plate_label"):
                 noPlateCheckButton.check = true
-            case "ป้ายแดง":
+            case String.localized("car_detail_red_plate_label"):
                 redPlateCheckButton.check = true
-            case "ป้ายไม่ตรง":
+            case String.localized("car_detail_incorrect_plate_label"):
                 mismatchPlateCheckButton.check = true
             default:
                 break
@@ -768,7 +820,7 @@ class AboutCarViewController: UIViewController, AboutCarDisplayLogic
         
         
         gasCheckButton.check = model.isGasTank ?? false
-
+        
         brandTextfield.text = model.make_BU
         typeCarTextField.text = model.bodyDesc_BU
         modelCarTextField.text = model.model_BU
@@ -777,10 +829,10 @@ class AboutCarViewController: UIViewController, AboutCarDisplayLogic
         colorTextField.text = model.colorCar
         codeModelTextField.text = model.codeModelCar
         yearRegisterTextField.text = model.registrationYear
-
+        
         detailModelCarLabel.text = model.detailModel
         detailModelCarLabel.isHidden = model.detailModel == nil
-
+        
         subModelCarTextField.text = model.variants
         capacityTextField.text = model.engineCapacity
         registrationTextField.text = model.registration
@@ -793,7 +845,7 @@ class AboutCarViewController: UIViewController, AboutCarDisplayLogic
         reasonGasTankTextField.text = model.reasonInValidGasNumber
         noteRegistrationTextField.text = model.registrationNote
     }
- 
+    
     @objc func updateView(){
         let isEnabled = getEnableView()
         let model = DataController.shared.receiverCarModel
@@ -804,7 +856,7 @@ class AboutCarViewController: UIViewController, AboutCarDisplayLogic
         gasCheckButton.setEnableView(isEnable: isEnabled)
         
         searchModelCar.isUserInteractionEnabled = isEnabled
-
+        
         brandTextfield.setEnableView(isEnable: isEnabled)
         typeCarTextField.setEnableView(isEnable: isEnabled)
         modelCarTextField.setEnableView(isEnable: isEnabled)
@@ -815,8 +867,8 @@ class AboutCarViewController: UIViewController, AboutCarDisplayLogic
         yearRegisterTextField.setEnableView(isEnable: isEnabled)
         subModelCarTextField.setEnableView(isEnable: isEnabled)
         capacityTextField.setEnableView(isEnable: isEnabled)
-     
-      
+        
+        
         
         //MARK: Validation
         brandLineView.validateLineView(model.validMake)
@@ -848,7 +900,7 @@ class AboutCarViewController: UIViewController, AboutCarDisplayLogic
         
         noteRegistrationLineView.validateLineView(model.validNoteRegistration)
     }
-
+    
     
 }
 // MARK: UITextFieldDelegate
@@ -856,12 +908,12 @@ extension AboutCarViewController : UITextFieldDelegate {
     @objc func textFieldDidChange(_ textField: UITextField) {
         //print(textField.text)
         
-
+        
         switch textField {
         case codeModelTextField:
             print("ignored Model Code ")
-//            self.detailModelCarLabel.isHidden = true
-//            DataController.shared.receiverCarModel.codeModelCar = textField.text
+            //            self.detailModelCarLabel.isHidden = true
+            //            DataController.shared.receiverCarModel.codeModelCar = textField.text
             
         case brandTextfield:
             DataController.shared.receiverCarModel.make_BU = nil
@@ -879,7 +931,7 @@ extension AboutCarViewController : UITextFieldDelegate {
             
         case subModelCarTextField:
             DataController.shared.receiverCarModel.variants = textField.text
-        
+            
         case yearRegisterTextField:
             DataController.shared.receiverCarModel.registrationYear = textField.text
             
@@ -889,7 +941,7 @@ extension AboutCarViewController : UITextFieldDelegate {
         case provinceTextField:
             DataController.shared.receiverCarModel.province = textField.text
             DataController.shared.inspectionCarModel.registrationProvince = textField.text
-        
+            
         case registrationTextField:
             //let request = AboutCar.Something.Request(registration: textField.text)
             //self.interactor?.validateRegistration(request: request)
@@ -918,13 +970,13 @@ extension AboutCarViewController : UITextFieldDelegate {
             
         case reasonEngineTextField:
             DataController.shared.receiverCarModel.reasonInValidEngineNumber = textField.text
-        
+            
         case reasonVINTextField:
             DataController.shared.receiverCarModel.reasonInValidVinNumber = textField.text
-        
+            
         case reasonGasTankTextField:
             DataController.shared.receiverCarModel.reasonInValidGasNumber = textField.text
-         
+            
         case noteRegistrationTextField:
             DataController.shared.receiverCarModel.registrationNote = textField.text
         default:
@@ -933,12 +985,12 @@ extension AboutCarViewController : UITextFieldDelegate {
     }
     
     
-   
+    
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
-         
-      
+        
+        
         return true
     }
     
@@ -956,12 +1008,12 @@ extension AboutCarViewController {
         updateView()
         
         NotificationCenter.default.addObserver(self, selector: #selector(updateView), name: NSNotification.Name("updateUI"), object: nil)
-   }
-   
-   override func viewDidDisappear(_ animated: Bool) {
-       super.viewDidDisappear(animated)
-       scrollView.resignKeyboardNotification()
+    }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        scrollView.resignKeyboardNotification()
+        
         NotificationCenter.default.removeObserver(self)
-   }
+    }
 }

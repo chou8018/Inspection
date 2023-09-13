@@ -14,10 +14,10 @@ import UIKit
 
 protocol PickUpCarDisplayLogic: AnyObject
 {
-  func displaySomething(viewModel: PickUpCar.Something.ViewModel)
+    func displaySomething(viewModel: PickUpCar.Something.ViewModel)
     func displayReceiverDayTime(viewModel: PickUpCar.Something.ViewModel)
     func displayDPF(viewModel: PickUpCar.Something.ViewModel)
-   
+    
     func displayErrorReceiverBookIn(viewModel: PickUpCar.Something.ViewModel)
     func displaySuccessReceiverBookIn(viewModel: PickUpCar.Something.ViewModel)
     func displayRequiteFieldSuccess(viewModel: PickUpCar.Something.ViewModel)
@@ -28,111 +28,146 @@ protocol PickUpCarDisplayLogic: AnyObject
     func displayIMATError(viewModel: PickUpCar.Something.ViewModel)
     func displayIMATSuccess(viewModel: PickUpCar.Something.ViewModel)
     
-
+    
 }
 
-class PickUpCarViewController: UIViewController, PickUpCarDisplayLogic
-{
-  var interactor: PickUpCarBusinessLogic?
-  var router: (NSObjectProtocol & PickUpCarRoutingLogic & PickUpCarDataPassing)?
+let string_excellent = String.localized("car_exterior_excellent_label")
+let string_good = String.localized("car_exterior_good_label")
+let string_good_first = String.localized("car_exterior_good_first_label")
+let string_average = String.localized("car_exterior_average_label")
+let string_fair = String.localized("car_exterior_fair_label")
+let string_poor = String.localized("car_exterior_poor_label")
+let string_as_is = String.localized("car_exterior_as_is_label")
+let string_salvage = String.localized("car_exterior_salvage_label")
 
-  // MARK: Object lifecycle
-  
-  override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
-  {
-    super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-    setup()
-  }
-  
-  required init?(coder aDecoder: NSCoder)
-  {
-    super.init(coder: aDecoder)
-    setup()
-  }
-  
-  // MARK: Setup
-  
-  private func setup()
-  {
-    let viewController = self
-    let interactor = PickUpCarInteractor()
-    let presenter = PickUpCarPresenter()
-    let router = PickUpCarRouter()
-    viewController.interactor = interactor
-    viewController.router = router
-    interactor.presenter = presenter
-    presenter.viewController = viewController
-    router.viewController = viewController
-    router.dataStore = interactor
-  }
-  
-  // MARK: Routing
-  
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-  {
-    if let scene = segue.identifier {
-      let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
-      if let router = router, router.responds(to: selector) {
-        router.perform(selector, with: segue)
-      }
-        
-        if let dateTimePicker = segue.destination as? DateTimeViewController {
-            dateTimePicker.didSelectedDateTimePicker = { [weak self] (dateReceiver) in
-                let request = PickUpCar.Something.Request(dateReceiver: dateReceiver)
-                self?.interactor?.setReceiverDateTime(request: request, isEdit: false)
-            }
-        }
-        
-    }
-  }
-  
-  // MARK: View lifecycle
-  
-  override func viewDidLoad()
-  {
-    super.viewDidLoad()
-    setTitleName()
-    setUpTab()
-    segmentSetUp()
-    setUpDateTime()
+let string_benzine = String.localized("car_engine_benzine_label")
+let string_diesel = String.localized("car_engine_diesel_label")
+let string_hybrid_benzine = String.localized("car_engine_hybrid_benzine_label")
+let string_hybrid_diesel = String.localized("car_engine_hybrid_diesel_label")
+
+let string_injector = String.localized("car_engine_injector_label")
+let string_carburetor = String.localized("car_engine_carburetor_label")
+let string_lpg_sequential_injection = String.localized("car_engine_lpg_sequential_injection_label")
+let string_lpg_fumigation_system = String.localized("car_engine_lpg_fumigation_system_label")
+let string_cng_sequential_injection = String.localized("car_engine_cng_sequential_injection_label")
+let string_cng_fumigation_system = String.localized("car_engine_cng_fumigation_system_label")
+
+let string_inspection_engine_working = String.localized("inspection_engine_working_label")
+let string_inspection_engine_not_working = String.localized("inspection_engine_not_working_label")
+
+class PickUpCarViewController: ViewController, PickUpCarDisplayLogic
+{
+    var interactor: PickUpCarBusinessLogic?
+    var router: (NSObjectProtocol & PickUpCarRoutingLogic & PickUpCarDataPassing)?
     
-    doSomething()
-  }
-  
-  // MARK: Do something
+    // MARK: Object lifecycle
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
+    {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        setup()
+    }
+    
+    required init?(coder aDecoder: NSCoder)
+    {
+        super.init(coder: aDecoder)
+        setup()
+    }
+    
+    // MARK: Setup
+    
+    private func setup()
+    {
+        let viewController = self
+        let interactor = PickUpCarInteractor()
+        let presenter = PickUpCarPresenter()
+        let router = PickUpCarRouter()
+        viewController.interactor = interactor
+        viewController.router = router
+        interactor.presenter = presenter
+        presenter.viewController = viewController
+        router.viewController = viewController
+        router.dataStore = interactor
+    }
+    
+    // MARK: Routing
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if let scene = segue.identifier {
+            let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
+            if let router = router, router.responds(to: selector) {
+                router.perform(selector, with: segue)
+            }
+            
+            if let dateTimePicker = segue.destination as? DateTimeViewController {
+                dateTimePicker.didSelectedDateTimePicker = { [weak self] (dateReceiver) in
+                    let request = PickUpCar.Something.Request(dateReceiver: dateReceiver)
+                    self?.interactor?.setReceiverDateTime(request: request, isEdit: false)
+                }
+            }
+            
+        }
+    }
+    
+    // MARK: View lifecycle
+    
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
+        setTitleName()
+        setUpTab()
+        segmentSetUp()
+        setUpDateTime()
+        
+        doSomething()
+    }
+    
+    // MARK: Do something
     @IBOutlet weak var fullName:UILabel!
     @IBOutlet weak var pickUpStackView: UIView!
     @IBOutlet weak var checkStackView: UIView!
     @IBOutlet weak var photoStackView: UIView!
-    
     @IBOutlet weak var sendButton: UIBarButtonItem!
     @IBOutlet weak var saveButton: UIBarButtonItem!
-    
     @IBOutlet weak var segmentView: UIView!
-    
     @IBOutlet weak var segmentWidthConstraint: NSLayoutConstraint!
-    
     @IBOutlet weak var lineview: UIView!
-    
     @IBOutlet weak var containerView: UIView!
-    
     @IBOutlet weak var scrollView: UIScrollView!
-
     @IBOutlet weak var dateTimeView: UIView!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     
+    // local string
+    @IBOutlet weak var mainButton: UIBarButtonItem!
+    @IBOutlet weak var pickupCarLabel: UILabel!
+    @IBOutlet weak var inspectionLabel: UILabel!
+    @IBOutlet weak var photosLabel: UILabel!
+    @IBOutlet weak var pickUpDateLabel: UILabel!
+    
+    override func initLocalString() {
+        super.initLocalString()
+        saveButton.title = String.localized("main_inspection_save_button_title")
+        mainButton.title = String.localized("main_inspection_bar_button_main_title")
+        pickupCarLabel.text = String.localized("main_inspection_item_book_in_title")
+        inspectionLabel.text = String.localized("main_inspection_item_inspection_title")
+        photosLabel.text = String.localized("main_inspection_item_photos_title")
+        pickUpDateLabel.text = String.localized("pick_up_date_title")
+
+    }
+    
     func doSomething()
-  {
-    let request = PickUpCar.Something.Request()
-    interactor?.doSomething(request: request)
-  }
+    {
+        let request = PickUpCar.Something.Request()
+        interactor?.doSomething(request: request)
+    }
     
-  //MARK: Presenter
-  func displaySomething(viewModel: PickUpCar.Something.ViewModel)
-  {
-    
-  }
+    //MARK: Presenter
+    func displaySomething(viewModel: PickUpCar.Something.ViewModel)
+    {
+        
+    }
     func displayRequiteFieldError(viewModel: PickUpCar.Something.ViewModel) {
         guard let errorMessage = viewModel.errorMessage else { return }
         alertErrorMessageOKAction(message: errorMessage) {
@@ -141,7 +176,7 @@ class PickUpCarViewController: UIViewController, PickUpCarDisplayLogic
     }
     func displayRequiteFieldSuccess(viewModel: PickUpCar.Something.ViewModel) {
         let fromEdit = DataController.shared.isFromEditView
-        let message = fromEdit ? "คุณต้องการแก้ไขรายการไหม" : "คุณต้องการบันทึกรายการรับมอบรถไหม"
+        let message = fromEdit ? String.localized("main_inspection_edit_list_title") : String.localized("main_inspection_save_vehicle_title")
         alert(message: message) { [weak self] in
             //send to server
             self?.confirmSendDataReceiver()
@@ -183,17 +218,17 @@ class PickUpCarViewController: UIViewController, PickUpCarDisplayLogic
         interactor?.validateRequiteField(request: request)
         
         print("🔸Book-in Type: (\(DataController.shared.bookInType.nameValue))🔸")
-
+        
     }
-   
+    
     @IBAction func saveToIMAT(_ sender: Any){
         print("🔶 save to IMAT")
-        alert(message: "คุณต้องการส่ง\nBook-In to IMAT ไหม") { [weak self] in
+        alert(message: String.localized("pick_up_send_book_in_confirm_title")) { [weak self] in
             self?.sendToIMAT()
         }
-       
+        
     }
-     
+    
     func displayActionEventSuccess(viewModel: PickUpCar.Something.ViewModel) {
         sendButton.isEnabled = viewModel.isEnableSendToIMAP ?? false
         saveButton.isEnabled = viewModel.isEnableSave ?? false
@@ -223,19 +258,19 @@ class PickUpCarViewController: UIViewController, PickUpCarDisplayLogic
     }
     func displayIMATSuccess(viewModel: PickUpCar.Something.ViewModel) {
         print("❤️🐶 displayIMATSuccess for updateUI")
-        alert(message: "ต้องการปริ้น IMAT QRCode ไหม", title: "Book-In สำเร็จ") { [weak self] in
+        alert(message: String.localized("pick_up_send_book_in_succeeded_subtitle"), title: String.localized("pick_up_send_book_in_succeeded_title")) { [weak self] in
             self?.createIMATQRCode()
         } cancel: {
             // cacel
         }
-
-
+        
+        
         validateSendIMAT()
         NotificationCenter.default.post(name: NSNotification.Name("updateUI"), object: nil)
-
+        
     }
     
-  
+    
     
     
     
@@ -250,29 +285,28 @@ class PickUpCarViewController: UIViewController, PickUpCarDisplayLogic
     
     
     func segmentSetUp(){
-
+        
         segmentView.addSubview(codeSegmented)
         codeSegmented.delegate = self
         updateUIView(from: 0)
     }
     
-
+    
     lazy var codeSegmented:SegmentControlCustom  =  {
-
+        
         let value = DataController.shared.bookInType.bookInValue
         let codeSegmented = SegmentControlCustom(buttonTitle: value, fontSize: 25.0)
-
+        
         codeSegmented.bgColor = .clear
         codeSegmented.selectorTextColor = UIColor.orangeColor
         codeSegmented.selectorViewColor = UIColor.orangeColor
         codeSegmented.textColor = UIColor.lightGray
-
+        
         return codeSegmented
     }()
     
     func setUpTab(){
-        fullName.text = "ผู้ตรวจสภาพ \(DataController.shared.getFullName())"
-       
+        fullName.text = "\(String.localized("select_inspection_inspector_label")) \(DataController.shared.getFullName())"
         
         pickUpStackView.isUserInteractionEnabled = true
         pickUpStackView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(toPickUpCar)))
@@ -292,7 +326,7 @@ class PickUpCarViewController: UIViewController, PickUpCarDisplayLogic
         
         // Add View Controller as Child View Controller
         //self.add(asChildViewController: viewController)
-
+        
         return viewController
     }()
     private lazy var aboutCarViewController: AboutCarViewController? = {
@@ -301,7 +335,7 @@ class PickUpCarViewController: UIViewController, PickUpCarDisplayLogic
         
         // Add View Controller as Child View Controller
         //self.add(asChildViewController: viewController)
-
+        
         return viewController
     }()
     private lazy var externalCarViewController: ExternalCarViewController? = {
@@ -310,7 +344,7 @@ class PickUpCarViewController: UIViewController, PickUpCarDisplayLogic
         
         // Add View Controller as Child View Controller
         //self.add(asChildViewController: viewController)
-
+        
         return viewController
     }()
     private lazy var sparePartsCarViewController: SparePartsCarViewController? = {
@@ -319,7 +353,7 @@ class PickUpCarViewController: UIViewController, PickUpCarDisplayLogic
         
         // Add View Controller as Child View Controller
         //self.add(asChildViewController: viewController)
-
+        
         return viewController
     }()
     private lazy var cabinCarViewController: CabinCarViewController? = {
@@ -328,7 +362,7 @@ class PickUpCarViewController: UIViewController, PickUpCarDisplayLogic
         
         // Add View Controller as Child View Controller
         //self.add(asChildViewController: viewController)
-
+        
         return viewController
     }()
     private lazy var engineCarViewController: EngineCarViewController? = {
@@ -337,7 +371,7 @@ class PickUpCarViewController: UIViewController, PickUpCarDisplayLogic
         
         // Add View Controller as Child View Controller
         //self.add(asChildViewController: viewController)
-
+        
         return viewController
     }()
     
@@ -348,7 +382,7 @@ class PickUpCarViewController: UIViewController, PickUpCarDisplayLogic
         
         // Add View Controller as Child View Controller
         //self.add(asChildViewController: viewController)
-
+        
         return viewController
     }()
     private lazy var bookInMotorcycle2ViewController: BookInMotorcycle2ViewController? = {
@@ -357,7 +391,7 @@ class PickUpCarViewController: UIViewController, PickUpCarDisplayLogic
         
         // Add View Controller as Child View Controller
         //self.add(asChildViewController: viewController)
-
+        
         return viewController
     }()
     
@@ -365,13 +399,13 @@ class PickUpCarViewController: UIViewController, PickUpCarDisplayLogic
     func setTitleName(){
         switch DataController.shared.bookInType {
         case .CAR:
-            title = "รับมอบ - รถยนต์"
+            title = String.localized("main_inspection_title")
         case .MBIKE:
-            title = "รับมอบ - รถจักรยานยนต์"
+            title = String.localized("motorbike_pick_up_navigation_title")
         case  .CARWRECK:
-            title = "รับมอบ - ซากรถยนต์"
+            title = String.localized("car_salvage_pick_up_navigation_title")
         case  .MBIKEWRECK:
-            title = "รับมอบ - ซากรถจักรยานต์"
+            title = String.localized("motorbike_salvage_pick_up_navigation_title")
         }
     }
     
@@ -381,7 +415,7 @@ class PickUpCarViewController: UIViewController, PickUpCarDisplayLogic
         dateTimeView.isUserInteractionEnabled = true
         dateTimeView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(showDateTime)))
         
-       
+        
     }
     
     @objc func showDateTime(){
@@ -421,11 +455,11 @@ extension PickUpCarViewController {
         
         validateSendIMAT()
     }
-   
+    
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-    
+        
         
     }
     
@@ -472,16 +506,16 @@ extension PickUpCarViewController : CustomSegmentedControlDelegate  {
                 add(asChildViewController: externalCarViewController)
             case .MBIKE, .MBIKEWRECK:
                 add(asChildViewController: bookInMotorcycle1ViewController)
-
+                
             }
-           
+            
         case 3:
             switch DataController.shared.bookInType {
             case .CAR, .CARWRECK:
                 add(asChildViewController: sparePartsCarViewController)
             case .MBIKE, .MBIKEWRECK:
                 add(asChildViewController: bookInMotorcycle2ViewController)
-
+                
             }
             
         case 4:
@@ -505,28 +539,28 @@ extension PickUpCarViewController : CustomSegmentedControlDelegate  {
         }
         // Add Child View Controller
         addChild(viewController)
-
+        
         // Add Child View as Subview
         containerView.addSubview(viewController.view)
-
+        
         // Configure Child View
         viewController.view.frame = containerView.bounds
         viewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-
+        
         // Notify Child View Controller
         viewController.didMove(toParent: self)
     }
-//    private func remove(asChildViewController viewController: UIViewController) {
-//        // Notify Child View Controller
-//        viewController.willMove(toParent: nil)
-//
-//        // Remove Child View From Superview
-//        viewController.view.removeFromSuperview()
-//
-//        // Notify Child View Controller
-//        viewController.removeFromParent()
-//    }
-
+    //    private func remove(asChildViewController viewController: UIViewController) {
+    //        // Notify Child View Controller
+    //        viewController.willMove(toParent: nil)
+    //
+    //        // Remove Child View From Superview
+    //        viewController.view.removeFromSuperview()
+    //
+    //        // Notify Child View Controller
+    //        viewController.removeFromParent()
+    //    }
+    
     private func getViewCOntroller(identifier : String) -> UIViewController {
         // Load Storyboard
         let storyboard = UIStoryboard(name: "PickUpCar", bundle: Bundle.main)

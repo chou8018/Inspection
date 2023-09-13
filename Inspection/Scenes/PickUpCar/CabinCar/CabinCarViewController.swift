@@ -15,7 +15,7 @@ import RadioGroup
 
 protocol CabinCarDisplayLogic: AnyObject
 {
-  func displaySomething(viewModel: CabinCar.Something.ViewModel)
+    func displaySomething(viewModel: CabinCar.Something.ViewModel)
     func displayValidateMileNumber(viewModel: CabinCar.Something.ViewModel)
     func displayKeyChecked(viewModel: CabinCar.Something.ViewModel)
     func displayRemoteChecked(viewModel: CabinCar.Something.ViewModel)
@@ -29,76 +29,76 @@ protocol CabinCarDisplayLogic: AnyObject
     func displayGearBoxText(viewModel: CabinCar.Something.ViewModel)
 }
 
-class CabinCarViewController: UIViewController, CabinCarDisplayLogic
+class CabinCarViewController: ViewController, CabinCarDisplayLogic
 {
-  var interactor: CabinCarBusinessLogic?
-  var router: (NSObjectProtocol & CabinCarRoutingLogic & CabinCarDataPassing)?
-
-  // MARK: Object lifecycle
-  
-  override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
-  {
-    super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-    setup()
-  }
-  
-  required init?(coder aDecoder: NSCoder)
-  {
-    super.init(coder: aDecoder)
-    setup()
-  }
-  
-  // MARK: Setup
-  
-  private func setup()
-  {
-    let viewController = self
-    let interactor = CabinCarInteractor()
-    let presenter = CabinCarPresenter()
-    let router = CabinCarRouter()
-    viewController.interactor = interactor
-    viewController.router = router
-    interactor.presenter = presenter
-    presenter.viewController = viewController
-    router.viewController = viewController
-    router.dataStore = interactor
-  }
-  
-  // MARK: Routing
-  
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-  {
-    if let scene = segue.identifier {
-      let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
-      if let router = router, router.responds(to: selector) {
-        router.perform(selector, with: segue)
-      }
-        
-        if let dateTimePicker = segue.destination as? DateTimeViewController {
-            dateTimePicker.didSelectedDateTimePicker = { [weak self] (dateExpired) in
-                let request = CabinCar.Something.Request(dateExpired: dateExpired)
-                self?.interactor?.setExpiredDateTime(request: request)
+    var interactor: CabinCarBusinessLogic?
+    var router: (NSObjectProtocol & CabinCarRoutingLogic & CabinCarDataPassing)?
+    
+    // MARK: Object lifecycle
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
+    {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        setup()
+    }
+    
+    required init?(coder aDecoder: NSCoder)
+    {
+        super.init(coder: aDecoder)
+        setup()
+    }
+    
+    // MARK: Setup
+    
+    private func setup()
+    {
+        let viewController = self
+        let interactor = CabinCarInteractor()
+        let presenter = CabinCarPresenter()
+        let router = CabinCarRouter()
+        viewController.interactor = interactor
+        viewController.router = router
+        interactor.presenter = presenter
+        presenter.viewController = viewController
+        router.viewController = viewController
+        router.dataStore = interactor
+    }
+    
+    // MARK: Routing
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if let scene = segue.identifier {
+            let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
+            if let router = router, router.responds(to: selector) {
+                router.perform(selector, with: segue)
+            }
+            
+            if let dateTimePicker = segue.destination as? DateTimeViewController {
+                dateTimePicker.didSelectedDateTimePicker = { [weak self] (dateExpired) in
+                    let request = CabinCar.Something.Request(dateExpired: dateExpired)
+                    self?.interactor?.setExpiredDateTime(request: request)
+                }
             }
         }
     }
-  }
-  
-  // MARK: View lifecycle
-  
-  override func viewDidLoad()
-  {
-    super.viewDidLoad()
-    setUIView()
-    setUpRadio()
-    setUpCheckBox()
-    setUpDropDown()
-    setDatePicker()
-    doSomething()
-  }
-  
-  // MARK: Do something
-  
-  //@IBOutlet weak var nameTextField: UITextField!
+    
+    // MARK: View lifecycle
+    
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
+        setUIView()
+        setUpRadio()
+        setUpCheckBox()
+        setUpDropDown()
+        setDatePicker()
+        doSomething()
+    }
+    
+    // MARK: Do something
+    
+    //@IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var scrollView: UIScrollView!
     
     @IBOutlet weak var isInvalidMilesCheckBox: CheckBoxUIButton!
@@ -160,22 +160,94 @@ class CabinCarViewController: UIViewController, CabinCarDisplayLogic
     //expire date
     @IBOutlet weak var taxPlateExpiredView: UIView!
     @IBOutlet weak var taxPlateExpiredLabel: UILabel!
-    
-   
     @IBOutlet weak var gearboxDropDown: DropDown!
     @IBOutlet weak var gearboxLineView: UIView!
     @IBOutlet weak var gearboxLabel: UILabel!
     
+    // local strings
+    @IBOutlet weak var interniorConditionLabel: UILabel!
+    @IBOutlet weak var fuelAmountLabel: UILabel!
+    @IBOutlet weak var unableVerifiedLabel: UILabel!
+    @IBOutlet weak var gearLabel: UILabel!
+    @IBOutlet weak var airBagLabel: UILabel!
+    @IBOutlet weak var gearheadLabel: UILabel!
+    @IBOutlet weak var powerAmplifierLabel: UILabel!
+    @IBOutlet weak var gearLockLabel: UILabel!
+    @IBOutlet weak var preAmplifierLabel: UILabel!
+    @IBOutlet weak var stereoLabel: UILabel!
+    @IBOutlet weak var manualBookLabel: UILabel!
+    @IBOutlet weak var cigaretteLighterLabel: UILabel!
+    @IBOutlet weak var taxSignLabel: UILabel!
+    @IBOutlet weak var navigatorLabel: UILabel!
+    @IBOutlet weak var builtInNavigatorLabel: UILabel!
+    @IBOutlet weak var soundPlayerLabel: UILabel!
+    @IBOutlet weak var radioLabel: UILabel!
+    @IBOutlet weak var tapeLabel: UILabel!
+    @IBOutlet weak var cdDVDLabel: UILabel!
+    @IBOutlet weak var keyTitleLabel: UILabel!
+    @IBOutlet weak var keyLabel: UILabel!
+    @IBOutlet weak var remoteControlLabel: UILabel!
+    @IBOutlet weak var remoteKeyLabel: UILabel!
+    @IBOutlet weak var immobilizerLabel: UILabel!
+    @IBOutlet weak var keylessLabel: UILabel!
+    @IBOutlet weak var othersLabel: UILabel!
+
+    let string_kilometer = String.localized("car_interior_kilometer_label")
+    let string_mileage = String.localized("car_interior_mileage_label")
+    
+    override func initLocalString() {
+        super.initLocalString()
+        
+        interniorConditionLabel.text = String.localized("car_interior_condition_label")
+        mileNumberTextField.placeholder = String.localized("car_interior_mileage_placeholder_label")
+        fuelAmountLabel.text = String.localized("car_interior_fuel_amount_label")
+        unableVerifiedLabel.text = String.localized("car_detail_unable_to_verified_label")
+        gearLabel.text = String.localized("car_interior_gear_label")
+        gearboxDropDown.placeholder = gearLabel.text
+        airBagLabel.text = String.localized("car_interior_airbag_label")
+        gearheadLabel.text = String.localized("car_interior_gearhead_label")
+        powerAmplifierLabel.text = String.localized("car_interior_power_amplifier_label")
+        gearLockLabel.text = String.localized("car_interior_gear_lock_label")
+        preAmplifierLabel.text = String.localized("car_interior_pre_amplifier_label")
+        stereoLabel.text = String.localized("car_interior_stereo_label")
+        manualBookLabel.text = String.localized("car_interior_manual_look_label")
+        cigaretteLighterLabel.text = String.localized("car_interior_cigarette_lighter_label")
+        taxSignLabel.text = String.localized("car_interior_tax_sign_label")
+        navigatorLabel.text = String.localized("car_interior_navigator_label")
+        builtInNavigatorLabel.text = String.localized("car_interior_navigator_in_label")
+        noCdCheckBox.setTitle(String.localized("car_interior_no_cd_label"), for: .normal)
+        noSdCardCheckBox.setTitle(String.localized("car_interior_no_cd_card_label"), for: .normal)
+        soundPlayerLabel.text = String.localized("car_interior_sound_player_label")
+        radioLabel.text = String.localized("car_interior_radio_label")
+        tapeLabel.text = String.localized("car_interior_tape_label")
+        cdDVDLabel.text = String.localized("car_interior_cd_dvd_label")
+        brandPlayerTextField.placeholder = String.localized("car_exterior_make_label")
+        keyTitleLabel.text = String.localized("car_interior_key_label")
+        keyLabel.text = String.localized("car_interior_key_label")
+        remoteControlLabel.text = String.localized("car_interior_remote_control_label")
+        remoteKeyLabel.text = String.localized("car_interior_remote_key_label")
+        immobilizerLabel.text = String.localized("car_interior_key_immobilizer_label")
+        keylessLabel.text = String.localized("car_interior_key_label")
+        othersLabel.text = String.localized("car_interior_others_label")
+        keyDropDown.placeholder = String.localized("car_interior_key_placeholder_label")
+        remoteDropDown.placeholder = keyDropDown.placeholder
+        remoteKeyDropDown.placeholder = keyDropDown.placeholder
+        immobilizarKeyDropDown.placeholder = keyDropDown.placeholder
+        keylessKeyDropDown.placeholder = keyDropDown.placeholder
+        cabinNoteTextField.placeholder = othersLabel.text
+        reasonMileageTextField.placeholder = String.localized("car_detail_reason_placeholder")
+    }
+    
     func doSomething()
-  {
-    let request = CabinCar.Something.Request()
-    interactor?.doSomething(request: request)
-  }
-  
-  func displaySomething(viewModel: CabinCar.Something.ViewModel)
-  {
-    //nameTextField.text = viewModel.name
-  }
+    {
+        let request = CabinCar.Something.Request()
+        interactor?.doSomething(request: request)
+    }
+    
+    func displaySomething(viewModel: CabinCar.Something.ViewModel)
+    {
+        //nameTextField.text = viewModel.name
+    }
     
     //MARK: UIView
     func setUIView(){
@@ -183,7 +255,7 @@ class CabinCarViewController: UIViewController, CabinCarDisplayLogic
         mileNumberTextField.autocorrectionType = .no
         brandPlayerTextField.autocorrectionType = .no
         reasonMileageTextField.autocorrectionType = .no
-           
+        
         mileNumberTextField.delegate = self
         brandPlayerTextField.delegate = self
         cabinNoteTextField.delegate = self
@@ -198,7 +270,7 @@ class CabinCarViewController: UIViewController, CabinCarDisplayLogic
         textfield.addTarget(self, action: #selector(textFieldDidChange(_:)),for: .editingChanged)
     }
     
-   
+    
     //MARK: Date Picker
     func setDatePicker(){
         taxPlateExpiredView.isHidden = true
@@ -222,41 +294,41 @@ class CabinCarViewController: UIViewController, CabinCarDisplayLogic
     //MARK: Radio
     func setUpRadio(){
         let attributedString = [NSAttributedString.Key.foregroundColor : UIColor.appPrimaryColor]
-
-
+        
+        
         cabinOverallRadio.attributedTitles = [
-            NSAttributedString(string: "ดี",
+            NSAttributedString(string: string_good_first,
                                attributes: attributedString),
-            NSAttributedString(string: "ปานกลาง",
+            NSAttributedString(string: string_average,
                                attributes: attributedString),
-            NSAttributedString(string: "พอใช้",
+            NSAttributedString(string: string_fair,
                                attributes: attributedString),
-            NSAttributedString(string: "ไม่ดี",
+            NSAttributedString(string: string_poor,
                                attributes: attributedString)
-
+            
         ]
-
-
+        
+        
         milesRadio.attributedTitles = [
-            NSAttributedString(string: "กิโลเมตร",
+            NSAttributedString(string: string_kilometer,
                                attributes: attributedString),
-            NSAttributedString(string: "ไมล์",
+            NSAttributedString(string: string_mileage,
                                attributes: attributedString)
         ]
-
+        
     }
     
     @IBAction func cabinOverallValueChange(_ sender: Any) {
         var selectString:String? = nil
         switch cabinOverallRadio.selectedIndex {
         case 0:
-            selectString = "ดี"
+            selectString = string_good_first
         case 1:
-            selectString = "ปานกลาง"
+            selectString = string_average
         case 2:
-            selectString = "พอใช้"
+            selectString = string_fair
         case 3:
-            selectString = "ไม่ดี"
+            selectString = string_poor
             
         default:
             return
@@ -272,9 +344,9 @@ class CabinCarViewController: UIViewController, CabinCarDisplayLogic
         var selectString:String? = nil
         switch milesRadio.selectedIndex {
         case 0:
-            selectString = "กิโลเมตร"
+            selectString = string_kilometer
         case 1:
-            selectString = "ไมล์"
+            selectString = string_mileage
         default:
             return
         }
@@ -299,7 +371,7 @@ class CabinCarViewController: UIViewController, CabinCarDisplayLogic
         isInvalidMilesCheckBox.toggle { [weak self] check in
             DataController.shared.receiverCarModel.isInvalidMileage = check
             self?.reasonMileageStackView.isHidden = !check
-             
+            
             if check {
                 /// set miles = 0
                 self?.mileNumberTextField.setEnableView(isEnable: false)
@@ -332,7 +404,7 @@ class CabinCarViewController: UIViewController, CabinCarDisplayLogic
         noCdCheckBox.typecheck = .BACKGROUND
     }
     
-   
+    
     //MARK: Player
     @IBAction func playerRadioTapped(_ sender: Any) {
         playerRadioCheckBox.toggle { [weak self] check in
@@ -419,9 +491,9 @@ class CabinCarViewController: UIViewController, CabinCarDisplayLogic
             
         }
     }
-//    @IBAction func warrantyTapped(_ sender: Any) {
-//        warrantyBookCheckBox.toggle()
-//    }
+    //    @IBAction func warrantyTapped(_ sender: Any) {
+    //        warrantyBookCheckBox.toggle()
+    //    }
     
     @IBAction func gearHeadTapped(_ sender: Any) {
         gearHeadCheckBox.toggle { check in
@@ -448,24 +520,24 @@ class CabinCarViewController: UIViewController, CabinCarDisplayLogic
             self?.taxPlateExpiredView.isHidden = !check
             DataController.shared.receiverCarModel.isTaxPlate = check
             if !check {
-                self?.taxPlateExpiredLabel.text = "วันหมดอายุ"
+                self?.taxPlateExpiredLabel.text = String.localized("car_pdf_validity_period_label")
                 self?.taxPlateExpiredLabel.textColor = .galleryColor
                 DataController.shared.receiverCarModel.dateExpiredTaxPlate = ""
             }
             
         }
     }
-     
+    
     //MARK: Keys
     @IBAction func keyTapped(_ sender: Any) {
         keyCheckBox.toggle { [weak self] check in
             if !check {
-                DataController.shared.receiverCarModel.removeKeys(type: "กุญแจ")
+                DataController.shared.receiverCarModel.removeKeys(type: string_key_label)
                 self?.keyDropDown.text = ""
                 self?.uncheckKeys()
             }else{
                 DataController.shared.receiverCarModel.isKeys = true
-                DataController.shared.receiverCarModel.addKeys(type: "กุญแจ")
+                DataController.shared.receiverCarModel.addKeys(type: string_key_label)
             }
         }
     }
@@ -473,24 +545,24 @@ class CabinCarViewController: UIViewController, CabinCarDisplayLogic
     @IBAction func remoteKeyTapped(_ sender: Any) {
         remoteKeyCheckBox.toggle { [weak self] check in
             if !check {
-                DataController.shared.receiverCarModel.removeKeys(type: "กุญแจรีโมท")
+                DataController.shared.receiverCarModel.removeKeys(type: string_remote_key_label)
                 self?.remoteKeyDropDown.text = ""
                 self?.uncheckKeys()
             }else{
                 DataController.shared.receiverCarModel.isKeys = true
-                DataController.shared.receiverCarModel.addKeys(type: "กุญแจรีโมท")
+                DataController.shared.receiverCarModel.addKeys(type: string_remote_key_label)
             }
         }
     }
     @IBAction func keylessKeyTapped(_ sender: Any) {
         keylessKeyCheckBox.toggle { [weak self] check in
             if !check {
-                DataController.shared.receiverCarModel.removeKeys(type: "กุญแจ Keyless")
+                DataController.shared.receiverCarModel.removeKeys(type: string_keyless_label)
                 self?.keylessKeyDropDown.text = ""
                 self?.uncheckKeys()
             }else{
                 DataController.shared.receiverCarModel.isKeys = true
-                DataController.shared.receiverCarModel.addKeys(type: "กุญแจ Keyless")
+                DataController.shared.receiverCarModel.addKeys(type: string_keyless_label)
             }
         }
     }
@@ -498,24 +570,24 @@ class CabinCarViewController: UIViewController, CabinCarDisplayLogic
     @IBAction func remoteTapped(_ sender: Any) {
         remoteCheckBox.toggle { [weak self] check in
             if !check {
-                DataController.shared.receiverCarModel.removeKeys(type: "รีโมท")
+                DataController.shared.receiverCarModel.removeKeys(type: string_remote_control_key_label)
                 self?.remoteDropDown.text = ""
                 self?.uncheckKeys()
             }else{
                 DataController.shared.receiverCarModel.isKeys = true
-                DataController.shared.receiverCarModel.addKeys(type: "รีโมท")
+                DataController.shared.receiverCarModel.addKeys(type: string_remote_control_key_label)
             }
         }
     }
     @IBAction func immobilizerKeyTapped(_ sender: Any) {
         immobilizarKeyCheckBox.toggle { [weak self] check in
             if !check {
-                DataController.shared.receiverCarModel.removeKeys(type: "กุญแจ Immobilizer")
+                DataController.shared.receiverCarModel.removeKeys(type: string_immobilizer_key_label)
                 self?.immobilizarKeyDropDown.text = ""
                 self?.uncheckKeys()
             }else{
                 DataController.shared.receiverCarModel.isKeys = true
-                DataController.shared.receiverCarModel.addKeys(type: "กุญแจ Immobilizer")
+                DataController.shared.receiverCarModel.addKeys(type: string_immobilizer_key_label)
             }
             
         }
@@ -573,7 +645,7 @@ class CabinCarViewController: UIViewController, CabinCarDisplayLogic
             weakself.navigationCheck(checkBox: weakself.noCdCheckBox , check: check)
         }
     }
-   
+    
     func uncheckNavigator(){
         guard !cdCheckBox.check,
               !sdCardCheckBox.check,
@@ -785,7 +857,7 @@ class CabinCarViewController: UIViewController, CabinCarDisplayLogic
         keyDropDown.didSelect { [weak self] (selected, _, _) in
             
             DataController.shared.receiverCarModel.isKeys = true
-            DataController.shared.receiverCarModel.addKeys(type: "กุญแจ", amount: selected)
+            DataController.shared.receiverCarModel.addKeys(type: string_key_label, amount: selected)
             
             self?.keyDropDown.text = selected
             
@@ -795,9 +867,9 @@ class CabinCarViewController: UIViewController, CabinCarDisplayLogic
         remoteDropDown.optionArray = keyValue
         remoteDropDown.didSelect { [weak self] (selected, _, _) in
             
-
+            
             DataController.shared.receiverCarModel.isKeys = true
-            DataController.shared.receiverCarModel.addKeys(type: "รีโมท", amount: selected)
+            DataController.shared.receiverCarModel.addKeys(type: string_remote_control_key_label, amount: selected)
             
             self?.remoteDropDown.text = selected
             
@@ -809,7 +881,7 @@ class CabinCarViewController: UIViewController, CabinCarDisplayLogic
         remoteKeyDropDown.didSelect { [weak self] (selected, _, _) in
             
             DataController.shared.receiverCarModel.isKeys = true
-            DataController.shared.receiverCarModel.addKeys(type: "กุญแจรีโมท", amount: selected)
+            DataController.shared.receiverCarModel.addKeys(type: string_remote_key_label, amount: selected)
             
             self?.remoteKeyDropDown.text = selected
             
@@ -821,7 +893,7 @@ class CabinCarViewController: UIViewController, CabinCarDisplayLogic
         keylessKeyDropDown.didSelect { [weak self] (selected, _, _) in
             
             DataController.shared.receiverCarModel.isKeys = true
-            DataController.shared.receiverCarModel.addKeys(type: "กุญแจ Keyless", amount: selected)
+            DataController.shared.receiverCarModel.addKeys(type: string_keyless_label, amount: selected)
             
             self?.keylessKeyDropDown.text = selected
             
@@ -833,7 +905,7 @@ class CabinCarViewController: UIViewController, CabinCarDisplayLogic
         immobilizarKeyDropDown.didSelect { [weak self] (selected, _, _) in
             
             DataController.shared.receiverCarModel.isKeys = true
-            DataController.shared.receiverCarModel.addKeys(type: "กุญแจ Immobilizer", amount: selected)
+            DataController.shared.receiverCarModel.addKeys(type: string_immobilizer_key_label, amount: selected)
             
             self?.immobilizarKeyDropDown.text = selected
             
@@ -867,8 +939,8 @@ class CabinCarViewController: UIViewController, CabinCarDisplayLogic
     
     @objc func prepareData(){
         let model  = DataController.shared.receiverCarModel
-        let cabinOverallValue = ["ดี", "ปานกลาง", "พอใช้", "ไม่ดี"]
-        let typeMilesValue = ["กิโลเมตร", "ไมล์"]
+        let cabinOverallValue = [string_good_first, string_average, string_fair, string_poor]
+        let typeMilesValue = [string_kilometer, string_mileage]
         let gearSystemValue = ["AT", "MT"]
         
         cabinOverallRadio.selectedIndex = getRadioIndexByValue(from: cabinOverallValue, value: model.cabinOverall)
@@ -894,7 +966,7 @@ class CabinCarViewController: UIViewController, CabinCarDisplayLogic
         bookServiceCheckBox.check = model.isBookService ?? false
         manualCheckBox.check = model.isManual ?? false
         taxPlateCheckBox.check = model.isTaxPlate ?? false
-
+        
         navigatorCheckBox.check = model.isNavigator ?? false
         navigatorOnCarCheckBox.check = model.isNavigatorOnCar ?? false
         cdCheckBox.check = model.isCd ?? false
@@ -903,11 +975,11 @@ class CabinCarViewController: UIViewController, CabinCarDisplayLogic
         noCdCheckBox.check = model.isNoCd ?? false
         
         ///key
-        let numberOfKey = model.mapKeys?["กุญแจ"] as? String
-        let numberOfKeyRemote = model.mapKeys?["กุญแจรีโมท"] as? String
-        let numberOfRemote = model.mapKeys?["รีโมท"] as? String
-        let numberOfImmobilizer = model.mapKeys?["กุญแจ Immobilizer"] as? String
-        let numberOfKeyless = model.mapKeys?["กุญแจ Keyless"] as? String
+        let numberOfKey = model.mapKeys?[string_key_label] as? String
+        let numberOfKeyRemote = model.mapKeys?[string_remote_key_label] as? String
+        let numberOfRemote = model.mapKeys?[string_remote_control_key_label] as? String
+        let numberOfImmobilizer = model.mapKeys?[string_immobilizer_key_label] as? String
+        let numberOfKeyless = model.mapKeys?[string_keyless_label] as? String
         
         let checkKey = (numberOfKey?.toInt() ?? 0) > 0
         let checkRemote = (numberOfRemote?.toInt() ?? 0) > 0
@@ -926,7 +998,7 @@ class CabinCarViewController: UIViewController, CabinCarDisplayLogic
         remoteKeyCheckBox.check = checkKeyRemote
         immobilizarKeyCheckBox.check = checkImmobilizer
         keylessKeyCheckBox.check = checkKeyless
-
+        
         
         
         ///oil
@@ -939,7 +1011,7 @@ class CabinCarViewController: UIViewController, CabinCarDisplayLogic
         /// expire date
         taxPlateExpiredView.isHidden = !(model.isTaxPlate ?? false)
         let dateExpired = model.dateExpiredTaxPlate ?? ""
-        taxPlateExpiredLabel.text = dateExpired.isEmpty ? "วันหมดอายุ" : dateExpired
+        taxPlateExpiredLabel.text = dateExpired.isEmpty ? String.localized("") : dateExpired
         taxPlateExpiredLabel.textColor = dateExpired.isEmpty ? .galleryColor : .appPrimaryColor
         
         isInvalidMilesCheckBox.check = (model.isInvalidMileage ?? false)
@@ -949,57 +1021,57 @@ class CabinCarViewController: UIViewController, CabinCarDisplayLogic
     
     @objc func updateView(){
         let model  = DataController.shared.receiverCarModel
-//        let isEnable = getEnableView()
-//
-//        cabinOverallRadio.setEnableView(isEnable: isEnable)
-//
-//        milesRadio.setEnableView(isEnable: isEnable)
-//
-//        playerRadioCheckBox.setEnableView(isEnable: isEnable)
-//        playerTapeCheckBox.setEnableView(isEnable: isEnable)
-//        playerCDCheckBox.setEnableView(isEnable: isEnable)
-//        playerUSBCheckBox.setEnableView(isEnable: isEnable)
-//
-//        mileNumberTextField.setEnableView(isEnable: isEnable)
-//        brandPlayerTextField.setEnableView(isEnable: isEnable)
-//        cabinNoteTextField.setEnableView(isEnable: isEnable)
-//
-//        airbackCheckBox.setEnableView(isEnable: isEnable)
-//        powerAmpCheckBox.setEnableView(isEnable: isEnable)
-//        preAmpCheckBox.setEnableView(isEnable: isEnable)
-//        speakerCheckBox.setEnableView(isEnable: isEnable)
-//        cigaretteLighterCheckBox.setEnableView(isEnable: isEnable)
-//        gearHeadCheckBox.setEnableView(isEnable: isEnable)
-//        gearLockCheckBox.setEnableView(isEnable: isEnable)
-//        bookServiceCheckBox.setEnableView(isEnable: isEnable)
-//        manualCheckBox.setEnableView(isEnable: isEnable)
-//        taxPlateCheckBox.setEnableView(isEnable: isEnable)
-//
-//        navigatorCheckBox.setEnableView(isEnable: isEnable)
-//        navigatorOnCarCheckBox.setEnableView(isEnable: isEnable)
-//        cdCheckBox.setEnableView(isEnable: isEnable)
-//        sdCardCheckBox.setEnableView(isEnable: isEnable)
-//        noSdCardCheckBox.setEnableView(isEnable: isEnable)
-//        noCdCheckBox.setEnableView(isEnable: isEnable)
-//
-//        keyDropDown.setEnableView(isEnable: isEnable)
-//        remoteDropDown.setEnableView(isEnable: isEnable)
-//        remoteKeyDropDown.setEnableView(isEnable: isEnable)
-//        immobilizarKeyDropDown.setEnableView(isEnable: isEnable)
-//        keylessKeyDropDown.setEnableView(isEnable: isEnable)
-//
-//        keyCheckBox.setEnableView(isEnable: isEnable)
-//        remoteCheckBox.setEnableView(isEnable: isEnable)
-//        remoteKeyCheckBox.setEnableView(isEnable: isEnable)
-//        immobilizarKeyCheckBox.setEnableView(isEnable: isEnable)
-//        keylessKeyCheckBox.setEnableView(isEnable: isEnable)
-//
-//        ///oil
-//        amountEOilCheckButton.setEnableView(isEnable: isEnable)
-//        amount1OilCheckButton.setEnableView(isEnable: isEnable)
-//        amount2OilCheckButton.setEnableView(isEnable: isEnable)
-//        amount3OilCheckButton.setEnableView(isEnable: isEnable)
-//        amount4OilCheckButton.setEnableView(isEnable: isEnable)
+        //        let isEnable = getEnableView()
+        //
+        //        cabinOverallRadio.setEnableView(isEnable: isEnable)
+        //
+        //        milesRadio.setEnableView(isEnable: isEnable)
+        //
+        //        playerRadioCheckBox.setEnableView(isEnable: isEnable)
+        //        playerTapeCheckBox.setEnableView(isEnable: isEnable)
+        //        playerCDCheckBox.setEnableView(isEnable: isEnable)
+        //        playerUSBCheckBox.setEnableView(isEnable: isEnable)
+        //
+        //        mileNumberTextField.setEnableView(isEnable: isEnable)
+        //        brandPlayerTextField.setEnableView(isEnable: isEnable)
+        //        cabinNoteTextField.setEnableView(isEnable: isEnable)
+        //
+        //        airbackCheckBox.setEnableView(isEnable: isEnable)
+        //        powerAmpCheckBox.setEnableView(isEnable: isEnable)
+        //        preAmpCheckBox.setEnableView(isEnable: isEnable)
+        //        speakerCheckBox.setEnableView(isEnable: isEnable)
+        //        cigaretteLighterCheckBox.setEnableView(isEnable: isEnable)
+        //        gearHeadCheckBox.setEnableView(isEnable: isEnable)
+        //        gearLockCheckBox.setEnableView(isEnable: isEnable)
+        //        bookServiceCheckBox.setEnableView(isEnable: isEnable)
+        //        manualCheckBox.setEnableView(isEnable: isEnable)
+        //        taxPlateCheckBox.setEnableView(isEnable: isEnable)
+        //
+        //        navigatorCheckBox.setEnableView(isEnable: isEnable)
+        //        navigatorOnCarCheckBox.setEnableView(isEnable: isEnable)
+        //        cdCheckBox.setEnableView(isEnable: isEnable)
+        //        sdCardCheckBox.setEnableView(isEnable: isEnable)
+        //        noSdCardCheckBox.setEnableView(isEnable: isEnable)
+        //        noCdCheckBox.setEnableView(isEnable: isEnable)
+        //
+        //        keyDropDown.setEnableView(isEnable: isEnable)
+        //        remoteDropDown.setEnableView(isEnable: isEnable)
+        //        remoteKeyDropDown.setEnableView(isEnable: isEnable)
+        //        immobilizarKeyDropDown.setEnableView(isEnable: isEnable)
+        //        keylessKeyDropDown.setEnableView(isEnable: isEnable)
+        //
+        //        keyCheckBox.setEnableView(isEnable: isEnable)
+        //        remoteCheckBox.setEnableView(isEnable: isEnable)
+        //        remoteKeyCheckBox.setEnableView(isEnable: isEnable)
+        //        immobilizarKeyCheckBox.setEnableView(isEnable: isEnable)
+        //        keylessKeyCheckBox.setEnableView(isEnable: isEnable)
+        //
+        //        ///oil
+        //        amountEOilCheckButton.setEnableView(isEnable: isEnable)
+        //        amount1OilCheckButton.setEnableView(isEnable: isEnable)
+        //        amount2OilCheckButton.setEnableView(isEnable: isEnable)
+        //        amount3OilCheckButton.setEnableView(isEnable: isEnable)
+        //        amount4OilCheckButton.setEnableView(isEnable: isEnable)
         
         
         
@@ -1074,12 +1146,12 @@ extension CabinCarViewController : UITextViewDelegate {
 extension CabinCarViewController : UITextFieldDelegate {
     @objc func textFieldDidChange(_ textField: UITextField) {
         //print(textField.text)
-       
+        
         switch textField {
         case mileNumberTextField:
             let request = CabinCar.Something.Request(miles: textField.text)
             interactor?.validateMileNumber(request: request)
-
+            
         case brandPlayerTextField:
             DataController.shared.receiverCarModel.brandPlayer = textField.text
             
@@ -1094,29 +1166,29 @@ extension CabinCarViewController : UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
-         
-      
+        
+        
         return true
     }
 }
 //MARK: keyboard
 extension CabinCarViewController {
-   override func viewWillAppear(_ animated: Bool) {
-       super.viewWillAppear(animated)
-       scrollView.registKeyboardNotification()
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        scrollView.registKeyboardNotification()
+        
         fetchAPI()
         prepareData()
         prepareGearBox()
         updateView()
-    
+        
         NotificationCenter.default.addObserver(self, selector: #selector(updateView), name: NSNotification.Name("updateUI"), object: nil)
-   }
-   
-   override func viewDidDisappear(_ animated: Bool) {
-       super.viewDidDisappear(animated)
-       scrollView.resignKeyboardNotification()
+    }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        scrollView.resignKeyboardNotification()
+        
         NotificationCenter.default.removeObserver(self)
-   }
+    }
 }

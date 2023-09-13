@@ -383,20 +383,21 @@ class CreateModelCodeInteractor: CreateModelCodeBusinessLogic, CreateModelCodeDa
         let validEngineCapacity = engineCapacity != nil && !(engineCapacity?.isEmpty ?? false) && (engineCapacity?.isValidNumber() ?? false)
         let validBuildYear = buildYear != nil && !(buildYear?.isEmpty ?? false) && (buildYear?.isValidNumber() ?? false)
         
+        let not_correct = String.localized("login_not_correct_label")
         var message : String = ""
-        message += validChassisno ? "" : "Chassis No. ไม่ถูกต้อง\n"
-        message += validModelCode ? "" : "Model Code ไม่ถูกต้อง\n"
-        message += validModel_Bu ? "" : "Model BU ไม่ถูกต้อง\n"
-        message += validVaraints ? "" : "Varaints ไม่ถูกต้อง\n"
-        message += validEngineCapacity ? "" : "Engine Capacity ไม่ถูกต้อง\n"
-        message += validFuelDelivery ? "" : "Fuel Delivery ไม่ถูกต้อง\n"
-        message += validFuelType ? "" : "Fuel Type ไม่ถูกต้อง\n"
-        message += validGearBox ? "" : "Gear Box ไม่ถูกต้อง\n"
-        message += validGear ? "" : "Gear ไม่ถูกต้อง\n"
-        message += validDrive ? "" : "Drive ไม่ถูกต้อง\n"
-        message += validMake ? "" : "Make ไม่ถูกต้อง\n"
-        message += validBody ? "" : "Body ไม่ถูกต้อง\n"
-        message += validBuildYear ? "" : "Build Year ไม่ถูกต้อง\n"
+        message += validChassisno ? "" : "Chassis No. \(not_correct)\n"
+        message += validModelCode ? "" : "Model Code \(not_correct)\n"
+        message += validModel_Bu ? "" : "Model BU \(not_correct)\n"
+        message += validVaraints ? "" : "Varaints \(not_correct)\n"
+        message += validEngineCapacity ? "" : "Engine Capacity \(not_correct)\n"
+        message += validFuelDelivery ? "" : "Fuel Delivery \(not_correct)\n"
+        message += validFuelType ? "" : "Fuel Type \(not_correct)\n"
+        message += validGearBox ? "" : "Gear Box \(not_correct)\n"
+        message += validGear ? "" : "Gear \(not_correct)\n"
+        message += validDrive ? "" : "Drive \(not_correct)\n"
+        message += validMake ? "" : "Make \(not_correct)\n"
+        message += validBody ? "" : "Body \(not_correct)\n"
+        message += validBuildYear ? "" : "Build Year \(not_correct)\n"
         
         
       

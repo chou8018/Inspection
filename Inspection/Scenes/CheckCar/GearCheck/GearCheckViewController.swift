@@ -15,90 +15,113 @@ import RadioGroup
 
 protocol GearCheckDisplayLogic: AnyObject
 {
-  func displaySomething(viewModel: GearCheck.Something.ViewModel)
+    func displaySomething(viewModel: GearCheck.Something.ViewModel)
 }
 
-class GearCheckViewController: UIViewController, GearCheckDisplayLogic
+class GearCheckViewController: ViewController, GearCheckDisplayLogic
 {
-  var interactor: GearCheckBusinessLogic?
-  var router: (NSObjectProtocol & GearCheckRoutingLogic & GearCheckDataPassing)?
-
-  // MARK: Object lifecycle
-  
-  override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
-  {
-    super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-    setup()
-  }
-  
-  required init?(coder aDecoder: NSCoder)
-  {
-    super.init(coder: aDecoder)
-    setup()
-  }
-  
-  // MARK: Setup
-  
-  private func setup()
-  {
-    let viewController = self
-    let interactor = GearCheckInteractor()
-    let presenter = GearCheckPresenter()
-    let router = GearCheckRouter()
-    viewController.interactor = interactor
-    viewController.router = router
-    interactor.presenter = presenter
-    presenter.viewController = viewController
-    router.viewController = viewController
-    router.dataStore = interactor
-  }
-  
-  // MARK: Routing
-  
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-  {
-    if let scene = segue.identifier {
-      let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
-      if let router = router, router.responds(to: selector) {
-        router.perform(selector, with: segue)
-      }
-    }
-  }
-  
-  // MARK: View lifecycle
-  
-  override func viewDidLoad()
-  {
-    super.viewDidLoad()
-    setUIView()
-    setRadio()
-    doSomething()
-  }
-  
-  // MARK: Do something
-  
-  //@IBOutlet weak var nameTextField: UITextField!
-    @IBOutlet weak var scrollView: UIScrollView!
+    var interactor: GearCheckBusinessLogic?
+    var router: (NSObjectProtocol & GearCheckRoutingLogic & GearCheckDataPassing)?
     
+    // MARK: Object lifecycle
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
+    {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        setup()
+    }
+    
+    required init?(coder aDecoder: NSCoder)
+    {
+        super.init(coder: aDecoder)
+        setup()
+    }
+    
+    // MARK: Setup
+    
+    private func setup()
+    {
+        let viewController = self
+        let interactor = GearCheckInteractor()
+        let presenter = GearCheckPresenter()
+        let router = GearCheckRouter()
+        viewController.interactor = interactor
+        viewController.router = router
+        interactor.presenter = presenter
+        presenter.viewController = viewController
+        router.viewController = viewController
+        router.dataStore = interactor
+    }
+    
+    // MARK: Routing
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if let scene = segue.identifier {
+            let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
+            if let router = router, router.responds(to: selector) {
+                router.perform(selector, with: segue)
+            }
+        }
+    }
+    
+    // MARK: View lifecycle
+    
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
+        setUIView()
+        setRadio()
+        doSomething()
+    }
+    
+    // MARK: Do something
+    
+    //@IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var gearSystemRadio: RadioGroup!
     @IBOutlet weak var statusGearRadio: RadioGroup!
     @IBOutlet weak var driveShaftGearRadio: RadioGroup!
-    
     @IBOutlet weak var gear4WDCheckBox: CheckBoxUIButton!
-    
     @IBOutlet weak var summaryGearSystemTextField: MultilineTextField!
-  
-  func doSomething()
-  {
-    let request = GearCheck.Something.Request()
-    interactor?.doSomething(request: request)
-  }
-  
+    
+    // local strings
+    @IBOutlet weak var gearSystemLabel: UILabel!
+    @IBOutlet weak var gearConditionLabel: UILabel!
+    @IBOutlet weak var driveShaftLabel: UILabel!
+    @IBOutlet weak var gear4WDLabel: UILabel!
+    @IBOutlet weak var gearSSummaryLabel: UILabel!
+    
+    let string_inspection_gear_working = String.localized("inspection_gear_working_label")
+    let string_inspection_gear_not_working = String.localized("inspection_gear_not_working_label")
+    
+    let string_inspection_gear_complete = String.localized("inspection_gear_complete_label")
+    let string_inspection_gear_incomplete = String.localized("inspection_gear_incomplete_label")
+    let string_inspection_gear_no_drive_shaft = String.localized("inspection_gear_no_drive_shaft_label")
+
+
+    override func initLocalString() {
+        super.initLocalString()
+        
+        gearSystemLabel.text = String.localized("inspection_gear_system_label")
+        gearConditionLabel.text = String.localized("inspection_gear_condition_label")
+        driveShaftLabel.text = String.localized("inspection_gear_drive_shaft_label")
+        gear4WDLabel.text = String.localized("inspection_gear_4wd_label")
+        gearSSummaryLabel.text = String.localized("inspection_gear_summary_label")
+        summaryGearSystemTextField.placeholder = gearSSummaryLabel.text
+    }
+    
+    func doSomething()
+    {
+        let request = GearCheck.Something.Request()
+        interactor?.doSomething(request: request)
+    }
+    
     //MARK: Presenter
-  func displaySomething(viewModel: GearCheck.Something.ViewModel)
-  {
-    //nameTextField.text = viewModel.name
-  }
+    func displaySomething(viewModel: GearCheck.Something.ViewModel)
+    {
+        //nameTextField.text = viewModel.name
+    }
     
     //MARK: UIView
     func setUIView(){
@@ -106,15 +129,15 @@ class GearCheckViewController: UIViewController, GearCheckDisplayLogic
         
         summaryGearSystemTextField.delegate = self
         
-
+        
         
     }
-   
+    
     
     //MARK: Radio
     func setRadio(){
         let attributedString = [NSAttributedString.Key.foregroundColor : UIColor.appPrimaryColor]
-         
+        
         gearSystemRadio.attributedTitles = [
             NSAttributedString(
                 string: "AT", attributes: attributedString),
@@ -123,17 +146,17 @@ class GearCheckViewController: UIViewController, GearCheckDisplayLogic
         ]
         statusGearRadio.attributedTitles = [
             NSAttributedString(
-                string: "ขับได้", attributes: attributedString),
+                string: string_inspection_gear_working, attributes: attributedString),
             NSAttributedString(
-                string: "ชำรุดขับไม่ได้", attributes: attributedString)
+                string: string_inspection_gear_not_working, attributes: attributedString)
         ]
         driveShaftGearRadio.attributedTitles = [
             NSAttributedString(
-                string: "ครบ", attributes: attributedString),
+                string: string_inspection_gear_complete, attributes: attributedString),
             NSAttributedString(
-                string: "ไม่ครบ", attributes: attributedString),
+                string: string_inspection_gear_incomplete, attributes: attributedString),
             NSAttributedString(
-                string: "ไม่มีเพลาขับ", attributes: attributedString)
+                string: string_inspection_gear_no_drive_shaft, attributes: attributedString)
         ]
     }
     @IBAction func gearSystemValueChanged(_ sender: Any) {
@@ -144,7 +167,7 @@ class GearCheckViewController: UIViewController, GearCheckDisplayLogic
         DataController.shared.inspectionCarModel.gearSystemId = gearSystemId
     }
     @IBAction func statusGearValueChanged(_ sender: Any) {
-        let value = getRadioValue(from: ["ขับได้", "ชำรุดขับไม่ได้"],
+        let value = getRadioValue(from: [string_inspection_gear_working, string_inspection_gear_not_working],
                                   selectIndex: statusGearRadio.selectedIndex)
         DataController.shared.inspectionCarModel.statusGear = value
         
@@ -152,7 +175,7 @@ class GearCheckViewController: UIViewController, GearCheckDisplayLogic
         DataController.shared.inspectionCarModel.gearConditionId = gearConditionId
     }
     @IBAction func driveShaftGearValueChanged(_ sender: Any) {
-        let value = getRadioValue(from: ["ครบ", "ไม่ครบ", "ไม่มีเพลาขับ"],
+        let value = getRadioValue(from: [string_inspection_gear_complete, string_inspection_gear_incomplete, string_inspection_gear_no_drive_shaft],
                                   selectIndex: driveShaftGearRadio.selectedIndex)
         DataController.shared.inspectionCarModel.driveShaftGear = value
         
@@ -171,8 +194,8 @@ class GearCheckViewController: UIViewController, GearCheckDisplayLogic
         let model = DataController.shared.inspectionCarModel
         summaryGearSystemTextField.text = model.summaryGearSystem
         gear4WDCheckBox.check = model.isGear4WD
-        driveShaftGearRadio.selectedIndex = getRadioIndexByValue(from: ["ครบ", "ไม่ครบ", "ไม่มีเพลาขับ"], value: model.driveShaftGear)
-        statusGearRadio.selectedIndex = getRadioIndexByValue(from: ["ขับได้", "ชำรุดขับไม่ได้"], value: model.statusGear)
+        driveShaftGearRadio.selectedIndex = getRadioIndexByValue(from: [string_inspection_gear_complete, string_inspection_gear_incomplete, string_inspection_gear_no_drive_shaft], value: model.driveShaftGear)
+        statusGearRadio.selectedIndex = getRadioIndexByValue(from: [string_inspection_gear_working, string_inspection_gear_not_working], value: model.statusGear)
         gearSystemRadio.selectedIndex = getRadioIndexByValue(from: ["AT", "MT"], value: model.gearSystem)
         
     }
@@ -187,7 +210,7 @@ extension GearCheckViewController : UITextViewDelegate {
         DataController.shared.inspectionCarModel.summaryGearSystem = textView.text
     }
 }
- 
+
 extension GearCheckViewController {
     
     

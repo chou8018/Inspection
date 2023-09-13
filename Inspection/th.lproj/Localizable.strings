@@ -1,0 +1,604 @@
+/* 
+  Localizable.strings
+  Inspection
+
+  Created by wanggao on 2023/8/7.
+  
+*/
+
+// login
+"login_title_label" = "ลงชื่อเข้าใช้";
+"login_user_name_placeholder" = "ชื่อผู้ใช้";
+"login_password_placeholder" = "รหัสผ่าน";
+"login_error_name_or_password_message_label" = "เกิดข้อผิดพลาด - ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง";
+"login_tips_message_label" = "พบปัญหาในการลงชื่อเข้าใช้? กรุณาติดต่อ ______";
+"login_or_label" = "หรือ";
+"login_not_correct_label" = "ไม่ถูกต้อง";
+
+// select inspection or list
+"select_inspection_label" = "เริ่มตรวจสภาพ";
+"select_inspection_list_label" = "รายการตรวจ";
+"select_inspection_hello_label" = "สวัสดี";
+"select_inspection_log_out" = "ลงชื่อออก";
+"select_inspection_log_out_dialog_title" = "ลงชื่อออก";
+"select_inspection_log_out_dialog_message" = "คุณต้องการลงชื่อออกไหม";
+"select_inspection_dialog_no" = "ยกเลิก";
+"select_inspection_dialog_yes" = "ยืนยัน";
+"select_inspection_dialog_ok" = "ตกลง";
+"select_inspection_dialog_try" = "ลองใหม่";
+
+// select insepction type
+"select_inspection_title_label" = "เลือกรายการที่ต้องการตรวจสภาพ";
+"select_inspection_car_label" = "รถยนต์";
+"select_inspection_motobike_label" = "รถจักรยานยนต์";
+"select_inspection_car_salvage_label" = "ซากรถยนต์";
+"select_inspection_motobike_salvage_label" = "ซากรถจักรยานยนต์";
+"select_inspection_back_to_main_button_title" = "กลับหน้าแรก";
+"select_inspection_inspector_label" = "ผู้ตรวจสภาพ";
+"select_inspection_place_label" = "สถานที่";
+"select_inspection_plant_label" = "สถานที่รับรถ";
+
+// inspection main
+"main_inspection_title" = "รับมอบ - รถยนต์";
+"main_inspection_bar_button_title" = "หน้าหลัก";
+"main_inspection_save_button_title" = "บันทึก";
+"main_inspection_send_book_button_title" = "Send book-in";
+"main_inspection_bar_button_main_title" = "หน้าหลัก";
+"main_inspection_item_book_in_title" = "รับมอบ";
+"main_inspection_item_inspection_title" = "ตรวจสภาพ";
+"main_inspection_item_photos_title" = "ถ่ายรูป";
+"main_inspection_car_navigation_photos_title" = "ถ่ายรูป - รถยนต์";
+"main_inspection_back_to_main_title" = "คุณต้องการกลับหน้าหลักไหม";
+"main_inspection_leave_edit_page_title" = "คุณต้องการกลับหน้ารายการไหม";
+"main_inspection_save_vehicle_title" = "คุณต้องการบันทึกรายการรับมอบรถไหม";
+"main_inspection_edit_list_title" = "คุณต้องการแก้ไขรายการไหม";
+
+"motorbike_pick_up_navigation_title" = "รับมอบ - รถจักรยานยนต์";
+"motorbike_inspection_navigation_title" = "ตรวจสภาพ - รถจักรยานยนต์";
+"motorbike_photos_navigation_title" = "ถ่ายรูป - รถจักรยานยนต์";
+"car_salvage_pick_up_navigation_title" = "รับมอบ - ซากรถยนต์";
+"car_salvage_inspection_navigation_title" = "ตรวจสภาพ - ซากรถยนต์";
+"car_salvage_photos_navigation_title" = "ถ่ายรูป - ซากรถยนต์";
+"motorbike_salvage_pick_up_navigation_title" = "รับมอบ - ซากรถจักรยานต์";
+"motorbike_salvage_inspection_navigation_title" = "ตรวจสภาพ - ซากรถจักรยานยนต์";
+"motorbike_salvage_photos_navigation_title" = "ถ่ายรูป - ซากรถจักรยานยนต์";
+
+// pick up
+"pick_up_deliverer_title" = "ผู้ส่งมอบ";
+"pick_up_car_details_title" = "รถยนต์";
+"pick_up_exterior_title" = "ภายนอก";
+"pick_up_trunk_title" = "ห้องสัมภาระ";
+"pick_up_interior_title" = "ห้องโดยสาร";
+"pick_up_engine_room_title" = "ห้องเครื่อง";
+"pick_up_date_title" = "วันรับรถ";
+"pick_up_send_book_in_confirm_title" = "คุณต้องการส่ง\nBook-In to IMAT ไหม";
+"pick_up_send_book_in_succeeded_title" = "Book-In สำเร็จ";
+"อัพโหลด" = "ต้องการปริ้น IMAT QRCode ไหม";
+"pick_up_send_book_in_succeeded" = "สำเร็จ";
+
+// car salvage
+"car_salvage_details_title" = "รถซาก";
+"car_salvage_deliverer_contract_number" = "เลขที่สัญญา/เลขเคลม";
+
+// receiver car
+"receiver_car_deliverer_name_label" = "ผู้ส่งมอบ";
+"receiver_car_deliverer_name_placeholder_label" = "ชื่อ-นามสกุล";
+"receiver_car_contract_number_label" = "เลขที่สัญญา";
+"receiver_car_phone_label" = "เบอร์โทรศัพท์";
+"receiver_car_seller_name_label" = "บริษัทฯ";
+"receiver_car_seller_name_placeholder_label" = "ชื่อบริษัท";
+"receiver_car_plant_location_label" = "สถานที่ ";
+"receiver_car_receive_location_label" = "สถานที่รับรถ";
+"receiver_car_storage_location_label" = "สถานที่เก็บรถ";
+"receiver_car_delivered_by_label" = "ลงชื่อผู้ส่งมอบ";
+"receiver_car_booked_in_by_label" = "ลงชื่อผู้รับมอบ";
+"receiver_car_booked_in_by_placeholder_label" = "กดภายในกรอบนัพื่อทำการลงชื่อ";
+"receiver_car_phone_number_is_incorrect_label" = "The phone number is incorrect";
+"receiver_car_company_no_list_label" = "ชื่อบริษัทไม่มีในรายกา";
+
+// car detail
+"car_detail_model_code_label" = "รหัสรุ่นรถ";
+"car_detail_search_vehicle_model_button_title" = "ค้นหารุ่นรถ";
+"car_detail_make_label" = "ยี่ห้อรถ";
+"car_detail_bodies_label" = "ประเภทรถ";
+"car_detail_model_label" = "รุ่นรถ";
+"car_detail_variant_label" = "รุ่นย่อย";
+"car_detail_engine_size_label" = "ขนาดเครื่องยนต์";
+"car_detail_year_manu_label" = "ปีผลิต";
+"car_detail_year_regis_label" = "ปีจดทะเบียน";
+"car_detail_year_placeholder_label" = "ปี";
+"car_detail_registration_label" = "หมายเลขทะเบียน";
+"car_detail_no_plate_label" = "ไม่มีแผ่นป้าย";
+"car_detail_red_plate_label" = "ป้ายแดง";
+"car_detail_incorrect_plate_label" = "ป้ายไม่ตรง";
+"car_detail_province_label" = "จังหวัด";
+"car_detail_color_label" = "สีรถ";
+"car_detail_engine_number_label" = "หมายเลขเครื่องยนต์";
+"car_detail_unable_to_verified_label" = "ตรวจสอบไม่ได้";
+"car_detail_vin_number_label" = "หมายเลขตัวถัง";
+"car_detail_gas_label" = "เลขถังแก๊ส";
+"car_detail_reason_placeholder" = "เหตุผล";
+
+// car exterior
+"car_exterior_label" = "สภาพภายนอกโดยรวม";
+"car_exterior_excellent_label" = "เยี่ยม";
+"car_exterior_good_label" = "ดีมาก";
+"car_exterior_good_first_label" = "ดี";
+"car_exterior_average_label" = "ปานกลาง";
+"car_exterior_fair_label" = "พอใช้";
+"car_exterior_poor_label" = "แย่";
+"car_exterior_as_is_label" = "ตามสภาพ";
+"car_exterior_salvage_label" = "ซาก";
+"car_exterior_paint_label" = "สภาพสีโดยรวม";
+"car_exterior_spoiler_label" = "สปอยเลอร์";
+"car_exterior_alloy_wheel_label" = "ล้อแม็กซ์";
+"car_exterior_amount_label" = "จำนวน";
+"car_exterior_unit_label" = "วง";
+"car_exterior_steel_wheel_label" = "ล้อกระทะ";
+"car_exterior_tires_label" = "ยาง";
+"car_exterior_make_label" = "ยี่ห้อ";
+"car_exterior_condition_label" = "สภาพ";
+"car_exterior_damages_label" = "รายละเอียดร่องรอยความเสียหาย";
+
+// car trunk
+"car_trunk_luggage_label" = "สภาพห้องสัมภาระโดยรวม";
+"car_trunk_remarks_placeholder" = "หมายเหตุ";
+"car_trunk_spare_tire_label" = "ยางอะไหล่";
+"car_trunk_tools_label" = "เครื่องมือ";
+"car_trunk_magliner_label" = "แม็กไลน์เนอร์";
+"car_trunk_roof_rag_label" = "แร็คหลังคา";
+"car_trunk_jack_label" = "แม่แรง";
+"car_trunk_ev_charger_label" = "สายชาร์จไฟ EV";
+"car_trunk_other_accessaries_label" = "อุปกรณ์แต่งอื่น ๆ";
+
+// car interior
+"car_interior_condition_label" = "สภาพภายในโดยรวม";
+"car_interior_kilometer_label" = "กิโลเมตร";
+"car_interior_mileage_label" = "ไมล์";
+"car_interior_mileage_placeholder_label" = "เลขไมล์";
+"car_interior_fuel_amount_label" = "ปริมาณน้ำมัน";
+"car_interior_gear_label" = "เกียร์";
+"car_interior_airbag_label" = "แอร์แบ็ค";
+"car_interior_gearhead_label" = "หัวเกียร์";
+"car_interior_power_amplifier_label" = "พาวเวอร์แอมป์";
+"car_interior_gear_lock_label" = "ล๊อคเกียร์";
+"car_interior_pre_amplifier_label" = "ปรีแอมป์";
+"car_interior_stereo_label" = "ลำโพง";
+"car_interior_manual_look_label" = "คู่มือ";
+"car_interior_cigarette_lighter_label" = "ที่จุดบุหรี่";
+"car_interior_tax_sign_label" = "ป้ายวงกลม";
+"car_interior_navigator_label" = "เนวิเกเตอร์";
+"car_interior_navigator_in_label" = "เนวิเกเตอร์ในตัว";
+"car_interior_no_cd_label" = "ไม่มี CD";
+"car_interior_no_cd_card_label" = "ไม่มี SD CARD";
+"car_interior_sound_player_label" = " เครื่องเล่น";
+"car_interior_radio_label" = "วิทยุ";
+"car_interior_tape_label" = "เทป";
+"car_interior_cd_dvd_label" = "ซีดี";
+"car_interior_key_label" = "กุญแจ";
+"car_interior_remote_control_label" = "รีโมท";
+"car_interior_remote_key_label" = "กุญแจรีโมท";
+"car_interior_key_immobilizer_label" = "กุญแจ Immobilizer";
+"car_interior_keyless_label" = "กุญแจ Keyless";
+"car_interior_key_placeholder_label" = "จำนวน";
+"car_interior_others_label" = "อื่นๆ";
+
+// car engine room
+"car_engine_room_condition_label" = "สภาพภายในโดยรวม";
+"car_engine_battery_label" = "แบตเตอรี่";
+"car_engine_ecu_label" = "กล่อง ECU";
+"car_engine_air_compressor_label" = "คอมเพรสเซอร์แอร์";
+"car_engine_drive_system_label" = "ระบบขับเคลื่อน";
+"car_engine_type_label" = "ชนิดเครื่องยนต์";
+"car_engine_benzine_label" = "เบนซิน";
+"car_engine_diesel_label" = "ดีเซล";
+"car_engine_hybrid_benzine_label" = "Hybrid / เบนซิน";
+"car_engine_hybrid_diesel_label" = "Hybrid / ดีเซล";
+"car_engine_fuel_system_label" = "ระบบเชื้อเพลิง";
+"car_engine_injector_label" = "หัวฉีด";
+"car_engine_carburetor_label" = "คาร์บูเรเตอร์";
+"car_engine_gas_label" = "แก๊ส";
+"car_engine_lpg_sequential_injection_label" = "LPG ระบบหัวฉีด";
+"car_engine_lpg_fumigation_system_label" = "LPG ระบบดูด";
+"car_engine_cng_sequential_injection_label" = "CNG/NGV ระบบหัวฉีด";
+"car_engine_cng_fumigation_system_label" = "CNG/NGV ระบบดูด";
+"car_engine_other_in_car_assets_label" = "ทรัพย์สินภายในรถ";
+"car_engine_turbocharger_label" = "เทอร์โบ";
+
+// inspection
+"inspection_body_title" = "ตัวถัง";
+"inspection_engine_title" = "เครื่องยนต์";
+"inspection_suspension_title" = "ช่วงล่าง";
+"inspection_gear_box_title" = "ระบบเกียร์";
+"inspection_steering_title" = "ระบบพวงมาลัย";
+"inspection_brake_title" = "ระบบเบรก";
+"inspection_air_title" = "ระบบแอร์";
+"inspection_gauges_title" = "มาตรวัด";
+"inspection_electrical_title" = "อุปกรณ์ไฟฟ้า";
+"inspection_date_title" = "วันที่ตรวจ";
+
+// body
+"inspection_body_registration_number_label" = "หมายเลขทะเบียน";
+"inspection_body_chassis_label" = "แชสซี";
+"inspection_body_front_label" = "ด้านหน้า";
+"inspection_body_back_label" = "ด้านหลัง";
+"inspection_body_right_label" = "ด้านขวา (คนขับ)";
+"inspection_body_left_label" = "ด้านซ้าย";
+"inspection_body_roof_label" = "หลังคา";
+"inspection_body_flooded_label" = "จมน้ำ";
+"inspection_body_summary_label" = "สรุปสภาพตัวถัง";
+"inspection_body_chassis_type_normal" = "ปกติ";
+"inspection_body_chassis_type_slight_repair" = "ซ่อมมาเล็กน้อย";
+"inspection_body_chassis_type_moderate_repair" = "ซ่อมมาปานกลาง";
+"inspection_body_chassis_type_hard_repair" = "ซ่อมมาหนัก";
+"inspection_body_chassis_type_rotting" = "ผุ";
+
+// inspection engine
+"inspection_engine_label" = "สภาพเครื่องยนต์โดยรวม";
+"inspection_engine_working_label" = "ใช้งานได้";
+"inspection_engine_not_working_label" = "ใช้งานไม่ได้";
+"inspection_engine_type_label" = "ชนิดเครื่องยนต์";
+"inspection_engine_oil_label" = "น้ำมันเครื่อง";
+"inspection_engine_oil_lacking_label" = "ขาด";
+"inspection_engine_oil_notlacking_label" = "ไม่ขาด";
+"inspection_engine_general_label" = "สภาพทั่วไป";
+"inspection_engine_function_label" = "ใช้งานได้";
+"inspection_engine_loud_label" = "เสียงดังผิดปกติ";
+"inspection_engine_oil_leak_label" = "น้ำมันรั่วซึม";
+"inspection_engine_water_stain_label" = "คราบน้ำดันออกจากหม้อพักน้ำ";
+"inspection_engine_oil_light_label" = "ไฟรูปเครื่องโชว์";
+"inspection_engine_not_smoothly_label" = "เครื่องยนต์เดินไม่เรียบ";
+"inspection_engine_nedd_repair_label" = "ต้องซ่อมก่อนใช้งาน";
+"inspection_engine_summary_label" = "สรุปสภาพเครื่องยนต์";
+"inspection_engine_gas_label" = "แก็ส";
+
+// motorbike exterior
+"motorbike_exterior_turn_light_l_label" = "ไฟเลี้ยวหน้า L";
+"motorbike_exterior_turn_light_r_label" = "ไฟเลี้ยวหน้า R";
+"motorbike_exterior_side_mirror_l_label" = "กระจก L";
+"motorbike_exterior_side_mirror_r_label" = "กระจก R";
+"motorbike_exterior_hand_brake_l_label" = "มือเบรค L";
+"motorbike_exterior_hand_brake_r_label" = "มือเบรค R";
+"motorbike_exterior_wind_shield_l_label" = "บังลม L";
+"motorbike_exterior_wind_shield_r_label" = "บังลม R";
+"motorbike_exterior_side_l_label" = "กาบข้าง L";
+"motorbike_exterior_side_r_label" = "กาบข้าง R";
+"motorbike_exterior_head_light_label" = "ไฟหน้า";
+"motorbike_exterior_maks_label" = "หน้ากาก";
+"motorbike_exterior_dashboard_label" = "เรือนไมล์";
+"motorbike_exterior_disk_brake_oil_canister_label" = "กระปุกน้ำมันดิสเบรคหน้า";
+"motorbike_exterior_hand_clutch_label" = "ไฟเลี้ยวหน้า";
+"motorbike_exterior_disk_brake_pump_label" = "ปั้มดิสเบรคหน้า";
+"motorbike_exterior_front_fender_label" = "บังโคลนหน้า";
+"motorbike_exterior_start_pedal_label" = "คันสตาร์ท";
+"motorbike_exterior_shock_absorber_label" = "โช๊คหน้า";
+"motorbike_exterior_footrest_r/l_label" = "พักเท้าหน้า R/L";
+"motorbike_exterior_tire_label" = "ยางหน้า";
+"motorbike_exterior_compartment_r_label" = "ช่องอเนกประสงค์ R";
+"motorbike_exterior_compartment_l_label" = "ช่องอเนกประสงค์ L";
+"motorbike_exterior_double_stand_label" = "ขาตั้งคู่";
+"motorbike_exterior_single_stand_label" = "ขาตั้งเดี่ยว";
+"motorbike_exterior_tail_light_label" = "ไฟท้าย";
+"motorbike_exterior_seat_iron_frame_label" = "โครงเหล็กท้ายเบาะ";
+"motorbike_exterior_rear_fender_label" = "บังโคลนท้าย";
+"motorbike_exterior_exhaust_pipe_label" = "ท่อไอเสีย";
+"motorbike_exterior_chain_guard_label" = "บังโซ่";
+"motorbike_exterior_seat_label" = "เบาะ";
+"motorbike_exterior_rear_tire_label" = "ยางหลัง";
+"motorbike_exterior_cdi_label" = "กล่องควบคุม (CDI)";
+"motorbike_exterior_front_tire_label" = "ล้อหน้า";
+"motorbike_exterior_spokes_label" = "ซี่ลวด";
+"motorbike_exterior_alloy_label" = "แม็กซ์";
+"motorbike_exterior_front_brake_label" = "เบรคหน้า";
+"motorbike_exterior_disk_label" = "ดิส";
+"motorbike_exterior_drum_label" = "ดรั้ม";
+"motorbike_exterior_rear_brake_label" = "เบรคหลัง";
+"motorbike_exterior_choice_label" = "ตัวเลือก";
+"motorbike_exterior_scratches_label" = "ครูด";
+"motorbike_exterior_fragmented_label" = "แตก";
+"motorbike_exterior_no_label" = "ไม่มี";
+
+// motorbike
+"motorbike_inspection_engine_label" = "สภาพเครื่องยนต์";
+"motorbike_inspection_engine_condition_label" = "สภาพรถ";
+"motorbike_inspection_engine_unverified_label" = "ตรวจสอบเลขไมล์ไม่ได้";
+"motorbike_inspection_engine_hand_start_label" = "สตาร์ทมือ";
+"motorbike_inspection_engine_foot_start_label" = "สตาร์ทเท้า";
+"motorbike_inspection_engine_registration_plate_label" = "แผ่นป้ายทะเบียน";
+"motorbike_inspection_engine_kilometer_label" = "กิโลเมตร";
+"motorbike_inspection_engine_mile_label" = "ไมล์";
+"motorbike_inspection_engine_need_repair_label" = "ต้องซ่อม";
+"motorbike_inspection_engine_working_label" = "สตาร์ทติด";
+"motorbike_inspection_engine_not_working_label" = "สตาร์ทไม่ติด";
+"motorbike_inspection_engine_mileage_placeholder" = "เลขไมล์";
+
+// motorbike inspection exterior
+"motorbike_inspection_exterior_label" = "สภาพภายนอก";
+"motorbike_inspection_exterior_serviced_label" = "เช็คสภาพตามอายุการใช้งาน";
+"motorbike_inspection_exterior_battery_label" = "Battery / แบตเตอรี่";
+"motorbike_inspection_exterior_cdi_label" = "CDI / กล่องควบคุมการจุดระเบิด";
+"motorbike_inspection_exterior_electric_label" = "Electric Start / สตาร์ทมื";
+"motorbike_inspection_exterior_pedal_label" = "Start pedal / คันสตาร์ท";
+"motorbike_inspection_exterior_odometer_label" = "Odometer / เรือนไมล์";
+"motorbike_inspection_exterior_plate_label" = "Plate / แผ่นป้ายทะเบียน";
+"motorbike_inspection_exterior_tyre_label" = "Tyre / ยาง (mm.)";
+"motorbike_inspection_exterior_tyre_f_label" = "F / หน้า";
+"motorbike_inspection_exterior_tyre_r_label" = "R / หลัง";
+"motorbike_inspection_exterior_under_tyre_label" = "*ประเมิณความลึกดอกยางโดยประมาณ ซึ่งวัดจากจุดศูนย์กลางของยาง";
+"motorbike_inspection_exterior_engine_type_label" = "Engine / เครื่องยนต์";
+"motorbike_inspection_exterior_serviced_label" = "Serviceable for age / เช็คสภาพตามอายุการใช้งาน";
+"motorbike_inspection_exterior_not_working_label" = "Will not start / สตาร์ทไม่ติด";
+"motorbike_inspection_exterior_need_repair_label" = "Requires Attention / ต้องทำการซ่อมแซม";
+"motorbike_inspection_exterior_missing_label" = "Missing / สูญหาย";
+"motorbike_inspection_exterior_damage_summary_label" = "ความเสียหายภายนอก";
+"motorbike_inspection_exterior_head_placeholder_label" = "ความเสียหาย ";
+
+// inspection suspension/under
+"inspection_suspension_drive_shaft_label" = "เพลาขับ";
+"inspection_suspension_label" = "ช่วงล่าง";
+"inspection_suspension_summary_label" = "สรุปสภาพช่วงล่าง";
+"inspection_suspension_leakage_label" = "รั่วซึม";
+
+// inspection gear box
+"inspection_gear_system_label" = "ระบบเกียร์";
+"inspection_gear_condition_label" = "สภาพเกียร์";
+"inspection_gear_drive_shaft_label" = "เพลาขับ";
+"inspection_gear_4wd_label" = "เกียร์ 4WD";
+"inspection_gear_summary_label" = "สรุประบบเกียร์";
+"inspection_gear_working_label" = "ขับได้";
+"inspection_gear_not_working_label" = "ชำรุดขับไม่ได้";
+"inspection_gear_complete_label" = "ครบ";
+"inspection_gear_incomplete_label" = "ไม่ครบ";
+"inspection_gear_no_drive_shaft_label" = "ไม่มีเพลาขับ";
+
+// inspection steering
+"inspection_steering_system_label" = "ระบบพวงมาลัย";
+"inspection_steering_power_label" = "พวงมาลัยเพาเวอร์";
+"inspection_steering_summary_label" = "สรุประบบพวงมาลัย";
+
+// inspection brake
+"inspection_brake_system_label" = "ระบบเบรก";
+"inspection_brake_summary_label" = "สรุประบบเบรก";
+
+// inspection air
+"inspection_air_system_label" = "ระบบแอร์";
+"inspection_air_compressor_label" = "คอมเพรสเซอร์";
+"inspection_air_summary_label" = "สรุประบบแอร์";
+"inspection_air_cool_label" = "เย็น";
+"inspection_air_not_cool_label" = "ไม่เย็น";
+
+// inspection gauges
+"inspection_gauges_system_label" = "มาตรวัด";
+"inspection_gauges_light_label" = "ไฟขึ้นโชว์ (ระบุ)";
+"inspection_gauges_details_placeholder_label" = "รายละเอียด";
+"inspection_gauges_summary_label" = "สรุปมาตรวัด";
+
+// inspectoin electrical
+"inspection_electrical_head_light_label" = "ไฟหน้าทำงาน";
+"inspection_electrical_turn_light_label" = "ไฟเลี้ยวทำงาน";
+"inspection_electrical_tail_light_label" = "ไฟท้ายทำงาน";
+"inspection_electrical_brake_light_label" = "ไฟเบรคทำงาน";
+"inspection_electrical_battery_label" = "แบตเตอรี่ทำงาน";
+"inspection_electrical_horn_label" = "แตรทำงาน";
+"inspection_electrical_dashboard_label" = "วัดรอบทำงาน";
+"inspection_electrical_other_remarks_label" = "หมายเหตุอื่น ๆ";
+"inspection_electrical_summary_label" = "สรุปอุปกรณ์ไฟฟ้า";
+
+// photos
+"photos_front_button_title" = "Front (ด้านหน้า)";
+"photos_engine_button_title" = "Engine (เครื่องยนต์)";
+"photos_plate_button_title" = "Plate (แผ่นป้าย)";
+"photos_chassis_button_title" = "Chassis (เลขแชสซี)";
+"photos_interior_button_title" = "Interior (ภายใน)";
+"photos_tray_button_title" = "Tray (ห้องท้าย)";
+"photos_side_button_title" = "Side (ด้านข้าง)";
+"photos_back_button_title" = "Back (ด้านหลัง)";
+"photos_gas_tank_button_title" = "Gas tank (ถังแก๊ส)";
+"photos_asset_button_title" = "Asset (ทรัพย์สิน)";
+"photos_damage_button_title" = "Damage (ความเสียหาย)";
+"photos_numbers_label" = "จำนวนรูป :";
+"photos_photograph_button_title" = "ถ่ายรูป";
+"photos_select_button_title" = "เลือกรูป";
+"photos_delete_head_title" = "คุณต้องการลบ";
+"photos_delete_tail_title" = "ไหม";
+"photos_save_confirm_title" = "คุณต้องการบันทึกรูปถ่ายไหม";
+"photos_send_book_in_first_title" = "กรุณาทำการ Send Book-in ก่อน";
+"photos_navigation_upload_title" = "อัพโหลด";
+"photos_upload_title" = "กำลังอัพโหลด";
+"photos_check_title" = "กรุณาทำการตรวจสภาพก่อน";
+"photos_add_title" = "กรุณาเพิ่มรูปถ่าย";
+
+// mode code
+"mode_code_title_label" = "ค้นหารุ่น";
+"mode_code_search_chassis_label" = "หมายเลขแชสซี";
+"mode_code_fill_information_label" = "กรอกข้อมูล";
+"mode_code_conduct_search_label" = "เพื่อทำการค้นหา";
+"mode_code_want_choose_label" = "คุณต้องการเลือก";
+"mode_code_edit_label" = "แก้ไข";
+"mode_code_no_data_message_label" = "ไม่พบรุ่นรถยนต์";
+
+// create model
+"create_model_chassis_number_label" = "หมายเลขแชสซี";
+"create_model_build_year_label" = "ปีผลิต";
+"create_model_variants_label" = "รุ่นย่อย";
+"create_model_mode_label" = "รุ่น";
+"create_model_body_label" = "ประเภทรถ";
+"create_model_fuel_delivery_label" = "ระบบเชื้อเพลิง";
+"create_model_fuel_type_label" = "เชื้อเพลิง";
+"create_model_gearbox_label" = "เกียร์";
+"create_model_gear_label" = "จำนวนเกียร์";
+"create_model_drive_label" = "ระบบขับเคลื่อน";
+"create_model_engine_capacity_label" = "ขนาดเครื่องยนต์";
+"create_model_back_label" = "กลับ";
+
+// inspection list
+"inspection_list_title_label" = "รายการ";
+"inspection_list_all_title_label" = "รายการทั้งหมด";
+"inspection_list_pending_label" = "รายการตรวจค้าง";
+"inspection_list_car_registration_label" = "ทะเบียนรถ";
+"inspection_list_car_registration_placeholder_label" = "หมายเลข";
+"inspection_list_registration_number_label" = "ทะเบียน";
+"inspection_list_search_label" = "ค้นหา";
+"inspection_list_book_in_number_label" = "หมายเลข Book-In";
+"inspection_list_status_label" = "สถานะ";
+"inspection_list_pending_no_data_label" = "ไม่รายการตรววจค้าง";
+"inspection_list_vin_number_label" = "หมายเลข VIN";
+"inspection_list_tip_message_label" = "กรอกข้อมูลและกดปุ่มค้นหาเพื่อทำการค้นหา";
+"inspection_list_not_good_label" = "ไม่ดี";
+
+// pick up car valid field
+"car_pick_up_valid_field_sender_name_label" = "ชื่อผู้ส่ง";
+"car_pick_up_valid_field_brand_label" = "ยี่ห้อรถยนต์";
+"car_pick_up_valid_field_type_label" = "ประเภทรถยนต์";
+"car_pick_up_valid_field_model_label" = "รุ่นรถยนต์";
+"car_pick_up_valid_field_submodel_label" = "รุ่นย่อยรถยนต์";
+"car_pick_up_valid_field_color_label" = "สี";
+"car_pick_up_valid_field_remark_tips_label" = "หมายเหตุป้ายทะเบียน ความยาวเกินกำหนด 100 ตัวอักษร";
+
+// car grade
+"car_grade_title_label" = "จัดเกรดรถเข้าประมูล";
+"car_grade_excellence_label" = "E Excellence ดีเยี่ยม";
+"car_grade_excellence_option1_label" = "เลขไมล์ไม่เกิน 20,000 กิโลเมตร";
+"car_grade_excellence_option2_label" = "ปีจดทะเบียนรถไม่เกิน 1 ปี (ไม่ใช่ปีผลิต)";
+"car_grade_excellence_option3_label" = "รถอยู่ในสภาพใหม่ ไม่มีริ้วรอย";
+"car_grade_excellence_option4_label" = "ภายในอยู่ในสภาพดี";
+"car_grade_excellence_option5_label" = "ไม่มีการทำสี, ไม่มีการซ่อมแซม, ไม่มีการเปลี่ยนชิ้นส่วนตัวถัง";
+"car_grade_good_label" = "G Good ดีมาก";
+"car_grade_good_option1_label" = "เลขไมล์ไม่เกิน 50,000 กิโลเมตร";
+"car_grade_good_option2_label" = "ปีจดทะเบียนรถไม่เกิน 2 ปี (ไม่ใช่ปีผลิต)";
+"car_grade_good_option3_label" = "มีรอยขีดข่วน, มีรอยบุบ";
+"car_grade_good_option4_label" = "ไม่มีการซ่อมสีตัวถัง";
+"car_grade_average_label" = "A Average ปานกลาง";
+"car_grade_average_option1_label" = "เลขไมล์ไม่เกิน 100,000 กิโลเมตร";
+"car_grade_average_option2_label" = "ปีจดทะเบียนรถไม่เกิน 5 ปี (ไม่ใช่ปีผลิต)";
+"car_grade_average_option3_label" = "มีการเก็บสี มีรอยบุบ ถลอก";
+"car_grade_average_option4_label" = "ไม่มีรอยถอดน๊อตหรือชิ้นส่วนอุปกรณ์ตัวถัง";
+"car_grade_fair_label" = "F Fair พอใช้";
+"car_grade_fair_option1_label" = "เลขไมค์เกิน 100,000 กิโลเมตร / ปีจดทะเบียนรถเกิน 5 ปี";
+"car_grade_fair_option2_label" = "มีรอยถอดน๊อตหรือชิ้นส่วนอุปกรณ์ตัวถัง";
+"car_grade_fair_option3_label" = "มีรอยถอดซ่อมหรือเปลี่ยนคานซับแรง";
+"car_grade_fair_option4_label" = "ชนหน้า-หลังถึงคานแต่ไม่ถึงโครงสร้างหลั";
+"car_grade_fair_option5_label" = "มีการถอด / ซ่อม / เปลี่ยนชิ้นส่วนตัวถัง";
+"car_grade_fair_option6_label" = "มีรอยบุบครูดถึงเนื้อโลหะ";
+"car_grade_fair_option7_label" = "รอบตัวรถมีร่องรอยการซ่อม";
+"car_grade_fair_option8_label" = "รถเปลี่ยนเครื่องยนต์ / สี มาและสภาพใช้งานไม่ปกติ";
+"car_grade_fair_option9_label" = "รถเคยติดแก๊สมา";
+"car_grade_fair_option10_label" = "รถเคยติดหลังคา / เจาะกระบะ";
+"car_grade_fair_option11_label" = "รถน้ำเข้ามีสนิมใต้เบาะ / ใต้คอนโซล แต่ไม่ปรากฎระดับน้";
+"car_grade_poor_label" = "P Poor แย่";
+"car_grade_poor_option1_label" = "รถชนหนักกระทบโครงสร้างหลักเปลี่ยนคาน";
+"car_grade_poor_option2_label" = "เปลี่ยน / ซ่อม ซุ้มล้อ หรือเบ้าโช๊ค";
+"car_grade_poor_option3_label" = "รอยอารค์เสาประตูมีรอยซ่อม";
+"car_grade_poor_option4_label" = "แชสซีมีรอยซ่อม, ช่วงล่างผุ";
+"car_grade_poor_option5_label" = "รถชนหนักมา / หลังคาเสียหายมีรอยซ่อม";
+"car_grade_poor_option6_label" = "ไม่มีแผ่นเพลท";
+"car_grade_poor_option7_label" = "มีการซ่อมห้องท้ายรถยนต์ / กระบะท้ายซ่อมถึงแชสซี";
+"car_grade_poor_option8_label" = "รถเคยผ่านน้ำท่วม";
+"car_grade_poor_option9_label" = "มีรอยตัดต่อเชื่อมตัวถังและรอยสนิม / ตัดต่อเลขแชสซี / ตอกเลขเครื่อง และ มีรอยสนิม / รถซ่อมแซมดัดแปลงจากอุบัติเหตุ";
+"car_grade_x_label" = "รถขับไม่ได้ / เครื่องยนต์มีปัญหา / เกียร์มีปัญหา / ไฮบริดเสีย";
+"car_grade_next_button_title" = "ต่อไป";
+"car_grade_conclusion_title" = "สรุป";
+"car_grade_serial_number_title" = "หมายเลขเครื่อง";
+"car_grade_delivery_company_title" = "บริษัทที่ส่งมอบ";
+"car_grade_auction_level_title" = "เกรดสำหรับการประมูล";
+"car_grade_auction_no_driven_title" = "รถขับไม่ได้";
+"car_grade_auction_save_confirm_title" = "คุณต้องการบันทึกรายการตรวจสภาพรถยนต์ไหม";
+"car_grade_send_inspection_title" = "คุณต้องการส่ง\nInspection to IMAT ไหม";
+
+// signature
+"car_signature_registration_area_label" = "พื่นที่สำหรับลงชื่อ";
+"car_signature_resign_button_title" = "ลบเพื่อลงชื่อใหม่";
+
+// date time
+"car_date_time_current_button_title" = "เวลาตอนนี้";
+
+// car pdf
+"car_pdf_title_label" = "ใบรับมอบรถยนต์ / Vehicle Receiving Report";
+"car_pdf_primitive_label" = "ต้นฉบับ";
+"car_pdf_copy_label" = "สำเนา";
+"car_pdf_receipt_number_label" = "เลขที่ใบรับมอบรถ";
+"car_pdf_pick_up_date_label" = "วันที่รับรถ";
+"car_pdf_pick_up_time_label" = "เวลา";
+"car_pdf_me_label" = "ข้าพเจ้า";
+"car_pdf_company_delivery_label" = "ผู้รับมอบอำนาจในการส่งมอบรถของบริษัท";
+"car_pdf_autograph_label" = "ลงชื่อ";
+"car_pdf_telephone_number_label" = "เบอร์โทร.";
+"car_pdf_during_editing_label" = "แก้ไขเมื่อ";
+"car_pdf_delivered_follows_label" = "(ผู้ส่งมอบรถยนต์) ได้ส่งมอบรถยนต์ให้แก่ตัวแทนของบริษัท มอตโต้ อ๊อคชั่น (ประเทศไทย) จำกัด ดังนี้";
+"car_pdf_receiver_and_supplier_label" = "ตัวแทนของบริษัท มอตโต้ อ๊อคชั่น (ประเทศไทย) จำกัด \"ผู้รับมอบรถยนต์\" และ \"ผู้ส่งมอบรถยนต์\"";
+"car_pdf_detail_information_label" = "ได้ร่วมกันตรวจสอบสภาพและรายละเอียดรถยนต์หมายเลขทะเบียน";
+"car_pdf_already_said_label" = "ดังกล่าวเรียบร้อยแล้ว";
+"car_pdf_ensure_label" = "และขอรับรองว่าข้อมูลตามที่ระบุไว้ในข้างต้นนั้นถูกต้องตรงกับความเป็นจริงทุกประการ ลงชื่อ";
+"car_pdf_receiver_label" = "ผู้รับมอบรถยนต์";
+"car_pdf_recipient_label" = "ผู้รับมอบ";
+"car_pdf_cabin_condition_label" = "สภาพภายในห้องโดยสาร";
+"car_pdf_validity_period_label" = "วันหมดอายุ";
+"car_pdf_other_accessories_label" = "อุปกรณ์แต่งอื่นๆ";
+"car_pdf_engine_condition_label" = "สภาพภายในห้องเครื่อง";
+"car_pdf_type_label" = "ประเภท";
+"car_pdf_pasting_peel_label" = "ที่ว่างสำหรับติดกระดาษลอกลาย / place for stick VIN rubbing tape";
+"car_pdf_yes_label" = "มี";
+"car_pdf_no_label" = "ไม่มี";
+"car_pdf_print_button_title" = "พิมพ์";
+"car_pdf_save_vehicle_title" = "กรุณาบันทึกรับมอบรถก่อน";
+
+// motorbike pdf
+"motorbike_pdf_title_label" = "ใบรับมอบ/บันทึกการตรวจสภาพรถจักรยานยนต์";
+"motorbike_pdf_hours_label" = "น.";
+"motorbike_pdf_rear_turn_lamp_label_l" = "ไฟเลี้ยวหลัง L";
+"motorbike_pdf_rear_turn_lamp_label_r" = "ไฟเลี้ยวหลัง R";
+"motorbike_pdf_r_flank_lamp_label" = "กาบข้าง R";
+"motorbike_pdf_rest_legs_label" = "พักเท้าหลัง";
+"motorbike_pdf_konstak_label" = "คันสตาร์ค";
+"motorbike_pdf_rear_wheel_label" = "ล้อหลัง";
+"motorbike_pdf_rear_brake_pump_label" = "ปั้มดิสเบรคหลัง";
+"motorbike_pdf_rear_brake_cylinder_label" = "กระปุกน้ำมันดิสเบรคหลัง";
+"motorbike_pdf_rear_shock_label" = "โช๊คหลัง";
+"motorbike_pdf_tank_label" = "ถังน้ำมัน";
+"motorbike_pdf_fuel_system_label" = "ระบบจ่ายเชื้อเพลิง";
+"motorbike_pdf_brake_label" = "เบรค";
+"motorbike_pdf_clutch_label" = "มือครัช";
+"motorbike_pdf_flower_label" = "ดอก";
+"motorbike_pdf_good_label" = "Good / ดี";
+"motorbike_pdf_average_label" = "Average / ปานกลาง";
+"motorbike_pdf_fair_label" = "Fair / พอใช้";
+"motorbike_pdf_poor_label" = "Poor / แย่";
+"motorbike_pdf_scrap_label" = "Scrap / ซาก";
+
+// car inspection pdf
+"car_inspection_pdf_title_label" = "ใบตรวจสภาพรถยนต์ / Inspection Report";
+"car_inspection_pdf_date_label" = "วันที่ตรวจสภาพ";
+"car_inspection_pdf_model_code_label" = "รหัสรุ่น";
+"car_inspection_pdf_inspector_name_label" = "ชื่อผู้ตรวจ";
+"car_inspection_pdf_edit_label" = "แก้ไขโดย";
+"car_inspection_pdf_body_condition_label" = "สภาพตัวถัง";
+"car_inspection_pdf_right_side_label" = "ด้านขวา(คนขับ)";
+"car_inspection_pdf_no_drown_label" = "ไม่จมน้ำ";
+"car_inspection_pdf_loud_sound_label" = "สียงดังผิดปรติ";
+"car_inspection_pdf_steer_system_label" = "ระบบพวงมาลัย​";
+"car_inspection_pdf_yes_label" = "ใช่";
+"car_inspection_pdf_no_label" = "ไม่ใช่";
+"car_inspection_pdf_power_steer_label" = "พวงมาลัย​พาวเวอร์";
+"car_inspection_pdf_work_label" = "ทำงาน";
+"car_inspection_pdf_not_work_label" = "ไม่ทำงาน";
+"car_inspection_pdf_turn_signal_label" = "ไฟเลี้ยว";
+"car_inspection_pdf_brake_light_label" = "ไฟเบรก";
+"car_inspection_pdf_horn_label" = "แตร";
+"car_inspection_pdf_tholos_label" = "วัดรอบ";
+"car_inspection_pdf_other_comments_label" = "หมายเหตุอื่นๆ";
+"car_inspection_pdf_damaged_photos_label" = "รูปความเสียหาย";
+
+// motorbike inspection pdf
+"motorbike_inspection_pdf_checklist_label" = "ใบตรวจสภาพรถจักรยานยนต์ / Inspection Report";
+"motorbike_inspection_ignition_box_label" = "กล่องควมคุมการจุดระเบิด";
+"motorbike_inspection_page_label" = "หน้า";
+"motorbike_inspection_behind_label" = "หลัง";
+"motorbike_inspection_depth_label" = "ความลึกดอกยาง";
+"motorbike_inspection_ordinary_key_label" = "กุญแจธรรมดา";
+"motorbike_inspection_remote_control_label" = "รีโมท";
+"motorbike_inspection_repaired_label" = "ต้องทำการซ่อมแซม";
+"motorbike_inspection_missing_label" = "สูญหาย";
+
+// car upload
+"car_upload_successful_label" = "อัพโหลดสำเร็จ";
+"car_upload_failed_label" = "อัพโหลดไฟล์ล้มเหลว ลองใหม่อีกครั้ง";

@@ -94,7 +94,7 @@ class IMatQRCodePDFWorker {
                                                     value: "", textColor: .black)
             let _ = weakself.drawString(attrString: attrTypeCarValueTitlePDF,
                                                             x: mapPoint["v2"]!,
-                                                            y: mapPoint["h1"]!,
+                                                            y: mapPoint["h2"]!,
                                                             isTable: true)
  
             //MARK: Model Car
@@ -112,7 +112,7 @@ class IMatQRCodePDFWorker {
                                                 value: "", textColor: .black)
             let _ = weakself.drawString(attrString: attrModelCarValuePDF,
                                                         x: mapPoint["v2"]!,
-                                                        y: mapPoint["h3"]!,
+                                                        y: mapPoint["h4"]!,
                                                         isTable: true)
             
             
@@ -130,7 +130,7 @@ class IMatQRCodePDFWorker {
                                              value: "", textColor: .black)
             let _ = weakself.drawString(attrString: attrColorValuePDF,
                                                      x: mapPoint["v2"]!,
-                                                     y: mapPoint["h4"]!,
+                                                     y: mapPoint["h5"]!,
                                                      isTable: true)
              
             
@@ -147,7 +147,7 @@ class IMatQRCodePDFWorker {
                                              value: "", textColor: .black)
             let _ = weakself.drawString(attrString: attrBrandValuePDF,
                                                      x: mapPoint["v2"]!,
-                                                     y: mapPoint["h2"]!,
+                                                     y: mapPoint["h3"]!,
                                                      isTable: true)
             
            
@@ -187,7 +187,7 @@ class IMatQRCodePDFWorker {
             let attrRegistrationValuePDF = weakself.getTitle(mainString: registrationText.uppercased(), value: "", textColor: .black)
             let _ = weakself.drawString(attrString: attrRegistrationValuePDF,
                                                             x: mapPoint["v2"]!,
-                                                            y: mapPoint["h5"]!,
+                                                            y: mapPoint["h6"]!,
                                                             isTable: true)
             
             
@@ -209,12 +209,21 @@ class IMatQRCodePDFWorker {
                 
             }else{
                 var qrString = "IMAT NO. \(receiverNumber.trimWhiteSpace)"
-                if let chassisNumber = receiverCarModel.vinNumber?.trimWhiteSpace ,chassisNumber.count > 0 {
-                    qrString += "\nChassis NO. \(chassisNumber)"
+                var chassisNumber = receiverCarModel.vinNumber?.trimWhiteSpace ?? "-"
+                if chassisNumber.count == 0 {
+                    chassisNumber = "-"
                 }
-                if let engineNumber = receiverCarModel.engineNumber?.trimWhiteSpace ,engineNumber.count > 0 {
-                    qrString += "\nEngine NO. \(engineNumber)"
+                qrString += "\nChassis NO. \(chassisNumber)"
+
+                var engineNumber = receiverCarModel.engineNumber?.trimWhiteSpace ?? "-"
+                if engineNumber.count == 0 {
+                    engineNumber = "-"
                 }
+                qrString += "\nEngine NO. \(engineNumber)"
+
+//                if let engineNumber = receiverCarModel.engineNumber?.trimWhiteSpace ,engineNumber.count > 0 {
+//                    qrString += "\nEngine NO. \(engineNumber)"
+//                }
          
                 if let qrcode = weakself.generateQRCode(from: qrString) {
 
@@ -224,25 +233,25 @@ class IMatQRCodePDFWorker {
                     
                    
                     qrcode.draw(in: CGRect(x: mapPoint["v1"]!,
-                                           y: mapPoint["h0"]!,
+                                           y: mapPoint["h1"]!,
                                            width: qrSquareSize, height: qrSquareSize))
                     
                 }
                 
-                let attrIMATBNumberPDF = weakself.getTitle(mainString: "IMAT NO.",
-                                                    value: "",
-                                                    textColor: .black)
-                let _ = weakself.drawString(attrString: attrIMATBNumberPDF,
-                                            x: mapPoint["v1"]! + 12,
-                                            y: mapPoint["h0"]!,
-                                            isTable: true)
+//                let attrIMATBNumberPDF = weakself.getTitle(mainString: "IMAT NO.",
+//                                                    value: "",
+//                                                    textColor: .black)
+//                let _ = weakself.drawString(attrString: attrIMATBNumberPDF,
+//                                            x: mapPoint["v1"]! + 12,
+//                                            y: mapPoint["h0"]!,
+//                                            isTable: true)
                 
-                let attrIMATPDF = weakself.getTitle(mainString: receiverNumber.trimWhiteSpace,
+                let attrIMATPDF = weakself.getTitle(mainString: qrString,
                                                     value: "",
                                                     textColor: .black)
                 let _ = weakself.drawString(attrString: attrIMATPDF,
-                                            x: mapPoint["v2"]!,
-                                            y: mapPoint["h0"]!,
+                                            x: mapPoint["v1"]!,
+                                            y: mapPoint["h1"]!,
                                             isTable: true)
             }
            
@@ -325,7 +334,7 @@ extension IMatQRCodePDFWorker {
         }
         
         // Draw content's element bottom horizontal line
-        for  horizontalLine in 0..<6{
+        for  horizontalLine in 0..<7{
             
             let yPosition =  CGFloat(horizontalLine) * heightOffset + underText
             

@@ -192,23 +192,23 @@ class SelectInspectionInteractor: SelectInspectionBusinessLogic, SelectInspectio
         }
     
         // 114.261278,30.688977 jinchan
-        var newList = [StorageLocationModel]()
-        for i in 0..<locationList.count {
-            var apiLocationModel = locationList[i]
-            
-            apiLocationModel.lat = NSNumber(value: 30.688977 + randomFloatNumber())
-            apiLocationModel.lon = NSNumber(value: 114.261278 + randomFloatNumber())
-            apiLocationModel.plant = "plant \(i)"
-            print("📍LOCATION-lan-lon: \(apiLocationModel.lat?.doubleValue ?? 0) \(apiLocationModel.lon?.doubleValue ?? 0)")
-            newList.append(apiLocationModel)
-        }
+//        var newList = [StorageLocationModel]()
+//        for i in 0..<locationList.count {
+//            var apiLocationModel = locationList[i]
+//
+//            apiLocationModel.lat = NSNumber(value: 30.688977 + randomFloatNumber())
+//            apiLocationModel.lon = NSNumber(value: 114.261278 + randomFloatNumber())
+//            apiLocationModel.plant = "plant \(i)"
+//            print("📍LOCATION-lan-lon: \(apiLocationModel.lat?.doubleValue ?? 0) \(apiLocationModel.lon?.doubleValue ?? 0)")
+//            newList.append(apiLocationModel)
+//        }
         
         var rangeLacationList = [StorageLocationModel]()
         var rangeDoubles: Array<Double> = []
 
         if let gpsLocation = location {
             
-            for var apiLocationModel in newList {
+            for var apiLocationModel in locationList {
                 if let lat = apiLocationModel.lat?.doubleValue , let lon = apiLocationModel.lon?.doubleValue {
                     let apiLocation = CLLocation(latitude: lat, longitude: lon)
                     let distance = gpsLocation.distance(from: apiLocation)

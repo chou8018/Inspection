@@ -55,7 +55,7 @@ class SelectInspectionPresenter: SelectInspectionPresentationLogic
     mutableAttributedString2.addAttribute(NSAttributedString.Key.font,
                                          value: UIFont.systemFont(ofSize: 18), range: range1)
     
-    let viewModelPlant = SelectInspection.Default.ViewModel(resultTextPlace: mutableAttributedString2)
+      let viewModelPlant = SelectInspection.Default.ViewModel(resultTextPlace: mutableAttributedString2,isCanSelect: response.isCanSelect)
     viewController?.displayResultTextPlacePlant(viewModel: viewModelPlant)
   
   }

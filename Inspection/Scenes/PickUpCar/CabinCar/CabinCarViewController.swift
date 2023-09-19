@@ -227,7 +227,7 @@ class CabinCarViewController: ViewController, CabinCarDisplayLogic
         remoteControlLabel.text = String.localized("car_interior_remote_control_label")
         remoteKeyLabel.text = String.localized("car_interior_remote_key_label")
         immobilizerLabel.text = String.localized("car_interior_key_immobilizer_label")
-        keylessLabel.text = String.localized("car_interior_key_label")
+        keylessLabel.text = String.localized("car_interior_keyless_label")
         othersLabel.text = String.localized("car_interior_others_label")
         keyDropDown.placeholder = String.localized("car_interior_key_placeholder_label")
         remoteDropDown.placeholder = keyDropDown.placeholder

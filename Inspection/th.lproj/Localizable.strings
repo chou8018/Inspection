@@ -266,9 +266,9 @@
 "motorbike_exterior_head_light_label" = "ไฟหน้า";
 "motorbike_exterior_maks_label" = "หน้ากาก";
 "motorbike_exterior_dashboard_label" = "เรือนไมล์";
-"motorbike_exterior_disk_brake_oil_canister_label" = "กระปุกน้ำมันดิสเบรคหน้า";
+"motorbike_exterior_disk_brake_oil_canister_label" = "กระปุกน้ำมันดิสเบรคหลัง";
 "motorbike_exterior_hand_clutch_label" = "ไฟเลี้ยวหน้า";
-"motorbike_exterior_disk_brake_pump_label" = "ปั้มดิสเบรคหน้า";
+"motorbike_exterior_disk_brake_pump_label" = "ปั้มดิสเบรคหลัง";
 "motorbike_exterior_front_fender_label" = "บังโคลนหน้า";
 "motorbike_exterior_start_pedal_label" = "คันสตาร์ท";
 "motorbike_exterior_shock_absorber_label" = "โช๊คหน้า";
@@ -393,7 +393,7 @@
 "photos_tray_button_title" = "Tray (ห้องท้าย)";
 "photos_side_button_title" = "Side (ด้านข้าง)";
 "photos_back_button_title" = "Back (ด้านหลัง)";
-"photos_gas_tank_button_title" = "Gas tank (ถังแก๊ส)";
+"photos_gas_tank_button_title" = "ถังน้ำมัน";
 "photos_asset_button_title" = "Asset (ทรัพย์สิน)";
 "photos_damage_button_title" = "Damage (ความเสียหาย)";
 "photos_numbers_label" = "จำนวนรูป :";

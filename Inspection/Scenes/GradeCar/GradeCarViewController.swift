@@ -226,7 +226,7 @@ class GradeCarViewController: ViewController, GradeCarDisplayLogic
         pOption9Label.text = String.localized("car_grade_poor_option9_label")
 
         xOptionLabel.text = String.localized("car_grade_x_label")
-        yOptionLabel.text = String.localized("car_salvage_details_title")
+        yOptionLabel.text = String.localized("car_grade_y_label")
 
     }
 

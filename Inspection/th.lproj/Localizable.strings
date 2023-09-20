@@ -496,6 +496,7 @@
 "car_grade_poor_option8_label" = "รถเคยผ่านน้ำท่วม";
 "car_grade_poor_option9_label" = "มีรอยตัดต่อเชื่อมตัวถังและรอยสนิม / ตัดต่อเลขแชสซี / ตอกเลขเครื่อง และ มีรอยสนิม / รถซ่อมแซมดัดแปลงจากอุบัติเหตุ";
 "car_grade_x_label" = "รถขับไม่ได้ / เครื่องยนต์มีปัญหา / เกียร์มีปัญหา / ไฮบริดเสีย";
+"car_grade_y_label" = "รถซาก";
 "car_grade_next_button_title" = "ต่อไป";
 "car_grade_conclusion_title" = "สรุป";
 "car_grade_serial_number_title" = "หมายเลขเครื่อง";

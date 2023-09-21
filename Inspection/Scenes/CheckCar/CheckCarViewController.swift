@@ -12,6 +12,17 @@
 
 import UIKit
 
+let inspectionItem0Height = 830.0
+let inspectionItem0MBHeight = 1810.0
+let inspectionItem1Height = 950.0
+let inspectionItem2Height = 520.0
+let inspectionItem3Height = 605.0
+let inspectionItem4Height = 445.0
+let inspectionItem5Height = 365.0
+let inspectionItem6Height = 445.0
+let inspectionItem7Height = 455.0
+let inspectionItem8Height = 810.0
+
 protocol CheckCarDisplayLogic: AnyObject
 {
     func displaySomething(viewModel: CheckCar.Something.ViewModel)
@@ -109,7 +120,21 @@ class CheckCarViewController: ViewController, CheckCarDisplayLogic
     @IBOutlet weak var inspectionLabel: UILabel!
     @IBOutlet weak var photosLabel: UILabel!
     @IBOutlet weak var inspectionDateLabel: UILabel!
-
+    @IBOutlet weak var mainScrollview: UIScrollView!
+    
+    
+    var lastFrame = CGRectZero
+    let item0OffsetY = 0
+    let item1OffsetY = inspectionItem0Height
+    let item1MBOffsetY = inspectionItem0MBHeight
+    let item2OffsetY = inspectionItem0Height + inspectionItem1Height
+    let item3OffsetY = inspectionItem0Height + inspectionItem1Height + inspectionItem2Height
+    let item4OffsetY = inspectionItem0Height + inspectionItem1Height + inspectionItem2Height + inspectionItem3Height
+    let item5OffsetY = inspectionItem0Height + inspectionItem1Height + inspectionItem2Height + inspectionItem3Height + inspectionItem4Height
+    let item6OffsetY = inspectionItem0Height + inspectionItem1Height + inspectionItem2Height + inspectionItem3Height + inspectionItem4Height + inspectionItem5Height
+    let item7OffsetY = inspectionItem0Height + inspectionItem1Height + inspectionItem2Height + inspectionItem3Height + inspectionItem4Height + inspectionItem5Height + inspectionItem6Height
+    let item8OffsetY = inspectionItem0Height + inspectionItem1Height +  inspectionItem2Height + inspectionItem3Height + inspectionItem4Height + inspectionItem5Height + inspectionItem6Height + inspectionItem7Height
+    
     override func initLocalString() {
         super.initLocalString()
         saveButton.title = String.localized("main_inspection_save_button_title")
@@ -179,7 +204,16 @@ class CheckCarViewController: ViewController, CheckCarDisplayLogic
         segmentView.addSubview(codeSegmented)
         codeSegmented.delegate = self
         
-        updateUIView(from: 0)
+//        updateUIView(from: 0)
+        
+        switch DataController.shared.bookInType {
+        case .CAR, .CARWRECK:
+            for i in 0..<9 {
+                updateUIView(from: i)
+            }
+        case .MBIKE, .MBIKEWRECK:
+            updateUIView(from: 0)
+        }
     }
     
     
@@ -388,9 +422,41 @@ extension CheckCarViewController  {
 extension CheckCarViewController : CustomSegmentedControlDelegate  {
     
     func change(to index: Int , button : UIButton) {
-        updateUIView(from: index)
+//        updateUIView(from: index)
+//        scrollView.scrollToView(view: button, animated: true)
         
-        scrollView.scrollToView(view: button, animated: true)
+        var offsetY = 0.0
+        switch index {
+        case 0:
+            offsetY = 0
+        case 1:
+            switch DataController.shared.bookInType {
+            case .CAR, .CARWRECK:
+                offsetY = item1OffsetY
+            case .MBIKE, .MBIKEWRECK:
+                offsetY = item1MBOffsetY
+            }
+        case 2:
+            offsetY = item2OffsetY
+        case 3:
+            offsetY = item3OffsetY
+        case 4:
+            offsetY = item4OffsetY
+        case 5:
+            offsetY = item5OffsetY
+        case 6:
+            offsetY = item6OffsetY
+        case 7:
+            offsetY = item7OffsetY
+        case 8:
+            offsetY = item8OffsetY
+
+        default:
+            return
+            
+        }
+        
+        mainScrollview.setContentOffset(CGPoint(x: 0, y: offsetY), animated: true)
     }
     
     private func updateUIView(from index: Int){
@@ -436,36 +502,54 @@ extension CheckCarViewController : CustomSegmentedControlDelegate  {
     private func add(asChildViewController viewController: UIViewController?) {
         guard let viewController = viewController else { return }
         
-        if let last = children.last {
-            last.willMove(toParent: nil)
-            last.view.removeFromSuperview()
-            last.removeFromParent()
-        }
+//        if let last = children.last {
+//            last.willMove(toParent: nil)
+//            last.view.removeFromSuperview()
+//            last.removeFromParent()
+//        }
         
         // Add Child View Controller
         addChild(viewController)
         
         // Add Child View as Subview
-        containerView.addSubview(viewController.view)
-        
+        mainScrollview.addSubview(viewController.view)
+        let spaceHeight = 0.0
+        if viewController is BodyCheckViewController {
+            lastFrame = CGRect(x: 0, y: 0, width: mainScrollview.width, height: inspectionItem0Height - spaceHeight)
+        } else if viewController is MotorcycleCheckViewController {
+            lastFrame = CGRect(x: 0, y: lastFrame.maxY, width: mainScrollview.width, height: inspectionItem0MBHeight - spaceHeight)
+        } else if viewController is EngineCheckViewController {
+            lastFrame = CGRect(x: 0, y: lastFrame.maxY, width: mainScrollview.width, height: inspectionItem1Height - spaceHeight)
+        } else if viewController is UnderCarCheckViewController {
+            lastFrame = CGRect(x: 0, y: lastFrame.maxY, width: mainScrollview.width, height: inspectionItem2Height - spaceHeight)
+        } else if viewController is GearCheckViewController {
+            lastFrame = CGRect(x: 0, y: lastFrame.maxY, width: mainScrollview.width, height: inspectionItem3Height - spaceHeight)
+        } else if viewController is SteerWheelCheckViewController {
+            lastFrame = CGRect(x: 0, y: lastFrame.maxY, width: mainScrollview.width, height: inspectionItem4Height - spaceHeight)
+        } else if viewController is BrakeCheckViewController {
+            lastFrame = CGRect(x: 0, y: lastFrame.maxY, width: mainScrollview.width, height: inspectionItem5Height - spaceHeight)
+        } else if viewController is AirCheckViewController {
+            lastFrame = CGRect(x: 0, y: lastFrame.maxY, width: mainScrollview.width, height: inspectionItem6Height - spaceHeight)
+        } else if viewController is GaugeCheckViewController {
+            lastFrame = CGRect(x: 0, y: lastFrame.maxY, width: mainScrollview.width, height: inspectionItem7Height - spaceHeight)
+        } else if viewController is ElectronicDeviceCheckViewController {
+            lastFrame = CGRect(x: 0, y: lastFrame.maxY, width: mainScrollview.width, height: inspectionItem8Height - spaceHeight)
+        }
+        mainScrollview.contentSize = CGSize(width: containerView.width, height: lastFrame.maxY)
         // Configure Child View
-        viewController.view.frame = containerView.bounds
-        viewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+//        viewController.view.frame = containerView.bounds
+        viewController.view.frame = CGRect(x: 0, y: lastFrame.minY, width: containerView.width, height: lastFrame.height)
         
-        // Notify Child View Controller
-        viewController.didMove(toParent: self)
+        // Add Child View as Subview
+//        containerView.addSubview(viewController.view)
+//
+//        // Configure Child View
+//        viewController.view.frame = containerView.bounds
+//        viewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+//
+//        // Notify Child View Controller
+//        viewController.didMove(toParent: self)
     }
-    //    private func remove(asChildViewController viewController: UIViewController) {
-    //        guard let viewController = viewController else { return }
-    //        // Notify Child View Controller
-    //        viewController.willMove(toParent: nil)
-    //
-    //        // Remove Child View From Superview
-    //        viewController.view.removeFromSuperview()
-    //
-    //        // Notify Child View Controller
-    //        viewController.removeFromParent()
-    //    }
     
     private func getViewCOntroller(identifier : String) -> UIViewController {
         // Load Storyboard

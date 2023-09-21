@@ -122,6 +122,7 @@ class CheckCarViewController: ViewController, CheckCarDisplayLogic
     @IBOutlet weak var inspectionDateLabel: UILabel!
     @IBOutlet weak var mainScrollview: UIScrollView!
     
+    var isClickedTopItem = false
     
     var lastFrame = CGRectZero
     let item0OffsetY = 0
@@ -214,6 +215,7 @@ class CheckCarViewController: ViewController, CheckCarDisplayLogic
         case .MBIKE, .MBIKEWRECK:
             updateUIView(from: 0)
         }
+        self.mainScrollview.delegate = self
     }
     
     
@@ -424,7 +426,7 @@ extension CheckCarViewController : CustomSegmentedControlDelegate  {
     func change(to index: Int , button : UIButton) {
 //        updateUIView(from: index)
 //        scrollView.scrollToView(view: button, animated: true)
-        
+        isClickedTopItem = true
         var offsetY = 0.0
         switch index {
         case 0:
@@ -556,5 +558,47 @@ extension CheckCarViewController : CustomSegmentedControlDelegate  {
         let storyboard = UIStoryboard(name: "CheckCar", bundle: Bundle.main)
         // Instantiate View Controller
         return storyboard.instantiateViewController(withIdentifier: identifier)
+    }
+}
+
+extension CheckCarViewController: UIScrollViewDelegate {
+    
+    func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
+        isClickedTopItem = false
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+        if isClickedTopItem {
+            return
+        }
+        let offsetY = scrollView.contentOffset.y
+        if offsetY < 0 {
+            return
+        }
+        var index = 0
+  
+        if offsetY >= 0 ,offsetY < item1OffsetY {
+            index = 0
+        } else if offsetY >= item1OffsetY , offsetY < item2OffsetY {
+            index = 1
+        } else if offsetY >= item2OffsetY , offsetY < item3OffsetY {
+            index = 2
+        } else if offsetY >= item3OffsetY , offsetY < item4OffsetY {
+            index = 3
+        } else if offsetY >= item4OffsetY , offsetY < item5OffsetY {
+            index = 4
+        } else if offsetY >= item5OffsetY , offsetY < item6OffsetY {
+            index = 5
+        } else if offsetY >= item6OffsetY , offsetY < item7OffsetY {
+            index = 6
+        } else if offsetY >= item7OffsetY , offsetY < item8OffsetY {
+            index = 7
+        } else {
+            index = 8
+        }
+  
+        let button = self.codeSegmented.buttons[index]
+        self.codeSegmented.buttonAction(sender: button , isCombine: true)
     }
 }

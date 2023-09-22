@@ -296,6 +296,26 @@ class EngineCheckViewController: ViewController, EngineCheckDisplayLogic
         typeEngineRadio.selectedIndex = getRadioIndexByValue(from : [string_benzine, string_diesel, "EV", string_hybrid_benzine, string_hybrid_diesel], value: model.typeEngine)
         
         summaryEngineRadio.selectedIndex = getRadioIndexByValue(from: [string_inspection_engine_working, string_inspection_engine_not_working], value: model.engineOverall)
+        
+        if let engineTypeIndex = DataController.shared.receiverCarModel.fuelSystemId , engineTypeIndex > 0 {
+            typeEngineRadio.selectedIndex = engineTypeIndex - 1
+        }
+        if let fuelDelivery = DataController.shared.receiverCarModel.fuelDelivery {
+            var index = -1
+            switch fuelDelivery {
+            case "I":
+                index = 0
+            case "N":
+                index = 1
+            case "D":
+                index = 2
+            case "1":
+                index = 3
+            default:
+                index = -1
+            }
+            fuelSystemRadio.selectedIndex = index
+        }
     }
     
 }

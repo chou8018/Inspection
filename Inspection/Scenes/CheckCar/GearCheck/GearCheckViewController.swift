@@ -198,6 +198,17 @@ class GearCheckViewController: ViewController, GearCheckDisplayLogic
         statusGearRadio.selectedIndex = getRadioIndexByValue(from: [string_inspection_gear_working, string_inspection_gear_not_working], value: model.statusGear)
         gearSystemRadio.selectedIndex = getRadioIndexByValue(from: ["AT", "MT"], value: model.gearSystem)
         
+        if let gearbox = DataController.shared.receiverCarModel.gearbox {
+            var index = -1
+            if gearbox == "M" {
+                index = 1
+            } else if gearbox == "1" {
+                index = -1
+            } else {
+                index = 0
+            }
+            gearSystemRadio.selectedIndex = index
+        }
     }
 }
 

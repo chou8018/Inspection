@@ -373,7 +373,71 @@ class GradeCarViewController: ViewController, GradeCarDisplayLogic
                                                  y1Chehck:   y1Chehck.check)
         
         interactor?.prapareCheck(request : request)
+        interactor?.evaluateGrade()
+    }
+    
+    func calculateRegistrationYearAndMiles() {
         
+
+        if let year = DataController.shared.receiverCarModel.registrationYear {
+            let currentYear = Date().year
+            let intYear = Int(year) ?? currentYear
+            let registration = currentYear - intYear
+            
+            if registration <= 1 {
+//                e2checkTapped(e2Chehck!)
+                DataController.shared.inspectionCarModel.e2Chehck = true
+                DataController.shared.inspectionCarModel.g2Chehck = false
+                DataController.shared.inspectionCarModel.a2Chehck = false
+                DataController.shared.inspectionCarModel.f1Chehck = false
+
+            } else if registration > 1 , registration <= 2 {
+//                g2checkTapped(g2Chehck!)
+                DataController.shared.inspectionCarModel.g2Chehck = true
+                DataController.shared.inspectionCarModel.e2Chehck = false
+                DataController.shared.inspectionCarModel.a2Chehck = false
+                DataController.shared.inspectionCarModel.f1Chehck = false
+
+            } else if registration > 2 , registration <= 5 {
+//                a2checkTapped(a2Chehck!)
+                DataController.shared.inspectionCarModel.a2Chehck = true
+                DataController.shared.inspectionCarModel.g2Chehck = false
+                DataController.shared.inspectionCarModel.e2Chehck = false
+                DataController.shared.inspectionCarModel.f1Chehck = false
+            } else {
+//                f1checkTapped(f1Chehck!)
+                DataController.shared.inspectionCarModel.f1Chehck = true
+                DataController.shared.inspectionCarModel.a2Chehck = false
+                DataController.shared.inspectionCarModel.g2Chehck = false
+                DataController.shared.inspectionCarModel.e2Chehck = false
+            }
+        }
+        if let miles = DataController.shared.receiverCarModel.miles?.replacingOccurrences(of: ",", with: ""){
+            let mileage = Int(miles) ?? 0
+            if mileage <= 20_000 {
+                DataController.shared.inspectionCarModel.e1Chehck = true
+                DataController.shared.inspectionCarModel.g1Chehck = false
+                DataController.shared.inspectionCarModel.a1Chehck = false
+                DataController.shared.inspectionCarModel.f1Chehck = false
+
+            } else if mileage > 20_000 , mileage <= 50_000 {
+                DataController.shared.inspectionCarModel.g1Chehck = true
+                DataController.shared.inspectionCarModel.e1Chehck = false
+                DataController.shared.inspectionCarModel.a1Chehck = false
+                DataController.shared.inspectionCarModel.f1Chehck = false
+            } else if mileage > 50_000 , mileage <= 100_000 {
+                DataController.shared.inspectionCarModel.a1Chehck = true
+                DataController.shared.inspectionCarModel.g1Chehck = false
+                DataController.shared.inspectionCarModel.e1Chehck = false
+                DataController.shared.inspectionCarModel.f1Chehck = false
+            } else {
+                DataController.shared.inspectionCarModel.f1Chehck = true
+                DataController.shared.inspectionCarModel.a1Chehck = false
+                DataController.shared.inspectionCarModel.g1Chehck = false
+                DataController.shared.inspectionCarModel.e1Chehck = false
+            }
+        }
+
     }
 }
 
@@ -382,7 +446,7 @@ extension GradeCarViewController  {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         scrollView.registKeyboardNotification()
-        
+        calculateRegistrationYearAndMiles()
         prepareData()
     }
     override func viewDidDisappear(_ animated: Bool) {

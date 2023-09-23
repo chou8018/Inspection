@@ -456,7 +456,7 @@
 "car_pick_up_valid_field_remark_tips_label" = "License Plate Remark: More than 100 characters";
 
 // car grade
-"car_grade_title_label" = "Grade the auction vehicles";
+"car_grade_title_label" = "Grade calculation";
 "car_grade_excellence_label" = "E Excellence";
 "car_grade_excellence_option1_label" = "Mileage ≤ 20,000 km.";
 "car_grade_excellence_option2_label" = "Registration ≤1 yr. (not manufacturing yr.)";
@@ -488,7 +488,7 @@
 "car_grade_poor_label" = "P Poor";
 "car_grade_poor_option1_label" = "Heavy accident to main structure / absorbtion beam replaced";
 "car_grade_poor_option2_label" = "Changed / repaired wheel arch";
-"car_grade_poor_option3_label" = "Heavy accident to main structure / absorbtion beam replaced";
+"car_grade_poor_option3_label" = "The ark on the gatepost has been repaired";
 "car_grade_poor_option4_label" = "Chassis repaired, suspension decayed";
 "car_grade_poor_option5_label" = "Heavy accident / roof repaired";
 "car_grade_poor_option6_label" = "No plate";

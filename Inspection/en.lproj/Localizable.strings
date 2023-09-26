@@ -488,7 +488,7 @@
 "car_grade_poor_label" = "P Poor";
 "car_grade_poor_option1_label" = "Heavy accident to main structure / absorbtion beam replaced";
 "car_grade_poor_option2_label" = "Changed / repaired wheel arch";
-"car_grade_poor_option3_label" = "The ark on the gatepost has been repaired";
+"car_grade_poor_option3_label" = "Car door arch damaged/repaired";
 "car_grade_poor_option4_label" = "Chassis repaired, suspension decayed";
 "car_grade_poor_option5_label" = "Heavy accident / roof repaired";
 "car_grade_poor_option6_label" = "No plate";

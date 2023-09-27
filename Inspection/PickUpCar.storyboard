@@ -2402,7 +2402,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="1080" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="APA-NU-qQq">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="APA-NU-qQq">
                                 <rect key="frame" x="0.0" y="20" width="1080" height="980"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="f8x-Rz-85m">
@@ -2720,7 +2720,7 @@
                                             <constraint firstItem="D9O-Ne-wfM" firstAttribute="width" secondItem="f8x-Rz-85m" secondAttribute="width" multiplier="0.5" id="ImH-pn-lnR"/>
                                         </constraints>
                                     </stackView>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2ZC-8g-Zsn" customClass="RadioGroup" customModule="RadioGroup">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2ZC-8g-Zsn" customClass="RadioGroup" customModule="RadioGroup">
                                         <rect key="frame" x="280" y="57" width="418" height="46"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" name="primary_color"/>
@@ -2749,7 +2749,7 @@
                                             <action selector="engineOverallRadioGroupValueChanged:" destination="WDo-vU-IEQ" eventType="valueChanged" id="f42-tg-PB3"/>
                                         </connections>
                                     </view>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7A8-2y-MjI" customClass="RadioGroup" customModule="RadioGroup">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7A8-2y-MjI" customClass="RadioGroup" customModule="RadioGroup">
                                         <rect key="frame" x="190" y="370" width="418" height="46"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" name="primary_color"/>
@@ -2778,7 +2778,7 @@
                                             <action selector="driverSystemRadioGroupValueChanged:" destination="WDo-vU-IEQ" eventType="valueChanged" id="eXG-0a-7yI"/>
                                         </connections>
                                     </view>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VGE-he-HNH" customClass="RadioGroup" customModule="RadioGroup">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VGE-he-HNH" customClass="RadioGroup" customModule="RadioGroup">
                                         <rect key="frame" x="190" y="451" width="418" height="46"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" name="primary_color"/>
@@ -2807,7 +2807,7 @@
                                             <action selector="oilSystemRadioGroupValueChanged:" destination="WDo-vU-IEQ" eventType="valueChanged" id="Iu1-Ya-vsb"/>
                                         </connections>
                                     </view>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="knz-5q-7fB" customClass="RadioGroup" customModule="RadioGroup">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="knz-5q-7fB" customClass="RadioGroup" customModule="RadioGroup">
                                         <rect key="frame" x="190" y="532" width="418" height="46"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" name="primary_color"/>
@@ -2836,7 +2836,7 @@
                                             <action selector="fuelSystemValueChanged:" destination="WDo-vU-IEQ" eventType="valueChanged" id="aHq-qu-0Ag"/>
                                         </connections>
                                     </view>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5F6-W3-eMP" customClass="RadioGroup" customModule="RadioGroup">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5F6-W3-eMP" customClass="RadioGroup" customModule="RadioGroup">
                                         <rect key="frame" x="190" y="613" width="418" height="46"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" name="primary_color"/>
@@ -3421,13 +3421,13 @@
                                                                 <rect key="frame" x="171.5" y="10" width="318.5" height="40"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="วันหมดอายุ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mEh-Fd-wAo">
-                                                                        <rect key="frame" x="111.5" y="8" width="95" height="24"/>
+                                                                        <rect key="frame" x="112" y="8" width="95" height="24"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                                         <color key="textColor" name="gullgray"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-pencil" translatesAutoresizingMaskIntoConstraints="NO" id="rXa-lX-Zql">
-                                                                        <rect key="frame" x="216.5" y="12.5" width="15" height="15"/>
+                                                                        <rect key="frame" x="217" y="12.5" width="15" height="15"/>
                                                                         <color key="tintColor" name="primary_color"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="15" id="DIx-Ua-yzT"/>
@@ -4179,7 +4179,7 @@
                                             </stackView>
                                         </subviews>
                                     </stackView>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qpN-cD-95h" customClass="RadioGroup" customModule="RadioGroup">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qpN-cD-95h" customClass="RadioGroup" customModule="RadioGroup">
                                         <rect key="frame" x="280" y="57" width="418" height="46"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" name="primary_color"/>
@@ -4456,7 +4456,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="1080" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" directionalLockEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kBq-Uq-YeP">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kBq-Uq-YeP">
                                 <rect key="frame" x="0.0" y="20" width="1080" height="980"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="amn-Ta-9IV">
@@ -4871,7 +4871,7 @@
                                             </stackView>
                                         </subviews>
                                     </stackView>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LRr-be-nEx" customClass="RadioGroup" customModule="RadioGroup">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LRr-be-nEx" customClass="RadioGroup" customModule="RadioGroup">
                                         <rect key="frame" x="280" y="57" width="418" height="46"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" name="primary_color"/>
@@ -4900,7 +4900,7 @@
                                             <action selector="overallValueChange:" destination="vwM-Bc-ykw" eventType="valueChanged" id="8iy-oG-hgl"/>
                                         </connections>
                                     </view>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ejn-rZ-nz9" customClass="RadioGroup" customModule="RadioGroup">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ejn-rZ-nz9" customClass="RadioGroup" customModule="RadioGroup">
                                         <rect key="frame" x="210" y="138" width="418" height="46"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" name="primary_color"/>

@@ -73,7 +73,7 @@
 "pick_up_date_title" = "วันรับรถ";
 "pick_up_send_book_in_confirm_title" = "คุณต้องการส่ง\nBook-In to IMAT ไหม";
 "pick_up_send_book_in_succeeded_title" = "Book-In สำเร็จ";
-"อัพโหลด" = "ต้องการปริ้น IMAT QRCode ไหม";
+"pick_up_send_book_in_succeeded_subtitle" = "ต้องการปริ้น IMAT QRCode ไหม";
 "pick_up_send_book_in_succeeded" = "สำเร็จ";
 
 // car salvage

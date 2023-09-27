@@ -488,7 +488,10 @@ extension ReceiverCarViewController : UITextFieldDelegate {
         senderNameTextField.text = model.nameSender
         contractNumberTextField.text = model.contractNumber
         phoneNumberTextField.text = model.phoneNumber
-        let comapyName = "\(model.companyName ?? "") \(model.companyNameEn ?? "")"
+        var comapyName = "\(model.companyName ?? "") \(model.companyNameEn ?? "")"
+        if !DataController.shared.isThaiLanguage() {
+            comapyName = "\(model.companyNameEn ?? "")"
+        }
         companyNumberTextField.text = comapyName.trimWhiteSpace  ///companyNumberTextField: DropDown!
         
         senderUIImageView.image = model.senderSignatureImage

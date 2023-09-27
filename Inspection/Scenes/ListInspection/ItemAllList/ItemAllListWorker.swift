@@ -473,7 +473,10 @@ class ItemAllListWorker
             case .success(let colorModel):
                 let model = DataController.shared.receiverCarModel
                 
-                let colorCar = "\(colorModel.colour_BU ?? "") \(colorModel.colour_LO ?? "")"
+                var colorCar = "\(colorModel.colour_BU ?? "") \(colorModel.colour_LO ?? "")"
+                if !DataController.shared.isThaiLanguage() {
+                    colorCar = "\(colorModel.colour_BU ?? "")"
+                }
                 model.colorCar = colorCar
                 model.colour_BU = colorModel.colour_BU
                 model.colour_LO = colorModel.colour_LO
@@ -514,6 +517,9 @@ class ItemAllListWorker
                     let model = DataController.shared.receiverCarModel
                     model.sellerCode = sellerModel.sellerCode
                     model.companyName = sellerModel.sellerNameTh
+                    if !DataController.shared.isThaiLanguage() {
+                        model.companyName = sellerModel.sellerNameEn
+                    }
                     model.companyNameEn = sellerModel.sellerNameEn
 
                     switch DataController.shared.bookInType {

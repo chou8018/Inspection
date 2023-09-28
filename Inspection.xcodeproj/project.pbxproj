@@ -11,6 +11,484 @@
 		7B7F1EB825A89CFD60F730D4 /* Pods_Inspection_InspectionUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 450FEF54378985C29D64B3B3 /* Pods_Inspection_InspectionUITests.framework */; };
 		BC4F3FB54F9E0571C9BB828C /* Pods_Inspection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF5A5BE48DF744DDCA6FF8D6 /* Pods_Inspection.framework */; };
 		C25786362A94A26100F295C4 /* Userdefault+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25786352A94A26100F295C4 /* Userdefault+Helper.swift */; };
+		C28900002AC5536A003C2F1A /* BrakeCheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94A045C25DA3A1300C8EC4C /* BrakeCheckViewController.swift */; };
+		C28900012AC5536A003C2F1A /* ItemAllListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F957B81F25CA495A00B8FB3C /* ItemAllListViewController.swift */; };
+		C28900022AC5536A003C2F1A /* Userdefault+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25786352A94A26100F295C4 /* Userdefault+Helper.swift */; };
+		C28900032AC5536A003C2F1A /* ModelCodeModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F931492B25F76B1D004E5F7A /* ModelCodeModels.swift */; };
+		C28900042AC5536A003C2F1A /* AirCheckPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94A046725DA3A2100C8EC4C /* AirCheckPresenter.swift */; };
+		C28900052AC5536A003C2F1A /* ConstraintPriorityTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B8893B2A6A69D400ED3A60 /* ConstraintPriorityTarget.swift */; };
+		C28900062AC5536A003C2F1A /* MotorcycleCheckPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE95D5B426F8444300A1538F /* MotorcycleCheckPresenter.swift */; };
+		C28900072AC5536A003C2F1A /* SparePartsCarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96F53A925D0E02700317ED0 /* SparePartsCarViewController.swift */; };
+		C28900082AC5536A003C2F1A /* DriveService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE5340052684516D006D0AC6 /* DriveService.swift */; };
+		C28900092AC5536A003C2F1A /* ItemAllListWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F957B81C25CA495A00B8FB3C /* ItemAllListWorker.swift */; };
+		C289000A2AC5536A003C2F1A /* UnderCarCheckPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94A042B25DA39D800C8EC4C /* UnderCarCheckPresenter.swift */; };
+		C289000B2AC5536A003C2F1A /* CabinCarInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96F53B925D0E03400317ED0 /* CabinCarInteractor.swift */; };
+		C289000C2AC5536A003C2F1A /* ConstraintMaker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B8894E2A6A69D400ED3A60 /* ConstraintMaker.swift */; };
+		C289000D2AC5536A003C2F1A /* CreateModelCodeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE534021268491A0006D0AC6 /* CreateModelCodeRequest.swift */; };
+		C289000E2AC5536A003C2F1A /* ExternalCarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96F539625D0E01900317ED0 /* ExternalCarPresenter.swift */; };
+		C289000F2AC5536A003C2F1A /* BookInMotorcycle1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE20496A26BA4A510073A528 /* BookInMotorcycle1ViewController.swift */; };
+		C28900102AC5536A003C2F1A /* UnderCarCheckRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94A042D25DA39D800C8EC4C /* UnderCarCheckRouter.swift */; };
+		C28900112AC5536A003C2F1A /* ImageViewerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE20497726BA8C020073A528 /* ImageViewerViewController.swift */; };
+		C28900122AC5536A003C2F1A /* SearchModelByCodeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F931498B25F8A001004E5F7A /* SearchModelByCodeService.swift */; };
+		C28900132AC5536A003C2F1A /* PlaceModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A5AC0E25C90C2D00952FE5 /* PlaceModels.swift */; };
+		C28900142AC5536A003C2F1A /* EngineCheckModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94A041F25DA39C400C8EC4C /* EngineCheckModels.swift */; };
+		C28900152AC5536A003C2F1A /* ModelCarService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F931497225F86F2F004E5F7A /* ModelCarService.swift */; };
+		C28900162AC5536A003C2F1A /* Debugging.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B889542A6A69D400ED3A60 /* Debugging.swift */; };
+		C28900172AC5536A003C2F1A /* DamageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0CBFDF266DC8B700A31068 /* DamageViewController.swift */; };
+		C28900182AC5536A003C2F1A /* ItemPendingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F957B82F25CA49A100B8FB3C /* ItemPendingListViewController.swift */; };
+		C28900192AC5536A003C2F1A /* CreateModelCodeModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB11A5F2682E79000CAEE1C /* CreateModelCodeModels.swift */; };
+		C289001A2AC5536A003C2F1A /* ConstraintMakerEditable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B8894D2A6A69D400ED3A60 /* ConstraintMakerEditable.swift */; };
+		C289001B2AC5536A003C2F1A /* InspectionImageDeleteRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F924DDD626396772002E4B90 /* InspectionImageDeleteRequest.swift */; };
+		C289001C2AC5536A003C2F1A /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91445A325C7FB8100B09FB6 /* LoginPresenter.swift */; };
+		C289001D2AC5536A003C2F1A /* CheckCarRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D7CD3F25CBA7FE003E049B /* CheckCarRouter.swift */; };
+		C289001E2AC5536A003C2F1A /* IMatInspectionWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A7C29F26526D010067D7C5 /* IMatInspectionWorker.swift */; };
+		C289001F2AC5536A003C2F1A /* ReadingQRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9192DFB25F08C1300297E1F /* ReadingQRViewController.swift */; };
+		C28900202AC5536A003C2F1A /* BookInMotorBikeModelRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1BCEC270E8EDA0079252C /* BookInMotorBikeModelRequest.swift */; };
+		C28900212AC5536A003C2F1A /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1BCFE2713EE880079252C /* LocationManager.swift */; };
+		C28900222AC5536A003C2F1A /* PlantService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0CBFEC26709A6100A31068 /* PlantService.swift */; };
+		C28900232AC5536A003C2F1A /* PickUpCarModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D7CD2D25CBA51D003E049B /* PickUpCarModels.swift */; };
+		C28900242AC5536A003C2F1A /* SignatureRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E02E3825D134EE0003CB9C /* SignatureRouter.swift */; };
+		C28900252AC5536A003C2F1A /* ItemPendingListModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F957B82E25CA49A100B8FB3C /* ItemPendingListModels.swift */; };
+		C28900262AC5536A003C2F1A /* ConstraintRelation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B8894F2A6A69D400ED3A60 /* ConstraintRelation.swift */; };
+		C28900272AC5536A003C2F1A /* VehicleDeleteDocumentRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F989FD89265F8C7900342895 /* VehicleDeleteDocumentRequest.swift */; };
+		C28900282AC5536A003C2F1A /* SummaryCarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D7CD7D25CBC9F4003E049B /* SummaryCarPresenter.swift */; };
+		C28900292AC5536A003C2F1A /* StorageLocationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DBA4662600BE4E00EE124F /* StorageLocationModel.swift */; };
+		C289002A2AC5536A003C2F1A /* CabinCarRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96F53B625D0E03400317ED0 /* CabinCarRouter.swift */; };
+		C289002B2AC5536A003C2F1A /* PickUpCarInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D7CD2F25CBA51D003E049B /* PickUpCarInteractor.swift */; };
+		C289002C2AC5536A003C2F1A /* PhotoCarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93F2A7125EF7423003BEB60 /* PhotoCarModel.swift */; };
+		C289002D2AC5536A003C2F1A /* UIColor+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99DB23925C82E000069F32E /* UIColor+extension.swift */; };
+		C289002E2AC5536A003C2F1A /* DetailModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A46FAE25CAAADE00D3732E /* DetailModels.swift */; };
+		C289002F2AC5536A003C2F1A /* ModelCodeTemplateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE53401726846932006D0AC6 /* ModelCodeTemplateModel.swift */; };
+		C28900302AC5536A003C2F1A /* UploadPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93148FA25F71A3D004E5F7A /* UploadPresenter.swift */; };
+		C28900312AC5536A003C2F1A /* ConstraintMultiplierTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B889352A6A69D400ED3A60 /* ConstraintMultiplierTarget.swift */; };
+		C28900322AC5536A003C2F1A /* FuelTypeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE534012268458C6006D0AC6 /* FuelTypeModel.swift */; };
+		C28900332AC5536A003C2F1A /* UploadRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93148FC25F71A3D004E5F7A /* UploadRouter.swift */; };
+		C28900342AC5536A003C2F1A /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96D25DF25D3A48800A274FF /* DataController.swift */; };
+		C28900352AC5536A003C2F1A /* ItemListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A46F9325CA8E1E00D3732E /* ItemListCell.swift */; };
+		C28900362AC5536A003C2F1A /* DateTimeWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9075E7025DCB3FE004D4765 /* DateTimeWorker.swift */; };
+		C28900372AC5536A003C2F1A /* BookInMotorcycle1Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE20496826BA4A510073A528 /* BookInMotorcycle1Router.swift */; };
+		C28900382AC5536A003C2F1A /* CarInspectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90BA916262FFE7000D5C3FB /* CarInspectionType.swift */; };
+		C28900392AC5536A003C2F1A /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97629382643C6B800E51903 /* LoginRequest.swift */; };
+		C289003A2AC5536A003C2F1A /* BodyTypeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DBA45B2600B15300EE124F /* BodyTypeModel.swift */; };
+		C289003B2AC5536A003C2F1A /* MotorcycleCheckModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE95D5B726F8444300A1538F /* MotorcycleCheckModels.swift */; };
+		C289003C2AC5536A003C2F1A /* SignaturePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E02E3625D134EE0003CB9C /* SignaturePresenter.swift */; };
+		C289003D2AC5536A003C2F1A /* VehicleDeleteDocumentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F989FD87265F89E000342895 /* VehicleDeleteDocumentService.swift */; };
+		C289003E2AC5536A003C2F1A /* BookInMotorcycle1Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE20496626BA4A510073A528 /* BookInMotorcycle1Presenter.swift */; };
+		C289003F2AC5536A003C2F1A /* BookInMotorcycle1Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE20496926BA4A510073A528 /* BookInMotorcycle1Models.swift */; };
+		C28900402AC5536A003C2F1A /* PickUpCarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D7CD2A25CBA51D003E049B /* PickUpCarPresenter.swift */; };
+		C28900412AC5536A003C2F1A /* SearchByViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F957B84425CA5BB400B8FB3C /* SearchByViewController.swift */; };
+		C28900422AC5536A003C2F1A /* ConstraintLayoutGuide+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B889572A6A69D400ED3A60 /* ConstraintLayoutGuide+Extensions.swift */; };
+		C28900432AC5536A003C2F1A /* ReadingQRPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9192DF725F08C1300297E1F /* ReadingQRPresenter.swift */; };
+		C28900442AC5536A003C2F1A /* GearCheckPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94A043A25DA39E900C8EC4C /* GearCheckPresenter.swift */; };
+		C28900452AC5536A003C2F1A /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = F914458F25C7FA5500B09FB6 /* Router.swift */; };
+		C28900462AC5536A003C2F1A /* BookInMotorcycle2Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE20498326D348E50073A528 /* BookInMotorcycle2Models.swift */; };
+		C28900472AC5536A003C2F1A /* PDFPreviewModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99583A025DF9A77005DD029 /* PDFPreviewModels.swift */; };
+		C28900482AC5536A003C2F1A /* ConstraintMakerExtendable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B8893F2A6A69D400ED3A60 /* ConstraintMakerExtendable.swift */; };
+		C28900492AC5536A003C2F1A /* BookInSearchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91EC084261DA66200E9D9F9 /* BookInSearchRequest.swift */; };
+		C289004A2AC5536A003C2F1A /* BodyCheckModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94A040D25DA398E00C8EC4C /* BodyCheckModels.swift */; };
+		C289004B2AC5536A003C2F1A /* DamagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0CBFDB266DC8B700A31068 /* DamagePresenter.swift */; };
+		C289004C2AC5536A003C2F1A /* ConstraintLayoutGuideDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B889502A6A69D400ED3A60 /* ConstraintLayoutGuideDSL.swift */; };
+		C289004D2AC5536A003C2F1A /* ModelCodeNoItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F931493F25F777EE004E5F7A /* ModelCodeNoItemCell.swift */; };
+		C289004E2AC5536A003C2F1A /* MakeVehicleResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99E9DB326563F4A00CF6435 /* MakeVehicleResponse.swift */; };
+		C289004F2AC5536A003C2F1A /* ConstraintItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B889522A6A69D400ED3A60 /* ConstraintItem.swift */; };
+		C28900502AC5536A003C2F1A /* UpdateInspecMotorBikeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1BCFC2710318F0079252C /* UpdateInspecMotorBikeService.swift */; };
+		C28900512AC5536A003C2F1A /* UINavigationController+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BDF83625CBE26700321289 /* UINavigationController+extension.swift */; };
+		C28900522AC5536A003C2F1A /* EngineCheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94A042025DA39C400C8EC4C /* EngineCheckViewController.swift */; };
+		C28900532AC5536A003C2F1A /* SteerWheelCheckInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94A044E25DA3A0300C8EC4C /* SteerWheelCheckInteractor.swift */; };
+		C28900542AC5536A003C2F1A /* PendingListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E0850025CB8D33008E28FA /* PendingListDataSource.swift */; };
+		C28900552AC5536A003C2F1A /* GaugeCheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94A047A25DA3A3000C8EC4C /* GaugeCheckViewController.swift */; };
+		C28900562AC5536A003C2F1A /* DamageModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0CBFDE266DC8B700A31068 /* DamageModels.swift */; };
+		C28900572AC5536A003C2F1A /* SummaryCarRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D7CD7F25CBC9F4003E049B /* SummaryCarRouter.swift */; };
+		C28900582AC5536A003C2F1A /* UploadInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93148FF25F71A3D004E5F7A /* UploadInteractor.swift */; };
+		C28900592AC5536A003C2F1A /* EngineCarWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96F53C425D0E04000317ED0 /* EngineCarWorker.swift */; };
+		C289005A2AC5536A003C2F1A /* KeyOptionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91EC089261DAEB200E9D9F9 /* KeyOptionType.swift */; };
+		C289005B2AC5536A003C2F1A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F914454825C7F94C00B09FB6 /* AppDelegate.swift */; };
+		C289005C2AC5536A003C2F1A /* SearchByRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F957B84225CA5BB400B8FB3C /* SearchByRouter.swift */; };
+		C289005D2AC5536A003C2F1A /* ReceiverCarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96F537C25D0DFF300317ED0 /* ReceiverCarViewController.swift */; };
+		C289005E2AC5536A003C2F1A /* PDFPreviewWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F995839E25DF9A77005DD029 /* PDFPreviewWorker.swift */; };
+		C289005F2AC5536A003C2F1A /* SelectInspectionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99DB24C25C8F26A0069F32E /* SelectInspectionInteractor.swift */; };
+		C28900602AC5536A003C2F1A /* SelectInspectionModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99DB24A25C8F26A0069F32E /* SelectInspectionModels.swift */; };
+		C28900612AC5536A003C2F1A /* StardardColorByCodeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BC5E4E261716B900CC0ED8 /* StardardColorByCodeService.swift */; };
+		C28900622AC5536A003C2F1A /* SteerWheelCheckPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94A044925DA3A0300C8EC4C /* SteerWheelCheckPresenter.swift */; };
+		C28900632AC5536A003C2F1A /* AboutCarRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96F538925D0E00400317ED0 /* AboutCarRouter.swift */; };
+		C28900642AC5536A003C2F1A /* SellerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93148AE25F1C331004E5F7A /* SellerService.swift */; };
+		C28900652AC5536A003C2F1A /* UnderCarCheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94A042F25DA39D800C8EC4C /* UnderCarCheckViewController.swift */; };
+		C28900662AC5536A003C2F1A /* MakeCarService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F931496D25F86ED7004E5F7A /* MakeCarService.swift */; };
+		C28900672AC5536A003C2F1A /* MotorbikeBookInType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1BCEE270E8F6B0079252C /* MotorbikeBookInType.swift */; };
+		C28900682AC5536A003C2F1A /* GearCheckModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94A043D25DA39E900C8EC4C /* GearCheckModels.swift */; };
+		C28900692AC5536A003C2F1A /* ReceiverService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F965DF67260C390400CE91E7 /* ReceiverService.swift */; };
+		C289006A2AC5536A003C2F1A /* MultilineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92507D425DE553F007D2E57 /* MultilineTextField.swift */; };
+		C289006B2AC5536A003C2F1A /* EngineCheckWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94A041D25DA39C400C8EC4C /* EngineCheckWorker.swift */; };
+		C289006C2AC5536A003C2F1A /* GradeCreateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90BA9E826315CD100D5C3FB /* GradeCreateService.swift */; };
+		C289006D2AC5536A003C2F1A /* DamageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0CBFE7266DDBC500A31068 /* DamageCell.swift */; };
+		C289006E2AC5536A003C2F1A /* PhotoCarModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D7CD5525CBA984003E049B /* PhotoCarModels.swift */; };
+		C289006F2AC5536A003C2F1A /* SearchCodeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F931498625F89A0B004E5F7A /* SearchCodeRequest.swift */; };
+		C28900702AC5536A003C2F1A /* VehicleDocumentRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99E9DB9265B5C6100CF6435 /* VehicleDocumentRequest.swift */; };
+		C28900712AC5536A003C2F1A /* Typealiases.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B8894A2A6A69D400ED3A60 /* Typealiases.swift */; };
+		C28900722AC5536A003C2F1A /* ModelCarRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F931497725F86FA9004E5F7A /* ModelCarRequest.swift */; };
+		C28900732AC5536A003C2F1A /* BodyCheckPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94A040A25DA398E00C8EC4C /* BodyCheckPresenter.swift */; };
+		C28900742AC5536A003C2F1A /* BrakeCheckWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94A045925DA3A1300C8EC4C /* BrakeCheckWorker.swift */; };
+		C28900752AC5536A003C2F1A /* ModelCarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F931496825F86E44004E5F7A /* ModelCarModel.swift */; };
+		C28900762AC5536A003C2F1A /* BookInMotorcycle2Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE20498226D348E50073A528 /* BookInMotorcycle2Router.swift */; };
+		C28900772AC5536A003C2F1A /* UILayoutSupport+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B889462A6A69D400ED3A60 /* UILayoutSupport+Extensions.swift */; };
+		C28900782AC5536A003C2F1A /* InspectionListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F957B80925CA3C5600B8FB3C /* InspectionListViewController.swift */; };
+		C28900792AC5536A003C2F1A /* BookInListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AAF983261AA7A800A88C14 /* BookInListService.swift */; };
+		C289007A2AC5536A003C2F1A /* PickUpCarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D7CD2E25CBA51D003E049B /* PickUpCarViewController.swift */; };
+		C289007B2AC5536A003C2F1A /* GradeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90BAA422632828B00D5C3FB /* GradeResponse.swift */; };
+		C289007C2AC5536A003C2F1A /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91445A525C7FB8100B09FB6 /* LoginRouter.swift */; };
+		C289007D2AC5536A003C2F1A /* IMatBookInWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A7C29D26521CFE0067D7C5 /* IMatBookInWorker.swift */; };
+		C289007E2AC5536A003C2F1A /* SignatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E02E3A25D134EE0003CB9C /* SignatureViewController.swift */; };
+		C289007F2AC5536A003C2F1A /* ConstraintDirectionalInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B889582A6A69D400ED3A60 /* ConstraintDirectionalInsets.swift */; };
+		C28900802AC5536A003C2F1A /* SelectInspectionWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99DB24825C8F26A0069F32E /* SelectInspectionWorker.swift */; };
+		C28900812AC5536A003C2F1A /* ReceiverUpdateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96111852611813B0083A191 /* ReceiverUpdateService.swift */; };
+		C28900822AC5536A003C2F1A /* EngineCarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96F53C725D0E04000317ED0 /* EngineCarViewController.swift */; };
+		C28900832AC5536A003C2F1A /* BaseRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93148B325F1C362004E5F7A /* BaseRequest.swift */; };
+		C28900842AC5536A003C2F1A /* AirCheckRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94A046925DA3A2100C8EC4C /* AirCheckRouter.swift */; };
+		C28900852AC5536A003C2F1A /* ModelCodePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F931492825F76B1D004E5F7A /* ModelCodePresenter.swift */; };
+		C28900862AC5536A003C2F1A /* ImageViewerModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE20497626BA8C020073A528 /* ImageViewerModels.swift */; };
+		C28900872AC5536A003C2F1A /* CabinType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F965DF49260C28FB00CE91E7 /* CabinType.swift */; };
+		C28900882AC5536A003C2F1A /* PlantResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0CBFEA267099E800A31068 /* PlantResponse.swift */; };
+		C28900892AC5536A003C2F1A /* ConstraintConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B889452A6A69D400ED3A60 /* ConstraintConfig.swift */; };
+		C289008A2AC5536A003C2F1A /* IMatQRCodePDFWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB11A53267AE52700CAEE1C /* IMatQRCodePDFWorker.swift */; };
+		C289008B2AC5536A003C2F1A /* ElectronicDeviceCheckInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94A048A25DA3A3F00C8EC4C /* ElectronicDeviceCheckInteractor.swift */; };
+		C289008C2AC5536A003C2F1A /* ConstraintInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B8893C2A6A69D400ED3A60 /* ConstraintInsets.swift */; };
+		C289008D2AC5536A003C2F1A /* PhotoCarRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D7CD5425CBA984003E049B /* PhotoCarRouter.swift */; };
+		C289008E2AC5536A003C2F1A /* BookInMotorcycle2Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE20498026D348E50073A528 /* BookInMotorcycle2Presenter.swift */; };
+		C289008F2AC5536A003C2F1A /* PDFPreviewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F995839F25DF9A77005DD029 /* PDFPreviewRouter.swift */; };
+		C28900902AC5536A003C2F1A /* DateFormatter+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96D25F125D3ABC200A274FF /* DateFormatter+extension.swift */; };
+		C28900912AC5536A003C2F1A /* ImageViewerInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE20497826BA8C020073A528 /* ImageViewerInteractor.swift */; };
+		C28900922AC5536A003C2F1A /* String+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96D25E725D3AA8900A274FF /* String+extension.swift */; };
+		C28900932AC5536A003C2F1A /* PlaceWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A5AC0C25C90C2D00952FE5 /* PlaceWorker.swift */; };
+		C28900942AC5536A003C2F1A /* BookInListSearchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91EC07F261DA63100E9D9F9 /* BookInListSearchService.swift */; };
+		C28900952AC5536A003C2F1A /* CreateModelCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB11A602682E79000CAEE1C /* CreateModelCodeViewController.swift */; };
+		C28900962AC5536A003C2F1A /* JatoVaraintsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE53402A26859E55006D0AC6 /* JatoVaraintsModel.swift */; };
+		C28900972AC5536A003C2F1A /* ItemListDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A46F9825CA922E00D3732E /* ItemListDataSource.swift */; };
+		C28900982AC5536A003C2F1A /* ImageViewerRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE20497526BA8C020073A528 /* ImageViewerRouter.swift */; };
+		C28900992AC5536A003C2F1A /* PhotoCarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D7CD5225CBA984003E049B /* PhotoCarPresenter.swift */; };
+		C289009A2AC5536A003C2F1A /* DefaultItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A46F9D25CA971700D3732E /* DefaultItemCell.swift */; };
+		C289009B2AC5536A003C2F1A /* VehicleDocumentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99E9DBD265B74B600CF6435 /* VehicleDocumentResponse.swift */; };
+		C289009C2AC5536A003C2F1A /* ElectronicDeviceCheckRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94A048725DA3A3F00C8EC4C /* ElectronicDeviceCheckRouter.swift */; };
+		C289009D2AC5536A003C2F1A /* SteerWheelCheckRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94A044B25DA3A0300C8EC4C /* SteerWheelCheckRouter.swift */; };
+		C289009E2AC5536A003C2F1A /* SteerWheelCheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94A044D25DA3A0300C8EC4C /* SteerWheelCheckViewController.swift */; };
+		C289009F2AC5536A003C2F1A /* GradeUpdateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90BAA8F2632AD3900D5C3FB /* GradeUpdateService.swift */; };
+		C28900A02AC5536A003C2F1A /* UIScrollView+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99DB20C25C8072A0069F32E /* UIScrollView+extension.swift */; };
+		C28900A12AC5536A003C2F1A /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AAFA30261B13CF00A88C14 /* Vehicle.swift */; };
+		C28900A22AC5536A003C2F1A /* CustomProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97F595E25FB6226001D159F /* CustomProgressView.swift */; };
+		C28900A32AC5536A003C2F1A /* ProvinceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DBA42D25FF5FD600EE124F /* ProvinceService.swift */; };
+		C28900A42AC5536A003C2F1A /* PhotoCarWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D7CD5325CBA984003E049B /* PhotoCarWorker.swift */; };
+		C28900A52AC5536A003C2F1A /* SellerByCodeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94924C82615B56600E60E17 /* SellerByCodeService.swift */; };
+		C28900A62AC5536A003C2F1A /* LandingPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99DB1FC25C8003F0069F32E /* LandingPageViewController.swift */; };
+		C28900A72AC5536A003C2F1A /* CheckCarWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D7CD3E25CBA7FE003E049B /* CheckCarWorker.swift */; };
+		C28900A82AC5536A003C2F1A /* BodyCheckWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94A040B25DA398E00C8EC4C /* BodyCheckWorker.swift */; };
+		C28900A92AC5536A003C2F1A /* ReceiverCarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96F537825D0DFF300317ED0 /* ReceiverCarPresenter.swift */; };
+		C28900AA2AC5536A003C2F1A /* SummaryCarInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D7CD8225CBC9F4003E049B /* SummaryCarInteractor.swift */; };
+		C28900AB2AC5536A003C2F1A /* ElectronicDeviceCheckPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94A048525DA3A3F00C8EC4C /* ElectronicDeviceCheckPresenter.swift */; };
+		C28900AC2AC5536A003C2F1A /* ConstraintMakerPriortizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B889382A6A69D400ED3A60 /* ConstraintMakerPriortizable.swift */; };
+		C28900AD2AC5536A003C2F1A /* StandradMakeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DBA3EB25FEF88400EE124F /* StandradMakeModel.swift */; };
+		C28900AE2AC5536A003C2F1A /* BrakeCheckModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94A045B25DA3A1300C8EC4C /* BrakeCheckModels.swift */; };
+		C28900AF2AC5536A003C2F1A /* JatoVaraintsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE53403226859F87006D0AC6 /* JatoVaraintsService.swift */; };
+		C28900B02AC5536A003C2F1A /* ItemAllListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F957B81B25CA495A00B8FB3C /* ItemAllListPresenter.swift */; };
+		C28900B12AC5536A003C2F1A /* ExternalCarInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96F539B25D0E01900317ED0 /* ExternalCarInteractor.swift */; };
+		C28900B22AC5536A003C2F1A /* ConstraintMakerFinalizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B8893D2A6A69D400ED3A60 /* ConstraintMakerFinalizable.swift */; };
+		C28900B32AC5536A003C2F1A /* AirCheckWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94A046825DA3A2100C8EC4C /* AirCheckWorker.swift */; };
+		C28900B42AC5536A003C2F1A /* ModelCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F931492C25F76B1D004E5F7A /* ModelCodeViewController.swift */; };
+		C28900B52AC5536A003C2F1A /* EngineCarRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96F53C525D0E04000317ED0 /* EngineCarRouter.swift */; };
+		C28900B62AC5536A003C2F1A /* NotFoundCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A46FA525CA99AC00D3732E /* NotFoundCell.swift */; };
+		C28900B72AC5536A003C2F1A /* ReceiverCarInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96F537D25D0DFF300317ED0 /* ReceiverCarInteractor.swift */; };
+		C28900B82AC5536A003C2F1A /* SearchByDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F957B85225CA5EDD00B8FB3C /* SearchByDataSource.swift */; };
+		C28900B92AC5536A003C2F1A /* ViewController+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F957B83A25CA568600B8FB3C /* ViewController+extension.swift */; };
+		C28900BA2AC5536A003C2F1A /* PlaceRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A5AC0D25C90C2D00952FE5 /* PlaceRouter.swift */; };
+		C28900BB2AC5536A003C2F1A /* KError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F914459D25C7FAF100B09FB6 /* KError.swift */; };
+		C28900BC2AC5536A003C2F1A /* PendingListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E084FB25CB8D15008E28FA /* PendingListCell.swift */; };
+		C28900BD2AC5536A003C2F1A /* DamageRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0CBFDD266DC8B700A31068 /* DamageRouter.swift */; };
+		C28900BE2AC5536A003C2F1A /* PlacePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A5AC0B25C90C2D00952FE5 /* PlacePresenter.swift */; };
+		C28900BF2AC5536A003C2F1A /* ProvinceDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A5AC1A25C9283100952FE5 /* ProvinceDataSource.swift */; };
+		C28900C02AC5536A003C2F1A /* GradeCarWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F986434F25FA1509004EAB2F /* GradeCarWorker.swift */; };
+		C28900C12AC5536A003C2F1A /* ConstraintMakerRelatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B8895A2A6A69D400ED3A60 /* ConstraintMakerRelatable.swift */; };
+		C28900C22AC5536A003C2F1A /* SegmentControlCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = F957B81425CA3E8B00B8FB3C /* SegmentControlCustom.swift */; };
+		C28900C32AC5536A003C2F1A /* MakeCarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F931496025F86DB1004E5F7A /* MakeCarModel.swift */; };
+		C28900C42AC5536A003C2F1A /* CabinCarModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96F53B725D0E03400317ED0 /* CabinCarModels.swift */; };
+		C28900C52AC5536A003C2F1A /* ReceiverModelResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F965DF62260C38D200CE91E7 /* ReceiverModelResponse.swift */; };
+		C28900C62AC5536A003C2F1A /* GaugeCheckModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94A047925DA3A3000C8EC4C /* GaugeCheckModels.swift */; };
+		C28900C72AC5536A003C2F1A /* BookInMotorcycle2Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE20498526D348E50073A528 /* BookInMotorcycle2Interactor.swift */; };
+		C28900C82AC5536A003C2F1A /* UploadModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93148FD25F71A3D004E5F7A /* UploadModels.swift */; };
+		C28900C92AC5536A003C2F1A /* SelectInspectionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99DB24725C8F26A0069F32E /* SelectInspectionPresenter.swift */; };
+		C28900CA2AC5536A003C2F1A /* VehicleType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F965DF44260C28FB00CE91E7 /* VehicleType.swift */; };
+		C28900CB2AC5536A003C2F1A /* MotorcycleCheckWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE95D5B526F8444300A1538F /* MotorcycleCheckWorker.swift */; };
+		C28900CC2AC5536A003C2F1A /* ConstraintDirectionalInsetTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B889422A6A69D400ED3A60 /* ConstraintDirectionalInsetTarget.swift */; };
+		C28900CD2AC5536A003C2F1A /* ModelCodeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F931494925F77D94004E5F7A /* ModelCodeCell.swift */; };
+		C28900CE2AC5536A003C2F1A /* StandardMakeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DBA3F325FEF93900EE124F /* StandardMakeService.swift */; };
+		C28900CF2AC5536A003C2F1A /* PDFPreviewInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99583A225DF9A77005DD029 /* PDFPreviewInteractor.swift */; };
+		C28900D02AC5536A003C2F1A /* EngineCheckPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94A041C25DA39C400C8EC4C /* EngineCheckPresenter.swift */; };
+		C28900D12AC5536A003C2F1A /* UIImage+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9ABEF8625EE466B00B48D7D /* UIImage+extension.swift */; };
+		C28900D22AC5536A003C2F1A /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91445A825C7FB8100B09FB6 /* LoginInteractor.swift */; };
+		C28900D32AC5536A003C2F1A /* LoginService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97629422643CA2A00E51903 /* LoginService.swift */; };
+		C28900D42AC5536A003C2F1A /* ItemPendingListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F957B82B25CA49A100B8FB3C /* ItemPendingListPresenter.swift */; };
+		C28900D52AC5536A003C2F1A /* InspectionImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F924DCD126390916002E4B90 /* InspectionImage.swift */; };
+		C28900D62AC5536A003C2F1A /* CreateModelCodeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE53402326849503006D0AC6 /* CreateModelCodeService.swift */; };
+		C28900D72AC5536A003C2F1A /* GradeCarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F986434E25FA1509004EAB2F /* GradeCarPresenter.swift */; };
+		C28900D82AC5536A003C2F1A /* SparePartsCarModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96F53A825D0E02700317ED0 /* SparePartsCarModels.swift */; };
+		C28900D92AC5536A003C2F1A /* VehicleModelRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A7C2A426536C480067D7C5 /* VehicleModelRequest.swift */; };
+		C28900DA2AC5536A003C2F1A /* ExternalCarModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96F539925D0E01900317ED0 /* ExternalCarModels.swift */; };
+		C28900DB2AC5536A003C2F1A /* ConstraintPriority.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B889402A6A69D400ED3A60 /* ConstraintPriority.swift */; };
+		C28900DC2AC5536A003C2F1A /* ConstraintLayoutSupportDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B889592A6A69D400ED3A60 /* ConstraintLayoutSupportDSL.swift */; };
+		C28900DD2AC5536A003C2F1A /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99DB22C25C80ED80069F32E /* MainNavigationController.swift */; };
+		C28900DE2AC5536A003C2F1A /* SparePartsCarWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96F53A625D0E02700317ED0 /* SparePartsCarWorker.swift */; };
+		C28900DF2AC5536A003C2F1A /* StandardColorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DBA40125FF057500EE124F /* StandardColorService.swift */; };
+		C28900E02AC5536A003C2F1A /* SearchCodeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F931495925F85FF2004E5F7A /* SearchCodeService.swift */; };
+		C28900E12AC5536A003C2F1A /* JatoCarModelsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE53402C26859EB0006D0AC6 /* JatoCarModelsModel.swift */; };
+		C28900E22AC5536A003C2F1A /* Canvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96DD8F325D13F3200DC52C4 /* Canvas.swift */; };
+		C28900E32AC5536A003C2F1A /* GearCheckInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94A043F25DA39E900C8EC4C /* GearCheckInteractor.swift */; };
+		C28900E42AC5536A003C2F1A /* ModelCodeTemplateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE53401926846CCF006D0AC6 /* ModelCodeTemplateService.swift */; };
+		C28900E52AC5536A003C2F1A /* CreateModelCodeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB11A612682E79000CAEE1C /* CreateModelCodeInteractor.swift */; };
+		C28900E62AC5536A003C2F1A /* ReceiverModelRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F965DF3E260C231F00CE91E7 /* ReceiverModelRequest.swift */; };
+		C28900E72AC5536A003C2F1A /* GaugeCheckInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94A047B25DA3A3000C8EC4C /* GaugeCheckInteractor.swift */; };
+		C28900E82AC5536A003C2F1A /* ConstraintDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B8893E2A6A69D400ED3A60 /* ConstraintDSL.swift */; };
+		C28900E92AC5536A003C2F1A /* UpdateBookInMotorBikeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1BCF3270EDBAD0079252C /* UpdateBookInMotorBikeService.swift */; };
+		C28900EA2AC5536A003C2F1A /* BaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97CD1982623F7B7003CED13 /* BaseResponse.swift */; };
+		C28900EB2AC5536A003C2F1A /* BodyCarService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DBA43825FF649C00EE124F /* BodyCarService.swift */; };
+		C28900EC2AC5536A003C2F1A /* BodyCarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DBA43325FF644C00EE124F /* BodyCarModel.swift */; };
+		C28900ED2AC5536A003C2F1A /* SparePartsCarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96F53A525D0E02700317ED0 /* SparePartsCarPresenter.swift */; };
+		C28900EE2AC5536A003C2F1A /* DateTimeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9075E7425DCB3FE004D4765 /* DateTimeInteractor.swift */; };
+		C28900EF2AC5536A003C2F1A /* BrakeCheckInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94A045D25DA3A1300C8EC4C /* BrakeCheckInteractor.swift */; };
+		C28900F02AC5536A003C2F1A /* ReadingQRInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9192DFC25F08C1300297E1F /* ReadingQRInteractor.swift */; };
+		C28900F12AC5536A003C2F1A /* Double+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F931499A25F8C5AD004E5F7A /* Double+extension.swift */; };
+		C28900F22AC5536A003C2F1A /* InspectionCar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9075E9A25DCEA90004D4765 /* InspectionCar.swift */; };
+		C28900F32AC5536A003C2F1A /* SearchCodeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F931495425F85EF6004E5F7A /* SearchCodeModel.swift */; };
+		C28900F42AC5536A003C2F1A /* SummaryCarPDFWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90BA8DD262FC09600D5C3FB /* SummaryCarPDFWorker.swift */; };
+		C28900F52AC5536A003C2F1A /* VehicleGetDocumentRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F989FD85265F858500342895 /* VehicleGetDocumentRequest.swift */; };
+		C28900F62AC5536A003C2F1A /* DateTimeModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9075E7225DCB3FE004D4765 /* DateTimeModels.swift */; };
+		C28900F72AC5536A003C2F1A /* ModelCodeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F931492A25F76B1D004E5F7A /* ModelCodeRouter.swift */; };
+		C28900F82AC5536A003C2F1A /* LandingPageRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99DB1FA25C8003F0069F32E /* LandingPageRouter.swift */; };
+		C28900F92AC5536A003C2F1A /* ModelCodeNotFoundCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F931494E25F781D8004E5F7A /* ModelCodeNotFoundCell.swift */; };
+		C28900FA2AC5536A003C2F1A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F914454A25C7F94C00B09FB6 /* SceneDelegate.swift */; };
+		C28900FB2AC5536A003C2F1A /* SignatureInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E02E3B25D134EE0003CB9C /* SignatureInteractor.swift */; };
+		C28900FC2AC5536A003C2F1A /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F976293D2643C9E000E51903 /* LoginResponse.swift */; };
+		C28900FD2AC5536A003C2F1A /* DateTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9075E7325DCB3FE004D4765 /* DateTimeViewController.swift */; };
+		C28900FE2AC5536A003C2F1A /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93148FE25F71A3D004E5F7A /* UploadViewController.swift */; };
+		C28900FF2AC5536A003C2F1A /* StandardColorRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9BC5E532617171500CC0ED8 /* StandardColorRequest.swift */; };
+		C28901002AC5536A003C2F1A /* ImageStickerContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B889322A6A69B600ED3A60 /* ImageStickerContainerView.swift */; };
+		C28901012AC5536A003C2F1A /* EngineCheckRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94A041E25DA39C400C8EC4C /* EngineCheckRouter.swift */; };
+		C28901022AC5536A003C2F1A /* FuelDeliveryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE53400D268452DD006D0AC6 /* FuelDeliveryModel.swift */; };
+		C28901032AC5536A003C2F1A /* SignatureModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E02E3925D134EE0003CB9C /* SignatureModels.swift */; };
+		C28901042AC5536A003C2F1A /* ImageViewerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE20497326BA8C020073A528 /* ImageViewerPresenter.swift */; };
+		C28901052AC5536A003C2F1A /* LoginWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91445A425C7FB8100B09FB6 /* LoginWorker.swift */; };
+		C28901062AC5536A003C2F1A /* BookInMotorcycle1Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE20496B26BA4A510073A528 /* BookInMotorcycle1Interactor.swift */; };
+		C28901072AC5536A003C2F1A /* Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B889532A6A69D400ED3A60 /* Constraint.swift */; };
+		C28901082AC5536A003C2F1A /* EngineType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F965DF4A260C28FB00CE91E7 /* EngineType.swift */; };
+		C28901092AC5536A003C2F1A /* SummaryCarModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D7CD8025CBC9F4003E049B /* SummaryCarModels.swift */; };
+		C289010A2AC5536A003C2F1A /* InspectionListModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F957B80825CA3C5600B8FB3C /* InspectionListModels.swift */; };
+		C289010B2AC5536A003C2F1A /* DriveModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE53400326844FC4006D0AC6 /* DriveModel.swift */; };
+		C289010C2AC5536A003C2F1A /* iOSDropDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96D25CF25D397D500A274FF /* iOSDropDown.swift */; };
+		C289010D2AC5536A003C2F1A /* ConstraintInsetTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B889412A6A69D400ED3A60 /* ConstraintInsetTarget.swift */; };
+		C289010E2AC5536A003C2F1A /* GradeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90BAA7426328C6500D5C3FB /* GradeRequest.swift */; };
+		C289010F2AC5536A003C2F1A /* UILabel+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0CBFD62664CE8B00A31068 /* UILabel+extension.swift */; };
+		C28901102AC5536A003C2F1A /* EngineCarModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96F53C625D0E04000317ED0 /* EngineCarModels.swift */; };
+		C28901112AC5536A003C2F1A /* SpareType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F965DF47260C28FB00CE91E7 /* SpareType.swift */; };
+		C28901122AC5536A003C2F1A /* KeyChainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97629532643D2FD00E51903 /* KeyChainService.swift */; };
+		C28901132AC5536A003C2F1A /* AirCheckModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94A046A25DA3A2100C8EC4C /* AirCheckModels.swift */; };
+		C28901142AC5536A003C2F1A /* ConstraintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B889472A6A69D400ED3A60 /* ConstraintView.swift */; };
+		C28901152AC5536A003C2F1A /* PDFPreviewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F995839D25DF9A77005DD029 /* PDFPreviewPresenter.swift */; };
+		C28901162AC5536A003C2F1A /* ExternalCarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96F539A25D0E01900317ED0 /* ExternalCarViewController.swift */; };
+		C28901172AC5536A003C2F1A /* LayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B889562A6A69D400ED3A60 /* LayoutConstraint.swift */; };
+		C28901182AC5536A003C2F1A /* LeftAlignedCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93F2A7925EF8626003BEB60 /* LeftAlignedCollectionViewFlowLayout.swift */; };
+		C28901192AC5536A003C2F1A /* DateTimePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9075E6F25DCB3FE004D4765 /* DateTimePresenter.swift */; };
+		C289011A2AC5536A003C2F1A /* SteerWheelCheckModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94A044C25DA3A0300C8EC4C /* SteerWheelCheckModels.swift */; };
+		C289011B2AC5536A003C2F1A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91445A725C7FB8100B09FB6 /* LoginViewController.swift */; };
+		C289011C2AC5536A003C2F1A /* ModelCodeNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE53400026843A45006D0AC6 /* ModelCodeNavViewController.swift */; };
+		C289011D2AC5536A003C2F1A /* DataSourceCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93F2A5D25EF405A003BEB60 /* DataSourceCollectionView.swift */; };
+		C289011E2AC5536A003C2F1A /* PDFPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99583A125DF9A77005DD029 /* PDFPreviewViewController.swift */; };
+		C289011F2AC5536A003C2F1A /* UnderCarCheckInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94A043025DA39D800C8EC4C /* UnderCarCheckInteractor.swift */; };
+		C28901202AC5536A003C2F1A /* InspectionListWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F957B80625CA3C5600B8FB3C /* InspectionListWorker.swift */; };
+		C28901212AC5536A003C2F1A /* BrakeCheckRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94A045A25DA3A1300C8EC4C /* BrakeCheckRouter.swift */; };
+		C28901222AC5536A003C2F1A /* Int+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96D25EC25D3AB1900A274FF /* Int+extension.swift */; };
+		C28901232AC5536A003C2F1A /* DateTimeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9075E7125DCB3FE004D4765 /* DateTimeRouter.swift */; };
+		C28901242AC5536A003C2F1A /* CabinCarWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96F53B525D0E03400317ED0 /* CabinCarWorker.swift */; };
+		C28901252AC5536A003C2F1A /* SignatureWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9E02E3725D134EE0003CB9C /* SignatureWorker.swift */; };
+		C28901262AC5536A003C2F1A /* CheckCarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D7CD4125CBA7FE003E049B /* CheckCarViewController.swift */; };
+		C28901272AC5536A003C2F1A /* ReceiverCarModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96F537B25D0DFF300317ED0 /* ReceiverCarModels.swift */; };
+		C28901282AC5536A003C2F1A /* ReceiverCarRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96F537A25D0DFF300317ED0 /* ReceiverCarRouter.swift */; };
+		C28901292AC5536A003C2F1A /* BodyCheckRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94A040C25DA398E00C8EC4C /* BodyCheckRouter.swift */; };
+		C289012A2AC5536A003C2F1A /* ConstraintLayoutSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B889492A6A69D400ED3A60 /* ConstraintLayoutSupport.swift */; };
+		C289012B2AC5536A003C2F1A /* InspectionImageUploadService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F924DD0426390C0B002E4B90 /* InspectionImageUploadService.swift */; };
+		C289012C2AC5536A003C2F1A /* ImageViewerWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE20497426BA8C020073A528 /* ImageViewerWorker.swift */; };
+		C289012D2AC5536A003C2F1A /* PickUpCarPDFWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F961118A2611859F0083A191 /* PickUpCarPDFWorker.swift */; };
+		C289012E2AC5536A003C2F1A /* InspectionMotorBikeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1BCF6270FF0CA0079252C /* InspectionMotorBikeModel.swift */; };
+		C289012F2AC5536A003C2F1A /* ExternalCarWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96F539725D0E01900317ED0 /* ExternalCarWorker.swift */; };
+		C28901302AC5536A003C2F1A /* CheckBoxUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99A7C9E25D28111004225CC /* CheckBoxUIButton.swift */; };
+		C28901312AC5536A003C2F1A /* ItemPendingListWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F957B82C25CA49A100B8FB3C /* ItemPendingListWorker.swift */; };
+		C28901322AC5536A003C2F1A /* InspectionMotorBikeDetailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1BCFA270FFE7E0079252C /* InspectionMotorBikeDetailService.swift */; };
+		C28901332AC5536A003C2F1A /* ItemPendingListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F957B83025CA49A100B8FB3C /* ItemPendingListInteractor.swift */; };
+		C28901342AC5536A003C2F1A /* ConstraintLayoutGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B889482A6A69D400ED3A60 /* ConstraintLayoutGuide.swift */; };
+		C28901352AC5536A003C2F1A /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A46FAF25CAAADE00D3732E /* DetailViewController.swift */; };
+		C28901362AC5536A003C2F1A /* SellerByCodeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94924CD2615B5B000E60E17 /* SellerByCodeRequest.swift */; };
+		C28901372AC5536A003C2F1A /* GradeCarRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F986435025FA1509004EAB2F /* GradeCarRouter.swift */; };
+		C28901382AC5536A003C2F1A /* BodyCheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94A040E25DA398E00C8EC4C /* BodyCheckViewController.swift */; };
+		C28901392AC5536A003C2F1A /* SparePartsCarInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96F53AA25D0E02700317ED0 /* SparePartsCarInteractor.swift */; };
+		C289013A2AC5536A003C2F1A /* ItemAllListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F957B81D25CA495A00B8FB3C /* ItemAllListRouter.swift */; };
+		C289013B2AC5536A003C2F1A /* FuelDeliveryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE53400F2684538E006D0AC6 /* FuelDeliveryService.swift */; };
+		C289013C2AC5536A003C2F1A /* LandingPageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99DB1FD25C8003F0069F32E /* LandingPageInteractor.swift */; };
+		C289013D2AC5536A003C2F1A /* CheckCarInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D7CD4225CBA7FE003E049B /* CheckCarInteractor.swift */; };
+		C289013E2AC5536A003C2F1A /* BookInDetailRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94924D32615C54F00E60E17 /* BookInDetailRequest.swift */; };
+		C289013F2AC5536A003C2F1A /* SellCateResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB11A5826817CC900CAEE1C /* SellCateResponse.swift */; };
+		C28901402AC5536A003C2F1A /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9192DEE25F0732900297E1F /* LoadingView.swift */; };
+		C28901412AC5536A003C2F1A /* SearchByPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F957B84025CA5BB400B8FB3C /* SearchByPresenter.swift */; };
+		C28901422AC5536A003C2F1A /* VehicleDocumentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99E9DBF265B755400CF6435 /* VehicleDocumentService.swift */; };
+		C28901432AC5536A003C2F1A /* GearCheckWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94A043B25DA39E900C8EC4C /* GearCheckWorker.swift */; };
+		C28901442AC5536A003C2F1A /* LandingPageWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99DB1F925C8003F0069F32E /* LandingPageWorker.swift */; };
+		C28901452AC5536A003C2F1A /* MotorcycleCheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE95D5B826F8444300A1538F /* MotorcycleCheckViewController.swift */; };
+		C28901462AC5536A003C2F1A /* ExternalCarRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96F539825D0E01900317ED0 /* ExternalCarRouter.swift */; };
+		C28901472AC5536A003C2F1A /* FuelTypeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE534014268459A4006D0AC6 /* FuelTypeService.swift */; };
+		C28901482AC5536A003C2F1A /* ElectronicDeviceCheckWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94A048625DA3A3F00C8EC4C /* ElectronicDeviceCheckWorker.swift */; };
+		C28901492AC5536A003C2F1A /* BookInMotorcycle1Worker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE20496726BA4A510073A528 /* BookInMotorcycle1Worker.swift */; };
+		C289014A2AC5536A003C2F1A /* AirCheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94A046B25DA3A2100C8EC4C /* AirCheckViewController.swift */; };
+		C289014B2AC5536A003C2F1A /* SellCateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB11A5A26817D6400CAEE1C /* SellCateService.swift */; };
+		C289014C2AC5536A003C2F1A /* GearBoxModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE534009268451E8006D0AC6 /* GearBoxModel.swift */; };
+		C289014D2AC5536A003C2F1A /* InspectionImageRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F924DCD6263909C1002E4B90 /* InspectionImageRequest.swift */; };
+		C289014E2AC5536A003C2F1A /* InspectionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90BA8CD262FBEBF00D5C3FB /* InspectionService.swift */; };
+		C289014F2AC5536A003C2F1A /* SelectInspectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99DB24B25C8F26A0069F32E /* SelectInspectionViewController.swift */; };
+		C28901502AC5536A003C2F1A /* SummaryCarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D7CD8125CBC9F4003E049B /* SummaryCarViewController.swift */; };
+		C28901512AC5536A003C2F1A /* LandingPagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99DB1F825C8003F0069F32E /* LandingPagePresenter.swift */; };
+		C28901522AC5536A003C2F1A /* SearchModelCodeTemplateByDPService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE534025268571B4006D0AC6 /* SearchModelCodeTemplateByDPService.swift */; };
+		C28901532AC5536A003C2F1A /* EngineCheckInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94A042125DA39C400C8EC4C /* EngineCheckInteractor.swift */; };
+		C28901542AC5536A003C2F1A /* InspectionMotorBikeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1BCF8270FF9D50079252C /* InspectionMotorBikeService.swift */; };
+		C28901552AC5536A003C2F1A /* ItemPendingListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F957B82D25CA49A100B8FB3C /* ItemPendingListRouter.swift */; };
+		C28901562AC5536A003C2F1A /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A46FAB25CAAADE00D3732E /* DetailPresenter.swift */; };
+		C28901572AC5536A003C2F1A /* BookInPendingRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F976295E2643E5D500E51903 /* BookInPendingRequest.swift */; };
+		C28901592AC5536A003C2F1A /* Pods_Inspection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF5A5BE48DF744DDCA6FF8D6 /* Pods_Inspection.framework */; };
+		C289015B2AC5536A003C2F1A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F98BFDD7264B701F0072E05B /* GoogleService-Info.plist */; };
+		C289015C2AC5536A003C2F1A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F914455325C7F95000B09FB6 /* LaunchScreen.storyboard */; };
+		C289015D2AC5536A003C2F1A /* PDF.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F99583AF25DF9AD5005DD029 /* PDF.storyboard */; };
+		C289015E2AC5536A003C2F1A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C2AEDD082A81385D00BAC131 /* Localizable.strings */; };
+		C289015F2AC5536A003C2F1A /* QRCodeReading.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9192E0625F08C9900297E1F /* QRCodeReading.storyboard */; };
+		C28901602AC5536A003C2F1A /* CustomProgressView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F97F595925FB61FF001D159F /* CustomProgressView.xib */; };
+		C28901612AC5536A003C2F1A /* PickUpCar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9D7CD2425CBA344003E049B /* PickUpCar.storyboard */; };
+		C28901622AC5536A003C2F1A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F914455125C7F95000B09FB6 /* Assets.xcassets */; };
+		C28901632AC5536A003C2F1A /* PhotoAndResultCar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9D7CD6125CBA9B3003E049B /* PhotoAndResultCar.storyboard */; };
+		C28901642AC5536A003C2F1A /* ModelCode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F931493A25F76BB6004E5F7A /* ModelCode.storyboard */; };
+		C28901652AC5536A003C2F1A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F914454E25C7F94C00B09FB6 /* Main.storyboard */; };
+		C28901662AC5536A003C2F1A /* DateTime.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9075E6925DCB35D004D4765 /* DateTime.storyboard */; };
+		C28901672AC5536A003C2F1A /* InspectionRate.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F931654625E7376000E0F8CD /* InspectionRate.storyboard */; };
+		C28901682AC5536A003C2F1A /* CheckCar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9D7CD4C25CBA822003E049B /* CheckCar.storyboard */; };
+		C28901702AC55452003C2F1A /* Staging-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C289016F2AC55452003C2F1A /* Staging-Info.plist */; };
+		C28901722AC555C9003C2F1A /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28901712AC555C9003C2F1A /* AppConfig.swift */; };
+		C28901732AC555C9003C2F1A /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = C28901712AC555C9003C2F1A /* AppConfig.swift */; };
+		C289FF8C2AC5536A003C2F1A /* MotorBikePDFWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEBD93012702E16500E3F2C2 /* MotorBikePDFWorker.swift */; };
+		C289FF8D2AC5536A003C2F1A /* InspectionDetailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90BA90F262FF84600D5C3FB /* InspectionDetailService.swift */; };
+		C289FF8E2AC5536A003C2F1A /* SellerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93148B825F1C3EF004E5F7A /* SellerModel.swift */; };
+		C289FF8F2AC5536A003C2F1A /* AboutCarInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96F538C25D0E00400317ED0 /* AboutCarInteractor.swift */; };
+		C289FF902AC5536A003C2F1A /* SearchModelCodeTempleteByCHService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE53401D268478B1006D0AC6 /* SearchModelCodeTempleteByCHService.swift */; };
+		C289FF912AC5536A003C2F1A /* ConstraintView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B889512A6A69D400ED3A60 /* ConstraintView+Extensions.swift */; };
+		C289FF922AC5536A003C2F1A /* ReadingQRModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9192DFA25F08C1300297E1F /* ReadingQRModels.swift */; };
+		C289FF932AC5536A003C2F1A /* SummaryCarWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D7CD7E25CBC9F4003E049B /* SummaryCarWorker.swift */; };
+		C289FF942AC5536A003C2F1A /* ElectronicDeviceCheckModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94A048825DA3A3F00C8EC4C /* ElectronicDeviceCheckModels.swift */; };
+		C289FF952AC5536A003C2F1A /* GaugeCheckWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94A047725DA3A3000C8EC4C /* GaugeCheckWorker.swift */; };
+		C289FF962AC5536A003C2F1A /* BookInDetailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94924D82615C5C700E60E17 /* BookInDetailService.swift */; };
+		C289FF972AC5536A003C2F1A /* UnderCarCheckModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94A042E25DA39D800C8EC4C /* UnderCarCheckModels.swift */; };
+		C289FF982AC5536A003C2F1A /* RadioGroup+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99E9DB526565CDF00CF6435 /* RadioGroup+extension.swift */; };
+		C289FF992AC5536A003C2F1A /* ProvinceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DBA41125FF192A00EE124F /* ProvinceModel.swift */; };
+		C289FF9A2AC5536A003C2F1A /* PhotoCarInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D7CD5725CBA984003E049B /* PhotoCarInteractor.swift */; };
+		C289FF9B2AC5536A003C2F1A /* ItemAllListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F957B82025CA495A00B8FB3C /* ItemAllListInteractor.swift */; };
+		C289FF9C2AC5536A003C2F1A /* MakeVehicleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A7C2A726536F310067D7C5 /* MakeVehicleService.swift */; };
+		C289FF9D2AC5536A003C2F1A /* DamageWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0CBFDC266DC8B700A31068 /* DamageWorker.swift */; };
+		C289FF9E2AC5536A003C2F1A /* ConstraintRelatableTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B889552A6A69D400ED3A60 /* ConstraintRelatableTarget.swift */; };
+		C289FF9F2AC5536A003C2F1A /* InspectionListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F957B80A25CA3C5600B8FB3C /* InspectionListInteractor.swift */; };
+		C289FFA02AC5536A003C2F1A /* GaugeCheckPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94A047625DA3A3000C8EC4C /* GaugeCheckPresenter.swift */; };
+		C289FFA12AC5536A003C2F1A /* VehicleGetDocumentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F989FD83265F853C00342895 /* VehicleGetDocumentService.swift */; };
+		C289FFA22AC5536A003C2F1A /* CheckCarModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D7CD4025CBA7FE003E049B /* CheckCarModels.swift */; };
+		C289FFA32AC5536A003C2F1A /* UIView+nib.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99DB21125C8077F0069F32E /* UIView+nib.swift */; };
+		C289FFA42AC5536A003C2F1A /* AirCheckInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94A046C25DA3A2100C8EC4C /* AirCheckInteractor.swift */; };
+		C289FFA52AC5536A003C2F1A /* BodyTypeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DBA4602600B1AD00EE124F /* BodyTypeService.swift */; };
+		C289FFA62AC5536A003C2F1A /* BookInMotorcycle2Worker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE20498126D348E50073A528 /* BookInMotorcycle2Worker.swift */; };
+		C289FFA72AC5536A003C2F1A /* InspectionListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F957B80525CA3C5600B8FB3C /* InspectionListPresenter.swift */; };
+		C289FFA82AC5536A003C2F1A /* ReadingQRWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9192DF825F08C1300297E1F /* ReadingQRWorker.swift */; };
+		C289FFA92AC5536A003C2F1A /* ModelCodeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F931492D25F76B1D004E5F7A /* ModelCodeInteractor.swift */; };
+		C289FFAA2AC5536A003C2F1A /* ReadingQRRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9192DF925F08C1300297E1F /* ReadingQRRouter.swift */; };
+		C289FFAB2AC5536A003C2F1A /* ReceiverCarModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9075E9525DCEA7B004D4765 /* ReceiverCarModel.swift */; };
+		C289FFAC2AC5536A003C2F1A /* SteerWheelCheckWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94A044A25DA3A0300C8EC4C /* SteerWheelCheckWorker.swift */; };
+		C289FFAD2AC5536A003C2F1A /* CabinCarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96F53B825D0E03400317ED0 /* CabinCarViewController.swift */; };
+		C289FFAE2AC5536A003C2F1A /* GradeCarInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F986435325FA1509004EAB2F /* GradeCarInteractor.swift */; };
+		C289FFAF2AC5536A003C2F1A /* DetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A46FB025CAAADE00D3732E /* DetailInteractor.swift */; };
+		C289FFB02AC5536A003C2F1A /* InspectionDetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90BA915262FFE7000D5C3FB /* InspectionDetailResponse.swift */; };
+		C289FFB12AC5536A003C2F1A /* MotorbikeInspecPDFWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1BCEA270BF9D30079252C /* MotorbikeInspecPDFWorker.swift */; };
+		C289FFB22AC5536A003C2F1A /* ModelCodeWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F931492925F76B1D004E5F7A /* ModelCodeWorker.swift */; };
+		C289FFB32AC5536A003C2F1A /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93F2A6225EF5D91003BEB60 /* PhotoCell.swift */; };
+		C289FFB42AC5536A003C2F1A /* SearchModelCodeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE53401B26846CFE006D0AC6 /* SearchModelCodeRequest.swift */; };
+		C289FFB52AC5536A003C2F1A /* ConstraintConstantTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B8894B2A6A69D400ED3A60 /* ConstraintConstantTarget.swift */; };
+		C289FFB62AC5536A003C2F1A /* ConstraintOffsetTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B8894C2A6A69D400ED3A60 /* ConstraintOffsetTarget.swift */; };
+		C289FFB72AC5536A003C2F1A /* UploadWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F93148FB25F71A3D004E5F7A /* UploadWorker.swift */; };
+		C289FFB82AC5536A003C2F1A /* PhotoCarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D7CD5625CBA984003E049B /* PhotoCarViewController.swift */; };
+		C289FFB92AC5536A003C2F1A /* SearchByWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F957B84125CA5BB400B8FB3C /* SearchByWorker.swift */; };
+		C289FFBA2AC5536A003C2F1A /* EngineCarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96F53C325D0E04000317ED0 /* EngineCarPresenter.swift */; };
+		C289FFBB2AC5536A003C2F1A /* GearBoxService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE53400B26845295006D0AC6 /* GearBoxService.swift */; };
+		C289FFBC2AC5536A003C2F1A /* MotorcycleCheckInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE95D5B926F8444300A1538F /* MotorcycleCheckInteractor.swift */; };
+		C289FFBD2AC5536A003C2F1A /* JatoVaraintsModelRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE53403026859F54006D0AC6 /* JatoVaraintsModelRequest.swift */; };
+		C289FFBE2AC5536A003C2F1A /* ExternalType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F965DF48260C28FB00CE91E7 /* ExternalType.swift */; };
+		C289FFBF2AC5536A003C2F1A /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9ABEF8125EE449F00B48D7D /* ImagePickerView.swift */; };
+		C289FFC02AC5536A003C2F1A /* DetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A46FAD25CAAADE00D3732E /* DetailRouter.swift */; };
+		C289FFC12AC5536A003C2F1A /* PlaceInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A5AC1025C90C2D00952FE5 /* PlaceInteractor.swift */; };
+		C289FFC22AC5536A003C2F1A /* AboutCarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96F538725D0E00400317ED0 /* AboutCarPresenter.swift */; };
+		C289FFC32AC5536A003C2F1A /* CodeModelDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F931494425F778D4004E5F7A /* CodeModelDataSource.swift */; };
+		C289FFC42AC5536A003C2F1A /* CheckCarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D7CD3D25CBA7FE003E049B /* CheckCarPresenter.swift */; };
+		C289FFC52AC5536A003C2F1A /* SparePartsCarRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96F53A725D0E02700317ED0 /* SparePartsCarRouter.swift */; };
+		C289FFC62AC5536A003C2F1A /* LandingPageModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99DB1FB25C8003F0069F32E /* LandingPageModels.swift */; };
+		C289FFC72AC5536A003C2F1A /* PlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A5AC0F25C90C2D00952FE5 /* PlaceViewController.swift */; };
+		C289FFC82AC5536A003C2F1A /* PickUpCarWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D7CD2B25CBA51D003E049B /* PickUpCarWorker.swift */; };
+		C289FFC92AC5536A003C2F1A /* ConstraintMakerRelatable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B889442A6A69D400ED3A60 /* ConstraintMakerRelatable+Extensions.swift */; };
+		C289FFCA2AC5536A003C2F1A /* JatoCarModelService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE53402E26859F13006D0AC6 /* JatoCarModelService.swift */; };
+		C289FFCB2AC5536A003C2F1A /* GaugeCheckRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94A047825DA3A3000C8EC4C /* GaugeCheckRouter.swift */; };
+		C289FFCC2AC5536A003C2F1A /* DamageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0CBFE0266DC8B700A31068 /* DamageInteractor.swift */; };
+		C289FFCD2AC5536A003C2F1A /* InspectionImageListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F924DEB4263A8EB8002E4B90 /* InspectionImageListResponse.swift */; };
+		C289FFCE2AC5536A003C2F1A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F914454C25C7F94C00B09FB6 /* ViewController.swift */; };
+		C289FFCF2AC5536A003C2F1A /* CabinCarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96F53B425D0E03400317ED0 /* CabinCarPresenter.swift */; };
+		C289FFD02AC5536A003C2F1A /* GearCheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94A043E25DA39E900C8EC4C /* GearCheckViewController.swift */; };
+		C289FFD12AC5536A003C2F1A /* AboutCarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96F538B25D0E00400317ED0 /* AboutCarViewController.swift */; };
+		C289FFD22AC5536A003C2F1A /* BookInListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AAFA3C261B13D700A88C14 /* BookInListResponse.swift */; };
+		C289FFD32AC5536A003C2F1A /* AboutCarModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96F538A25D0E00400317ED0 /* AboutCarModels.swift */; };
+		C289FFD42AC5536A003C2F1A /* UpdateModelCodeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE599CB5268C189E0080C970 /* UpdateModelCodeService.swift */; };
+		C289FFD52AC5536A003C2F1A /* BookInPendingListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F97629592643E59800E51903 /* BookInPendingListService.swift */; };
+		C289FFD62AC5536A003C2F1A /* ConstraintDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B889372A6A69D400ED3A60 /* ConstraintDescription.swift */; };
+		C289FFD72AC5536A003C2F1A /* InspectionImageDeleteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F924DDDB2639682F002E4B90 /* InspectionImageDeleteService.swift */; };
+		C289FFD82AC5536A003C2F1A /* BookInMotorBikeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF1BCF1270E948C0079252C /* BookInMotorBikeService.swift */; };
+		C289FFD92AC5536A003C2F1A /* BodyCheckInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94A040F25DA398E00C8EC4C /* BodyCheckInteractor.swift */; };
+		C289FFDA2AC5536A003C2F1A /* LoginModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F91445A625C7FB8100B09FB6 /* LoginModels.swift */; };
+		C289FFDB2AC5536A003C2F1A /* BaseApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = F914458E25C7FA5400B09FB6 /* BaseApi.swift */; };
+		C289FFDC2AC5536A003C2F1A /* GradeCarModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F986435125FA1509004EAB2F /* GradeCarModels.swift */; };
+		C289FFDD2AC5536A003C2F1A /* CreateModelCodeWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB11A5D2682E79000CAEE1C /* CreateModelCodeWorker.swift */; };
+		C289FFDE2AC5536A003C2F1A /* GradeCarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F986435225FA1509004EAB2F /* GradeCarViewController.swift */; };
+		C289FFDF2AC5536A003C2F1A /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D376E625CCE63400FADBEA /* GradientView.swift */; };
+		C289FFE02AC5536A003C2F1A /* StorageLocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DBA46B2600BEA400EE124F /* StorageLocationService.swift */; };
+		C289FFE12AC5536A003C2F1A /* Bundle+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB11A55267C970E00CAEE1C /* Bundle+extension.swift */; };
+		C289FFE22AC5536A003C2F1A /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99DB23425C82DD00069F32E /* UITextFieldExtension.swift */; };
+		C289FFE32AC5536A003C2F1A /* MotorcycleCheckRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE95D5B626F8444300A1538F /* MotorcycleCheckRouter.swift */; };
+		C289FFE42AC5536A003C2F1A /* ElectronicDeviceCheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94A048925DA3A3F00C8EC4C /* ElectronicDeviceCheckViewController.swift */; };
+		C289FFE52AC5536A003C2F1A /* CreateModelCodeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB11A5E2682E79000CAEE1C /* CreateModelCodeRouter.swift */; };
+		C289FFE62AC5536A003C2F1A /* AboutCarWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96F538825D0E00400317ED0 /* AboutCarWorker.swift */; };
+		C289FFE72AC5536A003C2F1A /* BookInType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F965DF46260C28FB00CE91E7 /* BookInType.swift */; };
+		C289FFE82AC5536A003C2F1A /* PickUpCarRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9D7CD2C25CBA51D003E049B /* PickUpCarRouter.swift */; };
+		C289FFE92AC5536A003C2F1A /* InspectionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90BA8C8262FB95700D5C3FB /* InspectionRequest.swift */; };
+		C289FFEA2AC5536A003C2F1A /* EngineCarInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96F53C825D0E04000317ED0 /* EngineCarInteractor.swift */; };
+		C289FFEB2AC5536A003C2F1A /* GearCheckRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94A043C25DA39E900C8EC4C /* GearCheckRouter.swift */; };
+		C289FFEC2AC5536A003C2F1A /* StandardColorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DBA3F925FF04E500EE124F /* StandardColorModel.swift */; };
+		C289FFED2AC5536A003C2F1A /* SearchByModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F957B84325CA5BB400B8FB3C /* SearchByModels.swift */; };
+		C289FFEE2AC5536A003C2F1A /* BookInMotorcycle2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE20498426D348E50073A528 /* BookInMotorcycle2ViewController.swift */; };
+		C289FFEF2AC5536A003C2F1A /* InspectionUpdateService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90BA93526301F2E00D5C3FB /* InspectionUpdateService.swift */; };
+		C289FFF02AC5536A003C2F1A /* DetailWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9A46FAC25CAAADE00D3732E /* DetailWorker.swift */; };
+		C289FFF12AC5536A003C2F1A /* LayoutConstraintItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B889362A6A69D400ED3A60 /* LayoutConstraintItem.swift */; };
+		C289FFF22AC5536A003C2F1A /* ReceiverCarWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96F537925D0DFF300317ED0 /* ReceiverCarWorker.swift */; };
+		C289FFF32AC5536A003C2F1A /* SearchByInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F957B84525CA5BB400B8FB3C /* SearchByInteractor.swift */; };
+		C289FFF42AC5536A003C2F1A /* UpdateVehicleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0CBFD826676C5D00A31068 /* UpdateVehicleService.swift */; };
+		C289FFF52AC5536A003C2F1A /* CreateModelCodePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB11A5C2682E79000CAEE1C /* CreateModelCodePresenter.swift */; };
+		C289FFF62AC5536A003C2F1A /* BrakeCheckPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94A045825DA3A1300C8EC4C /* BrakeCheckPresenter.swift */; };
+		C289FFF72AC5536A003C2F1A /* InspectionImageListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F924DD5626394DDE002E4B90 /* InspectionImageListService.swift */; };
+		C289FFF82AC5536A003C2F1A /* SelectInspectionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F99DB24925C8F26A0069F32E /* SelectInspectionRouter.swift */; };
+		C289FFF92AC5536A003C2F1A /* GradeDetailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F90BAA532632842900D5C3FB /* GradeDetailService.swift */; };
+		C289FFFA2AC5536A003C2F1A /* ImageUploadService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F924DE43263A7A03002E4B90 /* ImageUploadService.swift */; };
+		C289FFFB2AC5536A003C2F1A /* UnderCarCheckWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94A042C25DA39D800C8EC4C /* UnderCarCheckWorker.swift */; };
+		C289FFFC2AC5536A003C2F1A /* ConstraintAttributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B889392A6A69D400ED3A60 /* ConstraintAttributes.swift */; };
+		C289FFFD2AC5536A003C2F1A /* ItemAllListModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F957B81E25CA495A00B8FB3C /* ItemAllListModels.swift */; };
+		C289FFFE2AC5536A003C2F1A /* ConstraintViewDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B8893A2A6A69D400ED3A60 /* ConstraintViewDSL.swift */; };
+		C289FFFF2AC5536A003C2F1A /* InspectionListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F957B80725CA3C5600B8FB3C /* InspectionListRouter.swift */; };
 		C2AEDD0A2A81385D00BAC131 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C2AEDD082A81385D00BAC131 /* Localizable.strings */; };
 		C2B889332A6A69B600ED3A60 /* ImageStickerContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B889322A6A69B600ED3A60 /* ImageStickerContainerView.swift */; };
 		C2B8895B2A6A69D400ED3A60 /* ConstraintMultiplierTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B889352A6A69D400ED3A60 /* ConstraintMultiplierTarget.swift */; };
@@ -513,6 +991,9 @@
 		55C98B93E31756AF096E1F58 /* Pods-Inspection.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Inspection.release.xcconfig"; path = "Target Support Files/Pods-Inspection/Pods-Inspection.release.xcconfig"; sourceTree = "<group>"; };
 		58D757F7839D6F069EBBF157 /* Pods-Inspection-InspectionUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Inspection-InspectionUITests.release.xcconfig"; path = "Target Support Files/Pods-Inspection-InspectionUITests/Pods-Inspection-InspectionUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C25786352A94A26100F295C4 /* Userdefault+Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Userdefault+Helper.swift"; sourceTree = "<group>"; };
+		C289016D2AC5536A003C2F1A /* InspectionStaging.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InspectionStaging.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C289016F2AC55452003C2F1A /* Staging-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Staging-Info.plist"; sourceTree = "<group>"; };
+		C28901712AC555C9003C2F1A /* AppConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
 		C2AEDD092A81385D00BAC131 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C2AEDD0B2A81397D00BAC131 /* th */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = th; path = th.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C2B889322A6A69B600ED3A60 /* ImageStickerContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageStickerContainerView.swift; sourceTree = "<group>"; };
@@ -1003,6 +1484,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		C28901582AC5536A003C2F1A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C28901592AC5536A003C2F1A /* Pods_Inspection.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F914454225C7F94C00B09FB6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -1398,6 +1887,7 @@
 				F914454525C7F94C00B09FB6 /* Inspection.app */,
 				F914455B25C7F95100B09FB6 /* InspectionTests.xctest */,
 				F914456625C7F95100B09FB6 /* InspectionUITests.xctest */,
+				C289016D2AC5536A003C2F1A /* InspectionStaging.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1414,10 +1904,12 @@
 				F914454825C7F94C00B09FB6 /* AppDelegate.swift */,
 				F914454A25C7F94C00B09FB6 /* SceneDelegate.swift */,
 				F914454C25C7F94C00B09FB6 /* ViewController.swift */,
+				C28901712AC555C9003C2F1A /* AppConfig.swift */,
 				F914454E25C7F94C00B09FB6 /* Main.storyboard */,
 				F914455125C7F95000B09FB6 /* Assets.xcassets */,
 				F914455325C7F95000B09FB6 /* LaunchScreen.storyboard */,
 				F914455625C7F95000B09FB6 /* Info.plist */,
+				C289016F2AC55452003C2F1A /* Staging-Info.plist */,
 				F99DB22C25C80ED80069F32E /* MainNavigationController.swift */,
 				F9D7CD2425CBA344003E049B /* PickUpCar.storyboard */,
 				F9D7CD4C25CBA822003E049B /* CheckCar.storyboard */,
@@ -2348,6 +2840,25 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		C289FF892AC5536A003C2F1A /* InspectionStaging */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C289016A2AC5536A003C2F1A /* Build configuration list for PBXNativeTarget "InspectionStaging" */;
+			buildPhases = (
+				C289FF8A2AC5536A003C2F1A /* [CP] Check Pods Manifest.lock */,
+				C289FF8B2AC5536A003C2F1A /* Sources */,
+				C28901582AC5536A003C2F1A /* Frameworks */,
+				C289015A2AC5536A003C2F1A /* Resources */,
+				C28901692AC5536A003C2F1A /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = InspectionStaging;
+			productName = Inspection;
+			productReference = C289016D2AC5536A003C2F1A /* InspectionStaging.app */;
+			productType = "com.apple.product-type.application";
+		};
 		F914454425C7F94C00B09FB6 /* Inspection */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = F914456F25C7F95100B09FB6 /* Build configuration list for PBXNativeTarget "Inspection" */;
@@ -2443,6 +2954,7 @@
 			projectRoot = "";
 			targets = (
 				F914454425C7F94C00B09FB6 /* Inspection */,
+				C289FF892AC5536A003C2F1A /* InspectionStaging */,
 				F914455A25C7F95100B09FB6 /* InspectionTests */,
 				F914456525C7F95100B09FB6 /* InspectionUITests */,
 			);
@@ -2450,10 +2962,32 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		C289015A2AC5536A003C2F1A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C289015B2AC5536A003C2F1A /* GoogleService-Info.plist in Resources */,
+				C289015C2AC5536A003C2F1A /* LaunchScreen.storyboard in Resources */,
+				C289015D2AC5536A003C2F1A /* PDF.storyboard in Resources */,
+				C289015E2AC5536A003C2F1A /* Localizable.strings in Resources */,
+				C289015F2AC5536A003C2F1A /* QRCodeReading.storyboard in Resources */,
+				C28901602AC5536A003C2F1A /* CustomProgressView.xib in Resources */,
+				C28901612AC5536A003C2F1A /* PickUpCar.storyboard in Resources */,
+				C28901622AC5536A003C2F1A /* Assets.xcassets in Resources */,
+				C28901632AC5536A003C2F1A /* PhotoAndResultCar.storyboard in Resources */,
+				C28901642AC5536A003C2F1A /* ModelCode.storyboard in Resources */,
+				C28901652AC5536A003C2F1A /* Main.storyboard in Resources */,
+				C28901662AC5536A003C2F1A /* DateTime.storyboard in Resources */,
+				C28901672AC5536A003C2F1A /* InspectionRate.storyboard in Resources */,
+				C28901682AC5536A003C2F1A /* CheckCar.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F914454325C7F94C00B09FB6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C28901702AC55452003C2F1A /* Staging-Info.plist in Resources */,
 				F98BFDD8264B701F0072E05B /* GoogleService-Info.plist in Resources */,
 				F914455525C7F95000B09FB6 /* LaunchScreen.storyboard in Resources */,
 				F99583B025DF9AD5005DD029 /* PDF.storyboard in Resources */,
@@ -2544,6 +3078,45 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Inspection-InspectionUITests/Pods-Inspection-InspectionUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		C28901692AC5536A003C2F1A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Inspection/Pods-Inspection-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Inspection/Pods-Inspection-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Inspection/Pods-Inspection-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C289FF8A2AC5536A003C2F1A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Inspection-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		C7EEC0C18314D4BBDA10807D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -2591,6 +3164,474 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		C289FF8B2AC5536A003C2F1A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C289FF8C2AC5536A003C2F1A /* MotorBikePDFWorker.swift in Sources */,
+				C289FF8D2AC5536A003C2F1A /* InspectionDetailService.swift in Sources */,
+				C289FF8E2AC5536A003C2F1A /* SellerModel.swift in Sources */,
+				C289FF8F2AC5536A003C2F1A /* AboutCarInteractor.swift in Sources */,
+				C289FF902AC5536A003C2F1A /* SearchModelCodeTempleteByCHService.swift in Sources */,
+				C289FF912AC5536A003C2F1A /* ConstraintView+Extensions.swift in Sources */,
+				C289FF922AC5536A003C2F1A /* ReadingQRModels.swift in Sources */,
+				C289FF932AC5536A003C2F1A /* SummaryCarWorker.swift in Sources */,
+				C289FF942AC5536A003C2F1A /* ElectronicDeviceCheckModels.swift in Sources */,
+				C289FF952AC5536A003C2F1A /* GaugeCheckWorker.swift in Sources */,
+				C289FF962AC5536A003C2F1A /* BookInDetailService.swift in Sources */,
+				C289FF972AC5536A003C2F1A /* UnderCarCheckModels.swift in Sources */,
+				C289FF982AC5536A003C2F1A /* RadioGroup+extension.swift in Sources */,
+				C289FF992AC5536A003C2F1A /* ProvinceModel.swift in Sources */,
+				C289FF9A2AC5536A003C2F1A /* PhotoCarInteractor.swift in Sources */,
+				C289FF9B2AC5536A003C2F1A /* ItemAllListInteractor.swift in Sources */,
+				C289FF9C2AC5536A003C2F1A /* MakeVehicleService.swift in Sources */,
+				C289FF9D2AC5536A003C2F1A /* DamageWorker.swift in Sources */,
+				C289FF9E2AC5536A003C2F1A /* ConstraintRelatableTarget.swift in Sources */,
+				C289FF9F2AC5536A003C2F1A /* InspectionListInteractor.swift in Sources */,
+				C289FFA02AC5536A003C2F1A /* GaugeCheckPresenter.swift in Sources */,
+				C289FFA12AC5536A003C2F1A /* VehicleGetDocumentService.swift in Sources */,
+				C289FFA22AC5536A003C2F1A /* CheckCarModels.swift in Sources */,
+				C289FFA32AC5536A003C2F1A /* UIView+nib.swift in Sources */,
+				C289FFA42AC5536A003C2F1A /* AirCheckInteractor.swift in Sources */,
+				C289FFA52AC5536A003C2F1A /* BodyTypeService.swift in Sources */,
+				C289FFA62AC5536A003C2F1A /* BookInMotorcycle2Worker.swift in Sources */,
+				C289FFA72AC5536A003C2F1A /* InspectionListPresenter.swift in Sources */,
+				C289FFA82AC5536A003C2F1A /* ReadingQRWorker.swift in Sources */,
+				C289FFA92AC5536A003C2F1A /* ModelCodeInteractor.swift in Sources */,
+				C289FFAA2AC5536A003C2F1A /* ReadingQRRouter.swift in Sources */,
+				C289FFAB2AC5536A003C2F1A /* ReceiverCarModel.swift in Sources */,
+				C289FFAC2AC5536A003C2F1A /* SteerWheelCheckWorker.swift in Sources */,
+				C289FFAD2AC5536A003C2F1A /* CabinCarViewController.swift in Sources */,
+				C289FFAE2AC5536A003C2F1A /* GradeCarInteractor.swift in Sources */,
+				C289FFAF2AC5536A003C2F1A /* DetailInteractor.swift in Sources */,
+				C289FFB02AC5536A003C2F1A /* InspectionDetailResponse.swift in Sources */,
+				C289FFB12AC5536A003C2F1A /* MotorbikeInspecPDFWorker.swift in Sources */,
+				C289FFB22AC5536A003C2F1A /* ModelCodeWorker.swift in Sources */,
+				C289FFB32AC5536A003C2F1A /* PhotoCell.swift in Sources */,
+				C289FFB42AC5536A003C2F1A /* SearchModelCodeRequest.swift in Sources */,
+				C289FFB52AC5536A003C2F1A /* ConstraintConstantTarget.swift in Sources */,
+				C289FFB62AC5536A003C2F1A /* ConstraintOffsetTarget.swift in Sources */,
+				C289FFB72AC5536A003C2F1A /* UploadWorker.swift in Sources */,
+				C289FFB82AC5536A003C2F1A /* PhotoCarViewController.swift in Sources */,
+				C289FFB92AC5536A003C2F1A /* SearchByWorker.swift in Sources */,
+				C289FFBA2AC5536A003C2F1A /* EngineCarPresenter.swift in Sources */,
+				C289FFBB2AC5536A003C2F1A /* GearBoxService.swift in Sources */,
+				C289FFBC2AC5536A003C2F1A /* MotorcycleCheckInteractor.swift in Sources */,
+				C289FFBD2AC5536A003C2F1A /* JatoVaraintsModelRequest.swift in Sources */,
+				C289FFBE2AC5536A003C2F1A /* ExternalType.swift in Sources */,
+				C289FFBF2AC5536A003C2F1A /* ImagePickerView.swift in Sources */,
+				C28901732AC555C9003C2F1A /* AppConfig.swift in Sources */,
+				C289FFC02AC5536A003C2F1A /* DetailRouter.swift in Sources */,
+				C289FFC12AC5536A003C2F1A /* PlaceInteractor.swift in Sources */,
+				C289FFC22AC5536A003C2F1A /* AboutCarPresenter.swift in Sources */,
+				C289FFC32AC5536A003C2F1A /* CodeModelDataSource.swift in Sources */,
+				C289FFC42AC5536A003C2F1A /* CheckCarPresenter.swift in Sources */,
+				C289FFC52AC5536A003C2F1A /* SparePartsCarRouter.swift in Sources */,
+				C289FFC62AC5536A003C2F1A /* LandingPageModels.swift in Sources */,
+				C289FFC72AC5536A003C2F1A /* PlaceViewController.swift in Sources */,
+				C289FFC82AC5536A003C2F1A /* PickUpCarWorker.swift in Sources */,
+				C289FFC92AC5536A003C2F1A /* ConstraintMakerRelatable+Extensions.swift in Sources */,
+				C289FFCA2AC5536A003C2F1A /* JatoCarModelService.swift in Sources */,
+				C289FFCB2AC5536A003C2F1A /* GaugeCheckRouter.swift in Sources */,
+				C289FFCC2AC5536A003C2F1A /* DamageInteractor.swift in Sources */,
+				C289FFCD2AC5536A003C2F1A /* InspectionImageListResponse.swift in Sources */,
+				C289FFCE2AC5536A003C2F1A /* ViewController.swift in Sources */,
+				C289FFCF2AC5536A003C2F1A /* CabinCarPresenter.swift in Sources */,
+				C289FFD02AC5536A003C2F1A /* GearCheckViewController.swift in Sources */,
+				C289FFD12AC5536A003C2F1A /* AboutCarViewController.swift in Sources */,
+				C289FFD22AC5536A003C2F1A /* BookInListResponse.swift in Sources */,
+				C289FFD32AC5536A003C2F1A /* AboutCarModels.swift in Sources */,
+				C289FFD42AC5536A003C2F1A /* UpdateModelCodeService.swift in Sources */,
+				C289FFD52AC5536A003C2F1A /* BookInPendingListService.swift in Sources */,
+				C289FFD62AC5536A003C2F1A /* ConstraintDescription.swift in Sources */,
+				C289FFD72AC5536A003C2F1A /* InspectionImageDeleteService.swift in Sources */,
+				C289FFD82AC5536A003C2F1A /* BookInMotorBikeService.swift in Sources */,
+				C289FFD92AC5536A003C2F1A /* BodyCheckInteractor.swift in Sources */,
+				C289FFDA2AC5536A003C2F1A /* LoginModels.swift in Sources */,
+				C289FFDB2AC5536A003C2F1A /* BaseApi.swift in Sources */,
+				C289FFDC2AC5536A003C2F1A /* GradeCarModels.swift in Sources */,
+				C289FFDD2AC5536A003C2F1A /* CreateModelCodeWorker.swift in Sources */,
+				C289FFDE2AC5536A003C2F1A /* GradeCarViewController.swift in Sources */,
+				C289FFDF2AC5536A003C2F1A /* GradientView.swift in Sources */,
+				C289FFE02AC5536A003C2F1A /* StorageLocationService.swift in Sources */,
+				C289FFE12AC5536A003C2F1A /* Bundle+extension.swift in Sources */,
+				C289FFE22AC5536A003C2F1A /* UITextFieldExtension.swift in Sources */,
+				C289FFE32AC5536A003C2F1A /* MotorcycleCheckRouter.swift in Sources */,
+				C289FFE42AC5536A003C2F1A /* ElectronicDeviceCheckViewController.swift in Sources */,
+				C289FFE52AC5536A003C2F1A /* CreateModelCodeRouter.swift in Sources */,
+				C289FFE62AC5536A003C2F1A /* AboutCarWorker.swift in Sources */,
+				C289FFE72AC5536A003C2F1A /* BookInType.swift in Sources */,
+				C289FFE82AC5536A003C2F1A /* PickUpCarRouter.swift in Sources */,
+				C289FFE92AC5536A003C2F1A /* InspectionRequest.swift in Sources */,
+				C289FFEA2AC5536A003C2F1A /* EngineCarInteractor.swift in Sources */,
+				C289FFEB2AC5536A003C2F1A /* GearCheckRouter.swift in Sources */,
+				C289FFEC2AC5536A003C2F1A /* StandardColorModel.swift in Sources */,
+				C289FFED2AC5536A003C2F1A /* SearchByModels.swift in Sources */,
+				C289FFEE2AC5536A003C2F1A /* BookInMotorcycle2ViewController.swift in Sources */,
+				C289FFEF2AC5536A003C2F1A /* InspectionUpdateService.swift in Sources */,
+				C289FFF02AC5536A003C2F1A /* DetailWorker.swift in Sources */,
+				C289FFF12AC5536A003C2F1A /* LayoutConstraintItem.swift in Sources */,
+				C289FFF22AC5536A003C2F1A /* ReceiverCarWorker.swift in Sources */,
+				C289FFF32AC5536A003C2F1A /* SearchByInteractor.swift in Sources */,
+				C289FFF42AC5536A003C2F1A /* UpdateVehicleService.swift in Sources */,
+				C289FFF52AC5536A003C2F1A /* CreateModelCodePresenter.swift in Sources */,
+				C289FFF62AC5536A003C2F1A /* BrakeCheckPresenter.swift in Sources */,
+				C289FFF72AC5536A003C2F1A /* InspectionImageListService.swift in Sources */,
+				C289FFF82AC5536A003C2F1A /* SelectInspectionRouter.swift in Sources */,
+				C289FFF92AC5536A003C2F1A /* GradeDetailService.swift in Sources */,
+				C289FFFA2AC5536A003C2F1A /* ImageUploadService.swift in Sources */,
+				C289FFFB2AC5536A003C2F1A /* UnderCarCheckWorker.swift in Sources */,
+				C289FFFC2AC5536A003C2F1A /* ConstraintAttributes.swift in Sources */,
+				C289FFFD2AC5536A003C2F1A /* ItemAllListModels.swift in Sources */,
+				C289FFFE2AC5536A003C2F1A /* ConstraintViewDSL.swift in Sources */,
+				C289FFFF2AC5536A003C2F1A /* InspectionListRouter.swift in Sources */,
+				C28900002AC5536A003C2F1A /* BrakeCheckViewController.swift in Sources */,
+				C28900012AC5536A003C2F1A /* ItemAllListViewController.swift in Sources */,
+				C28900022AC5536A003C2F1A /* Userdefault+Helper.swift in Sources */,
+				C28900032AC5536A003C2F1A /* ModelCodeModels.swift in Sources */,
+				C28900042AC5536A003C2F1A /* AirCheckPresenter.swift in Sources */,
+				C28900052AC5536A003C2F1A /* ConstraintPriorityTarget.swift in Sources */,
+				C28900062AC5536A003C2F1A /* MotorcycleCheckPresenter.swift in Sources */,
+				C28900072AC5536A003C2F1A /* SparePartsCarViewController.swift in Sources */,
+				C28900082AC5536A003C2F1A /* DriveService.swift in Sources */,
+				C28900092AC5536A003C2F1A /* ItemAllListWorker.swift in Sources */,
+				C289000A2AC5536A003C2F1A /* UnderCarCheckPresenter.swift in Sources */,
+				C289000B2AC5536A003C2F1A /* CabinCarInteractor.swift in Sources */,
+				C289000C2AC5536A003C2F1A /* ConstraintMaker.swift in Sources */,
+				C289000D2AC5536A003C2F1A /* CreateModelCodeRequest.swift in Sources */,
+				C289000E2AC5536A003C2F1A /* ExternalCarPresenter.swift in Sources */,
+				C289000F2AC5536A003C2F1A /* BookInMotorcycle1ViewController.swift in Sources */,
+				C28900102AC5536A003C2F1A /* UnderCarCheckRouter.swift in Sources */,
+				C28900112AC5536A003C2F1A /* ImageViewerViewController.swift in Sources */,
+				C28900122AC5536A003C2F1A /* SearchModelByCodeService.swift in Sources */,
+				C28900132AC5536A003C2F1A /* PlaceModels.swift in Sources */,
+				C28900142AC5536A003C2F1A /* EngineCheckModels.swift in Sources */,
+				C28900152AC5536A003C2F1A /* ModelCarService.swift in Sources */,
+				C28900162AC5536A003C2F1A /* Debugging.swift in Sources */,
+				C28900172AC5536A003C2F1A /* DamageViewController.swift in Sources */,
+				C28900182AC5536A003C2F1A /* ItemPendingListViewController.swift in Sources */,
+				C28900192AC5536A003C2F1A /* CreateModelCodeModels.swift in Sources */,
+				C289001A2AC5536A003C2F1A /* ConstraintMakerEditable.swift in Sources */,
+				C289001B2AC5536A003C2F1A /* InspectionImageDeleteRequest.swift in Sources */,
+				C289001C2AC5536A003C2F1A /* LoginPresenter.swift in Sources */,
+				C289001D2AC5536A003C2F1A /* CheckCarRouter.swift in Sources */,
+				C289001E2AC5536A003C2F1A /* IMatInspectionWorker.swift in Sources */,
+				C289001F2AC5536A003C2F1A /* ReadingQRViewController.swift in Sources */,
+				C28900202AC5536A003C2F1A /* BookInMotorBikeModelRequest.swift in Sources */,
+				C28900212AC5536A003C2F1A /* LocationManager.swift in Sources */,
+				C28900222AC5536A003C2F1A /* PlantService.swift in Sources */,
+				C28900232AC5536A003C2F1A /* PickUpCarModels.swift in Sources */,
+				C28900242AC5536A003C2F1A /* SignatureRouter.swift in Sources */,
+				C28900252AC5536A003C2F1A /* ItemPendingListModels.swift in Sources */,
+				C28900262AC5536A003C2F1A /* ConstraintRelation.swift in Sources */,
+				C28900272AC5536A003C2F1A /* VehicleDeleteDocumentRequest.swift in Sources */,
+				C28900282AC5536A003C2F1A /* SummaryCarPresenter.swift in Sources */,
+				C28900292AC5536A003C2F1A /* StorageLocationModel.swift in Sources */,
+				C289002A2AC5536A003C2F1A /* CabinCarRouter.swift in Sources */,
+				C289002B2AC5536A003C2F1A /* PickUpCarInteractor.swift in Sources */,
+				C289002C2AC5536A003C2F1A /* PhotoCarModel.swift in Sources */,
+				C289002D2AC5536A003C2F1A /* UIColor+extension.swift in Sources */,
+				C289002E2AC5536A003C2F1A /* DetailModels.swift in Sources */,
+				C289002F2AC5536A003C2F1A /* ModelCodeTemplateModel.swift in Sources */,
+				C28900302AC5536A003C2F1A /* UploadPresenter.swift in Sources */,
+				C28900312AC5536A003C2F1A /* ConstraintMultiplierTarget.swift in Sources */,
+				C28900322AC5536A003C2F1A /* FuelTypeModel.swift in Sources */,
+				C28900332AC5536A003C2F1A /* UploadRouter.swift in Sources */,
+				C28900342AC5536A003C2F1A /* DataController.swift in Sources */,
+				C28900352AC5536A003C2F1A /* ItemListCell.swift in Sources */,
+				C28900362AC5536A003C2F1A /* DateTimeWorker.swift in Sources */,
+				C28900372AC5536A003C2F1A /* BookInMotorcycle1Router.swift in Sources */,
+				C28900382AC5536A003C2F1A /* CarInspectionType.swift in Sources */,
+				C28900392AC5536A003C2F1A /* LoginRequest.swift in Sources */,
+				C289003A2AC5536A003C2F1A /* BodyTypeModel.swift in Sources */,
+				C289003B2AC5536A003C2F1A /* MotorcycleCheckModels.swift in Sources */,
+				C289003C2AC5536A003C2F1A /* SignaturePresenter.swift in Sources */,
+				C289003D2AC5536A003C2F1A /* VehicleDeleteDocumentService.swift in Sources */,
+				C289003E2AC5536A003C2F1A /* BookInMotorcycle1Presenter.swift in Sources */,
+				C289003F2AC5536A003C2F1A /* BookInMotorcycle1Models.swift in Sources */,
+				C28900402AC5536A003C2F1A /* PickUpCarPresenter.swift in Sources */,
+				C28900412AC5536A003C2F1A /* SearchByViewController.swift in Sources */,
+				C28900422AC5536A003C2F1A /* ConstraintLayoutGuide+Extensions.swift in Sources */,
+				C28900432AC5536A003C2F1A /* ReadingQRPresenter.swift in Sources */,
+				C28900442AC5536A003C2F1A /* GearCheckPresenter.swift in Sources */,
+				C28900452AC5536A003C2F1A /* Router.swift in Sources */,
+				C28900462AC5536A003C2F1A /* BookInMotorcycle2Models.swift in Sources */,
+				C28900472AC5536A003C2F1A /* PDFPreviewModels.swift in Sources */,
+				C28900482AC5536A003C2F1A /* ConstraintMakerExtendable.swift in Sources */,
+				C28900492AC5536A003C2F1A /* BookInSearchRequest.swift in Sources */,
+				C289004A2AC5536A003C2F1A /* BodyCheckModels.swift in Sources */,
+				C289004B2AC5536A003C2F1A /* DamagePresenter.swift in Sources */,
+				C289004C2AC5536A003C2F1A /* ConstraintLayoutGuideDSL.swift in Sources */,
+				C289004D2AC5536A003C2F1A /* ModelCodeNoItemCell.swift in Sources */,
+				C289004E2AC5536A003C2F1A /* MakeVehicleResponse.swift in Sources */,
+				C289004F2AC5536A003C2F1A /* ConstraintItem.swift in Sources */,
+				C28900502AC5536A003C2F1A /* UpdateInspecMotorBikeService.swift in Sources */,
+				C28900512AC5536A003C2F1A /* UINavigationController+extension.swift in Sources */,
+				C28900522AC5536A003C2F1A /* EngineCheckViewController.swift in Sources */,
+				C28900532AC5536A003C2F1A /* SteerWheelCheckInteractor.swift in Sources */,
+				C28900542AC5536A003C2F1A /* PendingListDataSource.swift in Sources */,
+				C28900552AC5536A003C2F1A /* GaugeCheckViewController.swift in Sources */,
+				C28900562AC5536A003C2F1A /* DamageModels.swift in Sources */,
+				C28900572AC5536A003C2F1A /* SummaryCarRouter.swift in Sources */,
+				C28900582AC5536A003C2F1A /* UploadInteractor.swift in Sources */,
+				C28900592AC5536A003C2F1A /* EngineCarWorker.swift in Sources */,
+				C289005A2AC5536A003C2F1A /* KeyOptionType.swift in Sources */,
+				C289005B2AC5536A003C2F1A /* AppDelegate.swift in Sources */,
+				C289005C2AC5536A003C2F1A /* SearchByRouter.swift in Sources */,
+				C289005D2AC5536A003C2F1A /* ReceiverCarViewController.swift in Sources */,
+				C289005E2AC5536A003C2F1A /* PDFPreviewWorker.swift in Sources */,
+				C289005F2AC5536A003C2F1A /* SelectInspectionInteractor.swift in Sources */,
+				C28900602AC5536A003C2F1A /* SelectInspectionModels.swift in Sources */,
+				C28900612AC5536A003C2F1A /* StardardColorByCodeService.swift in Sources */,
+				C28900622AC5536A003C2F1A /* SteerWheelCheckPresenter.swift in Sources */,
+				C28900632AC5536A003C2F1A /* AboutCarRouter.swift in Sources */,
+				C28900642AC5536A003C2F1A /* SellerService.swift in Sources */,
+				C28900652AC5536A003C2F1A /* UnderCarCheckViewController.swift in Sources */,
+				C28900662AC5536A003C2F1A /* MakeCarService.swift in Sources */,
+				C28900672AC5536A003C2F1A /* MotorbikeBookInType.swift in Sources */,
+				C28900682AC5536A003C2F1A /* GearCheckModels.swift in Sources */,
+				C28900692AC5536A003C2F1A /* ReceiverService.swift in Sources */,
+				C289006A2AC5536A003C2F1A /* MultilineTextField.swift in Sources */,
+				C289006B2AC5536A003C2F1A /* EngineCheckWorker.swift in Sources */,
+				C289006C2AC5536A003C2F1A /* GradeCreateService.swift in Sources */,
+				C289006D2AC5536A003C2F1A /* DamageCell.swift in Sources */,
+				C289006E2AC5536A003C2F1A /* PhotoCarModels.swift in Sources */,
+				C289006F2AC5536A003C2F1A /* SearchCodeRequest.swift in Sources */,
+				C28900702AC5536A003C2F1A /* VehicleDocumentRequest.swift in Sources */,
+				C28900712AC5536A003C2F1A /* Typealiases.swift in Sources */,
+				C28900722AC5536A003C2F1A /* ModelCarRequest.swift in Sources */,
+				C28900732AC5536A003C2F1A /* BodyCheckPresenter.swift in Sources */,
+				C28900742AC5536A003C2F1A /* BrakeCheckWorker.swift in Sources */,
+				C28900752AC5536A003C2F1A /* ModelCarModel.swift in Sources */,
+				C28900762AC5536A003C2F1A /* BookInMotorcycle2Router.swift in Sources */,
+				C28900772AC5536A003C2F1A /* UILayoutSupport+Extensions.swift in Sources */,
+				C28900782AC5536A003C2F1A /* InspectionListViewController.swift in Sources */,
+				C28900792AC5536A003C2F1A /* BookInListService.swift in Sources */,
+				C289007A2AC5536A003C2F1A /* PickUpCarViewController.swift in Sources */,
+				C289007B2AC5536A003C2F1A /* GradeResponse.swift in Sources */,
+				C289007C2AC5536A003C2F1A /* LoginRouter.swift in Sources */,
+				C289007D2AC5536A003C2F1A /* IMatBookInWorker.swift in Sources */,
+				C289007E2AC5536A003C2F1A /* SignatureViewController.swift in Sources */,
+				C289007F2AC5536A003C2F1A /* ConstraintDirectionalInsets.swift in Sources */,
+				C28900802AC5536A003C2F1A /* SelectInspectionWorker.swift in Sources */,
+				C28900812AC5536A003C2F1A /* ReceiverUpdateService.swift in Sources */,
+				C28900822AC5536A003C2F1A /* EngineCarViewController.swift in Sources */,
+				C28900832AC5536A003C2F1A /* BaseRequest.swift in Sources */,
+				C28900842AC5536A003C2F1A /* AirCheckRouter.swift in Sources */,
+				C28900852AC5536A003C2F1A /* ModelCodePresenter.swift in Sources */,
+				C28900862AC5536A003C2F1A /* ImageViewerModels.swift in Sources */,
+				C28900872AC5536A003C2F1A /* CabinType.swift in Sources */,
+				C28900882AC5536A003C2F1A /* PlantResponse.swift in Sources */,
+				C28900892AC5536A003C2F1A /* ConstraintConfig.swift in Sources */,
+				C289008A2AC5536A003C2F1A /* IMatQRCodePDFWorker.swift in Sources */,
+				C289008B2AC5536A003C2F1A /* ElectronicDeviceCheckInteractor.swift in Sources */,
+				C289008C2AC5536A003C2F1A /* ConstraintInsets.swift in Sources */,
+				C289008D2AC5536A003C2F1A /* PhotoCarRouter.swift in Sources */,
+				C289008E2AC5536A003C2F1A /* BookInMotorcycle2Presenter.swift in Sources */,
+				C289008F2AC5536A003C2F1A /* PDFPreviewRouter.swift in Sources */,
+				C28900902AC5536A003C2F1A /* DateFormatter+extension.swift in Sources */,
+				C28900912AC5536A003C2F1A /* ImageViewerInteractor.swift in Sources */,
+				C28900922AC5536A003C2F1A /* String+extension.swift in Sources */,
+				C28900932AC5536A003C2F1A /* PlaceWorker.swift in Sources */,
+				C28900942AC5536A003C2F1A /* BookInListSearchService.swift in Sources */,
+				C28900952AC5536A003C2F1A /* CreateModelCodeViewController.swift in Sources */,
+				C28900962AC5536A003C2F1A /* JatoVaraintsModel.swift in Sources */,
+				C28900972AC5536A003C2F1A /* ItemListDataSource.swift in Sources */,
+				C28900982AC5536A003C2F1A /* ImageViewerRouter.swift in Sources */,
+				C28900992AC5536A003C2F1A /* PhotoCarPresenter.swift in Sources */,
+				C289009A2AC5536A003C2F1A /* DefaultItemCell.swift in Sources */,
+				C289009B2AC5536A003C2F1A /* VehicleDocumentResponse.swift in Sources */,
+				C289009C2AC5536A003C2F1A /* ElectronicDeviceCheckRouter.swift in Sources */,
+				C289009D2AC5536A003C2F1A /* SteerWheelCheckRouter.swift in Sources */,
+				C289009E2AC5536A003C2F1A /* SteerWheelCheckViewController.swift in Sources */,
+				C289009F2AC5536A003C2F1A /* GradeUpdateService.swift in Sources */,
+				C28900A02AC5536A003C2F1A /* UIScrollView+extension.swift in Sources */,
+				C28900A12AC5536A003C2F1A /* Vehicle.swift in Sources */,
+				C28900A22AC5536A003C2F1A /* CustomProgressView.swift in Sources */,
+				C28900A32AC5536A003C2F1A /* ProvinceService.swift in Sources */,
+				C28900A42AC5536A003C2F1A /* PhotoCarWorker.swift in Sources */,
+				C28900A52AC5536A003C2F1A /* SellerByCodeService.swift in Sources */,
+				C28900A62AC5536A003C2F1A /* LandingPageViewController.swift in Sources */,
+				C28900A72AC5536A003C2F1A /* CheckCarWorker.swift in Sources */,
+				C28900A82AC5536A003C2F1A /* BodyCheckWorker.swift in Sources */,
+				C28900A92AC5536A003C2F1A /* ReceiverCarPresenter.swift in Sources */,
+				C28900AA2AC5536A003C2F1A /* SummaryCarInteractor.swift in Sources */,
+				C28900AB2AC5536A003C2F1A /* ElectronicDeviceCheckPresenter.swift in Sources */,
+				C28900AC2AC5536A003C2F1A /* ConstraintMakerPriortizable.swift in Sources */,
+				C28900AD2AC5536A003C2F1A /* StandradMakeModel.swift in Sources */,
+				C28900AE2AC5536A003C2F1A /* BrakeCheckModels.swift in Sources */,
+				C28900AF2AC5536A003C2F1A /* JatoVaraintsService.swift in Sources */,
+				C28900B02AC5536A003C2F1A /* ItemAllListPresenter.swift in Sources */,
+				C28900B12AC5536A003C2F1A /* ExternalCarInteractor.swift in Sources */,
+				C28900B22AC5536A003C2F1A /* ConstraintMakerFinalizable.swift in Sources */,
+				C28900B32AC5536A003C2F1A /* AirCheckWorker.swift in Sources */,
+				C28900B42AC5536A003C2F1A /* ModelCodeViewController.swift in Sources */,
+				C28900B52AC5536A003C2F1A /* EngineCarRouter.swift in Sources */,
+				C28900B62AC5536A003C2F1A /* NotFoundCell.swift in Sources */,
+				C28900B72AC5536A003C2F1A /* ReceiverCarInteractor.swift in Sources */,
+				C28900B82AC5536A003C2F1A /* SearchByDataSource.swift in Sources */,
+				C28900B92AC5536A003C2F1A /* ViewController+extension.swift in Sources */,
+				C28900BA2AC5536A003C2F1A /* PlaceRouter.swift in Sources */,
+				C28900BB2AC5536A003C2F1A /* KError.swift in Sources */,
+				C28900BC2AC5536A003C2F1A /* PendingListCell.swift in Sources */,
+				C28900BD2AC5536A003C2F1A /* DamageRouter.swift in Sources */,
+				C28900BE2AC5536A003C2F1A /* PlacePresenter.swift in Sources */,
+				C28900BF2AC5536A003C2F1A /* ProvinceDataSource.swift in Sources */,
+				C28900C02AC5536A003C2F1A /* GradeCarWorker.swift in Sources */,
+				C28900C12AC5536A003C2F1A /* ConstraintMakerRelatable.swift in Sources */,
+				C28900C22AC5536A003C2F1A /* SegmentControlCustom.swift in Sources */,
+				C28900C32AC5536A003C2F1A /* MakeCarModel.swift in Sources */,
+				C28900C42AC5536A003C2F1A /* CabinCarModels.swift in Sources */,
+				C28900C52AC5536A003C2F1A /* ReceiverModelResponse.swift in Sources */,
+				C28900C62AC5536A003C2F1A /* GaugeCheckModels.swift in Sources */,
+				C28900C72AC5536A003C2F1A /* BookInMotorcycle2Interactor.swift in Sources */,
+				C28900C82AC5536A003C2F1A /* UploadModels.swift in Sources */,
+				C28900C92AC5536A003C2F1A /* SelectInspectionPresenter.swift in Sources */,
+				C28900CA2AC5536A003C2F1A /* VehicleType.swift in Sources */,
+				C28900CB2AC5536A003C2F1A /* MotorcycleCheckWorker.swift in Sources */,
+				C28900CC2AC5536A003C2F1A /* ConstraintDirectionalInsetTarget.swift in Sources */,
+				C28900CD2AC5536A003C2F1A /* ModelCodeCell.swift in Sources */,
+				C28900CE2AC5536A003C2F1A /* StandardMakeService.swift in Sources */,
+				C28900CF2AC5536A003C2F1A /* PDFPreviewInteractor.swift in Sources */,
+				C28900D02AC5536A003C2F1A /* EngineCheckPresenter.swift in Sources */,
+				C28900D12AC5536A003C2F1A /* UIImage+extension.swift in Sources */,
+				C28900D22AC5536A003C2F1A /* LoginInteractor.swift in Sources */,
+				C28900D32AC5536A003C2F1A /* LoginService.swift in Sources */,
+				C28900D42AC5536A003C2F1A /* ItemPendingListPresenter.swift in Sources */,
+				C28900D52AC5536A003C2F1A /* InspectionImage.swift in Sources */,
+				C28900D62AC5536A003C2F1A /* CreateModelCodeService.swift in Sources */,
+				C28900D72AC5536A003C2F1A /* GradeCarPresenter.swift in Sources */,
+				C28900D82AC5536A003C2F1A /* SparePartsCarModels.swift in Sources */,
+				C28900D92AC5536A003C2F1A /* VehicleModelRequest.swift in Sources */,
+				C28900DA2AC5536A003C2F1A /* ExternalCarModels.swift in Sources */,
+				C28900DB2AC5536A003C2F1A /* ConstraintPriority.swift in Sources */,
+				C28900DC2AC5536A003C2F1A /* ConstraintLayoutSupportDSL.swift in Sources */,
+				C28900DD2AC5536A003C2F1A /* MainNavigationController.swift in Sources */,
+				C28900DE2AC5536A003C2F1A /* SparePartsCarWorker.swift in Sources */,
+				C28900DF2AC5536A003C2F1A /* StandardColorService.swift in Sources */,
+				C28900E02AC5536A003C2F1A /* SearchCodeService.swift in Sources */,
+				C28900E12AC5536A003C2F1A /* JatoCarModelsModel.swift in Sources */,
+				C28900E22AC5536A003C2F1A /* Canvas.swift in Sources */,
+				C28900E32AC5536A003C2F1A /* GearCheckInteractor.swift in Sources */,
+				C28900E42AC5536A003C2F1A /* ModelCodeTemplateService.swift in Sources */,
+				C28900E52AC5536A003C2F1A /* CreateModelCodeInteractor.swift in Sources */,
+				C28900E62AC5536A003C2F1A /* ReceiverModelRequest.swift in Sources */,
+				C28900E72AC5536A003C2F1A /* GaugeCheckInteractor.swift in Sources */,
+				C28900E82AC5536A003C2F1A /* ConstraintDSL.swift in Sources */,
+				C28900E92AC5536A003C2F1A /* UpdateBookInMotorBikeService.swift in Sources */,
+				C28900EA2AC5536A003C2F1A /* BaseResponse.swift in Sources */,
+				C28900EB2AC5536A003C2F1A /* BodyCarService.swift in Sources */,
+				C28900EC2AC5536A003C2F1A /* BodyCarModel.swift in Sources */,
+				C28900ED2AC5536A003C2F1A /* SparePartsCarPresenter.swift in Sources */,
+				C28900EE2AC5536A003C2F1A /* DateTimeInteractor.swift in Sources */,
+				C28900EF2AC5536A003C2F1A /* BrakeCheckInteractor.swift in Sources */,
+				C28900F02AC5536A003C2F1A /* ReadingQRInteractor.swift in Sources */,
+				C28900F12AC5536A003C2F1A /* Double+extension.swift in Sources */,
+				C28900F22AC5536A003C2F1A /* InspectionCar.swift in Sources */,
+				C28900F32AC5536A003C2F1A /* SearchCodeModel.swift in Sources */,
+				C28900F42AC5536A003C2F1A /* SummaryCarPDFWorker.swift in Sources */,
+				C28900F52AC5536A003C2F1A /* VehicleGetDocumentRequest.swift in Sources */,
+				C28900F62AC5536A003C2F1A /* DateTimeModels.swift in Sources */,
+				C28900F72AC5536A003C2F1A /* ModelCodeRouter.swift in Sources */,
+				C28900F82AC5536A003C2F1A /* LandingPageRouter.swift in Sources */,
+				C28900F92AC5536A003C2F1A /* ModelCodeNotFoundCell.swift in Sources */,
+				C28900FA2AC5536A003C2F1A /* SceneDelegate.swift in Sources */,
+				C28900FB2AC5536A003C2F1A /* SignatureInteractor.swift in Sources */,
+				C28900FC2AC5536A003C2F1A /* LoginResponse.swift in Sources */,
+				C28900FD2AC5536A003C2F1A /* DateTimeViewController.swift in Sources */,
+				C28900FE2AC5536A003C2F1A /* UploadViewController.swift in Sources */,
+				C28900FF2AC5536A003C2F1A /* StandardColorRequest.swift in Sources */,
+				C28901002AC5536A003C2F1A /* ImageStickerContainerView.swift in Sources */,
+				C28901012AC5536A003C2F1A /* EngineCheckRouter.swift in Sources */,
+				C28901022AC5536A003C2F1A /* FuelDeliveryModel.swift in Sources */,
+				C28901032AC5536A003C2F1A /* SignatureModels.swift in Sources */,
+				C28901042AC5536A003C2F1A /* ImageViewerPresenter.swift in Sources */,
+				C28901052AC5536A003C2F1A /* LoginWorker.swift in Sources */,
+				C28901062AC5536A003C2F1A /* BookInMotorcycle1Interactor.swift in Sources */,
+				C28901072AC5536A003C2F1A /* Constraint.swift in Sources */,
+				C28901082AC5536A003C2F1A /* EngineType.swift in Sources */,
+				C28901092AC5536A003C2F1A /* SummaryCarModels.swift in Sources */,
+				C289010A2AC5536A003C2F1A /* InspectionListModels.swift in Sources */,
+				C289010B2AC5536A003C2F1A /* DriveModel.swift in Sources */,
+				C289010C2AC5536A003C2F1A /* iOSDropDown.swift in Sources */,
+				C289010D2AC5536A003C2F1A /* ConstraintInsetTarget.swift in Sources */,
+				C289010E2AC5536A003C2F1A /* GradeRequest.swift in Sources */,
+				C289010F2AC5536A003C2F1A /* UILabel+extension.swift in Sources */,
+				C28901102AC5536A003C2F1A /* EngineCarModels.swift in Sources */,
+				C28901112AC5536A003C2F1A /* SpareType.swift in Sources */,
+				C28901122AC5536A003C2F1A /* KeyChainService.swift in Sources */,
+				C28901132AC5536A003C2F1A /* AirCheckModels.swift in Sources */,
+				C28901142AC5536A003C2F1A /* ConstraintView.swift in Sources */,
+				C28901152AC5536A003C2F1A /* PDFPreviewPresenter.swift in Sources */,
+				C28901162AC5536A003C2F1A /* ExternalCarViewController.swift in Sources */,
+				C28901172AC5536A003C2F1A /* LayoutConstraint.swift in Sources */,
+				C28901182AC5536A003C2F1A /* LeftAlignedCollectionViewFlowLayout.swift in Sources */,
+				C28901192AC5536A003C2F1A /* DateTimePresenter.swift in Sources */,
+				C289011A2AC5536A003C2F1A /* SteerWheelCheckModels.swift in Sources */,
+				C289011B2AC5536A003C2F1A /* LoginViewController.swift in Sources */,
+				C289011C2AC5536A003C2F1A /* ModelCodeNavViewController.swift in Sources */,
+				C289011D2AC5536A003C2F1A /* DataSourceCollectionView.swift in Sources */,
+				C289011E2AC5536A003C2F1A /* PDFPreviewViewController.swift in Sources */,
+				C289011F2AC5536A003C2F1A /* UnderCarCheckInteractor.swift in Sources */,
+				C28901202AC5536A003C2F1A /* InspectionListWorker.swift in Sources */,
+				C28901212AC5536A003C2F1A /* BrakeCheckRouter.swift in Sources */,
+				C28901222AC5536A003C2F1A /* Int+extension.swift in Sources */,
+				C28901232AC5536A003C2F1A /* DateTimeRouter.swift in Sources */,
+				C28901242AC5536A003C2F1A /* CabinCarWorker.swift in Sources */,
+				C28901252AC5536A003C2F1A /* SignatureWorker.swift in Sources */,
+				C28901262AC5536A003C2F1A /* CheckCarViewController.swift in Sources */,
+				C28901272AC5536A003C2F1A /* ReceiverCarModels.swift in Sources */,
+				C28901282AC5536A003C2F1A /* ReceiverCarRouter.swift in Sources */,
+				C28901292AC5536A003C2F1A /* BodyCheckRouter.swift in Sources */,
+				C289012A2AC5536A003C2F1A /* ConstraintLayoutSupport.swift in Sources */,
+				C289012B2AC5536A003C2F1A /* InspectionImageUploadService.swift in Sources */,
+				C289012C2AC5536A003C2F1A /* ImageViewerWorker.swift in Sources */,
+				C289012D2AC5536A003C2F1A /* PickUpCarPDFWorker.swift in Sources */,
+				C289012E2AC5536A003C2F1A /* InspectionMotorBikeModel.swift in Sources */,
+				C289012F2AC5536A003C2F1A /* ExternalCarWorker.swift in Sources */,
+				C28901302AC5536A003C2F1A /* CheckBoxUIButton.swift in Sources */,
+				C28901312AC5536A003C2F1A /* ItemPendingListWorker.swift in Sources */,
+				C28901322AC5536A003C2F1A /* InspectionMotorBikeDetailService.swift in Sources */,
+				C28901332AC5536A003C2F1A /* ItemPendingListInteractor.swift in Sources */,
+				C28901342AC5536A003C2F1A /* ConstraintLayoutGuide.swift in Sources */,
+				C28901352AC5536A003C2F1A /* DetailViewController.swift in Sources */,
+				C28901362AC5536A003C2F1A /* SellerByCodeRequest.swift in Sources */,
+				C28901372AC5536A003C2F1A /* GradeCarRouter.swift in Sources */,
+				C28901382AC5536A003C2F1A /* BodyCheckViewController.swift in Sources */,
+				C28901392AC5536A003C2F1A /* SparePartsCarInteractor.swift in Sources */,
+				C289013A2AC5536A003C2F1A /* ItemAllListRouter.swift in Sources */,
+				C289013B2AC5536A003C2F1A /* FuelDeliveryService.swift in Sources */,
+				C289013C2AC5536A003C2F1A /* LandingPageInteractor.swift in Sources */,
+				C289013D2AC5536A003C2F1A /* CheckCarInteractor.swift in Sources */,
+				C289013E2AC5536A003C2F1A /* BookInDetailRequest.swift in Sources */,
+				C289013F2AC5536A003C2F1A /* SellCateResponse.swift in Sources */,
+				C28901402AC5536A003C2F1A /* LoadingView.swift in Sources */,
+				C28901412AC5536A003C2F1A /* SearchByPresenter.swift in Sources */,
+				C28901422AC5536A003C2F1A /* VehicleDocumentService.swift in Sources */,
+				C28901432AC5536A003C2F1A /* GearCheckWorker.swift in Sources */,
+				C28901442AC5536A003C2F1A /* LandingPageWorker.swift in Sources */,
+				C28901452AC5536A003C2F1A /* MotorcycleCheckViewController.swift in Sources */,
+				C28901462AC5536A003C2F1A /* ExternalCarRouter.swift in Sources */,
+				C28901472AC5536A003C2F1A /* FuelTypeService.swift in Sources */,
+				C28901482AC5536A003C2F1A /* ElectronicDeviceCheckWorker.swift in Sources */,
+				C28901492AC5536A003C2F1A /* BookInMotorcycle1Worker.swift in Sources */,
+				C289014A2AC5536A003C2F1A /* AirCheckViewController.swift in Sources */,
+				C289014B2AC5536A003C2F1A /* SellCateService.swift in Sources */,
+				C289014C2AC5536A003C2F1A /* GearBoxModel.swift in Sources */,
+				C289014D2AC5536A003C2F1A /* InspectionImageRequest.swift in Sources */,
+				C289014E2AC5536A003C2F1A /* InspectionService.swift in Sources */,
+				C289014F2AC5536A003C2F1A /* SelectInspectionViewController.swift in Sources */,
+				C28901502AC5536A003C2F1A /* SummaryCarViewController.swift in Sources */,
+				C28901512AC5536A003C2F1A /* LandingPagePresenter.swift in Sources */,
+				C28901522AC5536A003C2F1A /* SearchModelCodeTemplateByDPService.swift in Sources */,
+				C28901532AC5536A003C2F1A /* EngineCheckInteractor.swift in Sources */,
+				C28901542AC5536A003C2F1A /* InspectionMotorBikeService.swift in Sources */,
+				C28901552AC5536A003C2F1A /* ItemPendingListRouter.swift in Sources */,
+				C28901562AC5536A003C2F1A /* DetailPresenter.swift in Sources */,
+				C28901572AC5536A003C2F1A /* BookInPendingRequest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F914454125C7F94C00B09FB6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -2647,6 +3688,7 @@
 				CE53403126859F54006D0AC6 /* JatoVaraintsModelRequest.swift in Sources */,
 				F965DF4F260C28FB00CE91E7 /* ExternalType.swift in Sources */,
 				F9ABEF8225EE449F00B48D7D /* ImagePickerView.swift in Sources */,
+				C28901722AC555C9003C2F1A /* AppConfig.swift in Sources */,
 				F9A46FB325CAAADE00D3732E /* DetailRouter.swift in Sources */,
 				F9A5AC1625C90C2D00952FE5 /* PlaceInteractor.swift in Sources */,
 				F96F538D25D0E00400317ED0 /* AboutCarPresenter.swift in Sources */,
@@ -3118,6 +4160,58 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		C289016B2AC5536A003C2F1A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 25AAA39B0B487BE5798BC0A9 /* Pods-Inspection.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Inspection/Inspection.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 37;
+				DEVELOPMENT_TEAM = EMFZ5F9LY3;
+				INFOPLIST_FILE = "Inspection/Staging-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.4.6;
+				PRODUCT_BUNDLE_IDENTIFIER = com.motto.auction.inspecStaging;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C289016C2AC5536A003C2F1A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 55C98B93E31756AF096E1F58 /* Pods-Inspection.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Inspection/Inspection.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 37;
+				DEVELOPMENT_TEAM = EMFZ5F9LY3;
+				INFOPLIST_FILE = "Inspection/Staging-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.4.6;
+				PRODUCT_BUNDLE_IDENTIFIER = com.motto.auction.inspec;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		F914456D25C7F95100B09FB6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -3377,6 +4471,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		C289016A2AC5536A003C2F1A /* Build configuration list for PBXNativeTarget "InspectionStaging" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C289016B2AC5536A003C2F1A /* Debug */,
+				C289016C2AC5536A003C2F1A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		F914454025C7F94C00B09FB6 /* Build configuration list for PBXProject "Inspection" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

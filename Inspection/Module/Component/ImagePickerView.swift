@@ -59,6 +59,8 @@ open class ImagePicker: NSObject {
     
     private func configZLPhotoBrowser() {
         
+        config.maxSelectCount = 100
+        
         let minItemSpacing: CGFloat = 2
         let minLineSpacing: CGFloat = 2
         

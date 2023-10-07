@@ -277,7 +277,7 @@ struct ApiModel:URLRequestConvertible {
         UAT  http://mapapi-uat.mottoauction.com/
         PROD https://api.mottoauction.com/
      */
-    let base:String = "http://mapapi-uat.mottoauction.com/"
+//    let base:String = "http://mapapi-uat.mottoauction.com/"
     let apiKey = "e9ab5c97-019e-4a83-ad6f-b1d571b24d5d"
     
     var path:String
@@ -296,8 +296,8 @@ struct ApiModel:URLRequestConvertible {
 
     func asURLRequest() throws -> URLRequest {
         let model = self
-        let isFullpath = path.contains("https://api.mottoauction.com/")
-        let url = URL(string: isFullpath ? path : base + path )!
+        let isFullpath = path.contains(AppConfig.currentBaseUrl)
+        let url = URL(string: isFullpath ? path : AppConfig.currentBaseUrl + path )!
         var mutableURLRequest = URLRequest(url: url)
        
         mutableURLRequest.httpMethod = model.method.rawValue

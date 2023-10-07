@@ -369,7 +369,6 @@ class AboutCarInteractor: AboutCarBusinessLogic, AboutCarDataStore
     fileprivate func getStandardColor1ID(from colorValue:String) -> StandardColorModel? {
         guard let standardColorList = standardColorList else { return nil }
         
-        return standardColorList.filter { colorValue == ("\($0.colour_BU ?? "") (\($0.colour_LO ?? ""))") }.first
         if !DataController.shared.isThaiLanguage() {
             return standardColorList.filter { colorValue == ("\($0.colour_BU ?? "")") }.first
         } else {

@@ -3109,7 +3109,7 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="wae-Ie-87V">
                                                         <rect key="frame" x="60.5" y="10" width="200" height="40"/>
                                                         <subviews>
-                                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="เกียร์" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fC7-wk-QxG" customClass="DropDown" customModule="Inspection" customModuleProvider="target">
+                                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="เกียร์" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fC7-wk-QxG" customClass="GearDropDown" customModule="Inspection" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="200" height="39"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>

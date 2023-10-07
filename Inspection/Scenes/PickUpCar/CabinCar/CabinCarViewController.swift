@@ -83,6 +83,10 @@ class CabinCarViewController: ViewController, CabinCarDisplayLogic
         }
     }
     
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     // MARK: View lifecycle
     
     override func viewDidLoad()
@@ -94,6 +98,8 @@ class CabinCarViewController: ViewController, CabinCarDisplayLogic
         setUpDropDown()
         setDatePicker()
         doSomething()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(gearboxSelected(noti:)), name: GearboxSelected, object: nil)
     }
     
     // MARK: Do something
@@ -160,7 +166,7 @@ class CabinCarViewController: ViewController, CabinCarDisplayLogic
     //expire date
     @IBOutlet weak var taxPlateExpiredView: UIView!
     @IBOutlet weak var taxPlateExpiredLabel: UILabel!
-    @IBOutlet weak var gearboxDropDown: DropDown!
+    @IBOutlet weak var gearboxDropDown: GearDropDown!
     @IBOutlet weak var gearboxLineView: UIView!
     @IBOutlet weak var gearboxLabel: UILabel!
     
@@ -194,7 +200,10 @@ class CabinCarViewController: ViewController, CabinCarDisplayLogic
 
     let string_kilometer = String.localized("car_interior_kilometer_label")
     let string_mileage = String.localized("car_interior_mileage_label")
-    
+    var gearAutomaticIsSelected: Bool = false
+    var gearboxListPart: [String] = ["N/A", String.localized("gearbox_automatic_label"), String.localized("gearbox_manual_label")]
+    var gearboxListAll: [String] = ["N/A", String.localized("gearbox_automatic_label"), String.localized("gearbox_cvt_label"), String.localized("gearbox_sporttronic_label"), String.localized("gearbox_steptronic_label"), String.localized("gearbox_tiptronic_label"), String.localized("gearbox_xtronic_label"), String.localized("gearbox_manual_label")]
+
     override func initLocalString() {
         super.initLocalString()
         
@@ -236,6 +245,25 @@ class CabinCarViewController: ViewController, CabinCarDisplayLogic
         keylessKeyDropDown.placeholder = keyDropDown.placeholder
         cabinNoteTextField.placeholder = othersLabel.text
         reasonMileageTextField.placeholder = String.localized("car_detail_reason_placeholder")
+    }
+    
+    @objc func gearboxSelected(noti: NSNotification) {
+        let gear = noti.object as? String
+        let array = noti.userInfo?["array"] as? [String]
+        guard let gearStr = gear else { return }
+        guard let gearArr = array else { return }
+        
+        var usedList = [String]()
+
+        if gearArr == gearboxListPart {
+            usedList = gearboxListAll
+        } else {
+            usedList = gearboxListPart
+        }
+
+        let viewModel = CabinCar.Something.ViewModel(gearBoxList_bu: usedList)
+        displayGearBoxList(viewModel: viewModel)
+
     }
     
     func doSomething()
@@ -1096,10 +1124,14 @@ class CabinCarViewController: ViewController, CabinCarDisplayLogic
     }
     
     func displayGearBoxList(viewModel: CabinCar.Something.ViewModel) {
-        guard let gearBoxList_bu = viewModel.gearBoxList_bu else { return }
+        guard var gearBoxList_bu = viewModel.gearBoxList_bu else { return }
         isGearBox = true
-        
-        setValue(to: gearboxDropDown, values: gearBoxList_bu) { [weak self] (selectValue, _, _) in
+        if gearAutomaticIsSelected == false {
+            gearBoxList_bu = gearboxListPart
+        }
+        gearAutomaticIsSelected = !gearAutomaticIsSelected
+        setGearValue(to: gearboxDropDown, values: gearBoxList_bu) { [weak self] (selectValue, _, _) in
+            
             self?.gearboxDropDown.text = selectValue
             
             let request = CabinCar.Something.Request(selectGearbox: selectValue)
@@ -1107,6 +1139,7 @@ class CabinCarViewController: ViewController, CabinCarDisplayLogic
             
             self?.gearboxLabel.validateLabel(true)
             self?.gearboxLineView.validateLineView(true)
+
         }
         
         self.prepareGearBox()
@@ -1120,6 +1153,13 @@ class CabinCarViewController: ViewController, CabinCarDisplayLogic
     func setValue(to textfield:DropDown , values: [String], didSelected:@escaping (_ selectedText: String, _ index: Int , _ id:Int )->() ){
         textfield.text = ""
         textfield.optionArray = values
+        textfield.didSelect(completion: didSelected)
+    }
+    
+    func setGearValue(to textfield:GearDropDown , values: [String], didSelected:@escaping (_ selectedText: String, _ index: Int , _ id:Int )->() ){
+        textfield.text = ""
+        textfield.optionArray = values
+        textfield.searchText = ""
         textfield.didSelect(completion: didSelected)
     }
     

@@ -604,6 +604,14 @@
 "car_upload_successful_label" = "Upload successful";
 "car_upload_failed_label" = "File upload failed. Please try again.";
 
+// gearbox
+"gearbox_automatic_label" = "Automatic";
+"gearbox_cvt_label" = "CVT";
+"gearbox_sporttronic_label" = "Sporttronic";
+"gearbox_steptronic_label" = "Steptronic";
+"gearbox_tiptronic_label" = "Tiptronic";
+"gearbox_xtronic_label" = "Xtronic CVT";
+"gearbox_manual_label" = "Manual";
 
 
 

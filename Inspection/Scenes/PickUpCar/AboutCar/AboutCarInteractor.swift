@@ -368,6 +368,7 @@ class AboutCarInteractor: AboutCarBusinessLogic, AboutCarDataStore
     
     fileprivate func getStandardColor1ID(from colorValue:String) -> StandardColorModel? {
         guard let standardColorList = standardColorList else { return nil }
+        
         if !DataController.shared.isThaiLanguage() {
             return standardColorList.filter { colorValue == ("\($0.colour_BU ?? "")") }.first
         } else {
@@ -377,12 +378,13 @@ class AboutCarInteractor: AboutCarBusinessLogic, AboutCarDataStore
     }
     fileprivate func getState1ID(from province:String) -> String? {
         guard let provinceList = provinceList else { return nil }
-        
-        if !DataController.shared.isThaiLanguage() {
-            return provinceList.filter { province == $0.desc_BU ?? "" }.first?.state1
-        } else {
-            return provinceList.filter { province == $0.desc_LO ?? "" }.first?.state1
-        }
+        return provinceList.filter { province == $0.desc_LO ?? "" }.first?.state1
+
+//        if !DataController.shared.isThaiLanguage() {
+//            return provinceList.filter { province == $0.desc_BU ?? "" }.first?.state1
+//        } else {
+//            return provinceList.filter { province == $0.desc_LO ?? "" }.first?.state1
+//        }
         
     }
     fileprivate func getModelCarEng(from desc:String) -> String? {

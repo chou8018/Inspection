@@ -497,8 +497,6 @@
 		C2AB93BF2AD2449800BD1915 /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AB93BD2AD2449800BD1915 /* Data+Extensions.swift */; };
 		C2AB93C22AD2455400BD1915 /* ArrayBuildable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AB93C12AD2455400BD1915 /* ArrayBuildable.swift */; };
 		C2AB93C32AD2455400BD1915 /* ArrayBuildable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AB93C12AD2455400BD1915 /* ArrayBuildable.swift */; };
-		C2AB93C52AD246ED00BD1915 /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AB93C42AD246ED00BD1915 /* Bundle+Extension.swift */; };
-		C2AB93C62AD246ED00BD1915 /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AB93C42AD246ED00BD1915 /* Bundle+Extension.swift */; };
 		C2AEDD0A2A81385D00BAC131 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C2AEDD082A81385D00BAC131 /* Localizable.strings */; };
 		C2B889332A6A69B600ED3A60 /* ImageStickerContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B889322A6A69B600ED3A60 /* ImageStickerContainerView.swift */; };
 		C2B8895B2A6A69D400ED3A60 /* ConstraintMultiplierTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B889352A6A69D400ED3A60 /* ConstraintMultiplierTarget.swift */; };
@@ -1008,7 +1006,6 @@
 		C2AB93BA2AD2446100BD1915 /* JSONUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONUtils.swift; sourceTree = "<group>"; };
 		C2AB93BD2AD2449800BD1915 /* Data+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+Extensions.swift"; sourceTree = "<group>"; };
 		C2AB93C12AD2455400BD1915 /* ArrayBuildable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayBuildable.swift; sourceTree = "<group>"; };
-		C2AB93C42AD246ED00BD1915 /* Bundle+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Bundle+Extension.swift"; path = "../../../../carro-rabbit-iosv3/DevPods/Core/Source/Extensions+Helpers/Bundle+Extension.swift"; sourceTree = "<group>"; };
 		C2AEDD092A81385D00BAC131 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C2AEDD0B2A81397D00BAC131 /* th */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = th; path = th.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C2B889322A6A69B600ED3A60 /* ImageStickerContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageStickerContainerView.swift; sourceTree = "<group>"; };
@@ -2559,7 +2556,6 @@
 		F99DB20B25C8070E0069F32E /* extension */ = {
 			isa = PBXGroup;
 			children = (
-				C2AB93C42AD246ED00BD1915 /* Bundle+Extension.swift */,
 				C2AB93BD2AD2449800BD1915 /* Data+Extensions.swift */,
 				F99DB23425C82DD00069F32E /* UITextFieldExtension.swift */,
 				F99DB20C25C8072A0069F32E /* UIScrollView+extension.swift */,
@@ -3537,7 +3533,6 @@
 				C28900D22AC5536A003C2F1A /* LoginInteractor.swift in Sources */,
 				C28900D32AC5536A003C2F1A /* LoginService.swift in Sources */,
 				C28900D42AC5536A003C2F1A /* ItemPendingListPresenter.swift in Sources */,
-				C2AB93C62AD246ED00BD1915 /* Bundle+Extension.swift in Sources */,
 				C28900D52AC5536A003C2F1A /* InspectionImage.swift in Sources */,
 				C28900D62AC5536A003C2F1A /* CreateModelCodeService.swift in Sources */,
 				C28900D72AC5536A003C2F1A /* GradeCarPresenter.swift in Sources */,
@@ -4009,7 +4004,6 @@
 				F91445AE25C7FB8100B09FB6 /* LoginInteractor.swift in Sources */,
 				F97629432643CA2A00E51903 /* LoginService.swift in Sources */,
 				F957B83125CA49A100B8FB3C /* ItemPendingListPresenter.swift in Sources */,
-				C2AB93C52AD246ED00BD1915 /* Bundle+Extension.swift in Sources */,
 				F924DCD226390916002E4B90 /* InspectionImage.swift in Sources */,
 				CE53402426849503006D0AC6 /* CreateModelCodeService.swift in Sources */,
 				F986435425FA1509004EAB2F /* GradeCarPresenter.swift in Sources */,

@@ -130,6 +130,7 @@ class CabinCarInteractor: CabinCarBusinessLogic, CabinCarDataStore
     
     func fetchLocalGearBox(request: CabinCar.Something.Request) {
         let gearBoxList: [GearBoxModel] = JSONUtils.shared.getCodableResponseFromJson(fileName: "gearbox_details", bundle: .getBundle(for: self))
+        self.gearBoxList = gearBoxList
         let responseCabin = CabinCar.Something.Response(gearBoxList: gearBoxList)
         self.presenter?.presentGearBoxList(response: responseCabin)
     }

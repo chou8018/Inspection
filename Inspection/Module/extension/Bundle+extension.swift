@@ -24,4 +24,7 @@ extension Bundle {
         return infoDictionary?["CFBundleVersion"] as! String
     }
 
+    public static func getBundle(for object: AnyObject) -> Bundle {
+        return Bundle(for: type(of: object))
+    }
 }

@@ -146,6 +146,8 @@ class ReceiverCarModel {
     
     var gearbox:String? { didSet { setEdit(oldValue, value: &isEditVehicle) }}//require
     var gear:String? { didSet { setEdit(oldValue, value: &isEditVehicle) }}
+    var gearboxListPart:[String] = [String]() { didSet { setEdit(oldValue, value: &isEditVehicle) }}
+    var gearboxListAll:[String] = [String]() { didSet { setEdit(oldValue, value: &isEditVehicle) }}
     var fuelType:String?  { didSet { setEdit(oldValue, value: &isEditVehicle) }}//require
     var fuelDelivery:String?  { didSet { setEdit(oldValue, value: &isEditVehicle) }}
     var fuelDeliveryName:String? { didSet { setEdit(oldValue, value: &isEditVehicle) }}

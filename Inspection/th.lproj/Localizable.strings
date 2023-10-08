@@ -605,10 +605,10 @@
 "car_upload_failed_label" = "อัพโหลดไฟล์ล้มเหลว ลองใหม่อีกครั้ง";
 
 // gearbox
-"gearbox_automatic_label" = "ออโตเมติก";
-"gearbox_cvt_label" = "ซี วี ที";
-"gearbox_sporttronic_label" = "สปอร์ตโทรนิค";
-"gearbox_steptronic_label" = "สเตปโทรนิค";
-"gearbox_tiptronic_label" = "ทิปโททิค";
-"gearbox_xtronic_label" = "เอ็กซ์ทรอนิค ซีวีที";
-"gearbox_manual_label" = "ธรรมดา";
+"gearbox_automatic_label" = "Automatic";
+"gearbox_cvt_label" = "CVT";
+"gearbox_sporttronic_label" = "Sporttronic";
+"gearbox_steptronic_label" = "Steptronic";
+"gearbox_tiptronic_label" = "Tiptronic";
+"gearbox_xtronic_label" = "Xtronic CVT";
+"gearbox_manual_label" = "Manual";

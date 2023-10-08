@@ -250,7 +250,7 @@ class CabinCarViewController: ViewController, CabinCarDisplayLogic
     @objc func gearboxSelected(noti: NSNotification) {
         let gear = noti.object as? String
         let array = noti.userInfo?["array"] as? [String]
-        guard let gearStr = gear else { return }
+        guard gear != nil else { return }
         guard let gearArr = array else { return }
         
         var usedList = [String]()
@@ -1127,6 +1127,7 @@ class CabinCarViewController: ViewController, CabinCarDisplayLogic
         guard var gearBoxList_bu = viewModel.gearBoxList_bu else { return }
         isGearBox = true
         if gearAutomaticIsSelected == false {
+//            gearBoxList_bu = DataController.shared.receiverCarModel.gearboxListPart
             gearBoxList_bu = gearboxListPart
         }
         gearAutomaticIsSelected = !gearAutomaticIsSelected

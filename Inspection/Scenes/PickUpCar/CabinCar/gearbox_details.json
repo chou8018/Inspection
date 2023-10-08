@@ -1,0 +1,34 @@
+[{
+    "gearBox1": "1",
+    "desc_BU": "N/A",
+    "desc_LO": "N/A"
+}, {
+    "gearBox1": "A",
+    "desc_BU": "Automatic",
+    "desc_LO": "ออโตเมติก",
+    "items": [{
+        "gearBox1": "C",
+        "desc_BU": "CVT",
+        "desc_LO": "ซี วี ที"
+    },  {
+        "gearBox1": "P",
+        "desc_BU": "Sporttronic",
+        "desc_LO": "สปอร์ตโทรนิค"
+    }, {
+        "gearBox1": "S",
+        "desc_BU": "Steptronic",
+        "desc_LO": "สเตปโทรนิค"
+    }, {
+        "gearBox1": "T",
+        "desc_BU": "Tiptronic",
+        "desc_LO": "ทิปโททิค"
+    }, {
+        "gearBox1": "X",
+        "desc_BU": "Xtronic CVT",
+        "desc_LO": "เอ็กซ์ทรอนิค ซีวีที"
+    }]
+}, {
+    "gearBox1": "M",
+    "desc_BU": "Manual",
+    "desc_LO": "ธรรมดา"
+}]

@@ -124,9 +124,14 @@ class CabinCarInteractor: CabinCarBusinessLogic, CabinCarDataStore
                                                             error: response.error)
             
             self?.presenter?.presentGearBoxList(response: responseCabin)
-            
-              
         })
+//        fetchLocalGearBox(request: request)
+    }
+    
+    func fetchLocalGearBox(request: CabinCar.Something.Request) {
+        let gearBoxList: [GearBoxModel] = JSONUtils.shared.getCodableResponseFromJson(fileName: "gearbox_details", bundle: .getBundle(for: self))
+        let responseCabin = CabinCar.Something.Response(gearBoxList: gearBoxList)
+        self.presenter?.presentGearBoxList(response: responseCabin)
     }
     
     func prepareGearBox(request: CabinCar.Something.Request) {

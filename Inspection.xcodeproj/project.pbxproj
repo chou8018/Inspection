@@ -489,6 +489,16 @@
 		C289FFFD2AC5536A003C2F1A /* ItemAllListModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F957B81E25CA495A00B8FB3C /* ItemAllListModels.swift */; };
 		C289FFFE2AC5536A003C2F1A /* ConstraintViewDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B8893A2A6A69D400ED3A60 /* ConstraintViewDSL.swift */; };
 		C289FFFF2AC5536A003C2F1A /* InspectionListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F957B80725CA3C5600B8FB3C /* InspectionListRouter.swift */; };
+		C2AB93B72AD199EF00BD1915 /* gearbox_details.json in Resources */ = {isa = PBXBuildFile; fileRef = C2AB93B62AD199EF00BD1915 /* gearbox_details.json */; };
+		C2AB93B82AD199EF00BD1915 /* gearbox_details.json in Resources */ = {isa = PBXBuildFile; fileRef = C2AB93B62AD199EF00BD1915 /* gearbox_details.json */; };
+		C2AB93BB2AD2446100BD1915 /* JSONUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AB93BA2AD2446100BD1915 /* JSONUtils.swift */; };
+		C2AB93BC2AD2446100BD1915 /* JSONUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AB93BA2AD2446100BD1915 /* JSONUtils.swift */; };
+		C2AB93BE2AD2449800BD1915 /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AB93BD2AD2449800BD1915 /* Data+Extensions.swift */; };
+		C2AB93BF2AD2449800BD1915 /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AB93BD2AD2449800BD1915 /* Data+Extensions.swift */; };
+		C2AB93C22AD2455400BD1915 /* ArrayBuildable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AB93C12AD2455400BD1915 /* ArrayBuildable.swift */; };
+		C2AB93C32AD2455400BD1915 /* ArrayBuildable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AB93C12AD2455400BD1915 /* ArrayBuildable.swift */; };
+		C2AB93C52AD246ED00BD1915 /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AB93C42AD246ED00BD1915 /* Bundle+Extension.swift */; };
+		C2AB93C62AD246ED00BD1915 /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2AB93C42AD246ED00BD1915 /* Bundle+Extension.swift */; };
 		C2AEDD0A2A81385D00BAC131 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C2AEDD082A81385D00BAC131 /* Localizable.strings */; };
 		C2B889332A6A69B600ED3A60 /* ImageStickerContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B889322A6A69B600ED3A60 /* ImageStickerContainerView.swift */; };
 		C2B8895B2A6A69D400ED3A60 /* ConstraintMultiplierTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B889352A6A69D400ED3A60 /* ConstraintMultiplierTarget.swift */; };
@@ -994,6 +1004,11 @@
 		C289016D2AC5536A003C2F1A /* InspectionStaging.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InspectionStaging.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C289016F2AC55452003C2F1A /* Staging-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Staging-Info.plist"; sourceTree = "<group>"; };
 		C28901712AC555C9003C2F1A /* AppConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
+		C2AB93B62AD199EF00BD1915 /* gearbox_details.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = gearbox_details.json; sourceTree = "<group>"; };
+		C2AB93BA2AD2446100BD1915 /* JSONUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONUtils.swift; sourceTree = "<group>"; };
+		C2AB93BD2AD2449800BD1915 /* Data+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+Extensions.swift"; sourceTree = "<group>"; };
+		C2AB93C12AD2455400BD1915 /* ArrayBuildable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayBuildable.swift; sourceTree = "<group>"; };
+		C2AB93C42AD246ED00BD1915 /* Bundle+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Bundle+Extension.swift"; path = "../../../../carro-rabbit-iosv3/DevPods/Core/Source/Extensions+Helpers/Bundle+Extension.swift"; sourceTree = "<group>"; };
 		C2AEDD092A81385D00BAC131 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C2AEDD0B2A81397D00BAC131 /* th */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = th; path = th.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C2B889322A6A69B600ED3A60 /* ImageStickerContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageStickerContainerView.swift; sourceTree = "<group>"; };
@@ -1540,6 +1555,22 @@
 				ED7F01EFBE20F1FF79AD3938 /* Pods_InspectionTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C2AB93B92AD2443F00BD1915 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				C2AB93BA2AD2446100BD1915 /* JSONUtils.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		C2AB93C02AD2454100BD1915 /* Fundamentals */ = {
+			isa = PBXGroup;
+			children = (
+				C2AB93C12AD2455400BD1915 /* ArrayBuildable.swift */,
+			);
+			path = Fundamentals;
 			sourceTree = "<group>";
 		};
 		C2B889312A6A691400ED3A60 /* ZLPhotoBrowser */ = {
@@ -2420,6 +2451,7 @@
 		F96F537625D0DE4B00317ED0 /* CabinCar */ = {
 			isa = PBXGroup;
 			children = (
+				C2AB93B62AD199EF00BD1915 /* gearbox_details.json */,
 				F96F53B425D0E03400317ED0 /* CabinCarPresenter.swift */,
 				F96F53B525D0E03400317ED0 /* CabinCarWorker.swift */,
 				F96F53B625D0E03400317ED0 /* CabinCarRouter.swift */,
@@ -2515,6 +2547,8 @@
 		F99DB20A25C807030069F32E /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				C2AB93C02AD2454100BD1915 /* Fundamentals */,
+				C2AB93B92AD2443F00BD1915 /* Utils */,
 				F9652DAD25D28C0E00C5F395 /* CustomNib */,
 				F9E02E2625D1104D0003CB9C /* Component */,
 				F99DB20B25C8070E0069F32E /* extension */,
@@ -2525,6 +2559,8 @@
 		F99DB20B25C8070E0069F32E /* extension */ = {
 			isa = PBXGroup;
 			children = (
+				C2AB93C42AD246ED00BD1915 /* Bundle+Extension.swift */,
+				C2AB93BD2AD2449800BD1915 /* Data+Extensions.swift */,
 				F99DB23425C82DD00069F32E /* UITextFieldExtension.swift */,
 				F99DB20C25C8072A0069F32E /* UIScrollView+extension.swift */,
 				F99DB21125C8077F0069F32E /* UIView+nib.swift */,
@@ -2975,6 +3011,7 @@
 				C28901612AC5536A003C2F1A /* PickUpCar.storyboard in Resources */,
 				C28901622AC5536A003C2F1A /* Assets.xcassets in Resources */,
 				C28901632AC5536A003C2F1A /* PhotoAndResultCar.storyboard in Resources */,
+				C2AB93B82AD199EF00BD1915 /* gearbox_details.json in Resources */,
 				C28901642AC5536A003C2F1A /* ModelCode.storyboard in Resources */,
 				C28901652AC5536A003C2F1A /* Main.storyboard in Resources */,
 				C28901662AC5536A003C2F1A /* DateTime.storyboard in Resources */,
@@ -2995,6 +3032,7 @@
 				F9192E0725F08C9900297E1F /* QRCodeReading.storyboard in Resources */,
 				F97F595A25FB61FF001D159F /* CustomProgressView.xib in Resources */,
 				F9D7CD2525CBA344003E049B /* PickUpCar.storyboard in Resources */,
+				C2AB93B72AD199EF00BD1915 /* gearbox_details.json in Resources */,
 				F914455225C7F95000B09FB6 /* Assets.xcassets in Resources */,
 				F9D7CD6225CBA9B3003E049B /* PhotoAndResultCar.storyboard in Resources */,
 				F931493B25F76BB6004E5F7A /* ModelCode.storyboard in Resources */,
@@ -3491,6 +3529,7 @@
 				C28900CB2AC5536A003C2F1A /* MotorcycleCheckWorker.swift in Sources */,
 				C28900CC2AC5536A003C2F1A /* ConstraintDirectionalInsetTarget.swift in Sources */,
 				C28900CD2AC5536A003C2F1A /* ModelCodeCell.swift in Sources */,
+				C2AB93BF2AD2449800BD1915 /* Data+Extensions.swift in Sources */,
 				C28900CE2AC5536A003C2F1A /* StandardMakeService.swift in Sources */,
 				C28900CF2AC5536A003C2F1A /* PDFPreviewInteractor.swift in Sources */,
 				C28900D02AC5536A003C2F1A /* EngineCheckPresenter.swift in Sources */,
@@ -3498,6 +3537,7 @@
 				C28900D22AC5536A003C2F1A /* LoginInteractor.swift in Sources */,
 				C28900D32AC5536A003C2F1A /* LoginService.swift in Sources */,
 				C28900D42AC5536A003C2F1A /* ItemPendingListPresenter.swift in Sources */,
+				C2AB93C62AD246ED00BD1915 /* Bundle+Extension.swift in Sources */,
 				C28900D52AC5536A003C2F1A /* InspectionImage.swift in Sources */,
 				C28900D62AC5536A003C2F1A /* CreateModelCodeService.swift in Sources */,
 				C28900D72AC5536A003C2F1A /* GradeCarPresenter.swift in Sources */,
@@ -3505,12 +3545,14 @@
 				C28900D92AC5536A003C2F1A /* VehicleModelRequest.swift in Sources */,
 				C28900DA2AC5536A003C2F1A /* ExternalCarModels.swift in Sources */,
 				C28900DB2AC5536A003C2F1A /* ConstraintPriority.swift in Sources */,
+				C2AB93C32AD2455400BD1915 /* ArrayBuildable.swift in Sources */,
 				C28900DC2AC5536A003C2F1A /* ConstraintLayoutSupportDSL.swift in Sources */,
 				C28900DD2AC5536A003C2F1A /* MainNavigationController.swift in Sources */,
 				C28900DE2AC5536A003C2F1A /* SparePartsCarWorker.swift in Sources */,
 				C28900DF2AC5536A003C2F1A /* StandardColorService.swift in Sources */,
 				C28900E02AC5536A003C2F1A /* SearchCodeService.swift in Sources */,
 				C28900E12AC5536A003C2F1A /* JatoCarModelsModel.swift in Sources */,
+				C2AB93BC2AD2446100BD1915 /* JSONUtils.swift in Sources */,
 				C28900E22AC5536A003C2F1A /* Canvas.swift in Sources */,
 				C28900E32AC5536A003C2F1A /* GearCheckInteractor.swift in Sources */,
 				C28900E42AC5536A003C2F1A /* ModelCodeTemplateService.swift in Sources */,
@@ -3959,6 +4001,7 @@
 				CE95D5BB26F8444300A1538F /* MotorcycleCheckWorker.swift in Sources */,
 				C2B889682A6A69D400ED3A60 /* ConstraintDirectionalInsetTarget.swift in Sources */,
 				F931494A25F77D94004E5F7A /* ModelCodeCell.swift in Sources */,
+				C2AB93BE2AD2449800BD1915 /* Data+Extensions.swift in Sources */,
 				F9DBA3F425FEF93900EE124F /* StandardMakeService.swift in Sources */,
 				F99583A825DF9A77005DD029 /* PDFPreviewInteractor.swift in Sources */,
 				F94A042225DA39C500C8EC4C /* EngineCheckPresenter.swift in Sources */,
@@ -3966,6 +4009,7 @@
 				F91445AE25C7FB8100B09FB6 /* LoginInteractor.swift in Sources */,
 				F97629432643CA2A00E51903 /* LoginService.swift in Sources */,
 				F957B83125CA49A100B8FB3C /* ItemPendingListPresenter.swift in Sources */,
+				C2AB93C52AD246ED00BD1915 /* Bundle+Extension.swift in Sources */,
 				F924DCD226390916002E4B90 /* InspectionImage.swift in Sources */,
 				CE53402426849503006D0AC6 /* CreateModelCodeService.swift in Sources */,
 				F986435425FA1509004EAB2F /* GradeCarPresenter.swift in Sources */,
@@ -3973,12 +4017,14 @@
 				F9A7C2A526536C480067D7C5 /* VehicleModelRequest.swift in Sources */,
 				F96F539F25D0E01900317ED0 /* ExternalCarModels.swift in Sources */,
 				C2B889662A6A69D400ED3A60 /* ConstraintPriority.swift in Sources */,
+				C2AB93C22AD2455400BD1915 /* ArrayBuildable.swift in Sources */,
 				C2B8897E2A6A69D400ED3A60 /* ConstraintLayoutSupportDSL.swift in Sources */,
 				F99DB22D25C80ED80069F32E /* MainNavigationController.swift in Sources */,
 				F96F53AC25D0E02700317ED0 /* SparePartsCarWorker.swift in Sources */,
 				F9DBA40225FF057500EE124F /* StandardColorService.swift in Sources */,
 				F931495A25F85FF2004E5F7A /* SearchCodeService.swift in Sources */,
 				CE53402D26859EB1006D0AC6 /* JatoCarModelsModel.swift in Sources */,
+				C2AB93BB2AD2446100BD1915 /* JSONUtils.swift in Sources */,
 				F96DD8F425D13F3200DC52C4 /* Canvas.swift in Sources */,
 				F94A044525DA39E900C8EC4C /* GearCheckInteractor.swift in Sources */,
 				CE53401A26846CCF006D0AC6 /* ModelCodeTemplateService.swift in Sources */,

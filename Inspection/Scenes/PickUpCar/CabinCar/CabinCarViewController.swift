@@ -1127,7 +1127,6 @@ class CabinCarViewController: ViewController, CabinCarDisplayLogic
         guard var gearBoxList_bu = viewModel.gearBoxList_bu else { return }
         isGearBox = true
         if gearAutomaticIsSelected == false {
-//            gearBoxList_bu = DataController.shared.receiverCarModel.gearboxListPart
             gearBoxList_bu = gearboxListPart
         }
         gearAutomaticIsSelected = !gearAutomaticIsSelected

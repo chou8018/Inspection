@@ -8,7 +8,7 @@
 import Foundation
 import ObjectMapper
 
-struct GearBoxModel : Mappable , Codable {
+struct GearBoxModel : Mappable {
     /**
      
          [
@@ -23,7 +23,6 @@ struct GearBoxModel : Mappable , Codable {
     var gearBox1: String?
     var desc_BU: String?
     var desc_LO: String?
-    var items: [GearBoxModel]?
 
     init?(map: Map) {
         
@@ -33,6 +32,5 @@ struct GearBoxModel : Mappable , Codable {
         self.gearBox1 <- map["gearBox1"]
         self.desc_BU <- map["desc_BU"]
         self.desc_LO <- map["desc_LO"]
-        self.items <- map["items"]
     }
 }

@@ -255,10 +255,10 @@ class CabinCarViewController: ViewController, CabinCarDisplayLogic
         
         var usedList = [String]()
 
-        if gearArr == gearboxListPart {
-            usedList = gearboxListAll
+        if gearArr == DataController.shared.receiverCarModel.gearboxListPart {
+            usedList = DataController.shared.receiverCarModel.gearboxListAll
         } else {
-            usedList = gearboxListPart
+            usedList = DataController.shared.receiverCarModel.gearboxListPart
         }
 
         let viewModel = CabinCar.Something.ViewModel(gearBoxList_bu: usedList)
@@ -1127,8 +1127,7 @@ class CabinCarViewController: ViewController, CabinCarDisplayLogic
         guard var gearBoxList_bu = viewModel.gearBoxList_bu else { return }
         isGearBox = true
         if gearAutomaticIsSelected == false {
-//            gearBoxList_bu = DataController.shared.receiverCarModel.gearboxListPart
-            gearBoxList_bu = gearboxListPart
+            gearBoxList_bu = DataController.shared.receiverCarModel.gearboxListPart
         }
         gearAutomaticIsSelected = !gearAutomaticIsSelected
         setGearValue(to: gearboxDropDown, values: gearBoxList_bu) { [weak self] (selectValue, _, _) in

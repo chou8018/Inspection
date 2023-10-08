@@ -114,18 +114,18 @@ class CabinCarInteractor: CabinCarBusinessLogic, CabinCarDataStore
     
     
     func fetchGearBox(request: CabinCar.Something.Request) {
-        workerModelCode = CreateModelCodeWorker()
-        workerModelCode?.getGearBox(completion: { [weak self] response in
-            if let modelList = response.gearBoxList {
-                self?.gearBoxList = modelList
-            }
-            
-            let responseCabin = CabinCar.Something.Response(gearBoxList: response.gearBoxList,
-                                                            error: response.error)
-            
-            self?.presenter?.presentGearBoxList(response: responseCabin)
-        })
-//        fetchLocalGearBox(request: request)
+//        workerModelCode = CreateModelCodeWorker()
+//        workerModelCode?.getGearBox(completion: { [weak self] response in
+//            if let modelList = response.gearBoxList {
+//                self?.gearBoxList = modelList
+//            }
+//
+//            let responseCabin = CabinCar.Something.Response(gearBoxList: response.gearBoxList,
+//                                                            error: response.error)
+//
+//            self?.presenter?.presentGearBoxList(response: responseCabin)
+//        })
+        fetchLocalGearBox(request: request)
     }
     
     func fetchLocalGearBox(request: CabinCar.Something.Request) {

@@ -85,21 +85,21 @@ class CabinCarPresenter: CabinCarPresentationLogic
             guard let gearBoxList = response.gearBoxList else { return }
             let gearBoxList_bu = gearBoxList.compactMap({ $0.desc_BU })
             
-//            DataController.shared.receiverCarModel.gearboxListPart = gearBoxList_bu
-//            var listAll = [String]()
-//            for gear in gearBoxList {
-//                if let gear_bu = gear.desc_BU {
-//                    listAll.append(gear_bu)
-//                }
-//                if let items = gear.items {
-//                    for item in items {
-//                        if let gear_bu = item.desc_BU {
-//                            listAll.append(gear_bu)
-//                        }
-//                    }
-//                }
-//            }
-//            DataController.shared.receiverCarModel.gearboxListAll = listAll
+            DataController.shared.receiverCarModel.gearboxListPart = gearBoxList_bu
+            var listAll = [String]()
+            for gear in gearBoxList {
+                if let gear_bu = gear.desc_BU {
+                    listAll.append(gear_bu)
+                }
+                if let items = gear.items {
+                    for item in items {
+                        if let gear_bu = item.desc_BU {
+                            listAll.append(gear_bu)
+                        }
+                    }
+                }
+            }
+            DataController.shared.receiverCarModel.gearboxListAll = listAll
 
             let viewModel = CabinCar.Something.ViewModel(gearBoxList_bu: gearBoxList_bu)
             viewController?.displayGearBoxList(viewModel: viewModel)

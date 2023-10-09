@@ -100,7 +100,7 @@ class PhotoCarInteractor: PhotoCarBusinessLogic, PhotoCarDataStore
     
     
     func addPhoto(request: PhotoCar.Something.Request) {
-        DispatchQueue.global().async { [weak self] in
+        DispatchQueue.global().sync { [weak self] in
             guard let weakself = self else { return }
             guard  let image = request.image else { return }
             var imageResized = image

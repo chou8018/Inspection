@@ -359,7 +359,8 @@ class ZLPhotoPreviewController: UIViewController {
         bottomView.addSubview(editBtn)
         
         originalBtn.isHidden = !(config.allowSelectOriginal && config.allowSelectImage)
-        originalBtn.isSelected = (navigationController as? ZLImageNavController)?.isSelectedOriginal ?? false
+//        originalBtn.isSelected = (navigationController as? ZLImageNavController)?.isSelectedOriginal ?? false
+        originalBtn.isSelected = true
         bottomView.addSubview(originalBtn)
         
         bottomView.addSubview(doneBtn)

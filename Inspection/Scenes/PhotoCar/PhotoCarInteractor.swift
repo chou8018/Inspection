@@ -32,6 +32,7 @@ protocol PhotoCarBusinessLogic
     func validateActionSendToInspectionIMAT(request: PhotoCar.Something.Request)
     
     func showImageViewer(request: PhotoCar.Something.Request)
+    func showImageBySection()
 }
 
 protocol PhotoCarDataStore
@@ -141,11 +142,17 @@ class PhotoCarInteractor: PhotoCarBusinessLogic, PhotoCarDataStore
                 DataController.shared.photoCarModel.itemList = weakself.itemList
                 DataController.shared.photoCarModel.hasSection = weakself.hasSection
                 
-                let response = PhotoCar.Something.Response(imageList: weakself.itemList[sectionName])
-                weakself.presenter?.presentImageBySection(response: response)
+//                let response = PhotoCar.Something.Response(imageList: weakself.itemList[sectionName])
+//                weakself.presenter?.presentImageBySection(response: response)
             }
         }
       
+    }
+    
+    func showImageBySection() {
+        var response = PhotoCar.Something.Response(imageList: self.itemList[sectionName])
+        response.isNeedLoading = true
+        self.presenter?.presentImageBySection(response: response)
     }
     
     func ignoredSection(request: PhotoCar.Something.Request) {

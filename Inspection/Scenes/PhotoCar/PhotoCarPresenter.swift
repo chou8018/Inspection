@@ -71,7 +71,7 @@ class PhotoCarPresenter: PhotoCarPresentationLogic
                 }
             }
             
-            let viewModel = PhotoCar.Something.ViewModel(imageList: response.imageList, requiredSection: requiredSection)
+            let viewModel = PhotoCar.Something.ViewModel(imageList: response.imageList, requiredSection: requiredSection, isNeedLoading: response.isNeedLoading)
             viewController?.displayCollectionImageBySection(viewModel: viewModel)
         }
        

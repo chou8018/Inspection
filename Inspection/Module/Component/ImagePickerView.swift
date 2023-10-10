@@ -14,6 +14,7 @@ import ZLPhotoBrowser
 protocol ImagePickerPresenter : AnyObject {
     func didSelectCallback()
     func pickImageCallback(image : UIImage? , url : URL?)
+    func pickImagesCallback(images : [UIImage]?)
 }
 
 open class ImagePicker: NSObject {
@@ -154,10 +155,13 @@ open class ImagePicker: NSObject {
             debugPrint("isEdited: \(results.map { $0.isEdited })")
             debugPrint("isOriginal: \(isOriginal)")
             
-            self.selectedImages.forEach { (image) in
-                self.delegateImage?.didSelectCallback()
-                self.delegateImage?.pickImageCallback(image: image , url: URL(string: "https://inspecfakeurl.com/image/\(Date().DateToServerFormatString()).jpeg"))
-            }
+            self.delegateImage?.didSelectCallback()
+//            self.selectedImages.forEach { (image) in
+//                self.delegateImage?.pickImageCallback(image: image , url: URL(string: "https://inspecfakeurl.com/image/\(Date().DateToServerFormatString()).jpeg"))
+//            }
+            self.delegateImage?.pickImagesCallback(images: self.selectedImages)
+  
+
         }
         ac.cancelBlock = {
             debugPrint("cancel select")

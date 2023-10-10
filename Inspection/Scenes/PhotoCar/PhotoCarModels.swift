@@ -68,9 +68,9 @@ enum PhotoCar
         var isSkip:Bool?
         var isCheck:Bool?
         
-
         var isEnableSendToIMAP : Bool?
         var error: KErrorMessage?
+        var isNeedLoading = false
     }
     struct ViewModel
     {
@@ -82,9 +82,9 @@ enum PhotoCar
         var isSkip:Bool?
         var isCheck:Bool?
         
-
         var isEnableSendToIMAP : Bool?
         var errorMessage:String?
+        var isNeedLoading = false
     }
   }
 }

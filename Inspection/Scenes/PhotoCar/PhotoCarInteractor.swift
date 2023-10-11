@@ -117,10 +117,12 @@ class PhotoCarInteractor: PhotoCarBusinessLogic, PhotoCarDataStore
                 let sectionName = weakself.sectionName
 
                 //result
+                #if DEBUG
                 print("✅ sectionName = \(sectionName) ✅ ")
                 print("✅ fileName =  \(request.url?.lastPathComponent ?? "-") ✅ ")
-                print("✅ image size =  \(size), \(type(of: size)) ✅ ")
+//                print("✅ image size =  \(size), \(type(of: size)) ✅ ")
                 print("✅ image =  \(imageResized) ✅ ")
+                 #endif
                 
                 weakself.hasSection.append((sectionName, weakself.getSectionNumbe(sectionName)))
             

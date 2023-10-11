@@ -150,8 +150,7 @@ class PhotoCarInteractor: PhotoCarBusinessLogic, PhotoCarDataStore
     }
     
     func showImageBySection() {
-        var response = PhotoCar.Something.Response(imageList: self.itemList[sectionName])
-        response.isNeedLoading = true
+        let response = PhotoCar.Something.Response(imageList: self.itemList[sectionName])
         self.presenter?.presentImageBySection(response: response)
     }
     

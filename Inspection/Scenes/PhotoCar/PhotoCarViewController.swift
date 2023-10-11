@@ -550,38 +550,11 @@ class PhotoCarViewController: ViewController, PhotoCarDisplayLogic
     func displayCollectionImageBySection(viewModel: PhotoCar.Something.ViewModel) {
         //print("Reload Collection View")
         
-//        if viewModel.isNeedLoading == true {
-//            hideLoading()
-//        }
         hideLoading()
-        print("loading end ****************************")
 
         let viewList = [frontCheckBox, engineCheckBox, plateCheckBox, chassisCheckBox, interiorCheckBox, trayCheckBox, sideCheckBox, backCheckBox, gasTankCheckBox, assetCheckBox, damageCheckBox]
-//
-//        let indexSection = DataController.shared.photoCarModel.indexSection
-//        if let selectView = viewList[indexSection] {
-//            selectView.check = true
-//        }
-//
-//        if let count = viewModel.imageList?.count , count > 0 {
-//            let model = self.sourceSectionName[indexSection]
-//            self.setTitleFieldRequired(model)
-//        }
-//
-//        if let requiredSection = viewModel.requiredSection {
-//            for i in requiredSection {
-//                self.setTitleFieldRequired(self.sourceSectionName[i])
-//            }
-//        }
-//
-//
-//        self.amountLabel.text = "\(viewModel.imageList?.count ?? 0)"
-//        //self?.dataSource.styleCell = (indexSection == 10) ? .DAMAGE : .NORMAL
-//        self.dataSource.itemList = viewModel.imageList ?? []
-//        self.collectionView.reloadData()
         
         DispatchQueue.main.async { [weak self] in
-
 
             let indexSection = DataController.shared.photoCarModel.indexSection
             if let selectView = viewList[indexSection] {
@@ -605,11 +578,7 @@ class PhotoCarViewController: ViewController, PhotoCarDisplayLogic
             //self?.dataSource.styleCell = (indexSection == 10) ? .DAMAGE : .NORMAL
             self?.dataSource.itemList = viewModel.imageList ?? []
             self?.collectionView.reloadData()
-            print("reloadData ###############################")
-
         }
-        
-        
     }
     
     func displayUpdateRequiredButton(viewModel: PhotoCar.Something.ViewModel) {
@@ -709,8 +678,6 @@ extension PhotoCarViewController  {
 extension PhotoCarViewController : ImagePickerPresenter {
     func didSelectCallback() {
         showLoading()
-        print("loading start ---------------------------")
-
     }
     
     func pickImageCallback(image: UIImage?, url: URL?) {
@@ -723,8 +690,6 @@ extension PhotoCarViewController : ImagePickerPresenter {
     func pickImagesCallback(images: [UIImage]?) {
         
         guard let images =  images  else { return }
-//        showLoadingNormal()
-
         images.forEach { (image) in
             let url = URL(string: "https://inspecfakeurl.com/image/\(Date().DateToServerFormatString()).jpeg")
             

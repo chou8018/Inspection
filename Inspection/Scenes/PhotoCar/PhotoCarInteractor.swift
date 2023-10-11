@@ -107,10 +107,10 @@ class PhotoCarInteractor: PhotoCarBusinessLogic, PhotoCarDataStore
             var imageResized = image
             if var size = imageResized.getFileSize() {
                 print("🔸 filesize \(size), \(type(of: size))")
-                let maxSize = 2 * (1000 * 1000)
+                let maxSize = 3 * (1024 * 1024)
                 while size > maxSize {
 
-                    imageResized = imageResized.resized(withPercentage: 0.5)!
+                    imageResized = imageResized.resized(withPercentage: 0.65)!
                     size = imageResized.getFileSize()!
 
                     print("🔻 resize \(size), \(type(of: size))")
@@ -118,10 +118,12 @@ class PhotoCarInteractor: PhotoCarBusinessLogic, PhotoCarDataStore
                 let sectionName = weakself.sectionName
 
                 //result
+                #if DEBUG
                 print("✅ sectionName = \(sectionName) ✅ ")
                 print("✅ fileName =  \(request.url?.lastPathComponent ?? "-") ✅ ")
-                print("✅ image size =  \(size), \(type(of: size)) ✅ ")
+//                print("✅ image size =  \(size), \(type(of: size)) ✅ ")
                 print("✅ image =  \(imageResized) ✅ ")
+                 #endif
                 
                 weakself.hasSection.append((sectionName, weakself.getSectionNumbe(sectionName)))
             

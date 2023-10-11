@@ -68,7 +68,6 @@ enum PhotoCar
         var isSkip:Bool?
         var isCheck:Bool?
         
-
         var isEnableSendToIMAP : Bool?
         var error: KErrorMessage?
     }
@@ -82,7 +81,6 @@ enum PhotoCar
         var isSkip:Bool?
         var isCheck:Bool?
         
-
         var isEnableSendToIMAP : Bool?
         var errorMessage:String?
     }

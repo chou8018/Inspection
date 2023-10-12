@@ -13,9 +13,6 @@
 import UIKit
 import RadioGroup
 
-let string_inspection_suspension_leakage = String.localized("inspection_suspension_leakage_label")
-let string_inspection_suspension_other = String.localized("car_interior_others_label")
-
 protocol UnderCarCheckDisplayLogic: AnyObject
 {
     func displaySomething(viewModel: UnderCarCheck.Something.ViewModel)
@@ -96,8 +93,8 @@ class UnderCarCheckViewController: ViewController, UnderCarCheckDisplayLogic
     
     let option_used_strings: [String] = [string_inspection_engine_working,
                                string_inspection_engine_not_working,
-                               string_inspection_suspension_leakage,
-                               string_inspection_suspension_other]
+                                         String.localized("inspection_suspension_leakage_label"),
+                                         String.localized("car_interior_others_label")]
 
     override func initLocalString() {
         super.initLocalString()

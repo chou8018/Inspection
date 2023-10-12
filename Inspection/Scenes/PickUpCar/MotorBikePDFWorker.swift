@@ -17,7 +17,6 @@ class MotorBikePDFWorker {
     }
     func generateMotorBikePDFForBookIn(model:ReceiverCarModel, completion: @escaping responseMotorBikePDFHandler){
         
-        
         // 1 create a dictionary with the PDF’s metadata using predefined keys.
         let pdfMetaData = [
                 kCGPDFContextCreator: "Inspection",

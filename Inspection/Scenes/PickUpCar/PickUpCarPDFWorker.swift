@@ -1097,7 +1097,8 @@ class PickUpCarPDFWorker {
                                                            y: underEngineOverall)
                   
                 //MARK: OIL System
-                let oilSystemValue = receiverCarModel.oilSystem?.pdfValidateString  ?? "-"
+//                let oilSystemValue = receiverCarModel.oilSystem?.pdfValidateString  ?? "-"
+                let oilSystemValue = receiverCarModel.fuelDeliveryName?.pdfValidateString  ?? "-"
                 let oilSystemText = "\(String.localized("car_engine_fuel_system_label"))  \(oilSystemValue)"
                 let attrOilSystemPDFTitle = weakself.getTitle(mainString: oilSystemText, value: oilSystemValue)
                 let _ = weakself.drawString(attrString: attrOilSystemPDFTitle,
@@ -1115,7 +1116,8 @@ class PickUpCarPDFWorker {
                                                           y: underEcu)
                 
                 //MARK: GasSystem
-                let gasTypeSystemValue = receiverCarModel.gasSystem?.pdfValidateString ?? "-"
+//                let gasTypeSystemValue = receiverCarModel.gasSystem?.pdfValidateString ?? "-"
+                let gasTypeSystemValue = receiverCarModel.oilSystem?.pdfValidateString ?? "-"
                 let gasTypeSystemText = "  \(String.localized("car_pdf_type_label"))  \(gasTypeSystemValue)"
                 let attrGasTypeSystemPDFTitle = weakself.getTitle(mainString: gasTypeSystemText,
                                                          value: gasTypeSystemValue)

@@ -8,18 +8,13 @@
 import Foundation
 import PDFKit
 
-let string_pdf_yes = String.localized("car_pdf_yes_label")
-let string_pdf_no = String.localized("car_pdf_no_label")
-
 typealias responsePDFHandler = (_ response:PickUpCar.Something.Response) -> ()
 class PickUpCarPDFWorker {
     deinit {
         print("🔸🐶 deinit PickUpCarPDFWorker")
     }
     
-    
     func generatePDFForReceiver(receiverCarModel:ReceiverCarModel, completion: @escaping responsePDFHandler){
-        
         
         // 1 create a dictionary with the PDF’s metadata using predefined keys.
         let pdfMetaData = [

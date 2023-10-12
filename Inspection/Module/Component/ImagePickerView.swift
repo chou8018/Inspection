@@ -151,19 +151,14 @@ open class ImagePicker: NSObject {
         ac.selectImageBlock = { [weak self] results, isOriginal in
             guard let `self` = self else { return }
             self.selectedImages = results.map { $0.image }
-            debugPrint("images: \(self.selectedImages)")
-            debugPrint("isEdited: \(results.map { $0.isEdited })")
-            debugPrint("isOriginal: \(isOriginal)")
-            
             self.delegateImage?.didSelectCallback()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                self.delegateImage?.pickImagesCallback(images: self.selectedImages)
+            }
 //            self.selectedImages.forEach { (image) in
 //                self.delegateImage?.pickImageCallback(image: image , url: URL(string: "https://inspecfakeurl.com/image/\(Date().DateToServerFormatString()).jpeg"))
 //            }
 //            self.delegateImage?.pickImagesCallback(images: self.selectedImages)
-            
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                self.delegateImage?.pickImagesCallback(images: self.selectedImages)
-            }
         }
         ac.cancelBlock = {
             debugPrint("cancel select")

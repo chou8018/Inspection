@@ -735,7 +735,7 @@ class ZLThumbnailViewController: UIViewController {
             doneBtn.setTitle(doneTitle, for: .normal)
             doneBtn.backgroundColor = .zl.bottomToolViewBtnDisableBgColor
         }
-        originalBtn.isSelected = nav.isSelectedOriginal
+        originalBtn.isSelected = true
         refreshDoneBtnFrame()
     }
     

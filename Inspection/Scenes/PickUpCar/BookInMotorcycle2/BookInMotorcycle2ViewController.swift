@@ -13,12 +13,6 @@
 import UIKit
 import RadioGroup
 
-let string_key_label = String.localized("car_interior_key_label")
-let string_remote_key_label = String.localized("car_interior_remote_key_label")
-let string_remote_control_key_label = String.localized("car_interior_remote_control_label")
-let string_immobilizer_key_label = String.localized("car_interior_key_immobilizer_label")
-let string_keyless_label = String.localized("car_interior_keyless_label")
-
 protocol BookInMotorcycle2DisplayLogic: AnyObject
 {
     func displaySomething(viewModel: BookInMotorcycle2.Something.ViewModel)
@@ -180,6 +174,7 @@ class BookInMotorcycle2ViewController: ViewController, BookInMotorcycle2DisplayL
         immobilizarKeyDropDown.placeholder = String.localized("car_interior_key_placeholder_label")
         othersLabel.text = String.localized("car_interior_others_label")
         noteMultilineTextField.placeholder = othersLabel.text
+        
     }
     
     func doSomething()

@@ -111,7 +111,7 @@ class EngineCheckViewController: ViewController, EngineCheckDisplayLogic
     
     let string_inspection_oil_lacking = String.localized("inspection_engine_oil_lacking_label")
     let string_inspection_oil_not_lacking = String.localized("inspection_engine_oil_notlacking_label")
-
+    
     override func initLocalString() {
         super.initLocalString()
         
@@ -130,6 +130,7 @@ class EngineCheckViewController: ViewController, EngineCheckDisplayLogic
         summaryLabel.text = String.localized("inspection_engine_summary_label")
         summaryEngineTextField.placeholder = summaryLabel.text
         gasLabel.text = String.localized("inspection_engine_gas_label")
+
     }
     
     func doSomething()

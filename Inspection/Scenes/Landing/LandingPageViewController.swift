@@ -12,6 +12,39 @@
 
 import UIKit
 
+var string_excellent = String.localized("car_exterior_excellent_label")
+var string_good = String.localized("car_exterior_good_label")
+var string_good_first = String.localized("car_exterior_good_first_label")
+var string_average = String.localized("car_exterior_average_label")
+var string_fair = String.localized("car_exterior_fair_label")
+var string_poor = String.localized("car_exterior_poor_label")
+var string_as_is = String.localized("car_exterior_as_is_label")
+var string_salvage = String.localized("car_exterior_salvage_label")
+
+var string_benzine = String.localized("car_engine_benzine_label")
+var string_diesel = String.localized("car_engine_diesel_label")
+var string_hybrid_benzine = String.localized("car_engine_hybrid_benzine_label")
+var string_hybrid_diesel = String.localized("car_engine_hybrid_diesel_label")
+
+var string_injector = String.localized("car_engine_injector_label")
+var string_carburetor = String.localized("car_engine_carburetor_label")
+var string_lpg_sequential_injection = String.localized("car_engine_lpg_sequential_injection_label")
+var string_lpg_fumigation_system = String.localized("car_engine_lpg_fumigation_system_label")
+var string_cng_sequential_injection = String.localized("car_engine_cng_sequential_injection_label")
+var string_cng_fumigation_system = String.localized("car_engine_cng_fumigation_system_label")
+
+var string_inspection_engine_working = String.localized("inspection_engine_working_label")
+var string_inspection_engine_not_working = String.localized("inspection_engine_not_working_label")
+
+var string_key_label = String.localized("car_interior_key_label")
+var string_remote_key_label = String.localized("car_interior_remote_key_label")
+var string_remote_control_key_label = String.localized("car_interior_remote_control_label")
+var string_immobilizer_key_label = String.localized("car_interior_key_immobilizer_label")
+var string_keyless_label = String.localized("car_interior_keyless_label")
+
+var string_pdf_yes = String.localized("car_pdf_yes_label")
+var string_pdf_no = String.localized("car_pdf_no_label")
+
 protocol LandingPageDisplayLogic: AnyObject
 {
     func displaySomething(viewModel: LandingPage.Something.ViewModel)
@@ -94,6 +127,38 @@ class LandingPageViewController: ViewController, LandingPageDisplayLogic
         listInspectionLabel.text = String.localized("select_inspection_list_label")
         logOutButton.setTitle(String.localized("select_inspection_log_out"), for: .normal)
         updateUI()
+        
+        string_excellent = String.localized("car_exterior_excellent_label")
+        string_good = String.localized("car_exterior_good_label")
+        string_good_first = String.localized("car_exterior_good_first_label")
+        string_average = String.localized("car_exterior_average_label")
+        string_fair = String.localized("car_exterior_fair_label")
+        string_poor = String.localized("car_exterior_poor_label")
+        string_as_is = String.localized("car_exterior_as_is_label")
+        string_salvage = String.localized("car_exterior_salvage_label")
+
+        string_benzine = String.localized("car_engine_benzine_label")
+        string_diesel = String.localized("car_engine_diesel_label")
+        string_hybrid_benzine = String.localized("car_engine_hybrid_benzine_label")
+        string_hybrid_diesel = String.localized("car_engine_hybrid_diesel_label")
+
+        string_injector = String.localized("car_engine_injector_label")
+        string_carburetor = String.localized("car_engine_carburetor_label")
+        string_lpg_sequential_injection = String.localized("car_engine_lpg_sequential_injection_label")
+        string_lpg_fumigation_system = String.localized("car_engine_lpg_fumigation_system_label")
+        string_cng_sequential_injection = String.localized("car_engine_cng_sequential_injection_label")
+        string_cng_fumigation_system = String.localized("car_engine_cng_fumigation_system_label")
+
+        string_inspection_engine_working = String.localized("inspection_engine_working_label")
+        string_inspection_engine_not_working = String.localized("inspection_engine_not_working_label")
+        
+        string_key_label = String.localized("car_interior_key_label")
+        string_remote_key_label = String.localized("car_interior_remote_key_label")
+        string_remote_control_key_label = String.localized("car_interior_remote_control_label")
+        string_immobilizer_key_label = String.localized("car_interior_key_immobilizer_label")
+        string_keyless_label = String.localized("car_interior_keyless_label")
+        string_pdf_yes = String.localized("car_pdf_yes_label")
+        string_pdf_no = String.localized("car_pdf_no_label")
         
         if DataController.shared.isThaiLanguage() {
             switchLanguageButton.setTitle("TH", for: .normal)

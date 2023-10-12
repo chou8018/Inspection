@@ -32,6 +32,7 @@ protocol PhotoCarBusinessLogic
     func validateActionSendToInspectionIMAT(request: PhotoCar.Something.Request)
     
     func showImageViewer(request: PhotoCar.Something.Request)
+    func showImageBySection()
 }
 
 protocol PhotoCarDataStore
@@ -100,16 +101,16 @@ class PhotoCarInteractor: PhotoCarBusinessLogic, PhotoCarDataStore
     
     
     func addPhoto(request: PhotoCar.Something.Request) {
-        DispatchQueue.global().async { [weak self] in
+        DispatchQueue.global().sync { [weak self] in
             guard let weakself = self else { return }
             guard  let image = request.image else { return }
             var imageResized = image
             if var size = imageResized.getFileSize() {
                 print("🔸 filesize \(size), \(type(of: size))")
-                let maxSize = 2 * (1000 * 1000)
+                let maxSize = 3 * (1024 * 1024)
                 while size > maxSize {
 
-                    imageResized = imageResized.resized(withPercentage: 0.5)!
+                    imageResized = imageResized.resized(withPercentage: 0.65)!
                     size = imageResized.getFileSize()!
 
                     print("🔻 resize \(size), \(type(of: size))")
@@ -117,10 +118,12 @@ class PhotoCarInteractor: PhotoCarBusinessLogic, PhotoCarDataStore
                 let sectionName = weakself.sectionName
 
                 //result
+                #if DEBUG
                 print("✅ sectionName = \(sectionName) ✅ ")
                 print("✅ fileName =  \(request.url?.lastPathComponent ?? "-") ✅ ")
-                print("✅ image size =  \(size), \(type(of: size)) ✅ ")
+//                print("✅ image size =  \(size), \(type(of: size)) ✅ ")
                 print("✅ image =  \(imageResized) ✅ ")
+                 #endif
                 
                 weakself.hasSection.append((sectionName, weakself.getSectionNumbe(sectionName)))
             
@@ -141,11 +144,16 @@ class PhotoCarInteractor: PhotoCarBusinessLogic, PhotoCarDataStore
                 DataController.shared.photoCarModel.itemList = weakself.itemList
                 DataController.shared.photoCarModel.hasSection = weakself.hasSection
                 
-                let response = PhotoCar.Something.Response(imageList: weakself.itemList[sectionName])
-                weakself.presenter?.presentImageBySection(response: response)
+//                let response = PhotoCar.Something.Response(imageList: weakself.itemList[sectionName])
+//                weakself.presenter?.presentImageBySection(response: response)
             }
         }
       
+    }
+    
+    func showImageBySection() {
+        let response = PhotoCar.Something.Response(imageList: self.itemList[sectionName])
+        self.presenter?.presentImageBySection(response: response)
     }
     
     func ignoredSection(request: PhotoCar.Something.Request) {

@@ -10,14 +10,14 @@ import UIKit
 
 typealias responseInspectionPDFHandler = (_ response:SummaryCar.Something.Response) -> ()
 
-let string_inspection_pdf_work = String.localized("car_inspection_pdf_work_label")
-let string_inspection_pdf_not_work = String.localized("car_inspection_pdf_not_work_label")
-
 class SummaryCarPDFWorker {
     deinit {
         print("🔸🐶 deinit SummaryCarPDFWorker")
     }
     func generatePDFForInspection(model:InspectionCarModel, inspector:String?,  completion: @escaping responseInspectionPDFHandler){
+        
+        let string_inspection_pdf_work = String.localized("car_inspection_pdf_work_label")
+        let string_inspection_pdf_not_work = String.localized("car_inspection_pdf_not_work_label")
      
         let receiverModel = DataController.shared.receiverCarModel
         let damageLists = DataController.shared.photoCarModel.damageItemLists

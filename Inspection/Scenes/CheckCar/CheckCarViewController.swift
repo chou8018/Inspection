@@ -572,6 +572,11 @@ extension CheckCarViewController: UIScrollViewDelegate {
         if isClickedTopItem {
             return
         }
+        
+        if DataController.shared.bookInType == .MBIKE || DataController.shared.bookInType == .MBIKEWRECK {
+            return
+        }
+        
         let offsetY = scrollView.contentOffset.y
         if offsetY < 0 {
             return

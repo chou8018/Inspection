@@ -200,8 +200,8 @@
 "car_engine_gas_label" = "Gas";
 "car_engine_lpg_sequential_injection_label" = "LPG Sequential Injection";
 "car_engine_lpg_fumigation_system_label" = "LPG Fumigation System";
-"car_engine_cng_sequential_injection_label" = "CNG/NGV Sequential Injection";
-"car_engine_cng_fumigation_system_label" = "LCNG/NGV Fumigation System";
+"car_engine_cng_sequential_injection_label" = "CNG/NGV";
+"car_engine_cng_fumigation_system_label" = "LCNG/NGV";
 "car_engine_other_in_car_assets_label" = "Other in car assets";
 "car_engine_turbocharger_label" = "Turbocharger";
 

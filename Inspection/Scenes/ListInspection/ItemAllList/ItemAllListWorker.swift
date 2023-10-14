@@ -282,13 +282,10 @@ class ItemAllListWorker
                     model.fuelDeliveryName = fuelDeliveryName
                     model.fuelDelivery = fuelDelivery
                     
-                    DataController.shared.inspectionCarModel.fuelDeliveryType = fuelDeliveryName
+                    DataController.shared.inspectionCarModel.fuelSystem = fuelDeliveryName
+                    DataController.shared.inspectionCarModel.typeEngine = model.oilSystem
                 }
                 
-                
-
-                
-
                 
 //                let gasTypeValue = [nil, "LPG", "CNG / NGV"]
                 let gasTypeValue = [nil, string_lpg_sequential_injection, string_lpg_fumigation_system,

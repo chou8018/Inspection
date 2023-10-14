@@ -108,9 +108,61 @@ extension String {
     }
     
     func toJSON() -> Any? {
-           guard let data = self.data(using: .utf8, allowLossyConversion: false) else { return nil }
-           return try? JSONSerialization.jsonObject(with: data, options: .mutableContainers)
-       }
+        guard let data = self.data(using: .utf8, allowLossyConversion: false) else { return nil }
+        return try? JSONSerialization.jsonObject(with: data, options: .mutableContainers)
+    }
+    
+    func formateMileage() -> String {
+        return conversionOfDigital(unit: "km")
+    }
+    
+    func conversionOfDigital(unit: String? = nil) -> String {
+        
+        let strings = components(separatedBy: ".")
+        guard let _ = Float(self) else {
+            return "0"
+        }
+        var value = strings.first ?? ""
+        var float = ""
+        if strings.count > 1 {
+            float = strings.last ?? ""
+        }
+        
+        if value.count <= 3 {
+            if let unit = unit {
+                return self + " " + unit
+            }
+            return self
+        }
+        
+        let count = value.count/3
+        let left = value.count%3
+        
+        let separate: Character = ","
+        
+        for index in 0..<count {
+            if index == 0 && left != 0 {
+                let index = value.index(value.startIndex, offsetBy: left)
+                value.insert(separate, at: index)
+            }else{
+                let idx = left == 0 ? (index == 0 ? 1:index+1):index
+                let index = value.index(value.startIndex, offsetBy: (idx)*3+index+left)
+                value.insert(separate, at: index)
+            }
+        }
+        if value.hasSuffix(String(separate)) {
+            value.remove(at: value.index(value.endIndex, offsetBy: -1))
+        }
+        
+        var returnValue = value
+        if float.count > 0 {
+            returnValue = value + "." + float
+        }
+        if let unit = unit {
+            return returnValue + " " + unit
+        }
+        return returnValue
+    }
 }
 
 extension String {

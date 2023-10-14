@@ -178,6 +178,9 @@ class GradeCarViewController: ViewController, GradeCarDisplayLogic
     @IBOutlet weak var yOptionLabel: UILabel!
     @IBOutlet weak var rightButtonItem: UIBarButtonItem!
     
+    @IBOutlet weak var mileageLabel: UILabel!
+    @IBOutlet weak var registrationYearLabel: UILabel!
+    
     override func initLocalString() {
         super.initLocalString()
         self.title = String.localized("car_grade_title_label")
@@ -188,7 +191,7 @@ class GradeCarViewController: ViewController, GradeCarDisplayLogic
         eOption3Label.text = String.localized("car_grade_excellence_option3_label")
         eOption4Label.text = String.localized("car_grade_excellence_option4_label")
         eOption5Label.text = String.localized("car_grade_excellence_option5_label")
-
+        
         gTitleLabel.text = String.localized("car_grade_good_label")
         gOption1Label.text = String.localized("car_grade_good_option1_label")
         gOption2Label.text = String.localized("car_grade_good_option2_label")
@@ -224,12 +227,15 @@ class GradeCarViewController: ViewController, GradeCarDisplayLogic
         pOption7Label.text = String.localized("car_grade_poor_option7_label")
         pOption8Label.text = String.localized("car_grade_poor_option8_label")
         pOption9Label.text = String.localized("car_grade_poor_option9_label")
-
+        
         xOptionLabel.text = String.localized("car_grade_x_label")
         yOptionLabel.text = String.localized("car_grade_y_label")
-
+        
+        mileageLabel.text = "\(String.localized("car_interior_mileage_label")): \(DataController.shared.receiverCarModel.miles?.formateMileage() ?? "")"
+        registrationYearLabel.text = "\(String.localized("car_detail_registration_label")): \(DataController.shared.receiverCarModel.registrationYear ?? "")"
+        
     }
-
+    
     func doSomething()
     {
         let request = GradeCar.Something.Request()
@@ -245,27 +251,70 @@ class GradeCarViewController: ViewController, GradeCarDisplayLogic
     }
     
     //MARK: CheckBox Exellence
-    @IBAction func e1checkTapped(_ sender: Any) { e1Chehck.toggle { [weak self] in self?.interactor?.e1Chehck(request: GradeCar.Something.Request(e1Chehck: $0))} }
-    @IBAction func e2checkTapped(_ sender: Any) { e2Chehck.toggle { [weak self] in self?.interactor?.e2Chehck(request: GradeCar.Something.Request(e2Chehck: $0))} }
+    @IBAction func e1checkTapped(_ sender: Any) {
+        if hasDefaultMileage() {
+            return
+        }
+        e1Chehck.toggle { [weak self] in self?.interactor?.e1Chehck(request: GradeCar.Something.Request(e1Chehck: $0))}
+    }
+    @IBAction func e2checkTapped(_ sender: Any) {
+        if hasDefaultRegistration() {
+            return
+        }
+        e2Chehck.toggle { [weak self] in self?.interactor?.e2Chehck(request: GradeCar.Something.Request(e2Chehck: $0))}
+        
+    }
     @IBAction func e3checkTapped(_ sender: Any) { e3Chehck.toggle { [weak self] in self?.interactor?.e3Chehck(request: GradeCar.Something.Request(e3Chehck: $0))} }
     @IBAction func e4checkTapped(_ sender: Any) { e4Chehck.toggle { [weak self] in self?.interactor?.e4Chehck(request: GradeCar.Something.Request(e4Chehck: $0))} }
     @IBAction func e5checkTapped(_ sender: Any) { e5Chehck.toggle { [weak self] in self?.interactor?.e5Chehck(request: GradeCar.Something.Request(e5Chehck: $0))} }
     
     //MARK: CheckBox Good
-    @IBAction func g1checkTapped(_ sender: Any) { g1Chehck.toggle { [weak self] in self?.interactor?.g1Chehck(request: GradeCar.Something.Request(g1Chehck: $0))} }
-    @IBAction func g2checkTapped(_ sender: Any) { g2Chehck.toggle { [weak self] in self?.interactor?.g2Chehck(request: GradeCar.Something.Request(g2Chehck: $0))}}
+    @IBAction func g1checkTapped(_ sender: Any) {
+        if hasDefaultMileage() {
+            return
+        }
+        g1Chehck.toggle { [weak self] in self?.interactor?.g1Chehck(request: GradeCar.Something.Request(g1Chehck: $0))}
+    }
+    @IBAction func g2checkTapped(_ sender: Any) {
+        if hasDefaultRegistration() {
+            return
+        }
+        g2Chehck.toggle { [weak self] in self?.interactor?.g2Chehck(request: GradeCar.Something.Request(g2Chehck: $0))}
+        
+    }
     @IBAction func g3checkTapped(_ sender: Any) { g3Chehck.toggle { [weak self] in self?.interactor?.g3Chehck(request: GradeCar.Something.Request(g3Chehck: $0))} }
     @IBAction func g4checkTapped(_ sender: Any) { g4Chehck.toggle { [weak self] in self?.interactor?.g4Chehck(request: GradeCar.Something.Request(g4Chehck: $0))} }
     
     
     //MARK: CheckBox AveraTappedge
-    @IBAction func a1checkTapped(_ sender: Any) { a1Chehck.toggle { [weak self] in self?.interactor?.a1Chehck(request: GradeCar.Something.Request(a1Chehck: $0))} }
-    @IBAction func a2checkTapped(_ sender: Any) { a2Chehck.toggle { [weak self] in self?.interactor?.a2Chehck(request: GradeCar.Something.Request(a2Chehck: $0))} }
+    @IBAction func a1checkTapped(_ sender: Any) {
+        if hasDefaultMileage() {
+            return
+        }
+        a1Chehck.toggle { [weak self] in self?.interactor?.a1Chehck(request: GradeCar.Something.Request(a1Chehck: $0))}
+        
+    }
+    @IBAction func a2checkTapped(_ sender: Any) {
+        if hasDefaultRegistration() {
+            return
+        }
+        a2Chehck.toggle { [weak self] in self?.interactor?.a2Chehck(request: GradeCar.Something.Request(a2Chehck: $0))}
+        
+    }
     @IBAction func a3checkTapped(_ sender: Any) { a3Chehck.toggle { [weak self] in self?.interactor?.a3Chehck(request: GradeCar.Something.Request(a3Chehck: $0))} }
     @IBAction func a4checkTapped(_ sender: Any) { a4Chehck.toggle { [weak self] in self?.interactor?.a4Chehck(request: GradeCar.Something.Request(a4Chehck: $0))} }
     
     //MARK: CheckBox Fair
-    @IBAction func f1checkTapped(_ sender: Any) { f1Chehck.toggle { [weak self] in self?.interactor?.f1Chehck(request: GradeCar.Something.Request(f1Chehck: $0))} }
+    @IBAction func f1checkTapped(_ sender: Any) {
+        if hasDefaultMileage() {
+            return
+        }
+        if hasDefaultRegistration() {
+            return
+        }
+        f1Chehck.toggle { [weak self] in self?.interactor?.f1Chehck(request: GradeCar.Something.Request(f1Chehck: $0))}
+        
+    }
     @IBAction func f2checkTapped(_ sender: Any) { f2Chehck.toggle { [weak self] in self?.interactor?.f2Chehck(request: GradeCar.Something.Request(f2Chehck: $0))} }
     @IBAction func f3checkTapped(_ sender: Any) { f3Chehck.toggle { [weak self] in self?.interactor?.f3Chehck(request: GradeCar.Something.Request(f3Chehck: $0))} }
     @IBAction func f4checkTapped(_ sender: Any) { f4Chehck.toggle { [weak self] in self?.interactor?.f4Chehck(request: GradeCar.Something.Request(f4Chehck: $0))} }
@@ -378,66 +427,104 @@ class GradeCarViewController: ViewController, GradeCarDisplayLogic
     
     func calculateRegistrationYearAndMiles() {
         
-
+        if let miles = DataController.shared.receiverCarModel.miles?.replacingOccurrences(of: ",", with: ""){
+            let mileage = Int(miles) ?? 0
+            if mileage <= 20_000 {
+                DataController.shared.inspectionCarModel.e1Chehck = true
+            } else if mileage > 20_000 , mileage <= 50_000 {
+                DataController.shared.inspectionCarModel.g1Chehck = true
+            } else if mileage > 50_000 , mileage <= 100_000 {
+                DataController.shared.inspectionCarModel.a1Chehck = true
+            } else {
+                DataController.shared.inspectionCarModel.f1Chehck = true
+            }
+            defaultMileageSelected()
+        }
+        
         if let year = DataController.shared.receiverCarModel.registrationYear {
             let currentYear = Date().year
             let intYear = Int(year) ?? currentYear
             let registration = currentYear - intYear
             
             if registration <= 1 {
-//                e2checkTapped(e2Chehck!)
                 DataController.shared.inspectionCarModel.e2Chehck = true
-                DataController.shared.inspectionCarModel.g2Chehck = false
-                DataController.shared.inspectionCarModel.a2Chehck = false
-                DataController.shared.inspectionCarModel.f1Chehck = false
-
             } else if registration > 1 , registration <= 2 {
-//                g2checkTapped(g2Chehck!)
                 DataController.shared.inspectionCarModel.g2Chehck = true
-                DataController.shared.inspectionCarModel.e2Chehck = false
-                DataController.shared.inspectionCarModel.a2Chehck = false
-                DataController.shared.inspectionCarModel.f1Chehck = false
-
             } else if registration > 2 , registration <= 5 {
-//                a2checkTapped(a2Chehck!)
                 DataController.shared.inspectionCarModel.a2Chehck = true
-                DataController.shared.inspectionCarModel.g2Chehck = false
-                DataController.shared.inspectionCarModel.e2Chehck = false
-                DataController.shared.inspectionCarModel.f1Chehck = false
-            } else {
-//                f1checkTapped(f1Chehck!)
-                DataController.shared.inspectionCarModel.f1Chehck = true
-                DataController.shared.inspectionCarModel.a2Chehck = false
-                DataController.shared.inspectionCarModel.g2Chehck = false
-                DataController.shared.inspectionCarModel.e2Chehck = false
-            }
-        }
-        if let miles = DataController.shared.receiverCarModel.miles?.replacingOccurrences(of: ",", with: ""){
-            let mileage = Int(miles) ?? 0
-            if mileage <= 20_000 {
-                DataController.shared.inspectionCarModel.e1Chehck = true
-                DataController.shared.inspectionCarModel.g1Chehck = false
-                DataController.shared.inspectionCarModel.a1Chehck = false
-                DataController.shared.inspectionCarModel.f1Chehck = false
-
-            } else if mileage > 20_000 , mileage <= 50_000 {
-                DataController.shared.inspectionCarModel.g1Chehck = true
-                DataController.shared.inspectionCarModel.e1Chehck = false
-                DataController.shared.inspectionCarModel.a1Chehck = false
-                DataController.shared.inspectionCarModel.f1Chehck = false
-            } else if mileage > 50_000 , mileage <= 100_000 {
-                DataController.shared.inspectionCarModel.a1Chehck = true
-                DataController.shared.inspectionCarModel.g1Chehck = false
-                DataController.shared.inspectionCarModel.e1Chehck = false
-                DataController.shared.inspectionCarModel.f1Chehck = false
             } else {
                 DataController.shared.inspectionCarModel.f1Chehck = true
-                DataController.shared.inspectionCarModel.a1Chehck = false
-                DataController.shared.inspectionCarModel.g1Chehck = false
-                DataController.shared.inspectionCarModel.e1Chehck = false
             }
+            defaultRegistrationSelected()
         }
-
+    }
+    
+    func defaultMileageSelected() {
+        
+        if  DataController.shared.inspectionCarModel.e1Chehck == true {
+            DataController.shared.inspectionCarModel.g1Chehck = false
+            DataController.shared.inspectionCarModel.a1Chehck = false
+            DataController.shared.inspectionCarModel.f1Chehck = false
+        } else if DataController.shared.inspectionCarModel.g1Chehck == true {
+            DataController.shared.inspectionCarModel.e1Chehck = false
+            DataController.shared.inspectionCarModel.a1Chehck = false
+            DataController.shared.inspectionCarModel.f1Chehck = false
+        } else if DataController.shared.inspectionCarModel.a1Chehck == true {
+            DataController.shared.inspectionCarModel.e1Chehck = false
+            DataController.shared.inspectionCarModel.g1Chehck = false
+            DataController.shared.inspectionCarModel.f1Chehck = false
+        } else {
+            DataController.shared.inspectionCarModel.e1Chehck = false
+            DataController.shared.inspectionCarModel.g1Chehck = false
+            DataController.shared.inspectionCarModel.a1Chehck = false
+        }
+        
+//        a1Chehck.setEnableView(isEnable: false)
+//        e1Chehck.setEnableView(isEnable: false)
+//        g1Chehck.setEnableView(isEnable: false)
+//        f1Chehck.setEnableView(isEnable: false)
+        
+    }
+    
+    func defaultRegistrationSelected() {
+        
+        if  DataController.shared.inspectionCarModel.e2Chehck == true {
+            DataController.shared.inspectionCarModel.g2Chehck = false
+            DataController.shared.inspectionCarModel.a2Chehck = false
+            DataController.shared.inspectionCarModel.f1Chehck = false
+        } else if DataController.shared.inspectionCarModel.g2Chehck == true {
+            DataController.shared.inspectionCarModel.e2Chehck = false
+            DataController.shared.inspectionCarModel.a2Chehck = false
+            DataController.shared.inspectionCarModel.f1Chehck = false
+        } else if DataController.shared.inspectionCarModel.e2Chehck == true {
+            DataController.shared.inspectionCarModel.e2Chehck = false
+            DataController.shared.inspectionCarModel.a2Chehck = false
+            DataController.shared.inspectionCarModel.f1Chehck = false
+        } else {
+            DataController.shared.inspectionCarModel.e2Chehck = false
+            DataController.shared.inspectionCarModel.a2Chehck = false
+            DataController.shared.inspectionCarModel.g2Chehck = false
+        }
+        
+//        a2Chehck.setEnableView(isEnable: false)
+//        e2Chehck.setEnableView(isEnable: false)
+//        g2Chehck.setEnableView(isEnable: false)
+//        f1Chehck.setEnableView(isEnable: false)
+        
+    }
+    
+    func hasDefaultMileage() -> Bool {
+        if DataController.shared.inspectionCarModel.e1Chehck == true || DataController.shared.inspectionCarModel.g1Chehck == true || DataController.shared.inspectionCarModel.a1Chehck == true || DataController.shared.inspectionCarModel.f1Chehck == true {
+            return true
+        }
+        return false
+    }
+    
+    func hasDefaultRegistration() -> Bool {
+        if DataController.shared.inspectionCarModel.e2Chehck == true || DataController.shared.inspectionCarModel.g2Chehck == true || DataController.shared.inspectionCarModel.a2Chehck == true || DataController.shared.inspectionCarModel.f1Chehck == true {
+            return true
+        }
+        return false
     }
 }
 

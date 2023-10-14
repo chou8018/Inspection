@@ -19,10 +19,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2yB-TB-OtG">
-                                <rect key="frame" x="0.0" y="70" width="1080" height="1740"/>
+                                <rect key="frame" x="0.0" y="240" width="1080" height="1570"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ERL-W7-RxM">
-                                        <rect key="frame" x="50" y="50" width="980" height="1350"/>
+                                        <rect key="frame" x="50" y="0.0" width="980" height="1350"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="vUe-7f-EH7">
                                                 <rect key="frame" x="0.0" y="0.0" width="980" height="50"/>
@@ -1080,11 +1080,11 @@
                                     <constraint firstItem="ERL-W7-RxM" firstAttribute="centerX" secondItem="2yB-TB-OtG" secondAttribute="centerX" id="8Om-WI-K0v"/>
                                     <constraint firstAttribute="bottom" secondItem="ERL-W7-RxM" secondAttribute="bottom" constant="300" id="LzK-56-GTF"/>
                                     <constraint firstAttribute="trailing" secondItem="ERL-W7-RxM" secondAttribute="trailing" constant="50" id="XA6-da-HTu"/>
-                                    <constraint firstItem="ERL-W7-RxM" firstAttribute="top" secondItem="2yB-TB-OtG" secondAttribute="top" constant="50" id="lBg-C8-EtO"/>
+                                    <constraint firstItem="ERL-W7-RxM" firstAttribute="top" secondItem="2yB-TB-OtG" secondAttribute="top" id="lBg-C8-EtO"/>
                                 </constraints>
                             </scrollView>
                             <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wzk-Qh-PnU" customClass="CustomUIView" customModule="Inspection" customModuleProvider="target">
-                                <rect key="frame" x="960" y="120" width="100" height="100"/>
+                                <rect key="frame" x="50" y="120" width="100" height="100"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QKd-iQ-u5G">
                                         <rect key="frame" x="0.0" y="0.0" width="100" height="30"/>
@@ -1132,16 +1132,32 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Mileage:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="luD-Ld-BEe">
+                                <rect key="frame" x="160" y="130" width="86.5" height="27.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="23"/>
+                                <color key="textColor" name="primary_color"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Registration Year:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OOh-Sk-Iaf">
+                                <rect key="frame" x="160" y="172.5" width="179.5" height="27.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="23"/>
+                                <color key="textColor" name="primary_color"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="tZf-d4-gLB"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="tZf-d4-gLB" firstAttribute="trailing" secondItem="Wzk-Qh-PnU" secondAttribute="trailing" constant="20" id="Off-Gu-loE"/>
+                            <constraint firstItem="OOh-Sk-Iaf" firstAttribute="leading" secondItem="luD-Ld-BEe" secondAttribute="leading" id="0AE-JE-Bu3"/>
+                            <constraint firstItem="2yB-TB-OtG" firstAttribute="top" secondItem="Wzk-Qh-PnU" secondAttribute="bottom" constant="20" id="IJV-XR-j6M"/>
+                            <constraint firstItem="Wzk-Qh-PnU" firstAttribute="leading" secondItem="ERL-W7-RxM" secondAttribute="leading" id="O8Q-TV-Wt3"/>
                             <constraint firstItem="2yB-TB-OtG" firstAttribute="trailing" secondItem="tZf-d4-gLB" secondAttribute="trailing" id="Shf-Wr-vje"/>
                             <constraint firstItem="Wzk-Qh-PnU" firstAttribute="top" secondItem="tZf-d4-gLB" secondAttribute="top" constant="50" id="hkT-NY-fWQ"/>
-                            <constraint firstItem="2yB-TB-OtG" firstAttribute="top" secondItem="tZf-d4-gLB" secondAttribute="top" id="ip9-Mv-xB1"/>
                             <constraint firstItem="2yB-TB-OtG" firstAttribute="leading" secondItem="tZf-d4-gLB" secondAttribute="leading" id="l9r-wg-DYh"/>
+                            <constraint firstItem="OOh-Sk-Iaf" firstAttribute="top" secondItem="luD-Ld-BEe" secondAttribute="bottom" constant="15" id="oyx-Ii-ifT"/>
                             <constraint firstItem="2yB-TB-OtG" firstAttribute="bottom" secondItem="tZf-d4-gLB" secondAttribute="bottom" id="sl9-yO-jCC"/>
+                            <constraint firstItem="luD-Ld-BEe" firstAttribute="top" secondItem="Wzk-Qh-PnU" secondAttribute="top" constant="10" id="t0m-VP-3JY"/>
+                            <constraint firstItem="luD-Ld-BEe" firstAttribute="leading" secondItem="Wzk-Qh-PnU" secondAttribute="trailing" constant="10" id="ydl-AW-cml"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="จัดเกรดรถเข้าประมูล" id="Mfb-bb-zPk">
@@ -1208,6 +1224,7 @@
                         <outlet property="gOption4Label" destination="o4x-wd-fCV" id="uMz-Ml-zZc"/>
                         <outlet property="gTitleLabel" destination="8xS-oz-Frc" id="Uuf-lt-a2Z"/>
                         <outlet property="gradeLabel" destination="s0c-QS-eTL" id="TKm-rL-RpQ"/>
+                        <outlet property="mileageLabel" destination="luD-Ld-BEe" id="QIZ-0N-RXK"/>
                         <outlet property="p1Chehck" destination="B2D-xj-Elf" id="IwI-G5-Xhw"/>
                         <outlet property="p2Chehck" destination="rCh-Ya-Pjg" id="jvP-jn-du6"/>
                         <outlet property="p3Chehck" destination="aYW-9M-EU5" id="zf8-sB-GGa"/>
@@ -1227,6 +1244,7 @@
                         <outlet property="pOption8Label" destination="an6-41-LdS" id="Ui5-48-sPf"/>
                         <outlet property="pOption9Label" destination="hgE-Yh-rZv" id="cdT-oF-rjY"/>
                         <outlet property="pTitleLabel" destination="dFp-Rg-jor" id="Ppl-44-HYr"/>
+                        <outlet property="registrationYearLabel" destination="OOh-Sk-Iaf" id="zV7-I8-LsL"/>
                         <outlet property="rightButtonItem" destination="ryJ-2V-7um" id="2TC-tQ-WSB"/>
                         <outlet property="scrollView" destination="2yB-TB-OtG" id="JM1-0N-pJk"/>
                         <outlet property="x1Chehck" destination="Tnu-DX-Cxa" id="x4d-jM-RPp"/>

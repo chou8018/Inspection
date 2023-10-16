@@ -396,6 +396,7 @@
 "photos_gas_tank_button_title" = "Gas tank (ถังแก๊ส)";
 "photos_asset_button_title" = "Asset (ทรัพย์สิน)";
 "photos_damage_button_title" = "Damage (ความเสียหาย)";
+"photos_car_roof_button_title" = "Roof(หลังคา)";
 "photos_numbers_label" = "จำนวนรูป :";
 "photos_photograph_button_title" = "ถ่ายรูป";
 "photos_select_button_title" = "เลือกรูป";
@@ -469,7 +470,7 @@
 "car_grade_good_option3_label" = "แต่ไม่มีการเก็บสี";
 "car_grade_good_option4_label" = "ไม่มีการซ่อมสีตัวถัง";
 "car_grade_average_label" = "A Average ปานกลาง";
-"car_grade_average_option1_label" = "เลขไมล์ 50,000-100,000 กิโลเมตร";
+"car_grade_average_option1_label" = "เลขไมล์ 50,001-100,000 กิโลเมตร";
 "car_grade_average_option2_label" = "ปีจดทะเบียนรถไม่เกิน 5 ปี (ไม่ใช่ปีผลิต)";
 "car_grade_average_option3_label" = "แต่ไม่มีการถอดชิ้นส่วนตัวถัง";
 "car_grade_average_option4_label" = "ไม่มีรอยถอดน๊อตหรือชิ้นส่วนอุปกรณ์ตัวถัง";

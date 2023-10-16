@@ -38,7 +38,7 @@ class UploadInteractor: UploadBusinessLogic, UploadDataStore
     var uploadList : [PhotoCar.PhotoImage] = []
     var uploadSuccessCount = 0
   
-    var sectionArray = ["Front_B", "Engine_B", "Plate_B", "Chassis_B", "Interior_B", "Tray_B", "Side_B", "Back_B", "Gas_B", "Asset", "Damage"]
+    var sectionArray = ["Front_B", "Engine_B", "Plate_B", "Chassis_B", "Interior_B", "Tray_B", "Side_B", "Back_B", "Gas_B", "Asset", "Damage", "Roof_B"]
     
     var indexIterator:IndexingIterator<[PhotoCar.PhotoImage]>?
     

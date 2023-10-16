@@ -113,7 +113,7 @@ extension String {
     }
     
     func formateMileage() -> String {
-        return conversionOfDigital(unit: "km")
+        return conversionOfDigital(unit: "km.")
     }
     
     func conversionOfDigital(unit: String? = nil) -> String {

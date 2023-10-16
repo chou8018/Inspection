@@ -58,7 +58,7 @@ class PhotoCarInteractor: PhotoCarBusinessLogic, PhotoCarDataStore
     var hasSection:[(String,Int)] = []
     var hasCheckSection:[String:Bool] = [:]
     let sn = ["Front_B", "Engine_B", "Plate_B", "Chassis_B", "Interior_B",
-              "Tray_B", "Side_B", "Back_B", "Gas_B", "Asset", "Damage"]
+              "Tray_B", "Side_B", "Back_B", "Gas_B", "Asset", "Damage", "Roof_B"]
     
     func getSectionNumbe(_ name:String) -> Int {
         return sn.firstIndex(of: name) ?? 0
@@ -364,6 +364,7 @@ class PhotoCarInteractor: PhotoCarBusinessLogic, PhotoCarDataStore
                             spitName = String(name.split(separator: ".")[0])
                             section = "Asset"
                         }
+                        
                         if !section.isEmpty {
                             weakself.hasSection.append((section, weakself.getSectionNumbe(section)))
                            

@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="240" width="1080" height="1570"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ERL-W7-RxM">
-                                        <rect key="frame" x="50" y="0.0" width="980" height="1350"/>
+                                        <rect key="frame" x="50" y="10" width="980" height="1300"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="vUe-7f-EH7">
                                                 <rect key="frame" x="0.0" y="0.0" width="980" height="50"/>
@@ -97,7 +97,7 @@
                                                 <rect key="frame" x="0.0" y="100" width="980" height="50"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="3q0-QO-ICU">
-                                                        <rect key="frame" x="0.0" y="0.0" width="490" height="50"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="980" height="50"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PqC-Ob-jVo" customClass="CheckBoxUIButton" customModule="Inspection" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="5" width="40" height="40"/>
@@ -110,7 +110,7 @@
                                                                 </connections>
                                                             </button>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="รถอยู่ในสภาพใหม่ ไม่มีริ้วรอย" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="teq-Px-Wej">
-                                                                <rect key="frame" x="60" y="14.5" width="430" height="21.5"/>
+                                                                <rect key="frame" x="60" y="14.5" width="920" height="21.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                                 <color key="textColor" name="primary_color"/>
                                                                 <nil key="highlightedColor"/>
@@ -121,8 +121,8 @@
                                                             <constraint firstAttribute="height" constant="50" id="luo-OE-6h3"/>
                                                         </constraints>
                                                     </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="1pK-6k-uz1">
-                                                        <rect key="frame" x="490" y="0.0" width="490" height="50"/>
+                                                    <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="1pK-6k-uz1">
+                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="50"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YiI-1Q-5gc" customClass="CheckBoxUIButton" customModule="Inspection" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="5" width="40" height="40"/>
@@ -135,7 +135,7 @@
                                                                 </connections>
                                                             </button>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="ภายในอยู่ในสภาพดี" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Wq-bF-hyr">
-                                                                <rect key="frame" x="60" y="14.5" width="430" height="21.5"/>
+                                                                <rect key="frame" x="60" y="14.5" width="0.0" height="21.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                                 <color key="textColor" name="primary_color"/>
                                                                 <nil key="highlightedColor"/>
@@ -148,7 +148,7 @@
                                                     </stackView>
                                                 </subviews>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Q2q-Zv-Ezk">
+                                            <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Q2q-Zv-Ezk">
                                                 <rect key="frame" x="0.0" y="150" width="980" height="50"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uzm-Y3-ktn" customClass="CheckBoxUIButton" customModule="Inspection" customModuleProvider="target">
@@ -174,7 +174,7 @@
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="SHO-nt-HEB">
-                                                <rect key="frame" x="0.0" y="200" width="980" height="50"/>
+                                                <rect key="frame" x="0.0" y="150" width="980" height="50"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="G Good ดีมาก" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8xS-oz-Frc">
                                                         <rect key="frame" x="0.0" y="7" width="980" height="36"/>
@@ -188,7 +188,7 @@
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="a2o-CX-1kv">
-                                                <rect key="frame" x="0.0" y="250" width="980" height="50"/>
+                                                <rect key="frame" x="0.0" y="200" width="980" height="50"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="8x9-qg-PBY">
                                                         <rect key="frame" x="0.0" y="0.0" width="490" height="50"/>
@@ -243,10 +243,10 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Hov-0T-e05">
-                                                <rect key="frame" x="0.0" y="300" width="980" height="50"/>
+                                                <rect key="frame" x="0.0" y="250" width="980" height="50"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="MXg-uZ-Cf9">
-                                                        <rect key="frame" x="0.0" y="0.0" width="490" height="50"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="980" height="50"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vHv-Mx-tmq" customClass="CheckBoxUIButton" customModule="Inspection" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="5" width="40" height="40"/>
@@ -259,7 +259,7 @@
                                                                 </connections>
                                                             </button>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="มีรอยขีดข่วน, มีรอยบุบ" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C5D-ay-tPx">
-                                                                <rect key="frame" x="60" y="14.5" width="430" height="21.5"/>
+                                                                <rect key="frame" x="60" y="14.5" width="920" height="21.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                                 <color key="textColor" name="primary_color"/>
                                                                 <nil key="highlightedColor"/>
@@ -270,8 +270,8 @@
                                                             <constraint firstItem="vHv-Mx-tmq" firstAttribute="width" secondItem="vHv-Mx-tmq" secondAttribute="height" multiplier="1:1" id="SHn-11-PNB"/>
                                                         </constraints>
                                                     </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="zgg-85-924">
-                                                        <rect key="frame" x="490" y="0.0" width="490" height="50"/>
+                                                    <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="zgg-85-924">
+                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="50"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xL7-sC-V9R" customClass="CheckBoxUIButton" customModule="Inspection" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="5" width="40" height="40"/>
@@ -284,7 +284,7 @@
                                                                 </connections>
                                                             </button>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="ไม่มีการซ่อมสีตัวถัง" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o4x-wd-fCV">
-                                                                <rect key="frame" x="60" y="14.5" width="430" height="21.5"/>
+                                                                <rect key="frame" x="60" y="14.5" width="0.0" height="21.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                                 <color key="textColor" name="primary_color"/>
                                                                 <nil key="highlightedColor"/>
@@ -298,7 +298,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ESb-tW-ffw">
-                                                <rect key="frame" x="0.0" y="350" width="980" height="50"/>
+                                                <rect key="frame" x="0.0" y="300" width="980" height="50"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="A Average ปานกลาง" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c1u-jg-7qc">
                                                         <rect key="frame" x="0.0" y="7" width="980" height="36"/>
@@ -312,7 +312,7 @@
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="cBr-We-RdF">
-                                                <rect key="frame" x="0.0" y="400" width="980" height="50"/>
+                                                <rect key="frame" x="0.0" y="350" width="980" height="50"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ehm-i9-VbU">
                                                         <rect key="frame" x="0.0" y="0.0" width="490" height="50"/>
@@ -367,10 +367,10 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="xlI-CX-thT">
-                                                <rect key="frame" x="0.0" y="450" width="980" height="50"/>
+                                                <rect key="frame" x="0.0" y="400" width="980" height="50"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="GNE-D7-oE1">
-                                                        <rect key="frame" x="0.0" y="0.0" width="490" height="50"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="980" height="50"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pQU-8p-ujc" customClass="CheckBoxUIButton" customModule="Inspection" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="5" width="40" height="40"/>
@@ -383,7 +383,7 @@
                                                                 </connections>
                                                             </button>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="มีการเก็บสี มีรอยบุบ ถลอก" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sv4-Ci-HOp">
-                                                                <rect key="frame" x="60" y="14.5" width="430" height="21.5"/>
+                                                                <rect key="frame" x="60" y="14.5" width="920" height="21.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                                 <color key="textColor" name="primary_color"/>
                                                                 <nil key="highlightedColor"/>
@@ -394,8 +394,8 @@
                                                             <constraint firstAttribute="height" constant="50" id="q6Q-AK-uh5"/>
                                                         </constraints>
                                                     </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="GXN-za-Fqk">
-                                                        <rect key="frame" x="490" y="0.0" width="490" height="50"/>
+                                                    <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="GXN-za-Fqk">
+                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="50"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KYS-TV-LvZ" customClass="CheckBoxUIButton" customModule="Inspection" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="5" width="40" height="40"/>
@@ -408,7 +408,7 @@
                                                                 </connections>
                                                             </button>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="ไม่มีรอยถอดน๊อตหรือชิ้นส่วนอุปกรณ์ตัวถัง" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cO6-nr-NIR">
-                                                                <rect key="frame" x="60" y="14.5" width="430" height="21.5"/>
+                                                                <rect key="frame" x="60" y="14.5" width="0.0" height="21.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                                 <color key="textColor" name="primary_color"/>
                                                                 <nil key="highlightedColor"/>
@@ -422,7 +422,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="54R-xC-RdY">
-                                                <rect key="frame" x="0.0" y="500" width="980" height="50"/>
+                                                <rect key="frame" x="0.0" y="450" width="980" height="50"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="F Fair พอใช้" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="83w-E5-lxr">
                                                         <rect key="frame" x="0.0" y="7" width="980" height="36"/>
@@ -436,7 +436,7 @@
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="6Om-ok-RLt">
-                                                <rect key="frame" x="0.0" y="550" width="980" height="50"/>
+                                                <rect key="frame" x="0.0" y="500" width="980" height="50"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="mOi-jo-jKh">
                                                         <rect key="frame" x="0.0" y="0.0" width="490" height="50"/>
@@ -491,7 +491,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="rpq-Za-AYk">
-                                                <rect key="frame" x="0.0" y="600" width="980" height="50"/>
+                                                <rect key="frame" x="0.0" y="550" width="980" height="50"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Kxg-Bu-5ec">
                                                         <rect key="frame" x="0.0" y="0.0" width="490" height="50"/>
@@ -546,7 +546,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="gAP-AD-ywp">
-                                                <rect key="frame" x="0.0" y="650" width="980" height="50"/>
+                                                <rect key="frame" x="0.0" y="600" width="980" height="50"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="xOq-N9-Mcf">
                                                         <rect key="frame" x="0.0" y="0.0" width="490" height="50"/>
@@ -601,7 +601,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Kf9-vX-kCs">
-                                                <rect key="frame" x="0.0" y="700" width="980" height="50"/>
+                                                <rect key="frame" x="0.0" y="650" width="980" height="50"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="hv2-7E-cls">
                                                         <rect key="frame" x="0.0" y="0.0" width="490" height="50"/>
@@ -656,7 +656,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="NrT-Ym-ctI">
-                                                <rect key="frame" x="0.0" y="750" width="980" height="50"/>
+                                                <rect key="frame" x="0.0" y="700" width="980" height="50"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="hyD-kr-xBA">
                                                         <rect key="frame" x="0.0" y="0.0" width="490" height="50"/>
@@ -711,7 +711,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="klQ-jT-JvV">
-                                                <rect key="frame" x="0.0" y="800" width="980" height="50"/>
+                                                <rect key="frame" x="0.0" y="750" width="980" height="50"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IhM-Xf-u8M" customClass="CheckBoxUIButton" customModule="Inspection" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="5" width="40" height="40"/>
@@ -736,7 +736,7 @@
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="BE7-P0-GHI">
-                                                <rect key="frame" x="0.0" y="850" width="980" height="50"/>
+                                                <rect key="frame" x="0.0" y="800" width="980" height="50"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="P Poor แย่" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dFp-Rg-jor">
                                                         <rect key="frame" x="0.0" y="7" width="980" height="36"/>
@@ -750,7 +750,7 @@
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="6D3-0p-xYO">
-                                                <rect key="frame" x="0.0" y="900" width="980" height="50"/>
+                                                <rect key="frame" x="0.0" y="850" width="980" height="50"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="rzC-z9-1Jp">
                                                         <rect key="frame" x="0.0" y="0.0" width="490" height="50"/>
@@ -805,7 +805,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="aXa-KQ-k7i">
-                                                <rect key="frame" x="0.0" y="950" width="980" height="50"/>
+                                                <rect key="frame" x="0.0" y="900" width="980" height="50"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="TkO-Ue-obv">
                                                         <rect key="frame" x="0.0" y="0.0" width="490" height="50"/>
@@ -860,7 +860,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="BeU-I9-scL">
-                                                <rect key="frame" x="0.0" y="1000" width="980" height="50"/>
+                                                <rect key="frame" x="0.0" y="950" width="980" height="50"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="gxX-Ms-iTF">
                                                         <rect key="frame" x="0.0" y="0.0" width="490" height="50"/>
@@ -915,7 +915,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="7mS-Yw-UgB">
-                                                <rect key="frame" x="0.0" y="1050" width="980" height="50"/>
+                                                <rect key="frame" x="0.0" y="1000" width="980" height="50"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="0eC-dN-LJQ">
                                                         <rect key="frame" x="0.0" y="0.0" width="490" height="50"/>
@@ -970,7 +970,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="6V1-jq-bnL">
-                                                <rect key="frame" x="0.0" y="1100" width="980" height="50"/>
+                                                <rect key="frame" x="0.0" y="1050" width="980" height="50"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nQm-SI-XsB" customClass="CheckBoxUIButton" customModule="Inspection" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="5" width="40" height="40"/>
@@ -995,7 +995,7 @@
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Rnw-Mk-YMX">
-                                                <rect key="frame" x="0.0" y="1150" width="980" height="50"/>
+                                                <rect key="frame" x="0.0" y="1100" width="980" height="50"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="X" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hIU-3m-dmz">
                                                         <rect key="frame" x="0.0" y="7" width="980" height="36"/>
@@ -1009,7 +1009,7 @@
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="31c-oq-hiu">
-                                                <rect key="frame" x="0.0" y="1200" width="980" height="50"/>
+                                                <rect key="frame" x="0.0" y="1150" width="980" height="50"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tnu-DX-Cxa" customClass="CheckBoxUIButton" customModule="Inspection" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="5" width="40" height="40"/>
@@ -1034,7 +1034,7 @@
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="dUd-dQ-bKW">
-                                                <rect key="frame" x="0.0" y="1250" width="980" height="50"/>
+                                                <rect key="frame" x="0.0" y="1200" width="980" height="50"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Y" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NSI-9U-MFR">
                                                         <rect key="frame" x="0.0" y="7" width="980" height="36"/>
@@ -1048,7 +1048,7 @@
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="mae-S2-AbJ">
-                                                <rect key="frame" x="0.0" y="1300" width="980" height="50"/>
+                                                <rect key="frame" x="0.0" y="1250" width="980" height="50"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zBz-yy-bFM" customClass="CheckBoxUIButton" customModule="Inspection" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="5" width="40" height="40"/>
@@ -1080,7 +1080,7 @@
                                     <constraint firstItem="ERL-W7-RxM" firstAttribute="centerX" secondItem="2yB-TB-OtG" secondAttribute="centerX" id="8Om-WI-K0v"/>
                                     <constraint firstAttribute="bottom" secondItem="ERL-W7-RxM" secondAttribute="bottom" constant="300" id="LzK-56-GTF"/>
                                     <constraint firstAttribute="trailing" secondItem="ERL-W7-RxM" secondAttribute="trailing" constant="50" id="XA6-da-HTu"/>
-                                    <constraint firstItem="ERL-W7-RxM" firstAttribute="top" secondItem="2yB-TB-OtG" secondAttribute="top" id="lBg-C8-EtO"/>
+                                    <constraint firstItem="ERL-W7-RxM" firstAttribute="top" secondItem="2yB-TB-OtG" secondAttribute="top" constant="10" id="lBg-C8-EtO"/>
                                 </constraints>
                             </scrollView>
                             <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wzk-Qh-PnU" customClass="CustomUIView" customModule="Inspection" customModuleProvider="target">

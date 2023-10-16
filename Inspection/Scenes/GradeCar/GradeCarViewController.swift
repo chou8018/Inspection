@@ -309,13 +309,15 @@ class GradeCarViewController: ViewController, GradeCarDisplayLogic
         if hasDefaultMileage() {
             return
         }
-        if hasDefaultRegistration() {
-            return
-        }
         f1Chehck.toggle { [weak self] in self?.interactor?.f1Chehck(request: GradeCar.Something.Request(f1Chehck: $0))}
         
     }
-    @IBAction func f2checkTapped(_ sender: Any) { f2Chehck.toggle { [weak self] in self?.interactor?.f2Chehck(request: GradeCar.Something.Request(f2Chehck: $0))} }
+    @IBAction func f2checkTapped(_ sender: Any) {
+        if hasDefaultRegistration() {
+            return
+        }
+        f2Chehck.toggle { [weak self] in self?.interactor?.f2Chehck(request: GradeCar.Something.Request(f2Chehck: $0))}
+    }
     @IBAction func f3checkTapped(_ sender: Any) { f3Chehck.toggle { [weak self] in self?.interactor?.f3Chehck(request: GradeCar.Something.Request(f3Chehck: $0))} }
     @IBAction func f4checkTapped(_ sender: Any) { f4Chehck.toggle { [weak self] in self?.interactor?.f4Chehck(request: GradeCar.Something.Request(f4Chehck: $0))} }
     @IBAction func f5checkTapped(_ sender: Any) { f5Chehck.toggle { [weak self] in self?.interactor?.f5Chehck(request: GradeCar.Something.Request(f5Chehck: $0))} }
@@ -431,14 +433,25 @@ class GradeCarViewController: ViewController, GradeCarDisplayLogic
             let mileage = Int(miles) ?? 0
             if mileage <= 20_000 {
                 DataController.shared.inspectionCarModel.e1Chehck = true
+                DataController.shared.inspectionCarModel.g1Chehck = false
+                DataController.shared.inspectionCarModel.a1Chehck = false
+                DataController.shared.inspectionCarModel.f1Chehck = false
             } else if mileage > 20_000 , mileage <= 50_000 {
                 DataController.shared.inspectionCarModel.g1Chehck = true
+                DataController.shared.inspectionCarModel.e1Chehck = false
+                DataController.shared.inspectionCarModel.a1Chehck = false
+                DataController.shared.inspectionCarModel.f1Chehck = false
             } else if mileage > 50_000 , mileage <= 100_000 {
                 DataController.shared.inspectionCarModel.a1Chehck = true
+                DataController.shared.inspectionCarModel.e1Chehck = false
+                DataController.shared.inspectionCarModel.g1Chehck = false
+                DataController.shared.inspectionCarModel.f1Chehck = false
             } else {
                 DataController.shared.inspectionCarModel.f1Chehck = true
+                DataController.shared.inspectionCarModel.e1Chehck = false
+                DataController.shared.inspectionCarModel.g1Chehck = false
+                DataController.shared.inspectionCarModel.a1Chehck = false
             }
-            defaultMileageSelected()
         }
         
         if let year = DataController.shared.receiverCarModel.registrationYear {
@@ -448,69 +461,26 @@ class GradeCarViewController: ViewController, GradeCarDisplayLogic
             
             if registration <= 1 {
                 DataController.shared.inspectionCarModel.e2Chehck = true
+                DataController.shared.inspectionCarModel.g2Chehck = false
+                DataController.shared.inspectionCarModel.a2Chehck = false
+                DataController.shared.inspectionCarModel.f2Chehck = false
             } else if registration > 1 , registration <= 2 {
                 DataController.shared.inspectionCarModel.g2Chehck = true
+                DataController.shared.inspectionCarModel.e2Chehck = false
+                DataController.shared.inspectionCarModel.a2Chehck = false
+                DataController.shared.inspectionCarModel.f2Chehck = false
             } else if registration > 2 , registration <= 5 {
                 DataController.shared.inspectionCarModel.a2Chehck = true
+                DataController.shared.inspectionCarModel.e2Chehck = false
+                DataController.shared.inspectionCarModel.g2Chehck = false
+                DataController.shared.inspectionCarModel.f2Chehck = false
             } else {
-                DataController.shared.inspectionCarModel.f1Chehck = true
+                DataController.shared.inspectionCarModel.f2Chehck = true
+                DataController.shared.inspectionCarModel.e2Chehck = false
+                DataController.shared.inspectionCarModel.g2Chehck = false
+                DataController.shared.inspectionCarModel.a2Chehck = false
             }
-            defaultRegistrationSelected()
         }
-    }
-    
-    func defaultMileageSelected() {
-        
-        if  DataController.shared.inspectionCarModel.e1Chehck == true {
-            DataController.shared.inspectionCarModel.g1Chehck = false
-            DataController.shared.inspectionCarModel.a1Chehck = false
-            DataController.shared.inspectionCarModel.f1Chehck = false
-        } else if DataController.shared.inspectionCarModel.g1Chehck == true {
-            DataController.shared.inspectionCarModel.e1Chehck = false
-            DataController.shared.inspectionCarModel.a1Chehck = false
-            DataController.shared.inspectionCarModel.f1Chehck = false
-        } else if DataController.shared.inspectionCarModel.a1Chehck == true {
-            DataController.shared.inspectionCarModel.e1Chehck = false
-            DataController.shared.inspectionCarModel.g1Chehck = false
-            DataController.shared.inspectionCarModel.f1Chehck = false
-        } else {
-            DataController.shared.inspectionCarModel.e1Chehck = false
-            DataController.shared.inspectionCarModel.g1Chehck = false
-            DataController.shared.inspectionCarModel.a1Chehck = false
-        }
-        
-//        a1Chehck.setEnableView(isEnable: false)
-//        e1Chehck.setEnableView(isEnable: false)
-//        g1Chehck.setEnableView(isEnable: false)
-//        f1Chehck.setEnableView(isEnable: false)
-        
-    }
-    
-    func defaultRegistrationSelected() {
-        
-        if  DataController.shared.inspectionCarModel.e2Chehck == true {
-            DataController.shared.inspectionCarModel.g2Chehck = false
-            DataController.shared.inspectionCarModel.a2Chehck = false
-            DataController.shared.inspectionCarModel.f1Chehck = false
-        } else if DataController.shared.inspectionCarModel.g2Chehck == true {
-            DataController.shared.inspectionCarModel.e2Chehck = false
-            DataController.shared.inspectionCarModel.a2Chehck = false
-            DataController.shared.inspectionCarModel.f1Chehck = false
-        } else if DataController.shared.inspectionCarModel.e2Chehck == true {
-            DataController.shared.inspectionCarModel.e2Chehck = false
-            DataController.shared.inspectionCarModel.a2Chehck = false
-            DataController.shared.inspectionCarModel.f1Chehck = false
-        } else {
-            DataController.shared.inspectionCarModel.e2Chehck = false
-            DataController.shared.inspectionCarModel.a2Chehck = false
-            DataController.shared.inspectionCarModel.g2Chehck = false
-        }
-        
-//        a2Chehck.setEnableView(isEnable: false)
-//        e2Chehck.setEnableView(isEnable: false)
-//        g2Chehck.setEnableView(isEnable: false)
-//        f1Chehck.setEnableView(isEnable: false)
-        
     }
     
     func hasDefaultMileage() -> Bool {
@@ -521,7 +491,7 @@ class GradeCarViewController: ViewController, GradeCarDisplayLogic
     }
     
     func hasDefaultRegistration() -> Bool {
-        if DataController.shared.inspectionCarModel.e2Chehck == true || DataController.shared.inspectionCarModel.g2Chehck == true || DataController.shared.inspectionCarModel.a2Chehck == true || DataController.shared.inspectionCarModel.f1Chehck == true {
+        if DataController.shared.inspectionCarModel.e2Chehck == true || DataController.shared.inspectionCarModel.g2Chehck == true || DataController.shared.inspectionCarModel.a2Chehck == true || DataController.shared.inspectionCarModel.f2Chehck == true {
             return true
         }
         return false

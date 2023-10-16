@@ -118,6 +118,10 @@ extension String {
     
     func conversionOfDigital(unit: String? = nil) -> String {
         
+        if self.contains(",") {
+            return self
+        }
+        
         let strings = components(separatedBy: ".")
         guard let _ = Float(self) else {
             return "0"

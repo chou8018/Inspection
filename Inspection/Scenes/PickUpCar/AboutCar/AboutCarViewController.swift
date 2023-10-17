@@ -193,6 +193,10 @@ class AboutCarViewController: ViewController, AboutCarDisplayLogic
     @IBOutlet weak var gasNumberLabel: UILabel!
     @IBOutlet weak var gasUnableToVerifiedLabel: UILabel!
     
+    @IBOutlet weak var gasKeyLabel: UILabel!
+    @IBOutlet weak var gasTextField: DropDown!
+    @IBOutlet weak var gasNumberLineView: UIView!
+
     var isMakeCarLunch = false
     var isGetColorLunch = false
     var isGetProvinceLunch = false
@@ -238,6 +242,10 @@ class AboutCarViewController: ViewController, AboutCarDisplayLogic
         reasonEngineTextField.placeholder = String.localized("car_detail_reason_placeholder")
         reasonVINTextField.placeholder = String.localized("car_detail_reason_placeholder")
         reasonGasTankTextField.placeholder = String.localized("car_detail_reason_placeholder")
+        
+        gasKeyLabel.text = String.localized("car_detail_gas_label")
+        gasTextField.placeholder = gasKeyLabel.text
+        gasNumberTextField.placeholder = String.localized("car_detail_gas_number_placeholder")
     }
     
     func doSomething()
@@ -410,8 +418,25 @@ class AboutCarViewController: ViewController, AboutCarDisplayLogic
         DataController.shared.receiverCarModel.isGasTank = viewModel.isGasNumber ?? false
     }
     
-    
-    
+    func displayGasOptions() {
+        let gasValues = [String.localized("car_detail_gas_installed_label"), String.localized("car_detail_gas_removed_label"), String.localized("car_detail_unable_to_verified_label")]
+        setValue(to: gasTextField, values: gasValues) { selectedText, index, id in
+            self.gasTextField.text = selectedText
+            
+            // gas installed
+            if index == 0 {
+                self.gasNumberTextField.isHidden = false
+                self.gasNumberLineView.isHidden = false
+                DataController.shared.receiverCarModel.isGasTank = true
+            } else {
+                self.gasNumberTextField.isHidden = true
+                self.gasNumberLineView.isHidden = true
+                DataController.shared.receiverCarModel.isGasTank = false
+            }
+            
+            DataController.shared.receiverCarModel.reasonInValidGasNumber = selectedText
+        }
+    }
     
     //MARK: Call CodeModelPopup
     @IBAction func searchTapped(_ sender: Any) {
@@ -794,7 +819,7 @@ class AboutCarViewController: ViewController, AboutCarDisplayLogic
         
         engineNumberTextField.setEnableView(isEnable: !(model.isInValidEngineNumber ?? false))
         vinNumberTextField.setEnableView(isEnable: !(model.isInValidVinNumber ?? false))
-        gasNumberTextField.setEnableView(isEnable: !(model.isInValidGasNumber ?? false))
+//        gasNumberTextField.setEnableView(isEnable: !(model.isInValidGasNumber ?? false))
         
         
         if let registrationPlate = model.registrationPlate, !registrationPlate.trimWhiteSpace.isEmpty {
@@ -844,6 +869,15 @@ class AboutCarViewController: ViewController, AboutCarDisplayLogic
         reasonVINTextField.text = model.reasonInValidVinNumber
         reasonGasTankTextField.text = model.reasonInValidGasNumber
         noteRegistrationTextField.text = model.registrationNote
+        
+        if model.isGasTank == true {
+            gasNumberTextField.isHidden = false
+            gasNumberLineView.isHidden = false
+            gasTextField.text = DataController.shared.receiverCarModel.reasonInValidGasNumber
+        } else {
+            gasNumberTextField.isHidden = true
+            gasNumberLineView.isHidden = true
+        }
     }
     
     @objc func updateView(){
@@ -899,6 +933,7 @@ class AboutCarViewController: ViewController, AboutCarDisplayLogic
         
         
         noteRegistrationLineView.validateLineView(model.validNoteRegistration)
+        gasNumberLineView.validateLineView(model.validGasNumber)
     }
     
     
@@ -1002,7 +1037,7 @@ extension AboutCarViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         scrollView.registKeyboardNotification()
-        
+        displayGasOptions()
         loadRetryApi()
         prepareData()
         updateView()

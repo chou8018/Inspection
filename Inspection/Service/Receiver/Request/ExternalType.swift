@@ -24,7 +24,7 @@ struct ExternalType : Mappable {
     var tyreBrand : String = ""
 	var tyreQuality : Int = 0
 	var damageDesc : String = ""
-
+    var roofType : String = ""
 
 	init?(map: Map) {
 
@@ -39,7 +39,8 @@ struct ExternalType : Mappable {
         isTyre : Bool?,
         tyreBrand : String?,
         tyreQuality : Int?,
-        damageDesc : String?){
+        damageDesc : String?,
+        roofType: String?){
     
         self.gradeOverallId  = gradeOverallId
         self.colorOverallId = colorOverallId
@@ -50,7 +51,7 @@ struct ExternalType : Mappable {
         self.tyreBrand = tyreBrand ?? ""
         self.tyreQuality = tyreQuality ?? 0
         self.damageDesc = damageDesc ?? ""
-    
+        self.roofType = roofType ?? ""
     }
     
 	mutating func mapping(map: Map) {
@@ -64,7 +65,7 @@ struct ExternalType : Mappable {
         tyreBrand <- map["tyreBrand"]
 		tyreQuality <- map["tyreQuality"]
 		damageDesc <- map["damageDesc"]
-
+        roofType <- map["roofType"]
 	}
 
 }

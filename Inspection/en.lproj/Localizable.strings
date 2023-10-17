@@ -118,6 +118,9 @@
 "car_detail_vin_number_label" = "Vin. no.";
 "car_detail_gas_label" = "Gas";
 "car_detail_reason_placeholder" = "Reason";
+"car_detail_gas_installed_label" = "Gas installed";
+"car_detail_gas_removed_label" = "Gas installed & removed";
+"car_detail_gas_number_placeholder" = "Gas no.";
 
 // car exterior
 "car_exterior_label" = "Exterior condition";
@@ -139,6 +142,13 @@
 "car_exterior_make_label" = "Make";
 "car_exterior_condition_label" = "Condition";
 "car_exterior_damages_label" = "Damages Details";
+"car_exterior_roof_type_label" = "Roof type";
+"car_exterior_roof_not_attach_label" = "Not attach";
+"car_exterior_roof_corral_label" = "Corral";
+"car_exterior_roof_high_label" = "High roof";
+"car_exterior_roof_cargo_box_label" = "Cargo box";
+"car_exterior_roof_high_canopy_label" = "High canopy";
+"car_exterior_roof_canoly_label" = "Canoly";
 
 // car trunk
 "car_trunk_luggage_label" = "Luggage compartment condition";

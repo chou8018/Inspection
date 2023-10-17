@@ -231,6 +231,7 @@ class ItemAllListWorker
                 model.tireQuality = externalType?.tyreQuality.toString()
                 model.brandTire = externalType?.tyreBrand
                 model.damageDetail = externalType?.damageDesc
+                model.roofType = externalType?.roofType
                 
                 //MARK: SparePart
                 let spareOverAllValue = [nil, string_good_first, String.localized("inspection_list_not_good_label")]

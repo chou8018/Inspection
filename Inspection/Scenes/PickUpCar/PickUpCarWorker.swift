@@ -390,7 +390,8 @@ extension PickUpCarWorker {
                                          isTyre: model.isTire,
                                          tyreBrand: model.brandTire,
                                          tyreQuality: model.tireQuality?.toInt(),
-                                         damageDesc: model.damageDetail)
+                                         damageDesc: model.damageDetail,
+                                         roofType: model.roofType)
         
         //MARK: SpareType Model
         let spareType = SpareType(spareOverAllId: model.spareOverAllId,

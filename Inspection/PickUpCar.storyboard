@@ -993,7 +993,7 @@
                                 <rect key="frame" x="0.0" y="20" width="1200" height="1204"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Al4-Qw-xhx">
-                                        <rect key="frame" x="50" y="50" width="1100" height="1164"/>
+                                        <rect key="frame" x="50" y="50" width="1100" height="1144"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Ii0-Vj-jhr">
                                                 <rect key="frame" x="0.0" y="0.0" width="1100" height="80"/>
@@ -1807,9 +1807,58 @@
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="fOQ-6x-Q8c">
-                                                <rect key="frame" x="0.0" y="1064" width="1100" height="100"/>
+                                                <rect key="frame" x="0.0" y="1064" width="1100" height="80"/>
                                                 <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="vts-F6-ThJ">
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="WCv-Ie-JgN">
+                                                        <rect key="frame" x="0.0" y="0.0" width="1100" height="80"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gas" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DDT-T6-gTx">
+                                                                <rect key="frame" x="0.0" y="0.0" width="1100" height="24"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                                <color key="textColor" name="primary_color"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Gas" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zgd-eT-qSs" customClass="DropDown" customModule="Inspection" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="24" width="1100" height="55"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
+                                                                        <color key="value" name="gullgray"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="rowHeight">
+                                                                        <real key="value" value="50"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="rowBackgroundColor">
+                                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedRowColor">
+                                                                        <color key="value" name="orange"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                        <real key="value" value="10"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="arrowSize">
+                                                                        <real key="value" value="30"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="arrowColor">
+                                                                        <color key="value" name="primary_color"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </textField>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hWs-oT-IGW">
+                                                                <rect key="frame" x="0.0" y="79" width="1100" height="1"/>
+                                                                <color key="backgroundColor" name="primary_color"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="1" id="Vk8-5A-hp2"/>
+                                                                </constraints>
+                                                            </view>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="80" id="j06-9n-ezS"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                    <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="vts-F6-ThJ">
                                                         <rect key="frame" x="0.0" y="0.0" width="1100" height="40"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0IP-qC-3oZ" customClass="CheckBoxUIButton" customModule="Inspection" customModuleProvider="target">
@@ -1869,15 +1918,18 @@
                                                             </stackView>
                                                         </subviews>
                                                     </stackView>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z8P-U7-yBa">
-                                                        <rect key="frame" x="0.0" y="40" width="1100" height="10"/>
+                                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z8P-U7-yBa">
+                                                        <rect key="frame" x="0.0" y="0.0" width="1100" height="10"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="10" id="jAY-ZR-jGj"/>
                                                         </constraints>
                                                     </view>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="เลขถังแก๊ส" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ffk-Jl-mc0" customClass="CustomTextField" customModule="Inspection" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="50" width="1100" height="49"/>
+                                                    <textField hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="เลขถังแก๊ส" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ffk-Jl-mc0" customClass="CustomTextField" customModule="Inspection" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="1100" height="80"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="80" id="KbI-Up-x6W"/>
+                                                        </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                         <userDefinedRuntimeAttributes>
@@ -1886,17 +1938,14 @@
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </textField>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Zz-Nw-tXE">
-                                                        <rect key="frame" x="0.0" y="99" width="1100" height="1"/>
+                                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Zz-Nw-tXE">
+                                                        <rect key="frame" x="0.0" y="0.0" width="1100" height="1"/>
                                                         <color key="backgroundColor" name="primary_color"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="1" id="053-6j-Yzq"/>
                                                         </constraints>
                                                     </view>
                                                 </subviews>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="100" id="F1w-iq-QSe"/>
-                                                </constraints>
                                             </stackView>
                                         </subviews>
                                     </stackView>
@@ -1966,8 +2015,11 @@
                         <outlet property="engineNumberTextField" destination="y3c-08-pC1" id="pQt-IC-j3n"/>
                         <outlet property="engineUnableToVerifiedLabel" destination="mh4-2O-4Qv" id="ZCt-fS-arX"/>
                         <outlet property="gasCheckButton" destination="0IP-qC-3oZ" id="pcV-j0-tFC"/>
+                        <outlet property="gasKeyLabel" destination="DDT-T6-gTx" id="a0a-je-EQn"/>
                         <outlet property="gasNumberLabel" destination="Awj-ZF-Vtz" id="ZDh-yd-hxF"/>
+                        <outlet property="gasNumberLineView" destination="4Zz-Nw-tXE" id="5ml-U1-dZu"/>
                         <outlet property="gasNumberTextField" destination="ffk-Jl-mc0" id="yUV-B9-Vcw"/>
+                        <outlet property="gasTextField" destination="Zgd-eT-qSs" id="dUl-H1-9yl"/>
                         <outlet property="gasUnableToVerifiedLabel" destination="OmC-4M-YPv" id="5jL-44-N5T"/>
                         <outlet property="incorrectPlateLabel" destination="ENd-OH-zdE" id="Mk2-w3-cWI"/>
                         <outlet property="mismatchPlateCheckButton" destination="d0b-ub-lgU" id="H7O-hM-x5s"/>
@@ -3421,13 +3473,13 @@
                                                                 <rect key="frame" x="171.5" y="10" width="318.5" height="40"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="วันหมดอายุ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mEh-Fd-wAo">
-                                                                        <rect key="frame" x="112" y="8" width="95" height="24"/>
+                                                                        <rect key="frame" x="111.5" y="8" width="95" height="24"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                                         <color key="textColor" name="gullgray"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-pencil" translatesAutoresizingMaskIntoConstraints="NO" id="rXa-lX-Zql">
-                                                                        <rect key="frame" x="217" y="12.5" width="15" height="15"/>
+                                                                        <rect key="frame" x="216.5" y="12.5" width="15" height="15"/>
                                                                         <color key="tintColor" name="primary_color"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="15" id="DIx-Ua-yzT"/>
@@ -4822,6 +4874,73 @@
                                                     <constraint firstAttribute="height" constant="1" id="mae-Kr-Wnm"/>
                                                 </constraints>
                                             </view>
+                                            <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="9xF-34-3tQ">
+                                                <rect key="frame" x="0.0" y="481" width="980" height="60"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Roof type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ohr-cs-Xto">
+                                                        <rect key="frame" x="0.0" y="18" width="84.5" height="24"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                        <color key="textColor" name="primary_color"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Kob-i6-odt">
+                                                        <rect key="frame" x="104.5" y="10" width="200" height="40"/>
+                                                        <subviews>
+                                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="เกียร์" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wxu-4w-9TA" customClass="GearDropDown" customModule="Inspection" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="200" height="39"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
+                                                                        <color key="value" name="gullgray"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="rowHeight">
+                                                                        <real key="value" value="50"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="rowBackgroundColor">
+                                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedRowColor">
+                                                                        <color key="value" name="orange"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="arrowSize">
+                                                                        <real key="value" value="25"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                        <real key="value" value="10"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSearchEnable" value="NO"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </textField>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XfH-DT-vpo">
+                                                                <rect key="frame" x="0.0" y="39" width="200" height="1"/>
+                                                                <color key="backgroundColor" name="primary_color"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="1" id="Gkq-Kn-zQN"/>
+                                                                </constraints>
+                                                            </view>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="40" id="OUS-jm-fGe"/>
+                                                            <constraint firstAttribute="width" constant="200" id="grK-ct-QzS"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="anZ-pv-LbP">
+                                                        <rect key="frame" x="324.5" y="0.0" width="655.5" height="60"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </view>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="9Dv-k1-sny"/>
+                                                </constraints>
+                                            </stackView>
+                                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AFL-nb-kW7">
+                                                <rect key="frame" x="0.0" y="481" width="980" height="1"/>
+                                                <color key="backgroundColor" name="gallery"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="1" id="0HH-Fv-Cxb"/>
+                                                </constraints>
+                                            </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="JDx-Us-FPi">
                                                 <rect key="frame" x="0.0" y="486" width="980" height="200"/>
                                                 <subviews>
@@ -4966,6 +5085,10 @@
                         <outlet property="paintConditionLabel" destination="o6k-WB-nuT" id="ZoL-XX-wkV"/>
                         <outlet property="qualityColorRadio" destination="ejn-rZ-nz9" id="G70-pJ-aoj"/>
                         <outlet property="qualityOverallRadio" destination="LRr-be-nEx" id="7xU-A4-HLK"/>
+                        <outlet property="roofTypeLabel" destination="Ohr-cs-Xto" id="McB-fP-BXP"/>
+                        <outlet property="roofTypeLineView" destination="AFL-nb-kW7" id="P90-Pd-hNj"/>
+                        <outlet property="roofTypeTextField" destination="Wxu-4w-9TA" id="MES-VN-jds"/>
+                        <outlet property="roofTypeView" destination="9xF-34-3tQ" id="hLz-Y3-dp5"/>
                         <outlet property="scrollView" destination="kBq-Uq-YeP" id="CIe-UO-aUA"/>
                         <outlet property="spoilerCheckBox" destination="g0n-N0-Dv6" id="LWc-x8-xLM"/>
                         <outlet property="spoilerLabel" destination="wLh-By-YX1" id="Z2d-X7-d9A"/>
@@ -9169,6 +9292,9 @@
         <designable name="Wvq-v7-tmc">
             <size key="intrinsicContentSize" width="30" height="30"/>
         </designable>
+        <designable name="Wxu-4w-9TA">
+            <size key="intrinsicContentSize" width="40.5" height="25.5"/>
+        </designable>
         <designable name="X1P-8F-xSd">
             <size key="intrinsicContentSize" width="65" height="25.5"/>
         </designable>
@@ -9189,6 +9315,9 @@
         </designable>
         <designable name="Zga-n3-k8b">
             <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="Zgd-eT-qSs">
+            <size key="intrinsicContentSize" width="34.5" height="25.5"/>
         </designable>
         <designable name="a4q-sk-MJz">
             <size key="intrinsicContentSize" width="30" height="30"/>

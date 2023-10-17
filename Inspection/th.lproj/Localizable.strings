@@ -118,6 +118,9 @@
 "car_detail_vin_number_label" = "หมายเลขตัวถัง";
 "car_detail_gas_label" = "เลขถังแก๊ส";
 "car_detail_reason_placeholder" = "เหตุผล";
+"car_detail_gas_installed_label" = "ติดแก๊ส";
+"car_detail_gas_removed_label" = "เลขถังแก๊ส";
+"car_detail_gas_number_placeholder" = "เลขถังแก๊ส";
 
 // car exterior
 "car_exterior_label" = "สภาพภายนอกโดยรวม";
@@ -139,6 +142,13 @@
 "car_exterior_make_label" = "ยี่ห้อ";
 "car_exterior_condition_label" = "สภาพ";
 "car_exterior_damages_label" = "รายละเอียดร่องรอยความเสียหาย";
+"car_exterior_roof_type_label" = "ประเภทหลังคา";
+"car_exterior_roof_not_attach_label" = "ไม่ได้ติด";
+"car_exterior_roof_corral_label" = "คอก";
+"car_exterior_roof_high_label" = "หลังคาสูง";
+"car_exterior_roof_cargo_box_label" = "ตู้ทึบ";
+"car_exterior_roof_high_canopy_label" = "ทรงแครี่บอยสูง";
+"car_exterior_roof_canoly_label" = "แครี่บอยเสมอเก๋ง";
 
 // car trunk
 "car_trunk_luggage_label" = "สภาพห้องสัมภาระโดยรวม";

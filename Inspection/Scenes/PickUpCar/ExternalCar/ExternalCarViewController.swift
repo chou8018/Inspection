@@ -112,6 +112,10 @@ class ExternalCarViewController: ViewController, ExternalCarDisplayLogic
     @IBOutlet weak var steelUnitLabel: UILabel!
     @IBOutlet weak var tiresLabel: UILabel!
     @IBOutlet weak var damagesLabel: UILabel!
+    @IBOutlet weak var roofTypeLabel: UILabel!
+    @IBOutlet weak var roofTypeTextField: DropDown!
+    @IBOutlet weak var roofTypeView: UIStackView!
+    @IBOutlet weak var roofTypeLineView: UIView!
     
     override func initLocalString() {
         super.initLocalString()
@@ -129,7 +133,8 @@ class ExternalCarViewController: ViewController, ExternalCarDisplayLogic
         tireQualityTextField.placeholder = String.localized("car_exterior_condition_label")
         damagesLabel.text = String.localized("car_exterior_damages_label")
         damageDetailTextField.placeholder = damagesLabel.text
-
+        roofTypeLabel.text = String.localized("car_exterior_roof_type_label")
+        roofTypeTextField.placeholder = roofTypeLabel.text
     }
     
     func doSomething()
@@ -359,7 +364,6 @@ class ExternalCarViewController: ViewController, ExternalCarDisplayLogic
         DataController.shared.receiverCarModel.tireQuality = viewModel.validateNumberResult
     }
     
-    
     @objc func prepareData(){
         //MARK: External
         let model = DataController.shared.receiverCarModel
@@ -382,6 +386,8 @@ class ExternalCarViewController: ViewController, ExternalCarDisplayLogic
         tireQualityTextField.text = model.tireQuality
         damageDetailTextField.text = model.damageDetail
         
+        displayRoofTypeOptions()
+        
     }
     @objc func updateView(){
         let isEnabled = getEnableView()
@@ -400,6 +406,30 @@ class ExternalCarViewController: ViewController, ExternalCarDisplayLogic
         damageDetailTextField.setEnableView(isEnable: isEnabled)
         
         
+    }
+    
+    func displayRoofTypeOptions() {
+        if DataController.shared.receiverCarModel.sellingCategory?.trimWhiteSpace == "PU" {
+            roofTypeView.isHidden = false
+            roofTypeLineView.isHidden = false
+            
+            roofTypeTextField.text = DataController.shared.receiverCarModel.roofType
+            roofTypeTextField.optionArray = [
+                String.localized("car_exterior_roof_not_attach_label"),
+                String.localized("car_exterior_roof_corral_label"),
+                String.localized("car_exterior_roof_high_label"),
+                String.localized("car_exterior_roof_cargo_box_label"),
+                String.localized("car_exterior_roof_high_canopy_label"),
+                String.localized("car_exterior_roof_canoly_label")
+            ]
+            roofTypeTextField.didSelect { [weak self] (selected, _, _) in
+                self?.roofTypeTextField.text = selected
+                DataController.shared.receiverCarModel.roofType = selected
+            }
+        } else {
+            roofTypeView.isHidden = true
+            roofTypeLineView.isHidden = true
+        }
     }
 }
 

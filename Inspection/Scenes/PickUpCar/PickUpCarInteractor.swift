@@ -299,6 +299,8 @@ class PickUpCarInteractor: PickUpCarBusinessLogic, PickUpCarDataStore
         
         let noteRegistration = model.registrationNote ?? ""
         
+        let gasNumber = model.gasNumber
+        
         print(receiverPlace)
         print(storePlace)
         
@@ -330,6 +332,11 @@ class PickUpCarInteractor: PickUpCarBusinessLogic, PickUpCarDataStore
         
         let validModelCode = modelCode != nil && !(modelCode?.isEmpty ?? false)
         
+        var validGasNumber = true
+        if model.isGasTank == true {
+            validGasNumber = gasNumber != nil && !(gasNumber?.isEmpty ?? false)
+        }
+        
         let string_not_correct = String.localized("login_not_correct_label")
         
         var message : String = ""
@@ -354,8 +361,8 @@ class PickUpCarInteractor: PickUpCarBusinessLogic, PickUpCarDataStore
         message += validColorCar ? "" : "\(String.localized("car_pick_up_valid_field_color_label")) \(string_not_correct)\n"
         message += validGearBox ? "" : "\(String.localized("create_model_gearbox_label")) \(string_not_correct)\n"
         message += validFuelType ? "" : "\(String.localized("create_model_fuel_delivery_label")) \(string_not_correct)\n"
-        message += validNoteRegistration ? "" : "\(String.localized("car_pick_up_valid_field_remark_tips_label")) \n"
-        
+        message += validNoteRegistration ? "" : "\(String.localized("car_pick_up_valid_field_remark_tips_label")) \(string_not_correct)\n"
+        message += validGasNumber ? "" : "\(String.localized("car_detail_gas_number_placeholder")) \(string_not_correct)"
         
         DataController.shared.receiverCarModel.validReceiver = validReceiver
         DataController.shared.receiverCarModel.validStore = validStore
@@ -381,7 +388,8 @@ class PickUpCarInteractor: PickUpCarBusinessLogic, PickUpCarDataStore
         DataController.shared.receiverCarModel.validGearBox = validGearBox
         DataController.shared.receiverCarModel.validFuelType = validFuelType
         DataController.shared.receiverCarModel.validNoteRegistration = validNoteRegistration
-        
+        DataController.shared.receiverCarModel.validGasNumber = validGasNumber
+
         NotificationCenter.default.post(name: NSNotification.Name("updateUI"), object: nil)
         
         let validateRequiteFieldError = message.isEmpty ? nil : message

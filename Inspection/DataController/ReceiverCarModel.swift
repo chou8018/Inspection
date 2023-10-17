@@ -168,7 +168,8 @@ class ReceiverCarModel {
     var tireQuality : String?  { didSet { setEdit(oldValue, value: &isEditExternal) }}
     var brandTire : String? { didSet { setEdit(oldValue, value: &isEditExternal) }}
     var damageDetail : String? { didSet { setEdit(oldValue, value: &isEditExternal) }}
-    
+    var roofType: String? { didSet { setEdit(oldValue, value: &isEditExternal) }}
+
     //MARK: Cabin
     var cabinOverAllId : Int? { didSet { setEdit(oldValue, value: &isEditCabin) }}
     var mileageTypeId : Int? { didSet { isEditCabin = (mileageTypeId==1) ? false : (oldValue != nil) }}
@@ -335,9 +336,12 @@ class ReceiverCarModel {
     
     var validNoteRegistration:Bool?
     
+    var validGasNumber:Bool?
+
     var description : [String : Any] {
         return [:]
     }
+    
 }
 
 

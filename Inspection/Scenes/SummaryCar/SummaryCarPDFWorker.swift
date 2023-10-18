@@ -562,13 +562,13 @@ class SummaryCarPDFWorker {
                                             x: margin + 10,
                                             y: underRightSideDriver)
             
-            let roofType = model.roofType ?? "-"
-            let roofTypeMainString = "\(String.localized("car_exterior_roof_type_label"))  \(roofType)"
-            let attrRoofTypeValuePDF = weakself.getTitle(mainString: roofTypeMainString,
-                                                    value: roofType)
-            let roofTypeRect = weakself.drawString(attrString: attrRoofTypeValuePDF,
-                                            x: centerPosition,
-                                            y: underRightSideDriver)
+//            let roofType = model.roofType ?? "-"
+//            let roofTypeMainString = "\(String.localized("car_exterior_roof_type_label"))  \(roofType)"
+//            let attrRoofTypeValuePDF = weakself.getTitle(mainString: roofTypeMainString,
+//                                                    value: roofType)
+//            let roofTypeRect = weakself.drawString(attrString: attrRoofTypeValuePDF,
+//                                            x: centerPosition,
+//                                            y: underRightSideDriver)
             
             //MARK: Chassis Summary
 //            let chassisSummaryValue = model.bodySummary?
@@ -652,13 +652,13 @@ class SummaryCarPDFWorker {
                                             x: centerPosition,
                                             y: underOil)
             
-            let gasOptionsValue = model.gasOptions?.pdfValidateString ?? "-"
-            let gasOptionsMainString = "\(String.localized("photos_gas_tank_button_title"))  \(gasOptionsValue)"
-            let attrGasOptionsValuePDF = weakself.getTitle(mainString: gasOptionsMainString,
-                                                    value: gasOptionsValue)
-            let gasOptionsRect = weakself.drawString(attrString: attrGasOptionsValuePDF,
-                                            x: trailingPosition,
-                                            y: underOil)
+//            let gasOptionsValue = model.gasOptions?.pdfValidateString ?? "-"
+//            let gasOptionsMainString = "\(String.localized("photos_gas_tank_button_title"))  \(gasOptionsValue)"
+//            let attrGasOptionsValuePDF = weakself.getTitle(mainString: gasOptionsMainString,
+//                                                    value: gasOptionsValue)
+//            let gasOptionsRect = weakself.drawString(attrString: attrGasOptionsValuePDF,
+//                                            x: trailingPosition,
+//                                            y: underOil)
             
             //MARK: GereralCondition
             var gereralConditionValue = "\(model.useableGeneral ? String.localized("inspection_engine_working_label") : "")  "

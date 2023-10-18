@@ -386,7 +386,7 @@ class ExternalCarViewController: ViewController, ExternalCarDisplayLogic
         tireQualityTextField.text = model.tireQuality
         damageDetailTextField.text = model.damageDetail
         
-        displayRoofTypeOptions()
+//        displayRoofTypeOptions()
         
     }
     @objc func updateView(){

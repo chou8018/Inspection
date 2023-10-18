@@ -207,8 +207,9 @@ class InspectionCarModel {
     // y
     var y1Chehck : Bool = false
     
-    
-    
+    // roof type and gas
+    var roofType: String?
+    var gasOptions: String?
     
     var description : [String : Any]  {
         return [:]

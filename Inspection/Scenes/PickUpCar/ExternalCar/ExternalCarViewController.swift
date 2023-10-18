@@ -425,6 +425,7 @@ class ExternalCarViewController: ViewController, ExternalCarDisplayLogic
             roofTypeTextField.didSelect { [weak self] (selected, _, _) in
                 self?.roofTypeTextField.text = selected
                 DataController.shared.receiverCarModel.roofType = selected
+                DataController.shared.inspectionCarModel.roofType = selected
             }
         } else {
             roofTypeView.isHidden = true

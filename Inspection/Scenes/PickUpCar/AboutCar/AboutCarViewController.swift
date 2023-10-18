@@ -435,6 +435,7 @@ class AboutCarViewController: ViewController, AboutCarDisplayLogic
             }
             
             DataController.shared.receiverCarModel.reasonInValidGasNumber = selectedText
+            DataController.shared.inspectionCarModel.gasOptions = selectedText
         }
     }
     

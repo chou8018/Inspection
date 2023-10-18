@@ -73,7 +73,12 @@ class SummaryCarInteractor: SummaryCarBusinessLogic, SummaryCarDataStore
     vinNumber += notValidateVinNumber ?  reasonInValidVinNumber : vinNumber2
     
     
-    let companyName = "\(receiverModel.companyName ?? "")\n\(receiverModel.companyNameEn ?? "")".pdfValidateString 
+      var companyName = "\(receiverModel.companyName ?? "")\n\(receiverModel.companyNameEn ?? "")".pdfValidateString
+      
+      if !DataController.shared.isThaiLanguage() {
+          companyName = "\(receiverModel.companyNameEn ?? "")".pdfValidateString
+      }
+      
     let colorCar = receiverModel.colorCar?.pdfValidateString ?? "-"
     
     //var regis = receiverModel.registration?.pdfValidateString ?? "-"

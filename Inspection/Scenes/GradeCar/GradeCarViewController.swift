@@ -324,7 +324,13 @@ class GradeCarViewController: ViewController, GradeCarDisplayLogic
     @IBAction func f6checkTapped(_ sender: Any) { f6Chehck.toggle { [weak self] in self?.interactor?.f6Chehck(request: GradeCar.Something.Request(f6Chehck: $0))} }
     @IBAction func f7checkTapped(_ sender: Any) { f7Chehck.toggle { [weak self] in self?.interactor?.f7Chehck(request: GradeCar.Something.Request(f7Chehck: $0))} }
     @IBAction func f8checkTapped(_ sender: Any) { f8Chehck.toggle { [weak self] in self?.interactor?.f8Chehck(request: GradeCar.Something.Request(f8Chehck: $0))} }
-    @IBAction func f9checkTapped(_ sender: Any) { f9Chehck.toggle { [weak self] in self?.interactor?.f9Chehck(request: GradeCar.Something.Request(f9Chehck: $0))} }
+    @IBAction func f9checkTapped(_ sender: Any) {
+        if hasDefaultGasInstalled() {
+            return
+        }
+        f9Chehck.toggle { [weak self] in self?.interactor?.f9Chehck(request: GradeCar.Something.Request(f9Chehck: $0))}
+        
+    }
     @IBAction func f10checTappedk(_ sender: Any) { f10Chehck.toggle { [weak self] in self?.interactor?.f10Chehck(request: GradeCar.Something.Request(f10Chehck: $0))} }
     @IBAction func f11checTappedk(_ sender: Any) { f11Chehck.toggle { [weak self] in self?.interactor?.f11Chehck(request: GradeCar.Something.Request(f11Chehck: $0))} }
     
@@ -431,12 +437,12 @@ class GradeCarViewController: ViewController, GradeCarDisplayLogic
         
         if let miles = DataController.shared.receiverCarModel.miles?.replacingOccurrences(of: ",", with: ""){
             let mileage = Int(miles) ?? 0
-            if mileage <= 20_000 {
+            if mileage < 20_000 {
                 DataController.shared.inspectionCarModel.e1Chehck = true
                 DataController.shared.inspectionCarModel.g1Chehck = false
                 DataController.shared.inspectionCarModel.a1Chehck = false
                 DataController.shared.inspectionCarModel.f1Chehck = false
-            } else if mileage > 20_000 , mileage <= 50_000 {
+            } else if mileage >= 20_000 , mileage <= 50_000 {
                 DataController.shared.inspectionCarModel.g1Chehck = true
                 DataController.shared.inspectionCarModel.e1Chehck = false
                 DataController.shared.inspectionCarModel.a1Chehck = false
@@ -481,6 +487,10 @@ class GradeCarViewController: ViewController, GradeCarDisplayLogic
                 DataController.shared.inspectionCarModel.a2Chehck = false
             }
         }
+        
+        if DataController.shared.receiverCarModel.isGasTank == true , let gasNumber = DataController.shared.receiverCarModel.gasNumber , gasNumber.count > 0 {
+            DataController.shared.inspectionCarModel.f9Chehck = true
+        }
     }
     
     func hasDefaultMileage() -> Bool {
@@ -492,6 +502,13 @@ class GradeCarViewController: ViewController, GradeCarDisplayLogic
     
     func hasDefaultRegistration() -> Bool {
         if DataController.shared.inspectionCarModel.e2Chehck == true || DataController.shared.inspectionCarModel.g2Chehck == true || DataController.shared.inspectionCarModel.a2Chehck == true || DataController.shared.inspectionCarModel.f2Chehck == true {
+            return true
+        }
+        return false
+    }
+    
+    func hasDefaultGasInstalled() -> Bool {
+        if DataController.shared.inspectionCarModel.f9Chehck == true {
             return true
         }
         return false

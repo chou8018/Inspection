@@ -441,11 +441,22 @@ class PickUpCarPDFWorker {
                                                              isTable: true)
                 
                 //MARK: Gas Number Value
-                let notValidateGasNumber = receiverCarModel.isInValidGasNumber ?? false
-                let reasonInValidGasNumber = "\(receiverCarModel.reasonInValidGasNumber?.pdfValidateString2 ?? "")"
-                let gasNumber2 = "\(receiverCarModel.gasNumber?.pdfValidateString ?? "-")"
-                var gasNumber = notValidateGasNumber ? "\(String.localized("car_detail_unable_to_verified_label"))  " : ""
-                gasNumber += notValidateGasNumber ? reasonInValidGasNumber : gasNumber2
+//                let notValidateGasNumber = receiverCarModel.isInValidGasNumber ?? false
+//                let reasonInValidGasNumber = "\(receiverCarModel.reasonInValidGasNumber?.pdfValidateString2 ?? "")"
+//                let gasNumber2 = "\(receiverCarModel.gasNumber?.pdfValidateString ?? "-")"
+//                var gasNumber = notValidateGasNumber ? "\(String.localized("car_detail_unable_to_verified_label"))  " : ""
+//                gasNumber += notValidateGasNumber ? reasonInValidGasNumber : gasNumber2
+                
+                var gasNumber = ""
+                if let text = receiverCarModel.reasonInValidGasNumber {
+                    gasNumber = text
+                    if receiverCarModel.isGasTank == true , let gas = receiverCarModel.gasNumber {
+                        gasNumber += " \(gas)"
+                    }
+                } else {
+                    gasNumber = "-"
+                }
+                
                 let attrGasNumberValuePDF = weakself.getTitle(mainString: gasNumber.uppercased(),
                                                      value: "", textColor: .darkGray)
                 let _ = weakself.drawString(attrString: attrGasNumberValuePDF,

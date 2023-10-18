@@ -302,13 +302,22 @@ class SummaryCarPDFWorker {
             
             //MARK: Gas Value
 //            let gasValue = (receiverModel.isInValidGasNumber ?? false) ? "ตรวจสอบไม่ได้" : (receiverModel.gasNumber?.pdfValidateString ?? "-")
-            let notValidateGasNumber = receiverModel.isInValidGasNumber ?? false
-            let reasonInValidGasNumber = "\(receiverModel.reasonInValidGasNumber?.pdfValidateString2 ?? "")"
-            let gasNumber2 = "\(receiverModel.gasNumber?.pdfValidateString ?? "-")"
-            var gasNumber = notValidateGasNumber ? "\(String.localized("car_detail_unable_to_verified_label"))  " : ""
-            gasNumber += notValidateGasNumber ? reasonInValidGasNumber : gasNumber2
+//            let notValidateGasNumber = receiverModel.isInValidGasNumber ?? false
+//            let reasonInValidGasNumber = "\(receiverModel.reasonInValidGasNumber?.pdfValidateString2 ?? "")"
+//            let gasNumber2 = "\(receiverModel.gasNumber?.pdfValidateString ?? "-")"
+//            var gasNumber = notValidateGasNumber ? "\(String.localized("car_detail_unable_to_verified_label"))  " : ""
+//            gasNumber += notValidateGasNumber ? reasonInValidGasNumber : gasNumber2
             
-            
+            var gasNumber = ""
+            if let text = receiverModel.reasonInValidGasNumber {
+                gasNumber = text
+                if receiverModel.isGasTank == true , let gas = receiverModel.gasNumber {
+                    gasNumber += " \(gas)"
+                }
+            } else {
+                gasNumber = "-"
+            }
+                        
             let attrGasValuePDF = weakself.getTitle(mainString: gasNumber, value: gasNumber)
             let _ = weakself.drawString(attrString: attrGasValuePDF,
                                             x: mapPoint["v2"]!,

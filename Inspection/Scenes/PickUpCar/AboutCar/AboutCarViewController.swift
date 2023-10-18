@@ -873,11 +873,12 @@ class AboutCarViewController: ViewController, AboutCarDisplayLogic
         if model.isGasTank == true {
             gasNumberTextField.isHidden = false
             gasNumberLineView.isHidden = false
-            gasTextField.text = DataController.shared.receiverCarModel.reasonInValidGasNumber
         } else {
             gasNumberTextField.isHidden = true
             gasNumberLineView.isHidden = true
         }
+        gasTextField.text = DataController.shared.receiverCarModel.reasonInValidGasNumber
+
     }
     
     @objc func updateView(){

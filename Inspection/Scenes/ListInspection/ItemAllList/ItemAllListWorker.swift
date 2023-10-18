@@ -232,6 +232,7 @@ class ItemAllListWorker
                 model.brandTire = externalType?.tyreBrand
                 model.damageDetail = externalType?.damageDesc
                 model.roofType = externalType?.roofType
+                DataController.shared.inspectionCarModel.roofType = model.roofType
                 
                 //MARK: SparePart
                 let spareOverAllValue = [nil, string_good_first, String.localized("inspection_list_not_good_label")]
@@ -422,6 +423,8 @@ class ItemAllListWorker
                 model.reasonInValidEngineNumber = vehicleType?.reasonInValidEngineNumber
                 model.reasonInValidVinNumber = vehicleType?.reasonInValidVinNumber
                 model.reasonInValidGasNumber =  vehicleType?.reasonInValidGasNumber
+                
+                DataController.shared.inspectionCarModel.gasOptions = model.reasonInValidGasNumber
                 
                 model.registrationPlate = vehicleType?.registrationPlate
                 model.registrationNote = vehicleType?.registrationNote

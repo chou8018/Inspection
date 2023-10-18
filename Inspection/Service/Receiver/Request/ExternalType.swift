@@ -24,7 +24,7 @@ struct ExternalType : Mappable {
     var tyreBrand : String = ""
 	var tyreQuality : Int = 0
 	var damageDesc : String = ""
-    var roofType : String = ""
+    var roofType : String?
 
 	init?(map: Map) {
 

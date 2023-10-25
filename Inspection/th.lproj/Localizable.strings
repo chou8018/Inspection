@@ -111,6 +111,7 @@
 "car_detail_no_plate_label" = "ไม่มีแผ่นป้าย";
 "car_detail_red_plate_label" = "ป้ายแดง";
 "car_detail_incorrect_plate_label" = "ป้ายไม่ตรง";
+"car_detail_auction_plate_label" = "ป้ายประมูล";
 "car_detail_province_label" = "จังหวัด";
 "car_detail_color_label" = "สีรถ";
 "car_detail_engine_number_label" = "หมายเลขเครื่องยนต์";
@@ -192,7 +193,7 @@
 "car_interior_keyless_label" = "กุญแจ Keyless";
 "car_interior_key_placeholder_label" = "จำนวน";
 "car_interior_others_label" = "อื่นๆ";
-"car_interior_others_and_assets_label" = "อื่นๆ";
+"car_interior_others_and_assets_label" = "อื่นๆ และ ทรัพย์สินภายในรถ";
 
 // car engine room
 "car_engine_room_condition_label" = "สภาพภายในโดยรวม";

@@ -196,6 +196,9 @@ class AboutCarViewController: ViewController, AboutCarDisplayLogic
     @IBOutlet weak var gasKeyLabel: UILabel!
     @IBOutlet weak var gasTextField: DropDown!
     @IBOutlet weak var gasNumberLineView: UIView!
+    
+    @IBOutlet weak var auctionPlateLabel: UILabel!
+    @IBOutlet weak var auctionPlateCheckButton: CheckBoxUIButton!
 
     var isMakeCarLunch = false
     var isGetColorLunch = false
@@ -246,6 +249,8 @@ class AboutCarViewController: ViewController, AboutCarDisplayLogic
         gasKeyLabel.text = String.localized("car_detail_gas_label")
         gasTextField.placeholder = gasKeyLabel.text
         gasNumberTextField.placeholder = String.localized("car_detail_gas_number_placeholder")
+        
+        auctionPlateLabel.text = String.localized("car_detail_auction_plate_label")
     }
     
     func doSomething()
@@ -282,6 +287,7 @@ class AboutCarViewController: ViewController, AboutCarDisplayLogic
             if check {
                 self?.redPlateCheckButton.check = false
                 self?.mismatchPlateCheckButton.check = false
+                self?.auctionPlateCheckButton.check = false
                 DataController.shared.receiverCarModel.isRegistrationMismatch = false
             }else{
                 DataController.shared.receiverCarModel.registrationNote = ""
@@ -309,6 +315,7 @@ class AboutCarViewController: ViewController, AboutCarDisplayLogic
             if check {
                 self?.noPlateCheckButton.check = false
                 self?.mismatchPlateCheckButton.check = false
+                self?.auctionPlateCheckButton.check = false
                 DataController.shared.receiverCarModel.isRegistrationMismatch = false
             }else{
                 DataController.shared.receiverCarModel.registrationNote = ""
@@ -337,6 +344,7 @@ class AboutCarViewController: ViewController, AboutCarDisplayLogic
             if check {
                 self?.noPlateCheckButton.check = false
                 self?.redPlateCheckButton.check = false
+                self?.auctionPlateCheckButton.check = false
             }else{
                 DataController.shared.receiverCarModel.registrationNote = ""
                 self?.noteRegistrationTextField.text = ""
@@ -344,6 +352,32 @@ class AboutCarViewController: ViewController, AboutCarDisplayLogic
         }
     }
     
+    @IBAction func auctionPlateCheckTapped(_ sender: Any) {
+        auctionPlateCheckButton.toggle { [weak self] (check) in
+            self?.noteRegistrationStackView.isHidden = !check
+            ///registration
+            //self?.registrationTextField.setEnableView(isEnable: !check)
+            self?.registrationTextField.text = check ? "" : ""
+            DataController.shared.receiverCarModel.registration = check ? "" : ""
+            DataController.shared.inspectionCarModel.registration = check ? "" : ""
+            
+            self?.provinceTextField.text = check ? "-" : ""
+            DataController.shared.receiverCarModel.province = check ? "-" : ""
+            DataController.shared.inspectionCarModel.registrationProvince = check ? "-" : ""
+            
+            ///registration plate
+            DataController.shared.receiverCarModel.registrationPlate = check ? String.localized("car_detail_auction_plate_label") : ""
+            
+            if check {
+                self?.noPlateCheckButton.check = false
+                self?.redPlateCheckButton.check = false
+                self?.mismatchPlateCheckButton.check = false
+            }else{
+                DataController.shared.receiverCarModel.registrationNote = ""
+                self?.noteRegistrationTextField.text = ""
+            }
+        }
+    }
     
     @IBAction func engineCheckTapped(_ sender: Any) {
         engineNumberCheckButton.toggle { [weak self] check in
@@ -832,6 +866,8 @@ class AboutCarViewController: ViewController, AboutCarDisplayLogic
                 redPlateCheckButton.check = true
             case String.localized("car_detail_incorrect_plate_label"):
                 mismatchPlateCheckButton.check = true
+            case String.localized("car_detail_auction_plate_label"):
+                auctionPlateCheckButton.check = true
             default:
                 break
             }

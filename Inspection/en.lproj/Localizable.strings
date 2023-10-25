@@ -111,6 +111,7 @@
 "car_detail_no_plate_label" = "No plate";
 "car_detail_red_plate_label" = "Red plate";
 "car_detail_incorrect_plate_label" = "Incorrect plate";
+"car_detail_auction_plate_label" = "Auction/special plate";
 "car_detail_province_label" = "Province";
 "car_detail_color_label" = "Color";
 "car_detail_engine_number_label" = "Engine no.";

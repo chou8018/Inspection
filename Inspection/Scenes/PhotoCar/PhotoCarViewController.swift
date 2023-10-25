@@ -183,7 +183,10 @@ class PhotoCarViewController: ViewController, PhotoCarDisplayLogic
         assetCheckBox.setTitle(String.localized("photos_asset_button_title"), for: .normal)
         damageCheckBox.setTitle(String.localized("photos_damage_button_title"), for: .normal)
         dateTitleLabel.text = String.localized("inspection_date_title")
-
+        
+        carRoofCheckBox.setTitle(String.localized("photos_car_roof_button_title"), for: .normal)
+        dashboardCheckBox.setTitle(String.localized("photos_car_dashboard_button_title"), for: .normal)
+        catalyticCheckBox.setTitle(String.localized("photos_car_catalytic_button_title"), for: .normal)
     }
     
     var sourceSectionName : [(name:String, cb: CheckBoxUIButton)] = []

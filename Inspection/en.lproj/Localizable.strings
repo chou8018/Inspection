@@ -410,6 +410,7 @@
 "photos_car_roof_button_title" = "Roof";
 "photos_car_dashboard_button_title" = "Dashboard";
 "photos_car_catalytic_button_title" = "Catalytic Converter";
+"photos_car_catalytic_comment_title" = "If cannot take photo, please take what you can";
 "photos_numbers_label" = "Photos :";
 "photos_photograph_button_title" = "Photograph";
 "photos_select_button_title" = "Select Picture";

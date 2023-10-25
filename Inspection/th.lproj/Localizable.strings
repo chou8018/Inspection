@@ -410,6 +410,7 @@
 "photos_car_roof_button_title" = "Roof(หลังคา)";
 "photos_car_dashboard_button_title" = "แผงหน้าปัด (Dashboard)";
 "photos_car_catalytic_button_title" = "แคทตาไลติก (Catalytic Converter)";
+"photos_car_catalytic_comment_title" = "ถ้าไม่สามารถถ่ายรูปได้ ให้ถ่ายสาเหตุ";
 "photos_numbers_label" = "จำนวนรูป :";
 "photos_photograph_button_title" = "ถ่ายรูป";
 "photos_select_button_title" = "เลือกรูป";

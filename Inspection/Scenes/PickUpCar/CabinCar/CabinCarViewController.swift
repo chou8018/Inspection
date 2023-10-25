@@ -243,7 +243,7 @@ class CabinCarViewController: ViewController, CabinCarDisplayLogic
         remoteKeyDropDown.placeholder = keyDropDown.placeholder
         immobilizarKeyDropDown.placeholder = keyDropDown.placeholder
         keylessKeyDropDown.placeholder = keyDropDown.placeholder
-        cabinNoteTextField.placeholder = othersLabel.text
+        cabinNoteTextField.placeholder = String.localized("car_interior_others_and_assets_label")
         reasonMileageTextField.placeholder = String.localized("car_detail_reason_placeholder")
     }
     

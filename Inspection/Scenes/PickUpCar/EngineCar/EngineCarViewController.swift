@@ -119,7 +119,7 @@ class EngineCarViewController: ViewController, EngineCarDisplayLogic
         fuelSystemLabel.text = String.localized("car_engine_fuel_system_label")
         gasLabel.text = String.localized("car_engine_gas_label")
         engineOverAllLabel.text = String.localized("car_engine_other_in_car_assets_label")
-        engineOverAllTextField.placeholder = engineOverAllLabel.text
+        engineOverAllTextField.placeholder = String.localized("car_interior_others_label")
     }
     
     func doSomething()

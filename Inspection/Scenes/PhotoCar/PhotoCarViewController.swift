@@ -159,6 +159,8 @@ class PhotoCarViewController: ViewController, PhotoCarDisplayLogic
     @IBOutlet weak var dateTitleLabel: UILabel!
     
     @IBOutlet weak var carRoofCheckBox: CheckBoxUIButton!
+    @IBOutlet weak var dashboardCheckBox: CheckBoxUIButton!
+    @IBOutlet weak var catalyticCheckBox: CheckBoxUIButton!
 
     override func initLocalString() {
         super.initLocalString()
@@ -360,6 +362,8 @@ class PhotoCarViewController: ViewController, PhotoCarDisplayLogic
         damageCheckBox.typecheck = .BACKGROUND
         assetCheckBox.typecheck = .BACKGROUND
         carRoofCheckBox.typecheck = .BACKGROUND
+        dashboardCheckBox.typecheck = .BACKGROUND
+        catalyticCheckBox.typecheck = .BACKGROUND
 
         sourceSectionName = [(name: "\(String.localized("photos_front_button_title")) *", cb: frontCheckBox),
                              (name: "\(String.localized("photos_engine_button_title")) *", cb: engineCheckBox),
@@ -372,7 +376,9 @@ class PhotoCarViewController: ViewController, PhotoCarDisplayLogic
                              (name: "\(String.localized("photos_gas_tank_button_title")) *", cb: gasTankCheckBox),
                              (name: "\(String.localized("photos_asset_button_title")) *", cb: assetCheckBox),
                              (name: "\(String.localized("photos_damage_button_title")) *", cb: damageCheckBox),
-                             (name: "\(String.localized("photos_car_roof_button_title")) *", cb: carRoofCheckBox)
+                             (name: "\(String.localized("photos_car_roof_button_title")) *", cb: carRoofCheckBox),
+                             (name: "\(String.localized("photos_car_dashboard_button_title")) *", cb: dashboardCheckBox),
+                             (name: "\(String.localized("photos_car_catalytic_button_title")) *", cb: catalyticCheckBox)
         ]
         
         for item in sourceSectionName {
@@ -481,6 +487,20 @@ class PhotoCarViewController: ViewController, PhotoCarDisplayLogic
         }
     }
     
+    @IBAction func dashboardCheckBoxTapped(_ sender: Any) {
+        dashboardCheckBox.toggle { [weak self] check in
+            guard let weakself = self else { return }
+            weakself.selectButton(selectView: weakself.dashboardCheckBox)
+        }
+    }
+    
+    @IBAction func catalyticCheckBoxTapped(_ sender: Any) {
+        catalyticCheckBox.toggle { [weak self] check in
+            guard let weakself = self else { return }
+            weakself.selectButton(selectView: weakself.catalyticCheckBox)
+        }
+    }
+    
     //MARK: Damage
     //    func performDamageView(){
     //        performSegue(withIdentifier: "damageSegue", sender: nil)
@@ -491,7 +511,7 @@ class PhotoCarViewController: ViewController, PhotoCarDisplayLogic
         guard let _  = selectView else { return }
         
         
-        let viewList = [frontCheckBox, engineCheckBox, plateCheckBox, chassisCheckBox, interiorCheckBox, trayCheckBox, sideCheckBox, backCheckBox, gasTankCheckBox, assetCheckBox, damageCheckBox, carRoofCheckBox]
+        let viewList = [frontCheckBox, engineCheckBox, plateCheckBox, chassisCheckBox, interiorCheckBox, trayCheckBox, sideCheckBox, backCheckBox, gasTankCheckBox, assetCheckBox, damageCheckBox, carRoofCheckBox, dashboardCheckBox, catalyticCheckBox]
         
         let selectionList = viewList.map { (view) -> String in
             view?.check = view == selectView
@@ -519,6 +539,10 @@ class PhotoCarViewController: ViewController, PhotoCarDisplayLogic
                 name = "Damage"
             case carRoofCheckBox:
                 name = "Roof_B"
+            case dashboardCheckBox:
+                name = "Dashboard_B"
+            case catalyticCheckBox:
+                name = "Catalytic_B"
             case assetCheckBox:
                 name = "Asset"
             default:
@@ -563,7 +587,7 @@ class PhotoCarViewController: ViewController, PhotoCarDisplayLogic
         
         hideLoading()
 
-        let viewList = [frontCheckBox, engineCheckBox, plateCheckBox, chassisCheckBox, interiorCheckBox, trayCheckBox, sideCheckBox, backCheckBox, gasTankCheckBox, assetCheckBox, damageCheckBox, carRoofCheckBox]
+        let viewList = [frontCheckBox, engineCheckBox, plateCheckBox, chassisCheckBox, interiorCheckBox, trayCheckBox, sideCheckBox, backCheckBox, gasTankCheckBox, assetCheckBox, damageCheckBox, carRoofCheckBox, dashboardCheckBox , catalyticCheckBox]
         
         DispatchQueue.main.async { [weak self] in
 

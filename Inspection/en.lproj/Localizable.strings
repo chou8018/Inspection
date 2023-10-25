@@ -192,6 +192,7 @@
 "car_interior_keyless_label" = "Keyless";
 "car_interior_key_placeholder_label" = "Numbers";
 "car_interior_others_label" = "Others";
+"car_interior_others_and_assets_label" = "Others & Assets in the car";
 
 // car engine room
 "car_engine_room_condition_label" = "Engine room condition";
@@ -407,6 +408,8 @@
 "photos_asset_button_title" = "Asset";
 "photos_damage_button_title" = "Damage";
 "photos_car_roof_button_title" = "Roof";
+"photos_car_dashboard_button_title" = "Dashboard";
+"photos_car_catalytic_button_title" = "Catalytic Converter";
 "photos_numbers_label" = "Photos :";
 "photos_photograph_button_title" = "Photograph";
 "photos_select_button_title" = "Select Picture";

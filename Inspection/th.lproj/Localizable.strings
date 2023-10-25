@@ -192,6 +192,7 @@
 "car_interior_keyless_label" = "กุญแจ Keyless";
 "car_interior_key_placeholder_label" = "จำนวน";
 "car_interior_others_label" = "อื่นๆ";
+"car_interior_others_and_assets_label" = "อื่นๆ";
 
 // car engine room
 "car_engine_room_condition_label" = "สภาพภายในโดยรวม";
@@ -407,6 +408,8 @@
 "photos_asset_button_title" = "Asset (ทรัพย์สิน)";
 "photos_damage_button_title" = "Damage (ความเสียหาย)";
 "photos_car_roof_button_title" = "Roof(หลังคา)";
+"photos_car_dashboard_button_title" = "แผงหน้าปัด (Dashboard)";
+"photos_car_catalytic_button_title" = "แคทตาไลติก (Catalytic Converter)";
 "photos_numbers_label" = "จำนวนรูป :";
 "photos_photograph_button_title" = "ถ่ายรูป";
 "photos_select_button_title" = "เลือกรูป";

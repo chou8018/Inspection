@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="47o-Qp-Pz8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="47o-Qp-Pz8">
     <device id="ipad10_2" orientation="landscape" layout="fullscreen" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -642,7 +642,7 @@
                                 <rect key="frame" x="120" y="0.0" width="250" height="660"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="gcj-Cn-zGY">
-                                        <rect key="frame" x="0.0" y="0.0" width="250" height="613"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="250" height="715"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qf0-a6-j3c">
                                                 <rect key="frame" x="0.0" y="0.0" width="250" height="1"/>
@@ -903,17 +903,59 @@
                                                     <constraint firstAttribute="height" constant="1" id="eT1-3k-fqx"/>
                                                 </constraints>
                                             </view>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TYe-YX-bNO" customClass="CheckBoxUIButton" customModule="Inspection" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="613" width="250" height="50"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="4Bb-1F-MvP"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <state key="normal" title="แผงหน้าปัด (Dashboard)">
+                                                    <color key="titleColor" name="primary_color"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="dashboardCheckBoxTapped:" destination="47o-Qp-Pz8" eventType="touchUpInside" id="wTC-6h-yoo"/>
+                                                </connections>
+                                            </button>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3jl-BT-a1h">
+                                                <rect key="frame" x="0.0" y="663" width="250" height="1"/>
+                                                <color key="backgroundColor" name="gallery"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="1" id="m2B-jh-E4z"/>
+                                                </constraints>
+                                            </view>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SM5-4y-jya" customClass="CheckBoxUIButton" customModule="Inspection" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="664" width="250" height="50"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="Oaz-64-2G6"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <state key="normal" title="แคทตาไลติก (Catalytic Converter)">
+                                                    <color key="titleColor" name="primary_color"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="catalyticCheckBoxTapped:" destination="47o-Qp-Pz8" eventType="touchUpInside" id="Hpt-76-Tks"/>
+                                                </connections>
+                                            </button>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iVe-fY-fIA">
+                                                <rect key="frame" x="0.0" y="714" width="250" height="1"/>
+                                                <color key="backgroundColor" name="gallery"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="1" id="sd4-A3-UwL"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FPs-1r-bj2">
-                                        <rect key="frame" x="0.0" y="0.0" width="1" height="613"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="1" height="715"/>
                                         <color key="backgroundColor" name="gallery"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="1" id="7Rw-QS-xrh"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KkY-jC-fXE">
-                                        <rect key="frame" x="249" y="0.0" width="1" height="613"/>
+                                        <rect key="frame" x="249" y="0.0" width="1" height="715"/>
                                         <color key="backgroundColor" name="gallery"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="1" id="LZI-jD-zBZ"/>
@@ -1148,6 +1190,7 @@
                                                 <rect key="frame" x="0.0" y="5" width="40" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="1nL-0F-XkQ"/>
+                                                    <constraint firstAttribute="width" secondItem="Hvq-tc-cPT" secondAttribute="height" multiplier="1:1" id="Xh2-Ms-bqj"/>
                                                 </constraints>
                                                 <state key="normal" backgroundImage="icon-check-outline"/>
                                                 <connections>
@@ -1163,7 +1206,6 @@
                                         </subviews>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="WrT-oc-P8G"/>
-                                            <constraint firstItem="Hvq-tc-cPT" firstAttribute="width" secondItem="Hvq-tc-cPT" secondAttribute="height" multiplier="1:1" id="Xh2-Ms-bqj"/>
                                         </constraints>
                                     </stackView>
                                 </subviews>
@@ -1230,10 +1272,12 @@
                         <outlet property="assetCheckBox" destination="2PP-K6-7Ds" id="amv-el-3mk"/>
                         <outlet property="backCheckBox" destination="0cy-X3-HVo" id="H4B-FO-1jo"/>
                         <outlet property="carRoofCheckBox" destination="cu0-gv-thF" id="yv7-sG-Koa"/>
+                        <outlet property="catalyticCheckBox" destination="SM5-4y-jya" id="LLt-2Y-g6j"/>
                         <outlet property="chassisCheckBox" destination="ytI-ce-fRr" id="tGW-p6-XgU"/>
                         <outlet property="checkStackView" destination="vjB-G0-l6E" id="Hep-4y-Jw1"/>
                         <outlet property="collectionView" destination="j0F-Td-19x" id="vEJ-dV-U2X"/>
                         <outlet property="damageCheckBox" destination="g5t-l0-duk" id="XjB-io-aYo"/>
+                        <outlet property="dashboardCheckBox" destination="TYe-YX-bNO" id="amK-P3-F2v"/>
                         <outlet property="dateLabel" destination="aAC-s3-35T" id="9Yc-aA-BCc"/>
                         <outlet property="dateTimeView" destination="Zk0-h2-4lV" id="H9m-Qh-mGx"/>
                         <outlet property="dateTitleLabel" destination="hPY-lV-tyx" id="xcA-Pe-7A0"/>
@@ -1383,6 +1427,12 @@
         </designable>
         <designable name="Kfk-5z-1Mb">
             <size key="intrinsicContentSize" width="95.5" height="25.5"/>
+        </designable>
+        <designable name="SM5-4y-jya">
+            <size key="intrinsicContentSize" width="310" height="36"/>
+        </designable>
+        <designable name="TYe-YX-bNO">
+            <size key="intrinsicContentSize" width="218" height="36"/>
         </designable>
         <designable name="XKG-Zv-oAW">
             <size key="intrinsicContentSize" width="140" height="36"/>

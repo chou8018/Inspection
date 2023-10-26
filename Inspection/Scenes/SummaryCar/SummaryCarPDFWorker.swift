@@ -652,13 +652,13 @@ class SummaryCarPDFWorker {
                                             x: centerPosition,
                                             y: underOil)
             
-            let catalyticValue = model.catalytic?.pdfValidateString ?? "-"
-            let catalyticMainString = "\(String.localized("inspection_engine_catalytic_label"))  \(catalyticValue)"
-            let catalyticValuePDF = weakself.getTitle(mainString: catalyticMainString,
-                                                    value: catalyticValue)
-            let catalyticRect = weakself.drawString(attrString: catalyticValuePDF,
-                                            x: trailingPosition,
-                                            y: underOil)
+//            let catalyticValue = model.catalytic?.pdfValidateString ?? "-"
+//            let catalyticMainString = "\(String.localized("inspection_engine_catalytic_label"))  \(catalyticValue)"
+//            let catalyticValuePDF = weakself.getTitle(mainString: catalyticMainString,
+//                                                    value: catalyticValue)
+//            let catalyticRect = weakself.drawString(attrString: catalyticValuePDF,
+//                                            x: trailingPosition,
+//                                            y: underOil)
             
 //            let gasOptionsValue = model.gasOptions?.pdfValidateString ?? "-"
 //            let gasOptionsMainString = "\(String.localized("photos_gas_tank_button_title"))  \(gasOptionsValue)"

@@ -460,7 +460,7 @@ extension PickUpCarWorker {
                                       reasonInValidGasNumber: model.reasonInValidGasNumber,
                                       registrationPlate: model.registrationPlate,
                                       isRegistrationMismatch: model.isRegistrationMismatch,
-                                      registrationNote: model.registrationNote)
+                                      registrationNote: model.registrationNote, isRegistrationAuction: model.isRegistrationAuction)
         print(vehicleType.toJSON())
 
         let numberOfKey = model.mapKeys?[String.localized("car_interior_key_label")] as? String

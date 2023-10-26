@@ -111,6 +111,14 @@ class ElectronicDeviceCheckViewController: ViewController, ElectronicDeviceCheck
     @IBOutlet weak var navigatorInLabel: UILabel!
     @IBOutlet weak var otherRemarksLabel: UILabel!
     @IBOutlet weak var summaryLabel: UILabel!
+    @IBOutlet weak var sideMirror1Label: UILabel!
+    @IBOutlet weak var sideMirror2Label: UILabel!
+    @IBOutlet weak var sideMirror3Label: UILabel!
+    @IBOutlet weak var sideMirror4Label: UILabel!
+    @IBOutlet weak var sideMirror1CheckBox: CheckBoxUIButton!
+    @IBOutlet weak var sideMirror2CheckBox: CheckBoxUIButton!
+    @IBOutlet weak var sideMirror3CheckBox: CheckBoxUIButton!
+    @IBOutlet weak var sideMirror4CheckBox: CheckBoxUIButton!
 
     override func initLocalString() {
         super.initLocalString()
@@ -130,6 +138,12 @@ class ElectronicDeviceCheckViewController: ViewController, ElectronicDeviceCheck
         summaryElectronicDeviceTextField.placeholder = summaryLabel.text
         noCdCheckBox.setTitle(String.localized("car_interior_no_cd_label"), for: .normal)
         noSdCardCheckBox.setTitle(String.localized("car_interior_no_cd_card_label"), for: .normal)
+        
+        sideMirror1Label.text = String.localized("inspection_electrical_side_mirror1_label")
+        sideMirror2Label.text = String.localized("inspection_electrical_side_mirror2_label")
+        sideMirror3Label.text = String.localized("inspection_electrical_side_mirror3_label")
+        sideMirror4Label.text = String.localized("inspection_electrical_side_mirror4_label")
+
     }
     
     func doSomething()
@@ -245,6 +259,26 @@ class ElectronicDeviceCheckViewController: ViewController, ElectronicDeviceCheck
         noCdCheckBox.toggle { [weak self] check in
             guard let weakself = self else { return }
             weakself.navigationCheck(checkBox: weakself.noCdCheckBox , check: check)
+        }
+    }
+    
+    @IBAction func mirror1Tapped(_ sender: Any) {
+        sideMirror1CheckBox.toggle { check in
+        }
+    }
+    
+    @IBAction func mirror2Tapped(_ sender: Any) {
+        sideMirror2CheckBox.toggle { check in
+        }
+    }
+    
+    @IBAction func mirror3Tapped(_ sender: Any) {
+        sideMirror3CheckBox.toggle { check in
+        }
+    }
+    
+    @IBAction func mirror4Tapped(_ sender: Any) {
+        sideMirror4CheckBox.toggle { check in
         }
     }
     

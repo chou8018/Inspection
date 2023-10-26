@@ -206,6 +206,8 @@
 "car_engine_diesel_label" = "Diesel";
 "car_engine_hybrid_benzine_label" = "Hybrid / Benzine";
 "car_engine_hybrid_diesel_label" = "Hybrid / Diesel";
+"car_engine_bev_label" = "BEV";
+"car_engine_phev_label" = "PHEV";
 "car_engine_fuel_system_label" = "Fuel system";
 "car_engine_injector_label" = "Injector";
 "car_engine_carburetor_label" = "Carburetor";
@@ -263,6 +265,9 @@
 "inspection_engine_nedd_repair_label" = "Need repair";
 "inspection_engine_summary_label" = "Summary engine condition";
 "inspection_engine_gas_label" = "Gas";
+"inspection_engine_catalytic_label" = "Catalytic Converter";
+"inspection_engine_with_label" = "With";
+"inspection_engine_without_label" = "Without";
 
 // motorbike exterior
 "motorbike_exterior_turn_light_l_label" = "Turn light L";
@@ -395,6 +400,10 @@
 "inspection_electrical_dashboard_label" = "Dashboard working";
 "inspection_electrical_other_remarks_label" = "Other remarks";
 "inspection_electrical_summary_label" = "Summary electrical equipments condition";
+"inspection_electrical_side_mirror1_label" = "Side mirror 1 working";
+"inspection_electrical_side_mirror2_label" = "Side mirror 2 working";
+"inspection_electrical_side_mirror3_label" = "Side mirror 3 working";
+"inspection_electrical_side_mirror4_label" = "Side mirror 4 working";
 
 // photos
 "photos_front_button_title" = "Front";

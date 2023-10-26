@@ -206,9 +206,10 @@ class EngineCarViewController: ViewController, EngineCarDisplayLogic
         oilSystemRadio.attributedTitles = [
             NSAttributedString(string: string_benzine, attributes: attributedString),
             NSAttributedString(string: string_diesel, attributes: attributedString),
-            NSAttributedString(string: "EV", attributes: attributedString),
             NSAttributedString(string: string_hybrid_benzine, attributes: attributedString),
-            NSAttributedString(string: string_hybrid_diesel, attributes: attributedString)
+            NSAttributedString(string: string_hybrid_diesel, attributes: attributedString),
+            NSAttributedString(string: string_bev_diesel, attributes: attributedString),
+            NSAttributedString(string: string_phev_diesel, attributes: attributedString)
         ]
         
         gasRadio.attributedTitles = [
@@ -262,7 +263,7 @@ class EngineCarViewController: ViewController, EngineCarDisplayLogic
     }
     //MARK: OIL
     @IBAction func oilSystemRadioGroupValueChanged(_ sender: Any) {
-        let value = getRadioValue(from: [string_benzine, string_diesel, "EV", string_hybrid_benzine, string_hybrid_diesel],
+        let value = getRadioValue(from: [string_benzine, string_diesel, string_hybrid_benzine, string_hybrid_diesel, string_bev_diesel, string_phev_diesel],
                                   selectIndex: oilSystemRadio.selectedIndex)
         
         DataController.shared.receiverCarModel.oilSystem = value

@@ -108,7 +108,9 @@ class EngineCheckViewController: ViewController, EngineCheckDisplayLogic
     @IBOutlet weak var needRepairLabel: UILabel!
     @IBOutlet weak var summaryLabel: UILabel!
     @IBOutlet weak var gasLabel: UILabel!
-    
+    @IBOutlet weak var catalyticLabel: UILabel!
+    @IBOutlet weak var catalyticRadio: RadioGroup!
+
     let string_inspection_oil_lacking = String.localized("inspection_engine_oil_lacking_label")
     let string_inspection_oil_not_lacking = String.localized("inspection_engine_oil_notlacking_label")
     
@@ -130,6 +132,7 @@ class EngineCheckViewController: ViewController, EngineCheckDisplayLogic
         summaryLabel.text = String.localized("inspection_engine_summary_label")
         summaryEngineTextField.placeholder = summaryLabel.text
         gasLabel.text = String.localized("inspection_engine_gas_label")
+        catalyticLabel.text = String.localized("inspection_engine_catalytic_label")
 
     }
     
@@ -162,9 +165,10 @@ class EngineCheckViewController: ViewController, EngineCheckDisplayLogic
         typeEngineRadio.attributedTitles = [
             NSAttributedString(string: string_benzine, attributes: attributedString),
             NSAttributedString(string: string_diesel, attributes: attributedString),
-            NSAttributedString(string: "EV", attributes: attributedString),
             NSAttributedString(string: string_hybrid_benzine, attributes: attributedString),
-            NSAttributedString(string: string_hybrid_diesel, attributes: attributedString)
+            NSAttributedString(string: string_hybrid_diesel, attributes: attributedString),
+            NSAttributedString(string: string_bev_diesel, attributes: attributedString),
+            NSAttributedString(string: string_phev_diesel, attributes: attributedString)
         ]
         haveOilRadio.attributedTitles = [
             NSAttributedString(string: string_inspection_oil_lacking, attributes: attributedString),
@@ -183,6 +187,12 @@ class EngineCheckViewController: ViewController, EngineCheckDisplayLogic
             NSAttributedString(string: string_cng_fumigation_system, attributes: attributedString)
         ]
         
+        catalyticRadio.attributedTitles = [
+            NSAttributedString(string: String.localized("inspection_engine_with_label"), attributes: attributedString),
+            NSAttributedString(string: String.localized("inspection_engine_without_label"), attributes: attributedString),
+            NSAttributedString(string: String.localized("car_detail_unable_to_verified_label"), attributes: attributedString),
+        ]
+        
     }
     //MARK: Radio ValueChange
     @IBAction func summaryEngineValueChanged(_ sender: Any) {
@@ -195,7 +205,7 @@ class EngineCheckViewController: ViewController, EngineCheckDisplayLogic
     }
     
     @IBAction func typeEngineValueChanged(_ sender: Any) {
-        let value = getRadioValue(from: [string_benzine, string_diesel, "EV", string_hybrid_benzine, string_hybrid_diesel],
+        let value = getRadioValue(from: [string_benzine, string_diesel, string_hybrid_benzine, string_hybrid_diesel, string_bev_diesel, string_phev_diesel],
                                   selectIndex: typeEngineRadio.selectedIndex)
         DataController.shared.inspectionCarModel.typeEngine = value
         
@@ -238,6 +248,14 @@ class EngineCheckViewController: ViewController, EngineCheckDisplayLogic
         oldValue = defautValue != gasSystemRadio.selectedIndex ? select : defautValue
     }
     
+    @IBAction func catalyticValueChanged(_ sender: Any) {
+        
+        let value =  getRadioValue(from : [String.localized("inspection_engine_with_label"), String.localized("inspection_engine_without_label"),
+                                           String.localized("car_detail_unable_to_verified_label")],
+                                   selectIndex: catalyticRadio.selectedIndex)
+                    
+        let catalyticId = catalyticRadio.selectedIndex + 1
+    }
     
     //MARK: CheckBox
     @IBAction func useableTapped(_ sender: Any) {
@@ -294,9 +312,11 @@ class EngineCheckViewController: ViewController, EngineCheckDisplayLogic
         
         haveOilRadio.selectedIndex = getRadioIndexByValue(from : [string_inspection_oil_lacking, string_inspection_oil_not_lacking], value: model.oilEngine)
         
-        typeEngineRadio.selectedIndex = getRadioIndexByValue(from : [string_benzine, string_diesel, "EV", string_hybrid_benzine, string_hybrid_diesel], value: model.typeEngine)
+        typeEngineRadio.selectedIndex = getRadioIndexByValue(from : [string_benzine, string_diesel, string_hybrid_benzine, string_hybrid_diesel, string_bev_diesel, string_phev_diesel], value: model.typeEngine)
         
         summaryEngineRadio.selectedIndex = getRadioIndexByValue(from: [string_inspection_engine_working, string_inspection_engine_not_working], value: model.engineOverall)
+        
+//        catalyticRadio.selectedIndex = getRadioIndexByValue(from: <#T##[String]#>, value: <#T##String?#>)
         
         if let engineTypeIndex = DataController.shared.receiverCarModel.fuelSystemId , engineTypeIndex > 0 {
             typeEngineRadio.selectedIndex = engineTypeIndex - 1

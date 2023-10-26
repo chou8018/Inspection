@@ -206,6 +206,8 @@
 "car_engine_diesel_label" = "ดีเซล";
 "car_engine_hybrid_benzine_label" = "Hybrid / เบนซิน";
 "car_engine_hybrid_diesel_label" = "Hybrid / ดีเซล";
+"car_engine_bev_label" = "BEV";
+"car_engine_phev_label" = "PHEV";
 "car_engine_fuel_system_label" = "ระบบเชื้อเพลิง";
 "car_engine_injector_label" = "หัวฉีด";
 "car_engine_carburetor_label" = "คาร์บูเรเตอร์";
@@ -263,6 +265,9 @@
 "inspection_engine_nedd_repair_label" = "ต้องซ่อมก่อนใช้งาน";
 "inspection_engine_summary_label" = "สรุปสภาพเครื่องยนต์";
 "inspection_engine_gas_label" = "แก็ส";
+"inspection_engine_catalytic_label" = "แคทตาไลติก";
+"inspection_engine_with_label" = "มี";
+"inspection_engine_without_label" = "ไม่มี";
 
 // motorbike exterior
 "motorbike_exterior_turn_light_l_label" = "ไฟเลี้ยวหน้า L";
@@ -395,6 +400,10 @@
 "inspection_electrical_dashboard_label" = "วัดรอบทำงาน";
 "inspection_electrical_other_remarks_label" = "หมายเหตุอื่น ๆ";
 "inspection_electrical_summary_label" = "สรุปอุปกรณ์ไฟฟ้า";
+"inspection_electrical_side_mirror1_label" = "กระจกประตูไฟฟ้า 1 ทำงาน";
+"inspection_electrical_side_mirror2_label" = "กระจกประตูไฟฟ้า 2 ทำงาน";
+"inspection_electrical_side_mirror3_label" = "กระจกประตูไฟฟ้า 3 ทำงาน";
+"inspection_electrical_side_mirror4_label" = "กระจกประตูไฟฟ้า 4 ทำงาน";
 
 // photos
 "photos_front_button_title" = "Front (ด้านหน้า)";

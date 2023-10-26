@@ -14,7 +14,7 @@ import UIKit
 
 let inspectionItem0Height = 830.0
 let inspectionItem0MBHeight = 1810.0
-let inspectionItem1Height = 950.0
+let inspectionItem1Height = 1015.0
 let inspectionItem2Height = 520.0
 let inspectionItem3Height = 605.0
 let inspectionItem4Height = 445.0

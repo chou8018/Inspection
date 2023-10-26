@@ -289,6 +289,7 @@ class AboutCarViewController: ViewController, AboutCarDisplayLogic
                 self?.mismatchPlateCheckButton.check = false
                 self?.auctionPlateCheckButton.check = false
                 DataController.shared.receiverCarModel.isRegistrationMismatch = false
+                DataController.shared.receiverCarModel.isRegistrationAuction = false
             }else{
                 DataController.shared.receiverCarModel.registrationNote = ""
                 self?.noteRegistrationTextField.text = ""
@@ -317,6 +318,8 @@ class AboutCarViewController: ViewController, AboutCarDisplayLogic
                 self?.mismatchPlateCheckButton.check = false
                 self?.auctionPlateCheckButton.check = false
                 DataController.shared.receiverCarModel.isRegistrationMismatch = false
+                DataController.shared.receiverCarModel.isRegistrationAuction = false
+
             }else{
                 DataController.shared.receiverCarModel.registrationNote = ""
                 self?.noteRegistrationTextField.text = ""
@@ -345,6 +348,8 @@ class AboutCarViewController: ViewController, AboutCarDisplayLogic
                 self?.noPlateCheckButton.check = false
                 self?.redPlateCheckButton.check = false
                 self?.auctionPlateCheckButton.check = false
+                DataController.shared.receiverCarModel.isRegistrationAuction = false
+
             }else{
                 DataController.shared.receiverCarModel.registrationNote = ""
                 self?.noteRegistrationTextField.text = ""
@@ -360,7 +365,8 @@ class AboutCarViewController: ViewController, AboutCarDisplayLogic
             self?.registrationTextField.text = check ? "" : ""
             DataController.shared.receiverCarModel.registration = check ? "" : ""
             DataController.shared.inspectionCarModel.registration = check ? "" : ""
-            
+            DataController.shared.receiverCarModel.isRegistrationAuction = check
+
             self?.provinceTextField.text = check ? "-" : ""
             DataController.shared.receiverCarModel.province = check ? "-" : ""
             DataController.shared.inspectionCarModel.registrationProvince = check ? "-" : ""
@@ -372,6 +378,8 @@ class AboutCarViewController: ViewController, AboutCarDisplayLogic
                 self?.noPlateCheckButton.check = false
                 self?.redPlateCheckButton.check = false
                 self?.mismatchPlateCheckButton.check = false
+                DataController.shared.receiverCarModel.isRegistrationMismatch = false
+
             }else{
                 DataController.shared.receiverCarModel.registrationNote = ""
                 self?.noteRegistrationTextField.text = ""

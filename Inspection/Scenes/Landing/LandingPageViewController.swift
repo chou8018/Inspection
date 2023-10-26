@@ -25,6 +25,8 @@ var string_benzine = String.localized("car_engine_benzine_label")
 var string_diesel = String.localized("car_engine_diesel_label")
 var string_hybrid_benzine = String.localized("car_engine_hybrid_benzine_label")
 var string_hybrid_diesel = String.localized("car_engine_hybrid_diesel_label")
+var string_bev_diesel = String.localized("car_engine_bev_label")
+var string_phev_diesel = String.localized("car_engine_phev_label")
 
 var string_injector = String.localized("car_engine_injector_label")
 var string_carburetor = String.localized("car_engine_carburetor_label")

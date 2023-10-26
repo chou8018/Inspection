@@ -75,6 +75,9 @@ struct VehicleType : Mappable {
     var isRegistrationMismatch : Bool = false
     var registrationNote : String = ""
     
+    // add-on 26/10/2022
+    var isRegistrationAuction : Bool = false
+
 	init?(map: Map) {
 
 	}
@@ -131,7 +134,8 @@ struct VehicleType : Mappable {
         reasonInValidGasNumber : String?,
         registrationPlate : String?,
         isRegistrationMismatch : Bool?,
-        registrationNote : String?) {
+        registrationNote : String?,
+        isRegistrationAuction : Bool?) {
         
         
         self.seller = seller ?? ""
@@ -192,6 +196,8 @@ struct VehicleType : Mappable {
         self.registrationPlate = registrationPlate ?? ""
         self.isRegistrationMismatch = isRegistrationMismatch ?? false
         self.registrationNote = registrationNote ?? ""
+            
+        self.isRegistrationAuction = isRegistrationAuction ?? false
     }
 
 	mutating func mapping(map: Map) {
@@ -255,6 +261,8 @@ struct VehicleType : Mappable {
         registrationPlate <- map["registrationPlate"]
         isRegistrationMismatch <- map["isRegistrationMismatch"]
         registrationNote <- map["registrationNote"]
+        
+        isRegistrationAuction <- map["isRegistrationAuction"]
 	}
 
 }

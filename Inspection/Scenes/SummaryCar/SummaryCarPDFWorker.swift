@@ -652,6 +652,14 @@ class SummaryCarPDFWorker {
                                             x: centerPosition,
                                             y: underOil)
             
+            let catalyticValue = model.catalytic?.pdfValidateString ?? "-"
+            let catalyticMainString = "\(String.localized("inspection_engine_catalytic_label"))  \(catalyticValue)"
+            let catalyticValuePDF = weakself.getTitle(mainString: catalyticMainString,
+                                                    value: catalyticValue)
+            let catalyticRect = weakself.drawString(attrString: catalyticValuePDF,
+                                            x: trailingPosition,
+                                            y: underOil)
+            
 //            let gasOptionsValue = model.gasOptions?.pdfValidateString ?? "-"
 //            let gasOptionsMainString = "\(String.localized("photos_gas_tank_button_title"))  \(gasOptionsValue)"
 //            let attrGasOptionsValuePDF = weakself.getTitle(mainString: gasOptionsMainString,
@@ -1076,9 +1084,41 @@ class SummaryCarPDFWorker {
             let roundGaugeString = "\(String.localized("car_inspection_pdf_tholos_label"))  \(roundGaugeValue)"
             let attrRoundGaugeValuePDF = weakself.getTitle(mainString: roundGaugeString,
                                                     value: roundGaugeValue)
-            let _ = weakself.drawString(attrString: attrRoundGaugeValuePDF,
+            let roundGaugeRect = weakself.drawString(attrString: attrRoundGaugeValuePDF,
                                             x: margin + 10,
                                             y: brakeLightRect.maxY + margin)
+            
+//            let sideMirror1Value = model.isSideMirror1 ? string_inspection_pdf_work : string_inspection_pdf_not_work
+//            let sideMirror1String = "\(String.localized("car_inspection_pdf_mirror1_label"))  \(sideMirror1Value)"
+//            let sideMirror1ValuePDF = weakself.getTitle(mainString: sideMirror1String,
+//                                                    value: sideMirror1Value)
+//            let _ = weakself.drawString(attrString: sideMirror1ValuePDF,
+//                                            x: centerPosition,
+//                                            y: brakeLightRect.maxY + margin)
+//            
+//            let sideMirror2Value = model.isSideMirror2 ? string_inspection_pdf_work : string_inspection_pdf_not_work
+//            let sideMirror2String = "\(String.localized("car_inspection_pdf_mirror2_label"))  \(sideMirror2Value)"
+//            let sideMirror2ValuePDF = weakself.getTitle(mainString: sideMirror2String,
+//                                                    value: sideMirror2Value)
+//            let _ = weakself.drawString(attrString: sideMirror2ValuePDF,
+//                                            x: trailingPosition,
+//                                            y: brakeLightRect.maxY + margin)
+//            
+//            let sideMirror3Value = model.isSideMirror3 ? string_inspection_pdf_work : string_inspection_pdf_not_work
+//            let sideMirror3String = "\(String.localized("car_inspection_pdf_mirror3_label"))  \(sideMirror3Value)"
+//            let sideMirror3ValuePDF = weakself.getTitle(mainString: sideMirror3String,
+//                                                    value: sideMirror3Value)
+//            let _ = weakself.drawString(attrString: sideMirror3ValuePDF,
+//                                            x: margin + 10,
+//                                            y: roundGaugeRect.maxY + margin)
+//            
+//            let sideMirror4Value = model.isSideMirror4 ? string_inspection_pdf_work : string_inspection_pdf_not_work
+//            let sideMirror4String = "\(String.localized("car_inspection_pdf_mirror4_label"))  \(sideMirror4Value)"
+//            let sideMirror4ValuePDF = weakself.getTitle(mainString: sideMirror4String,
+//                                                    value: sideMirror4Value)
+//            let _ = weakself.drawString(attrString: sideMirror4ValuePDF,
+//                                            x: centerPosition,
+//                                            y: roundGaugeRect.maxY + margin)
             
             //MARK: Navigator
             var navigatorValue = "\(model.isNavigator ? string_pdf_yes : string_pdf_no)  "
@@ -1092,7 +1132,7 @@ class SummaryCarPDFWorker {
                                                     value: navigatorValue)
             let navigatorRect = weakself.drawString(attrString: attrNavigatorValuePDF,
                                             x: centerPosition,
-                                            y: brakeLightRect.maxY + margin)
+                                            y: roundGaugeRect.minY)
             
             //MARK: Note
             let noteValue = model.note?.pdfValidateString ?? "-"

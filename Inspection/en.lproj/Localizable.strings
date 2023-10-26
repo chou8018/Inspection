@@ -611,6 +611,10 @@
 "car_inspection_pdf_brake_light_label" = "Brake light";
 "car_inspection_pdf_horn_label" = "Horn";
 "car_inspection_pdf_tholos_label" = "Tholos";
+"car_inspection_pdf_mirror1_label" = "Mirror 1";
+"car_inspection_pdf_mirror2_label" = "Mirror 2";
+"car_inspection_pdf_mirror3_label" = "Mirror 3";
+"car_inspection_pdf_mirror4_label" = "Mirror 4";
 "car_inspection_pdf_other_comments_label" = "Other comments";
 "car_inspection_pdf_damaged_photos_label" = "Damaged photos";
 

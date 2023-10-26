@@ -318,6 +318,7 @@ class EngineCarViewController: ViewController, EngineCarDisplayLogic
     }
     
     func setFuelType(fuelType:Int, gasSystem:Int){
+        
         switch fuelType {
         case 0: //"เบนซิน"
             print("Petrol : P")
@@ -339,6 +340,31 @@ class EngineCarViewController: ViewController, EngineCarDisplayLogic
             DataController.shared.receiverCarModel.fuelType = "1"
             break
         }
+        
+//        switch fuelType {
+//        case 0: //"เบนซิน"
+//            print("Petrol : P")
+//            DataController.shared.receiverCarModel.fuelType = "P"
+//        case 1: //"ดีเซล"
+//            print("Diesel : D")
+//            DataController.shared.receiverCarModel.fuelType = "D"
+//        case 2: //"EV" -> "Hybrid / Benzine"
+//            print("Petrol : HP")
+//            DataController.shared.receiverCarModel.fuelType = "HP"
+//        case 3: //"Hybrid / Diesel"
+//            print("Diesel : HD")
+//            DataController.shared.receiverCarModel.fuelType = "HD"
+//        case 4: // "Hybrid / ดีเซล" update -> "BEV"
+//            print("BEV")
+//            DataController.shared.receiverCarModel.fuelType = "BEV"
+//        case 5: // "PHEV"
+//            print("PHEV")
+//            DataController.shared.receiverCarModel.fuelType = "PHEV"
+//        default:
+//            print("N/A : 1")
+//            DataController.shared.receiverCarModel.fuelType = "1"
+//            break
+//        }
         
         //["เบนซิน", "ดีเซล", "EV", "Hybrid / เบนซิน", "Hybrid / ดีเซล"]
         //["LPG ระบบหัวฉีด", "LPG ระบบดูด", "CNG/NGV ระบบหัวฉีด", "CNG/NGV ระบบดูด"]

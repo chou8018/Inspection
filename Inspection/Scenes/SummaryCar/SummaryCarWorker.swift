@@ -300,7 +300,11 @@ extension SummaryCarWorker {
                                         bookInNumber: bookinNo,
                                         latestUpdatedDate: latestUpdatedDate,
                                         registrationProvince: model.registrationProvince,
-                                        regisration: model.registration)
+                                        regisration: model.registration,
+                                        isSideMirror1Working: model.isSideMirror1,
+                                        isSideMirror2Working: model.isSideMirror2,
+                                        isSideMirror3Working: model.isSideMirror3,
+                                        isSideMirror4Working: model.isSideMirror4)
         
         print("❤️🐶🦊\(request.toJSON())❤️🐶🦊")
         

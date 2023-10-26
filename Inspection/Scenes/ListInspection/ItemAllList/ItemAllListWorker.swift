@@ -828,6 +828,12 @@ class ItemAllListWorker
                 model.isNoSdCard = carInspectionType?.isNavigatorNoSdcard ?? false
                 model.isNoCd = carInspectionType?.isNavigatorNoCD ?? false
                 
+                //add 26/10/23
+                model.isSideMirror1 = carInspectionType?.isSideMirror1Working ?? false
+                model.isSideMirror2 = carInspectionType?.isSideMirror2Working ?? false
+                model.isSideMirror2 = carInspectionType?.isSideMirror3Working ?? false
+                model.isSideMirror3 = carInspectionType?.isSideMirror4Working ?? false
+                
                 //found book-in number
                 model.isCreate = true
                 self?.getGrade(from: bookInNumber, completion: completion)

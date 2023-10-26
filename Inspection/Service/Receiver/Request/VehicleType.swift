@@ -75,7 +75,7 @@ struct VehicleType : Mappable {
     var isRegistrationMismatch : Bool = false
     var registrationNote : String = ""
     
-    // add-on 26/10/2022
+    // add-on 26/10/2023
     var isRegistrationAuction : Bool = false
 
 	init?(map: Map) {

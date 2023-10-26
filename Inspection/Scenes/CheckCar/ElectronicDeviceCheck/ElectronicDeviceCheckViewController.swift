@@ -264,21 +264,25 @@ class ElectronicDeviceCheckViewController: ViewController, ElectronicDeviceCheck
     
     @IBAction func mirror1Tapped(_ sender: Any) {
         sideMirror1CheckBox.toggle { check in
+            DataController.shared.inspectionCarModel.isSideMirror1 = check
         }
     }
     
     @IBAction func mirror2Tapped(_ sender: Any) {
         sideMirror2CheckBox.toggle { check in
+            DataController.shared.inspectionCarModel.isSideMirror2 = check
         }
     }
     
     @IBAction func mirror3Tapped(_ sender: Any) {
         sideMirror3CheckBox.toggle { check in
+            DataController.shared.inspectionCarModel.isSideMirror3 = check
         }
     }
     
     @IBAction func mirror4Tapped(_ sender: Any) {
         sideMirror4CheckBox.toggle { check in
+            DataController.shared.inspectionCarModel.isSideMirror4 = check
         }
     }
     
@@ -442,6 +446,12 @@ class ElectronicDeviceCheckViewController: ViewController, ElectronicDeviceCheck
         noCdCheckBox.check = model.isNoCd
         summaryElectronicDeviceTextField.text = model.summaryElectronicDevice
         noteTextField.text = model.note
+        
+        sideMirror1CheckBox.check = model.isSideMirror1
+        sideMirror2CheckBox.check = model.isSideMirror2
+        sideMirror3CheckBox.check = model.isSideMirror3
+        sideMirror4CheckBox.check = model.isSideMirror4
+
     }
 }
 

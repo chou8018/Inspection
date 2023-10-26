@@ -78,10 +78,16 @@ struct InspectionRequest : Mappable {
     var registrationProvince: String?
     var regisration: String?
     
+    // add 26/10/23
+    var isSideMirror1Working: Bool?
+    var isSideMirror2Working: Bool?
+    var isSideMirror3Working: Bool?
+    var isSideMirror4Working: Bool?
+    
     init?(map: Map) {
-
+        
     }
-
+    
     
     init(
         vehicleId : String?,
@@ -148,79 +154,89 @@ struct InspectionRequest : Mappable {
         bookInNumber : String?,
         latestUpdatedDate : String?,
         registrationProvince: String?,
-        regisration: String?) {
-        
-      
-        self.vehicleId = vehicleId
-        self.inspector = inspector ?? ""
-        self.inspectorName = inspectorName ?? ""
-        self.inspectionDate = inspectionDate ?? ""
-        self.chassis = chassis ?? ""
-        self.front = front ?? ""
-        self.back = back ?? ""
-        self.rightSide = rightSide ?? ""
-        self.leftSide = leftSide ?? ""
-        self.roof = roof ?? ""
-        self.isFlood = isFlood ?? false
-        self.bodySummary = bodySummary ?? ""
-        self.isEngineWorks = isEngineWorks ?? false
-        self.fuelSystemId = fuelSystemId ?? 0
-        self.isLubricatorLow = isLubricatorLow ?? false
-        self.engineSystemId = engineSystemId ?? 0
-        self.gearTypeId = gearTypeId ?? 0
-        self.isUseableGeneral = isUseableGeneral ?? false
-        self.isSoundAbnormal = isSoundAbnormal ?? false
-        self.isLeakFuel = isLeakFuel ?? false
-        self.isStainWater = isStainWater ?? false
-        self.isMachineLightShow = isMachineLightShow ?? false
-        self.isEngineAbnomal = isEngineAbnomal ?? false
-        self.isNeedRepair = isNeedRepair ?? false
-        self.engineSummary = engineSummary ?? ""
-        self.driveShaftConditionId = driveShaftConditionId ?? 0
-        self.driveShaftConditionNote = driveShaftConditionNote ?? ""
-        self.suspensionConditionId = suspensionConditionId ?? 0
-        self.suspensionConditionNote = suspensionConditionNote ?? ""
-        self.suspensionSummary = suspensionSummary ?? ""
-        self.gearSystemId = gearSystemId ?? 0
-        self.gearConditionId = gearConditionId ?? 0
-        self.driveShaftId = driveShaftId ?? 0
-        self.is4WD = is4WD ?? false
-        self.gearSystemSummary = gearSystemSummary ?? ""
-        self.isUseableSteerWheel = isUseableSteerWheel ?? false
-        self.isPowerSteering = isPowerSteering ?? false
-        self.steeringSummary = steeringSummary ?? ""
-        self.isUseableBrake = isUseableBrake ?? false
-        self.breakSystemSumary = breakSystemSumary ?? ""
-        self.isAirCool = isAirCool ?? false
-        self.isCompressorAir = isCompressorAir ?? false
-        self.airSystemSummary = airSystemSummary ?? ""
-        self.isUseableGuage = isUseableGuage ?? false
-        self.warningLightNote = warningLightNote ?? ""
-        self.gaugeSummary = gaugeSummary ?? ""
-        self.isFrontLightWorking = isFrontLightWorking ?? false
-        self.isTurnLightWorking = isTurnLightWorking ?? false
-        self.isBackLightWorking = isBackLightWorking ?? false
-        self.isBrakeLightWoring = isBrakeLightWoring ?? false
-        self.isBetteryWorking = isBetteryWorking ?? false
-        self.isHooterWorking = isHooterWorking ?? false
-        self.isRoundGaugeWorking = isRoundGaugeWorking ?? false
-        self.isNavigator = isNavigator ?? false
-        self.isNavigatorBuiltIn = isNavigatorBuiltIn ?? false
-        self.isNavigatorCD = isNavigatorCD ?? false
-        self.isNavigatorSdcard = isNavigatorSdcard ?? false
-        self.isNavigatorNoCD = isNavigatorNoCD ?? false
-        self.isNavigatorNoSdcard = isNavigatorNoSdcard ?? false
-        self.electronicNote = electronicNote ?? ""
-        self.electronicSummary = electronicSummary ?? ""
-        self.bookInNumber = bookInNumber ?? ""
-        self.latestUpdatedDate = latestUpdatedDate ?? ""
-        
-        self.registrationProvince = registrationProvince ?? ""
-        self.regisration = regisration ?? ""
-    }
+        regisration: String?,
+        isSideMirror1Working: Bool?,
+        isSideMirror2Working: Bool?,
+        isSideMirror3Working: Bool?,
+        isSideMirror4Working: Bool?) {
+            
+            
+            self.vehicleId = vehicleId
+            self.inspector = inspector ?? ""
+            self.inspectorName = inspectorName ?? ""
+            self.inspectionDate = inspectionDate ?? ""
+            self.chassis = chassis ?? ""
+            self.front = front ?? ""
+            self.back = back ?? ""
+            self.rightSide = rightSide ?? ""
+            self.leftSide = leftSide ?? ""
+            self.roof = roof ?? ""
+            self.isFlood = isFlood ?? false
+            self.bodySummary = bodySummary ?? ""
+            self.isEngineWorks = isEngineWorks ?? false
+            self.fuelSystemId = fuelSystemId ?? 0
+            self.isLubricatorLow = isLubricatorLow ?? false
+            self.engineSystemId = engineSystemId ?? 0
+            self.gearTypeId = gearTypeId ?? 0
+            self.isUseableGeneral = isUseableGeneral ?? false
+            self.isSoundAbnormal = isSoundAbnormal ?? false
+            self.isLeakFuel = isLeakFuel ?? false
+            self.isStainWater = isStainWater ?? false
+            self.isMachineLightShow = isMachineLightShow ?? false
+            self.isEngineAbnomal = isEngineAbnomal ?? false
+            self.isNeedRepair = isNeedRepair ?? false
+            self.engineSummary = engineSummary ?? ""
+            self.driveShaftConditionId = driveShaftConditionId ?? 0
+            self.driveShaftConditionNote = driveShaftConditionNote ?? ""
+            self.suspensionConditionId = suspensionConditionId ?? 0
+            self.suspensionConditionNote = suspensionConditionNote ?? ""
+            self.suspensionSummary = suspensionSummary ?? ""
+            self.gearSystemId = gearSystemId ?? 0
+            self.gearConditionId = gearConditionId ?? 0
+            self.driveShaftId = driveShaftId ?? 0
+            self.is4WD = is4WD ?? false
+            self.gearSystemSummary = gearSystemSummary ?? ""
+            self.isUseableSteerWheel = isUseableSteerWheel ?? false
+            self.isPowerSteering = isPowerSteering ?? false
+            self.steeringSummary = steeringSummary ?? ""
+            self.isUseableBrake = isUseableBrake ?? false
+            self.breakSystemSumary = breakSystemSumary ?? ""
+            self.isAirCool = isAirCool ?? false
+            self.isCompressorAir = isCompressorAir ?? false
+            self.airSystemSummary = airSystemSummary ?? ""
+            self.isUseableGuage = isUseableGuage ?? false
+            self.warningLightNote = warningLightNote ?? ""
+            self.gaugeSummary = gaugeSummary ?? ""
+            self.isFrontLightWorking = isFrontLightWorking ?? false
+            self.isTurnLightWorking = isTurnLightWorking ?? false
+            self.isBackLightWorking = isBackLightWorking ?? false
+            self.isBrakeLightWoring = isBrakeLightWoring ?? false
+            self.isBetteryWorking = isBetteryWorking ?? false
+            self.isHooterWorking = isHooterWorking ?? false
+            self.isRoundGaugeWorking = isRoundGaugeWorking ?? false
+            self.isNavigator = isNavigator ?? false
+            self.isNavigatorBuiltIn = isNavigatorBuiltIn ?? false
+            self.isNavigatorCD = isNavigatorCD ?? false
+            self.isNavigatorSdcard = isNavigatorSdcard ?? false
+            self.isNavigatorNoCD = isNavigatorNoCD ?? false
+            self.isNavigatorNoSdcard = isNavigatorNoSdcard ?? false
+            self.electronicNote = electronicNote ?? ""
+            self.electronicSummary = electronicSummary ?? ""
+            self.bookInNumber = bookInNumber ?? ""
+            self.latestUpdatedDate = latestUpdatedDate ?? ""
+            
+            self.registrationProvince = registrationProvince ?? ""
+            self.regisration = regisration ?? ""
+            
+            self.isSideMirror1Working = isSideMirror1Working ?? false
+            self.isSideMirror2Working = isSideMirror2Working ?? false
+            self.isSideMirror3Working = isSideMirror3Working ?? false
+            self.isSideMirror4Working = isSideMirror4Working ?? false
+            
+        }
     mutating func mapping(map: Map) {
-
-     
+        
+        
         vehicleId <- map["vehicleId"]
         inspector <- map["inspector"]
         inspectorName <- map["inspectorName"]
@@ -287,6 +303,12 @@ struct InspectionRequest : Mappable {
         
         registrationProvince <- map["registrationProvince"]
         regisration <- map["regisration"]
+        
+        isSideMirror1Working <- map["isSideMirror1Working"]
+        isSideMirror2Working <- map["isSideMirror2Working"]
+        isSideMirror3Working <- map["isSideMirror3Working"]
+        isSideMirror4Working <- map["isSideMirror4Working"]
+
     }
     
 }

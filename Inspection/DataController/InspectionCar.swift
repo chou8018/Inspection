@@ -124,7 +124,12 @@ class InspectionCarModel {
     var isNoSdCard = false
     var isNoCd = false
     
-    
+    // add 26/10/23
+    var isSideMirror1 = false
+    var isSideMirror2 = false
+    var isSideMirror3 = false
+    var isSideMirror4 = false
+
     var registrationProvince: String?
     var registration: String?
     

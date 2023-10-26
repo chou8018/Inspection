@@ -138,7 +138,7 @@ class ReceiverCarModel {
     var isInValidGasNumber : Bool? { didSet { setEdit(oldValue, value: &isEditVehicle) }}
     var isRegistrationMismatch : Bool? { didSet { setEdit(oldValue, value: &isEditVehicle) }}
     
-    // add-on 26/10/2022
+    // add-on 26/10/2023
     var isRegistrationAuction : Bool? { didSet { setEdit(oldValue, value: &isEditVehicle) }}
     
     var reasonInValidEngineNumber : String? { didSet { setEdit(oldValue, value: &isEditVehicle) }}

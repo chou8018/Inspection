@@ -833,6 +833,7 @@ class ItemAllListWorker
                 model.isSideMirror2 = carInspectionType?.isSideMirror2Working ?? false
                 model.isSideMirror2 = carInspectionType?.isSideMirror3Working ?? false
                 model.isSideMirror3 = carInspectionType?.isSideMirror4Working ?? false
+                model.catalytic = carInspectionType?.catalytic
                 
                 //found book-in number
                 model.isCreate = true

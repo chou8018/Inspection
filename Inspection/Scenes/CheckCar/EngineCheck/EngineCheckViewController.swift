@@ -253,8 +253,7 @@ class EngineCheckViewController: ViewController, EngineCheckDisplayLogic
         let value =  getRadioValue(from : [String.localized("inspection_engine_with_label"), String.localized("inspection_engine_without_label"),
                                            String.localized("car_detail_unable_to_verified_label")],
                                    selectIndex: catalyticRadio.selectedIndex)
-                    
-        let catalyticId = catalyticRadio.selectedIndex + 1
+        DataController.shared.inspectionCarModel.catalytic = value
     }
     
     //MARK: CheckBox
@@ -316,7 +315,8 @@ class EngineCheckViewController: ViewController, EngineCheckDisplayLogic
         
         summaryEngineRadio.selectedIndex = getRadioIndexByValue(from: [string_inspection_engine_working, string_inspection_engine_not_working], value: model.engineOverall)
         
-//        catalyticRadio.selectedIndex = getRadioIndexByValue(from: <#T##[String]#>, value: <#T##String?#>)
+        catalyticRadio.selectedIndex = getRadioIndexByValue(from: [String.localized("inspection_engine_with_label"), String.localized("inspection_engine_without_label"),
+                                                                   String.localized("car_detail_unable_to_verified_label")], value: model.catalytic)
         
         if let engineTypeIndex = DataController.shared.receiverCarModel.fuelSystemId , engineTypeIndex > 0 {
             typeEngineRadio.selectedIndex = engineTypeIndex - 1

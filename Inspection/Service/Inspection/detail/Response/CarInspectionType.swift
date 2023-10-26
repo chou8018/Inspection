@@ -91,7 +91,8 @@ struct CarInspectionType : Mappable {
     var isSideMirror2Working: Bool?
     var isSideMirror3Working: Bool?
     var isSideMirror4Working: Bool?
-
+    var catalytic: String?
+    
 	init?(map: Map) {
 
 	}
@@ -171,7 +172,7 @@ struct CarInspectionType : Mappable {
         isSideMirror2Working <- map["isSideMirror2Working"]
         isSideMirror3Working <- map["isSideMirror3Working"]
         isSideMirror4Working <- map["isSideMirror4Working"]
-
+        catalytic <- map["catalytic"]
 	}
 
 }

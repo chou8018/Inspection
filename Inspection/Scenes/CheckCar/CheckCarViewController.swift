@@ -21,7 +21,7 @@ let inspectionItem4Height = 445.0
 let inspectionItem5Height = 365.0
 let inspectionItem6Height = 445.0
 let inspectionItem7Height = 455.0
-let inspectionItem8Height = 810.0
+let inspectionItem8Height = 870.0
 
 protocol CheckCarDisplayLogic: AnyObject
 {

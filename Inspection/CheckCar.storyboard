@@ -2133,11 +2133,11 @@
             <objects>
                 <viewController storyboardIdentifier="ElectronicDeviceCheckViewController" id="3Ck-Af-ybp" customClass="ElectronicDeviceCheckViewController" customModule="Inspection" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NoI-IP-dic">
-                        <rect key="frame" x="0.0" y="0.0" width="1080" height="810"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1080" height="870"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" scrollEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="icD-zZ-LxP">
-                                <rect key="frame" x="0.0" y="20" width="1080" height="790"/>
+                                <rect key="frame" x="0.0" y="20" width="1080" height="850"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="OdD-JS-jV3">
                                         <rect key="frame" x="50" y="50" width="980" height="791"/>
@@ -2653,7 +2653,7 @@
                             <constraint firstItem="icD-zZ-LxP" firstAttribute="trailing" secondItem="yrS-Np-RqX" secondAttribute="trailing" id="zcv-9h-XCY"/>
                         </constraints>
                     </view>
-                    <size key="freeformSize" width="1080" height="810"/>
+                    <size key="freeformSize" width="1080" height="870"/>
                     <connections>
                         <outlet property="backLightCheckBox" destination="jMa-Q9-2ql" id="SQE-qa-dFc"/>
                         <outlet property="batteryLabel" destination="YTr-1t-wMs" id="Hhd-Ci-B6j"/>

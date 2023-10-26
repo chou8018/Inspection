@@ -129,6 +129,7 @@ class InspectionCarModel {
     var isSideMirror2 = false
     var isSideMirror3 = false
     var isSideMirror4 = false
+    var catalytic: String?
 
     var registrationProvince: String?
     var registration: String?

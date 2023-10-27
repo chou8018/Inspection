@@ -398,7 +398,8 @@ class EngineCarViewController: ViewController, EngineCarDisplayLogic
         let model = DataController.shared.receiverCarModel
         let engineRoomOverAllValue = [string_good_first, string_average, string_fair, string_poor]
         let driverSystemValue = ["FWD", "RWD", "4WD", "AWD"]
-        let fuelSystemValue = [string_benzine, string_diesel, "EV", string_hybrid_benzine, string_diesel]
+//        let fuelSystemValue = [string_benzine, string_diesel, "EV", string_hybrid_benzine, string_diesel]
+        let fuelSystemValue = [string_benzine, string_diesel, string_hybrid_benzine, string_hybrid_diesel, string_bev_diesel, string_phev_diesel]
         let gasTypeValue = [string_lpg_sequential_injection, string_lpg_fumigation_system,
                             string_cng_sequential_injection, string_cng_fumigation_system]
         

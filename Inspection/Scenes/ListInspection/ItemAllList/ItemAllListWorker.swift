@@ -260,7 +260,9 @@ class ItemAllListWorker
                 model.driverSystemId = engineType?.driverSystemId
                 model.driverSystem = driverSystemValue[driverSystemId]
                 
-                let fuelSystemValue = [nil, string_benzine, string_diesel, "EV", string_hybrid_benzine, string_hybrid_diesel]
+//                let fuelSystemValue = [nil, string_benzine, string_diesel, "EV", string_hybrid_benzine, string_hybrid_diesel]
+                let fuelSystemValue = [nil, string_benzine, string_diesel, string_hybrid_benzine, string_hybrid_diesel, string_bev_diesel, string_phev_diesel]
+                
                 let fuelSystemId = engineType?.fuelSystemId ?? 0
                 model.fuelSystemId = engineType?.fuelSystemId
                 model.oilSystem = fuelSystemValue[fuelSystemId]

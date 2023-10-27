@@ -187,6 +187,10 @@ class PhotoCarViewController: ViewController, PhotoCarDisplayLogic
         carRoofCheckBox.setTitle(String.localized("photos_car_roof_button_title"), for: .normal)
         dashboardCheckBox.setTitle(String.localized("photos_car_dashboard_button_title"), for: .normal)
         catalyticCheckBox.setTitle(String.localized("photos_car_catalytic_button_title"), for: .normal)
+        
+        catalyticCheckBox.titleLabel!.lineBreakMode = NSLineBreakMode.byWordWrapping
+        catalyticCheckBox.titleLabel!.numberOfLines = 2
+        catalyticCheckBox.titleLabel!.textAlignment = NSTextAlignment.center
     }
     
     var sourceSectionName : [(name:String, cb: CheckBoxUIButton)] = []
@@ -381,7 +385,7 @@ class PhotoCarViewController: ViewController, PhotoCarDisplayLogic
                              (name: "\(String.localized("photos_damage_button_title")) *", cb: damageCheckBox),
                              (name: "\(String.localized("photos_car_roof_button_title")) *", cb: carRoofCheckBox),
                              (name: "\(String.localized("photos_car_dashboard_button_title")) *", cb: dashboardCheckBox),
-                             (name: "\(String.localized("photos_car_catalytic_button_title")) *", cb: catalyticCheckBox)
+                             (name: "\(String.localized("photos_car_catalytic_button_title")) *\n\(String.localized("photos_car_catalytic_comment_title"))", cb: catalyticCheckBox)
         ]
         
         for item in sourceSectionName {
@@ -408,11 +412,22 @@ class PhotoCarViewController: ViewController, PhotoCarDisplayLogic
         let range = (title as NSString).range(of: "*")
         let attr = NSMutableAttributedString(string: title)
         attr.addAttribute(.foregroundColor, value: UIColor.red, range: range)
+        
+        if cb == catalyticCheckBox {
+            let comment = String.localized("photos_car_catalytic_comment_title")
+            let commentRange = (title as NSString).range(of: comment)
+            attr.addAttribute(.font, value: UIFont.systemFont(ofSize: 10), range: commentRange)
+        }
         cb.setAttributedTitle(attr, for: .normal)
+
     }
     
     func setTitleFieldRequired(_ model:(name:String, cb: CheckBoxUIButton)){
-        let name = model.name.split(separator: "*")[0]
+        var name = model.name.split(separator: "*")[0]
+        
+        if model.cb == catalyticCheckBox {
+            name += "\n\(String.localized("photos_car_catalytic_comment_title"))"
+        }
         self.setTitleCheckBox(String(name), cb: model.cb)
     }
     

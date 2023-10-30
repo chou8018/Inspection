@@ -208,6 +208,8 @@
 "car_engine_hybrid_diesel_label" = "Hybrid / Diesel";
 "car_engine_bev_label" = "BEV";
 "car_engine_phev_label" = "PHEV";
+"car_engine_tip_electric_elabel" = "Electric vehicles 100%";
+"car_engine_tip_electric_internal_label" = "Electric and internal combustion engine vehicles";
 "car_engine_fuel_system_label" = "Fuel system";
 "car_engine_injector_label" = "Injector";
 "car_engine_carburetor_label" = "Carburetor";

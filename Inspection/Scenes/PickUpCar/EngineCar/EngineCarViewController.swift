@@ -274,7 +274,18 @@ class EngineCarViewController: ViewController, EngineCarDisplayLogic
         setFuelType(fuelType: oilSystemRadio.selectedIndex, gasSystem: gasRadio.selectedIndex)
         
         oilSystemRadio.setValidateView(true)
+        
+        if let selectItem = oilSystemRadio.subviews.first?.subviews[oilSystemRadio.selectedIndex] {
+            if value == string_bev_diesel {
+                DataController.shared.showTipView(sender: selectItem, superView: self.view, message: String.localized("car_engine_tip_electric_elabel"))
+            }
+            
+            if value == string_phev_diesel {
+                DataController.shared.showTipView(sender: selectItem, superView: self.view, message: String.localized("car_engine_tip_electric_internal_label"))
+            }
+        }
     }
+    
     @IBAction func fuelSystemValueChanged(_ sender: Any) {
         let value = getRadioValue(from: [string_injector, string_carburetor, "Direct Injection", "N/A"],
                                   selectIndex: fuelSystemRadio.selectedIndex)

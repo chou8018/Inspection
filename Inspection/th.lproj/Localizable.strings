@@ -208,6 +208,8 @@
 "car_engine_hybrid_diesel_label" = "Hybrid / ดีเซล";
 "car_engine_bev_label" = "BEV";
 "car_engine_phev_label" = "PHEV";
+"car_engine_tip_electric_elabel" = "รถไฟฟ้า 100%";
+"car_engine_tip_electric_internal_label" = "รถที่มีทั้งมอเตอร์ไฟฟ้า และเครื่องยนต์สันดาป";
 "car_engine_fuel_system_label" = "ระบบเชื้อเพลิง";
 "car_engine_injector_label" = "หัวฉีด";
 "car_engine_carburetor_label" = "คาร์บูเรเตอร์";

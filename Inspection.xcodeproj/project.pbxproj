@@ -489,6 +489,10 @@
 		C289FFFD2AC5536A003C2F1A /* ItemAllListModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F957B81E25CA495A00B8FB3C /* ItemAllListModels.swift */; };
 		C289FFFE2AC5536A003C2F1A /* ConstraintViewDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B8893A2A6A69D400ED3A60 /* ConstraintViewDSL.swift */; };
 		C289FFFF2AC5536A003C2F1A /* InspectionListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F957B80725CA3C5600B8FB3C /* InspectionListRouter.swift */; };
+		C297BE142AEF4E77006FFB31 /* EasyTipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C297BE102AEF4E77006FFB31 /* EasyTipView.swift */; };
+		C297BE152AEF4E77006FFB31 /* EasyTipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C297BE102AEF4E77006FFB31 /* EasyTipView.swift */; };
+		C297BE1B2AEF4ED2006FFB31 /* UIKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C297BE1A2AEF4ED2006FFB31 /* UIKitExtensions.swift */; };
+		C297BE1C2AEF4ED2006FFB31 /* UIKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C297BE1A2AEF4ED2006FFB31 /* UIKitExtensions.swift */; };
 		C2AEDD0A2A81385D00BAC131 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C2AEDD082A81385D00BAC131 /* Localizable.strings */; };
 		C2B889332A6A69B600ED3A60 /* ImageStickerContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B889322A6A69B600ED3A60 /* ImageStickerContainerView.swift */; };
 		C2B8895B2A6A69D400ED3A60 /* ConstraintMultiplierTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B889352A6A69D400ED3A60 /* ConstraintMultiplierTarget.swift */; };
@@ -994,6 +998,9 @@
 		C289016D2AC5536A003C2F1A /* InspectionStaging.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InspectionStaging.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C289016F2AC55452003C2F1A /* Staging-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Staging-Info.plist"; sourceTree = "<group>"; };
 		C28901712AC555C9003C2F1A /* AppConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
+		C297BE102AEF4E77006FFB31 /* EasyTipView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EasyTipView.swift; sourceTree = "<group>"; };
+		C297BE122AEF4E77006FFB31 /* EasyTipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EasyTipView.h; sourceTree = "<group>"; };
+		C297BE1A2AEF4ED2006FFB31 /* UIKitExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIKitExtensions.swift; sourceTree = "<group>"; };
 		C2AEDD092A81385D00BAC131 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C2AEDD0B2A81397D00BAC131 /* th */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = th; path = th.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C2B889322A6A69B600ED3A60 /* ImageStickerContainerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageStickerContainerView.swift; sourceTree = "<group>"; };
@@ -1540,6 +1547,16 @@
 				ED7F01EFBE20F1FF79AD3938 /* Pods_InspectionTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C297BE0F2AEF4E77006FFB31 /* EasyTipView */ = {
+			isa = PBXGroup;
+			children = (
+				C297BE102AEF4E77006FFB31 /* EasyTipView.swift */,
+				C297BE122AEF4E77006FFB31 /* EasyTipView.h */,
+				C297BE1A2AEF4ED2006FFB31 /* UIKitExtensions.swift */,
+			);
+			path = EasyTipView;
 			sourceTree = "<group>";
 		};
 		C2B889312A6A691400ED3A60 /* ZLPhotoBrowser */ = {
@@ -2797,6 +2814,7 @@
 		F9E02E2625D1104D0003CB9C /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				C297BE0F2AEF4E77006FFB31 /* EasyTipView */,
 				C2B889312A6A691400ED3A60 /* ZLPhotoBrowser */,
 				F9ABEF8125EE449F00B48D7D /* ImagePickerView.swift */,
 				F92507D425DE553F007D2E57 /* MultilineTextField.swift */,
@@ -3581,6 +3599,7 @@
 				C28901252AC5536A003C2F1A /* SignatureWorker.swift in Sources */,
 				C28901262AC5536A003C2F1A /* CheckCarViewController.swift in Sources */,
 				C28901272AC5536A003C2F1A /* ReceiverCarModels.swift in Sources */,
+				C297BE1C2AEF4ED2006FFB31 /* UIKitExtensions.swift in Sources */,
 				C28901282AC5536A003C2F1A /* ReceiverCarRouter.swift in Sources */,
 				C28901292AC5536A003C2F1A /* BodyCheckRouter.swift in Sources */,
 				C289012A2AC5536A003C2F1A /* ConstraintLayoutSupport.swift in Sources */,
@@ -3590,6 +3609,7 @@
 				C289012E2AC5536A003C2F1A /* InspectionMotorBikeModel.swift in Sources */,
 				C289012F2AC5536A003C2F1A /* ExternalCarWorker.swift in Sources */,
 				C28901302AC5536A003C2F1A /* CheckBoxUIButton.swift in Sources */,
+				C297BE152AEF4E77006FFB31 /* EasyTipView.swift in Sources */,
 				C28901312AC5536A003C2F1A /* ItemPendingListWorker.swift in Sources */,
 				C28901322AC5536A003C2F1A /* InspectionMotorBikeDetailService.swift in Sources */,
 				C28901332AC5536A003C2F1A /* ItemPendingListInteractor.swift in Sources */,
@@ -4049,6 +4069,7 @@
 				F9E02E3D25D134EE0003CB9C /* SignatureWorker.swift in Sources */,
 				F9D7CD4725CBA7FE003E049B /* CheckCarViewController.swift in Sources */,
 				F96F538125D0DFF300317ED0 /* ReceiverCarModels.swift in Sources */,
+				C297BE1B2AEF4ED2006FFB31 /* UIKitExtensions.swift in Sources */,
 				F96F538025D0DFF300317ED0 /* ReceiverCarRouter.swift in Sources */,
 				F94A041225DA398E00C8EC4C /* BodyCheckRouter.swift in Sources */,
 				C2B8896E2A6A69D400ED3A60 /* ConstraintLayoutSupport.swift in Sources */,
@@ -4058,6 +4079,7 @@
 				CEF1BCF7270FF0CA0079252C /* InspectionMotorBikeModel.swift in Sources */,
 				F96F539D25D0E01900317ED0 /* ExternalCarWorker.swift in Sources */,
 				F99A7C9F25D28111004225CC /* CheckBoxUIButton.swift in Sources */,
+				C297BE142AEF4E77006FFB31 /* EasyTipView.swift in Sources */,
 				F957B83225CA49A100B8FB3C /* ItemPendingListWorker.swift in Sources */,
 				CEF1BCFB270FFE7E0079252C /* InspectionMotorBikeDetailService.swift in Sources */,
 				F957B83625CA49A100B8FB3C /* ItemPendingListInteractor.swift in Sources */,

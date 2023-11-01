@@ -1083,7 +1083,7 @@ extension AboutCarViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         scrollView.registKeyboardNotification()
-//        displayGasOptions()
+        displayGasOptions()
         loadRetryApi()
         prepareData()
         updateView()

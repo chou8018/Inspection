@@ -151,6 +151,13 @@ enum Router {
         
         case .bookInDetail(_, let bookInNumber):
             return ApiModel(path: "inspection/api/MotorbikeBookIn/BookinSingle/\(bookInNumber)", method: .get)
+
+//            var api = "inspection/api/MotorbikeBookIn/BookinSingle/"
+//            if DataController.shared.bookInType == .CAR || DataController.shared.bookInType == .CARWRECK {
+//                api = "inspection/api/BookIn/Single/"
+//            }
+            
+//            return ApiModel(path: "\(api)\(bookInNumber)", method: .get)
         ///inspection/api/MotorbikeBookIn/BookinSingle/
         ///inspection/api/bookin/single/
         

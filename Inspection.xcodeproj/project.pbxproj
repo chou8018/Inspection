@@ -489,6 +489,18 @@
 		C289FFFD2AC5536A003C2F1A /* ItemAllListModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F957B81E25CA495A00B8FB3C /* ItemAllListModels.swift */; };
 		C289FFFE2AC5536A003C2F1A /* ConstraintViewDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B8893A2A6A69D400ED3A60 /* ConstraintViewDSL.swift */; };
 		C289FFFF2AC5536A003C2F1A /* InspectionListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F957B80725CA3C5600B8FB3C /* InspectionListRouter.swift */; };
+		C2938A7D2B353023003076B1 /* RoofTypeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2938A7B2B353023003076B1 /* RoofTypeService.swift */; };
+		C2938A7E2B353023003076B1 /* RoofTypeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2938A7B2B353023003076B1 /* RoofTypeService.swift */; };
+		C2938A7F2B353023003076B1 /* RoofTypeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2938A7C2B353023003076B1 /* RoofTypeModel.swift */; };
+		C2938A802B353023003076B1 /* RoofTypeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2938A7C2B353023003076B1 /* RoofTypeModel.swift */; };
+		C2938A892B353089003076B1 /* GasTypeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2938A872B353089003076B1 /* GasTypeModel.swift */; };
+		C2938A8A2B353089003076B1 /* GasTypeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2938A872B353089003076B1 /* GasTypeModel.swift */; };
+		C2938A8B2B353089003076B1 /* GasTypeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2938A882B353089003076B1 /* GasTypeService.swift */; };
+		C2938A8C2B353089003076B1 /* GasTypeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2938A882B353089003076B1 /* GasTypeService.swift */; };
+		C2938A8F2B3530BE003076B1 /* CatalyticOptionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2938A8D2B3530BE003076B1 /* CatalyticOptionModel.swift */; };
+		C2938A902B3530BE003076B1 /* CatalyticOptionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2938A8D2B3530BE003076B1 /* CatalyticOptionModel.swift */; };
+		C2938A912B3530BE003076B1 /* CatalyticOptionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2938A8E2B3530BE003076B1 /* CatalyticOptionService.swift */; };
+		C2938A922B3530BE003076B1 /* CatalyticOptionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2938A8E2B3530BE003076B1 /* CatalyticOptionService.swift */; };
 		C297BE142AEF4E77006FFB31 /* EasyTipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C297BE102AEF4E77006FFB31 /* EasyTipView.swift */; };
 		C297BE152AEF4E77006FFB31 /* EasyTipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C297BE102AEF4E77006FFB31 /* EasyTipView.swift */; };
 		C297BE1B2AEF4ED2006FFB31 /* UIKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C297BE1A2AEF4ED2006FFB31 /* UIKitExtensions.swift */; };
@@ -998,6 +1010,12 @@
 		C289016D2AC5536A003C2F1A /* InspectionStaging.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InspectionStaging.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C289016F2AC55452003C2F1A /* Staging-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Staging-Info.plist"; sourceTree = "<group>"; };
 		C28901712AC555C9003C2F1A /* AppConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
+		C2938A7B2B353023003076B1 /* RoofTypeService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoofTypeService.swift; sourceTree = "<group>"; };
+		C2938A7C2B353023003076B1 /* RoofTypeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoofTypeModel.swift; sourceTree = "<group>"; };
+		C2938A872B353089003076B1 /* GasTypeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GasTypeModel.swift; sourceTree = "<group>"; };
+		C2938A882B353089003076B1 /* GasTypeService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GasTypeService.swift; sourceTree = "<group>"; };
+		C2938A8D2B3530BE003076B1 /* CatalyticOptionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CatalyticOptionModel.swift; sourceTree = "<group>"; };
+		C2938A8E2B3530BE003076B1 /* CatalyticOptionService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CatalyticOptionService.swift; sourceTree = "<group>"; };
 		C297BE102AEF4E77006FFB31 /* EasyTipView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EasyTipView.swift; sourceTree = "<group>"; };
 		C297BE122AEF4E77006FFB31 /* EasyTipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EasyTipView.h; sourceTree = "<group>"; };
 		C297BE1A2AEF4ED2006FFB31 /* UIKitExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIKitExtensions.swift; sourceTree = "<group>"; };
@@ -1549,6 +1567,33 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C2938A782B352F1B003076B1 /* RoofType */ = {
+			isa = PBXGroup;
+			children = (
+				C2938A7C2B353023003076B1 /* RoofTypeModel.swift */,
+				C2938A7B2B353023003076B1 /* RoofTypeService.swift */,
+			);
+			path = RoofType;
+			sourceTree = "<group>";
+		};
+		C2938A792B352F3B003076B1 /* GasType */ = {
+			isa = PBXGroup;
+			children = (
+				C2938A872B353089003076B1 /* GasTypeModel.swift */,
+				C2938A882B353089003076B1 /* GasTypeService.swift */,
+			);
+			path = GasType;
+			sourceTree = "<group>";
+		};
+		C2938A7A2B352F44003076B1 /* CatalyticOption */ = {
+			isa = PBXGroup;
+			children = (
+				C2938A8D2B3530BE003076B1 /* CatalyticOptionModel.swift */,
+				C2938A8E2B3530BE003076B1 /* CatalyticOptionService.swift */,
+			);
+			path = CatalyticOption;
+			sourceTree = "<group>";
+		};
 		C297BE0F2AEF4E77006FFB31 /* EasyTipView */ = {
 			isa = PBXGroup;
 			children = (
@@ -1962,6 +2007,9 @@
 		F914458225C7F9FD00B09FB6 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				C2938A7A2B352F44003076B1 /* CatalyticOption */,
+				C2938A792B352F3B003076B1 /* GasType */,
+				C2938A782B352F1B003076B1 /* RoofType */,
 				CE53402726859D0D006D0AC6 /* Jato */,
 				CE53401626846921006D0AC6 /* ModelCodeTemplate */,
 				CE534011268458B7006D0AC6 /* FuelType */,
@@ -3315,6 +3363,7 @@
 				C28900092AC5536A003C2F1A /* ItemAllListWorker.swift in Sources */,
 				C289000A2AC5536A003C2F1A /* UnderCarCheckPresenter.swift in Sources */,
 				C289000B2AC5536A003C2F1A /* CabinCarInteractor.swift in Sources */,
+				C2938A902B3530BE003076B1 /* CatalyticOptionModel.swift in Sources */,
 				C289000C2AC5536A003C2F1A /* ConstraintMaker.swift in Sources */,
 				C289000D2AC5536A003C2F1A /* CreateModelCodeRequest.swift in Sources */,
 				C289000E2AC5536A003C2F1A /* ExternalCarPresenter.swift in Sources */,
@@ -3495,6 +3544,8 @@
 				C28900BD2AC5536A003C2F1A /* DamageRouter.swift in Sources */,
 				C28900BE2AC5536A003C2F1A /* PlacePresenter.swift in Sources */,
 				C28900BF2AC5536A003C2F1A /* ProvinceDataSource.swift in Sources */,
+				C2938A8A2B353089003076B1 /* GasTypeModel.swift in Sources */,
+				C2938A922B3530BE003076B1 /* CatalyticOptionService.swift in Sources */,
 				C28900C02AC5536A003C2F1A /* GradeCarWorker.swift in Sources */,
 				C28900C12AC5536A003C2F1A /* ConstraintMakerRelatable.swift in Sources */,
 				C28900C22AC5536A003C2F1A /* SegmentControlCustom.swift in Sources */,
@@ -3519,6 +3570,7 @@
 				C28900D52AC5536A003C2F1A /* InspectionImage.swift in Sources */,
 				C28900D62AC5536A003C2F1A /* CreateModelCodeService.swift in Sources */,
 				C28900D72AC5536A003C2F1A /* GradeCarPresenter.swift in Sources */,
+				C2938A802B353023003076B1 /* RoofTypeModel.swift in Sources */,
 				C28900D82AC5536A003C2F1A /* SparePartsCarModels.swift in Sources */,
 				C28900D92AC5536A003C2F1A /* VehicleModelRequest.swift in Sources */,
 				C28900DA2AC5536A003C2F1A /* ExternalCarModels.swift in Sources */,
@@ -3594,6 +3646,7 @@
 				C28901202AC5536A003C2F1A /* InspectionListWorker.swift in Sources */,
 				C28901212AC5536A003C2F1A /* BrakeCheckRouter.swift in Sources */,
 				C28901222AC5536A003C2F1A /* Int+extension.swift in Sources */,
+				C2938A8C2B353089003076B1 /* GasTypeService.swift in Sources */,
 				C28901232AC5536A003C2F1A /* DateTimeRouter.swift in Sources */,
 				C28901242AC5536A003C2F1A /* CabinCarWorker.swift in Sources */,
 				C28901252AC5536A003C2F1A /* SignatureWorker.swift in Sources */,
@@ -3627,6 +3680,7 @@
 				C289013F2AC5536A003C2F1A /* SellCateResponse.swift in Sources */,
 				C28901402AC5536A003C2F1A /* LoadingView.swift in Sources */,
 				C28901412AC5536A003C2F1A /* SearchByPresenter.swift in Sources */,
+				C2938A7E2B353023003076B1 /* RoofTypeService.swift in Sources */,
 				C28901422AC5536A003C2F1A /* VehicleDocumentService.swift in Sources */,
 				C28901432AC5536A003C2F1A /* GearCheckWorker.swift in Sources */,
 				C28901442AC5536A003C2F1A /* LandingPageWorker.swift in Sources */,
@@ -3785,6 +3839,7 @@
 				F957B82225CA495A00B8FB3C /* ItemAllListWorker.swift in Sources */,
 				F94A043125DA39D800C8EC4C /* UnderCarCheckPresenter.swift in Sources */,
 				F96F53BF25D0E03400317ED0 /* CabinCarInteractor.swift in Sources */,
+				C2938A8F2B3530BE003076B1 /* CatalyticOptionModel.swift in Sources */,
 				C2B889732A6A69D400ED3A60 /* ConstraintMaker.swift in Sources */,
 				CE534022268491A0006D0AC6 /* CreateModelCodeRequest.swift in Sources */,
 				F96F539C25D0E01900317ED0 /* ExternalCarPresenter.swift in Sources */,
@@ -3965,6 +4020,8 @@
 				CE0CBFE3266DC8B700A31068 /* DamageRouter.swift in Sources */,
 				F9A5AC1125C90C2D00952FE5 /* PlacePresenter.swift in Sources */,
 				F9A5AC1B25C9283100952FE5 /* ProvinceDataSource.swift in Sources */,
+				C2938A892B353089003076B1 /* GasTypeModel.swift in Sources */,
+				C2938A912B3530BE003076B1 /* CatalyticOptionService.swift in Sources */,
 				F986435525FA1509004EAB2F /* GradeCarWorker.swift in Sources */,
 				C2B8897F2A6A69D400ED3A60 /* ConstraintMakerRelatable.swift in Sources */,
 				F957B81525CA3E8B00B8FB3C /* SegmentControlCustom.swift in Sources */,
@@ -3989,6 +4046,7 @@
 				F924DCD226390916002E4B90 /* InspectionImage.swift in Sources */,
 				CE53402426849503006D0AC6 /* CreateModelCodeService.swift in Sources */,
 				F986435425FA1509004EAB2F /* GradeCarPresenter.swift in Sources */,
+				C2938A7F2B353023003076B1 /* RoofTypeModel.swift in Sources */,
 				F96F53AE25D0E02700317ED0 /* SparePartsCarModels.swift in Sources */,
 				F9A7C2A526536C480067D7C5 /* VehicleModelRequest.swift in Sources */,
 				F96F539F25D0E01900317ED0 /* ExternalCarModels.swift in Sources */,
@@ -4064,6 +4122,7 @@
 				F957B80C25CA3C5600B8FB3C /* InspectionListWorker.swift in Sources */,
 				F94A046025DA3A1300C8EC4C /* BrakeCheckRouter.swift in Sources */,
 				F96D25ED25D3AB1900A274FF /* Int+extension.swift in Sources */,
+				C2938A8B2B353089003076B1 /* GasTypeService.swift in Sources */,
 				F9075E7725DCB3FE004D4765 /* DateTimeRouter.swift in Sources */,
 				F96F53BB25D0E03400317ED0 /* CabinCarWorker.swift in Sources */,
 				F9E02E3D25D134EE0003CB9C /* SignatureWorker.swift in Sources */,
@@ -4097,6 +4156,7 @@
 				CEB11A5926817CC900CAEE1C /* SellCateResponse.swift in Sources */,
 				F9192DEF25F0732900297E1F /* LoadingView.swift in Sources */,
 				F957B84625CA5BB400B8FB3C /* SearchByPresenter.swift in Sources */,
+				C2938A7D2B353023003076B1 /* RoofTypeService.swift in Sources */,
 				F99E9DC0265B755400CF6435 /* VehicleDocumentService.swift in Sources */,
 				F94A044125DA39E900C8EC4C /* GearCheckWorker.swift in Sources */,
 				F99DB1FF25C8003F0069F32E /* LandingPageWorker.swift in Sources */,

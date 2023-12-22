@@ -304,7 +304,7 @@ extension SummaryCarWorker {
                                         isSideMirror1Working: model.isSideMirror1,
                                         isSideMirror2Working: model.isSideMirror2,
                                         isSideMirror3Working: model.isSideMirror3,
-                                        isSideMirror4Working: model.isSideMirror4)
+                                        isSideMirror4Working: model.isSideMirror4, catalyticId: model.catalyticOptionId)
         
         print("❤️🐶🦊\(request.toJSON())❤️🐶🦊")
         

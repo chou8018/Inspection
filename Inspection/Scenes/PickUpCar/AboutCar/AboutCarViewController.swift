@@ -41,7 +41,10 @@ protocol AboutCarDisplayLogic: AnyObject
     func displayShowVaraintError(viewModel: AboutCar.Something.ViewModel)
     func displayVaraintDropdown(viewModel: AboutCar.Something.ViewModel)
     
-    
+    // add on 12/22/2023
+    func displayGasOptionDropdown(viewModel: AboutCar.Something.ViewModel)
+    func displayGasOptionError(viewModel: AboutCar.Something.ViewModel)
+
 }
 
 class AboutCarViewController: ViewController, AboutCarDisplayLogic
@@ -204,7 +207,8 @@ class AboutCarViewController: ViewController, AboutCarDisplayLogic
     var isGetColorLunch = false
     var isGetProvinceLunch = false
     var isGetTypeCar = false
-    
+    var isGetGasOptionLunch = false
+
     override func initLocalString() {
         super.initLocalString()
         modelCodeTitleLabel.text = String.localized("car_detail_model_code_label")
@@ -476,8 +480,7 @@ class AboutCarViewController: ViewController, AboutCarDisplayLogic
                 DataController.shared.receiverCarModel.isGasTank = false
             }
             
-            DataController.shared.receiverCarModel.reasonInValidGasNumber = selectedText
-            DataController.shared.inspectionCarModel.gasOptions = selectedText
+            DataController.shared.receiverCarModel.gasOption = selectedText
         }
     }
     
@@ -649,6 +652,42 @@ class AboutCarViewController: ViewController, AboutCarDisplayLogic
             
             let request = AboutCar.Something.Request(varaints_bu : selectValue)
             self?.interactor?.selectVaraintCar(request : request)
+        }
+    }
+    
+    //MARK: gasOption
+    func getGasOption(){
+        
+        let request = AboutCar.Something.Request()
+        interactor?.getGasOption(request: request)
+    }
+    func displayGasOptionError(viewModel: AboutCar.Something.ViewModel) {
+        guard let errorMessage = viewModel.errorMessage else { return }
+        alertErrorMessage(message: errorMessage) { [weak self] in
+            self?.loadRetryApi()
+        }
+    }
+    func displayGasOptionDropdown(viewModel: AboutCar.Something.ViewModel) {
+        
+        guard let values = viewModel.gasOption else { return }
+        isGetGasOptionLunch = true
+        
+        setValue(to: gasTextField, values: values) { selectedText, index, id in
+            self.gasTextField.text = selectedText
+            
+            // gas installed
+            if index == 0 {
+                self.gasNumberTextField.isHidden = false
+                self.gasNumberLineView.isHidden = false
+                DataController.shared.receiverCarModel.isGasTank = true
+            } else {
+                self.gasNumberTextField.isHidden = true
+                self.gasNumberLineView.isHidden = true
+                DataController.shared.receiverCarModel.isGasTank = false
+            }
+            
+            DataController.shared.receiverCarModel.gasOption = selectedText
+            DataController.shared.receiverCarModel.gasOptionId = id
         }
     }
     
@@ -844,6 +883,10 @@ class AboutCarViewController: ViewController, AboutCarDisplayLogic
         if !isGetTypeCar {
             getBodyCar()
         }
+        
+        if !isGetGasOptionLunch {
+            getGasOption()
+        }
     }
     
     @objc func prepareData(){
@@ -922,7 +965,7 @@ class AboutCarViewController: ViewController, AboutCarDisplayLogic
             gasNumberTextField.isHidden = true
             gasNumberLineView.isHidden = true
         }
-        gasTextField.text = DataController.shared.receiverCarModel.reasonInValidGasNumber
+        gasTextField.text = DataController.shared.receiverCarModel.gasOption
 
     }
     
@@ -1083,7 +1126,7 @@ extension AboutCarViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         scrollView.registKeyboardNotification()
-        displayGasOptions()
+//        displayGasOptions()
         loadRetryApi()
         prepareData()
         updateView()

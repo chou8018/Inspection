@@ -16,6 +16,10 @@ import RadioGroup
 protocol EngineCheckDisplayLogic: AnyObject
 {
     func displaySomething(viewModel: EngineCheck.Something.ViewModel)
+    
+    // add on 12/22/2023
+    func displayCatalyticOption(viewModel: EngineCheck.Something.ViewModel)
+    func displayCatalyticOptionError(viewModel: EngineCheck.Something.ViewModel)
 }
 
 class EngineCheckViewController: ViewController, EngineCheckDisplayLogic
@@ -62,6 +66,12 @@ class EngineCheckViewController: ViewController, EngineCheckDisplayLogic
             if let router = router, router.responds(to: selector) {
                 router.perform(selector, with: segue)
             }
+        }
+    }
+    
+    func loadRetryApi() {
+         if !isGetCatalyticOption {
+            getCatalyticOptions()
         }
     }
     
@@ -114,6 +124,11 @@ class EngineCheckViewController: ViewController, EngineCheckDisplayLogic
     let string_inspection_oil_lacking = String.localized("inspection_engine_oil_lacking_label")
     let string_inspection_oil_not_lacking = String.localized("inspection_engine_oil_notlacking_label")
     
+    var isGetCatalyticOption = false
+    var catalyticOptions: [String]?
+    var localCatalyticOptions: [String] = [String.localized("inspection_engine_with_label"), String.localized("inspection_engine_without_label"),
+                                           String.localized("car_detail_unable_to_verified_label")]
+
     override func initLocalString() {
         super.initLocalString()
         
@@ -134,6 +149,25 @@ class EngineCheckViewController: ViewController, EngineCheckDisplayLogic
         gasLabel.text = String.localized("inspection_engine_gas_label")
         catalyticLabel.text = String.localized("inspection_engine_catalytic_label")
 
+    }
+    
+    //MARK: catalyticOption
+    func getCatalyticOptions(){
+        let request = EngineCheck.Something.Request()
+        interactor?.getCatalyticOptions(request: request)
+    }
+    func displayCatalyticOptionError(viewModel: EngineCheck.Something.ViewModel) {
+        guard let errorMessage = viewModel.errorMessage else { return }
+        alertErrorMessage(message: errorMessage) { [weak self] in
+            self?.loadRetryApi()
+        }
+    }
+    func displayCatalyticOption(viewModel: EngineCheck.Something.ViewModel) {
+        
+        guard let values = viewModel.catalyticOptions else { return }
+        catalyticOptions = values
+        catalyticRadio.titles = values
+        isGetCatalyticOption = true
     }
     
     func doSomething()
@@ -187,11 +221,11 @@ class EngineCheckViewController: ViewController, EngineCheckDisplayLogic
             NSAttributedString(string: string_cng_fumigation_system, attributes: attributedString)
         ]
         
-        catalyticRadio.attributedTitles = [
-            NSAttributedString(string: String.localized("inspection_engine_with_label"), attributes: attributedString),
-            NSAttributedString(string: String.localized("inspection_engine_without_label"), attributes: attributedString),
-            NSAttributedString(string: String.localized("car_detail_unable_to_verified_label"), attributes: attributedString),
-        ]
+//        catalyticRadio.attributedTitles = [
+//            NSAttributedString(string: String.localized("inspection_engine_with_label"), attributes: attributedString),
+//            NSAttributedString(string: String.localized("inspection_engine_without_label"), attributes: attributedString),
+//            NSAttributedString(string: String.localized("car_detail_unable_to_verified_label"), attributes: attributedString),
+//        ]
         
     }
     //MARK: Radio ValueChange
@@ -250,10 +284,21 @@ class EngineCheckViewController: ViewController, EngineCheckDisplayLogic
     
     @IBAction func catalyticValueChanged(_ sender: Any) {
         
-        let value =  getRadioValue(from : [String.localized("inspection_engine_with_label"), String.localized("inspection_engine_without_label"),
-                                           String.localized("car_detail_unable_to_verified_label")],
-                                   selectIndex: catalyticRadio.selectedIndex)
+//        let value =  getRadioValue(from : [String.localized("inspection_engine_with_label"), String.localized("inspection_engine_without_label"),
+//                                           String.localized("car_detail_unable_to_verified_label")],
+//                                   selectIndex: catalyticRadio.selectedIndex)
+        
+        var value = ""
+        if let catalyticOptions = catalyticOptions {
+            value =  getRadioValue(from : catalyticOptions,
+                                       selectIndex: catalyticRadio.selectedIndex)
+        } else {
+            value =  getRadioValue(from : localCatalyticOptions,
+                                       selectIndex: catalyticRadio.selectedIndex)
+        }
         DataController.shared.inspectionCarModel.catalytic = value
+        DataController.shared.inspectionCarModel.catalyticOptionId = catalyticRadio.selectedIndex + 1
+
     }
     
     //MARK: CheckBox
@@ -315,9 +360,12 @@ class EngineCheckViewController: ViewController, EngineCheckDisplayLogic
         
         summaryEngineRadio.selectedIndex = getRadioIndexByValue(from: [string_inspection_engine_working, string_inspection_engine_not_working], value: model.engineOverall)
         
-        catalyticRadio.selectedIndex = getRadioIndexByValue(from: [String.localized("inspection_engine_with_label"), String.localized("inspection_engine_without_label"),
-                                                                   String.localized("car_detail_unable_to_verified_label")], value: model.catalytic)
-        
+        if let catalyticOptions = catalyticOptions , let catalyticOptionId = model.catalyticOptionId {
+            catalyticRadio.selectedIndex = catalyticOptionId - 1
+        } else {
+            catalyticRadio.selectedIndex = getRadioIndexByValue(from: localCatalyticOptions, value: model.catalytic)
+        }
+ 
         if let engineTypeIndex = DataController.shared.receiverCarModel.fuelSystemId , engineTypeIndex > 0 {
             typeEngineRadio.selectedIndex = engineTypeIndex - 1
         }
@@ -356,7 +404,7 @@ extension EngineCheckViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         scrollView.registKeyboardNotification()
-        
+        loadRetryApi()
         prepareData()
     }
     

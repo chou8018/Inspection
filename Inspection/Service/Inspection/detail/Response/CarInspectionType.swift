@@ -168,11 +168,11 @@ struct CarInspectionType : Mappable {
         registrationProvince <- map["registrationProvince"]
         regisration <- map["regisration"]
         
-        isSideMirror1Working <- map["isSideMirror1Working"]
-        isSideMirror2Working <- map["isSideMirror2Working"]
-        isSideMirror3Working <- map["isSideMirror3Working"]
-        isSideMirror4Working <- map["isSideMirror4Working"]
-        catalytic <- map["catalytic"]
+        isSideMirror1Working <- map["isSideMirror_1_Working"]
+        isSideMirror2Working <- map["isSideMirror_2_Working"]
+        isSideMirror3Working <- map["isSideMirror_3_Working"]
+        isSideMirror4Working <- map["isSideMirror_4_Working"]
+        catalytic <- map["catalyticOption"]
 	}
 
 }

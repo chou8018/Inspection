@@ -144,6 +144,9 @@ class ReceiverCarModel {
     var reasonInValidEngineNumber : String? { didSet { setEdit(oldValue, value: &isEditVehicle) }}
     var reasonInValidVinNumber : String? { didSet { setEdit(oldValue, value: &isEditVehicle) }}
     var reasonInValidGasNumber : String? { didSet { setEdit(oldValue, value: &isEditVehicle) }}
+    var gasOption : String? { didSet { setEdit(oldValue, value: &isEditVehicle) }}
+    var gasOptionId : Int? { didSet { setEdit(oldValue, value: &isEditVehicle) }}
+
     var registrationNote : String? { didSet { setEdit(oldValue, value: &isEditVehicle) }}
     var registrationPlate : String? { didSet { setEdit(oldValue, value: &isEditVehicle) }}
     
@@ -172,6 +175,7 @@ class ReceiverCarModel {
     var brandTire : String? { didSet { setEdit(oldValue, value: &isEditExternal) }}
     var damageDetail : String? { didSet { setEdit(oldValue, value: &isEditExternal) }}
     var roofType: String? { didSet { setEdit(oldValue, value: &isEditExternal) }}
+    var roofTypeId: Int? { didSet { setEdit(oldValue, value: &isEditExternal) }}
 
     //MARK: Cabin
     var cabinOverAllId : Int? { didSet { setEdit(oldValue, value: &isEditCabin) }}

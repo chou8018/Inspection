@@ -14,36 +14,38 @@ import UIKit
 
 protocol ExternalCarBusinessLogic
 {
-  func doSomething(request: ExternalCar.Something.Request)
+    func doSomething(request: ExternalCar.Something.Request)
     func checkTire(request: ExternalCar.Something.Request)
     func validateNumber(request: ExternalCar.Something.Request)
     func validateWheel(request: ExternalCar.Something.Request)
     func validateNormalWheel(request: ExternalCar.Something.Request)
+    
+    // add on 12/22/2023
+    func getRoofType(request: ExternalCar.Something.Request)
 }
 
 protocol ExternalCarDataStore
 {
-  //var name: String { get set }
+    //var name: String { get set }
 }
 
 class ExternalCarInteractor: ExternalCarBusinessLogic, ExternalCarDataStore
 {
-  var presenter: ExternalCarPresentationLogic?
-  var worker: ExternalCarWorker?
-  //var name: String = ""
-  
-  // MARK: Do something
-  
-  func doSomething(request: ExternalCar.Something.Request)
-  {
-    worker = ExternalCarWorker()
-    worker?.doSomeWork()
+    var presenter: ExternalCarPresentationLogic?
+    var worker: ExternalCarWorker?
+    //var name: String = ""
     
-    let response = ExternalCar.Something.Response()
-    presenter?.presentSomething(response: response)
-  }
+    var roofTypes: [RoofTypeModel]?
     
-    
+    // MARK: Do something
+    func doSomething(request: ExternalCar.Something.Request)
+    {
+        worker = ExternalCarWorker()
+        worker?.doSomeWork()
+        
+        let response = ExternalCar.Something.Response()
+        presenter?.presentSomething(response: response)
+    }
     
     func checkTire(request: ExternalCar.Something.Request) {
         let tire = request.tire
@@ -94,7 +96,7 @@ class ExternalCarInteractor: ExternalCarBusinessLogic, ExternalCarDataStore
         let response = ExternalCar.Something.Response(isMagWheel: !isMagWheel,
                                                       validateWheelResult: validateResult)
         
-
+        
         presenter?.presentCheckBoxMagWheel(response: response)
     }
     
@@ -113,5 +115,18 @@ class ExternalCarInteractor: ExternalCarBusinessLogic, ExternalCarDataStore
         
         
         presenter?.presentCheckBoxNormalWheel(response: response)
+    }
+    
+    //MARK: Get roofType
+    func getRoofType(request: ExternalCar.Something.Request) {
+        worker = ExternalCarWorker()
+        worker?.fetchRoofType(completion: { [weak self] (response) in
+            self?.presenter?.presentRoofTypes(response: response)
+            
+            if let values = response.roofTypes {
+                self?.roofTypes = values
+            }
+            
+        })
     }
 }

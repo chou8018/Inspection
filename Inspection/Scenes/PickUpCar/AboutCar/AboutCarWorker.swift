@@ -18,6 +18,29 @@ class AboutCarWorker
   func doSomeWork()
   {
   }
+    
+    //MARK: RoofType
+    func fetchGasOption(completion: @escaping aboutCarHandler){
+        
+        showLoading()
+        
+        let request = BaseRequest()
+        GasTypeService().callServiceArray(request: request) { (result) in
+            
+            hideLoading()
+            
+            switch result {
+            
+            case .success(let gasOption):
+                let response = AboutCar.Something.Response(gasOption: gasOption)
+                completion(response)
+            case .failure(let error):
+                let response = AboutCar.Something.Response(error: error.getMessage)
+                completion(response)
+            }
+        }
+    }
+    
     //MARK: Color
     func fetchColor(completion: @escaping aboutCarHandler){
         

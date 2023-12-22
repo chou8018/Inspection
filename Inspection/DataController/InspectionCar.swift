@@ -130,6 +130,7 @@ class InspectionCarModel {
     var isSideMirror3 = false
     var isSideMirror4 = false
     var catalytic: String?
+    var catalyticOptionId: Int?
 
     var registrationProvince: String?
     var registration: String?
@@ -215,6 +216,7 @@ class InspectionCarModel {
     
     // roof type and gas
     var roofType: String?
+    var roofTypeId: Int?
     var gasOptions: String?
     
     var description : [String : Any]  {

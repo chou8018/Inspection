@@ -391,7 +391,7 @@ extension PickUpCarWorker {
                                          tyreBrand: model.brandTire,
                                          tyreQuality: model.tireQuality?.toInt(),
                                          damageDesc: model.damageDetail,
-                                         roofType: model.roofType)
+                                         roofTypeId: model.roofTypeId)
         
         //MARK: SpareType Model
         let spareType = SpareType(spareOverAllId: model.spareOverAllId,
@@ -460,7 +460,7 @@ extension PickUpCarWorker {
                                       reasonInValidGasNumber: model.reasonInValidGasNumber,
                                       registrationPlate: model.registrationPlate,
                                       isRegistrationMismatch: model.isRegistrationMismatch,
-                                      registrationNote: model.registrationNote, isRegistrationAuction: model.isRegistrationAuction)
+                                      registrationNote: model.registrationNote, isRegistrationAuction: model.isRegistrationAuction, gasOption: model.gasOption, gasOptionId: model.gasOptionId)
         print(vehicleType.toJSON())
 
         let numberOfKey = model.mapKeys?[String.localized("car_interior_key_label")] as? String

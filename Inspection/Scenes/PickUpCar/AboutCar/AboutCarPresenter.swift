@@ -32,10 +32,15 @@ protocol AboutCarPresentationLogic
     func presentVariantsList(response: AboutCar.Something.Response)
     
     func presentValidRegistration(response: AboutCar.Something.Response)
+    
+    // add on 12/22/2023
+    func presentGasOption(response: AboutCar.Something.Response)
+
 }
 
 class AboutCarPresenter: AboutCarPresentationLogic
 {
+    
   weak var viewController: AboutCarDisplayLogic?
   
   // MARK: Do something
@@ -84,6 +89,25 @@ class AboutCarPresenter: AboutCarPresentationLogic
             let values = modelList.map({ $0.model_BU ?? "" })
             let viewModel = AboutCar.Something.ViewModel(modelList: values)
             viewController?.displayModelCarDropdown(viewModel: viewModel)
+        }
+    }
+    
+    func presentGasOption(response: AboutCar.Something.Response) {
+        if let kError = response.error {
+            let message = kError.message
+            let viewModel = AboutCar.Something.ViewModel(errorMessage: message)
+            viewController?.displayGasOptionError(viewModel: viewModel)
+        }else{
+            guard let gasOption = response.gasOption else { return }
+            var values = gasOption.map({ ("\($0.desc_LO ?? "")") })
+            
+            if !DataController.shared.isThaiLanguage() {
+                values = gasOption.map({ ("\($0.desc_BU ?? "")") })
+            }
+            
+//            values = values.sorted(by: { $0 < $1 })
+            let viewModel = AboutCar.Something.ViewModel(gasOption: values)
+            viewController?.displayGasOptionDropdown(viewModel: viewModel)
         }
     }
     

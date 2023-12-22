@@ -19,6 +19,8 @@ protocol ExternalCarPresentationLogic
     func presentCheckBoxMagWheel(response: ExternalCar.Something.Response)
     func presentValidateNumber(response: ExternalCar.Something.Response)
     func presentCheckBoxNormalWheel(response: ExternalCar.Something.Response)
+    // add on 12/22/2023
+    func presentRoofTypes(response: ExternalCar.Something.Response)
 }
 
 class ExternalCarPresenter: ExternalCarPresentationLogic
@@ -58,5 +60,23 @@ class ExternalCarPresenter: ExternalCarPresentationLogic
         
         viewController?.displayValidateResultTireTextField(viewModel: viewModel)
     }
-    
+
+    func presentRoofTypes(response: ExternalCar.Something.Response) {
+        if let kError = response.error {
+            let message = kError.message
+            let viewModel = ExternalCar.Something.ViewModel(errorMessage: message)
+            viewController?.displayRoofTypesError(viewModel: viewModel)
+        }else{
+            guard let result = response.roofTypes else { return }
+            var values = result.map({ ("\($0.desc_LO ?? "")") })
+            
+            if !DataController.shared.isThaiLanguage() {
+                values = result.map({ ("\($0.desc_BU ?? "")") })
+            }
+            
+//            values = values.sorted(by: { $0 < $1 })
+            let viewModel = ExternalCar.Something.ViewModel(roofTypes: values)
+            viewController?.displayRoofTypesDropdown(viewModel: viewModel)
+        }
+    }
 }

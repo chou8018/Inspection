@@ -309,7 +309,7 @@ class SummaryCarPDFWorker {
 //            gasNumber += notValidateGasNumber ? reasonInValidGasNumber : gasNumber2
             
             var gasNumber = ""
-            if let text = receiverModel.reasonInValidGasNumber {
+            if let text = receiverModel.gasOption {
                 gasNumber = text
                 if receiverModel.isGasTank == true , let gas = receiverModel.gasNumber {
                     gasNumber += " \(gas)"

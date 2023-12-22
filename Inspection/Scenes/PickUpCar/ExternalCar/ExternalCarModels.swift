@@ -32,6 +32,10 @@ enum ExternalCar
         var isTire : Bool?
         var validateNumberResult : String?
         var validateWheelResult : String?
+        
+        var roofTypes : [RoofTypeModel]?
+        var error : KErrorMessage?
+
     }
     struct ViewModel
     {
@@ -40,6 +44,10 @@ enum ExternalCar
         var isTire : Bool?
         var validateNumberResult : String?
         var validateWheelResult : String?
+        
+        var roofTypes : [String]?
+        var errorMessage: String?
+
     }
   }
 }

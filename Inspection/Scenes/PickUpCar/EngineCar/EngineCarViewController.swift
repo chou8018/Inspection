@@ -322,7 +322,7 @@ class EngineCarViewController: ViewController, EngineCarDisplayLogic
         let gasTypeId = gasRadio.selectedIndex + 1
         DataController.shared.receiverCarModel.gasTypeId = gasTypeId
         
-        
+        DataController.shared.inspectionCarModel.gasSystem = value
         
         setFuelType(fuelType: oilSystemRadio.selectedIndex, gasSystem: gasRadio.selectedIndex)
         

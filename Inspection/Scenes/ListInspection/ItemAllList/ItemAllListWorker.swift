@@ -232,8 +232,11 @@ class ItemAllListWorker
                 model.brandTire = externalType?.tyreBrand
                 model.damageDetail = externalType?.damageDesc
                 model.roofType = externalType?.roofType
-                DataController.shared.inspectionCarModel.roofType = model.roofType
-                
+                model.roofTypeId = externalType?.roofTypeId
+//                DataController.shared.inspectionCarModel.roofType = model.roofType
+
+                DataController.shared.receiverCarModel.roofTypeId = model.roofTypeId
+
                 //MARK: SparePart
                 let spareOverAllValue = [nil, string_good_first, String.localized("inspection_list_not_good_label")]
                 let spareOverAllId = spareType?.spareOverAllId ?? 0
@@ -305,6 +308,7 @@ class ItemAllListWorker
                 model.isGas = engineType?.isFuelGas
                 model.assetInCar = engineType?.insideAssetNote
                 
+                DataController.shared.inspectionCarModel.gasSystem = model.gasSystem
                 
                 //MARK: cabinType
                 let cabinOverallValue = [nil, string_good_first, string_average, string_fair, String.localized("inspection_list_not_good_label")]
@@ -426,8 +430,8 @@ class ItemAllListWorker
                 model.reasonInValidVinNumber = vehicleType?.reasonInValidVinNumber
                 model.reasonInValidGasNumber =  vehicleType?.reasonInValidGasNumber
                 
-                DataController.shared.inspectionCarModel.gasOptions = model.reasonInValidGasNumber
-                
+                DataController.shared.receiverCarModel.gasOption = vehicleType?.gasOption
+
                 model.registrationPlate = vehicleType?.registrationPlate
                 model.registrationNote = vehicleType?.registrationNote
                 model.isRegistrationMismatch = vehicleType?.isRegistrationMismatch
@@ -833,8 +837,8 @@ class ItemAllListWorker
                 //add 26/10/23
                 model.isSideMirror1 = carInspectionType?.isSideMirror1Working ?? false
                 model.isSideMirror2 = carInspectionType?.isSideMirror2Working ?? false
-                model.isSideMirror2 = carInspectionType?.isSideMirror3Working ?? false
-                model.isSideMirror3 = carInspectionType?.isSideMirror4Working ?? false
+                model.isSideMirror3 = carInspectionType?.isSideMirror3Working ?? false
+                model.isSideMirror4 = carInspectionType?.isSideMirror4Working ?? false
                 model.catalytic = carInspectionType?.catalytic
                 
                 //found book-in number

@@ -2477,7 +2477,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="1080" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="APA-NU-qQq">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="APA-NU-qQq">
                                 <rect key="frame" x="0.0" y="20" width="1080" height="980"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="f8x-Rz-85m">
@@ -2827,7 +2827,7 @@
                                             <action selector="engineOverallRadioGroupValueChanged:" destination="WDo-vU-IEQ" eventType="valueChanged" id="f42-tg-PB3"/>
                                         </connections>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7A8-2y-MjI" customClass="RadioGroup" customModule="RadioGroup">
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7A8-2y-MjI" customClass="RadioGroup" customModule="RadioGroup">
                                         <rect key="frame" x="190" y="370" width="418" height="46"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" name="primary_color"/>
@@ -2856,7 +2856,7 @@
                                             <action selector="driverSystemRadioGroupValueChanged:" destination="WDo-vU-IEQ" eventType="valueChanged" id="eXG-0a-7yI"/>
                                         </connections>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VGE-he-HNH" customClass="RadioGroup" customModule="RadioGroup">
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VGE-he-HNH" customClass="RadioGroup" customModule="RadioGroup">
                                         <rect key="frame" x="190" y="451" width="418" height="46"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" name="primary_color"/>
@@ -2885,7 +2885,7 @@
                                             <action selector="oilSystemRadioGroupValueChanged:" destination="WDo-vU-IEQ" eventType="valueChanged" id="Iu1-Ya-vsb"/>
                                         </connections>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="knz-5q-7fB" customClass="RadioGroup" customModule="RadioGroup">
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="knz-5q-7fB" customClass="RadioGroup" customModule="RadioGroup">
                                         <rect key="frame" x="190" y="532" width="418" height="46"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" name="primary_color"/>
@@ -2914,7 +2914,7 @@
                                             <action selector="fuelSystemValueChanged:" destination="WDo-vU-IEQ" eventType="valueChanged" id="aHq-qu-0Ag"/>
                                         </connections>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5F6-W3-eMP" customClass="RadioGroup" customModule="RadioGroup">
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5F6-W3-eMP" customClass="RadioGroup" customModule="RadioGroup">
                                         <rect key="frame" x="190" y="613" width="418" height="46"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" name="primary_color"/>
@@ -4546,11 +4546,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="1080" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kBq-Uq-YeP">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" directionalLockEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kBq-Uq-YeP">
                                 <rect key="frame" x="0.0" y="20" width="1080" height="980"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="amn-Ta-9IV">
-                                        <rect key="frame" x="50" y="50" width="980" height="767"/>
+                                        <rect key="frame" x="50" y="50" width="980" height="686"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DMt-fs-Ie4">
                                                 <rect key="frame" x="0.0" y="0.0" width="980" height="60"/>
@@ -4912,8 +4912,8 @@
                                                     <constraint firstAttribute="height" constant="1" id="mae-Kr-Wnm"/>
                                                 </constraints>
                                             </view>
-                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="9xF-34-3tQ">
-                                                <rect key="frame" x="0.0" y="486" width="980" height="60"/>
+                                            <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="9xF-34-3tQ">
+                                                <rect key="frame" x="0.0" y="481" width="980" height="60"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Roof type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ohr-cs-Xto">
                                                         <rect key="frame" x="0.0" y="18" width="84.5" height="24"/>
@@ -4972,15 +4972,15 @@
                                                     <constraint firstAttribute="height" constant="60" id="9Dv-k1-sny"/>
                                                 </constraints>
                                             </stackView>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AFL-nb-kW7">
-                                                <rect key="frame" x="0.0" y="556" width="980" height="1"/>
+                                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AFL-nb-kW7">
+                                                <rect key="frame" x="0.0" y="481" width="980" height="1"/>
                                                 <color key="backgroundColor" name="gallery"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="0HH-Fv-Cxb"/>
                                                 </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="JDx-Us-FPi">
-                                                <rect key="frame" x="0.0" y="567" width="980" height="200"/>
+                                                <rect key="frame" x="0.0" y="486" width="980" height="200"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="รายละเอียดร่องรอยความเสียหาย" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wak-L0-uuJ">
                                                         <rect key="frame" x="0.0" y="0.0" width="980" height="24"/>
@@ -5028,7 +5028,7 @@
                                             </stackView>
                                         </subviews>
                                     </stackView>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LRr-be-nEx" customClass="RadioGroup" customModule="RadioGroup">
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LRr-be-nEx" customClass="RadioGroup" customModule="RadioGroup">
                                         <rect key="frame" x="280" y="57" width="418" height="46"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" name="primary_color"/>
@@ -9089,9 +9089,6 @@
         <designable name="1Sh-s5-uhC">
             <size key="intrinsicContentSize" width="30" height="30"/>
         </designable>
-        <designable name="2ZC-8g-Zsn">
-            <size key="intrinsicContentSize" width="418" height="46"/>
-        </designable>
         <designable name="2h0-Wa-RBv">
             <size key="intrinsicContentSize" width="30" height="30"/>
         </designable>
@@ -9104,17 +9101,11 @@
         <designable name="3tR-Yb-yyy">
             <size key="intrinsicContentSize" width="65" height="25.5"/>
         </designable>
-        <designable name="4Qg-0T-jGF">
-            <size key="intrinsicContentSize" width="280" height="239.5"/>
-        </designable>
         <designable name="4or-KB-slc">
             <size key="intrinsicContentSize" width="65" height="25.5"/>
         </designable>
         <designable name="561-Da-bAK">
             <size key="intrinsicContentSize" width="50" height="36"/>
-        </designable>
-        <designable name="5F6-W3-eMP">
-            <size key="intrinsicContentSize" width="418" height="46"/>
         </designable>
         <designable name="5TM-7z-gUX">
             <size key="intrinsicContentSize" width="30" height="30"/>
@@ -9134,14 +9125,8 @@
         <designable name="73J-K9-S4N">
             <size key="intrinsicContentSize" width="30" height="30"/>
         </designable>
-        <designable name="7A8-2y-MjI">
-            <size key="intrinsicContentSize" width="418" height="46"/>
-        </designable>
         <designable name="7Et-z9-cBd">
             <size key="intrinsicContentSize" width="65" height="25.5"/>
-        </designable>
-        <designable name="7H0-66-Rbw">
-            <size key="intrinsicContentSize" width="300" height="117.5"/>
         </designable>
         <designable name="7Ju-1K-3b7">
             <size key="intrinsicContentSize" width="30" height="30"/>
@@ -9167,9 +9152,6 @@
         <designable name="Ao8-uv-iaP">
             <size key="intrinsicContentSize" width="36.5" height="25.5"/>
         </designable>
-        <designable name="Aw1-qp-Cen">
-            <size key="intrinsicContentSize" width="259.5" height="259.5"/>
-        </designable>
         <designable name="B1p-Ho-Uai">
             <size key="intrinsicContentSize" width="30" height="30"/>
         </designable>
@@ -9184,9 +9166,6 @@
         </designable>
         <designable name="CDc-uT-41v">
             <size key="intrinsicContentSize" width="122" height="25.5"/>
-        </designable>
-        <designable name="CFr-Hs-Iqf">
-            <size key="intrinsicContentSize" width="259.5" height="259.5"/>
         </designable>
         <designable name="Crb-9b-k9k">
             <size key="intrinsicContentSize" width="56" height="25.5"/>
@@ -9242,9 +9221,6 @@
         <designable name="L9P-at-vkJ">
             <size key="intrinsicContentSize" width="36.5" height="25.5"/>
         </designable>
-        <designable name="LRr-be-nEx">
-            <size key="intrinsicContentSize" width="418" height="46"/>
-        </designable>
         <designable name="MHF-du-Yhr">
             <size key="intrinsicContentSize" width="65" height="25.5"/>
         </designable>
@@ -9281,9 +9257,6 @@
         <designable name="PPd-vB-GOO">
             <size key="intrinsicContentSize" width="65" height="25.5"/>
         </designable>
-        <designable name="PQp-oX-OFQ">
-            <size key="intrinsicContentSize" width="289.5" height="138"/>
-        </designable>
         <designable name="PRl-X4-5dz">
             <size key="intrinsicContentSize" width="30" height="30"/>
         </designable>
@@ -9304,15 +9277,6 @@
         </designable>
         <designable name="UvF-Y1-YeX">
             <size key="intrinsicContentSize" width="56" height="25.5"/>
-        </designable>
-        <designable name="VDT-7m-Kln">
-            <size key="intrinsicContentSize" width="418" height="46"/>
-        </designable>
-        <designable name="VGE-he-HNH">
-            <size key="intrinsicContentSize" width="418" height="46"/>
-        </designable>
-        <designable name="VWf-Dq-a8P">
-            <size key="intrinsicContentSize" width="279.5" height="239.5"/>
         </designable>
         <designable name="VZa-6H-Qv8">
             <size key="intrinsicContentSize" width="108.5" height="25.5"/>
@@ -9419,9 +9383,6 @@
         <designable name="ejd-cw-J9N">
             <size key="intrinsicContentSize" width="30" height="30"/>
         </designable>
-        <designable name="ejn-rZ-nz9">
-            <size key="intrinsicContentSize" width="418" height="46"/>
-        </designable>
         <designable name="emy-aI-Uid">
             <size key="intrinsicContentSize" width="30" height="30"/>
         </designable>
@@ -9476,14 +9437,8 @@
         <designable name="iIz-SV-yhc">
             <size key="intrinsicContentSize" width="30" height="30"/>
         </designable>
-        <designable name="iQN-Fn-P57">
-            <size key="intrinsicContentSize" width="398.5" height="57"/>
-        </designable>
         <designable name="iUk-cc-l8h">
             <size key="intrinsicContentSize" width="30" height="30"/>
-        </designable>
-        <designable name="iiX-Xq-e6k">
-            <size key="intrinsicContentSize" width="299.5" height="97.5"/>
         </designable>
         <designable name="jYI-1j-kO5">
             <size key="intrinsicContentSize" width="13" height="25.5"/>
@@ -9494,14 +9449,8 @@
         <designable name="kk4-pn-31M">
             <size key="intrinsicContentSize" width="12" height="25.5"/>
         </designable>
-        <designable name="knz-5q-7fB">
-            <size key="intrinsicContentSize" width="418" height="46"/>
-        </designable>
         <designable name="lj8-ZS-fK5">
             <size key="intrinsicContentSize" width="86.5" height="25.5"/>
-        </designable>
-        <designable name="lzm-gR-twe">
-            <size key="intrinsicContentSize" width="259.5" height="259.5"/>
         </designable>
         <designable name="mJj-l9-ztU">
             <size key="intrinsicContentSize" width="65" height="25.5"/>
@@ -9542,9 +9491,6 @@
         <designable name="qcz-fJ-pED">
             <size key="intrinsicContentSize" width="65" height="25.5"/>
         </designable>
-        <designable name="qpN-cD-95h">
-            <size key="intrinsicContentSize" width="418" height="46"/>
-        </designable>
         <designable name="rBj-YG-PAd">
             <size key="intrinsicContentSize" width="30" height="30"/>
         </designable>
@@ -9559,9 +9505,6 @@
         </designable>
         <designable name="rpU-yC-r7L">
             <size key="intrinsicContentSize" width="65" height="25.5"/>
-        </designable>
-        <designable name="rw8-XS-nZm">
-            <size key="intrinsicContentSize" width="259.5" height="259.5"/>
         </designable>
         <designable name="rxh-EU-E9w">
             <size key="intrinsicContentSize" width="30" height="30"/>
@@ -9589,9 +9532,6 @@
         </designable>
         <designable name="urX-m9-ZdT">
             <size key="intrinsicContentSize" width="56" height="25.5"/>
-        </designable>
-        <designable name="vB8-5e-LQS">
-            <size key="intrinsicContentSize" width="289.5" height="138"/>
         </designable>
         <designable name="vdL-95-7S8">
             <size key="intrinsicContentSize" width="13" height="25.5"/>
@@ -9663,7 +9603,7 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

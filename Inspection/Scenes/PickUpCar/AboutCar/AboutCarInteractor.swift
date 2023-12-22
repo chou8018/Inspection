@@ -41,6 +41,10 @@ protocol AboutCarBusinessLogic
     func selectVaraintCar(request: AboutCar.Something.Request)
     
     func validateRegistration(request: AboutCar.Something.Request)
+    
+    // add on 12/22/2023
+    func getGasOption(request: AboutCar.Something.Request)
+
 }
 
 protocol AboutCarDataStore
@@ -66,6 +70,8 @@ class AboutCarInteractor: AboutCarBusinessLogic, AboutCarDataStore
     var makeList:[StandradMakeModel]?
     
     var model_bu: String?
+    
+    var gasOption: [GasTypeModel]?
     
     // MARK: Do something
   func doSomething(request: AboutCar.Something.Request)
@@ -273,7 +279,18 @@ class AboutCarInteractor: AboutCarBusinessLogic, AboutCarDataStore
         
     }
     
-    
+    //MARK: Get gasOption
+    func getGasOption(request: AboutCar.Something.Request) {
+        worker = AboutCarWorker()
+        worker?.fetchGasOption(completion: { [weak self] (response) in
+            self?.presenter?.presentGasOption(response: response)
+            
+            if let values = response.gasOption {
+                self?.gasOption = values
+            }
+            
+        })
+    }
     
     //MARK: Get Color
     func getColorCar(request: AboutCar.Something.Request) {

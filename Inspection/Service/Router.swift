@@ -91,6 +91,11 @@ enum Router {
     case createInspecMotorBike(_ parameter:Parameters)
     case updateInspecMotorBike(_ parameter:Parameters, _ bookInNumber:String)
     
+    // roofType, gasType , catalyticOption
+    case getRoofTypes(_ parameter:Parameters)
+    case getGasTypes(_ parameter:Parameters)
+    case getCatalyticOptions(_ parameter:Parameters)
+
     var apiModel : ApiModel {
         switch self {
         
@@ -262,7 +267,14 @@ enum Router {
          
         case .updateInspecMotorBike(let param, let bookinNo):
             return ApiModel(path: "inspection/api/MotorBikeInspections/Edit/\(bookinNo)/model", method: .put, param: param)
-            
+          
+        // add on 12/22/2023
+        case .getRoofTypes(_):
+            return ApiModel(path: "inspection/api/bookin/roofType", method: .get)
+        case .getGasTypes(_):
+            return ApiModel(path: "inspection/api/bookin/gasType", method: .get)
+        case .getCatalyticOptions(_):
+            return ApiModel(path: "inspection/api/bookin/catalyticOption", method: .get)
         }
         
     

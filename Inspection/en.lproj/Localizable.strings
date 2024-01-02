@@ -402,10 +402,10 @@
 "inspection_electrical_dashboard_label" = "Dashboard working";
 "inspection_electrical_other_remarks_label" = "Other remarks";
 "inspection_electrical_summary_label" = "Summary electrical equipments condition";
-"inspection_electrical_side_mirror1_label" = "Side mirror 1 working";
-"inspection_electrical_side_mirror2_label" = "Side mirror 2 working";
-"inspection_electrical_side_mirror3_label" = "Side mirror 3 working";
-"inspection_electrical_side_mirror4_label" = "Side mirror 4 working";
+"inspection_electrical_side_mirror1_label" = "Front-R window working";
+"inspection_electrical_side_mirror2_label" = "Front-L window working";
+"inspection_electrical_side_mirror3_label" = "Back-R window working";
+"inspection_electrical_side_mirror4_label" = "Back-L window working";
 
 // photos
 "photos_front_button_title" = "Front";

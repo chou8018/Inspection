@@ -118,6 +118,7 @@
 "car_detail_unable_to_verified_label" = "Unable to verified";
 "car_detail_vin_number_label" = "Vin. no.";
 "car_detail_gas_label" = "Gas";
+"car_detail_gas_title_label" = "Gas installation";
 "car_detail_reason_placeholder" = "Reason";
 "car_detail_gas_installed_label" = "Gas installed";
 "car_detail_gas_removed_label" = "Gas installed & removed";

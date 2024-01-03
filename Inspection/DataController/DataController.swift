@@ -147,6 +147,13 @@ class DataController {
         }
     }
     
+    func hasRoofType() -> Bool {
+        if DataController.shared.receiverCarModel.sellingCategory?.trimWhiteSpace == "PU" {
+            return true
+        }
+        return false
+    }
+    
     func showTipView(sender: UIView, superView: UIView? , message: String) {
         var preferences = EasyTipView.Preferences()
         preferences.drawing.font = UIFont.systemFont(ofSize: 13)

@@ -250,7 +250,7 @@ class AboutCarViewController: ViewController, AboutCarDisplayLogic
         reasonVINTextField.placeholder = String.localized("car_detail_reason_placeholder")
         reasonGasTankTextField.placeholder = String.localized("car_detail_reason_placeholder")
         
-        gasKeyLabel.text = String.localized("car_detail_gas_label")
+        gasKeyLabel.text = String.localized("car_detail_gas_title_label")
         gasTextField.placeholder = gasKeyLabel.text
         gasNumberTextField.placeholder = String.localized("car_detail_gas_number_placeholder")
         
@@ -274,7 +274,8 @@ class AboutCarViewController: ViewController, AboutCarDisplayLogic
     
     @IBAction func noPlateCheckTapped(_ sender: Any) {
         noPlateCheckButton.toggle { [weak self] (check) in
-            self?.noteRegistrationStackView.isHidden = !check
+//            self?.noteRegistrationStackView.isHidden = !check
+            self?.noteRegistrationTextField.isHidden = !check
             ///registration
             //self?.registrationTextField.setEnableView(isEnable: !check)
             self?.registrationTextField.text = check ? "NOPLATE" : ""
@@ -303,7 +304,8 @@ class AboutCarViewController: ViewController, AboutCarDisplayLogic
     
     @IBAction func redPlateCheckTapped(_ sender: Any) {
         redPlateCheckButton.toggle { [weak self] (check) in
-            self?.noteRegistrationStackView.isHidden = !check
+//            self?.noteRegistrationStackView.isHidden = !check
+            self?.noteRegistrationTextField.isHidden = !check
             ///registration
             //self?.registrationTextField.setEnableView(isEnable: !check)
             self?.registrationTextField.text = check ? "REDPLATE" : ""
@@ -333,7 +335,9 @@ class AboutCarViewController: ViewController, AboutCarDisplayLogic
     
     @IBAction func mismatchPlateCheckTapped(_ sender: Any) {
         mismatchPlateCheckButton.toggle { [weak self] (check) in
-            self?.noteRegistrationStackView.isHidden = !check
+//            self?.noteRegistrationStackView.isHidden = !check
+            self?.noteRegistrationTextField.isHidden = !check
+
             ///registration
             //self?.registrationTextField.setEnableView(isEnable: !check)
             self?.registrationTextField.text = check ? "" : ""
@@ -363,7 +367,9 @@ class AboutCarViewController: ViewController, AboutCarDisplayLogic
     
     @IBAction func auctionPlateCheckTapped(_ sender: Any) {
         auctionPlateCheckButton.toggle { [weak self] (check) in
-            self?.noteRegistrationStackView.isHidden = !check
+//            self?.noteRegistrationStackView.isHidden = !check
+            self?.noteRegistrationTextField.isHidden = !check
+
             ///registration
             //self?.registrationTextField.setEnableView(isEnable: !check)
             self?.registrationTextField.text = check ? "" : ""
@@ -857,6 +863,8 @@ class AboutCarViewController: ViewController, AboutCarDisplayLogic
         
         ///config search by prefix name
         colorTextField.isPrefix = true
+            
+        noteRegistrationStackView.subviews.last?.backgroundColor = .white
     }
     
     fileprivate func addTarget(from textfield: UITextField ){
@@ -924,10 +932,13 @@ class AboutCarViewController: ViewController, AboutCarDisplayLogic
             }
             
             noteRegistrationStackView.isHidden = false
+            noteRegistrationTextField.isHidden = false
+
             //registrationTextField.setEnableView(isEnable: false)
         }else{
-            noteRegistrationStackView.isHidden = true
+//            noteRegistrationStackView.isHidden = true
             //registrationTextField.setEnableView(isEnable: true)
+            noteRegistrationTextField.isHidden = true
         }
         
         

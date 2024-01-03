@@ -161,7 +161,9 @@ class PhotoCarViewController: ViewController, PhotoCarDisplayLogic
     @IBOutlet weak var carRoofCheckBox: CheckBoxUIButton!
     @IBOutlet weak var dashboardCheckBox: CheckBoxUIButton!
     @IBOutlet weak var catalyticCheckBox: CheckBoxUIButton!
-
+    @IBOutlet weak var skipView: CustomUIView!
+    @IBOutlet weak var catalyticMessageLabel: UILabel!
+    
     override func initLocalString() {
         super.initLocalString()
         
@@ -191,6 +193,9 @@ class PhotoCarViewController: ViewController, PhotoCarDisplayLogic
         catalyticCheckBox.titleLabel!.lineBreakMode = NSLineBreakMode.byWordWrapping
         catalyticCheckBox.titleLabel!.numberOfLines = 2
         catalyticCheckBox.titleLabel!.textAlignment = NSTextAlignment.center
+        
+        catalyticMessageLabel.text = String.localized("photos_car_catalytic_comment_title")
+
     }
     
     var sourceSectionName : [(name:String, cb: CheckBoxUIButton)] = []
@@ -385,7 +390,7 @@ class PhotoCarViewController: ViewController, PhotoCarDisplayLogic
                              (name: "\(String.localized("photos_damage_button_title")) *", cb: damageCheckBox),
                              (name: "\(String.localized("photos_car_roof_button_title")) *", cb: carRoofCheckBox),
                              (name: "\(String.localized("photos_car_dashboard_button_title")) *", cb: dashboardCheckBox),
-                             (name: "\(String.localized("photos_car_catalytic_button_title")) *\n\(String.localized("photos_car_catalytic_comment_title"))", cb: catalyticCheckBox)
+                             (name: "\(String.localized("photos_car_catalytic_button_title")) *", cb: catalyticCheckBox)
         ]
         
         for item in sourceSectionName {
@@ -431,71 +436,87 @@ class PhotoCarViewController: ViewController, PhotoCarDisplayLogic
         self.setTitleCheckBox(String(name), cb: model.cb)
     }
     
+    private func skipViewShowOrNot(isShow: Bool) {
+        skipView.isHidden = !isShow
+        catalyticMessageLabel.isHidden = isShow
+    }
+    
     @IBAction func frontCheckBoxTapped(_ sender: Any) {
         frontCheckBox.toggle { [weak self] check in
             guard let weakself = self else { return }
             weakself.selectButton(selectView: weakself.frontCheckBox)
         }
+        skipViewShowOrNot(isShow: true)
     }
     @IBAction func engineCheckBoxTapped(_ sender: Any) {
         engineCheckBox.toggle { [weak self] check in
             guard let weakself = self else { return }
             weakself.selectButton(selectView: weakself.engineCheckBox)
         }
+        skipViewShowOrNot(isShow: true)
     }
     @IBAction func plateCheckBoxTapped(_ sender: Any) {
         plateCheckBox.toggle { [weak self] check in
             guard let weakself = self else { return }
             weakself.selectButton(selectView: weakself.plateCheckBox)
         }
+        skipViewShowOrNot(isShow: true)
     }
     @IBAction func chassisCheckBoxTapped(_ sender: Any) {
         chassisCheckBox.toggle { [weak self] check in
             guard let weakself = self else { return }
             weakself.selectButton(selectView: weakself.chassisCheckBox)
         }
+        skipViewShowOrNot(isShow: true)
     }
     @IBAction func interiorCheckBoxTapped(_ sender: Any) {
         interiorCheckBox.toggle { [weak self] check in
             guard let weakself = self else { return }
             weakself.selectButton(selectView: weakself.interiorCheckBox)
         }
+        skipViewShowOrNot(isShow: true)
     }
     @IBAction func trayCheckBoxTapped(_ sender: Any) {
         trayCheckBox.toggle { [weak self] check in
             guard let weakself = self else { return }
             weakself.selectButton(selectView: weakself.trayCheckBox)
         }
+        skipViewShowOrNot(isShow: true)
     }
     @IBAction func sideCheckBoxTapped(_ sender: Any) {
         sideCheckBox.toggle { [weak self] check in
             guard let weakself = self else { return }
             weakself.selectButton(selectView: weakself.sideCheckBox)
         }
+        skipViewShowOrNot(isShow: true)
     }
     @IBAction func backCheckBoxTapped(_ sender: Any) {
         backCheckBox.toggle { [weak self] check in
             guard let weakself = self else { return }
             weakself.selectButton(selectView: weakself.backCheckBox)
         }
+        skipViewShowOrNot(isShow: true)
     }
     @IBAction func gasTankCheckBoxTapped(_ sender: Any) {
         gasTankCheckBox.toggle { [weak self] check in
             guard let weakself = self else { return }
             weakself.selectButton(selectView: weakself.gasTankCheckBox)
         }
+        skipViewShowOrNot(isShow: true)
     }
     @IBAction func damageCheckBoxTapped(_ sender: Any) {
         damageCheckBox.toggle { [weak self] check in
             guard let weakself = self else { return }
             weakself.selectButton(selectView: weakself.damageCheckBox)
         }
+        skipViewShowOrNot(isShow: true)
     }
     @IBAction func assetCheckBoxTapped(_ sender: Any) {
         assetCheckBox.toggle { [weak self] check in
             guard let weakself = self else { return }
             weakself.selectButton(selectView: weakself.assetCheckBox)
         }
+        skipViewShowOrNot(isShow: true)
     }
     
     @IBAction func carRoofBoxTapped(_ sender: Any) {
@@ -503,6 +524,7 @@ class PhotoCarViewController: ViewController, PhotoCarDisplayLogic
             guard let weakself = self else { return }
             weakself.selectButton(selectView: weakself.carRoofCheckBox)
         }
+        skipViewShowOrNot(isShow: true)
     }
     
     @IBAction func dashboardCheckBoxTapped(_ sender: Any) {
@@ -510,6 +532,7 @@ class PhotoCarViewController: ViewController, PhotoCarDisplayLogic
             guard let weakself = self else { return }
             weakself.selectButton(selectView: weakself.dashboardCheckBox)
         }
+        skipViewShowOrNot(isShow: true)
     }
     
     @IBAction func catalyticCheckBoxTapped(_ sender: Any) {
@@ -517,6 +540,7 @@ class PhotoCarViewController: ViewController, PhotoCarDisplayLogic
             guard let weakself = self else { return }
             weakself.selectButton(selectView: weakself.catalyticCheckBox)
         }
+        skipViewShowOrNot(isShow: false)
     }
     
     //MARK: Damage

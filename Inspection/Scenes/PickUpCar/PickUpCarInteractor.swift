@@ -300,6 +300,7 @@ class PickUpCarInteractor: PickUpCarBusinessLogic, PickUpCarDataStore
         let noteRegistration = model.registrationNote ?? ""
         
         let gasNumber = model.gasNumber
+        let roofType = model.roofType
         
         print(receiverPlace)
         print(storePlace)
@@ -337,6 +338,11 @@ class PickUpCarInteractor: PickUpCarBusinessLogic, PickUpCarDataStore
             validGasNumber = gasNumber != nil && !(gasNumber?.isEmpty ?? false)
         }
         
+        var validRoofType = true
+        if DataController.shared.hasRoofType() == true {
+            validRoofType = roofType != nil && !(roofType?.isEmpty ?? false)
+        }
+        
         let string_not_correct = String.localized("login_not_correct_label")
         
         var message : String = ""
@@ -364,6 +370,8 @@ class PickUpCarInteractor: PickUpCarBusinessLogic, PickUpCarDataStore
         message += validNoteRegistration ? "" : "\(String.localized("car_pick_up_valid_field_remark_tips_label")) \(string_not_correct)\n"
         message += validGasNumber ? "" : "\(String.localized("car_detail_gas_number_placeholder")) \(string_not_correct)"
         
+        message += validRoofType ? "" : "\(String.localized("car_exterior_roof_type_label")) \(string_not_correct)"
+        
         DataController.shared.receiverCarModel.validReceiver = validReceiver
         DataController.shared.receiverCarModel.validStore = validStore
         DataController.shared.receiverCarModel.validSellCate = validSellCate
@@ -389,6 +397,7 @@ class PickUpCarInteractor: PickUpCarBusinessLogic, PickUpCarDataStore
         DataController.shared.receiverCarModel.validFuelType = validFuelType
         DataController.shared.receiverCarModel.validNoteRegistration = validNoteRegistration
         DataController.shared.receiverCarModel.validGasNumber = validGasNumber
+        DataController.shared.receiverCarModel.validRoofType = validRoofType
 
         NotificationCenter.default.post(name: NSNotification.Name("updateUI"), object: nil)
         

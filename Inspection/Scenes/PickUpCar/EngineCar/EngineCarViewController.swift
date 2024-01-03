@@ -118,7 +118,7 @@ class EngineCarViewController: ViewController, EngineCarDisplayLogic
         engineTypeLabel.text = String.localized("car_engine_type_label")
         fuelSystemLabel.text = String.localized("car_engine_fuel_system_label")
         gasLabel.text = String.localized("car_engine_gas_label")
-        engineOverAllLabel.text = String.localized("car_engine_other_in_car_assets_label")
+        engineOverAllLabel.text = String.localized("car_interior_others_label")
         engineOverAllTextField.placeholder = String.localized("car_interior_others_label")
     }
     

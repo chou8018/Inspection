@@ -344,6 +344,7 @@ class ReceiverCarModel {
     var validNoteRegistration:Bool?
     
     var validGasNumber:Bool?
+    var validRoofType:Bool?
 
     var description : [String : Any] {
         return [:]

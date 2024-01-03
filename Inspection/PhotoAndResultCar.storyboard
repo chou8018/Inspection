@@ -1218,6 +1218,12 @@
                                     <constraint firstAttribute="bottom" secondItem="x0V-Qr-bEa" secondAttribute="bottom" id="cT3-bj-5Z6"/>
                                 </constraints>
                             </view>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="623-z6-ebf">
+                                <rect key="frame" x="704.5" y="124.5" width="41.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="mCs-Do-t2e"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -1228,6 +1234,7 @@
                             <constraint firstItem="feJ-my-I1P" firstAttribute="leading" secondItem="Wai-32-lxz" secondAttribute="trailing" constant="10" id="DtD-95-1zJ"/>
                             <constraint firstItem="jc4-c2-Ocz" firstAttribute="top" secondItem="feJ-my-I1P" secondAttribute="bottom" constant="10" id="Epl-Va-C8E"/>
                             <constraint firstItem="j0F-Td-19x" firstAttribute="leading" secondItem="HVG-Rh-3Ob" secondAttribute="trailing" id="GaH-4D-eCf"/>
+                            <constraint firstItem="623-z6-ebf" firstAttribute="centerX" secondItem="j0F-Td-19x" secondAttribute="centerX" id="Jsg-xT-jzT"/>
                             <constraint firstItem="y2d-N9-4qH" firstAttribute="top" secondItem="mCs-Do-t2e" secondAttribute="top" id="Noc-sI-S1l"/>
                             <constraint firstItem="mCs-Do-t2e" firstAttribute="trailing" secondItem="j0F-Td-19x" secondAttribute="trailing" id="VG1-Qx-1Cb"/>
                             <constraint firstItem="lLU-TJ-Nk5" firstAttribute="leading" secondItem="y2d-N9-4qH" secondAttribute="trailing" id="VyK-mF-OcL"/>
@@ -1238,6 +1245,7 @@
                             <constraint firstAttribute="bottom" secondItem="lLU-TJ-Nk5" secondAttribute="bottom" id="hZA-cL-484"/>
                             <constraint firstAttribute="bottom" secondItem="y2d-N9-4qH" secondAttribute="bottom" id="hZP-dz-sew"/>
                             <constraint firstItem="HVG-Rh-3Ob" firstAttribute="top" secondItem="mCs-Do-t2e" secondAttribute="top" id="j2G-0U-aMp"/>
+                            <constraint firstItem="j0F-Td-19x" firstAttribute="top" secondItem="623-z6-ebf" secondAttribute="bottom" constant="5" id="jer-FW-qtT"/>
                             <constraint firstItem="BXq-5I-jP4" firstAttribute="top" secondItem="mCs-Do-t2e" secondAttribute="top" constant="10" id="kff-gO-Ta7"/>
                             <constraint firstItem="feJ-my-I1P" firstAttribute="centerY" secondItem="Wai-32-lxz" secondAttribute="centerY" id="leW-7o-LCu"/>
                             <constraint firstItem="HVG-Rh-3Ob" firstAttribute="leading" secondItem="y2d-N9-4qH" secondAttribute="trailing" id="oYI-uZ-fI0"/>
@@ -1273,6 +1281,7 @@
                         <outlet property="backCheckBox" destination="0cy-X3-HVo" id="H4B-FO-1jo"/>
                         <outlet property="carRoofCheckBox" destination="cu0-gv-thF" id="yv7-sG-Koa"/>
                         <outlet property="catalyticCheckBox" destination="SM5-4y-jya" id="LLt-2Y-g6j"/>
+                        <outlet property="catalyticMessageLabel" destination="623-z6-ebf" id="j6W-PS-wPW"/>
                         <outlet property="chassisCheckBox" destination="ytI-ce-fRr" id="tGW-p6-XgU"/>
                         <outlet property="checkStackView" destination="vjB-G0-l6E" id="Hep-4y-Jw1"/>
                         <outlet property="collectionView" destination="j0F-Td-19x" id="vEJ-dV-U2X"/>
@@ -1298,6 +1307,7 @@
                         <outlet property="sendInspectionButton" destination="tdi-ik-o3A" id="wsH-33-Wgk"/>
                         <outlet property="sideCheckBox" destination="zMW-M6-rUW" id="oy1-EC-oJv"/>
                         <outlet property="skipCheckBox" destination="Hvq-tc-cPT" id="r1t-d1-Lgb"/>
+                        <outlet property="skipView" destination="jc4-c2-Ocz" id="zKR-lT-LeF"/>
                         <outlet property="timeLabel" destination="sj6-Rw-ZCR" id="cRw-sL-iuB"/>
                         <outlet property="trayCheckBox" destination="weg-dK-yQe" id="nWT-x2-5Yr"/>
                         <segue destination="Qrb-mW-Cfl" kind="popoverPresentation" identifier="showDateTime" popoverAnchorView="Zk0-h2-4lV" id="HWi-vo-Hv6">

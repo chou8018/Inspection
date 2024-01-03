@@ -145,8 +145,17 @@ class ExternalCarViewController: ViewController, ExternalCarDisplayLogic
     }
     
     func loadRetryApi() {
-        if !isGetRoofTypeLunch , DataController.shared.receiverCarModel.sellingCategory?.trimWhiteSpace == "PU" {
-            getRoofType()
+        
+        if DataController.shared.hasRoofType() {
+            roofTypeView.isHidden = false
+            roofTypeLineView.isHidden = false
+            
+            if !isGetRoofTypeLunch {
+                getRoofType()
+            }
+        } else {
+            roofTypeView.isHidden = true
+            roofTypeLineView.isHidden = true
         }
     }
     

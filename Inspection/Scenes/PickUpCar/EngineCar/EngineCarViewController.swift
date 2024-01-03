@@ -208,10 +208,10 @@ class EngineCarViewController: ViewController, EngineCarDisplayLogic
             NSAttributedString(string: string_diesel, attributes: attributedString),
             NSAttributedString(string: string_hybrid_benzine, attributes: attributedString),
             NSAttributedString(string: string_hybrid_diesel, attributes: attributedString),
-            NSAttributedString(string: string_bev_diesel, attributes: attributedString),
-            NSAttributedString(string: string_phev_diesel, attributes: attributedString)
+            NSAttributedString(string: "\(string_bev_diesel) ?", attributes: attributedString),
+            NSAttributedString(string: "\(string_phev_diesel) ?", attributes: attributedString)
         ]
-        
+                
         gasRadio.attributedTitles = [
             NSAttributedString(string: string_lpg_sequential_injection, attributes: attributedString),
             NSAttributedString(string: string_lpg_fumigation_system, attributes: attributedString),

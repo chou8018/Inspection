@@ -434,7 +434,7 @@ class PickUpCarPDFWorker {
                  
                 
                 //MARK: Gas Number
-                let attrGasNumberTitlePDF = weakself.getTitle(mainString: String.localized("car_detail_gas_label"), value: "")
+                let attrGasNumberTitlePDF = weakself.getTitle(mainString: String.localized("car_detail_gas_title_label"), value: "")
                 let _ = weakself.drawString(attrString: attrGasNumberTitlePDF,
                                                              x: mapPoint["v3"]!,
                                                              y: mapPoint["h5"]!,
@@ -448,7 +448,7 @@ class PickUpCarPDFWorker {
 //                gasNumber += notValidateGasNumber ? reasonInValidGasNumber : gasNumber2
                 
                 var gasNumber = ""
-                if let text = receiverCarModel.reasonInValidGasNumber {
+                if let text = receiverCarModel.gasOption {
                     gasNumber = text
                     if receiverCarModel.isGasTank == true , let gas = receiverCarModel.gasNumber {
                         gasNumber += " \(gas)"
@@ -637,13 +637,29 @@ class PickUpCarPDFWorker {
                 let tireBrandValue = receiverCarModel.brandTire?.pdfValidateString ?? "-"
                 let tireBrandText = "  \(String.localized("car_exterior_make_label"))  \(tireBrandValue)"
                 let attrTireBrandPDF = weakself.getTitle(mainString: tireBrandText, value: tireBrandValue)
-                let _ = weakself.drawString(attrString: attrTireBrandPDF,
+                let attrBrandPDFSizeRect = weakself.drawString(attrString: attrTireBrandPDF,
                                                           x: attrTireQualityPDFSizeRect.maxX + margin,
                                                           y: underSpoiler)
                 
-                 
-                
                 let underMagWheel = attrMagWheelPDFSizeRect.maxY + margin
+                
+                //MARK: Roof type
+                let roofTypes = [String.localized("car_exterior_roof_not_attach_label"),
+                                 String.localized("car_exterior_roof_corral_label"),
+                                 String.localized("car_exterior_roof_high_label"),
+                                 String.localized("car_exterior_roof_cargo_box_label"),
+                                 String.localized("car_exterior_roof_high_canopy_label"),
+                                 String.localized("car_exterior_roof_canoly_label")]
+                var roofType = ""
+                if let roofTypeId = receiverCarModel.roofTypeId , roofTypeId > 0 {
+                    roofType = roofTypes[roofTypeId-1]
+                }
+                let roofTypeMainString = "\(String.localized("car_exterior_roof_type_label"))  \(roofType)"
+                let attrRoofTypeValuePDF = weakself.getTitle(mainString: roofTypeMainString,
+                                                             value: roofType)
+                let roofTypeRect = weakself.drawString(attrString: attrRoofTypeValuePDF,
+                                                       x: trailingPosition,
+                                                       y: underSpoiler)
                 
                 //MARK: Damage Detail
                 let damageDetailValue = receiverCarModel.damageDetail?

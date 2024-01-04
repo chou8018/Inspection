@@ -106,6 +106,8 @@
 "car_detail_engine_size_label" = "ขนาดเครื่องยนต์";
 "car_detail_year_manu_label" = "ปีผลิต";
 "car_detail_year_regis_label" = "ปีจดทะเบียน";
+"car_detail_year_manu_label" = "ปีผลิต";
+"car_detail_year_regis_label" = "ปีจดทะเบียน";
 "car_detail_year_placeholder_label" = "ปี";
 "car_detail_registration_label" = "หมายเลขทะเบียน";
 "car_detail_no_plate_label" = "ไม่มีแผ่นป้าย";
@@ -118,7 +120,7 @@
 "car_detail_unable_to_verified_label" = "ตรวจสอบไม่ได้";
 "car_detail_vin_number_label" = "หมายเลขตัวถัง";
 "car_detail_gas_label" = "เลขถังแก๊ส";
-"car_detail_gas_title_label" = "การติดตั้งแก๊ส / Gas installation";
+"car_detail_gas_title_label" = "การติดตั้งแก๊ส";
 "car_detail_reason_placeholder" = "เหตุผล";
 "car_detail_gas_installed_label" = "ติดแก๊ส";
 "car_detail_gas_removed_label" = "เลขถังแก๊ส";

@@ -208,8 +208,8 @@ class EngineCarViewController: ViewController, EngineCarDisplayLogic
             NSAttributedString(string: string_diesel, attributes: attributedString),
             NSAttributedString(string: string_hybrid_benzine, attributes: attributedString),
             NSAttributedString(string: string_hybrid_diesel, attributes: attributedString),
-            NSAttributedString(string: "\(string_bev_diesel) ?", attributes: attributedString),
-            NSAttributedString(string: "\(string_phev_diesel) ?", attributes: attributedString)
+            NSAttributedString(string: "Book-in-\(string_bev_diesel)", attributes: attributedString),
+            NSAttributedString(string: "Book-in-\(string_phev_diesel)", attributes: attributedString)
         ]
                 
         gasRadio.attributedTitles = [
@@ -275,15 +275,15 @@ class EngineCarViewController: ViewController, EngineCarDisplayLogic
         
         oilSystemRadio.setValidateView(true)
         
-        if let selectItem = oilSystemRadio.subviews.first?.subviews[oilSystemRadio.selectedIndex] {
-            if value == string_bev_diesel {
-                DataController.shared.showTipView(sender: selectItem, superView: self.view, message: String.localized("car_engine_tip_electric_elabel"))
-            }
-            
-            if value == string_phev_diesel {
-                DataController.shared.showTipView(sender: selectItem, superView: self.view, message: String.localized("car_engine_tip_electric_internal_label"))
-            }
-        }
+//        if let selectItem = oilSystemRadio.subviews.first?.subviews[oilSystemRadio.selectedIndex] {
+//            if value == string_bev_diesel {
+//                DataController.shared.showTipView(sender: selectItem, superView: self.view, message: String.localized("car_engine_tip_electric_elabel"))
+//            }
+//            
+//            if value == string_phev_diesel {
+//                DataController.shared.showTipView(sender: selectItem, superView: self.view, message: String.localized("car_engine_tip_electric_internal_label"))
+//            }
+//        }
     }
     
     @IBAction func fuelSystemValueChanged(_ sender: Any) {
@@ -452,6 +452,21 @@ class EngineCarViewController: ViewController, EngineCarDisplayLogic
         oilSystemRadio.setValidateView(model.validFuelType)
     }
     
+    @objc func tipButtonSelected(noti: NSNotification){
+        guard let sender = noti.object as? UIButton else {
+            return
+        }
+    
+        guard let value = noti.userInfo?["text"] as? String else {
+            return
+        }
+        
+        if value == string_bev_diesel {
+            DataController.shared.showTipView(sender: sender, superView: self.view, message: String.localized("car_engine_tip_electric_elabel"))
+        } else if value == string_phev_diesel {
+            DataController.shared.showTipView(sender: sender, superView: self.view, message: String.localized("car_engine_tip_electric_internal_label"))
+        }
+    }
 }
 
 extension EngineCarViewController : UITextViewDelegate {
@@ -497,6 +512,8 @@ extension EngineCarViewController {
         updateView()
         
         NotificationCenter.default.addObserver(self, selector: #selector(updateView), name: NSNotification.Name("updateUI"), object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(tipButtonSelected(noti:)), name: NSNotification.Name("tipButtondSelect"), object: nil)
     }
     
     override func viewDidDisappear(_ animated: Bool) {

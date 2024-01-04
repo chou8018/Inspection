@@ -300,7 +300,7 @@ class PickUpCarInteractor: PickUpCarBusinessLogic, PickUpCarDataStore
         let noteRegistration = model.registrationNote ?? ""
         
         let gasNumber = model.gasNumber
-        let roofType = model.roofType
+        let roofTypeId = model.roofTypeId
         
         print(receiverPlace)
         print(storePlace)
@@ -340,7 +340,7 @@ class PickUpCarInteractor: PickUpCarBusinessLogic, PickUpCarDataStore
         
         var validRoofType = true
         if DataController.shared.hasRoofType() == true {
-            validRoofType = roofType != nil && !(roofType?.isEmpty ?? false)
+            validRoofType = roofTypeId != nil && (roofTypeId ?? 0 > 0)
         }
         
         let string_not_correct = String.localized("login_not_correct_label")

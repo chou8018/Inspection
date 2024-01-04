@@ -294,7 +294,7 @@ class SummaryCarPDFWorker {
                                             isTable: true)
             
             //MARK: Gas
-            let attrGasPDF = weakself.getTitle(mainString: String.localized("car_detail_gas_label"), value: "")
+            let attrGasPDF = weakself.getTitle(mainString: String.localized("car_detail_gas_title_label"), value: "")
             let _ = weakself.drawString(attrString: attrGasPDF,
                                             x: mapPoint["v1"]!,
                                             y: mapPoint["h6"]!,
@@ -467,10 +467,65 @@ class SummaryCarPDFWorker {
                                                 isTable: true)
             }
             
+            //MARK: CC
+            let attrCCTitlePDF = weakself.getTitle(mainString: "CC", value: "")
+            let _ = weakself.drawString(attrString: attrCCTitlePDF,
+                                                  x: mapPoint["v1"]!,
+                                                  y: mapPoint["h8"]!,
+                                                  isTable: true)
+             
+            //MARK: CC Value
+            var capacityCarText = ""
+            capacityCarText += "\(String.localized("car_detail_year_manu_label")) \(receiverModel.year?.pdfValidateString ?? "-")  "
+            capacityCarText += "\(String.localized("car_detail_year_regis_label")) \(receiverModel.registrationYear?.pdfValidateString ?? "-")"
+            let attrCCValuePDF = weakself.getTitle(mainString: capacityCarText.uppercased(),
+                                          value: "", textColor: .darkGray)
+            let _ = weakself.drawString(attrString: attrCCValuePDF,
+                                                  x: mapPoint["v2"]!,
+                                                  y: mapPoint["h8"]!,
+                                                  isTable: true)
             
+//            let attrImatatPDF3 = weakself.getTitle(mainString: String.localized("car_exterior_roof_type_label"), value: "")
+//            let _ = weakself.drawString(attrString: attrImatatPDF,
+//                                            x: mapPoint["v3"]!,
+//                                            y: mapPoint["h8"]!,
+//                                            isTable: true)
+//            
+//            //MARK: IMAT value
+//            let imatValue3 = receiverModel.vehicleId.pdfValidateString
+//            let attrImaTValuePDF3 = weakself.getTitle(mainString: imatValue, value: imatValue)
+//            let lastLineTableRect = weakself.drawString(attrString: attrImaTValuePDF,
+//                                            x: mapPoint["v4"]!,
+//                                            y: mapPoint["h8"]!,
+//                                            isTable: true)
+            
+            //MARK: Roof type
+            
+            let roofTypeMainString = weakself.getTitle(mainString: String.localized("car_exterior_roof_type_label"), value: "")
+            let _ = weakself.drawString(attrString: roofTypeMainString,
+                                                  x: mapPoint["v3"]!,
+                                                  y: mapPoint["h8"]!,
+                                                  isTable: true)
+            
+            let roofTypes = [String.localized("car_exterior_roof_not_attach_label"),
+                             String.localized("car_exterior_roof_corral_label"),
+                             String.localized("car_exterior_roof_high_label"),
+                             String.localized("car_exterior_roof_cargo_box_label"),
+                             String.localized("car_exterior_roof_high_canopy_label"),
+                             String.localized("car_exterior_roof_canoly_label")]
+            var roofType = ""
+            if let roofTypeId = receiverModel.roofTypeId , roofTypeId > 0 {
+                roofType = roofTypes[roofTypeId-1]
+            }
+            let attrRoofTypeValuePDF = weakself.getTitle(mainString: roofType,
+                                                         value: "", textColor: .darkGray)
+            let lastLineTableRect = weakself.drawString(attrString: attrRoofTypeValuePDF,
+                                                   x: mapPoint["v4"]!,
+                                                   y: mapPoint["h8"]!,
+                                                   isTable: true)
             
           //MARK: Chassis Header
-          let underGasSystem = insoectionRect.maxY + margin + margin
+          let underGasSystem = lastLineTableRect.maxY + margin + margin
             
             let chassisTitle = "\(String.localized("car_inspection_pdf_body_condition_label"))\t\t\t\t"
           let chassisTitleAttr = [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 12),
@@ -652,13 +707,13 @@ class SummaryCarPDFWorker {
                                             x: centerPosition,
                                             y: underOil)
             
-//            let catalyticValue = model.catalytic?.pdfValidateString ?? "-"
-//            let catalyticMainString = "\(String.localized("inspection_engine_catalytic_label"))  \(catalyticValue)"
-//            let catalyticValuePDF = weakself.getTitle(mainString: catalyticMainString,
-//                                                    value: catalyticValue)
-//            let catalyticRect = weakself.drawString(attrString: catalyticValuePDF,
-//                                            x: trailingPosition,
-//                                            y: underOil)
+            let catalyticValue = model.catalytic?.pdfValidateString ?? "-"
+            let catalyticMainString = "\(String.localized("inspection_engine_catalytic_label"))  \(catalyticValue)"
+            let catalyticValuePDF = weakself.getTitle(mainString: catalyticMainString,
+                                                    value: catalyticValue)
+            let catalyticRect = weakself.drawString(attrString: catalyticValuePDF,
+                                            x: trailingPosition,
+                                            y: underOil)
             
 //            let gasOptionsValue = model.gasOptions?.pdfValidateString ?? "-"
 //            let gasOptionsMainString = "\(String.localized("photos_gas_tank_button_title"))  \(gasOptionsValue)"
@@ -1289,7 +1344,7 @@ extension SummaryCarPDFWorker {
         var mapPoint : [String:CGFloat] = [:]
         
         let heightOffset = heightOffset
-        let heightTable = heightOffset * 7
+        let heightTable = heightOffset * 8
         let underText = underOfText
         let yPosition = underText
         let margin = margin  + 10
@@ -1333,7 +1388,7 @@ extension SummaryCarPDFWorker {
         }
         
         // Draw content's element bottom horizontal line
-        for  horizontalLine in 0..<8{
+        for  horizontalLine in 0..<9{
             
             let yPosition =  CGFloat(horizontalLine) * heightOffset + underText
             

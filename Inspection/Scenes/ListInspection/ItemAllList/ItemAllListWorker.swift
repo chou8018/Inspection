@@ -841,6 +841,11 @@ class ItemAllListWorker
                 model.isSideMirror4 = carInspectionType?.isSideMirror4Working ?? false
                 model.catalytic = carInspectionType?.catalytic
                 
+                model.sideMirror1 = carInspectionType?.sideMirror1
+                model.sideMirror2 = carInspectionType?.sideMirror2
+                model.sideMirror3 = carInspectionType?.sideMirror3
+                model.sideMirror4 = carInspectionType?.sideMirror4
+
                 //found book-in number
                 model.isCreate = true
                 self?.getGrade(from: bookInNumber, completion: completion)

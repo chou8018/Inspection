@@ -95,6 +95,7 @@ enum Router {
     case getRoofTypes(_ parameter:Parameters)
     case getGasTypes(_ parameter:Parameters)
     case getCatalyticOptions(_ parameter:Parameters)
+    case getWindowOptions(_ parameter:Parameters)
 
     var apiModel : ApiModel {
         switch self {
@@ -282,9 +283,11 @@ enum Router {
             return ApiModel(path: "inspection/api/bookin/gasType", method: .get)
         case .getCatalyticOptions(_):
             return ApiModel(path: "inspection/api/bookin/catalyticOption", method: .get)
+            
+        // add on 01/05/2024
+        case .getWindowOptions(_):
+            return ApiModel(path: "inspection/api/bookIn/windowOption", method: .get)
         }
-        
-    
         
     }
 

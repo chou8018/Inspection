@@ -131,6 +131,11 @@ class InspectionCarModel {
     var isSideMirror4 = false
     var catalytic: String?
     var catalyticOptionId: Int?
+    
+    var sideMirror1: Int?
+    var sideMirror2: Int?
+    var sideMirror3: Int?
+    var sideMirror4: Int?
 
     var registrationProvince: String?
     var registration: String?

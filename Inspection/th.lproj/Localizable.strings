@@ -333,6 +333,7 @@
 "motorbike_inspection_engine_working_label" = "สตาร์ทติด";
 "motorbike_inspection_engine_not_working_label" = "สตาร์ทไม่ติด";
 "motorbike_inspection_engine_mileage_placeholder" = "เลขไมล์";
+"motorbike_inspection_engine_non_exist_label" = "ไม่มี";
 
 // motorbike inspection exterior
 "motorbike_inspection_exterior_label" = "สภาพภายนอก";
@@ -405,10 +406,10 @@
 "inspection_electrical_dashboard_label" = "วัดรอบทำงาน";
 "inspection_electrical_other_remarks_label" = "หมายเหตุอื่น ๆ";
 "inspection_electrical_summary_label" = "สรุปอุปกรณ์ไฟฟ้า";
-"inspection_electrical_side_mirror1_label" = "กระจกประตูไฟฟ้า 1 ทำงาน";
-"inspection_electrical_side_mirror2_label" = "กระจกประตูไฟฟ้า 2 ทำงาน";
-"inspection_electrical_side_mirror3_label" = "กระจกประตูไฟฟ้า 3 ทำงาน";
-"inspection_electrical_side_mirror4_label" = "กระจกประตูไฟฟ้า 4 ทำงาน";
+"inspection_electrical_side_mirror1_label" = "หน้าต่าง Front-R";
+"inspection_electrical_side_mirror2_label" = "หน้าต่าง Front-L";
+"inspection_electrical_side_mirror3_label" = "หน้าต่าง Back-R";
+"inspection_electrical_side_mirror4_label" = "หน้าต่าง Back-L";
 
 // photos
 "photos_front_button_title" = "Front (ด้านหน้า)";
@@ -622,6 +623,7 @@
 "car_inspection_pdf_mirror4_label" = "กระจกประตูไฟฟ้า 4";
 "car_inspection_pdf_other_comments_label" = "หมายเหตุอื่นๆ";
 "car_inspection_pdf_damaged_photos_label" = "รูปความเสียหาย";
+"car_inspection_pdf_bottom_message_label" = "การตรวจสอบอุปกรณ์เป็นการตรวจเบื้องต้น บริษัทฯไม่รับผิดชอบกรณีอุปกรณ์ไม่สามารถใช้งานได้จากเหตุเสื่อมสภาพ";
 
 // motorbike inspection pdf
 "motorbike_inspection_pdf_checklist_label" = "ใบตรวจสภาพรถจักรยานยนต์ / Inspection Report";

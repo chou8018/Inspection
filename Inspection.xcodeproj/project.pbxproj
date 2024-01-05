@@ -11,6 +11,10 @@
 		7B7F1EB825A89CFD60F730D4 /* Pods_Inspection_InspectionUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 450FEF54378985C29D64B3B3 /* Pods_Inspection_InspectionUITests.framework */; };
 		BC4F3FB54F9E0571C9BB828C /* Pods_Inspection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF5A5BE48DF744DDCA6FF8D6 /* Pods_Inspection.framework */; };
 		C25786362A94A26100F295C4 /* Userdefault+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25786352A94A26100F295C4 /* Userdefault+Helper.swift */; };
+		C26136D02B47EAE0004650BA /* WindowOptionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26136CE2B47EAE0004650BA /* WindowOptionService.swift */; };
+		C26136D12B47EAE0004650BA /* WindowOptionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26136CE2B47EAE0004650BA /* WindowOptionService.swift */; };
+		C26136D22B47EAE0004650BA /* WindowOptionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26136CF2B47EAE0004650BA /* WindowOptionModel.swift */; };
+		C26136D32B47EAE0004650BA /* WindowOptionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26136CF2B47EAE0004650BA /* WindowOptionModel.swift */; };
 		C28900002AC5536A003C2F1A /* BrakeCheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94A045C25DA3A1300C8EC4C /* BrakeCheckViewController.swift */; };
 		C28900012AC5536A003C2F1A /* ItemAllListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F957B81F25CA495A00B8FB3C /* ItemAllListViewController.swift */; };
 		C28900022AC5536A003C2F1A /* Userdefault+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25786352A94A26100F295C4 /* Userdefault+Helper.swift */; };
@@ -1007,6 +1011,8 @@
 		55C98B93E31756AF096E1F58 /* Pods-Inspection.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Inspection.release.xcconfig"; path = "Target Support Files/Pods-Inspection/Pods-Inspection.release.xcconfig"; sourceTree = "<group>"; };
 		58D757F7839D6F069EBBF157 /* Pods-Inspection-InspectionUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Inspection-InspectionUITests.release.xcconfig"; path = "Target Support Files/Pods-Inspection-InspectionUITests/Pods-Inspection-InspectionUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C25786352A94A26100F295C4 /* Userdefault+Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Userdefault+Helper.swift"; sourceTree = "<group>"; };
+		C26136CE2B47EAE0004650BA /* WindowOptionService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowOptionService.swift; sourceTree = "<group>"; };
+		C26136CF2B47EAE0004650BA /* WindowOptionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowOptionModel.swift; sourceTree = "<group>"; };
 		C289016D2AC5536A003C2F1A /* InspectionStaging.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InspectionStaging.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C289016F2AC55452003C2F1A /* Staging-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Staging-Info.plist"; sourceTree = "<group>"; };
 		C28901712AC555C9003C2F1A /* AppConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
@@ -1567,6 +1573,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C26136CD2B47EAE0004650BA /* WindowOption */ = {
+			isa = PBXGroup;
+			children = (
+				C26136CE2B47EAE0004650BA /* WindowOptionService.swift */,
+				C26136CF2B47EAE0004650BA /* WindowOptionModel.swift */,
+			);
+			path = WindowOption;
+			sourceTree = "<group>";
+		};
 		C2938A782B352F1B003076B1 /* RoofType */ = {
 			isa = PBXGroup;
 			children = (
@@ -2007,6 +2022,7 @@
 		F914458225C7F9FD00B09FB6 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				C26136CD2B47EAE0004650BA /* WindowOption */,
 				C2938A7A2B352F44003076B1 /* CatalyticOption */,
 				C2938A792B352F3B003076B1 /* GasType */,
 				C2938A782B352F1B003076B1 /* RoofType */,
@@ -3486,6 +3502,7 @@
 				C28900832AC5536A003C2F1A /* BaseRequest.swift in Sources */,
 				C28900842AC5536A003C2F1A /* AirCheckRouter.swift in Sources */,
 				C28900852AC5536A003C2F1A /* ModelCodePresenter.swift in Sources */,
+				C26136D12B47EAE0004650BA /* WindowOptionService.swift in Sources */,
 				C28900862AC5536A003C2F1A /* ImageViewerModels.swift in Sources */,
 				C28900872AC5536A003C2F1A /* CabinType.swift in Sources */,
 				C28900882AC5536A003C2F1A /* PlantResponse.swift in Sources */,
@@ -3620,6 +3637,7 @@
 				C28901062AC5536A003C2F1A /* BookInMotorcycle1Interactor.swift in Sources */,
 				C28901072AC5536A003C2F1A /* Constraint.swift in Sources */,
 				C28901082AC5536A003C2F1A /* EngineType.swift in Sources */,
+				C26136D32B47EAE0004650BA /* WindowOptionModel.swift in Sources */,
 				C28901092AC5536A003C2F1A /* SummaryCarModels.swift in Sources */,
 				C289010A2AC5536A003C2F1A /* InspectionListModels.swift in Sources */,
 				C289010B2AC5536A003C2F1A /* DriveModel.swift in Sources */,
@@ -3962,6 +3980,7 @@
 				F93148B425F1C362004E5F7A /* BaseRequest.swift in Sources */,
 				F94A046F25DA3A2100C8EC4C /* AirCheckRouter.swift in Sources */,
 				F931492E25F76B1D004E5F7A /* ModelCodePresenter.swift in Sources */,
+				C26136D02B47EAE0004650BA /* WindowOptionService.swift in Sources */,
 				CE20497C26BA8C020073A528 /* ImageViewerModels.swift in Sources */,
 				F965DF50260C28FB00CE91E7 /* CabinType.swift in Sources */,
 				CE0CBFEB267099EA00A31068 /* PlantResponse.swift in Sources */,
@@ -4096,6 +4115,7 @@
 				CE20497126BA4A510073A528 /* BookInMotorcycle1Interactor.swift in Sources */,
 				C2B889782A6A69D400ED3A60 /* Constraint.swift in Sources */,
 				F965DF51260C28FB00CE91E7 /* EngineType.swift in Sources */,
+				C26136D22B47EAE0004650BA /* WindowOptionModel.swift in Sources */,
 				F9D7CD8625CBC9F4003E049B /* SummaryCarModels.swift in Sources */,
 				F957B80E25CA3C5600B8FB3C /* InspectionListModels.swift in Sources */,
 				CE53400426844FC4006D0AC6 /* DriveModel.swift in Sources */,

@@ -84,6 +84,12 @@ struct InspectionRequest : Mappable {
     var isSideMirror3Working: Bool?
     var isSideMirror4Working: Bool?
     var catalyticId: Int?
+    
+    // add 05/01/24
+    var sideMirror1: Int?
+    var sideMirror2: Int?
+    var sideMirror3: Int?
+    var sideMirror4: Int?
 
     init?(map: Map) {
         
@@ -160,8 +166,11 @@ struct InspectionRequest : Mappable {
         isSideMirror2Working: Bool?,
         isSideMirror3Working: Bool?,
         isSideMirror4Working: Bool?,
-        catalyticId: Int?) {
-            
+        catalyticId: Int?, 
+        sideMirror1: Int?,
+        sideMirror2: Int?, 
+        sideMirror3: Int?,
+        sideMirror4: Int?) {
             
             self.vehicleId = vehicleId
             self.inspector = inspector ?? ""
@@ -235,6 +244,12 @@ struct InspectionRequest : Mappable {
             self.isSideMirror3Working = isSideMirror3Working ?? false
             self.isSideMirror4Working = isSideMirror4Working ?? false
             self.catalyticId = catalyticId
+            
+            self.sideMirror1 = sideMirror1
+            self.sideMirror2 = sideMirror2
+            self.sideMirror3 = sideMirror3
+            self.sideMirror4 = sideMirror4
+
         }
     mutating func mapping(map: Map) {
         
@@ -311,6 +326,12 @@ struct InspectionRequest : Mappable {
         isSideMirror3Working <- map["isSideMirror_3_Working"]
         isSideMirror4Working <- map["isSideMirror_4_Working"]
         catalyticId <- map["catalyticOption"]
+        
+        sideMirror1 <- map["sideMirror_1"]
+        sideMirror2 <- map["sideMirror_2"]
+        sideMirror3 <- map["sideMirror_3"]
+        sideMirror4 <- map["sideMirror_4"]
+
     }
     
 }

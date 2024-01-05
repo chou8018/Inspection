@@ -333,6 +333,7 @@
 "motorbike_inspection_engine_working_label" = "Working";
 "motorbike_inspection_engine_not_working_label" = "Not working";
 "motorbike_inspection_engine_mileage_placeholder" = "Mileage";
+"motorbike_inspection_engine_non_exist_label" = "non-exist";
 
 // motorbike inspection exterior
 "motorbike_inspection_exterior_label" = "Exterior";
@@ -405,10 +406,10 @@
 "inspection_electrical_dashboard_label" = "Dashboard working";
 "inspection_electrical_other_remarks_label" = "Other remarks";
 "inspection_electrical_summary_label" = "Summary electrical equipments condition";
-"inspection_electrical_side_mirror1_label" = "Front-R window working";
-"inspection_electrical_side_mirror2_label" = "Front-L window working";
-"inspection_electrical_side_mirror3_label" = "Back-R window working";
-"inspection_electrical_side_mirror4_label" = "Back-L window working";
+"inspection_electrical_side_mirror1_label" = "Front-R window";
+"inspection_electrical_side_mirror2_label" = "Front-L window";
+"inspection_electrical_side_mirror3_label" = "Back-R window";
+"inspection_electrical_side_mirror4_label" = "Back-L window";
 
 // photos
 "photos_front_button_title" = "Front";
@@ -622,6 +623,7 @@
 "car_inspection_pdf_mirror4_label" = "Mirror 4";
 "car_inspection_pdf_other_comments_label" = "Other comments";
 "car_inspection_pdf_damaged_photos_label" = "Damaged photos";
+"car_inspection_pdf_bottom_message_label" = "The company provide basic equipment check. We are not responsible for equipment/system malfunction from deterioration";
 
 // motorbike inspection pdf
 "motorbike_inspection_pdf_checklist_label" = "Motorcycle Inspection Checklist / Inspection Report";

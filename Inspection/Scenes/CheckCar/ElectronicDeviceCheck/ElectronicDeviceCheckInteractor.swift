@@ -14,28 +14,44 @@ import UIKit
 
 protocol ElectronicDeviceCheckBusinessLogic
 {
-  func doSomething(request: ElectronicDeviceCheck.Something.Request)
+    func doSomething(request: ElectronicDeviceCheck.Something.Request)
+    // add on 01/05/2024
+    func getWindowOptions(request: ElectronicDeviceCheck.Something.Request)
 }
 
 protocol ElectronicDeviceCheckDataStore
 {
-  //var name: String { get set }
+    //var name: String { get set }
 }
 
 class ElectronicDeviceCheckInteractor: ElectronicDeviceCheckBusinessLogic, ElectronicDeviceCheckDataStore
 {
-  var presenter: ElectronicDeviceCheckPresentationLogic?
-  var worker: ElectronicDeviceCheckWorker?
-  //var name: String = ""
-  
-  // MARK: Do something
-  
-  func doSomething(request: ElectronicDeviceCheck.Something.Request)
-  {
-    worker = ElectronicDeviceCheckWorker()
-    worker?.doSomeWork()
+    var presenter: ElectronicDeviceCheckPresentationLogic?
+    var worker: ElectronicDeviceCheckWorker?
+    //var name: String = ""
     
-    let response = ElectronicDeviceCheck.Something.Response()
-    presenter?.presentSomething(response: response)
-  }
+    var windowOptions: [WindowOptionModel]?
+    
+    // MARK: Do something
+    
+    func doSomething(request: ElectronicDeviceCheck.Something.Request)
+    {
+        worker = ElectronicDeviceCheckWorker()
+        worker?.doSomeWork()
+        
+        let response = ElectronicDeviceCheck.Something.Response()
+        presenter?.presentSomething(response: response)
+    }
+    
+    func getWindowOptions(request: ElectronicDeviceCheck.Something.Request) {
+        worker = ElectronicDeviceCheckWorker()
+        worker?.fetchWindowOptions(completion: { [weak self] (response) in
+            self?.presenter?.presentWindowOptions(response: response)
+            
+            if let values = response.windowOptions {
+                self?.windowOptions = values
+            }
+            
+        })
+    }
 }

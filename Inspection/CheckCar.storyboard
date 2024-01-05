@@ -1009,7 +1009,7 @@
                                             </stackView>
                                         </subviews>
                                     </stackView>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1pM-Bc-VUS" customClass="RadioGroup" customModule="RadioGroup">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1pM-Bc-VUS" customClass="RadioGroup" customModule="RadioGroup">
                                         <rect key="frame" x="210" y="57" width="418" height="46"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" name="primary_color"/>
@@ -1082,7 +1082,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="1080" height="1015"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" directionalLockEnabled="YES" scrollEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gWJ-k2-As9">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" scrollEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gWJ-k2-As9">
                                 <rect key="frame" x="0.0" y="20" width="1080" height="995"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="YTP-3Z-m5Z">
@@ -1455,7 +1455,7 @@
                                             </stackView>
                                         </subviews>
                                     </stackView>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="drX-uc-alg" customClass="RadioGroup" customModule="RadioGroup">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="drX-uc-alg" customClass="RadioGroup" customModule="RadioGroup">
                                         <rect key="frame" x="280" y="57" width="418" height="46"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" name="primary_color"/>
@@ -1484,7 +1484,7 @@
                                             <action selector="summaryEngineValueChanged:" destination="U8s-ZS-t5h" eventType="valueChanged" id="BRZ-DF-jKk"/>
                                         </connections>
                                     </view>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uTd-ng-56w" customClass="RadioGroup" customModule="RadioGroup">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uTd-ng-56w" customClass="RadioGroup" customModule="RadioGroup">
                                         <rect key="frame" x="220" y="138" width="418" height="46"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" name="primary_color"/>
@@ -1513,7 +1513,7 @@
                                             <action selector="typeEngineValueChanged:" destination="U8s-ZS-t5h" eventType="valueChanged" id="yPl-Uo-VAf"/>
                                         </connections>
                                     </view>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="txA-et-PYF" customClass="RadioGroup" customModule="RadioGroup">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="txA-et-PYF" customClass="RadioGroup" customModule="RadioGroup">
                                         <rect key="frame" x="220" y="219" width="418" height="46"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" name="primary_color"/>
@@ -1542,7 +1542,7 @@
                                             <action selector="haveOilValueChanged:" destination="U8s-ZS-t5h" eventType="valueChanged" id="OB4-zA-NFy"/>
                                         </connections>
                                     </view>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="S44-a1-ieJ" customClass="RadioGroup" customModule="RadioGroup">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S44-a1-ieJ" customClass="RadioGroup" customModule="RadioGroup">
                                         <rect key="frame" x="220" y="300" width="418" height="46"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" name="primary_color"/>
@@ -1571,7 +1571,7 @@
                                             <action selector="fuelSystemValueChanged:" destination="U8s-ZS-t5h" eventType="valueChanged" id="Mtm-dT-fUg"/>
                                         </connections>
                                     </view>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ib1-S6-RNv" customClass="RadioGroup" customModule="RadioGroup">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ib1-S6-RNv" customClass="RadioGroup" customModule="RadioGroup">
                                         <rect key="frame" x="220" y="381" width="418" height="46"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" name="primary_color"/>
@@ -1600,7 +1600,7 @@
                                             <action selector="gasSystemValueChanged:" destination="U8s-ZS-t5h" eventType="valueChanged" id="jWj-g4-e4k"/>
                                         </connections>
                                     </view>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bhe-Lc-aVD" customClass="RadioGroup" customModule="RadioGroup">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bhe-Lc-aVD" customClass="RadioGroup" customModule="RadioGroup">
                                         <rect key="frame" x="220" y="462" width="418" height="46"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" name="primary_color"/>
@@ -1814,7 +1814,7 @@
                                             </stackView>
                                         </subviews>
                                     </stackView>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s0e-RP-5lc" customClass="RadioGroup" customModule="RadioGroup">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s0e-RP-5lc" customClass="RadioGroup" customModule="RadioGroup">
                                         <rect key="frame" x="250" y="57" width="418" height="46"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" name="primary_color"/>
@@ -1887,7 +1887,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="1080" height="520"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" directionalLockEnabled="YES" scrollEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fxs-7m-tQZ">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" scrollEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fxs-7m-tQZ">
                                 <rect key="frame" x="0.0" y="20" width="1080" height="500"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="men-h5-Plp">
@@ -2030,7 +2030,7 @@
                                             </stackView>
                                         </subviews>
                                     </stackView>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dyn-Y5-ns6" customClass="RadioGroup" customModule="RadioGroup">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dyn-Y5-ns6" customClass="RadioGroup" customModule="RadioGroup">
                                         <rect key="frame" x="160" y="57" width="418" height="46"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" name="primary_color"/>
@@ -2059,7 +2059,7 @@
                                             <action selector="driveShaftValueChanged:" destination="aWR-wZ-4C9" eventType="valueChanged" id="TGX-lB-wgw"/>
                                         </connections>
                                     </view>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2tH-mM-adr" customClass="RadioGroup" customModule="RadioGroup">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2tH-mM-adr" customClass="RadioGroup" customModule="RadioGroup">
                                         <rect key="frame" x="160" y="177" width="418" height="46"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" name="primary_color"/>
@@ -2128,10 +2128,10 @@
             </objects>
             <point key="canvasLocation" x="1265.5555555555554" y="918.51851851851848"/>
         </scene>
-        <!--Electronic Device Check View Controller-->
+        <!--View Controller-->
         <scene sceneID="AY6-ll-FPP">
             <objects>
-                <viewController storyboardIdentifier="ElectronicDeviceCheckViewController" id="3Ck-Af-ybp" customClass="ElectronicDeviceCheckViewController" customModule="Inspection" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="3Ck-Af-ybp" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NoI-IP-dic">
                         <rect key="frame" x="0.0" y="0.0" width="1080" height="870"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2704,7 +2704,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="1080" height="605"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" directionalLockEnabled="YES" scrollEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IE5-Qz-VOY">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" scrollEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IE5-Qz-VOY">
                                 <rect key="frame" x="0.0" y="20" width="1080" height="585"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="gio-qC-1FD">
@@ -2855,7 +2855,7 @@
                                             </stackView>
                                         </subviews>
                                     </stackView>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XaI-E0-MdZ" customClass="RadioGroup" customModule="RadioGroup">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XaI-E0-MdZ" customClass="RadioGroup" customModule="RadioGroup">
                                         <rect key="frame" x="180" y="57" width="418" height="46"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" name="primary_color"/>
@@ -2884,7 +2884,7 @@
                                             <action selector="gearSystemValueChanged:" destination="wDI-QY-P9N" eventType="valueChanged" id="Mkw-Zu-ybG"/>
                                         </connections>
                                     </view>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="58D-nF-1bh" customClass="RadioGroup" customModule="RadioGroup">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="58D-nF-1bh" customClass="RadioGroup" customModule="RadioGroup">
                                         <rect key="frame" x="180" y="219" width="418" height="46"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" name="primary_color"/>
@@ -2913,7 +2913,7 @@
                                             <action selector="driveShaftGearValueChanged:" destination="wDI-QY-P9N" eventType="valueChanged" id="t7P-WZ-iR5"/>
                                         </connections>
                                     </view>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VZ1-3O-5af" customClass="RadioGroup" customModule="RadioGroup">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VZ1-3O-5af" customClass="RadioGroup" customModule="RadioGroup">
                                         <rect key="frame" x="180" y="138" width="418" height="46"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" name="primary_color"/>
@@ -3103,7 +3103,7 @@
                                             </stackView>
                                         </subviews>
                                     </stackView>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hZW-Nm-Bky" customClass="RadioGroup" customModule="RadioGroup">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hZW-Nm-Bky" customClass="RadioGroup" customModule="RadioGroup">
                                         <rect key="frame" x="230" y="57" width="418" height="46"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" name="primary_color"/>
@@ -3252,7 +3252,7 @@
                                             </stackView>
                                         </subviews>
                                     </stackView>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q3Q-YG-OvX" customClass="RadioGroup" customModule="RadioGroup">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q3Q-YG-OvX" customClass="RadioGroup" customModule="RadioGroup">
                                         <rect key="frame" x="180" y="57" width="418" height="46"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" name="primary_color"/>
@@ -4424,6 +4424,726 @@
             </objects>
             <point key="canvasLocation" x="626" y="-69"/>
         </scene>
+        <!--Electronic Device Check View Controller-->
+        <scene sceneID="bux-OM-Cgd">
+            <objects>
+                <viewController storyboardIdentifier="ElectronicDeviceCheckViewController" id="hKQ-7N-aqp" customClass="ElectronicDeviceCheckViewController" customModule="Inspection" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KjN-3X-TXE">
+                        <rect key="frame" x="0.0" y="0.0" width="1080" height="870"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" scrollEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7UF-wP-OOc">
+                                <rect key="frame" x="0.0" y="20" width="1080" height="850"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="aPy-dR-bHl">
+                                        <rect key="frame" x="50" y="50" width="980" height="791"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="6sv-la-FQ9">
+                                                <rect key="frame" x="0.0" y="0.0" width="980" height="410"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="YNi-Wa-6ne">
+                                                        <rect key="frame" x="0.0" y="0.0" width="480" height="410"/>
+                                                        <subviews>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="SH5-I7-kXH">
+                                                                <rect key="frame" x="0.0" y="0.0" width="480" height="60"/>
+                                                                <subviews>
+                                                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mhl-5c-S3J" customClass="CheckBoxUIButton" customModule="Inspection" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="10" width="40" height="40"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="40" id="mn8-Zr-96A"/>
+                                                                            <constraint firstAttribute="width" secondItem="Mhl-5c-S3J" secondAttribute="height" multiplier="1:1" id="zQn-8l-lEb"/>
+                                                                        </constraints>
+                                                                        <state key="normal" backgroundImage="icon-check-outline"/>
+                                                                        <connections>
+                                                                            <action selector="frontLightTapped:" destination="hKQ-7N-aqp" eventType="touchUpInside" id="WDv-id-XZ9"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="ไฟหน้าทำงาน" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Tr-cf-z4q">
+                                                                        <rect key="frame" x="60" y="18" width="420" height="24"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                                        <color key="textColor" name="primary_color"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="60" id="FsV-iW-RB7"/>
+                                                                </constraints>
+                                                            </stackView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="HT7-77-VM7">
+                                                                <rect key="frame" x="0.0" y="70" width="480" height="60"/>
+                                                                <subviews>
+                                                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fat-Sr-Vel" customClass="CheckBoxUIButton" customModule="Inspection" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="10" width="40" height="40"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" secondItem="Fat-Sr-Vel" secondAttribute="height" multiplier="1:1" id="buO-3D-yg6"/>
+                                                                            <constraint firstAttribute="height" constant="40" id="tHG-ev-PdU"/>
+                                                                        </constraints>
+                                                                        <state key="normal" backgroundImage="icon-check-outline"/>
+                                                                        <connections>
+                                                                            <action selector="backLightTapped:" destination="hKQ-7N-aqp" eventType="touchUpInside" id="FcB-RM-v6r"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="ไฟท้ายทำงาน" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hpG-KA-3OJ">
+                                                                        <rect key="frame" x="60" y="18" width="420" height="24"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                                        <color key="textColor" name="primary_color"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </stackView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Eyd-bc-M6w">
+                                                                <rect key="frame" x="0.0" y="140" width="480" height="60"/>
+                                                                <subviews>
+                                                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Elf-Iw-5YO" customClass="CheckBoxUIButton" customModule="Inspection" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="10" width="40" height="40"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" secondItem="Elf-Iw-5YO" secondAttribute="height" multiplier="1:1" id="LLt-Ov-ovr"/>
+                                                                            <constraint firstAttribute="height" constant="40" id="OoU-R8-Grg"/>
+                                                                        </constraints>
+                                                                        <state key="normal" backgroundImage="icon-check-outline"/>
+                                                                        <connections>
+                                                                            <action selector="betteryTapped:" destination="hKQ-7N-aqp" eventType="touchUpInside" id="fBg-aw-Wds"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="แบตเตอรี่ทำงาน" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KmR-be-DpQ">
+                                                                        <rect key="frame" x="60" y="18" width="420" height="24"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                                        <color key="textColor" name="primary_color"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </stackView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="0L5-Un-fif">
+                                                                <rect key="frame" x="0.0" y="210" width="480" height="60"/>
+                                                                <subviews>
+                                                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BdS-xz-aQm" customClass="CheckBoxUIButton" customModule="Inspection" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="10" width="40" height="40"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="40" id="Lmg-tF-PIT"/>
+                                                                            <constraint firstAttribute="width" secondItem="BdS-xz-aQm" secondAttribute="height" multiplier="1:1" id="RGQ-ct-trC"/>
+                                                                        </constraints>
+                                                                        <state key="normal" backgroundImage="icon-check-outline"/>
+                                                                        <connections>
+                                                                            <action selector="roundGaugeTapped:" destination="hKQ-7N-aqp" eventType="touchUpInside" id="4Tz-3S-tp0"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="วัดรอบทำงาน" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HpZ-vH-Qmz">
+                                                                        <rect key="frame" x="60" y="18" width="420" height="24"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                                        <color key="textColor" name="primary_color"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </stackView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="l2r-x8-h8h">
+                                                                <rect key="frame" x="0.0" y="280" width="480" height="60"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Window front R" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6gv-Ql-hBn">
+                                                                        <rect key="frame" x="0.0" y="18" width="135" height="24"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                                        <color key="textColor" name="primary_color"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="fXG-0E-YFq">
+                                                                        <rect key="frame" x="155" y="10" width="200" height="40"/>
+                                                                        <subviews>
+                                                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="เกียร์" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yCZ-81-7ml" customClass="DropDown" customModule="Inspection" customModuleProvider="target">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="200" height="39"/>
+                                                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                                                <userDefinedRuntimeAttributes>
+                                                                                    <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
+                                                                                        <color key="value" name="gullgray"/>
+                                                                                    </userDefinedRuntimeAttribute>
+                                                                                    <userDefinedRuntimeAttribute type="number" keyPath="rowHeight">
+                                                                                        <real key="value" value="50"/>
+                                                                                    </userDefinedRuntimeAttribute>
+                                                                                    <userDefinedRuntimeAttribute type="color" keyPath="rowBackgroundColor">
+                                                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                    </userDefinedRuntimeAttribute>
+                                                                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedRowColor">
+                                                                                        <color key="value" name="orange"/>
+                                                                                    </userDefinedRuntimeAttribute>
+                                                                                    <userDefinedRuntimeAttribute type="number" keyPath="arrowSize">
+                                                                                        <real key="value" value="25"/>
+                                                                                    </userDefinedRuntimeAttribute>
+                                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                                        <real key="value" value="10"/>
+                                                                                    </userDefinedRuntimeAttribute>
+                                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSearchEnable" value="NO"/>
+                                                                                </userDefinedRuntimeAttributes>
+                                                                            </textField>
+                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0B9-0J-obp">
+                                                                                <rect key="frame" x="0.0" y="39" width="200" height="1"/>
+                                                                                <color key="backgroundColor" name="primary_color"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="height" constant="1" id="45j-5e-Bv2"/>
+                                                                                </constraints>
+                                                                            </view>
+                                                                        </subviews>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" constant="200" id="YaO-8T-rmt"/>
+                                                                            <constraint firstAttribute="height" constant="40" id="kr4-Oq-mYa"/>
+                                                                        </constraints>
+                                                                    </stackView>
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9da-Ex-0N0">
+                                                                        <rect key="frame" x="375" y="0.0" width="105" height="60"/>
+                                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    </view>
+                                                                </subviews>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="60" id="vSD-D6-OFr"/>
+                                                                </constraints>
+                                                            </stackView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="kp4-Jt-9EH">
+                                                                <rect key="frame" x="0.0" y="350" width="480" height="60"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Window back R" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hg0-AK-F8j">
+                                                                        <rect key="frame" x="0.0" y="18" width="136" height="24"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                                        <color key="textColor" name="primary_color"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="jrb-RH-ChF">
+                                                                        <rect key="frame" x="156" y="10" width="200" height="40"/>
+                                                                        <subviews>
+                                                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="เกียร์" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="47j-yh-4Fl" customClass="DropDown" customModule="Inspection" customModuleProvider="target">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="200" height="39"/>
+                                                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                                                <userDefinedRuntimeAttributes>
+                                                                                    <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
+                                                                                        <color key="value" name="gullgray"/>
+                                                                                    </userDefinedRuntimeAttribute>
+                                                                                    <userDefinedRuntimeAttribute type="number" keyPath="rowHeight">
+                                                                                        <real key="value" value="50"/>
+                                                                                    </userDefinedRuntimeAttribute>
+                                                                                    <userDefinedRuntimeAttribute type="color" keyPath="rowBackgroundColor">
+                                                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                    </userDefinedRuntimeAttribute>
+                                                                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedRowColor">
+                                                                                        <color key="value" name="orange"/>
+                                                                                    </userDefinedRuntimeAttribute>
+                                                                                    <userDefinedRuntimeAttribute type="number" keyPath="arrowSize">
+                                                                                        <real key="value" value="25"/>
+                                                                                    </userDefinedRuntimeAttribute>
+                                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                                        <real key="value" value="10"/>
+                                                                                    </userDefinedRuntimeAttribute>
+                                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSearchEnable" value="NO"/>
+                                                                                </userDefinedRuntimeAttributes>
+                                                                            </textField>
+                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="59n-y3-iWw">
+                                                                                <rect key="frame" x="0.0" y="39" width="200" height="1"/>
+                                                                                <color key="backgroundColor" name="primary_color"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="height" constant="1" id="nAP-Rg-7Q5"/>
+                                                                                </constraints>
+                                                                            </view>
+                                                                        </subviews>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" constant="200" id="53Z-iX-XDP"/>
+                                                                            <constraint firstAttribute="height" constant="40" id="nlT-rE-fKB"/>
+                                                                        </constraints>
+                                                                    </stackView>
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OMz-Gf-xNl">
+                                                                        <rect key="frame" x="376" y="0.0" width="104" height="60"/>
+                                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    </view>
+                                                                </subviews>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="60" id="vYt-4H-D5A"/>
+                                                                </constraints>
+                                                            </stackView>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="GY9-1E-YMH">
+                                                        <rect key="frame" x="500" y="0.0" width="480" height="410"/>
+                                                        <subviews>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="j04-1d-reb">
+                                                                <rect key="frame" x="0.0" y="0.0" width="480" height="60"/>
+                                                                <subviews>
+                                                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hrV-ib-kSY" customClass="CheckBoxUIButton" customModule="Inspection" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="10" width="40" height="40"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" secondItem="hrV-ib-kSY" secondAttribute="height" multiplier="1:1" id="59o-cV-If9"/>
+                                                                            <constraint firstAttribute="height" constant="40" id="MhH-UJ-Fat"/>
+                                                                        </constraints>
+                                                                        <state key="normal" backgroundImage="icon-check-outline"/>
+                                                                        <connections>
+                                                                            <action selector="turnLightTapped:" destination="hKQ-7N-aqp" eventType="touchUpInside" id="oph-Xd-aAO"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="ไฟเลี้ยวทำงาน" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2b7-WU-0Yq">
+                                                                        <rect key="frame" x="60" y="18" width="420" height="24"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                                        <color key="textColor" name="primary_color"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="60" id="8ic-ef-h9w"/>
+                                                                </constraints>
+                                                            </stackView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="E6F-QB-hT5">
+                                                                <rect key="frame" x="0.0" y="70" width="480" height="60"/>
+                                                                <subviews>
+                                                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tct-Qd-btP" customClass="CheckBoxUIButton" customModule="Inspection" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="10" width="40" height="40"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" secondItem="tct-Qd-btP" secondAttribute="height" multiplier="1:1" id="9fV-Cj-lSD"/>
+                                                                            <constraint firstAttribute="height" constant="40" id="aEu-xo-vmc"/>
+                                                                        </constraints>
+                                                                        <state key="normal" backgroundImage="icon-check-outline"/>
+                                                                        <connections>
+                                                                            <action selector="brakeLightTapped:" destination="hKQ-7N-aqp" eventType="touchUpInside" id="yWP-HE-4uE"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="ไฟเบรคทำงาน" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yoc-SK-WIb">
+                                                                        <rect key="frame" x="60" y="18" width="420" height="24"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                                        <color key="textColor" name="primary_color"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </stackView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="KGU-RR-ecS">
+                                                                <rect key="frame" x="0.0" y="140" width="480" height="60"/>
+                                                                <subviews>
+                                                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N7v-LN-zS3" customClass="CheckBoxUIButton" customModule="Inspection" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="10" width="40" height="40"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="40" id="4BB-sb-lrw"/>
+                                                                            <constraint firstAttribute="width" secondItem="N7v-LN-zS3" secondAttribute="height" multiplier="1:1" id="caQ-hM-n5m"/>
+                                                                        </constraints>
+                                                                        <state key="normal" backgroundImage="icon-check-outline"/>
+                                                                        <connections>
+                                                                            <action selector="hooterTapped:" destination="hKQ-7N-aqp" eventType="touchUpInside" id="uXr-WI-rI5"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="แตรทำงาน" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sxX-qr-Ml3">
+                                                                        <rect key="frame" x="60" y="18" width="420" height="24"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                                        <color key="textColor" name="primary_color"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                            </stackView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Euf-9x-yob">
+                                                                <rect key="frame" x="0.0" y="210" width="480" height="60"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Window front L" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I06-uG-kEt">
+                                                                        <rect key="frame" x="0.0" y="18" width="133" height="24"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                                        <color key="textColor" name="primary_color"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="hG0-ZJ-7nj">
+                                                                        <rect key="frame" x="153" y="10" width="200" height="40"/>
+                                                                        <subviews>
+                                                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="เกียร์" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NEi-47-ryA" customClass="DropDown" customModule="Inspection" customModuleProvider="target">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="200" height="39"/>
+                                                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                                                <userDefinedRuntimeAttributes>
+                                                                                    <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
+                                                                                        <color key="value" name="gullgray"/>
+                                                                                    </userDefinedRuntimeAttribute>
+                                                                                    <userDefinedRuntimeAttribute type="number" keyPath="rowHeight">
+                                                                                        <real key="value" value="50"/>
+                                                                                    </userDefinedRuntimeAttribute>
+                                                                                    <userDefinedRuntimeAttribute type="color" keyPath="rowBackgroundColor">
+                                                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                    </userDefinedRuntimeAttribute>
+                                                                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedRowColor">
+                                                                                        <color key="value" name="orange"/>
+                                                                                    </userDefinedRuntimeAttribute>
+                                                                                    <userDefinedRuntimeAttribute type="number" keyPath="arrowSize">
+                                                                                        <real key="value" value="25"/>
+                                                                                    </userDefinedRuntimeAttribute>
+                                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                                        <real key="value" value="10"/>
+                                                                                    </userDefinedRuntimeAttribute>
+                                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSearchEnable" value="NO"/>
+                                                                                </userDefinedRuntimeAttributes>
+                                                                            </textField>
+                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="98Q-Gp-vNH">
+                                                                                <rect key="frame" x="0.0" y="39" width="200" height="1"/>
+                                                                                <color key="backgroundColor" name="primary_color"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="height" constant="1" id="CLT-4j-hbX"/>
+                                                                                </constraints>
+                                                                            </view>
+                                                                        </subviews>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="40" id="Uhe-Pa-jJL"/>
+                                                                            <constraint firstAttribute="width" constant="200" id="jpg-Os-cMh"/>
+                                                                        </constraints>
+                                                                    </stackView>
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GVm-Ak-znT">
+                                                                        <rect key="frame" x="373" y="0.0" width="107" height="60"/>
+                                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    </view>
+                                                                </subviews>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="60" id="duS-oJ-Icy"/>
+                                                                </constraints>
+                                                            </stackView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Hfl-Dm-P2a">
+                                                                <rect key="frame" x="0.0" y="280" width="480" height="60"/>
+                                                                <subviews>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Window back L" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t4O-w8-2sB" userLabel="Window back L">
+                                                                        <rect key="frame" x="0.0" y="18" width="134" height="24"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                                        <color key="textColor" name="primary_color"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="1ik-hQ-neD">
+                                                                        <rect key="frame" x="154" y="10" width="200" height="40"/>
+                                                                        <subviews>
+                                                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="เกียร์" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AyM-0B-rwo" customClass="DropDown" customModule="Inspection" customModuleProvider="target">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="200" height="39"/>
+                                                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                                                <userDefinedRuntimeAttributes>
+                                                                                    <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
+                                                                                        <color key="value" name="gullgray"/>
+                                                                                    </userDefinedRuntimeAttribute>
+                                                                                    <userDefinedRuntimeAttribute type="number" keyPath="rowHeight">
+                                                                                        <real key="value" value="50"/>
+                                                                                    </userDefinedRuntimeAttribute>
+                                                                                    <userDefinedRuntimeAttribute type="color" keyPath="rowBackgroundColor">
+                                                                                        <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                    </userDefinedRuntimeAttribute>
+                                                                                    <userDefinedRuntimeAttribute type="color" keyPath="selectedRowColor">
+                                                                                        <color key="value" name="orange"/>
+                                                                                    </userDefinedRuntimeAttribute>
+                                                                                    <userDefinedRuntimeAttribute type="number" keyPath="arrowSize">
+                                                                                        <real key="value" value="25"/>
+                                                                                    </userDefinedRuntimeAttribute>
+                                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                                        <real key="value" value="10"/>
+                                                                                    </userDefinedRuntimeAttribute>
+                                                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSearchEnable" value="NO"/>
+                                                                                </userDefinedRuntimeAttributes>
+                                                                            </textField>
+                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JP3-Gf-tAb">
+                                                                                <rect key="frame" x="0.0" y="39" width="200" height="1"/>
+                                                                                <color key="backgroundColor" name="primary_color"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="height" constant="1" id="RmW-20-yBP"/>
+                                                                                </constraints>
+                                                                            </view>
+                                                                        </subviews>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" constant="200" id="JSt-GG-VjI"/>
+                                                                            <constraint firstAttribute="height" constant="40" id="vIR-l3-pQN"/>
+                                                                        </constraints>
+                                                                    </stackView>
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="guk-hi-pOy">
+                                                                        <rect key="frame" x="374" y="5" width="106" height="50"/>
+                                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    </view>
+                                                                </subviews>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="60" id="Grk-XP-tzr"/>
+                                                                </constraints>
+                                                            </stackView>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2BS-Sv-bOy">
+                                                                <rect key="frame" x="0.0" y="350" width="480" height="60"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            </view>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Qcp-DI-o4c">
+                                                <rect key="frame" x="0.0" y="420" width="980" height="60"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="m2r-Z0-NXQ">
+                                                        <rect key="frame" x="0.0" y="0.0" width="210.5" height="60"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EuB-zq-XQ7" customClass="CheckBoxUIButton" customModule="Inspection" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="10" width="40" height="40"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="40" id="WMb-uK-NsI"/>
+                                                                    <constraint firstAttribute="width" secondItem="EuB-zq-XQ7" secondAttribute="height" multiplier="1:1" id="u9D-dF-zWi"/>
+                                                                </constraints>
+                                                                <state key="normal" backgroundImage="icon-check-outline"/>
+                                                                <connections>
+                                                                    <action selector="navigatorTapped:" destination="hKQ-7N-aqp" eventType="touchUpInside" id="Egb-LJ-lrg"/>
+                                                                </connections>
+                                                            </button>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="เนวิเกเตอร์" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UVh-01-hXP">
+                                                                <rect key="frame" x="60" y="18" width="150.5" height="24"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                                <color key="textColor" name="primary_color"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="3dY-Pq-Tnc">
+                                                        <rect key="frame" x="220.5" y="0.0" width="274" height="60"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s3I-mW-vTr" customClass="CheckBoxUIButton" customModule="Inspection" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="10" width="40" height="40"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" secondItem="s3I-mW-vTr" secondAttribute="height" multiplier="1:1" id="Kgu-QU-rfB"/>
+                                                                    <constraint firstAttribute="height" constant="40" id="qUQ-sH-QVW"/>
+                                                                </constraints>
+                                                                <state key="normal" backgroundImage="icon-check-outline"/>
+                                                                <connections>
+                                                                    <action selector="navigatorOnCarTapped:" destination="hKQ-7N-aqp" eventType="touchUpInside" id="Ogu-yy-xgC"/>
+                                                                </connections>
+                                                            </button>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="เนวิเกเตอร์ในตัว" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uld-fp-fCu">
+                                                                <rect key="frame" x="60" y="18" width="214" height="24"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                                <color key="textColor" name="primary_color"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="1zg-3E-H9f">
+                                                        <rect key="frame" x="504.5" y="0.0" width="184" height="60"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U4j-kc-PDX" customClass="CheckBoxUIButton" customModule="Inspection" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="10" width="92" height="40"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="40" id="8y8-B5-20a"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                                <state key="normal" title="CD">
+                                                                    <color key="titleColor" name="primary_color"/>
+                                                                </state>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                        <real key="value" value="1"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="cdTapped:" destination="hKQ-7N-aqp" eventType="touchUpInside" id="FfH-D1-vk5"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eis-e2-K6S" customClass="CheckBoxUIButton" customModule="Inspection" customModuleProvider="target">
+                                                                <rect key="frame" x="92" y="10" width="92" height="40"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="40" id="dKG-PZ-X1q"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                                <state key="normal" title="SD CARD">
+                                                                    <color key="titleColor" name="primary_color"/>
+                                                                </state>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                        <real key="value" value="1"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="sdCardTapped:" destination="hKQ-7N-aqp" eventType="touchUpInside" id="ZWR-tE-CVo"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="qXq-l0-SLR">
+                                                        <rect key="frame" x="698.5" y="0.0" width="281.5" height="60"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="91v-oC-Qv8" customClass="CheckBoxUIButton" customModule="Inspection" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="10" width="140.5" height="40"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="40" id="qnl-T7-JgN"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                                <state key="normal" title="ไม่มี CD">
+                                                                    <color key="titleColor" name="primary_color"/>
+                                                                </state>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                        <real key="value" value="1"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="noCDTapped:" destination="hKQ-7N-aqp" eventType="touchUpInside" id="ufx-Sa-0S5"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sWa-EH-RSd" customClass="CheckBoxUIButton" customModule="Inspection" customModuleProvider="target">
+                                                                <rect key="frame" x="140.5" y="10" width="141" height="40"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="40" id="Knd-9e-i4Q"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                                <state key="normal" title="ไม่มี SD CARD">
+                                                                    <color key="titleColor" name="primary_color"/>
+                                                                </state>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                        <real key="value" value="1"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="noSdCardTapped:" destination="hKQ-7N-aqp" eventType="touchUpInside" id="tbY-lN-EUV"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="60" id="r1J-4w-iDg"/>
+                                                </constraints>
+                                            </stackView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f2M-2x-vLn">
+                                                <rect key="frame" x="0.0" y="490" width="980" height="1"/>
+                                                <color key="backgroundColor" name="gallery"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="1" id="eDl-cq-Gla"/>
+                                                </constraints>
+                                            </view>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Acs-l0-hvM">
+                                                <rect key="frame" x="0.0" y="501" width="980" height="80"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="หมายเหตุอื่น ๆ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rQv-PN-Gio">
+                                                        <rect key="frame" x="0.0" y="0.0" width="980" height="24"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                        <color key="textColor" name="primary_color"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="หมายเหตุอื่น ๆ" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bB2-LI-pez" customClass="CustomTextField" customModule="Inspection" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="24" width="980" height="55"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
+                                                                <color key="value" name="gullgray"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </textField>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t1q-KZ-S1b">
+                                                        <rect key="frame" x="0.0" y="79" width="980" height="1"/>
+                                                        <color key="backgroundColor" name="primary_color"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="1" id="oXh-IK-9xM"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="80" id="0mH-SM-T96"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="2Q8-Wp-iUv">
+                                                <rect key="frame" x="0.0" y="591" width="980" height="200"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="สรุปอุปกรณ์ไฟฟ้า" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I3P-RE-oE5">
+                                                        <rect key="frame" x="0.0" y="0.0" width="980" height="24"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                        <color key="textColor" name="primary_color"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xvl-4S-Vyw" customClass="CustomUIView" customModule="Inspection" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="34" width="980" height="166"/>
+                                                        <subviews>
+                                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="nXC-8L-TKK" customClass="MultilineTextField" customModule="Inspection" customModuleProvider="target">
+                                                                <rect key="frame" x="10" y="0.0" width="960" height="166"/>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                <color key="textColor" systemColor="labelColor"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="สรุปอุปกรณ์ไฟฟ้า"/>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </textView>
+                                                        </subviews>
+                                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="bottom" secondItem="nXC-8L-TKK" secondAttribute="bottom" id="M6h-W5-bfS"/>
+                                                            <constraint firstItem="nXC-8L-TKK" firstAttribute="top" secondItem="xvl-4S-Vyw" secondAttribute="top" id="as0-93-521"/>
+                                                            <constraint firstAttribute="trailing" secondItem="nXC-8L-TKK" secondAttribute="trailing" constant="10" id="dpP-eP-bpv"/>
+                                                            <constraint firstItem="nXC-8L-TKK" firstAttribute="leading" secondItem="xvl-4S-Vyw" secondAttribute="leading" constant="10" id="oTw-gI-kAK"/>
+                                                        </constraints>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                                <real key="value" value="1"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="10"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                                <color key="value" name="primary_color"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </view>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="200" id="oAN-AV-NgU"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="aPy-dR-bHl" secondAttribute="bottom" constant="300" id="ddA-2i-eNK"/>
+                                    <constraint firstAttribute="trailing" secondItem="aPy-dR-bHl" secondAttribute="trailing" constant="50" id="fRx-sa-qik"/>
+                                    <constraint firstItem="aPy-dR-bHl" firstAttribute="leading" secondItem="7UF-wP-OOc" secondAttribute="leading" constant="50" id="ljK-lu-zsy"/>
+                                    <constraint firstItem="aPy-dR-bHl" firstAttribute="top" secondItem="7UF-wP-OOc" secondAttribute="top" constant="50" id="rCn-lf-f3W"/>
+                                    <constraint firstItem="aPy-dR-bHl" firstAttribute="centerX" secondItem="7UF-wP-OOc" secondAttribute="centerX" id="wku-7f-uDZ"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="LoV-i4-rRS"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="7UF-wP-OOc" firstAttribute="leading" secondItem="LoV-i4-rRS" secondAttribute="leading" id="1Ko-P0-Ckb"/>
+                            <constraint firstItem="7UF-wP-OOc" firstAttribute="top" secondItem="LoV-i4-rRS" secondAttribute="top" id="SHO-ac-coa"/>
+                            <constraint firstItem="7UF-wP-OOc" firstAttribute="bottom" secondItem="LoV-i4-rRS" secondAttribute="bottom" id="VOx-U5-odb"/>
+                            <constraint firstItem="7UF-wP-OOc" firstAttribute="trailing" secondItem="LoV-i4-rRS" secondAttribute="trailing" id="ZEw-aI-EwV"/>
+                        </constraints>
+                    </view>
+                    <size key="freeformSize" width="1080" height="870"/>
+                    <connections>
+                        <outlet property="backLightCheckBox" destination="Fat-Sr-Vel" id="r8r-d0-QNE"/>
+                        <outlet property="batteryLabel" destination="KmR-be-DpQ" id="5jR-eU-BGB"/>
+                        <outlet property="betteryCheckBox" destination="Elf-Iw-5YO" id="lME-ai-c9J"/>
+                        <outlet property="brakeLabel" destination="yoc-SK-WIb" id="j6a-33-qFR"/>
+                        <outlet property="brakeLightCheckBox" destination="tct-Qd-btP" id="fMp-pk-KOj"/>
+                        <outlet property="cdCheckBox" destination="U4j-kc-PDX" id="6W5-gP-To1"/>
+                        <outlet property="dashboardLabel" destination="HpZ-vH-Qmz" id="kj1-x7-Dv6"/>
+                        <outlet property="frontLightCheckBox" destination="Mhl-5c-S3J" id="3ej-Hg-hfZ"/>
+                        <outlet property="headLightLabel" destination="6Tr-cf-z4q" id="cLL-lv-N4U"/>
+                        <outlet property="hooterCheckBox" destination="N7v-LN-zS3" id="QpY-ko-Pwd"/>
+                        <outlet property="hornLabel" destination="sxX-qr-Ml3" id="9k9-5s-CA0"/>
+                        <outlet property="navigatorCheckBox" destination="EuB-zq-XQ7" id="0Eg-sX-12E"/>
+                        <outlet property="navigatorInLabel" destination="Uld-fp-fCu" id="J3m-vQ-Wsu"/>
+                        <outlet property="navigatorLabel" destination="UVh-01-hXP" id="z2r-eq-qLd"/>
+                        <outlet property="navigatorOnCarCheckBox" destination="s3I-mW-vTr" id="wKa-Nd-CXR"/>
+                        <outlet property="noCdCheckBox" destination="91v-oC-Qv8" id="sRU-MO-a1x"/>
+                        <outlet property="noSdCardCheckBox" destination="sWa-EH-RSd" id="GM4-1u-tBX"/>
+                        <outlet property="noteTextField" destination="bB2-LI-pez" id="Tqv-sR-Lfy"/>
+                        <outlet property="otherRemarksLabel" destination="rQv-PN-Gio" id="fgP-sZ-KMg"/>
+                        <outlet property="roundGaugeCheckBox" destination="BdS-xz-aQm" id="m7x-2B-q0p"/>
+                        <outlet property="scrollView" destination="7UF-wP-OOc" id="7jS-Qb-aUo"/>
+                        <outlet property="sdCardCheckBox" destination="eis-e2-K6S" id="J02-HQ-PaM"/>
+                        <outlet property="sideMirror1Label" destination="I06-uG-kEt" id="714-MH-AyE"/>
+                        <outlet property="sideMirror2Label" destination="6gv-Ql-hBn" id="BzE-6B-gRc"/>
+                        <outlet property="sideMirror3Label" destination="t4O-w8-2sB" id="1Pn-CF-W7Q"/>
+                        <outlet property="sideMirror4Label" destination="hg0-AK-F8j" id="q8H-GU-dh1"/>
+                        <outlet property="summaryElectronicDeviceTextField" destination="nXC-8L-TKK" id="roP-Mz-ZcT"/>
+                        <outlet property="summaryLabel" destination="I3P-RE-oE5" id="bJ5-vr-ccz"/>
+                        <outlet property="tailLightLabel" destination="hpG-KA-3OJ" id="59H-iF-fct"/>
+                        <outlet property="turnLightCheckBox" destination="hrV-ib-kSY" id="KRn-J8-Fqg"/>
+                        <outlet property="turnLightLabel" destination="2b7-WU-0Yq" id="bJu-gq-MIK"/>
+                        <outlet property="window1DropDown" destination="NEi-47-ryA" id="yG2-3G-G3l"/>
+                        <outlet property="window2DropDown" destination="yCZ-81-7ml" id="8TR-dc-mOT"/>
+                        <outlet property="window3DropDown" destination="AyM-0B-rwo" id="Lsh-Q7-Rf1"/>
+                        <outlet property="window4DropDown" destination="47j-yh-4Fl" id="4d2-jM-60Q"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jUA-rW-Sz5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1266" y="2348"/>
+        </scene>
     </scenes>
     <designables>
         <designable name="0e9-qG-p0F">
@@ -4435,11 +5155,23 @@
         <designable name="1lm-8o-aw4">
             <size key="intrinsicContentSize" width="35.5" height="25.5"/>
         </designable>
+        <designable name="1pM-Bc-VUS">
+            <size key="intrinsicContentSize" width="418" height="46"/>
+        </designable>
         <designable name="1pZ-NP-P4y">
             <size key="intrinsicContentSize" width="30" height="30"/>
         </designable>
         <designable name="2f1-vQ-eXw">
             <size key="intrinsicContentSize" width="232" height="25.5"/>
+        </designable>
+        <designable name="2tH-mM-adr">
+            <size key="intrinsicContentSize" width="418" height="46"/>
+        </designable>
+        <designable name="47j-yh-4Fl">
+            <size key="intrinsicContentSize" width="40.5" height="25.5"/>
+        </designable>
+        <designable name="58D-nF-1bh">
+            <size key="intrinsicContentSize" width="418" height="46"/>
         </designable>
         <designable name="6YY-R4-WlI">
             <size key="intrinsicContentSize" width="30" height="30"/>
@@ -4453,6 +5185,9 @@
         <designable name="8vP-6W-gX5">
             <size key="intrinsicContentSize" width="30" height="30"/>
         </designable>
+        <designable name="91v-oC-Qv8">
+            <size key="intrinsicContentSize" width="51" height="30"/>
+        </designable>
         <designable name="9Bk-Y7-GPM">
             <size key="intrinsicContentSize" width="69.5" height="25.5"/>
         </designable>
@@ -4462,10 +5197,31 @@
         <designable name="AZ7-0k-UEO">
             <size key="intrinsicContentSize" width="56" height="25.5"/>
         </designable>
+        <designable name="AyM-0B-rwo">
+            <size key="intrinsicContentSize" width="40.5" height="25.5"/>
+        </designable>
+        <designable name="BdS-xz-aQm">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="Bhe-Lc-aVD">
+            <size key="intrinsicContentSize" width="418" height="46"/>
+        </designable>
+        <designable name="Dyn-Y5-ns6">
+            <size key="intrinsicContentSize" width="418" height="46"/>
+        </designable>
         <designable name="EHu-qd-xPm">
             <size key="intrinsicContentSize" width="30" height="30"/>
         </designable>
+        <designable name="Elf-Iw-5YO">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="EuB-zq-XQ7">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
         <designable name="FFV-mf-cTk">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="Fat-Sr-Vel">
             <size key="intrinsicContentSize" width="30" height="30"/>
         </designable>
         <designable name="GaB-xi-phP">
@@ -4486,11 +5242,20 @@
         <designable name="Ll2-VV-T2e">
             <size key="intrinsicContentSize" width="30" height="30"/>
         </designable>
+        <designable name="Mhl-5c-S3J">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
         <designable name="MiV-cm-dRS">
             <size key="intrinsicContentSize" width="35.5" height="25.5"/>
         </designable>
         <designable name="N3q-8F-Jsy">
             <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="N7v-LN-zS3">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="NEi-47-ryA">
+            <size key="intrinsicContentSize" width="40.5" height="25.5"/>
         </designable>
         <designable name="Nxn-iz-0Zh">
             <size key="intrinsicContentSize" width="30" height="30"/>
@@ -4504,14 +5269,26 @@
         <designable name="RFn-RE-7fE">
             <size key="intrinsicContentSize" width="30" height="30"/>
         </designable>
+        <designable name="S44-a1-ieJ">
+            <size key="intrinsicContentSize" width="418" height="46"/>
+        </designable>
         <designable name="TV9-vv-a7L">
             <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="U4j-kc-PDX">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="VZ1-3O-5af">
+            <size key="intrinsicContentSize" width="418" height="46"/>
         </designable>
         <designable name="Vut-Of-pKW">
             <size key="intrinsicContentSize" width="325.5" height="25.5"/>
         </designable>
         <designable name="XQA-Kf-sU1">
             <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="XaI-E0-MdZ">
+            <size key="intrinsicContentSize" width="418" height="46"/>
         </designable>
         <designable name="Y7x-A2-wwg">
             <size key="intrinsicContentSize" width="30" height="30"/>
@@ -4525,8 +5302,14 @@
         <designable name="aTK-gR-qgZ">
             <size key="intrinsicContentSize" width="95.5" height="25.5"/>
         </designable>
+        <designable name="agX-KO-VzK">
+            <size key="intrinsicContentSize" width="398.5" height="57"/>
+        </designable>
         <designable name="axX-GR-aQ7">
             <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="bB2-LI-pez">
+            <size key="intrinsicContentSize" width="120" height="25.5"/>
         </designable>
         <designable name="dax-Ka-kp1">
             <size key="intrinsicContentSize" width="30" height="30"/>
@@ -4537,11 +5320,17 @@
         <designable name="drV-dH-h7w">
             <size key="intrinsicContentSize" width="65" height="30"/>
         </designable>
+        <designable name="drX-uc-alg">
+            <size key="intrinsicContentSize" width="418" height="46"/>
+        </designable>
         <designable name="dtD-Bw-jzc">
             <size key="intrinsicContentSize" width="30" height="30"/>
         </designable>
         <designable name="e8d-z5-lp0">
             <size key="intrinsicContentSize" width="294" height="25.5"/>
+        </designable>
+        <designable name="eis-e2-K6S">
+            <size key="intrinsicContentSize" width="65" height="30"/>
         </designable>
         <designable name="euA-4W-Iwl">
             <size key="intrinsicContentSize" width="30" height="30"/>
@@ -4560,6 +5349,15 @@
         </designable>
         <designable name="hJr-JB-XlU">
             <size key="intrinsicContentSize" width="310.5" height="25.5"/>
+        </designable>
+        <designable name="hZW-Nm-Bky">
+            <size key="intrinsicContentSize" width="418" height="46"/>
+        </designable>
+        <designable name="hrV-ib-kSY">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="ib1-S6-RNv">
+            <size key="intrinsicContentSize" width="418" height="46"/>
         </designable>
         <designable name="ieJ-fa-Adm">
             <size key="intrinsicContentSize" width="56" height="25.5"/>
@@ -4588,10 +5386,25 @@
         <designable name="nuz-38-oct">
             <size key="intrinsicContentSize" width="30" height="30"/>
         </designable>
+        <designable name="q3Q-YG-OvX">
+            <size key="intrinsicContentSize" width="418" height="46"/>
+        </designable>
         <designable name="r48-3x-VBG">
             <size key="intrinsicContentSize" width="81.5" height="25.5"/>
         </designable>
+        <designable name="s0e-RP-5lc">
+            <size key="intrinsicContentSize" width="418" height="46"/>
+        </designable>
+        <designable name="s3I-mW-vTr">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
         <designable name="s8Z-fI-GNF">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="sWa-EH-RSd">
+            <size key="intrinsicContentSize" width="95" height="30"/>
+        </designable>
+        <designable name="tct-Qd-btP">
             <size key="intrinsicContentSize" width="30" height="30"/>
         </designable>
         <designable name="teV-JF-sME">
@@ -4603,11 +5416,17 @@
         <designable name="tpm-kJ-9ud">
             <size key="intrinsicContentSize" width="38.5" height="25.5"/>
         </designable>
+        <designable name="txA-et-PYF">
+            <size key="intrinsicContentSize" width="418" height="46"/>
+        </designable>
         <designable name="uKM-hh-H2v">
             <size key="intrinsicContentSize" width="95" height="30"/>
         </designable>
         <designable name="uRS-7c-ndx">
             <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="uTd-ng-56w">
+            <size key="intrinsicContentSize" width="418" height="46"/>
         </designable>
         <designable name="uv8-O0-Asf">
             <size key="intrinsicContentSize" width="30" height="30"/>
@@ -4620,6 +5439,9 @@
         </designable>
         <designable name="xT1-Op-MMj">
             <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="yCZ-81-7ml">
+            <size key="intrinsicContentSize" width="40.5" height="25.5"/>
         </designable>
     </designables>
     <resources>

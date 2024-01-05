@@ -15,6 +15,9 @@ import UIKit
 protocol ElectronicDeviceCheckDisplayLogic: AnyObject
 {
     func displaySomething(viewModel: ElectronicDeviceCheck.Something.ViewModel)
+    // add on 12/22/2023
+    func displayWindowOption(viewModel: ElectronicDeviceCheck.Something.ViewModel)
+    func displayWindowOptionError(viewModel: ElectronicDeviceCheck.Something.ViewModel)
 }
 
 class ElectronicDeviceCheckViewController: ViewController, ElectronicDeviceCheckDisplayLogic
@@ -119,6 +122,27 @@ class ElectronicDeviceCheckViewController: ViewController, ElectronicDeviceCheck
     @IBOutlet weak var sideMirror2CheckBox: CheckBoxUIButton!
     @IBOutlet weak var sideMirror3CheckBox: CheckBoxUIButton!
     @IBOutlet weak var sideMirror4CheckBox: CheckBoxUIButton!
+    @IBOutlet weak var window1DropDown: DropDown!
+    @IBOutlet weak var window2DropDown: DropDown!
+    @IBOutlet weak var window3DropDown: DropDown!
+    @IBOutlet weak var window4DropDown: DropDown!
+    
+    var isGetWindowOption = false
+    var windowOptionsFront: [String]?
+    var windowOptionsBack: [String]?
+
+    var localWindowticOptionsFront: [String] = [
+        String.localized("motorbike_inspection_engine_working_label"),
+        String.localized("motorbike_inspection_engine_not_working_label"),
+        String.localized("motorbike_inspection_engine_unverified_label"),
+    ]
+    
+    var localWindowticOptionsBack: [String] = [
+        String.localized("motorbike_inspection_engine_working_label"),
+        String.localized("motorbike_inspection_engine_not_working_label"),
+        String.localized("motorbike_inspection_engine_unverified_label"),
+        String.localized("motorbike_inspection_engine_non_exist_label"),
+    ]
 
     override func initLocalString() {
         super.initLocalString()
@@ -143,7 +167,92 @@ class ElectronicDeviceCheckViewController: ViewController, ElectronicDeviceCheck
         sideMirror2Label.text = String.localized("inspection_electrical_side_mirror2_label")
         sideMirror3Label.text = String.localized("inspection_electrical_side_mirror3_label")
         sideMirror4Label.text = String.localized("inspection_electrical_side_mirror4_label")
-
+        window1DropDown.placeholder = sideMirror1Label.text
+        window2DropDown.placeholder = sideMirror2Label.text
+        window3DropDown.placeholder = sideMirror3Label.text
+        window4DropDown.placeholder = sideMirror4Label.text
+        
+    }
+    
+    private func setupWindowData(arrayFront: [String] , arrayBack: [String]) {
+        
+        window1DropDown.optionArray = arrayFront
+        if let sideMirror1 = DataController.shared.inspectionCarModel.sideMirror1, sideMirror1 > 0 {
+            window1DropDown.selectedIndex = sideMirror1 - 1
+            window1DropDown.text = window1DropDown.optionArray[sideMirror1 - 1]
+        }
+        
+        window1DropDown.didSelect { [weak self] (selected, index, _) in
+            self?.window1DropDown.text = selected
+            DataController.shared.inspectionCarModel.sideMirror1 = index + 1
+        }
+        
+        window2DropDown.optionArray = arrayFront
+        if let sideMirror2 = DataController.shared.inspectionCarModel.sideMirror2, sideMirror2 > 0 {
+            window2DropDown.selectedIndex = sideMirror2 - 1
+            window2DropDown.text = window2DropDown.optionArray[sideMirror2 - 1]
+        }
+        window2DropDown.didSelect { [weak self] (selected, index, _) in
+            self?.window2DropDown.text = selected
+            DataController.shared.inspectionCarModel.sideMirror2 = index + 1
+        }
+        
+        window3DropDown.optionArray = arrayBack
+        if let sideMirror3 = DataController.shared.inspectionCarModel.sideMirror3, sideMirror3 > 0 {
+            window3DropDown.selectedIndex = sideMirror3 - 1
+            window3DropDown.text = window3DropDown.optionArray[sideMirror3 - 1]
+        }
+        window3DropDown.didSelect { [weak self] (selected, index, _) in
+            self?.window3DropDown.text = selected
+            DataController.shared.inspectionCarModel.sideMirror3 = index + 1
+        }
+        
+        window4DropDown.optionArray = arrayBack
+        if let sideMirror4 = DataController.shared.inspectionCarModel.sideMirror4, sideMirror4 > 0 {
+            window4DropDown.selectedIndex = sideMirror4 - 1
+            window4DropDown.text = window4DropDown.optionArray[sideMirror4 - 1]
+        }
+        window4DropDown.didSelect { [weak self] (selected, index, _) in
+            self?.window4DropDown.text = selected
+            DataController.shared.inspectionCarModel.sideMirror4 = index + 1
+        }
+        
+    }
+    
+    func loadRetryApi() {
+         if !isGetWindowOption {
+             getWindowOptions()
+        }
+    }
+    
+    //MARK: windowOption
+    func getWindowOptions(){
+        let request = ElectronicDeviceCheck.Something.Request()
+        interactor?.getWindowOptions(request: request)
+    }
+    func displayWindowOptionError(viewModel: ElectronicDeviceCheck.Something.ViewModel) {
+        guard let errorMessage = viewModel.errorMessage else { return }
+        alertErrorMessage(message: errorMessage) { [weak self] in
+            self?.loadRetryApi()
+        }
+    }
+    func displayWindowOption(viewModel: ElectronicDeviceCheck.Something.ViewModel) {
+        
+        guard var values = viewModel.windowOptions , values.count > 0 else { return }
+        windowOptionsBack = values
+        
+        var arrayFront: [String] = []
+        for i in 0..<values.count {
+            if i == values.count - 1 {
+                continue
+            }
+            let value = values[i]
+            arrayFront.append(value)
+        }
+        windowOptionsFront = arrayFront
+        isGetWindowOption = true
+        
+        setupWindowData(arrayFront: arrayFront, arrayBack: values)
     }
     
     func doSomething()
@@ -166,6 +275,8 @@ class ElectronicDeviceCheckViewController: ViewController, ElectronicDeviceCheck
         noteTextField.delegate = self
         
         addTarget(from: noteTextField)
+        
+//        setupWindowData(arrayFront: localWindowticOptionsFront, arrayBack: localWindowticOptionsBack)
     }
     
     fileprivate func addTarget(from textfield: UITextField ){
@@ -447,10 +558,10 @@ class ElectronicDeviceCheckViewController: ViewController, ElectronicDeviceCheck
         summaryElectronicDeviceTextField.text = model.summaryElectronicDevice
         noteTextField.text = model.note
         
-        sideMirror1CheckBox.check = model.isSideMirror1
-        sideMirror2CheckBox.check = model.isSideMirror2
-        sideMirror3CheckBox.check = model.isSideMirror3
-        sideMirror4CheckBox.check = model.isSideMirror4
+//        sideMirror1CheckBox.check = model.isSideMirror1
+//        sideMirror2CheckBox.check = model.isSideMirror2
+//        sideMirror3CheckBox.check = model.isSideMirror3
+//        sideMirror4CheckBox.check = model.isSideMirror4
 
     }
 }
@@ -491,8 +602,7 @@ extension ElectronicDeviceCheckViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         scrollView.registKeyboardNotification()
-        
-        
+        loadRetryApi()
         prepareData()
     }
     

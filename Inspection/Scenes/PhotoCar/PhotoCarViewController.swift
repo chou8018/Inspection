@@ -194,7 +194,7 @@ class PhotoCarViewController: ViewController, PhotoCarDisplayLogic
         catalyticCheckBox.titleLabel!.numberOfLines = 2
         catalyticCheckBox.titleLabel!.textAlignment = NSTextAlignment.center
         
-        catalyticMessageLabel.text = String.localized("photos_car_catalytic_comment_title")
+//        catalyticMessageLabel.text = String.localized("photos_car_catalytic_comment_title")
 
     }
     
@@ -418,11 +418,11 @@ class PhotoCarViewController: ViewController, PhotoCarDisplayLogic
         let attr = NSMutableAttributedString(string: title)
         attr.addAttribute(.foregroundColor, value: UIColor.red, range: range)
         
-        if cb == catalyticCheckBox {
-            let comment = String.localized("photos_car_catalytic_comment_title")
-            let commentRange = (title as NSString).range(of: comment)
-            attr.addAttribute(.font, value: UIFont.systemFont(ofSize: 10), range: commentRange)
-        }
+//        if cb == catalyticCheckBox {
+//            let comment = String.localized("photos_car_catalytic_comment_title")
+//            let commentRange = (title as NSString).range(of: comment)
+//            attr.addAttribute(.font, value: UIFont.systemFont(ofSize: 10), range: commentRange)
+//        }
         cb.setAttributedTitle(attr, for: .normal)
 
     }
@@ -430,9 +430,9 @@ class PhotoCarViewController: ViewController, PhotoCarDisplayLogic
     func setTitleFieldRequired(_ model:(name:String, cb: CheckBoxUIButton)){
         var name = model.name.split(separator: "*")[0]
         
-        if model.cb == catalyticCheckBox {
-            name += "\n\(String.localized("photos_car_catalytic_comment_title"))"
-        }
+//        if model.cb == catalyticCheckBox {
+//            name += "\n\(String.localized("photos_car_catalytic_comment_title"))"
+//        }
         self.setTitleCheckBox(String(name), cb: model.cb)
     }
     

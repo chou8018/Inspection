@@ -102,8 +102,11 @@ class SummaryCarPDFWorker {
         let photoSize = 2 * 72.0
         let photoRow = divide + ((mod > 0) ? 1 : 0)
         let marginPhotoBottom = Double(20 * photoRow) + Double(hightText)
-        let photoTotalHeight = (Double(photoRow) * photoSize) + marginPhotoBottom
-        let isDamagePhoto = damageLists.count > 0
+//        let photoTotalHeight = (Double(photoRow) * photoSize) + marginPhotoBottom
+//        let isDamagePhoto = damageLists.count > 0
+        let isDamagePhoto = false
+        let photoTotalHeight = 100.0
+
         // 1 create a dictionary with the PDF’s metadata using predefined keys.
         let pdfMetaData = [
                 kCGPDFContextCreator: "Inspection",
@@ -334,7 +337,7 @@ class SummaryCarPDFWorker {
             //MARK: Name inspection value
             let nameValue = model.nameInspection?.pdfValidateString ?? "-"
             let attrNameValuePDF = weakself.getTitle(mainString: nameValue, value: nameValue)
-            let insoectionRect = weakself.drawString(attrString: attrNameValuePDF,
+            _ = weakself.drawString(attrString: attrNameValuePDF,
                                             x: mapPoint["v2"]!,
                                             y: mapPoint["h7"]!,
                                             isTable: true)
@@ -711,7 +714,7 @@ class SummaryCarPDFWorker {
             let catalyticMainString = "\(String.localized("inspection_engine_catalytic_label"))  \(catalyticValue)"
             let catalyticValuePDF = weakself.getTitle(mainString: catalyticMainString,
                                                     value: catalyticValue)
-            let catalyticRect = weakself.drawString(attrString: catalyticValuePDF,
+            let _ = weakself.drawString(attrString: catalyticValuePDF,
                                             x: trailingPosition,
                                             y: underOil)
             
@@ -1189,14 +1192,65 @@ class SummaryCarPDFWorker {
                                             x: centerPosition,
                                             y: roundGaugeRect.minY)
             
-            //MARK: Note
+            let arrayWindow: [String] = [
+                String.localized("motorbike_inspection_engine_working_label"),
+                String.localized("motorbike_inspection_engine_not_working_label"),
+                String.localized("motorbike_inspection_engine_unverified_label"),
+                String.localized("motorbike_inspection_engine_non_exist_label"),
+            ]
+            
+            //MARK: window
+            var windowValue1 = "-"
+            if let sideWindow1 = model.sideMirror1 , sideWindow1 > 0 {
+                windowValue1 = arrayWindow[sideWindow1-1]
+            }
+            let windowString1 = "\(String.localized("inspection_electrical_side_mirror1_label"))  \(windowValue1)"
+            let attrWindowValuePDF1 = weakself.getTitle(mainString: windowString1,
+                                                    value: windowValue1)
+            let windowRect1 = weakself.drawString(attrString: attrWindowValuePDF1,
+                                            x: trailingPosition,
+                                                  y: navigatorRect.minY)
+            
+            var windowValue2 = "-"
+            if let sideWindow2 = model.sideMirror2 , sideWindow2 > 0 {
+                windowValue2 = arrayWindow[sideWindow2-1]
+            }
+            let windowString2 = "\(String.localized("inspection_electrical_side_mirror2_label"))  \(windowValue2)"
+            let attrWindowValuePDF2 = weakself.getTitle(mainString: windowString2,
+                                                    value: windowValue2)
+            let windowRect2 = weakself.drawString(attrString: attrWindowValuePDF2,
+                                            x: margin + 10,
+                                                  y: navigatorRect.maxY + margin)
+            
+            var windowValue3 = "-"
+            if let sideWindow3 = model.sideMirror3 , sideWindow3 > 0 {
+                windowValue3 = arrayWindow[sideWindow3-1]
+            }
+            let windowString3 = "\(String.localized("inspection_electrical_side_mirror3_label"))  \(windowValue3)"
+            let attrWindowValuePDF3 = weakself.getTitle(mainString: windowString3,
+                                                    value: windowValue3)
+            let windowRect3 = weakself.drawString(attrString: attrWindowValuePDF3,
+                                            x: centerPosition,
+                                                  y: windowRect2.minY)
+            
+            var windowValue4 = "-"
+            if let sideWindow4 = model.sideMirror4 , sideWindow4 > 0 {
+                windowValue4 = arrayWindow[sideWindow4-1]
+            }
+            let windowString4 = "\(String.localized("inspection_electrical_side_mirror4_label"))  \(windowValue4)"
+            let attrWindowValuePDF4 = weakself.getTitle(mainString: windowString4,
+                                                    value: windowValue4)
+            let windowRect4 = weakself.drawString(attrString: attrWindowValuePDF4,
+                                            x: trailingPosition,
+                                                  y: windowRect3.minY)
+            
             let noteValue = model.note?.pdfValidateString ?? "-"
             let noteString = "\(String.localized("car_inspection_pdf_other_comments_label"))  \(noteValue)"
             let attrNoteValuePDF = weakself.getTitle(mainString: noteString,
                                                     value: noteValue)
             let noteRect = weakself.drawString(attrString: attrNoteValuePDF,
                                             x: margin + 10,
-                                            y: navigatorRect.maxY + margin)
+                                            y: windowRect4.maxY + margin)
             
             //MARK: ElecSummary
 //            let elecSummaryValue = model.summaryElectronicDevice?
@@ -1209,69 +1263,76 @@ class SummaryCarPDFWorker {
                                             x: margin + 10,
                                             y: noteRect.maxY + margin)
             
+            let underElecSummary = elecSummaryValueRect.maxY + margin
+            
+            let damageDesc = String.localized("car_inspection_pdf_bottom_message_label")
+            let attrDamageDescValuePDF = weakself.getTitle(mainString: damageDesc,
+                                                           value: damageDesc)
+            let damageCenter = CGFloat(pageWidth/2) - (attrDamageDescValuePDF.size().width/2)
+            let _ = weakself.drawString(attrString: attrDamageDescValuePDF,
+                                                     x: damageCenter,
+                                                     y: underElecSummary + 30)
             
             //MARK: DamagePhoto
-            if isDamagePhoto {
-                let underElecSummary = elecSummaryValueRect.maxY + margin
-                
-                let damageDesc = String.localized("car_inspection_pdf_damaged_photos_label")
-                let attrDamageDescValuePDF = weakself.getTitle(mainString: damageDesc,
-                                                               value: damageDesc, size: 20.0)
-                let damageCenter = CGFloat(pageWidth/2) - (attrDamageDescValuePDF.size().width/2)
-                let damageDescRect = weakself.drawString(attrString: attrDamageDescValuePDF,
-                                                         x: damageCenter,
-                                                         y: underElecSummary)
-             
-                let mapPointDamage = weakself.createTableDrawLineSize(drawContext: context.cgContext,
-                                    pageWidth: CGFloat(pageWidth),
-                                    underOfText: damageDescRect.maxY + margin,
-                                    heightOffset: CGFloat(photoSize),
-                                    margin: margin,
-                                    row: photoRow)
-                
-                print(mapPointDamage)
-                
-                damageLists.enumerated().forEach { (offset, model) in
-                  
-                    let position = offset/3
-
-                    let offsetV = offset
-                    
-                    if (offsetV % 3) == 2 {
-                        if let image = model.imageData?.base64StringToImage() {
-                            image.draw(in: CGRect(x: mapPointDamage["v3"]!,
-                                                  y: mapPointDamage["h\(position)"]!,
-                                                  width: CGFloat(photoSize),
-                                                  height: CGFloat(photoSize)))
-                        }
-                        
-                    
-                    }else if (offsetV % 3) == 1 {
-                        if let image = model.imageData?.base64StringToImage() {
-                            image.draw(in: CGRect(x: mapPointDamage["v2"]!,
-                                                  y: mapPointDamage["h\(position)"]!,
-                                                  width: CGFloat(photoSize),
-                                                  height: CGFloat(photoSize)))
-                        }
-                        
-                    
-                    }else{
-                        if let image = model.imageData?.base64StringToImage() {
-                            image.draw(in: CGRect(x: mapPointDamage["v1"]!,
-                                                  y: mapPointDamage["h\(position)"]!,
-                                                  width: CGFloat(photoSize),
-                                                  height: CGFloat(photoSize)))
-                        }
-                        
-                     
-                    }
-
-
-                } // End Loop
-
-            }
-            
-            
+//            if isDamagePhoto {
+//                let underElecSummary = elecSummaryValueRect.maxY + margin
+//                
+//                let damageDesc = String.localized("car_inspection_pdf_damaged_photos_label")
+//                let attrDamageDescValuePDF = weakself.getTitle(mainString: damageDesc,
+//                                                               value: damageDesc, size: 20.0)
+//                let damageCenter = CGFloat(pageWidth/2) - (attrDamageDescValuePDF.size().width/2)
+//                let damageDescRect = weakself.drawString(attrString: attrDamageDescValuePDF,
+//                                                         x: damageCenter,
+//                                                         y: underElecSummary)
+//             
+//                let mapPointDamage = weakself.createTableDrawLineSize(drawContext: context.cgContext,
+//                                    pageWidth: CGFloat(pageWidth),
+//                                    underOfText: damageDescRect.maxY + margin,
+//                                    heightOffset: CGFloat(photoSize),
+//                                    margin: margin,
+//                                    row: photoRow)
+//                
+//                print(mapPointDamage)
+//                
+//                damageLists.enumerated().forEach { (offset, model) in
+//                  
+//                    let position = offset/3
+//
+//                    let offsetV = offset
+//                    
+//                    if (offsetV % 3) == 2 {
+//                        if let image = model.imageData?.base64StringToImage() {
+//                            image.draw(in: CGRect(x: mapPointDamage["v3"]!,
+//                                                  y: mapPointDamage["h\(position)"]!,
+//                                                  width: CGFloat(photoSize),
+//                                                  height: CGFloat(photoSize)))
+//                        }
+//                        
+//                    
+//                    }else if (offsetV % 3) == 1 {
+//                        if let image = model.imageData?.base64StringToImage() {
+//                            image.draw(in: CGRect(x: mapPointDamage["v2"]!,
+//                                                  y: mapPointDamage["h\(position)"]!,
+//                                                  width: CGFloat(photoSize),
+//                                                  height: CGFloat(photoSize)))
+//                        }
+//                        
+//                    
+//                    }else{
+//                        if let image = model.imageData?.base64StringToImage() {
+//                            image.draw(in: CGRect(x: mapPointDamage["v1"]!,
+//                                                  y: mapPointDamage["h\(position)"]!,
+//                                                  width: CGFloat(photoSize),
+//                                                  height: CGFloat(photoSize)))
+//                        }
+//                        
+//                     
+//                    }
+//
+//
+//                } // End Loop
+//
+//            }
             
         }
         

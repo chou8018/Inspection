@@ -194,7 +194,7 @@ class PhotoCarViewController: ViewController, PhotoCarDisplayLogic
         catalyticCheckBox.titleLabel!.numberOfLines = 2
         catalyticCheckBox.titleLabel!.textAlignment = NSTextAlignment.center
         
-//        catalyticMessageLabel.text = String.localized("photos_car_catalytic_comment_title")
+        catalyticMessageLabel.text = String.localized("photos_car_catalytic_comment_title")
 
     }
     

@@ -710,7 +710,13 @@ class SummaryCarPDFWorker {
                                             x: centerPosition,
                                             y: underOil)
             
-            let catalyticValue = model.catalytic?.pdfValidateString ?? "-"
+            var localCatalyticOptions: [String] = [String.localized("inspection_engine_with_label"), String.localized("inspection_engine_without_label"),
+                                                   String.localized("car_detail_unable_to_verified_label")]
+            var catalyticValue = "-"
+            if let catalyticValueId = model.catalyticOptionId , catalyticValueId > 0 {
+                catalyticValue = localCatalyticOptions[catalyticValueId-1]
+            }
+            catalyticValue = catalyticValue.pdfValidateString
             let catalyticMainString = "\(String.localized("inspection_engine_catalytic_label"))  \(catalyticValue)"
             let catalyticValuePDF = weakself.getTitle(mainString: catalyticMainString,
                                                     value: catalyticValue)

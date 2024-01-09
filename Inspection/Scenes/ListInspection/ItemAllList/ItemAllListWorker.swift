@@ -839,7 +839,7 @@ class ItemAllListWorker
                 model.isSideMirror2 = carInspectionType?.isSideMirror2Working ?? false
                 model.isSideMirror3 = carInspectionType?.isSideMirror3Working ?? false
                 model.isSideMirror4 = carInspectionType?.isSideMirror4Working ?? false
-                model.catalytic = carInspectionType?.catalytic
+                model.catalyticOptionId = carInspectionType?.catalyticOptionId
                 
                 model.sideMirror1 = carInspectionType?.sideMirror1
                 model.sideMirror2 = carInspectionType?.sideMirror2

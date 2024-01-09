@@ -91,7 +91,7 @@ struct CarInspectionType : Mappable {
     var isSideMirror2Working: Bool?
     var isSideMirror3Working: Bool?
     var isSideMirror4Working: Bool?
-    var catalytic: String?
+    var catalyticOptionId: Int?
     
     // add 05/01/24
     var sideMirror1: Int?
@@ -178,7 +178,7 @@ struct CarInspectionType : Mappable {
         isSideMirror2Working <- map["isSideMirror_2_Working"]
         isSideMirror3Working <- map["isSideMirror_3_Working"]
         isSideMirror4Working <- map["isSideMirror_4_Working"]
-        catalytic <- map["catalyticOption"]
+        catalyticOptionId <- map["catalyticOption"]
         
         sideMirror1 <- map["sideMirror_1"]
         sideMirror2 <- map["sideMirror_2"]

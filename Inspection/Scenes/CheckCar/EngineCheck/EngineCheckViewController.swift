@@ -284,19 +284,14 @@ class EngineCheckViewController: ViewController, EngineCheckDisplayLogic
     
     @IBAction func catalyticValueChanged(_ sender: Any) {
         
-//        let value =  getRadioValue(from : [String.localized("inspection_engine_with_label"), String.localized("inspection_engine_without_label"),
-//                                           String.localized("car_detail_unable_to_verified_label")],
-//                                   selectIndex: catalyticRadio.selectedIndex)
-        
-        var value = ""
-        if let catalyticOptions = catalyticOptions {
-            value =  getRadioValue(from : catalyticOptions,
-                                       selectIndex: catalyticRadio.selectedIndex)
-        } else {
-            value =  getRadioValue(from : localCatalyticOptions,
-                                       selectIndex: catalyticRadio.selectedIndex)
-        }
-        DataController.shared.inspectionCarModel.catalytic = value
+//        var value = ""
+//        if let catalyticOptions = catalyticOptions {
+//            value =  getRadioValue(from : catalyticOptions,
+//                                       selectIndex: catalyticRadio.selectedIndex)
+//        } else {
+//            value =  getRadioValue(from : localCatalyticOptions,
+//                                       selectIndex: catalyticRadio.selectedIndex)
+//        }
         DataController.shared.inspectionCarModel.catalyticOptionId = catalyticRadio.selectedIndex + 1
 
     }
@@ -360,10 +355,8 @@ class EngineCheckViewController: ViewController, EngineCheckDisplayLogic
         
         summaryEngineRadio.selectedIndex = getRadioIndexByValue(from: [string_inspection_engine_working, string_inspection_engine_not_working], value: model.engineOverall)
         
-        if let catalyticOptions = catalyticOptions , let catalyticOptionId = model.catalyticOptionId {
+        if let catalyticOptionId = model.catalyticOptionId {
             catalyticRadio.selectedIndex = catalyticOptionId - 1
-        } else {
-            catalyticRadio.selectedIndex = getRadioIndexByValue(from: localCatalyticOptions, value: model.catalytic)
         }
  
         if let engineTypeIndex = DataController.shared.receiverCarModel.fuelSystemId , engineTypeIndex > 0 {

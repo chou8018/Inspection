@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 enum Environment:String {
     case production = "production"
@@ -32,5 +33,13 @@ struct AppConfig {
             return baseProdUrl
         }
         return baseStagingUrl
+    }
+    
+    static var screenWidth: CGFloat {
+        return UIScreen.main.bounds.size.width
+    }
+    
+    static var screenHeight: CGFloat {
+        return UIScreen.main.bounds.size.height
     }
 }

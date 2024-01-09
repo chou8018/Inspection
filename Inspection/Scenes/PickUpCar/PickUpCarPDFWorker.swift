@@ -351,21 +351,20 @@ class PickUpCarPDFWorker {
                 
                
                 
-                //MARK: CC
-                let attrCCTitlePDF = weakself.getTitle(mainString: "CC", value: "")
-                let _ = weakself.drawString(attrString: attrCCTitlePDF,
+                //MARK: Year
+                let attrYearTitlePDF = weakself.getTitle(mainString: String.localized("car_detail_year_placeholder_label"), value: "")
+                let _ = weakself.drawString(attrString: attrYearTitlePDF,
                                                       x: mapPoint["v3"]!,
                                                       y: mapPoint["h2"]!,
                                                       isTable: true)
                  
                 
-                //MARK: CC Value
-                var capacityCarText = "\(receiverCarModel.engineCapacity?.pdfValidateString ?? "-")  "
-                capacityCarText += "\t\(String.localized("car_detail_year_manu_label")) \(receiverCarModel.year?.pdfValidateString ?? "-")  "
-                capacityCarText += "\(String.localized("car_detail_year_regis_label")) \(receiverCarModel.registrationYear?.pdfValidateString ?? "-")"
-                let attrCCValuePDF = weakself.getTitle(mainString: capacityCarText.uppercased(),
+                //MARK: Year Value
+                var yearText = "\(String.localized("car_detail_year_manu_label")) \(receiverCarModel.year?.pdfValidateString ?? "-") "
+                yearText += "\(String.localized("car_detail_year_regis_label")) \(receiverCarModel.registrationYear?.pdfValidateString ?? "-")"
+                let attrYearValuePDF = weakself.getTitle(mainString: yearText.uppercased(),
                                               value: "", textColor: .darkGray)
-                let _ = weakself.drawString(attrString: attrCCValuePDF,
+                let _ = weakself.drawString(attrString: attrYearValuePDF,
                                                       x: mapPoint["v4"]!,
                                                       y: mapPoint["h2"]!,
                                                       isTable: true)
@@ -382,27 +381,26 @@ class PickUpCarPDFWorker {
                 //MARK: Registration Value
                 let registration = receiverCarModel.registration
                 var registrationText = "\(registration?.pdfValidateString ?? "-")"
-                registrationText += " \(receiverCarModel.province ?? "")"
+//                registrationText += " \(receiverCarModel.province ?? "")"
                 
-                
-                if let plate = receiverCarModel.registrationPlate , !plate.trimWhiteSpace.isEmpty {
-                    let note = receiverCarModel.registrationNote
-                    let isRegistrationMismatch = receiverCarModel.isRegistrationMismatch ?? false
-                    
-                    let isNotValidRegistration = registration?.uppercased().contains("PLATE") ?? false
-                    
-                    if isRegistrationMismatch {
-                        registrationText = " \(note?.pdfValidateString2 ?? "")"
-                        registrationText += " \(plate.pdfValidateString2)"
-                    }else{
-                        
-                        registrationText = isNotValidRegistration ? "" : "\(registration?.pdfValidateString2 ?? "")"
-                        registrationText += " \(receiverCarModel.province ?? "")"
-                        registrationText += " \(note?.pdfValidateString2 ?? "")"
-                        registrationText += " \(plate.pdfValidateString2)"
-                    }
-                    
-                }
+//                if let plate = receiverCarModel.registrationPlate , !plate.trimWhiteSpace.isEmpty {
+//                    let note = receiverCarModel.registrationNote
+//                    let isRegistrationMismatch = receiverCarModel.isRegistrationMismatch ?? false
+//                    
+//                    let isNotValidRegistration = registration?.uppercased().contains("PLATE") ?? false
+//                    
+//                    if isRegistrationMismatch {
+//                        registrationText = " \(note?.pdfValidateString2 ?? "")"
+//                        registrationText += " \(plate.pdfValidateString2)"
+//                    }else{
+//                        
+//                        registrationText = isNotValidRegistration ? "" : "\(registration?.pdfValidateString2 ?? "")"
+//                        registrationText += " \(receiverCarModel.province ?? "")"
+//                        registrationText += " \(note?.pdfValidateString2 ?? "")"
+//                        registrationText += " \(plate.pdfValidateString2)"
+//                    }
+//                    
+//                }
                 
                 let attrRegistrationValuePDF = weakself.getTitle(mainString: registrationText.uppercased(),
                                                         value: "", textColor: .darkGray)
@@ -451,7 +449,7 @@ class PickUpCarPDFWorker {
                 if let text = receiverCarModel.gasOption {
                     gasNumber = text
                     if receiverCarModel.isGasTank == true , let gas = receiverCarModel.gasNumber {
-                        gasNumber += " \(gas)"
+                        gasNumber += ",\(String.localized("car_detail_gas_number_placeholder"))\(gas)"
                     }
                 } else {
                     gasNumber = "-"
@@ -464,11 +462,41 @@ class PickUpCarPDFWorker {
                                                              y: mapPoint["h5"]!,
                                                              isTable: true)
                 
-              
-                
+                //MARK: CC
+                let attrCCTitlePDF = weakself.getTitle(mainString: "CC", value: "")
+                let _ = weakself.drawString(attrString: attrCCTitlePDF,
+                                            x: mapPoint["v1"]!,
+                                            y: mapPoint["h6"]!,
+                                            isTable: true)
+
+                //MARK: CC Value
+                let capacityCarText = "\(receiverCarModel.engineCapacity?.pdfValidateString ?? "-")  "
+                let attrCCValuePDF = weakself.getTitle(mainString: capacityCarText.uppercased(), value: "", textColor: .darkGray)
+                let _ = weakself.drawString(attrString: attrCCValuePDF,
+                                                             x: mapPoint["v2"]!,
+                                                             y: mapPoint["h6"]!,
+                                                             isTable: true)
+
+                //MARK: plate type
+                let attrPlateTitlePDF = weakself.getTitle(mainString: String.localized("car_pdf_plate_type_title"), value: "")
+                let _ = weakself.drawString(attrString: attrPlateTitlePDF,
+                                            x: mapPoint["v3"]!,
+                                            y: mapPoint["h6"]!,
+                                            isTable: true)
+
+                //MARK: plate type Value
+                var carPlate = ""
+                if let plate = receiverCarModel.registrationPlate , !plate.trimWhiteSpace.isEmpty {
+                    carPlate = plate
+                }
+                let attrCarPlateValuePDF = weakself.getTitle(mainString: carPlate.uppercased(), value: "", textColor: .darkGray)
+                let _ = weakself.drawString(attrString: attrCarPlateValuePDF,
+                                                             x: mapPoint["v4"]!,
+                                                             y: mapPoint["h6"]!,
+                                                             isTable: true)
                 
                 //MARK: Receiver Name
-                let underTable = mapPoint["h5"]! + margin
+                let underTable = mapPoint["h6"]! + margin
                 let valuenametext1 = "\(receiverCarModel.nameReceiver?.pdfValidateString ?? "-")"
                 let attrReceiverNamePDF = weakself.getTitle(mainString: "\(String.localized("car_pdf_me_label"))  \t\(valuenametext1)",
                                                    value: valuenametext1)
@@ -1213,7 +1241,7 @@ extension PickUpCarPDFWorker {
         var mapPoint : [String:CGFloat] = [:]
         
         let heightOffset = heightOffset
-        let heightTable = heightOffset * 5
+        let heightTable = heightOffset * 6
         let underText = underOfText
         let yPosition = underText
         let margin = margin  + 10
@@ -1267,7 +1295,7 @@ extension PickUpCarPDFWorker {
         }
         
         // Draw content's element bottom horizontal line
-        for  horizontalLine in 0..<6{
+        for  horizontalLine in 0..<7{
             
             let yPosition =  CGFloat(horizontalLine) * heightOffset + underText
             

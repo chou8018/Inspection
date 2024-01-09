@@ -573,6 +573,7 @@
 "car_pdf_no_label" = "No";
 "car_pdf_print_button_title" = "Print";
 "car_pdf_save_vehicle_title" = "Please save your vehicle first";
+"car_pdf_plate_type_title" = "Plate type";
 
 // motorbike pdf
 "motorbike_pdf_title_label" = "Motorcycle inspection receipt/record";

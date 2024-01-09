@@ -105,7 +105,7 @@ class SummaryCarPDFWorker {
 //        let photoTotalHeight = (Double(photoRow) * photoSize) + marginPhotoBottom
 //        let isDamagePhoto = damageLists.count > 0
         let isDamagePhoto = false
-        let photoTotalHeight = 100.0
+        let photoTotalHeight = 200.0
 
         // 1 create a dictionary with the PDF’s metadata using predefined keys.
         let pdfMetaData = [
@@ -1276,8 +1276,8 @@ class SummaryCarPDFWorker {
                                                            value: damageDesc)
             let damageCenter = CGFloat(pageWidth/2) - (attrDamageDescValuePDF.size().width/2)
             let _ = weakself.drawString(attrString: attrDamageDescValuePDF,
-                                                     x: damageCenter,
-                                                     y: underElecSummary + 30)
+                                                     x: margin + 10,
+                                                     y: underElecSummary + 10)
             
             //MARK: DamagePhoto
 //            if isDamagePhoto {
@@ -1398,7 +1398,7 @@ extension SummaryCarPDFWorker {
         let attrPDFSize = attrString.size()
         let attrPDFSizeRect = CGRect(x: x + (isTable ? 2 : 0),
                                      y: y - (isTable ? attrPDFSize.height : 0),
-                                     width: attrPDFSize.width,  height: attrPDFSize.height)
+                                     width: attrPDFSize.width > AppConfig.screenWidth - 200 ? AppConfig.screenWidth - 200 : attrPDFSize.width,  height: attrPDFSize.height)
         attrString.draw(in: attrPDFSizeRect)
         return attrPDFSizeRect
     }

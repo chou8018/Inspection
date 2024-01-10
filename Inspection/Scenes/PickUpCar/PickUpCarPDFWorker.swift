@@ -449,7 +449,7 @@ class PickUpCarPDFWorker {
                 if let text = receiverCarModel.gasOption {
                     gasNumber = text
                     if receiverCarModel.isGasTank == true , let gas = receiverCarModel.gasNumber {
-                        gasNumber += ",\(String.localized("car_detail_gas_number_placeholder"))\(gas)"
+                        gasNumber += ",\(String.localized("car_inspection_pdf_tank_number_label"))\(gas)"
                     }
                 } else {
                     gasNumber = "-"

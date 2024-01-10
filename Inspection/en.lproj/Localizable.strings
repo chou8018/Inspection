@@ -614,6 +614,7 @@
 "car_inspection_pdf_power_steer_label" = "Power steering";
 "car_inspection_pdf_work_label" = "Work";
 "car_inspection_pdf_not_work_label" = "Not Work";
+"car_inspection_pdf_unverified_label" = "Unverified";
 "car_inspection_pdf_turn_signal_label" = "Turn signal";
 "car_inspection_pdf_brake_light_label" = "Brake light";
 "car_inspection_pdf_horn_label" = "Horn";
@@ -626,9 +627,9 @@
 "car_inspection_pdf_damaged_photos_label" = "Damaged photos";
 "car_inspection_pdf_tank_number_label" = "Tank no.";
 "car_inspection_pdf_bottom_message_label" = "Attention:
--Due to limited space for transmission testing on all types of vehicles, the testing speed does not exceed 30 kilometers per hour. The buyer has the right to make the purchase at their own discretion, and the company reserves the right not to be liable for any damage and/or damage to the transmission after the auction.
--The company reserves the right to assume no responsibility for the deterioration or inability to use of vehicle equipment and electrical equipment after inspection.
--The company reserves the right to assume no responsibility for the statement that the engine number cannot be checked. We reserve the right not to be responsible for any changes, as all vehicle auctions are conducted on a conditional basis. Buyers need to purchase with caution.";
+-Due to limited space for transmission testing on all types of vehicles, the testing speed does not exceed 30 kilometers per hour. \nThe buyer has the right to make the purchase at their own discretion, \nand the company reserves the right not to be liable for any damage and/or damage to the transmission after the auction.
+-The company reserves the right to assume no responsibility for the deterioration \nor inability to use of vehicle equipment and electrical equipment after inspection.
+-The company reserves the right to assume no responsibility for the statement that the engine number cannot be checked. \nWe reserve the right not to be responsible for any changes, as all vehicle auctions are conducted on a conditional basis. \nBuyers need to purchase with caution.";
 
 // motorbike inspection pdf
 "motorbike_inspection_pdf_checklist_label" = "Motorcycle Inspection Checklist / Inspection Report";

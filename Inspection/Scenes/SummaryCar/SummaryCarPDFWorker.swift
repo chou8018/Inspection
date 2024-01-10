@@ -105,7 +105,7 @@ class SummaryCarPDFWorker {
 //        let photoTotalHeight = (Double(photoRow) * photoSize) + marginPhotoBottom
 //        let isDamagePhoto = damageLists.count > 0
         let isDamagePhoto = false
-        let photoTotalHeight = 200.0
+        let photoTotalHeight = 150.0
 
         // 1 create a dictionary with the PDF’s metadata using predefined keys.
         let pdfMetaData = [
@@ -1202,9 +1202,9 @@ class SummaryCarPDFWorker {
                                             y: roundGaugeRect.minY)
             
             let arrayWindow: [String] = [
-                String.localized("motorbike_inspection_engine_working_label"),
-                String.localized("motorbike_inspection_engine_not_working_label"),
-                String.localized("motorbike_inspection_engine_unverified_label"),
+                String.localized("car_inspection_pdf_work_label"),
+                String.localized("car_inspection_pdf_not_work_label"),
+                String.localized("car_inspection_pdf_unverified_label"),
                 String.localized("motorbike_inspection_engine_non_exist_label"),
             ]
             
@@ -1398,10 +1398,16 @@ extension SummaryCarPDFWorker {
        return mapPoint
    }
     func drawString(attrString : NSAttributedString , x : CGFloat , y : CGFloat, isTable:Bool = false) -> CGRect {
-        let attrPDFSize = attrString.size()
+        var attrPDFSize = attrString.size()
+        if attrString.string == String.localized("car_inspection_pdf_bottom_message_label") {
+            let stringWidth = attrPDFSize.width
+            print("stringWidth =\(stringWidth)")
+            attrPDFSize.width = AppConfig.screenWidth - 50
+            attrPDFSize.height = 150
+        }
         let attrPDFSizeRect = CGRect(x: x + (isTable ? 2 : 0),
                                      y: y - (isTable ? attrPDFSize.height : 0),
-                                     width: attrPDFSize.width > AppConfig.screenWidth - 200 ? AppConfig.screenWidth - 200 : attrPDFSize.width,  height: attrPDFSize.height)
+                                     width: attrPDFSize.width,  height: attrPDFSize.height)
         attrString.draw(in: attrPDFSizeRect)
         return attrPDFSizeRect
     }

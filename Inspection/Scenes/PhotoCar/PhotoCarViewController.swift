@@ -634,6 +634,11 @@ class PhotoCarViewController: ViewController, PhotoCarDisplayLogic
         DispatchQueue.main.async { [weak self] in
 
             let indexSection = DataController.shared.photoCarModel.indexSection
+            if indexSection == viewList.count - 1 {
+                self?.skipViewShowOrNot(isShow: false)
+            } else {
+                self?.skipViewShowOrNot(isShow: true)
+            }
             if let selectView = viewList[indexSection] {
                 selectView.check = true
             }

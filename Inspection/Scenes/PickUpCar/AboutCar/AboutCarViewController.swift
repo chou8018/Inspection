@@ -202,6 +202,7 @@ class AboutCarViewController: ViewController, AboutCarDisplayLogic
     
     @IBOutlet weak var auctionPlateLabel: UILabel!
     @IBOutlet weak var auctionPlateCheckButton: CheckBoxUIButton!
+    @IBOutlet weak var gasOptionLineView: UIView!
 
     var isMakeCarLunch = false
     var isGetColorLunch = false
@@ -273,9 +274,11 @@ class AboutCarViewController: ViewController, AboutCarDisplayLogic
     //MARK: CHECKBOX
     
     @IBAction func noPlateCheckTapped(_ sender: Any) {
+
         noPlateCheckButton.toggle { [weak self] (check) in
 //            self?.noteRegistrationStackView.isHidden = !check
-            self?.noteRegistrationTextField.isHidden = !check
+            self?.isHideNoteView(isHide: !check)
+
             ///registration
             //self?.registrationTextField.setEnableView(isEnable: !check)
             self?.registrationTextField.text = check ? "NOPLATE" : ""
@@ -303,9 +306,11 @@ class AboutCarViewController: ViewController, AboutCarDisplayLogic
     }
     
     @IBAction func redPlateCheckTapped(_ sender: Any) {
+
         redPlateCheckButton.toggle { [weak self] (check) in
 //            self?.noteRegistrationStackView.isHidden = !check
-            self?.noteRegistrationTextField.isHidden = !check
+            self?.isHideNoteView(isHide: !check)
+
             ///registration
             //self?.registrationTextField.setEnableView(isEnable: !check)
             self?.registrationTextField.text = check ? "REDPLATE" : ""
@@ -334,9 +339,10 @@ class AboutCarViewController: ViewController, AboutCarDisplayLogic
     }
     
     @IBAction func mismatchPlateCheckTapped(_ sender: Any) {
+
         mismatchPlateCheckButton.toggle { [weak self] (check) in
 //            self?.noteRegistrationStackView.isHidden = !check
-            self?.noteRegistrationTextField.isHidden = !check
+            self?.isHideNoteView(isHide: !check)
 
             ///registration
             //self?.registrationTextField.setEnableView(isEnable: !check)
@@ -368,7 +374,7 @@ class AboutCarViewController: ViewController, AboutCarDisplayLogic
     @IBAction func auctionPlateCheckTapped(_ sender: Any) {
         auctionPlateCheckButton.toggle { [weak self] (check) in
 //            self?.noteRegistrationStackView.isHidden = !check
-            self?.noteRegistrationTextField.isHidden = !check
+            self?.isHideNoteView(isHide: !check)
 
             ///registration
             //self?.registrationTextField.setEnableView(isEnable: !check)
@@ -693,7 +699,7 @@ class AboutCarViewController: ViewController, AboutCarDisplayLogic
             }
             
             DataController.shared.receiverCarModel.gasOption = selectedText
-            DataController.shared.receiverCarModel.gasOptionId = id
+            DataController.shared.receiverCarModel.gasOptionId = index + 1
         }
     }
     
@@ -864,7 +870,7 @@ class AboutCarViewController: ViewController, AboutCarDisplayLogic
         ///config search by prefix name
         colorTextField.isPrefix = true
             
-        noteRegistrationStackView.subviews.last?.backgroundColor = .white
+        isHideNoteView(isHide: true)
     }
     
     fileprivate func addTarget(from textfield: UITextField ){
@@ -932,13 +938,14 @@ class AboutCarViewController: ViewController, AboutCarDisplayLogic
             }
             
             noteRegistrationStackView.isHidden = false
-            noteRegistrationTextField.isHidden = false
+            self.isHideNoteView(isHide: false)
 
             //registrationTextField.setEnableView(isEnable: false)
         }else{
 //            noteRegistrationStackView.isHidden = true
             //registrationTextField.setEnableView(isEnable: true)
-            noteRegistrationTextField.isHidden = true
+            self.isHideNoteView(isHide: true)
+
         }
         
         
@@ -1034,6 +1041,9 @@ class AboutCarViewController: ViewController, AboutCarDisplayLogic
         
         noteRegistrationLineView.validateLineView(model.validNoteRegistration)
         gasNumberLineView.validateLineView(model.validGasNumber)
+        gasOptionLineView.validateLineView(model.validGasOption)
+        gasKeyLabel.validateLabel(model.validGasOption)
+
     }
     
     
@@ -1134,6 +1144,12 @@ extension AboutCarViewController : UITextFieldDelegate {
 //MARK: keyboard
 extension AboutCarViewController {
     
+    func isHideNoteView(isHide: Bool) {
+        self.noteRegistrationTextField.isHidden = isHide
+        self.noteRegistrationLineView.isHidden = isHide
+        noteRegistrationStackView.subviews.last?.backgroundColor = .white
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         scrollView.registKeyboardNotification()
@@ -1141,7 +1157,7 @@ extension AboutCarViewController {
         loadRetryApi()
         prepareData()
         updateView()
-        
+
         NotificationCenter.default.addObserver(self, selector: #selector(updateView), name: NSNotification.Name("updateUI"), object: nil)
     }
     

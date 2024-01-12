@@ -705,7 +705,7 @@ class SummaryCarPDFWorker {
                                             x: centerPosition,
                                             y: underOil)
             
-            var localCatalyticOptions: [String] = [String.localized("inspection_engine_with_label"), String.localized("inspection_engine_without_label"),
+            let localCatalyticOptions: [String] = [String.localized("inspection_engine_with_label"), String.localized("inspection_engine_without_label"),
                                                    String.localized("car_detail_unable_to_verified_label")]
             var catalyticValue = "-"
             if let catalyticValueId = model.catalyticOptionId , catalyticValueId > 0 {
@@ -1485,6 +1485,10 @@ extension SummaryCarPDFWorker {
         
         let mutableAttributedString = NSMutableAttributedString(string: mainString, attributes: attr)
         mutableAttributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.darkGray, range: range)
+        
+        if mainString == String.localized("car_inspection_pdf_bottom_message_label") {
+            mutableAttributedString.addAttribute(NSAttributedString.Key.font, value: UIFont.boldSystemFont(ofSize: size), range: range)
+        }
         return mutableAttributedString
     }
     

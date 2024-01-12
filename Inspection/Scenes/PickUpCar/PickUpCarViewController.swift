@@ -145,6 +145,8 @@ class PickUpCarViewController: ViewController, PickUpCarDisplayLogic
         
     }
     func displayRequiteFieldError(viewModel: PickUpCar.Something.ViewModel) {
+        
+        aboutCarViewController?.isHideNoteView(isHide: true)
         guard let errorMessage = viewModel.errorMessage else { return }
         alertErrorMessageOKAction(message: errorMessage) {
             print("alertErrorMessage", "OKAction")

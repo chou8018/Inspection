@@ -301,7 +301,8 @@ class PickUpCarInteractor: PickUpCarBusinessLogic, PickUpCarDataStore
         
         let gasNumber = model.gasNumber
         let roofTypeId = model.roofTypeId
-        
+        let gasOption = model.gasOption
+
         print(receiverPlace)
         print(storePlace)
         
@@ -332,6 +333,8 @@ class PickUpCarInteractor: PickUpCarBusinessLogic, PickUpCarDataStore
         let validFuelType = fuelType != nil && !(fuelType?.isEmpty ?? false)
         
         let validModelCode = modelCode != nil && !(modelCode?.isEmpty ?? false)
+        
+        let validGasOption = gasOption != nil && !(gasOption?.isEmpty ?? false)
         
         var validGasNumber = true
         if model.isGasTank == true {
@@ -368,7 +371,9 @@ class PickUpCarInteractor: PickUpCarBusinessLogic, PickUpCarDataStore
         message += validGearBox ? "" : "\(String.localized("create_model_gearbox_label")) \(string_not_correct)\n"
         message += validFuelType ? "" : "\(String.localized("create_model_fuel_delivery_label")) \(string_not_correct)\n"
         message += validNoteRegistration ? "" : "\(String.localized("car_pick_up_valid_field_remark_tips_label")) \(string_not_correct)\n"
-        message += validGasNumber ? "" : "\(String.localized("car_detail_gas_number_placeholder")) \(string_not_correct)"
+        
+        message += validGasOption ? "" : "\(String.localized("car_detail_gas_title_label")) \(string_not_correct)\n"
+        message += validGasNumber ? "" : "\(String.localized("car_detail_gas_number_placeholder")) \(string_not_correct)\n"
         
         message += validRoofType ? "" : "\(String.localized("car_exterior_roof_type_label")) \(string_not_correct)"
         
@@ -398,6 +403,7 @@ class PickUpCarInteractor: PickUpCarBusinessLogic, PickUpCarDataStore
         DataController.shared.receiverCarModel.validNoteRegistration = validNoteRegistration
         DataController.shared.receiverCarModel.validGasNumber = validGasNumber
         DataController.shared.receiverCarModel.validRoofType = validRoofType
+        DataController.shared.receiverCarModel.validGasOption = validGasOption
 
         NotificationCenter.default.post(name: NSNotification.Name("updateUI"), object: nil)
         

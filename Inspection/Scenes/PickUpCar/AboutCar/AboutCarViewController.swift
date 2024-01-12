@@ -277,8 +277,7 @@ class AboutCarViewController: ViewController, AboutCarDisplayLogic
 
         noPlateCheckButton.toggle { [weak self] (check) in
 //            self?.noteRegistrationStackView.isHidden = !check
-            self?.noteRegistrationTextField.isHidden = !check
-            self?.noteRegistrationLineView.isHidden = !check
+            self?.isHideNoteView(isHide: !check)
             ///registration
             //self?.registrationTextField.setEnableView(isEnable: !check)
             self?.registrationTextField.text = check ? "NOPLATE" : ""
@@ -309,8 +308,8 @@ class AboutCarViewController: ViewController, AboutCarDisplayLogic
 
         redPlateCheckButton.toggle { [weak self] (check) in
 //            self?.noteRegistrationStackView.isHidden = !check
-            self?.noteRegistrationTextField.isHidden = !check
-            self?.noteRegistrationLineView.isHidden = !check
+            self?.isHideNoteView(isHide: !check)
+
             ///registration
             //self?.registrationTextField.setEnableView(isEnable: !check)
             self?.registrationTextField.text = check ? "REDPLATE" : ""
@@ -342,8 +341,8 @@ class AboutCarViewController: ViewController, AboutCarDisplayLogic
 
         mismatchPlateCheckButton.toggle { [weak self] (check) in
 //            self?.noteRegistrationStackView.isHidden = !check
-            self?.noteRegistrationTextField.isHidden = !check
-            self?.noteRegistrationLineView.isHidden = !check
+            self?.isHideNoteView(isHide: !check)
+    
             ///registration
             //self?.registrationTextField.setEnableView(isEnable: !check)
             self?.registrationTextField.text = check ? "" : ""
@@ -374,8 +373,7 @@ class AboutCarViewController: ViewController, AboutCarDisplayLogic
     @IBAction func auctionPlateCheckTapped(_ sender: Any) {
         auctionPlateCheckButton.toggle { [weak self] (check) in
 //            self?.noteRegistrationStackView.isHidden = !check
-            self?.noteRegistrationTextField.isHidden = !check
-            self?.noteRegistrationLineView.isHidden = !check
+            self?.isHideNoteView(isHide: !check)
             ///registration
             //self?.registrationTextField.setEnableView(isEnable: !check)
             self?.registrationTextField.text = check ? "" : ""
@@ -1145,7 +1143,10 @@ extension AboutCarViewController : UITextFieldDelegate {
 extension AboutCarViewController {
     
     func isHideNoteView(isHide: Bool) {
+        self.noteRegistrationTextField.isHidden = isHide
+        self.noteRegistrationLineView.isHidden = isHide
         noteRegistrationStackView.subviews.last?.backgroundColor = .white
+        self.noteRegistrationLineView.backgroundColor = .appPrimaryColor
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -720,7 +720,12 @@ class ItemAllListWorker
                 model.isEngineWorks = isEngineWorks
                 
 
-                let typeEngineVelue = [nil, string_benzine, string_diesel, "EV", string_hybrid_benzine, string_hybrid_diesel]
+                let typeEngineVelue = [nil, string_benzine,
+                                       string_diesel,
+                                       string_hybrid_benzine,
+                                       string_hybrid_diesel,
+                                       string_bev_diesel,
+                                       string_phev_diesel]
                 let engineSystemId = carInspectionType?.engineSystemId ?? 0
                 model.typeEngine = typeEngineVelue[engineSystemId]
                 model.engineSystemId = engineSystemId

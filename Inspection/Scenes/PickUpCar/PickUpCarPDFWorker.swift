@@ -381,7 +381,7 @@ class PickUpCarPDFWorker {
                 //MARK: Registration Value
                 let registration = receiverCarModel.registration
                 var registrationText = "\(registration?.pdfValidateString ?? "-")"
-//                registrationText += " \(receiverCarModel.province ?? "")"
+                registrationText += " \(receiverCarModel.province ?? "")"
                 
 //                if let plate = receiverCarModel.registrationPlate , !plate.trimWhiteSpace.isEmpty {
 //                    let note = receiverCarModel.registrationNote

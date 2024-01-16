@@ -668,7 +668,19 @@ class SummaryCarPDFWorker {
                                             y: underEngineTitle)
             
           //MARK: Engine Type
-            let engineTypeValue = model.typeEngine?.pdfValidateString ?? "-"
+            
+            let engineTypes = [string_benzine,
+                               string_diesel,
+                               string_hybrid_benzine,
+                               string_hybrid_diesel,
+                               string_bev_diesel,
+                               string_phev_diesel]
+
+            var engineTypeValue = "-"
+            if let engineTypeIndex = DataController.shared.receiverCarModel.fuelSystemId , engineTypeIndex > 0 {
+                engineTypeValue = engineTypes[engineTypeIndex - 1].pdfValidateString
+            }
+            
             let engineTypeMainString = "\(String.localized("inspection_engine_type_label"))  \(engineTypeValue)"
             let attrEngineTypeValuePDF = weakself.getTitle(mainString: engineTypeMainString,
                                                     value: engineTypeValue)
@@ -688,7 +700,29 @@ class SummaryCarPDFWorker {
             let underOil = oilEngineRect.maxY + margin
             
             //MARK: FuelSystem
-            let fuelSystemValue = model.fuelSystem?.pdfValidateString ?? "-"
+            
+            let fuelSystem = [string_injector,
+                              string_carburetor,
+                              "Direct Injection"]
+
+            var fuelSystemValue = "-"
+            if let fuelDelivery = DataController.shared.receiverCarModel.fuelDelivery {
+                var index = -1
+                switch fuelDelivery {
+                case "I":
+                    index = 0
+                case "N":
+                    index = 1
+                case "D":
+                    index = 2
+                case "1":
+                    index = 3
+                default:
+                    index = -1
+                }
+                fuelSystemValue = fuelSystem[index].pdfValidateString
+            }
+            
             let fuelSystemMainString = "\(String.localized("car_engine_fuel_system_label"))  \(fuelSystemValue)"
             let attrFuelSystemValuePDF = weakself.getTitle(mainString: fuelSystemMainString,
                                                     value: fuelSystemValue)

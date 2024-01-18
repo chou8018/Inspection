@@ -83,22 +83,37 @@ extension String {
         }
     }
     
+    func grCodeId(urlStr: String) -> String? {
+        let component = urlStr.components(separatedBy: "=")
+        if component.count > 1, let first = component.first, let id = component.last {
+            if first == "inspectionandbookin://id" {
+                return id
+            }else{
+                return nil
+            }
+        }
+        return nil
+    }
      
     var grCodeIDValue :  String? {
         if  let url = URL(string: self.trimWhiteSpace) {
             let urlStr = url.absoluteString
              print(urlStr)
             // Parse the custom URL as per your requirement.
-            let component = urlStr.components(separatedBy: "=")
-            if component.count > 1, let first = component.first, let id = component.last {
-                if first == "inspectionandbookin://id" {
-                    return id
-                }else{
-                    return nil
-                }
-            }
+            
+            return grCodeId(urlStr: urlStr)
+
         }
+        
         return nil
+    }
+    
+    var grCodeIDValueNew :  String? {
+        if self.contains("\n") , let firstStr = self.components(separatedBy: "\n").first {
+            return grCodeId(urlStr: firstStr)
+        } else {
+            return grCodeId(urlStr: self)
+        }
     }
     
     func base64StringToImage() -> UIImage? {

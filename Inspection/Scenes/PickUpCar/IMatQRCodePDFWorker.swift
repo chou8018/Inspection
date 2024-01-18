@@ -210,13 +210,13 @@ class IMatQRCodePDFWorker {
                 
             }else{
                 
-                let qrString = "inspectionandbookin://id=\(bookinNo.trimWhiteSpace)"
+                var qrString = "inspectionandbookin://id=\(bookinNo.trimWhiteSpace)"
                 
                 let imatNumber = self?.displayText(showText: receiverNumber.pdfValidateString, prefix: "IMAT") ?? ""
                 let chassisNumber = self?.displayText(showText: receiverCarModel.vinNumber?.pdfValidateString, prefix: "Chassis no.") ?? ""
                 let engineNumber = self?.displayText(showText: receiverCarModel.engineNumber?.pdfValidateString, prefix: "Engine no.") ?? ""
                 
-//                let qrString = "\(imatNumber )\n\(chassisNumber)\n\(engineNumber )"
+//                qrString += "\n\(imatNumber )\n\(chassisNumber)\n\(engineNumber )"
                 if let qrcode = weakself.generateQRCode(from: qrString) {
                     
                     qrcode.draw(in: CGRect(x: mapPoint["v1"]!,

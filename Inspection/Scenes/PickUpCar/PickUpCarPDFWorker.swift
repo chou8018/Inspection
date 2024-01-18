@@ -950,8 +950,8 @@ class PickUpCarPDFWorker {
                 //MARK: note Cabin
                 let noteCabinValue = receiverCarModel.noteCabin?
                                     .pdfValidateString
-                                    .pdfReFormString(title: "\(String.localized("car_interior_others_label"))  ")  ?? "-"
-                let noteCabinText = "\(String.localized("car_interior_others_label"))  \(noteCabinValue)"
+                                    .pdfReFormString(title: "\(String.localized("car_interior_others_and_assets_label"))  ")  ?? "-"
+                let noteCabinText = "\(String.localized("car_interior_others_and_assets_label"))  \(noteCabinValue)"
                 let attrNoteCabinPDF = weakself.getTitle(mainString: noteCabinText, value: noteCabinValue)
                 let attrNoteCabinPDFSizeRect = weakself.drawString(attrString: attrNoteCabinPDF,
                                                           x: margin + 10,
@@ -1185,8 +1185,8 @@ class PickUpCarPDFWorker {
                 //MARK: GasSystem
                 let assetInCarValue = receiverCarModel.assetInCar?
                                         .pdfValidateString
-                                        .pdfReFormString(title: "\(String.localized("car_engine_other_in_car_assets_label"))  ") ?? "-"
-                let assetInCarText = "\(String.localized("car_engine_other_in_car_assets_label"))  \(assetInCarValue)"
+                                        .pdfReFormString(title: "\(String.localized("car_interior_others_label"))  ") ?? "-"
+                let assetInCarText = "\(String.localized("car_interior_others_label"))  \(assetInCarValue)"
                 let attrAssetInCarPDFTitle = weakself.getTitle(mainString: assetInCarText,
                                                          value: assetInCarValue)
                 let attrAssetInCarPDFRect = weakself.drawString(attrString: attrAssetInCarPDFTitle,

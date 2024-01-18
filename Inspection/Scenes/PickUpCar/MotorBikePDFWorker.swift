@@ -821,8 +821,8 @@ class MotorBikePDFWorker {
                 
                 let noteOtherValue = model.otherNote?
                                     .pdfValidateString
-                                    .pdfReFormString(title: "\(String.localized("car_interior_others_label")) ")  ?? "-"
-                let noteOtherText = "\(String.localized("car_interior_others_label"))  \(noteOtherValue)"
+                                    .pdfReFormString(title: "\(String.localized("car_interior_others_and_assets_label")) ")  ?? "-"
+                let noteOtherText = "\(String.localized("car_interior_others_and_assets_label"))  \(noteOtherValue)"
                 
                 let attrNoteOtherPDF = weakself.getTitle(mainString: noteOtherText, value: noteOtherValue)
                 let attrNoteOtherPDFSizeRect = weakself.drawString(attrString: attrNoteOtherPDF,

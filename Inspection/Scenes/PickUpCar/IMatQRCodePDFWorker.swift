@@ -196,6 +196,8 @@ class IMatQRCodePDFWorker {
             let qrSquareSize = CGFloat(56)
             
             let receiverNumber = receiverCarModel.vehicleId
+            let bookinNo = receiverCarModel.bookinNo ?? ""
+
             if receiverNumber.trimWhiteSpace.isEmpty {
                 let placeholder = UIImage(named: "placeholder-image")!
 //                placeholder.draw(in: CGRect(x: centerPosition - 60 ,
@@ -207,11 +209,14 @@ class IMatQRCodePDFWorker {
                                             width: qrSquareSize, height: qrSquareSize))
                 
             }else{
-                let imatNumber = displayText(showText: receiverNumber.pdfValidateString, prefix: "IMAT")
-                let chassisNumber = displayText(showText: receiverCarModel.vinNumber?.pdfValidateString, prefix: "Chassis no.")
-                let engineNumber = displayText(showText: receiverCarModel.engineNumber?.pdfValidateString, prefix: "Engine no.")
                 
-                let qrString = "\(imatNumber)\n\(chassisNumber)\n\(engineNumber)"
+                let qrString = "inspectionandbookin://id=\(bookinNo.trimWhiteSpace)"
+                
+                let imatNumber = self?.displayText(showText: receiverNumber.pdfValidateString, prefix: "IMAT") ?? ""
+                let chassisNumber = self?.displayText(showText: receiverCarModel.vinNumber?.pdfValidateString, prefix: "Chassis no.") ?? ""
+                let engineNumber = self?.displayText(showText: receiverCarModel.engineNumber?.pdfValidateString, prefix: "Engine no.") ?? ""
+                
+//                let qrString = "\(imatNumber )\n\(chassisNumber)\n\(engineNumber )"
                 if let qrcode = weakself.generateQRCode(from: qrString) {
                     
                     qrcode.draw(in: CGRect(x: mapPoint["v1"]!,
@@ -221,7 +226,7 @@ class IMatQRCodePDFWorker {
                 }
 
                 pointH += 1
-                let attrIMATPDF = weakself.getTitle(mainString: imatNumber,
+                let attrIMATPDF = weakself.getTitle(mainString: imatNumber ,
                                                     value: "",
                                                     textColor: .black)
                 let _ = weakself.drawString(attrString: attrIMATPDF,
@@ -229,7 +234,7 @@ class IMatQRCodePDFWorker {
                                             y: mapPoint["h\(pointH)"]! - hSpace,
                                             isTable: true)
                 pointH += 1
-                let attrChassisPDF = weakself.getTitle(mainString: chassisNumber,
+                let attrChassisPDF = weakself.getTitle(mainString: chassisNumber ,
                                                     value: "",
                                                     textColor: .black)
                 let _ = weakself.drawString(attrString: attrChassisPDF,
@@ -237,7 +242,7 @@ class IMatQRCodePDFWorker {
                                             y: mapPoint["h\(pointH)"]! - hSpace,
                                             isTable: true)
                 pointH += 1
-                let attrEnginePDF = weakself.getTitle(mainString: engineNumber,
+                let attrEnginePDF = weakself.getTitle(mainString: engineNumber ,
                                                     value: "",
                                                     textColor: .black)
                 let _ = weakself.drawString(attrString: attrEnginePDF,

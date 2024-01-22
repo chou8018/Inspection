@@ -164,24 +164,24 @@ class IMatQRCodePDFWorker {
             var registrationText = "\(registration?.pdfValidateString ?? "-")"
             registrationText += " \(receiverCarModel.province ?? "")"
             
-            if let plate = receiverCarModel.registrationPlate , !plate.trimWhiteSpace.isEmpty {
-                let note = receiverCarModel.registrationNote
-                let isRegistrationMismatch = receiverCarModel.isRegistrationMismatch ?? false
-                
-                let isNotValidRegistration = registration?.uppercased().contains("PLATE") ?? false
-                
-                if isRegistrationMismatch {
-                    registrationText = " \(note?.pdfValidateString2 ?? "")"
-                    registrationText += " \(plate.pdfValidateString2)"
-                }else{
-                    
-                    registrationText = isNotValidRegistration ? "" : "\(registration?.pdfValidateString2 ?? "")"
-                    registrationText += " \(receiverCarModel.province ?? "")"
-                    registrationText += " \(note?.pdfValidateString2 ?? "")"
-                    registrationText += " \(plate.pdfValidateString2)"
-                }
-                
-            }
+//            if let plate = receiverCarModel.registrationPlate , !plate.trimWhiteSpace.isEmpty {
+//                let note = receiverCarModel.registrationNote
+//                let isRegistrationMismatch = receiverCarModel.isRegistrationMismatch ?? false
+//                
+//                let isNotValidRegistration = registration?.uppercased().contains("PLATE") ?? false
+//                
+//                if isRegistrationMismatch {
+//                    registrationText = " \(note?.pdfValidateString2 ?? "")"
+//                    registrationText += " \(plate.pdfValidateString2)"
+//                }else{
+//                    
+//                    registrationText = isNotValidRegistration ? "" : "\(registration?.pdfValidateString2 ?? "")"
+//                    registrationText += " \(receiverCarModel.province ?? "")"
+//                    registrationText += " \(note?.pdfValidateString2 ?? "")"
+//                    registrationText += " \(plate.pdfValidateString2)"
+//                }
+//                
+//            }
             
             let attrRegistrationValuePDF = weakself.getTitle(mainString: "Regis no.: " + registrationText.uppercased(), value: "", textColor: .black)
             let _ = weakself.drawString(attrString: attrRegistrationValuePDF,

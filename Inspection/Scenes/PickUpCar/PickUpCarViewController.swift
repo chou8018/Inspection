@@ -12,6 +12,13 @@
 
 import UIKit
 
+let bookinItem0Height = 1240.0
+let bookinItem1Height = 1260.0
+let bookinItem2Height = 780.0
+let bookinItem2MBHeight = 1900.0
+let bookinItem3Height = 800.0
+let bookinItem4Height = 1400.0
+
 protocol PickUpCarDisplayLogic: AnyObject
 {
     func displaySomething(viewModel: PickUpCar.Something.ViewModel)
@@ -121,6 +128,20 @@ class PickUpCarViewController: ViewController, PickUpCarDisplayLogic
     @IBOutlet weak var inspectionLabel: UILabel!
     @IBOutlet weak var photosLabel: UILabel!
     @IBOutlet weak var pickUpDateLabel: UILabel!
+    
+    @IBOutlet weak var mainScrollview: UIScrollView!
+
+    var isClickedTopItem = false
+
+    var lastFrame = CGRectZero
+    let item0OffsetY = 0
+    let item1OffsetY = bookinItem0Height
+    let item2OffsetY = bookinItem0Height + bookinItem1Height
+    let item2MotorbikeOffsetY = bookinItem0Height + bookinItem1Height
+    let item3OffsetY = bookinItem0Height + bookinItem1Height + bookinItem2Height
+    let item3MotorbikeOffsetY = bookinItem0Height + bookinItem1Height + bookinItem2MBHeight
+    let item4OffsetY = bookinItem0Height + bookinItem1Height + bookinItem2Height + bookinItem3Height
+    let item5OffsetY = bookinItem0Height + bookinItem1Height + bookinItem2Height + bookinItem3Height + bookinItem4Height
     
     override func initLocalString() {
         super.initLocalString()
@@ -248,14 +269,6 @@ class PickUpCarViewController: ViewController, PickUpCarDisplayLogic
         
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
     func confirmSendDataReceiver(){
         let request = PickUpCar.Something.Request(methodReceiver: .POST)
         self.interactor?.confirmSendDataReceiverCar(request: request)
@@ -266,7 +279,20 @@ class PickUpCarViewController: ViewController, PickUpCarDisplayLogic
         
         segmentView.addSubview(codeSegmented)
         codeSegmented.delegate = self
-        updateUIView(from: 0)
+//        updateUIView(from: 0)
+        
+        switch DataController.shared.bookInType {
+        case .CAR, .CARWRECK:
+            for i in 0..<6 {
+                updateUIView(from: i)
+            }
+        case .MBIKE, .MBIKEWRECK:
+            for i in 0..<4 {
+                updateUIView(from: i)
+            }
+        }
+        
+        self.mainScrollview.delegate = self
     }
     
     
@@ -464,9 +490,42 @@ extension PickUpCarViewController {
 
 extension PickUpCarViewController : CustomSegmentedControlDelegate  {
     func change(to index: Int , button : UIButton) {
-        updateUIView(from: index)
+//        updateUIView(from: index)
+//        scrollView.scrollToView(view: button, animated: true)
+        isClickedTopItem = true
+
+        var offsetY = 0.0
+        switch index {
+        case 0:
+            offsetY = 0
+        case 1:
+            offsetY = item1OffsetY
+        case 2:
+            switch DataController.shared.bookInType {
+            case .CAR, .CARWRECK:
+                offsetY = item2OffsetY
+            case .MBIKE, .MBIKEWRECK:
+                offsetY = item2MotorbikeOffsetY
+            }
+            
+        case 3:
+            switch DataController.shared.bookInType {
+            case .CAR, .CARWRECK:
+                offsetY = item3OffsetY
+            case .MBIKE, .MBIKEWRECK:
+                offsetY = item3MotorbikeOffsetY
+            }
+            
+        case 4:
+            offsetY = item4OffsetY
+        case 5:
+            offsetY = item5OffsetY
+        default:
+            return
+            
+        }
         
-        scrollView.scrollToView(view: button, animated: true)
+        mainScrollview.setContentOffset(CGPoint(x: 0, y: offsetY), animated: true)
     }
     
     
@@ -510,24 +569,53 @@ extension PickUpCarViewController : CustomSegmentedControlDelegate  {
     
     private func add(asChildViewController viewController: UIViewController?) {
         guard let viewController = viewController else { return }
-        if let last = children.last {
-            last.willMove(toParent: nil)
-            last.view.removeFromSuperview()
-            last.removeFromParent()
-        }
-        // Add Child View Controller
+        
         addChild(viewController)
         
-        // Add Child View as Subview
-        containerView.addSubview(viewController.view)
-        
-        // Configure Child View
-        viewController.view.frame = containerView.bounds
-        viewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        
-        // Notify Child View Controller
-        viewController.didMove(toParent: self)
+        mainScrollview.addSubview(viewController.view)
+        let spaceHeight = 0.0
+        if viewController is ReceiverCarViewController {
+            lastFrame = CGRect(x: 0, y: 0, width: mainScrollview.width, height: 1240 - spaceHeight)
+        } else if viewController is AboutCarViewController {
+            lastFrame = CGRect(x: 0, y: lastFrame.maxY, width: mainScrollview.width, height: 1260 - spaceHeight)
+        } else if viewController is ExternalCarViewController {
+            lastFrame = CGRect(x: 0, y: lastFrame.maxY, width: mainScrollview.width, height: 780 - spaceHeight)
+        } else if viewController is BookInMotorcycle1ViewController {
+            lastFrame = CGRect(x: 0, y: lastFrame.maxY, width: mainScrollview.width, height: 1900 - spaceHeight)
+        } else if viewController is SparePartsCarViewController {
+            lastFrame = CGRect(x: 0, y: lastFrame.maxY, width: mainScrollview.width, height: 800 - spaceHeight)
+        } else if viewController is BookInMotorcycle2ViewController {
+            lastFrame = CGRect(x: 0, y: lastFrame.maxY, width: mainScrollview.width, height: 1220 - spaceHeight)
+        } else if viewController is CabinCarViewController {
+            lastFrame = CGRect(x: 0, y: lastFrame.maxY, width: mainScrollview.width, height: 1400 - spaceHeight)
+        } else if viewController is EngineCarViewController {
+            lastFrame = CGRect(x: 0, y: lastFrame.maxY, width: mainScrollview.width, height: 930 - spaceHeight)
+        }
+        mainScrollview.contentSize = CGSize(width: containerView.width, height: lastFrame.maxY)
+
+        viewController.view.frame = CGRect(x: 0, y: lastFrame.minY, width: containerView.width, height: lastFrame.height)
     }
+    
+//    private func add(asChildViewController viewController: UIViewController?) {
+//        guard let viewController = viewController else { return }
+//        if let last = children.last {
+//            last.willMove(toPar1ent: nil)
+//            last.view.removeFromSuperview()
+//            last.removeFromParent()
+//        }
+//        // Add Child View Controller
+//        addChild(viewController)
+//        
+//        // Add Child View as Subview
+//        containerView.addSubview(viewController.view)
+//        
+//        // Configure Child View
+//        viewController.view.frame = containerView.bounds
+//        viewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+//        
+//        // Notify Child View Controller
+//        viewController.didMove(toParent: self)
+//    }
     //    private func remove(asChildViewController viewController: UIViewController) {
     //        // Notify Child View Controller
     //        viewController.willMove(toParent: nil)
@@ -544,5 +632,46 @@ extension PickUpCarViewController : CustomSegmentedControlDelegate  {
         let storyboard = UIStoryboard(name: "PickUpCar", bundle: Bundle.main)
         // Instantiate View Controller
         return storyboard.instantiateViewController(withIdentifier: identifier)
+    }
+}
+
+extension PickUpCarViewController: UIScrollViewDelegate {
+    
+    func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
+        isClickedTopItem = false
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+        if isClickedTopItem {
+            return
+        }
+        
+        if DataController.shared.bookInType == .MBIKE || DataController.shared.bookInType == .MBIKEWRECK {
+            return
+        }
+        
+        let offsetY = scrollView.contentOffset.y
+        if offsetY < 0 {
+            return
+        }
+        var index = 0
+  
+        if offsetY >= 0 ,offsetY < item1OffsetY {
+            index = 0
+        } else if offsetY >= item1OffsetY , offsetY < item2OffsetY {
+            index = 1
+        } else if offsetY >= item2OffsetY , offsetY < item3OffsetY {
+            index = 2
+        } else if offsetY >= item3OffsetY , offsetY < item4OffsetY {
+            index = 3
+        } else if offsetY >= item4OffsetY , offsetY < item5OffsetY {
+            index = 4
+        } else {
+            index = 5
+        }
+  
+        let button = self.codeSegmented.buttons[index]
+        self.codeSegmented.buttonAction(sender: button , isCombine: true)
     }
 }

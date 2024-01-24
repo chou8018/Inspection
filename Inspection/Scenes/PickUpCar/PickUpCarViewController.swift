@@ -13,11 +13,13 @@
 import UIKit
 
 let bookinItem0Height = 1240.0
-let bookinItem1Height = 1260.0
+let bookinItem1Height = 1300.0
 let bookinItem2Height = 780.0
 let bookinItem2MBHeight = 1900.0
 let bookinItem3Height = 800.0
+let bookinItem3MBHeight = 1220.0
 let bookinItem4Height = 1400.0
+let bookinItem5Height = 930.0
 
 protocol PickUpCarDisplayLogic: AnyObject
 {
@@ -575,21 +577,21 @@ extension PickUpCarViewController : CustomSegmentedControlDelegate  {
         mainScrollview.addSubview(viewController.view)
         let spaceHeight = 0.0
         if viewController is ReceiverCarViewController {
-            lastFrame = CGRect(x: 0, y: 0, width: mainScrollview.width, height: 1240 - spaceHeight)
+            lastFrame = CGRect(x: 0, y: 0, width: mainScrollview.width, height: bookinItem0Height - spaceHeight)
         } else if viewController is AboutCarViewController {
-            lastFrame = CGRect(x: 0, y: lastFrame.maxY, width: mainScrollview.width, height: 1260 - spaceHeight)
+            lastFrame = CGRect(x: 0, y: lastFrame.maxY, width: mainScrollview.width, height: bookinItem1Height - spaceHeight)
         } else if viewController is ExternalCarViewController {
-            lastFrame = CGRect(x: 0, y: lastFrame.maxY, width: mainScrollview.width, height: 780 - spaceHeight)
+            lastFrame = CGRect(x: 0, y: lastFrame.maxY, width: mainScrollview.width, height: bookinItem2Height - spaceHeight)
         } else if viewController is BookInMotorcycle1ViewController {
-            lastFrame = CGRect(x: 0, y: lastFrame.maxY, width: mainScrollview.width, height: 1900 - spaceHeight)
+            lastFrame = CGRect(x: 0, y: lastFrame.maxY, width: mainScrollview.width, height: bookinItem2MBHeight - spaceHeight)
         } else if viewController is SparePartsCarViewController {
-            lastFrame = CGRect(x: 0, y: lastFrame.maxY, width: mainScrollview.width, height: 800 - spaceHeight)
+            lastFrame = CGRect(x: 0, y: lastFrame.maxY, width: mainScrollview.width, height: bookinItem3Height - spaceHeight)
         } else if viewController is BookInMotorcycle2ViewController {
-            lastFrame = CGRect(x: 0, y: lastFrame.maxY, width: mainScrollview.width, height: 1220 - spaceHeight)
+            lastFrame = CGRect(x: 0, y: lastFrame.maxY, width: mainScrollview.width, height: bookinItem3MBHeight - spaceHeight)
         } else if viewController is CabinCarViewController {
-            lastFrame = CGRect(x: 0, y: lastFrame.maxY, width: mainScrollview.width, height: 1400 - spaceHeight)
+            lastFrame = CGRect(x: 0, y: lastFrame.maxY, width: mainScrollview.width, height: bookinItem4Height - spaceHeight)
         } else if viewController is EngineCarViewController {
-            lastFrame = CGRect(x: 0, y: lastFrame.maxY, width: mainScrollview.width, height: 930 - spaceHeight)
+            lastFrame = CGRect(x: 0, y: lastFrame.maxY, width: mainScrollview.width, height: bookinItem5Height - spaceHeight)
         }
         mainScrollview.contentSize = CGSize(width: containerView.width, height: lastFrame.maxY)
 
@@ -647,28 +649,39 @@ extension PickUpCarViewController: UIScrollViewDelegate {
             return
         }
         
-        if DataController.shared.bookInType == .MBIKE || DataController.shared.bookInType == .MBIKEWRECK {
-            return
-        }
-        
         let offsetY = scrollView.contentOffset.y
         if offsetY < 0 {
             return
         }
+        
         var index = 0
-  
-        if offsetY >= 0 ,offsetY < item1OffsetY {
-            index = 0
-        } else if offsetY >= item1OffsetY , offsetY < item2OffsetY {
-            index = 1
-        } else if offsetY >= item2OffsetY , offsetY < item3OffsetY {
-            index = 2
-        } else if offsetY >= item3OffsetY , offsetY < item4OffsetY {
-            index = 3
-        } else if offsetY >= item4OffsetY , offsetY < item5OffsetY {
-            index = 4
+        
+        if DataController.shared.bookInType == .MBIKE || DataController.shared.bookInType == .MBIKEWRECK {
+            
+            if offsetY >= 0 ,offsetY < item1OffsetY {
+                index = 0
+            } else if offsetY >= item1OffsetY , offsetY < item2MotorbikeOffsetY {
+                index = 1
+            } else if offsetY >= item2MotorbikeOffsetY , offsetY < item3MotorbikeOffsetY {
+                index = 2
+            } else {
+                index = 3
+            }
+            
         } else {
-            index = 5
+            if offsetY >= 0 ,offsetY < item1OffsetY {
+                index = 0
+            } else if offsetY >= item1OffsetY , offsetY < item2OffsetY {
+                index = 1
+            } else if offsetY >= item2OffsetY , offsetY < item3OffsetY {
+                index = 2
+            } else if offsetY >= item3OffsetY , offsetY < item4OffsetY {
+                index = 3
+            } else if offsetY >= item4OffsetY , offsetY < item5OffsetY {
+                index = 4
+            } else {
+                index = 5
+            }
         }
   
         let button = self.codeSegmented.buttons[index]

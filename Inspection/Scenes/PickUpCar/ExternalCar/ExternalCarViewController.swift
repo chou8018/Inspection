@@ -146,13 +146,14 @@ class ExternalCarViewController: ViewController, ExternalCarDisplayLogic
     
     func loadRetryApi() {
         
+        if !isGetRoofTypeLunch {
+            getRoofType()
+        }
+        
         if DataController.shared.hasRoofType() {
             roofTypeView.isHidden = false
             roofTypeLineView.isHidden = false
             
-            if !isGetRoofTypeLunch {
-                getRoofType()
-            }
         } else {
             roofTypeView.isHidden = true
             roofTypeLineView.isHidden = true
@@ -472,6 +473,10 @@ class ExternalCarViewController: ViewController, ExternalCarDisplayLogic
         
     }
     
+    @objc func categoryChanged(){
+        loadRetryApi()
+    }
+    
     func displayRoofTypeOptions() {
         if DataController.shared.receiverCarModel.sellingCategory?.trimWhiteSpace == "PU" {
             roofTypeView.isHidden = false
@@ -558,6 +563,8 @@ extension ExternalCarViewController {
         updateView()
         
         NotificationCenter.default.addObserver(self, selector: #selector(updateView), name: NSNotification.Name("updateUI"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(categoryChanged), name: NSNotification.Name("categoryChanged"), object: nil)
+        
     }
     
     override func viewDidDisappear(_ animated: Bool) {

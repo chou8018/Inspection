@@ -14,7 +14,7 @@ import UIKit
 
 let bookinItem0Height = 1240.0
 let bookinItem1Height = 1300.0
-let bookinItem2Height = 780.0
+let bookinItem2Height = 850.0
 let bookinItem2MBHeight = 1900.0
 let bookinItem3Height = 800.0
 let bookinItem3MBHeight = 1220.0
@@ -136,7 +136,7 @@ class PickUpCarViewController: ViewController, PickUpCarDisplayLogic
     var isClickedTopItem = false
 
     var lastFrame = CGRectZero
-    let item0OffsetY = 0
+    let item0OffsetY = 0.0
     let item1OffsetY = bookinItem0Height
     let item2OffsetY = bookinItem0Height + bookinItem1Height
     let item2MotorbikeOffsetY = bookinItem0Height + bookinItem1Height
@@ -438,6 +438,38 @@ class PickUpCarViewController: ViewController, PickUpCarDisplayLogic
         cabinCarViewController = nil
         engineCarViewController = nil
     }
+    
+    func selectedVCIndex(index:Int) {
+        
+        switch index {
+        case 0:
+            receiverCarViewController?.viewWillAppear(true)
+        case 1:
+            aboutCarViewController?.viewWillAppear(true)
+        case 2:
+            switch DataController.shared.bookInType {
+            case .CAR, .CARWRECK:
+                externalCarViewController?.viewWillAppear(true)
+            case .MBIKE, .MBIKEWRECK:
+                bookInMotorcycle1ViewController?.viewWillAppear(true)
+            }
+            
+        case 3:
+            switch DataController.shared.bookInType {
+            case .CAR, .CARWRECK:
+                sparePartsCarViewController?.viewWillAppear(true)
+            case .MBIKE, .MBIKEWRECK:
+                bookInMotorcycle2ViewController?.viewWillAppear(true)
+            }
+            
+        case 4:
+            cabinCarViewController?.viewWillAppear(true)
+        case 5:
+            engineCarViewController?.viewWillAppear(true)
+        default:
+            return
+        }
+    }
 }
 //MARK: ViewCOntroller Lift Cycle
 
@@ -465,10 +497,7 @@ extension PickUpCarViewController {
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        
-        
     }
-    
     
 }
 
@@ -487,8 +516,6 @@ extension PickUpCarViewController {
     
     
 }
-
-
 
 extension PickUpCarViewController : CustomSegmentedControlDelegate  {
     func change(to index: Int , button : UIButton) {
@@ -526,7 +553,6 @@ extension PickUpCarViewController : CustomSegmentedControlDelegate  {
             return
             
         }
-        
         mainScrollview.setContentOffset(CGPoint(x: 0, y: offsetY), animated: true)
     }
     
@@ -642,7 +668,7 @@ extension PickUpCarViewController: UIScrollViewDelegate {
     func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
         isClickedTopItem = false
     }
-    
+        
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
         if isClickedTopItem {
@@ -683,7 +709,7 @@ extension PickUpCarViewController: UIScrollViewDelegate {
                 index = 5
             }
         }
-  
+          
         let button = self.codeSegmented.buttons[index]
         self.codeSegmented.buttonAction(sender: button , isCombine: true)
     }

@@ -200,6 +200,7 @@ class ReceiverCarInteractor: ReceiverCarBusinessLogic, ReceiverCarDataStore
         
         if let sellCateSelect = self.sellCategoryList?.filter({ $0.desc_BU?.trimWhiteSpace == sellCate.trimWhiteSpace }).first {
             DataController.shared.receiverCarModel.sellingCategory = sellCateSelect.sellingCategory1
+            NotificationCenter.default.post(name: NSNotification.Name("categoryChanged"), object: nil)
         }
     }
     

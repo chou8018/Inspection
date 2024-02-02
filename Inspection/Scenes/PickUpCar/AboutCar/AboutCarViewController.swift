@@ -204,7 +204,11 @@ class AboutCarViewController: ViewController, AboutCarDisplayLogic
     @IBOutlet weak var auctionPlateCheckButton: CheckBoxUIButton!
     @IBOutlet weak var gasOptionLineView: UIView!
     @IBOutlet weak var gasInstallationStackView: UIStackView!
-
+    // added on 02/02/2024
+    @IBOutlet weak var regisCheckButton: CheckBoxUIButton!
+    @IBOutlet weak var regisCheckView: UIStackView!
+    @IBOutlet weak var regisCheckLabel: UILabel!
+    
     var isMakeCarLunch = false
     var isGetColorLunch = false
     var isGetProvinceLunch = false
@@ -230,6 +234,7 @@ class AboutCarViewController: ViewController, AboutCarDisplayLogic
         yearTextField.placeholder = String.localized("car_detail_year_placeholder_label")
         yearRegisterTitleLabel.text = String.localized("car_detail_year_regis_label")
         yearRegisterTextField.placeholder = String.localized("car_detail_year_placeholder_label")
+        yearRegisterTextField.isSearchEnable = false
         registrationTitleLabel.text = String.localized("car_detail_registration_label")
         noPlateLabel.text = String.localized("car_detail_no_plate_label")
         redPlateLabel.text = String.localized("car_detail_red_plate_label")
@@ -257,6 +262,8 @@ class AboutCarViewController: ViewController, AboutCarDisplayLogic
         gasNumberTextField.placeholder = String.localized("car_detail_gas_number_placeholder")
         
         auctionPlateLabel.text = String.localized("car_detail_auction_plate_label")
+        regisCheckLabel.text = String.localized("car_detail_year_regis_unable_label")
+
     }
     
     func doSomething()
@@ -467,6 +474,16 @@ class AboutCarViewController: ViewController, AboutCarDisplayLogic
                 self?.gasNumberTextField.text = ""
             }
             DataController.shared.receiverCarModel.isGasTank = check
+        }
+    }
+    
+    @IBAction func regisCheckTapped(_ sender: Any) {
+        regisCheckButton.toggle { [weak self] (check) in
+            if check {
+                self?.yearRegisterTextField.text = ""
+                DataController.shared.receiverCarModel.registrationYear = nil
+            }
+            DataController.shared.receiverCarModel.isInValidRegistrationYear = check
         }
     }
     
@@ -986,8 +1003,10 @@ class AboutCarViewController: ViewController, AboutCarDisplayLogic
         
         if DataController.shared.bookInType == .MBIKE || DataController.shared.bookInType == .MBIKEWRECK {
             gasInstallationStackView.isHidden = true
+            regisCheckView.isHidden = true
         } else {
             gasInstallationStackView.isHidden = false
+            regisCheckView.isHidden = false
         }
 
     }
@@ -1170,7 +1189,14 @@ extension AboutCarViewController {
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         scrollView.resignKeyboardNotification()
-        
         NotificationCenter.default.removeObserver(self)
+    }
+    
+    @IBAction func manuYearTipButtonTapped(_ sender: UIButton) {
+        DataController.shared.showTipView(sender: sender, superView: self.view, message: String.localized("car_detail_year_manu_tip_message") , textAlignment: .left)
+    }
+    
+    @IBAction func regisYearTipButtonTapped(_ sender: UIButton) {
+        DataController.shared.showTipView(sender: sender, superView: self.view, message: String.localized("car_detail_year_regis_tip_message"), textAlignment: .left)
     }
 }

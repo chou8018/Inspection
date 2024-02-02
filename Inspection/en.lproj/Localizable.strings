@@ -105,7 +105,21 @@
 "car_detail_variant_label" = "Variant";
 "car_detail_engine_size_label" = "Engine size";
 "car_detail_year_manu_label" = "Year Manu.";
+"car_detail_year_manu_tip_message" = "How to inspect Manufacturing year
+1. Car plate
+2. Vin no.
+3. Safety belt
+4. Door window mirror
+5. Vehicle document i.e. registration book, warranty book
+If you are unsure, please contact supervisor";
 "car_detail_year_regis_label" = "Year Regis.";
+"car_detail_year_regis_tip_message" = "How to inspect Registration year
+1. Car plate
+2. Vin no.
+3. Safety belt
+4. Door window mirror
+5. Vehicle document i.e. registration book, warranty book
+If you are unsure, please contact supervisor";
 "car_detail_year_regis_unable_label" = "Unable to verify registration year";
 "car_detail_year_manu_label" = "Manu.";
 "car_detail_year_regis_label" = "Regis.";

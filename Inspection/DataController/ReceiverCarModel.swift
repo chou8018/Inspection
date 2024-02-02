@@ -132,6 +132,8 @@ class ReceiverCarModel {
     var engineNumber : String? { didSet { setEdit(oldValue, value: &isEditVehicle) }}
     var vinNumber : String? { didSet { setEdit(oldValue, value: &isEditVehicle) }}
     var gasNumber : String? { didSet { setEdit(oldValue, value: &isEditVehicle) }}
+    // add-on 02/02/2024
+    var isInValidRegistrationYear : Bool? { didSet { setEdit(oldValue, value: &isEditVehicle) }}
     
     var isInValidEngineNumber : Bool? { didSet { setEdit(oldValue, value: &isEditVehicle) }}
     var isInValidVinNumber : Bool? { didSet { setEdit(oldValue, value: &isEditVehicle) }}

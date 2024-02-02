@@ -154,13 +154,13 @@ class DataController {
         return false
     }
     
-    func showTipView(sender: UIView, superView: UIView? , message: String) {
+    func showTipView(sender: UIView, superView: UIView? , message: String, textAlignment: NSTextAlignment = .center) {
         var preferences = EasyTipView.Preferences()
         preferences.drawing.font = UIFont.systemFont(ofSize: 13)
         preferences.drawing.foregroundColor = UIColor.white
         preferences.drawing.backgroundColor = UIColor.black
         preferences.drawing.arrowPosition = EasyTipView.ArrowPosition.bottom
-        
+        preferences.drawing.textAlignment = textAlignment
         let tipView = EasyTipView(text:  message, preferences: preferences)
         tipView.show(forView: sender, withinSuperview: superView)
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {

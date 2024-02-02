@@ -438,6 +438,8 @@ class ItemAllListWorker
                 
                 model.isRegistrationAuction = vehicleType?.isRegistrationAuction
                 
+                model.isInValidRegistrationYear = vehicleType?.isInValidRegistrationYear
+                
                 //print("🔸🐶 Registration Plate \(model.registrationPlate)")
                 //print("🔸🐶 Mismatch: \(model.isRegistrationMismatch), noteRegistration: \(model.registrationNote))")
                 

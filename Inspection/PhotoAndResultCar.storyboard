@@ -1279,7 +1279,9 @@
                         <outlet property="amountLabel" destination="feJ-my-I1P" id="8Nd-p4-mpU"/>
                         <outlet property="assetCheckBox" destination="2PP-K6-7Ds" id="amv-el-3mk"/>
                         <outlet property="backCheckBox" destination="0cy-X3-HVo" id="H4B-FO-1jo"/>
+                        <outlet property="carRoofBottomView" destination="BOm-Wy-A9I" id="Q6x-pE-fnS"/>
                         <outlet property="carRoofCheckBox" destination="cu0-gv-thF" id="yv7-sG-Koa"/>
+                        <outlet property="catalyticBottomView" destination="iVe-fY-fIA" id="k8X-Iv-nWo"/>
                         <outlet property="catalyticCheckBox" destination="SM5-4y-jya" id="LLt-2Y-g6j"/>
                         <outlet property="catalyticMessageLabel" destination="623-z6-ebf" id="j6W-PS-wPW"/>
                         <outlet property="chassisCheckBox" destination="ytI-ce-fRr" id="tGW-p6-XgU"/>

@@ -13,7 +13,7 @@
 import UIKit
 
 let bookinItem0Height = 1240.0
-let bookinItem1Height = 1300.0
+var bookinItem1Height = 1300.0
 let bookinItem2Height = 850.0
 let bookinItem2MBHeight = 1900.0
 let bookinItem3Height = 800.0
@@ -137,13 +137,13 @@ class PickUpCarViewController: ViewController, PickUpCarDisplayLogic
 
     var lastFrame = CGRectZero
     let item0OffsetY = 0.0
-    let item1OffsetY = bookinItem0Height
-    let item2OffsetY = bookinItem0Height + bookinItem1Height
-    let item2MotorbikeOffsetY = bookinItem0Height + bookinItem1Height
-    let item3OffsetY = bookinItem0Height + bookinItem1Height + bookinItem2Height
-    let item3MotorbikeOffsetY = bookinItem0Height + bookinItem1Height + bookinItem2MBHeight
-    let item4OffsetY = bookinItem0Height + bookinItem1Height + bookinItem2Height + bookinItem3Height
-    let item5OffsetY = bookinItem0Height + bookinItem1Height + bookinItem2Height + bookinItem3Height + bookinItem4Height
+    var item1OffsetY = 0.0
+    var item2OffsetY = 0.0
+    var item2MotorbikeOffsetY = 0.0
+    var item3OffsetY = 0.0
+    var item3MotorbikeOffsetY = 0.0
+    var item4OffsetY = 0.0
+    var item5OffsetY = 0.0
     
     override func initLocalString() {
         super.initLocalString()
@@ -153,6 +153,20 @@ class PickUpCarViewController: ViewController, PickUpCarDisplayLogic
         inspectionLabel.text = String.localized("main_inspection_item_inspection_title")
         photosLabel.text = String.localized("main_inspection_item_photos_title")
         pickUpDateLabel.text = String.localized("pick_up_date_title")
+        
+        if DataController.shared.bookInType == .MBIKE || DataController.shared.bookInType == .MBIKEWRECK  {
+            bookinItem1Height = 1300 - 130
+        } else {
+            bookinItem1Height = 1300
+        }
+        
+        item1OffsetY = bookinItem0Height
+        item2OffsetY = bookinItem0Height + bookinItem1Height
+        item2MotorbikeOffsetY = bookinItem0Height + bookinItem1Height
+        item3OffsetY = bookinItem0Height + bookinItem1Height + bookinItem2Height
+        item3MotorbikeOffsetY = bookinItem0Height + bookinItem1Height + bookinItem2MBHeight
+        item4OffsetY = bookinItem0Height + bookinItem1Height + bookinItem2Height + bookinItem3Height
+        item5OffsetY = bookinItem0Height + bookinItem1Height + bookinItem2Height + bookinItem3Height + bookinItem4Height
 
     }
     

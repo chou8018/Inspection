@@ -106,6 +106,7 @@
 "car_detail_engine_size_label" = "ขนาดเครื่องยนต์";
 "car_detail_year_manu_label" = "ปีผลิต";
 "car_detail_year_regis_label" = "ปีจดทะเบียน";
+"car_detail_year_regis_unable_label" = "ไม่ สามารถบอกปี จดทะเบี ยนได";
 "car_detail_year_manu_label" = "ปีผลิต";
 "car_detail_year_regis_label" = "ปีจดทะเบียน";
 "car_detail_year_placeholder_label" = "ปี";

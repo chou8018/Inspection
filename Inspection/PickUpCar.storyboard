@@ -2046,6 +2046,7 @@
                         <outlet property="engineNumberTextField" destination="y3c-08-pC1" id="pQt-IC-j3n"/>
                         <outlet property="engineUnableToVerifiedLabel" destination="mh4-2O-4Qv" id="ZCt-fS-arX"/>
                         <outlet property="gasCheckButton" destination="0IP-qC-3oZ" id="pcV-j0-tFC"/>
+                        <outlet property="gasInstallationStackView" destination="fOQ-6x-Q8c" id="dfg-nD-jKj"/>
                         <outlet property="gasKeyLabel" destination="DDT-T6-gTx" id="a0a-je-EQn"/>
                         <outlet property="gasNumberLabel" destination="Awj-ZF-Vtz" id="ZDh-yd-hxF"/>
                         <outlet property="gasNumberLineView" destination="4Zz-Nw-tXE" id="5ml-U1-dZu"/>
@@ -9616,7 +9617,7 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGreenColor">
-            <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

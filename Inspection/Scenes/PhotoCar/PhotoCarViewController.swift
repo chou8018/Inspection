@@ -163,6 +163,8 @@ class PhotoCarViewController: ViewController, PhotoCarDisplayLogic
     @IBOutlet weak var catalyticCheckBox: CheckBoxUIButton!
     @IBOutlet weak var skipView: CustomUIView!
     @IBOutlet weak var catalyticMessageLabel: UILabel!
+    @IBOutlet weak var carRoofBottomView: UIView!
+    @IBOutlet weak var catalyticBottomView: UIView!
     
     override func initLocalString() {
         super.initLocalString()
@@ -195,6 +197,13 @@ class PhotoCarViewController: ViewController, PhotoCarDisplayLogic
         catalyticCheckBox.titleLabel!.textAlignment = NSTextAlignment.center
         
         catalyticMessageLabel.text = String.localized("photos_car_catalytic_comment_title")
+        
+        if DataController.shared.bookInType == .MBIKE || DataController.shared.bookInType == .MBIKEWRECK  {
+            carRoofCheckBox.isHidden = true
+            carRoofBottomView.isHidden = true
+            catalyticCheckBox.isHidden = true
+            catalyticBottomView.isHidden = true
+        }
 
     }
     

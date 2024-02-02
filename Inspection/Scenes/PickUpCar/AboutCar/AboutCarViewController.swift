@@ -203,6 +203,7 @@ class AboutCarViewController: ViewController, AboutCarDisplayLogic
     @IBOutlet weak var auctionPlateLabel: UILabel!
     @IBOutlet weak var auctionPlateCheckButton: CheckBoxUIButton!
     @IBOutlet weak var gasOptionLineView: UIView!
+    @IBOutlet weak var gasInstallationStackView: UIStackView!
 
     var isMakeCarLunch = false
     var isGetColorLunch = false
@@ -982,6 +983,12 @@ class AboutCarViewController: ViewController, AboutCarDisplayLogic
             gasNumberLineView.isHidden = true
         }
         gasTextField.text = DataController.shared.receiverCarModel.gasOption
+        
+        if DataController.shared.bookInType == .MBIKE || DataController.shared.bookInType == .MBIKEWRECK {
+            gasInstallationStackView.isHidden = true
+        } else {
+            gasInstallationStackView.isHidden = false
+        }
 
     }
     

@@ -106,6 +106,7 @@
 "car_detail_engine_size_label" = "Engine size";
 "car_detail_year_manu_label" = "Year Manu.";
 "car_detail_year_regis_label" = "Year Regis.";
+"car_detail_year_regis_unable_label" = "Unable to verify registration year";
 "car_detail_year_manu_label" = "Manu.";
 "car_detail_year_regis_label" = "Regis.";
 "car_detail_year_placeholder_label" = "Year";

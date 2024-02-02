@@ -490,6 +490,8 @@ class GradeCarViewController: ViewController, GradeCarDisplayLogic
         
         if DataController.shared.receiverCarModel.isGasTank == true , let gasNumber = DataController.shared.receiverCarModel.gasNumber , gasNumber.count > 0 {
             DataController.shared.inspectionCarModel.f9Chehck = true
+        } else {
+            DataController.shared.inspectionCarModel.f9Chehck = false
         }
     }
     
@@ -508,7 +510,8 @@ class GradeCarViewController: ViewController, GradeCarDisplayLogic
     }
     
     func hasDefaultGasInstalled() -> Bool {
-        if DataController.shared.inspectionCarModel.f9Chehck == true {
+        
+        if DataController.shared.receiverCarModel.isGasTank == true , let gasNumber = DataController.shared.receiverCarModel.gasNumber , gasNumber.count > 0 {
             return true
         }
         return false

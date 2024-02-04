@@ -12,8 +12,9 @@
 
 import UIKit
 
+let usedBookinItem1Height = 1500.0
 let bookinItem0Height = 1240.0
-var bookinItem1Height = 1300.0
+var bookinItem1Height = usedBookinItem1Height
 let bookinItem2Height = 850.0
 let bookinItem2MBHeight = 1900.0
 let bookinItem3Height = 800.0
@@ -155,9 +156,9 @@ class PickUpCarViewController: ViewController, PickUpCarDisplayLogic
         pickUpDateLabel.text = String.localized("pick_up_date_title")
         
         if DataController.shared.bookInType == .MBIKE || DataController.shared.bookInType == .MBIKEWRECK  {
-            bookinItem1Height = 1300 - 130
+            bookinItem1Height = usedBookinItem1Height - 130
         } else {
-            bookinItem1Height = 1300
+            bookinItem1Height = usedBookinItem1Height
         }
         
         item1OffsetY = bookinItem0Height

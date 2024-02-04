@@ -323,8 +323,14 @@ class PickUpCarInteractor: PickUpCarBusinessLogic, PickUpCarDataStore
         let validModelCar = modelCar != nil && !(modelCar?.isEmpty ?? false)
         let validVariantsCar = variantsCar != nil && !(variantsCar?.isEmpty ?? false)
         let validCapacityCar = capacityCar != nil && !(capacityCar?.isEmpty ?? false)
-        let validYearMake = yearMake != nil && !(yearMake?.isEmpty ?? false)
-        let validYearRegister = yearRegister != nil && !(yearRegister?.isEmpty ?? false)
+        var validYearMake = yearMake != nil && !(yearMake?.isEmpty ?? false)
+        if DataController.shared.receiverCarModel.isInValidManuYear == true {
+            validYearMake = true
+        }
+        var validYearRegister = yearRegister != nil && !(yearRegister?.isEmpty ?? false)
+        if DataController.shared.receiverCarModel.isInValidRegistrationYear == true {
+            validYearRegister = true
+        }
         let validRegistration = registration != nil && !(registration?.isEmpty ?? false)
         let validProvince = province != nil && !(province?.isEmpty ?? false)
         let validColorCar = colorCar != nil && !(colorCar?.isEmpty ?? false)

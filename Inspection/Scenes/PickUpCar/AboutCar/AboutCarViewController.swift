@@ -208,7 +208,12 @@ class AboutCarViewController: ViewController, AboutCarDisplayLogic
     @IBOutlet weak var regisCheckButton: CheckBoxUIButton!
     @IBOutlet weak var regisCheckView: UIStackView!
     @IBOutlet weak var regisCheckLabel: UILabel!
-    
+    @IBOutlet weak var manuCheckButton: CheckBoxUIButton!
+    @IBOutlet weak var manuCheckView: UIStackView!
+    @IBOutlet weak var manuCheckLabel: UILabel!
+    @IBOutlet weak var manuTipButton: UIButton!
+    @IBOutlet weak var regisTipButton: UIButton!
+
     var isMakeCarLunch = false
     var isGetColorLunch = false
     var isGetProvinceLunch = false
@@ -232,6 +237,7 @@ class AboutCarViewController: ViewController, AboutCarDisplayLogic
         capacityTextField.placeholder = capacityTitleLabel.text
         yearTitleLabel.text = String.localized("car_detail_year_manu_label")
         yearTextField.placeholder = String.localized("car_detail_year_placeholder_label")
+        yearTextField.isSearchEnable = false
         yearRegisterTitleLabel.text = String.localized("car_detail_year_regis_label")
         yearRegisterTextField.placeholder = String.localized("car_detail_year_placeholder_label")
         yearRegisterTextField.isSearchEnable = false
@@ -263,6 +269,7 @@ class AboutCarViewController: ViewController, AboutCarDisplayLogic
         
         auctionPlateLabel.text = String.localized("car_detail_auction_plate_label")
         regisCheckLabel.text = String.localized("car_detail_year_regis_unable_label")
+        manuCheckLabel.text = String.localized("car_detail_year_manu_unable_label")
 
     }
     
@@ -484,6 +491,16 @@ class AboutCarViewController: ViewController, AboutCarDisplayLogic
                 DataController.shared.receiverCarModel.registrationYear = nil
             }
             DataController.shared.receiverCarModel.isInValidRegistrationYear = check
+        }
+    }
+    
+    @IBAction func manuCheckTapped(_ sender: Any) {
+        manuCheckButton.toggle { [weak self] (check) in
+            if check {
+                self?.yearTextField.text = ""
+                DataController.shared.receiverCarModel.year = nil
+            }
+            DataController.shared.receiverCarModel.isInValidManuYear = check
         }
     }
     
@@ -810,11 +827,15 @@ class AboutCarViewController: ViewController, AboutCarDisplayLogic
             [weak self] (selectValue, _, _) in
             DataController.shared.receiverCarModel.year = selectValue
             self?.yearTextField.text = selectValue
+            self?.manuCheckButton.check = false
+            DataController.shared.receiverCarModel.isInValidManuYear = false
         }
         setValue(to: yearRegisterTextField, values: viewModel.yearLists ?? []) {
             [weak self] (selectValue, _, _) in
             DataController.shared.receiverCarModel.registrationYear = selectValue
             self?.yearRegisterTextField.text =  selectValue
+            self?.regisCheckButton.check = false
+            DataController.shared.receiverCarModel.isInValidRegistrationYear = false
         }
     }
     
@@ -964,8 +985,6 @@ class AboutCarViewController: ViewController, AboutCarDisplayLogic
 
         }
         
-        
-        
         gasCheckButton.check = model.isGasTank ?? false
         
         brandTextfield.text = model.make_BU
@@ -1003,11 +1022,18 @@ class AboutCarViewController: ViewController, AboutCarDisplayLogic
         
         if DataController.shared.bookInType == .MBIKE || DataController.shared.bookInType == .MBIKEWRECK {
             gasInstallationStackView.isHidden = true
-            regisCheckView.isHidden = true
+            manuTipButton.isHidden = true
+            regisTipButton.isHidden = true
+//            regisCheckView.isHidden = true
         } else {
             gasInstallationStackView.isHidden = false
-            regisCheckView.isHidden = false
+            manuTipButton.isHidden = false
+            regisTipButton.isHidden = false
+//            regisCheckView.isHidden = false
         }
+
+        manuCheckButton.check = model.isInValidManuYear ?? false
+        regisCheckButton.check = model.isInValidRegistrationYear ?? false
 
     }
     

@@ -82,7 +82,8 @@ struct VehicleType : Mappable {
     
     // add-on 02/02/2024
     var isInValidRegistrationYear : Bool = false
-    
+    var isInValidManuYear : Bool = false
+
     init?(map: Map) {
         
     }
@@ -143,8 +144,8 @@ struct VehicleType : Mappable {
         isRegistrationAuction : Bool?,
         gasOption: String?,
         gasOptionId: Int?,
-        isInValidRegistrationYear: Bool?) {
-            
+        isInValidRegistrationYear: Bool?,
+        isInValidManuYear: Bool?) {
             
             self.seller = seller ?? ""
             self.sellingCategory = sellingCategory ?? ""
@@ -209,6 +210,8 @@ struct VehicleType : Mappable {
             self.gasOption = gasOption ?? ""
             self.gasOptionId = gasOptionId
             self.isInValidRegistrationYear = isInValidRegistrationYear ?? false
+            self.isInValidManuYear = isInValidManuYear ?? false
+
         }
     
     mutating func mapping(map: Map) {
@@ -277,7 +280,9 @@ struct VehicleType : Mappable {
         gasOption <- map["gasNote"]
         gasOptionId <- map["gasType"]
         
-        isInValidRegistrationYear <- map["IsNohaveBuildYear"]
+        isInValidRegistrationYear <- map["isNohaveRegis"]
+        isInValidManuYear <- map["isNohaveBuildYear"]
+
     }
     
 }

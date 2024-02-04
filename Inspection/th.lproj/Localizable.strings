@@ -105,9 +105,7 @@
 "car_detail_variant_label" = "รุ่นย่อย";
 "car_detail_engine_size_label" = "ขนาดเครื่องยนต์";
 "car_detail_year_manu_label" = "ปีผลิต";
-"car_detail_year_regis_label" = "ปีจดทะเบียน";
-"car_detail_year_regis_unable_label" = "ไม่ สามารถบอกปี จดทะเบี ยนได";
-"car_detail_year_manu_label" = "ปีผลิต";
+"car_detail_year_manu_unable_label" = "ไม่ สามารถบอกปี ปีผลิต ยนได";
 "car_detail_year_manu_tip_message" = "การตรวจสอบปีผลิตรถยนต์
 1. แผ่นเพลท
 2. หมายเลขตัวถัง
@@ -116,6 +114,9 @@
 5. เอกสารประจำรถ เช่น สำเนาทะเบียน, สมุดรับประกัน
 หากไม่แน่ใจขอให้สอบถามหัวหน้างาน";
 "car_detail_year_regis_label" = "ปีจดทะเบียน";
+"car_detail_year_regis_unable_label" = "ไม่ สามารถบอกปี จดทะเบี ยนได";
+//"car_detail_year_manu_label" = "ปีผลิต";
+//"car_detail_year_regis_label" = "ปีจดทะเบียน";
 "car_detail_year_regis_tip_message" = "การตรวจสอบปีผลิตรถยนต์
 1. แผ่นเพลท
 2. หมายเลขตัวถัง

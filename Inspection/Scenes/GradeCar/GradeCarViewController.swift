@@ -232,8 +232,19 @@ class GradeCarViewController: ViewController, GradeCarDisplayLogic
         yOptionLabel.text = String.localized("car_grade_y_label")
         
         mileageLabel.text = "\(String.localized("car_interior_mileage_label")): \(DataController.shared.receiverCarModel.miles?.formateMileage() ?? "")"
-        registrationYearLabel.text = "\(String.localized("car_detail_year_regis_label")): \(DataController.shared.receiverCarModel.registrationYear ?? "")"
+        registrationYearLabel.text = "\(String.localized("car_detail_year_regis_label")): \(newRegistrationYear() ?? "")"
         
+    }
+    
+    private func newRegistrationYear() -> String? {
+        
+        var result = ""
+        if let regisYear = DataController.shared.receiverCarModel.registrationYear , regisYear.toInt() > 0 {
+            result = regisYear
+        } else if let manuYear = DataController.shared.receiverCarModel.year , manuYear.toInt() > 0 {
+            result = "\(manuYear.toInt() + 1)"
+        }
+        return result
     }
     
     func doSomething()
@@ -460,7 +471,7 @@ class GradeCarViewController: ViewController, GradeCarDisplayLogic
             }
         }
         
-        if let year = DataController.shared.receiverCarModel.registrationYear {
+        if let year = newRegistrationYear() {
             let currentYear = Date().year
             let intYear = Int(year) ?? currentYear
             let registration = currentYear - intYear

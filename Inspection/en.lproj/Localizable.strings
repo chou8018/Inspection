@@ -121,7 +121,7 @@ If you are unsure, please contact supervisor";
 4. Door window mirror
 5. Vehicle document i.e. registration book, warranty book
 If you are unsure, please contact supervisor";
-"car_detail_year_regis_unable_label" = "Unable to verify registration year";
+"car_detail_year_regis_unable_label" = "Unable to verify";
 //"car_detail_year_manu_label" = "Manu.";
 //"car_detail_year_regis_label" = "Regis.";
 "car_detail_year_placeholder_label" = "Year";
@@ -141,6 +141,14 @@ If you are unsure, please contact supervisor";
 "car_detail_gas_installed_label" = "Gas installed";
 "car_detail_gas_removed_label" = "Gas installed & removed";
 "car_detail_gas_number_placeholder" = "Gas no.";
+"car_detail_brief_condition_title_label" = "Brief car condition";
+"car_detail_brief_tip_message" = "Brief car condition on drive ability
+If you select \"undrivable\", the car will automatically grade \"X\"
+Please inspect deeply on which part makes the car undriveable again in inspection section";
+"car_detail_brief_drivable_label" = "Drivable";
+"car_detail_brief_undriveable_label" = "Undriveable";
+"car_detail_brief_wrapped_undriveable_label" = "Wrapped Undriveable";
+"car_detail_brief_note_label" = "Note";
 
 // car exterior
 "car_exterior_label" = "Exterior condition";

@@ -13,10 +13,10 @@ class CheckBoxUIButton : UIButton {
     var fillImage = UIImage(named: "icon-check-fill")
     var fillImage2 = UIImage(named: "icon-check-fill-disable")
     var outlineImage = UIImage(named: "icon-check-outline")
+    var disableImage = UIImage(named: "icon_unable_click")
     
-    
-    
-    
+    var isDisable = false
+
     var callBack : ((Bool) -> Void)?
     enum TYPECHECK  {
         case IMAGE
@@ -38,7 +38,11 @@ class CheckBoxUIButton : UIButton {
        
         case .IMAGE:
             let fille = isEnabled ? fillImage : fillImage2
-            self.setBackgroundImage(check ? fille : outlineImage , for: .normal)
+            if isDisable {
+                self.setBackgroundImage(disableImage , for: .normal)
+            } else {
+                self.setBackgroundImage(check ? fille : outlineImage , for: .normal)
+            }
         case .BACKGROUND:
             self.backgroundColor = check ? (isEnabled ? .orangeColor : .gullgray) : .white
             self.setTitleColor(check ? .white : .appPrimaryColor, for: .normal)
@@ -48,6 +52,10 @@ class CheckBoxUIButton : UIButton {
     
     func setEnableView(isEnable : Bool){
         self.isEnabled = isEnable
+    }
+    
+    func setEaableClick(isEnable : Bool){
+        isDisable = isEnable
     }
 }
  

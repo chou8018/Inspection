@@ -141,6 +141,13 @@
 "car_detail_gas_installed_label" = "ติดแก๊ส";
 "car_detail_gas_removed_label" = "เลขถังแก๊ส";
 "car_detail_gas_number_placeholder" = "เลขถังแก๊ส";
+"car_detail_brief_condition_title_label" = "สภาพรถเบื้องต้น";
+"car_detail_brief_tip_message" = "ตรวจสอบเบื้องต้นตอนรับรถว่ารถ ขับได้/ขับไม่ได้ เช่น ถูกแรพมา ไม่มีมีกุญแจ เครื่องสตาร์ทไม่ติด
+หากเลือกขับไม่ได้ รถจะถูกตัดเกรด \"X\" โดยอัตโนมัติ พนักงานต้องตรวจสภาพอย่างละเอียด และลงว่าขับไม่ได้เพราะอะไร ในหมวดการตรวจสภาพอีกครั้ง";
+"car_detail_brief_drivable_label" = "ขับได้";
+"car_detail_brief_undriveable_label" = "ขับไม่ได้";
+"car_detail_brief_wrapped_undriveable_label" = "รถแรพมา";
+"car_detail_brief_note_label" = "รายละเอียด";
 
 // car exterior
 "car_exterior_label" = "สภาพภายนอกโดยรวม";

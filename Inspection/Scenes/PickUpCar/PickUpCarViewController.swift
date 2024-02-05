@@ -12,7 +12,7 @@
 
 import UIKit
 
-let usedBookinItem1Height = 1400.0
+let usedBookinItem1Height = 1600.0
 let bookinItem0Height = 1240.0
 var bookinItem1Height = usedBookinItem1Height
 let bookinItem2Height = 850.0
@@ -352,13 +352,14 @@ class PickUpCarViewController: ViewController, PickUpCarDisplayLogic
     }()
     private lazy var aboutCarViewController: AboutCarBaseViewController? = {
         
-        var viewController: AboutCarBaseViewController
+        let viewController = getViewCOntroller(identifier: "AboutCarViewControllerNew") as! AboutCarViewControllerNew
         
-        if DataController.shared.bookInType == .MBIKE || DataController.shared.bookInType == .MBIKEWRECK  {
-            viewController = getViewCOntroller(identifier: "AboutCarViewController") as! AboutCarViewController
-        } else {
-            viewController = getViewCOntroller(identifier: "AboutCarViewControllerNew") as! AboutCarViewControllerNew
-        }
+//        var viewController: AboutCarBaseViewController
+//        if DataController.shared.bookInType == .MBIKE || DataController.shared.bookInType == .MBIKEWRECK  {
+//            viewController = getViewCOntroller(identifier: "AboutCarViewController") as! AboutCarViewController
+//        } else {
+//            viewController = getViewCOntroller(identifier: "AboutCarViewControllerNew") as! AboutCarViewControllerNew
+//        }
         
         // Add View Controller as Child View Controller
         //self.add(asChildViewController: viewController)

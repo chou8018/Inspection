@@ -9190,14 +9190,14 @@
             <objects>
                 <viewController storyboardIdentifier="AboutCarViewControllerNew" id="r2g-3L-ZG3" customClass="AboutCarViewControllerNew" customModule="Inspection" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qVP-Mp-p5j">
-                        <rect key="frame" x="0.0" y="0.0" width="1200" height="1330"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1200" height="1500"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z4A-de-cfc">
-                                <rect key="frame" x="0.0" y="20" width="1200" height="1310"/>
+                                <rect key="frame" x="0.0" y="20" width="1200" height="1480"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="0b5-I3-YHb">
-                                        <rect key="frame" x="50" y="50" width="1100" height="1179"/>
+                                        <rect key="frame" x="50" y="50" width="1100" height="1391"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ewu-vq-IrY">
                                                 <rect key="frame" x="0.0" y="0.0" width="1100" height="80"/>
@@ -9447,22 +9447,22 @@
                                                 </constraints>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="BVl-A2-fsC">
-                                                <rect key="frame" x="0.0" y="500" width="1100" height="99"/>
+                                                <rect key="frame" x="0.0" y="500" width="1100" height="74"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="xEx-hf-5eO">
-                                                        <rect key="frame" x="0.0" y="0.0" width="252.5" height="99"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="535" height="74"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ขนาดเครื่อง" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lkl-vi-q3G">
-                                                                <rect key="frame" x="0.0" y="0.0" width="252.5" height="49"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="535" height="24"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                                 <color key="textColor" name="primary_color"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nmg-uF-yqn">
-                                                                <rect key="frame" x="0.0" y="49" width="252.5" height="49"/>
+                                                                <rect key="frame" x="0.0" y="24" width="535" height="49"/>
                                                                 <subviews>
                                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="ขนาดเครื่อง" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="49y-Oo-99R" customClass="CustomTextField" customModule="Inspection" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="225" height="49"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="507.5" height="49"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                                         <userDefinedRuntimeAttributes>
@@ -9472,7 +9472,7 @@
                                                                         </userDefinedRuntimeAttributes>
                                                                     </textField>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l3n-kx-eH8">
-                                                                        <rect key="frame" x="225" y="0.0" width="27.5" height="49"/>
+                                                                        <rect key="frame" x="507.5" y="0.0" width="27.5" height="49"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                                         <color key="textColor" name="primary_color"/>
                                                                         <nil key="highlightedColor"/>
@@ -9483,7 +9483,7 @@
                                                                 </constraints>
                                                             </stackView>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bzc-EU-uhI">
-                                                                <rect key="frame" x="0.0" y="98" width="252.5" height="1"/>
+                                                                <rect key="frame" x="0.0" y="73" width="535" height="1"/>
                                                                 <color key="backgroundColor" name="primary_color"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="1" id="jJY-At-pRb"/>
@@ -9491,20 +9491,326 @@
                                                             </view>
                                                         </subviews>
                                                     </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Brm-DC-PRi">
+                                                        <rect key="frame" x="565" y="0.0" width="535" height="74"/>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="j2i-59-EOL">
+                                                <rect key="frame" x="0.0" y="594" width="1100" height="100"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="d3l-VS-9Cd">
+                                                        <rect key="frame" x="0.0" y="0.0" width="1100" height="40"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" text="หมายเลขเครื่องยนต์" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uzr-1U-jpv">
+                                                                <rect key="frame" x="0.0" y="0.0" width="165" height="40"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                                <color key="textColor" name="primary_color"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6nS-fQ-WdH" customClass="CheckBoxUIButton" customModule="Inspection" customModuleProvider="target">
+                                                                <rect key="frame" x="185" y="0.0" width="40" height="40"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="40" id="UTO-AM-Nev"/>
+                                                                    <constraint firstAttribute="width" secondItem="6nS-fQ-WdH" secondAttribute="height" multiplier="1:1" id="wFh-dl-I9G"/>
+                                                                </constraints>
+                                                                <state key="normal" backgroundImage="icon-check-outline"/>
+                                                                <connections>
+                                                                    <action selector="engineCheckTapped:" destination="r2g-3L-ZG3" eventType="touchUpInside" id="s4v-XS-G0L"/>
+                                                                </connections>
+                                                            </button>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="ตรวจสอบไม่ได้" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nLe-bg-MVz">
+                                                                <rect key="frame" x="245" y="0.0" width="124.5" height="40"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                                <color key="textColor" name="primary_color"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="db5-lV-8Rb">
+                                                                <rect key="frame" x="389.5" y="0.0" width="710.5" height="40"/>
+                                                                <subviews>
+                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="เหตุผล" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ihw-q9-wFZ" customClass="CustomTextField" customModule="Inspection" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="710.5" height="39"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                                        <textInputTraits key="textInputTraits"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
+                                                                                <color key="value" name="gullgray"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                    </textField>
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="egO-TG-kCh">
+                                                                        <rect key="frame" x="0.0" y="39" width="710.5" height="1"/>
+                                                                        <color key="backgroundColor" name="primary_color"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="1" id="Oa1-0Z-1RE"/>
+                                                                        </constraints>
+                                                                    </view>
+                                                                </subviews>
+                                                            </stackView>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D0R-gM-hOT">
+                                                        <rect key="frame" x="0.0" y="40" width="1100" height="10"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="10" id="bSd-yh-ya7"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="หมายเลขเครื่องยนต์" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jqo-wk-Jri" customClass="CustomTextField" customModule="Inspection" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="50" width="1100" height="49"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
+                                                                <color key="value" name="gullgray"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </textField>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kGA-3d-axD">
+                                                        <rect key="frame" x="0.0" y="99" width="1100" height="1"/>
+                                                        <color key="backgroundColor" name="primary_color"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="1" id="lOn-qC-YMv"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="100" id="4Q8-hj-639"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="DR1-HG-UdA">
+                                                <rect key="frame" x="0.0" y="714" width="1100" height="100"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="jBk-JI-BgH">
+                                                        <rect key="frame" x="0.0" y="0.0" width="1100" height="40"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" text="หมายเลขตัวถัง" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mwi-hZ-6sA">
+                                                                <rect key="frame" x="0.0" y="0.0" width="122" height="40"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                                <color key="textColor" name="primary_color"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mA3-s8-BMD" customClass="CheckBoxUIButton" customModule="Inspection" customModuleProvider="target">
+                                                                <rect key="frame" x="142" y="0.0" width="40" height="40"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" secondItem="mA3-s8-BMD" secondAttribute="height" multiplier="1:1" id="K1R-Md-uiE"/>
+                                                                    <constraint firstAttribute="height" constant="40" id="qf5-4M-6ip"/>
+                                                                </constraints>
+                                                                <state key="normal" backgroundImage="icon-check-outline"/>
+                                                                <connections>
+                                                                    <action selector="vinCheckTapped:" destination="r2g-3L-ZG3" eventType="touchUpInside" id="gIN-AV-ixB"/>
+                                                                </connections>
+                                                            </button>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="ตรวจสอบไม่ได้" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LrO-c6-796">
+                                                                <rect key="frame" x="202" y="0.0" width="124.5" height="40"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                                <color key="textColor" name="primary_color"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="LOJ-E2-fez">
+                                                                <rect key="frame" x="346.5" y="0.0" width="753.5" height="40"/>
+                                                                <subviews>
+                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="เหตุผล" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uNg-jf-3qU" customClass="CustomTextField" customModule="Inspection" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="753.5" height="39"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                                        <textInputTraits key="textInputTraits"/>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
+                                                                                <color key="value" name="gullgray"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                        </userDefinedRuntimeAttributes>
+                                                                    </textField>
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pwJ-i6-NkM">
+                                                                        <rect key="frame" x="0.0" y="39" width="753.5" height="1"/>
+                                                                        <color key="backgroundColor" name="primary_color"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="1" id="hnn-rq-sLK"/>
+                                                                        </constraints>
+                                                                    </view>
+                                                                </subviews>
+                                                            </stackView>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DTr-lL-BYY">
+                                                        <rect key="frame" x="0.0" y="40" width="1100" height="10"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="10" id="cBF-Oo-BgV"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="หมายเลขตัวถัง" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oB3-ZQ-cfD" customClass="CustomTextField" customModule="Inspection" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="50" width="1100" height="49"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
+                                                                <color key="value" name="gullgray"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                    </textField>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AWW-MJ-cHX">
+                                                        <rect key="frame" x="0.0" y="99" width="1100" height="1"/>
+                                                        <color key="backgroundColor" name="primary_color"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="1" id="Drd-jC-FSH"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="100" id="iHa-dc-kmT"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Jb6-BD-HFb">
+                                                <rect key="frame" x="0.0" y="834" width="1100" height="98"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WOR-ai-Bho">
+                                                        <rect key="frame" x="0.0" y="0.0" width="1100" height="49"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brief car condition" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t6g-XI-bBb">
+                                                                <rect key="frame" x="0.0" y="0.0" width="159.5" height="49"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                                <color key="textColor" name="primary_color"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vo2-vL-h2P">
+                                                                <rect key="frame" x="159.5" y="0.0" width="24" height="49"/>
+                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                <state key="normal" image="icons-help"/>
+                                                                <connections>
+                                                                    <action selector="briefTipButtonTapped:" destination="r2g-3L-ZG3" eventType="touchUpInside" id="xBb-f9-YyJ"/>
+                                                                </connections>
+                                                            </button>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HRz-0D-PK0">
+                                                                <rect key="frame" x="183.5" y="0.0" width="916.5" height="49"/>
+                                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                            </view>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="49" id="vq9-bS-2GP"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="kfF-2I-mXS">
+                                                        <rect key="frame" x="0.0" y="49" width="1100" height="49"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="250" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KuO-2H-8ld" customClass="CheckBoxUIButton" customModule="Inspection" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="9.5" width="30" height="30"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="30" id="8c1-Er-CBq"/>
+                                                                    <constraint firstAttribute="width" secondItem="KuO-2H-8ld" secondAttribute="height" multiplier="1:1" id="GZk-Hd-zx6"/>
+                                                                </constraints>
+                                                                <state key="normal" backgroundImage="icon-check-outline"/>
+                                                                <connections>
+                                                                    <action selector="brief0CheckTapped:" destination="r2g-3L-ZG3" eventType="touchUpInside" id="NoK-9T-Zty"/>
+                                                                </connections>
+                                                            </button>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="250" text="Drivable" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rCH-my-Ot9">
+                                                                <rect key="frame" x="40" y="15.5" width="80" height="18"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="80" id="y7S-dz-eqv"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                                <color key="textColor" name="primary_color"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="250" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kLB-0o-YZ5" customClass="CheckBoxUIButton" customModule="Inspection" customModuleProvider="target">
+                                                                <rect key="frame" x="130" y="9.5" width="30" height="30"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="30" id="Btf-4y-cbE"/>
+                                                                    <constraint firstAttribute="width" secondItem="kLB-0o-YZ5" secondAttribute="height" multiplier="1:1" id="KZv-bk-wNF"/>
+                                                                    <constraint firstAttribute="width" secondItem="kLB-0o-YZ5" secondAttribute="height" multiplier="1:1" id="U2I-Dq-MFm"/>
+                                                                </constraints>
+                                                                <state key="normal" backgroundImage="icon-check-outline"/>
+                                                                <connections>
+                                                                    <action selector="brief1CheckTapped:" destination="r2g-3L-ZG3" eventType="touchUpInside" id="Pz6-T4-5Wc"/>
+                                                                </connections>
+                                                            </button>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="250" text="Undriveable" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tCs-KF-S3F">
+                                                                <rect key="frame" x="170" y="15.5" width="100" height="18"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="qtF-eg-hUt"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                                <color key="textColor" name="primary_color"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="250" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aTG-s3-G0V" customClass="CheckBoxUIButton" customModule="Inspection" customModuleProvider="target">
+                                                                <rect key="frame" x="280" y="9.5" width="30" height="30"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" secondItem="aTG-s3-G0V" secondAttribute="height" multiplier="1:1" id="0eD-i8-Xow"/>
+                                                                    <constraint firstAttribute="width" secondItem="aTG-s3-G0V" secondAttribute="height" multiplier="1:1" id="e16-Zf-hSA"/>
+                                                                    <constraint firstAttribute="height" constant="30" id="eMM-DN-fC6"/>
+                                                                </constraints>
+                                                                <state key="normal" backgroundImage="icon-check-outline"/>
+                                                                <connections>
+                                                                    <action selector="brief2CheckTapped:" destination="r2g-3L-ZG3" eventType="touchUpInside" id="bG2-2K-vRa"/>
+                                                                </connections>
+                                                            </button>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="250" text="Wrapped Undriveable" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jd1-Ue-KoN">
+                                                                <rect key="frame" x="320" y="15.5" width="150" height="18"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="7gY-nd-kee"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                                <color key="textColor" name="primary_color"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ySh-g1-bgW">
+                                                                <rect key="frame" x="480" y="4.5" width="620" height="40"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="40" id="zyy-x3-1rJ"/>
+                                                                </constraints>
+                                                            </stackView>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="kLB-0o-YZ5" firstAttribute="width" secondItem="kLB-0o-YZ5" secondAttribute="height" multiplier="1:1" id="T49-eY-DvW"/>
+                                                            <constraint firstItem="kLB-0o-YZ5" firstAttribute="width" secondItem="kLB-0o-YZ5" secondAttribute="height" multiplier="1:1" id="TCe-EZ-cTD"/>
+                                                            <constraint firstAttribute="height" constant="49" id="cSt-2f-RDB"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                    <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Y6x-AI-cU1">
+                                                        <rect key="frame" x="0.0" y="98" width="1100" height="49"/>
+                                                        <subviews>
+                                                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="หมายเหตุ" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GPl-Cb-Ynh" customClass="CustomTextField" customModule="Inspection" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="1100" height="48"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                                <textInputTraits key="textInputTraits"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
+                                                                        <color key="value" name="gullgray"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </textField>
+                                                            <view contentMode="scaleToFill" horizontalHuggingPriority="249" translatesAutoresizingMaskIntoConstraints="NO" id="nT6-QM-sdf">
+                                                                <rect key="frame" x="0.0" y="48" width="1100" height="1"/>
+                                                                <color key="backgroundColor" name="primary_color"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="1" id="yks-2c-fca"/>
+                                                                </constraints>
+                                                            </view>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="49" id="E0k-jC-6Zx"/>
+                                                        </constraints>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Rnj-mK-Mcy">
+                                                <rect key="frame" x="0.0" y="952" width="1100" height="99"/>
+                                                <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="jeV-bZ-6t0">
-                                                        <rect key="frame" x="282.5" y="0.0" width="252.5" height="99"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="346.5" height="99"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gMz-gH-mMx">
-                                                                <rect key="frame" x="0.0" y="0.0" width="252.5" height="49"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="346.5" height="49"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ปีผลิต" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7kc-5e-1Yz">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="49"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="50.5" height="49"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                                         <color key="textColor" name="primary_color"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TLn-VP-Tqk">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="49"/>
+                                                                        <rect key="frame" x="50.5" y="0.0" width="24" height="49"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                         <state key="normal" image="icons-help"/>
                                                                         <connections>
@@ -9512,7 +9818,7 @@
                                                                         </connections>
                                                                     </button>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jAz-Zb-LUd">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="252.5" height="49"/>
+                                                                        <rect key="frame" x="74.5" y="0.0" width="272" height="49"/>
                                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                     </view>
                                                                 </subviews>
@@ -9521,10 +9827,10 @@
                                                                 </constraints>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RfK-xT-Cqe">
-                                                                <rect key="frame" x="0.0" y="49" width="252.5" height="49"/>
+                                                                <rect key="frame" x="0.0" y="49" width="346.5" height="49"/>
                                                                 <subviews>
                                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="ปี" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z56-aP-dbp" customClass="DropDown" customModule="Inspection" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="252.5" height="49"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="346.5" height="49"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                                         <userDefinedRuntimeAttributes>
@@ -9557,7 +9863,7 @@
                                                                 </constraints>
                                                             </stackView>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IqH-fx-hTB">
-                                                                <rect key="frame" x="0.0" y="98" width="252.5" height="1"/>
+                                                                <rect key="frame" x="0.0" y="98" width="346.5" height="1"/>
                                                                 <color key="backgroundColor" name="primary_color"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="1" id="v2m-Ec-BS4"/>
@@ -9566,10 +9872,10 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="58k-An-Ifm">
-                                                        <rect key="frame" x="565" y="0.0" width="252.5" height="99"/>
+                                                        <rect key="frame" x="376.5" y="0.0" width="347" height="99"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nD0-Fz-GDY">
-                                                                <rect key="frame" x="0.0" y="0.0" width="252.5" height="49"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="347" height="49"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ปีจดทะเบียน" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2kS-ny-TOX">
                                                                         <rect key="frame" x="0.0" y="0.0" width="102" height="49"/>
@@ -9586,7 +9892,7 @@
                                                                         </connections>
                                                                     </button>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q7z-hl-fYN">
-                                                                        <rect key="frame" x="126" y="0.0" width="126.5" height="49"/>
+                                                                        <rect key="frame" x="126" y="0.0" width="221" height="49"/>
                                                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                     </view>
                                                                 </subviews>
@@ -9595,10 +9901,10 @@
                                                                 </constraints>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7WR-7z-rO0">
-                                                                <rect key="frame" x="0.0" y="49" width="252.5" height="49"/>
+                                                                <rect key="frame" x="0.0" y="49" width="347" height="49"/>
                                                                 <subviews>
                                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="ปี" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="d9l-Yb-I6c" customClass="DropDown" customModule="Inspection" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="252.5" height="49"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="347" height="49"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                                         <userDefinedRuntimeAttributes>
@@ -9631,7 +9937,7 @@
                                                                 </constraints>
                                                             </stackView>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j3V-61-pBk">
-                                                                <rect key="frame" x="0.0" y="98" width="252.5" height="1"/>
+                                                                <rect key="frame" x="0.0" y="98" width="347" height="1"/>
                                                                 <color key="backgroundColor" name="primary_color"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="1" id="P8T-bj-gvC"/>
@@ -9640,16 +9946,16 @@
                                                         </subviews>
                                                     </stackView>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="6vM-Mb-s1j">
-                                                        <rect key="frame" x="847.5" y="0.0" width="252.5" height="99"/>
+                                                        <rect key="frame" x="753.5" y="0.0" width="346.5" height="99"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ljz-G3-KSj">
-                                                                <rect key="frame" x="0.0" y="0.0" width="252.5" height="59"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="346.5" height="59"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                                 <color key="textColor" name="primary_color"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fT0-2l-a2u">
-                                                                <rect key="frame" x="0.0" y="59" width="252.5" height="40"/>
+                                                                <rect key="frame" x="0.0" y="59" width="346.5" height="40"/>
                                                                 <subviews>
                                                                     <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="250" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ak-SU-8gv" customClass="CheckBoxUIButton" customModule="Inspection" customModuleProvider="target">
                                                                         <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
@@ -9672,7 +9978,7 @@
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalCompressionResistancePriority="250" text="Unable to verify registration year" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="213.5" translatesAutoresizingMaskIntoConstraints="NO" id="dni-i2-BHy">
-                                                                        <rect key="frame" x="48" y="0.0" width="204.5" height="40"/>
+                                                                        <rect key="frame" x="48" y="0.0" width="298.5" height="40"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                                         <color key="textColor" name="primary_color"/>
                                                                         <nil key="highlightedColor"/>
@@ -9688,7 +9994,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="J6e-C6-nTq">
-                                                <rect key="frame" x="0.0" y="619" width="1100" height="40"/>
+                                                <rect key="frame" x="0.0" y="1071" width="1100" height="40"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="9lH-pf-WR3">
                                                         <rect key="frame" x="0.0" y="0.0" width="1100" height="40"/>
@@ -9816,7 +10122,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Mv2-fh-B79">
-                                                <rect key="frame" x="0.0" y="679" width="1100" height="50"/>
+                                                <rect key="frame" x="0.0" y="1131" width="1100" height="50"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" horizontalCompressionResistancePriority="751" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ggB-xV-5An">
                                                         <rect key="frame" x="0.0" y="0.0" width="535" height="50"/>
@@ -9905,7 +10211,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="dIb-3v-CkU">
-                                                <rect key="frame" x="0.0" y="749" width="1100" height="80"/>
+                                                <rect key="frame" x="0.0" y="1201" width="1100" height="80"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="สีรถ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wbs-zR-NB6">
                                                         <rect key="frame" x="0.0" y="0.0" width="1100" height="24"/>
@@ -9953,172 +10259,8 @@
                                                     <constraint firstAttribute="height" constant="80" id="Z5l-pM-mHd"/>
                                                 </constraints>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="j2i-59-EOL">
-                                                <rect key="frame" x="0.0" y="849" width="1100" height="100"/>
-                                                <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="d3l-VS-9Cd">
-                                                        <rect key="frame" x="0.0" y="0.0" width="1100" height="40"/>
-                                                        <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" text="หมายเลขเครื่องยนต์" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uzr-1U-jpv">
-                                                                <rect key="frame" x="0.0" y="0.0" width="165" height="40"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                                <color key="textColor" name="primary_color"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6nS-fQ-WdH" customClass="CheckBoxUIButton" customModule="Inspection" customModuleProvider="target">
-                                                                <rect key="frame" x="185" y="0.0" width="40" height="40"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="height" constant="40" id="UTO-AM-Nev"/>
-                                                                    <constraint firstAttribute="width" secondItem="6nS-fQ-WdH" secondAttribute="height" multiplier="1:1" id="wFh-dl-I9G"/>
-                                                                </constraints>
-                                                                <state key="normal" backgroundImage="icon-check-outline"/>
-                                                                <connections>
-                                                                    <action selector="engineCheckTapped:" destination="r2g-3L-ZG3" eventType="touchUpInside" id="s4v-XS-G0L"/>
-                                                                </connections>
-                                                            </button>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="ตรวจสอบไม่ได้" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nLe-bg-MVz">
-                                                                <rect key="frame" x="245" y="0.0" width="124.5" height="40"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                                <color key="textColor" name="primary_color"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="db5-lV-8Rb">
-                                                                <rect key="frame" x="389.5" y="0.0" width="710.5" height="40"/>
-                                                                <subviews>
-                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="เหตุผล" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ihw-q9-wFZ" customClass="CustomTextField" customModule="Inspection" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="710.5" height="39"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                                        <textInputTraits key="textInputTraits"/>
-                                                                        <userDefinedRuntimeAttributes>
-                                                                            <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
-                                                                                <color key="value" name="gullgray"/>
-                                                                            </userDefinedRuntimeAttribute>
-                                                                        </userDefinedRuntimeAttributes>
-                                                                    </textField>
-                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="egO-TG-kCh">
-                                                                        <rect key="frame" x="0.0" y="39" width="710.5" height="1"/>
-                                                                        <color key="backgroundColor" name="primary_color"/>
-                                                                        <constraints>
-                                                                            <constraint firstAttribute="height" constant="1" id="Oa1-0Z-1RE"/>
-                                                                        </constraints>
-                                                                    </view>
-                                                                </subviews>
-                                                            </stackView>
-                                                        </subviews>
-                                                    </stackView>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D0R-gM-hOT">
-                                                        <rect key="frame" x="0.0" y="40" width="1100" height="10"/>
-                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="10" id="bSd-yh-ya7"/>
-                                                        </constraints>
-                                                    </view>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="หมายเลขเครื่องยนต์" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jqo-wk-Jri" customClass="CustomTextField" customModule="Inspection" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="50" width="1100" height="49"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                        <textInputTraits key="textInputTraits"/>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
-                                                                <color key="value" name="gullgray"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                        </userDefinedRuntimeAttributes>
-                                                    </textField>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kGA-3d-axD">
-                                                        <rect key="frame" x="0.0" y="99" width="1100" height="1"/>
-                                                        <color key="backgroundColor" name="primary_color"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="1" id="lOn-qC-YMv"/>
-                                                        </constraints>
-                                                    </view>
-                                                </subviews>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="100" id="4Q8-hj-639"/>
-                                                </constraints>
-                                            </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="DR1-HG-UdA">
-                                                <rect key="frame" x="0.0" y="969" width="1100" height="100"/>
-                                                <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="jBk-JI-BgH">
-                                                        <rect key="frame" x="0.0" y="0.0" width="1100" height="40"/>
-                                                        <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" text="หมายเลขตัวถัง" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mwi-hZ-6sA">
-                                                                <rect key="frame" x="0.0" y="0.0" width="122" height="40"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                                <color key="textColor" name="primary_color"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                            <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mA3-s8-BMD" customClass="CheckBoxUIButton" customModule="Inspection" customModuleProvider="target">
-                                                                <rect key="frame" x="142" y="0.0" width="40" height="40"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="width" secondItem="mA3-s8-BMD" secondAttribute="height" multiplier="1:1" id="K1R-Md-uiE"/>
-                                                                    <constraint firstAttribute="height" constant="40" id="qf5-4M-6ip"/>
-                                                                </constraints>
-                                                                <state key="normal" backgroundImage="icon-check-outline"/>
-                                                                <connections>
-                                                                    <action selector="vinCheckTapped:" destination="r2g-3L-ZG3" eventType="touchUpInside" id="gIN-AV-ixB"/>
-                                                                </connections>
-                                                            </button>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="ตรวจสอบไม่ได้" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LrO-c6-796">
-                                                                <rect key="frame" x="202" y="0.0" width="124.5" height="40"/>
-                                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                                <color key="textColor" name="primary_color"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="LOJ-E2-fez">
-                                                                <rect key="frame" x="346.5" y="0.0" width="753.5" height="40"/>
-                                                                <subviews>
-                                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="เหตุผล" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uNg-jf-3qU" customClass="CustomTextField" customModule="Inspection" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="753.5" height="39"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                                        <textInputTraits key="textInputTraits"/>
-                                                                        <userDefinedRuntimeAttributes>
-                                                                            <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
-                                                                                <color key="value" name="gullgray"/>
-                                                                            </userDefinedRuntimeAttribute>
-                                                                        </userDefinedRuntimeAttributes>
-                                                                    </textField>
-                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pwJ-i6-NkM">
-                                                                        <rect key="frame" x="0.0" y="39" width="753.5" height="1"/>
-                                                                        <color key="backgroundColor" name="primary_color"/>
-                                                                        <constraints>
-                                                                            <constraint firstAttribute="height" constant="1" id="hnn-rq-sLK"/>
-                                                                        </constraints>
-                                                                    </view>
-                                                                </subviews>
-                                                            </stackView>
-                                                        </subviews>
-                                                    </stackView>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DTr-lL-BYY">
-                                                        <rect key="frame" x="0.0" y="40" width="1100" height="10"/>
-                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="10" id="cBF-Oo-BgV"/>
-                                                        </constraints>
-                                                    </view>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="หมายเลขตัวถัง" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oB3-ZQ-cfD" customClass="CustomTextField" customModule="Inspection" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="50" width="1100" height="49"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                                        <textInputTraits key="textInputTraits"/>
-                                                        <userDefinedRuntimeAttributes>
-                                                            <userDefinedRuntimeAttribute type="color" keyPath="placeHolderColor">
-                                                                <color key="value" name="gullgray"/>
-                                                            </userDefinedRuntimeAttribute>
-                                                        </userDefinedRuntimeAttributes>
-                                                    </textField>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AWW-MJ-cHX">
-                                                        <rect key="frame" x="0.0" y="99" width="1100" height="1"/>
-                                                        <color key="backgroundColor" name="primary_color"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="1" id="Drd-jC-FSH"/>
-                                                        </constraints>
-                                                    </view>
-                                                </subviews>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="100" id="iHa-dc-kmT"/>
-                                                </constraints>
-                                            </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="2oZ-Df-nUn">
-                                                <rect key="frame" x="0.0" y="1089" width="1100" height="90"/>
+                                                <rect key="frame" x="0.0" y="1301" width="1100" height="90"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="fco-7Z-d1B">
                                                         <rect key="frame" x="0.0" y="0.0" width="1100" height="80"/>
@@ -10284,7 +10426,7 @@
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="searchTapped:" destination="r2g-3L-ZG3" eventType="touchUpInside" id="lKQ-r1-RNm"/>
-                                            <segue destination="3Ut-qg-0fm" kind="presentation" id="IJT-7P-ahM"/>
+                                            <segue destination="3Ut-qg-0fm" kind="presentation" identifier="ModelCodePopup" id="IJT-7P-ahM"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -10309,13 +10451,22 @@
                         </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="1200" height="1330"/>
+                    <size key="freeformSize" width="1200" height="1500"/>
                     <connections>
                         <outlet property="auctionPlateCheckButton" destination="6d4-kb-QV2" id="WlI-Hp-nlr"/>
                         <outlet property="auctionPlateLabel" destination="ypM-ri-MPu" id="mSC-ch-4Rf"/>
                         <outlet property="brandLineView" destination="Onc-94-1n4" id="QGo-FK-c82"/>
                         <outlet property="brandTextfield" destination="23h-mI-uq8" id="DaI-9R-a9M"/>
                         <outlet property="brandTitleLabel" destination="KAI-pz-tpj" id="oLh-dF-3pv"/>
+                        <outlet property="briefCheckBox0" destination="KuO-2H-8ld" id="kQG-kM-kSd"/>
+                        <outlet property="briefCheckBox1" destination="kLB-0o-YZ5" id="zNz-nr-5vd"/>
+                        <outlet property="briefCheckBox2" destination="aTG-s3-G0V" id="EYG-8V-8pi"/>
+                        <outlet property="briefCheckTitleLabel0" destination="rCH-my-Ot9" id="iW0-yl-O0c"/>
+                        <outlet property="briefCheckTitleLabel1" destination="tCs-KF-S3F" id="sHZ-EN-ylG"/>
+                        <outlet property="briefCheckTitleLabel2" destination="Jd1-Ue-KoN" id="gzv-JD-bMc"/>
+                        <outlet property="briefNoteStackView" destination="Y6x-AI-cU1" id="kLH-hC-Vxj"/>
+                        <outlet property="briefNoteTextField" destination="GPl-Cb-Ynh" id="9jw-KA-prk"/>
+                        <outlet property="briefTitleLabel" destination="t6g-XI-bBb" id="HXc-qV-BPY"/>
                         <outlet property="capacityLineView" destination="bzc-EU-uhI" id="Npm-Od-tJ0"/>
                         <outlet property="capacityTextField" destination="49y-Oo-99R" id="98r-Jm-Mud"/>
                         <outlet property="capacityTitleLabel" destination="Lkl-vi-q3G" id="d81-3K-bVW"/>
@@ -10389,7 +10540,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fw3-gR-8zB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-907" y="2384"/>
+            <point key="canvasLocation" x="-1423" y="2602"/>
         </scene>
     </scenes>
     <designables>
@@ -10522,6 +10673,9 @@
         <designable name="G1u-Ne-n3I">
             <size key="intrinsicContentSize" width="65" height="25.5"/>
         </designable>
+        <designable name="GPl-Cb-Ynh">
+            <size key="intrinsicContentSize" width="80" height="25.5"/>
+        </designable>
         <designable name="GfD-up-RTe">
             <size key="intrinsicContentSize" width="80" height="25.5"/>
         </designable>
@@ -10548,6 +10702,9 @@
         </designable>
         <designable name="KmU-cg-eCb">
             <size key="intrinsicContentSize" width="65" height="30"/>
+        </designable>
+        <designable name="KuO-2H-8ld">
+            <size key="intrinsicContentSize" width="30" height="30"/>
         </designable>
         <designable name="L9P-at-vkJ">
             <size key="intrinsicContentSize" width="36.5" height="25.5"/>
@@ -10677,6 +10834,9 @@
         </designable>
         <designable name="aGn-CQ-cE2">
             <size key="intrinsicContentSize" width="63.5" height="25.5"/>
+        </designable>
+        <designable name="aTG-s3-G0V">
+            <size key="intrinsicContentSize" width="30" height="30"/>
         </designable>
         <designable name="ain-PF-Fnb">
             <size key="intrinsicContentSize" width="30" height="30"/>
@@ -10808,6 +10968,9 @@
             <size key="intrinsicContentSize" width="165" height="25.5"/>
         </designable>
         <designable name="jwv-gq-JYd">
+            <size key="intrinsicContentSize" width="30" height="30"/>
+        </designable>
+        <designable name="kLB-0o-YZ5">
             <size key="intrinsicContentSize" width="30" height="30"/>
         </designable>
         <designable name="kk4-pn-31M">

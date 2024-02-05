@@ -453,21 +453,34 @@ class GradeCarViewController: ViewController, GradeCarDisplayLogic
                 DataController.shared.inspectionCarModel.g1Chehck = false
                 DataController.shared.inspectionCarModel.a1Chehck = false
                 DataController.shared.inspectionCarModel.f1Chehck = false
+                g1Chehck.setEaableClick(isEnable: true)
+                a1Chehck.setEaableClick(isEnable: true)
+                f1Chehck.setEaableClick(isEnable: true)
+                
             } else if mileage >= 20_000 , mileage <= 50_000 {
                 DataController.shared.inspectionCarModel.g1Chehck = true
                 DataController.shared.inspectionCarModel.e1Chehck = false
                 DataController.shared.inspectionCarModel.a1Chehck = false
                 DataController.shared.inspectionCarModel.f1Chehck = false
+                e1Chehck.setEaableClick(isEnable: true)
+                a1Chehck.setEaableClick(isEnable: true)
+                f1Chehck.setEaableClick(isEnable: true)
             } else if mileage > 50_000 , mileage <= 100_000 {
                 DataController.shared.inspectionCarModel.a1Chehck = true
                 DataController.shared.inspectionCarModel.e1Chehck = false
                 DataController.shared.inspectionCarModel.g1Chehck = false
                 DataController.shared.inspectionCarModel.f1Chehck = false
+                e1Chehck.setEaableClick(isEnable: true)
+                g1Chehck.setEaableClick(isEnable: true)
+                f1Chehck.setEaableClick(isEnable: true)
             } else {
                 DataController.shared.inspectionCarModel.f1Chehck = true
                 DataController.shared.inspectionCarModel.e1Chehck = false
                 DataController.shared.inspectionCarModel.g1Chehck = false
                 DataController.shared.inspectionCarModel.a1Chehck = false
+                e1Chehck.setEaableClick(isEnable: true)
+                g1Chehck.setEaableClick(isEnable: true)
+                a1Chehck.setEaableClick(isEnable: true)
             }
         }
         
@@ -481,21 +494,33 @@ class GradeCarViewController: ViewController, GradeCarDisplayLogic
                 DataController.shared.inspectionCarModel.g2Chehck = false
                 DataController.shared.inspectionCarModel.a2Chehck = false
                 DataController.shared.inspectionCarModel.f2Chehck = false
+                g2Chehck.setEaableClick(isEnable: true)
+                a2Chehck.setEaableClick(isEnable: true)
+                f2Chehck.setEaableClick(isEnable: true)
             } else if registration > 1 , registration <= 2 {
                 DataController.shared.inspectionCarModel.g2Chehck = true
                 DataController.shared.inspectionCarModel.e2Chehck = false
                 DataController.shared.inspectionCarModel.a2Chehck = false
                 DataController.shared.inspectionCarModel.f2Chehck = false
+                e2Chehck.setEaableClick(isEnable: true)
+                a2Chehck.setEaableClick(isEnable: true)
+                f2Chehck.setEaableClick(isEnable: true)
             } else if registration > 2 , registration <= 5 {
                 DataController.shared.inspectionCarModel.a2Chehck = true
                 DataController.shared.inspectionCarModel.e2Chehck = false
                 DataController.shared.inspectionCarModel.g2Chehck = false
                 DataController.shared.inspectionCarModel.f2Chehck = false
+                e2Chehck.setEaableClick(isEnable: true)
+                g2Chehck.setEaableClick(isEnable: true)
+                f2Chehck.setEaableClick(isEnable: true)
             } else {
                 DataController.shared.inspectionCarModel.f2Chehck = true
                 DataController.shared.inspectionCarModel.e2Chehck = false
                 DataController.shared.inspectionCarModel.g2Chehck = false
                 DataController.shared.inspectionCarModel.a2Chehck = false
+                e2Chehck.setEaableClick(isEnable: true)
+                g2Chehck.setEaableClick(isEnable: true)
+                a2Chehck.setEaableClick(isEnable: true)
             }
         }
         

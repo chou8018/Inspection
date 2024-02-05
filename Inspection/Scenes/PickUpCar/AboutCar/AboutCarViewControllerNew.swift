@@ -174,7 +174,17 @@ class AboutCarViewControllerNew: AboutCarBaseViewController, AboutCarDisplayLogi
     @IBOutlet weak var regisCheckLabel: UILabel!
     @IBOutlet weak var manuTipButton: UIButton!
     @IBOutlet weak var regisTipButton: UIButton!
-
+    
+    @IBOutlet weak var briefTitleLabel: UILabel!
+    @IBOutlet weak var briefCheckBox0: CheckBoxUIButton!
+    @IBOutlet weak var briefCheckTitleLabel0: UILabel!
+    @IBOutlet weak var briefCheckBox1: CheckBoxUIButton!
+    @IBOutlet weak var briefCheckTitleLabel1: UILabel!
+    @IBOutlet weak var briefCheckBox2: CheckBoxUIButton!
+    @IBOutlet weak var briefCheckTitleLabel2: UILabel!
+    @IBOutlet weak var briefNoteTextField: CustomTextField!
+    @IBOutlet weak var briefNoteStackView: UIStackView!
+    
     var isMakeCarLunch = false
     var isGetColorLunch = false
     var isGetProvinceLunch = false
@@ -231,6 +241,11 @@ class AboutCarViewControllerNew: AboutCarBaseViewController, AboutCarDisplayLogi
         auctionPlateLabel.text = String.localized("car_detail_auction_plate_label")
         regisCheckLabel.text = String.localized("car_detail_year_regis_unable_label")
 
+        briefTitleLabel.text = String.localized("car_detail_brief_condition_title_label")
+        briefCheckTitleLabel0.text = String.localized("car_detail_brief_drivable_label")
+        briefCheckTitleLabel1.text = String.localized("car_detail_brief_undriveable_label")
+        briefCheckTitleLabel2.text = String.localized("car_detail_brief_wrapped_undriveable_label")
+        briefNoteTextField.placeholder = String.localized("car_detail_brief_note_label")
     }
     
     func doSomething()
@@ -373,6 +388,44 @@ class AboutCarViewControllerNew: AboutCarBaseViewController, AboutCarDisplayLogi
                 DataController.shared.receiverCarModel.registrationNote = ""
                 self?.noteRegistrationTextField.text = ""
             }
+        }
+    }
+    
+    @IBAction func brief0CheckTapped(_ sender: Any) {
+        briefCheckBox0.toggle { [weak self] (check) in
+            if check {
+                self?.briefCheckBox1.check = false
+                self?.briefCheckBox2.check = false
+                DataController.shared.receiverCarModel.briefConditionOptionId = 1
+            }else{
+                self?.briefNoteTextField.text = ""
+                DataController.shared.receiverCarModel.briefNote = ""
+            }
+            self?.briefNoteStackView.isHidden = true
+        }
+    }
+    
+    @IBAction func brief1CheckTapped(_ sender: Any) {
+        briefCheckBox1.toggle { [weak self] (check) in
+            if check {
+                self?.briefCheckBox0.check = false
+                self?.briefCheckBox2.check = false
+                DataController.shared.receiverCarModel.briefConditionOptionId = 2
+            }else{
+            }
+            self?.briefNoteStackView.isHidden = !check
+        }
+    }
+    
+    @IBAction func brief2CheckTapped(_ sender: Any) {
+        briefCheckBox2.toggle { [weak self] (check) in
+            if check {
+                self?.briefCheckBox0.check = false
+                self?.briefCheckBox1.check = false
+                DataController.shared.receiverCarModel.briefConditionOptionId = 3
+            }else{
+            }
+            self?.briefNoteStackView.isHidden = !check
         }
     }
     
@@ -814,6 +867,7 @@ class AboutCarViewControllerNew: AboutCarBaseViewController, AboutCarDisplayLogi
         reasonVINTextField.autocorrectionType = .no
         reasonGasTankTextField.autocorrectionType = .no
         noteRegistrationTextField.autocorrectionType = .no
+        briefNoteTextField.autocorrectionType = .no
         
         capacityTextField.delegate = self
         registrationTextField.delegate = self
@@ -825,6 +879,7 @@ class AboutCarViewControllerNew: AboutCarBaseViewController, AboutCarDisplayLogi
         reasonVINTextField.delegate = self
         reasonGasTankTextField.delegate = self
         noteRegistrationTextField.delegate = self
+        briefNoteTextField.delegate = self
         
         //textfield
         addTarget(from: subModelCarTextField)
@@ -838,8 +893,7 @@ class AboutCarViewControllerNew: AboutCarBaseViewController, AboutCarDisplayLogi
         addTarget(from: reasonVINTextField)
         addTarget(from: reasonGasTankTextField)
         addTarget(from: noteRegistrationTextField)
-        
-        
+        addTarget(from: briefNoteTextField)
         
         //dropdown
         addTarget(from: brandTextfield)
@@ -982,6 +1036,23 @@ class AboutCarViewControllerNew: AboutCarBaseViewController, AboutCarDisplayLogi
 
 //        manuCheckButton.check = model.isInValidManuYear ?? false
         regisCheckButton.check = model.isInValidRegistrationYear ?? false
+        
+        if model.briefConditionOptionId == 1 {
+            briefCheckBox0.check = true
+            briefNoteStackView.isHidden = true
+        } else if model.briefConditionOptionId == 2 {
+            briefCheckBox1.check = true
+            briefNoteStackView.isHidden = false
+        } else if model.briefConditionOptionId == 3 {
+            briefCheckBox2.check = true
+            briefNoteStackView.isHidden = false
+        } else {
+            briefCheckBox0.check = false
+            briefCheckBox1.check = false
+            briefCheckBox2.check = false
+            briefNoteStackView.isHidden = true
+        }
+        briefNoteTextField.text = model.briefNote
 
     }
     
@@ -1127,6 +1198,8 @@ extension AboutCarViewControllerNew : UITextFieldDelegate {
             
         case noteRegistrationTextField:
             DataController.shared.receiverCarModel.registrationNote = textField.text
+        case briefNoteTextField:
+            DataController.shared.receiverCarModel.briefNote = textField.text
         default:
             break
         }
@@ -1172,5 +1245,9 @@ extension AboutCarViewControllerNew {
     
     @IBAction func regisYearTipButtonTapped(_ sender: UIButton) {
         DataController.shared.showTipView(sender: sender, superView: self.view, message: String.localized("car_detail_year_regis_tip_message"), textAlignment: .left)
+    }
+    
+    @IBAction func briefTipButtonTapped(_ sender: UIButton) {
+        DataController.shared.showTipView(sender: sender, superView: self.view, message: String.localized("car_detail_brief_tip_message"), textAlignment: .left)
     }
 }

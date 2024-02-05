@@ -145,6 +145,10 @@ class ReceiverCarModel {
     // add-on 26/10/2023
     var isRegistrationAuction : Bool? { didSet { setEdit(oldValue, value: &isEditVehicle) }}
     
+    // add-on 05/02/2024
+    var briefConditionOptionId : Int? { didSet { setEdit(oldValue, value: &isEditVehicle) }}
+    var briefNote : String? { didSet { setEdit(oldValue, value: &isEditVehicle) }}
+
     var reasonInValidEngineNumber : String? { didSet { setEdit(oldValue, value: &isEditVehicle) }}
     var reasonInValidVinNumber : String? { didSet { setEdit(oldValue, value: &isEditVehicle) }}
     var reasonInValidGasNumber : String? { didSet { setEdit(oldValue, value: &isEditVehicle) }}

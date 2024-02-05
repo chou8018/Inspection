@@ -83,7 +83,11 @@ struct VehicleType : Mappable {
     // add-on 02/02/2024
     var isInValidRegistrationYear : Bool = false
     var isInValidManuYear : Bool = false
-
+    
+    // add-on 05/02/2024
+    var briefConditionOptionId : Int?
+    var briefNote : String = ""
+    
     init?(map: Map) {
         
     }
@@ -145,7 +149,9 @@ struct VehicleType : Mappable {
         gasOption: String?,
         gasOptionId: Int?,
         isInValidRegistrationYear: Bool?,
-        isInValidManuYear: Bool?) {
+        isInValidManuYear: Bool?,
+        briefConditionOptionId: Int?,
+        briefNote: String?) {
             
             self.seller = seller ?? ""
             self.sellingCategory = sellingCategory ?? ""
@@ -212,6 +218,8 @@ struct VehicleType : Mappable {
             self.isInValidRegistrationYear = isInValidRegistrationYear ?? false
             self.isInValidManuYear = isInValidManuYear ?? false
 
+            self.briefConditionOptionId = briefConditionOptionId
+            self.briefNote = briefNote ?? ""
         }
     
     mutating func mapping(map: Map) {
@@ -263,7 +271,6 @@ struct VehicleType : Mappable {
         registrationProvince <- map["registrationProvince"]
         variants <- map["variants"]
         
-        
         isInValidEngineNumber <- map["isInValidEngineNumber"]
         isInValidVinNumber <- map["isInValidVinNumber"]
         isInValidGasNumber <- map["isInValidGasNumber"]
@@ -282,7 +289,9 @@ struct VehicleType : Mappable {
         
         isInValidRegistrationYear <- map["isNohaveRegis"]
         isInValidManuYear <- map["isNohaveBuildYear"]
-
+        
+        briefConditionOptionId <- map["briefCarConditionId"]
+        briefNote <- map["detallBriefCarCondition"]
     }
     
 }

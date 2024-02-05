@@ -548,6 +548,8 @@
 		C2B8897D2A6A69D400ED3A60 /* ConstraintDirectionalInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B889582A6A69D400ED3A60 /* ConstraintDirectionalInsets.swift */; };
 		C2B8897E2A6A69D400ED3A60 /* ConstraintLayoutSupportDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B889592A6A69D400ED3A60 /* ConstraintLayoutSupportDSL.swift */; };
 		C2B8897F2A6A69D400ED3A60 /* ConstraintMakerRelatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B8895A2A6A69D400ED3A60 /* ConstraintMakerRelatable.swift */; };
+		C2DB1B712B70C69A00244F2A /* AboutCarViewControllerNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DB1B702B70C69A00244F2A /* AboutCarViewControllerNew.swift */; };
+		C2DB1B722B70C69A00244F2A /* AboutCarViewControllerNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DB1B702B70C69A00244F2A /* AboutCarViewControllerNew.swift */; };
 		CE0CBFD72664CE8B00A31068 /* UILabel+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0CBFD62664CE8B00A31068 /* UILabel+extension.swift */; };
 		CE0CBFD926676C5D00A31068 /* UpdateVehicleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0CBFD826676C5D00A31068 /* UpdateVehicleService.swift */; };
 		CE0CBFE1266DC8B700A31068 /* DamagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0CBFDB266DC8B700A31068 /* DamagePresenter.swift */; };
@@ -1066,6 +1068,7 @@
 		C2B889582A6A69D400ED3A60 /* ConstraintDirectionalInsets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintDirectionalInsets.swift; sourceTree = "<group>"; };
 		C2B889592A6A69D400ED3A60 /* ConstraintLayoutSupportDSL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintLayoutSupportDSL.swift; sourceTree = "<group>"; };
 		C2B8895A2A6A69D400ED3A60 /* ConstraintMakerRelatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintMakerRelatable.swift; sourceTree = "<group>"; };
+		C2DB1B702B70C69A00244F2A /* AboutCarViewControllerNew.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutCarViewControllerNew.swift; sourceTree = "<group>"; };
 		CE0CBFD62664CE8B00A31068 /* UILabel+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+extension.swift"; sourceTree = "<group>"; };
 		CE0CBFD826676C5D00A31068 /* UpdateVehicleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateVehicleService.swift; sourceTree = "<group>"; };
 		CE0CBFDB266DC8B700A31068 /* DamagePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DamagePresenter.swift; sourceTree = "<group>"; };
@@ -2467,6 +2470,7 @@
 				F96F538925D0E00400317ED0 /* AboutCarRouter.swift */,
 				F96F538A25D0E00400317ED0 /* AboutCarModels.swift */,
 				F96F538B25D0E00400317ED0 /* AboutCarViewController.swift */,
+				C2DB1B702B70C69A00244F2A /* AboutCarViewControllerNew.swift */,
 				F96F538C25D0E00400317ED0 /* AboutCarInteractor.swift */,
 			);
 			path = AboutCar;
@@ -3622,6 +3626,7 @@
 				C28900F72AC5536A003C2F1A /* ModelCodeRouter.swift in Sources */,
 				C28900F82AC5536A003C2F1A /* LandingPageRouter.swift in Sources */,
 				C28900F92AC5536A003C2F1A /* ModelCodeNotFoundCell.swift in Sources */,
+				C2DB1B722B70C69A00244F2A /* AboutCarViewControllerNew.swift in Sources */,
 				C28900FA2AC5536A003C2F1A /* SceneDelegate.swift in Sources */,
 				C28900FB2AC5536A003C2F1A /* SignatureInteractor.swift in Sources */,
 				C28900FC2AC5536A003C2F1A /* LoginResponse.swift in Sources */,
@@ -4100,6 +4105,7 @@
 				F931493025F76B1D004E5F7A /* ModelCodeRouter.swift in Sources */,
 				F99DB20025C8003F0069F32E /* LandingPageRouter.swift in Sources */,
 				F931494F25F781D8004E5F7A /* ModelCodeNotFoundCell.swift in Sources */,
+				C2DB1B712B70C69A00244F2A /* AboutCarViewControllerNew.swift in Sources */,
 				F914454B25C7F94C00B09FB6 /* SceneDelegate.swift in Sources */,
 				F9E02E4125D134EE0003CB9C /* SignatureInteractor.swift in Sources */,
 				F976293E2643C9E000E51903 /* LoginResponse.swift in Sources */,

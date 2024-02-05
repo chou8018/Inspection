@@ -1,5 +1,5 @@
 //
-//  AboutCarViewController.swift
+//  AboutCarViewControllerNew.swift
 //  Inspection
 //
 //  Created by Thanawat prathumset on 8/2/2564 BE.
@@ -12,42 +12,7 @@
 
 import UIKit
 
-
-
-protocol AboutCarDisplayLogic: AnyObject
-{
-    func displaySomething(viewModel: AboutCar.Something.ViewModel)
-    func displayDropdownYear(viewModel: AboutCar.Something.ViewModel)
-    func displayGasCheckBox(viewModel: AboutCar.Something.ViewModel)
-    func displayCapacityNumberResult(viewModel: AboutCar.Something.ViewModel)
-    
-    func displayMakeCarDropdown(viewModel: AboutCar.Something.ViewModel)
-    func displayModelCarDropdown(viewModel: AboutCar.Something.ViewModel)
-    func displayColorCarDropdown(viewModel: AboutCar.Something.ViewModel)
-    func displayProvinceDropdown(viewModel: AboutCar.Something.ViewModel)
-    func displayfillModelSelected(viewModel: AboutCar.Something.ViewModel)
-    func  displayBodyCarDropdown(viewModel: AboutCar.Something.ViewModel)
-    
-    func displayShowMakeError(viewModel: AboutCar.Something.ViewModel)
-    func displayShowModelError(viewModel: AboutCar.Something.ViewModel)
-    func displayShowColorError(viewModel: AboutCar.Something.ViewModel)
-    func displayShowProvinceError(viewModel: AboutCar.Something.ViewModel)
-    
-    func displayShowBodyCarError(viewModel: AboutCar.Something.ViewModel)
-    
-    func displayfillBodySelected(viewModel: AboutCar.Something.ViewModel)
-    func displayfillMakeSelected(viewModel: AboutCar.Something.ViewModel)
-    
-    func displayShowVaraintError(viewModel: AboutCar.Something.ViewModel)
-    func displayVaraintDropdown(viewModel: AboutCar.Something.ViewModel)
-    
-    // add on 12/22/2023
-    func displayGasOptionDropdown(viewModel: AboutCar.Something.ViewModel)
-    func displayGasOptionError(viewModel: AboutCar.Something.ViewModel)
-
-}
-
-class AboutCarViewController: AboutCarBaseViewController, AboutCarDisplayLogic
+class AboutCarViewControllerNew: AboutCarBaseViewController, AboutCarDisplayLogic
 {
     var interactor: AboutCarBusinessLogic?
     var router: (NSObjectProtocol & AboutCarRoutingLogic & AboutCarDataPassing)?
@@ -1080,14 +1045,14 @@ class AboutCarViewController: AboutCarBaseViewController, AboutCarDisplayLogic
     }
     
     override func isHideNoteView(isHide: Bool) {
-       self.noteRegistrationTextField.isHidden = isHide
-       self.noteRegistrationLineView.isHidden = isHide
-       noteRegistrationStackView.subviews.last?.backgroundColor = .white
-       self.noteRegistrationLineView.backgroundColor = .appPrimaryColor
-   }
+        self.noteRegistrationTextField.isHidden = isHide
+        self.noteRegistrationLineView.isHidden = isHide
+        noteRegistrationStackView.subviews.last?.backgroundColor = .white
+        self.noteRegistrationLineView.backgroundColor = .appPrimaryColor
+    }
 }
 // MARK: UITextFieldDelegate
-extension AboutCarViewController : UITextFieldDelegate {
+extension AboutCarViewControllerNew : UITextFieldDelegate {
     @objc func textFieldDidChange(_ textField: UITextField) {
         //print(textField.text)
         
@@ -1180,7 +1145,8 @@ extension AboutCarViewController : UITextFieldDelegate {
     
 }
 //MARK: keyboard
-extension AboutCarViewController {
+extension AboutCarViewControllerNew {
+    
 
     
     override func viewWillAppear(_ animated: Bool) {

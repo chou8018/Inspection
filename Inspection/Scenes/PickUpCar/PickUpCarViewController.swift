@@ -350,9 +350,15 @@ class PickUpCarViewController: ViewController, PickUpCarDisplayLogic
         
         return viewController
     }()
-    private lazy var aboutCarViewController: AboutCarViewController? = {
+    private lazy var aboutCarViewController: AboutCarBaseViewController? = {
         
-        var viewController = getViewCOntroller(identifier: "AboutCarViewController") as! AboutCarViewController
+        var viewController: AboutCarBaseViewController
+        
+        if DataController.shared.bookInType == .MBIKE || DataController.shared.bookInType == .MBIKEWRECK  {
+            viewController = getViewCOntroller(identifier: "AboutCarViewController") as! AboutCarViewController
+        } else {
+            viewController = getViewCOntroller(identifier: "AboutCarViewControllerNew") as! AboutCarViewControllerNew
+        }
         
         // Add View Controller as Child View Controller
         //self.add(asChildViewController: viewController)
@@ -443,7 +449,6 @@ class PickUpCarViewController: ViewController, PickUpCarDisplayLogic
         performSegue(withIdentifier: "showDateTime", sender: nil)
     }
     
-    
     deinit {
         print("🔸🐶 deinit PickUpCarViewController ")
         receiverCarViewController = nil
@@ -454,37 +459,6 @@ class PickUpCarViewController: ViewController, PickUpCarDisplayLogic
         engineCarViewController = nil
     }
     
-    func selectedVCIndex(index:Int) {
-        
-        switch index {
-        case 0:
-            receiverCarViewController?.viewWillAppear(true)
-        case 1:
-            aboutCarViewController?.viewWillAppear(true)
-        case 2:
-            switch DataController.shared.bookInType {
-            case .CAR, .CARWRECK:
-                externalCarViewController?.viewWillAppear(true)
-            case .MBIKE, .MBIKEWRECK:
-                bookInMotorcycle1ViewController?.viewWillAppear(true)
-            }
-            
-        case 3:
-            switch DataController.shared.bookInType {
-            case .CAR, .CARWRECK:
-                sparePartsCarViewController?.viewWillAppear(true)
-            case .MBIKE, .MBIKEWRECK:
-                bookInMotorcycle2ViewController?.viewWillAppear(true)
-            }
-            
-        case 4:
-            cabinCarViewController?.viewWillAppear(true)
-        case 5:
-            engineCarViewController?.viewWillAppear(true)
-        default:
-            return
-        }
-    }
 }
 //MARK: ViewCOntroller Lift Cycle
 
@@ -619,7 +593,7 @@ extension PickUpCarViewController : CustomSegmentedControlDelegate  {
         let spaceHeight = 0.0
         if viewController is ReceiverCarViewController {
             lastFrame = CGRect(x: 0, y: 0, width: mainScrollview.width, height: bookinItem0Height - spaceHeight)
-        } else if viewController is AboutCarViewController {
+        } else if viewController is AboutCarBaseViewController {
             lastFrame = CGRect(x: 0, y: lastFrame.maxY, width: mainScrollview.width, height: bookinItem1Height - spaceHeight)
         } else if viewController is ExternalCarViewController {
             lastFrame = CGRect(x: 0, y: lastFrame.maxY, width: mainScrollview.width, height: bookinItem2Height - spaceHeight)

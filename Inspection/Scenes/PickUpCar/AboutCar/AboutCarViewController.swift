@@ -206,11 +206,7 @@ class AboutCarViewController: ViewController, AboutCarDisplayLogic
     @IBOutlet weak var gasInstallationStackView: UIStackView!
     // added on 02/02/2024
     @IBOutlet weak var regisCheckButton: CheckBoxUIButton!
-    @IBOutlet weak var regisCheckView: UIStackView!
     @IBOutlet weak var regisCheckLabel: UILabel!
-    @IBOutlet weak var manuCheckButton: CheckBoxUIButton!
-    @IBOutlet weak var manuCheckView: UIStackView!
-    @IBOutlet weak var manuCheckLabel: UILabel!
     @IBOutlet weak var manuTipButton: UIButton!
     @IBOutlet weak var regisTipButton: UIButton!
 
@@ -269,7 +265,6 @@ class AboutCarViewController: ViewController, AboutCarDisplayLogic
         
         auctionPlateLabel.text = String.localized("car_detail_auction_plate_label")
         regisCheckLabel.text = String.localized("car_detail_year_regis_unable_label")
-        manuCheckLabel.text = String.localized("car_detail_year_manu_unable_label")
 
     }
     
@@ -491,16 +486,6 @@ class AboutCarViewController: ViewController, AboutCarDisplayLogic
                 DataController.shared.receiverCarModel.registrationYear = nil
             }
             DataController.shared.receiverCarModel.isInValidRegistrationYear = check
-        }
-    }
-    
-    @IBAction func manuCheckTapped(_ sender: Any) {
-        manuCheckButton.toggle { [weak self] (check) in
-            if check {
-                self?.yearTextField.text = ""
-                DataController.shared.receiverCarModel.year = nil
-            }
-            DataController.shared.receiverCarModel.isInValidManuYear = check
         }
     }
     
@@ -827,7 +812,7 @@ class AboutCarViewController: ViewController, AboutCarDisplayLogic
             [weak self] (selectValue, _, _) in
             DataController.shared.receiverCarModel.year = selectValue
             self?.yearTextField.text = selectValue
-            self?.manuCheckButton.check = false
+//            self?.manuCheckButton.check = false
             DataController.shared.receiverCarModel.isInValidManuYear = false
         }
         setValue(to: yearRegisterTextField, values: viewModel.yearLists ?? []) {
@@ -1024,15 +1009,13 @@ class AboutCarViewController: ViewController, AboutCarDisplayLogic
             gasInstallationStackView.isHidden = true
             manuTipButton.isHidden = true
             regisTipButton.isHidden = true
-//            regisCheckView.isHidden = true
         } else {
             gasInstallationStackView.isHidden = false
             manuTipButton.isHidden = false
             regisTipButton.isHidden = false
-//            regisCheckView.isHidden = false
         }
 
-        manuCheckButton.check = model.isInValidManuYear ?? false
+//        manuCheckButton.check = model.isInValidManuYear ?? false
         regisCheckButton.check = model.isInValidRegistrationYear ?? false
 
     }

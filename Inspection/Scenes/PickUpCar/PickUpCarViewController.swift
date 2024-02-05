@@ -12,7 +12,7 @@
 
 import UIKit
 
-let usedBookinItem1Height = 1500.0
+let usedBookinItem1Height = 1400.0
 let bookinItem0Height = 1240.0
 var bookinItem1Height = usedBookinItem1Height
 let bookinItem2Height = 850.0

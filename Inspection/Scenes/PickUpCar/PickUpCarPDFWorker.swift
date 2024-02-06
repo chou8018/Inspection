@@ -361,7 +361,13 @@ class PickUpCarPDFWorker {
                 
                 //MARK: Year Value
                 var yearText = "\(String.localized("car_detail_year_manu_label")) \(receiverCarModel.year?.pdfValidateString ?? "-") "
-                yearText += "\(String.localized("car_detail_year_regis_label")) \(receiverCarModel.registrationYear?.pdfValidateString ?? "-")"
+                
+                var regisYear = ""
+                if let regisY = receiverCarModel.registrationYear?.pdfValidateString , regisY == "-" {
+                    regisYear = String.localized("car_detail_year_regis_unable_label")
+                }
+                yearText += "\(String.localized("car_detail_year_regis_label")) \(regisYear)"
+    
                 let attrYearValuePDF = weakself.getTitle(mainString: yearText.uppercased(),
                                               value: "", textColor: .darkGray)
                 let _ = weakself.drawString(attrString: attrYearValuePDF,

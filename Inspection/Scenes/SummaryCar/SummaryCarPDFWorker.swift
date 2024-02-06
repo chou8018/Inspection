@@ -472,7 +472,12 @@ class SummaryCarPDFWorker {
             //MARK: CC Value
             var capacityCarText = ""
             capacityCarText += "\(String.localized("car_detail_year_manu_label")) \(receiverModel.year?.pdfValidateString ?? "-")  "
-            capacityCarText += "\(String.localized("car_detail_year_regis_label")) \(receiverModel.registrationYear?.pdfValidateString ?? "-")"
+            
+            var regisYear = ""
+            if let regisY = receiverModel.registrationYear?.pdfValidateString , regisY == "-" {
+                regisYear = String.localized("car_detail_year_regis_unable_label")
+            }
+            capacityCarText += "\(String.localized("car_detail_year_regis_label")) \(regisYear)"
             let attrCCValuePDF = weakself.getTitle(mainString: capacityCarText.uppercased(),
                                           value: "", textColor: .darkGray)
             let lastLineTableRect = weakself.drawString(attrString: attrCCValuePDF,

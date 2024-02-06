@@ -241,9 +241,13 @@ class GradeCarViewController: ViewController, GradeCarDisplayLogic
         var result = ""
         if let regisYear = DataController.shared.receiverCarModel.registrationYear , regisYear.toInt() > 0 {
             result = regisYear
-        } else if let manuYear = DataController.shared.receiverCarModel.year , manuYear.toInt() > 0 {
-            result = "\(manuYear.toInt() + 1)"
+        } else {
+            result = String.localized("car_detail_year_regis_unable_label")
         }
+        
+//        else if let manuYear = DataController.shared.receiverCarModel.year , manuYear.toInt() > 0 {
+//            result = "\(manuYear.toInt() + 1)"
+//        }
         return result
     }
     

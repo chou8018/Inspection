@@ -20,12 +20,3 @@ class ViewController: UIViewController {
     }
 }
 
-class AboutCarBaseViewController: ViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
-    func isHideNoteView(isHide: Bool) {}
-}
-

@@ -446,7 +446,6 @@
 		C289FFCE2AC5536A003C2F1A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F914454C25C7F94C00B09FB6 /* ViewController.swift */; };
 		C289FFCF2AC5536A003C2F1A /* CabinCarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96F53B425D0E03400317ED0 /* CabinCarPresenter.swift */; };
 		C289FFD02AC5536A003C2F1A /* GearCheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F94A043E25DA39E900C8EC4C /* GearCheckViewController.swift */; };
-		C289FFD12AC5536A003C2F1A /* AboutCarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96F538B25D0E00400317ED0 /* AboutCarViewController.swift */; };
 		C289FFD22AC5536A003C2F1A /* BookInListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9AAFA3C261B13D700A88C14 /* BookInListResponse.swift */; };
 		C289FFD32AC5536A003C2F1A /* AboutCarModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96F538A25D0E00400317ED0 /* AboutCarModels.swift */; };
 		C289FFD42AC5536A003C2F1A /* UpdateModelCodeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE599CB5268C189E0080C970 /* UpdateModelCodeService.swift */; };
@@ -548,8 +547,8 @@
 		C2B8897D2A6A69D400ED3A60 /* ConstraintDirectionalInsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B889582A6A69D400ED3A60 /* ConstraintDirectionalInsets.swift */; };
 		C2B8897E2A6A69D400ED3A60 /* ConstraintLayoutSupportDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B889592A6A69D400ED3A60 /* ConstraintLayoutSupportDSL.swift */; };
 		C2B8897F2A6A69D400ED3A60 /* ConstraintMakerRelatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B8895A2A6A69D400ED3A60 /* ConstraintMakerRelatable.swift */; };
-		C2DB1B712B70C69A00244F2A /* AboutCarViewControllerNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DB1B702B70C69A00244F2A /* AboutCarViewControllerNew.swift */; };
-		C2DB1B722B70C69A00244F2A /* AboutCarViewControllerNew.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DB1B702B70C69A00244F2A /* AboutCarViewControllerNew.swift */; };
+		C2DB1B712B70C69A00244F2A /* AboutCarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DB1B702B70C69A00244F2A /* AboutCarViewController.swift */; };
+		C2DB1B722B70C69A00244F2A /* AboutCarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DB1B702B70C69A00244F2A /* AboutCarViewController.swift */; };
 		CE0CBFD72664CE8B00A31068 /* UILabel+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0CBFD62664CE8B00A31068 /* UILabel+extension.swift */; };
 		CE0CBFD926676C5D00A31068 /* UpdateVehicleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0CBFD826676C5D00A31068 /* UpdateVehicleService.swift */; };
 		CE0CBFE1266DC8B700A31068 /* DamagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0CBFDB266DC8B700A31068 /* DamagePresenter.swift */; };
@@ -833,7 +832,6 @@
 		F96F538E25D0E00400317ED0 /* AboutCarWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96F538825D0E00400317ED0 /* AboutCarWorker.swift */; };
 		F96F538F25D0E00400317ED0 /* AboutCarRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96F538925D0E00400317ED0 /* AboutCarRouter.swift */; };
 		F96F539025D0E00400317ED0 /* AboutCarModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96F538A25D0E00400317ED0 /* AboutCarModels.swift */; };
-		F96F539125D0E00400317ED0 /* AboutCarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96F538B25D0E00400317ED0 /* AboutCarViewController.swift */; };
 		F96F539225D0E00400317ED0 /* AboutCarInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96F538C25D0E00400317ED0 /* AboutCarInteractor.swift */; };
 		F96F539C25D0E01900317ED0 /* ExternalCarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96F539625D0E01900317ED0 /* ExternalCarPresenter.swift */; };
 		F96F539D25D0E01900317ED0 /* ExternalCarWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F96F539725D0E01900317ED0 /* ExternalCarWorker.swift */; };
@@ -1068,7 +1066,7 @@
 		C2B889582A6A69D400ED3A60 /* ConstraintDirectionalInsets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintDirectionalInsets.swift; sourceTree = "<group>"; };
 		C2B889592A6A69D400ED3A60 /* ConstraintLayoutSupportDSL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintLayoutSupportDSL.swift; sourceTree = "<group>"; };
 		C2B8895A2A6A69D400ED3A60 /* ConstraintMakerRelatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintMakerRelatable.swift; sourceTree = "<group>"; };
-		C2DB1B702B70C69A00244F2A /* AboutCarViewControllerNew.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutCarViewControllerNew.swift; sourceTree = "<group>"; };
+		C2DB1B702B70C69A00244F2A /* AboutCarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutCarViewController.swift; sourceTree = "<group>"; };
 		CE0CBFD62664CE8B00A31068 /* UILabel+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+extension.swift"; sourceTree = "<group>"; };
 		CE0CBFD826676C5D00A31068 /* UpdateVehicleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateVehicleService.swift; sourceTree = "<group>"; };
 		CE0CBFDB266DC8B700A31068 /* DamagePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DamagePresenter.swift; sourceTree = "<group>"; };
@@ -1361,7 +1359,6 @@
 		F96F538825D0E00400317ED0 /* AboutCarWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutCarWorker.swift; sourceTree = "<group>"; };
 		F96F538925D0E00400317ED0 /* AboutCarRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutCarRouter.swift; sourceTree = "<group>"; };
 		F96F538A25D0E00400317ED0 /* AboutCarModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutCarModels.swift; sourceTree = "<group>"; };
-		F96F538B25D0E00400317ED0 /* AboutCarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutCarViewController.swift; sourceTree = "<group>"; };
 		F96F538C25D0E00400317ED0 /* AboutCarInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutCarInteractor.swift; sourceTree = "<group>"; };
 		F96F539625D0E01900317ED0 /* ExternalCarPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExternalCarPresenter.swift; sourceTree = "<group>"; };
 		F96F539725D0E01900317ED0 /* ExternalCarWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExternalCarWorker.swift; sourceTree = "<group>"; };
@@ -2469,8 +2466,7 @@
 				F96F538825D0E00400317ED0 /* AboutCarWorker.swift */,
 				F96F538925D0E00400317ED0 /* AboutCarRouter.swift */,
 				F96F538A25D0E00400317ED0 /* AboutCarModels.swift */,
-				F96F538B25D0E00400317ED0 /* AboutCarViewController.swift */,
-				C2DB1B702B70C69A00244F2A /* AboutCarViewControllerNew.swift */,
+				C2DB1B702B70C69A00244F2A /* AboutCarViewController.swift */,
 				F96F538C25D0E00400317ED0 /* AboutCarInteractor.swift */,
 			);
 			path = AboutCar;
@@ -3324,7 +3320,6 @@
 				C289FFCE2AC5536A003C2F1A /* ViewController.swift in Sources */,
 				C289FFCF2AC5536A003C2F1A /* CabinCarPresenter.swift in Sources */,
 				C289FFD02AC5536A003C2F1A /* GearCheckViewController.swift in Sources */,
-				C289FFD12AC5536A003C2F1A /* AboutCarViewController.swift in Sources */,
 				C289FFD22AC5536A003C2F1A /* BookInListResponse.swift in Sources */,
 				C289FFD32AC5536A003C2F1A /* AboutCarModels.swift in Sources */,
 				C289FFD42AC5536A003C2F1A /* UpdateModelCodeService.swift in Sources */,
@@ -3626,7 +3621,7 @@
 				C28900F72AC5536A003C2F1A /* ModelCodeRouter.swift in Sources */,
 				C28900F82AC5536A003C2F1A /* LandingPageRouter.swift in Sources */,
 				C28900F92AC5536A003C2F1A /* ModelCodeNotFoundCell.swift in Sources */,
-				C2DB1B722B70C69A00244F2A /* AboutCarViewControllerNew.swift in Sources */,
+				C2DB1B722B70C69A00244F2A /* AboutCarViewController.swift in Sources */,
 				C28900FA2AC5536A003C2F1A /* SceneDelegate.swift in Sources */,
 				C28900FB2AC5536A003C2F1A /* SignatureInteractor.swift in Sources */,
 				C28900FC2AC5536A003C2F1A /* LoginResponse.swift in Sources */,
@@ -3803,7 +3798,6 @@
 				F914454D25C7F94C00B09FB6 /* ViewController.swift in Sources */,
 				F96F53BA25D0E03400317ED0 /* CabinCarPresenter.swift in Sources */,
 				F94A044425DA39E900C8EC4C /* GearCheckViewController.swift in Sources */,
-				F96F539125D0E00400317ED0 /* AboutCarViewController.swift in Sources */,
 				F9AAFA3D261B13D700A88C14 /* BookInListResponse.swift in Sources */,
 				F96F539025D0E00400317ED0 /* AboutCarModels.swift in Sources */,
 				CE599CB6268C189E0080C970 /* UpdateModelCodeService.swift in Sources */,
@@ -4105,7 +4099,7 @@
 				F931493025F76B1D004E5F7A /* ModelCodeRouter.swift in Sources */,
 				F99DB20025C8003F0069F32E /* LandingPageRouter.swift in Sources */,
 				F931494F25F781D8004E5F7A /* ModelCodeNotFoundCell.swift in Sources */,
-				C2DB1B712B70C69A00244F2A /* AboutCarViewControllerNew.swift in Sources */,
+				C2DB1B712B70C69A00244F2A /* AboutCarViewController.swift in Sources */,
 				F914454B25C7F94C00B09FB6 /* SceneDelegate.swift in Sources */,
 				F9E02E4125D134EE0003CB9C /* SignatureInteractor.swift in Sources */,
 				F976293E2643C9E000E51903 /* LoginResponse.swift in Sources */,

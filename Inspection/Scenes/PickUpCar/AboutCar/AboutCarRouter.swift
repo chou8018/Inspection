@@ -24,7 +24,7 @@ protocol AboutCarDataPassing
 
 class AboutCarRouter: NSObject, AboutCarRoutingLogic, AboutCarDataPassing
 {
-  weak var viewController: AboutCarBaseViewController?
+  weak var viewController: AboutCarViewController?
   var dataStore: AboutCarDataStore?
   
   // MARK: Routing
@@ -58,9 +58,3 @@ class AboutCarRouter: NSObject, AboutCarRoutingLogic, AboutCarDataPassing
   //  destination.name = source.name
   //}
 }
-
-//class AboutCarRouterNew: NSObject, AboutCarRoutingLogic, AboutCarDataPassing
-//{
-//  weak var viewController: AboutCarViewControllerNew?
-//  var dataStore: AboutCarDataStore?
-//}

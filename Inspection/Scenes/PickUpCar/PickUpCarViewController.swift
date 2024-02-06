@@ -350,9 +350,9 @@ class PickUpCarViewController: ViewController, PickUpCarDisplayLogic
         
         return viewController
     }()
-    private lazy var aboutCarViewController: AboutCarBaseViewController? = {
+    private lazy var aboutCarViewController: AboutCarViewController? = {
         
-        let viewController = getViewCOntroller(identifier: "AboutCarViewControllerNew") as! AboutCarViewControllerNew
+        let viewController = getViewCOntroller(identifier: "AboutCarViewController") as! AboutCarViewController
         
 //        var viewController: AboutCarBaseViewController
 //        if DataController.shared.bookInType == .MBIKE || DataController.shared.bookInType == .MBIKEWRECK  {
@@ -594,7 +594,7 @@ extension PickUpCarViewController : CustomSegmentedControlDelegate  {
         let spaceHeight = 0.0
         if viewController is ReceiverCarViewController {
             lastFrame = CGRect(x: 0, y: 0, width: mainScrollview.width, height: bookinItem0Height - spaceHeight)
-        } else if viewController is AboutCarBaseViewController {
+        } else if viewController is AboutCarViewController {
             lastFrame = CGRect(x: 0, y: lastFrame.maxY, width: mainScrollview.width, height: bookinItem1Height - spaceHeight)
         } else if viewController is ExternalCarViewController {
             lastFrame = CGRect(x: 0, y: lastFrame.maxY, width: mainScrollview.width, height: bookinItem2Height - spaceHeight)

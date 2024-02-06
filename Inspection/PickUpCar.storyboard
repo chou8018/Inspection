@@ -10466,6 +10466,7 @@
                         <outlet property="briefCheckTitleLabel2" destination="Jd1-Ue-KoN" id="gzv-JD-bMc"/>
                         <outlet property="briefNoteStackView" destination="Y6x-AI-cU1" id="kLH-hC-Vxj"/>
                         <outlet property="briefNoteTextField" destination="GPl-Cb-Ynh" id="9jw-KA-prk"/>
+                        <outlet property="briefStackView" destination="Jb6-BD-HFb" id="HnC-Xe-RSP"/>
                         <outlet property="briefTitleLabel" destination="t6g-XI-bBb" id="HXc-qV-BPY"/>
                         <outlet property="capacityLineView" destination="bzc-EU-uhI" id="Npm-Od-tJ0"/>
                         <outlet property="capacityTextField" destination="49y-Oo-99R" id="98r-Jm-Mud"/>

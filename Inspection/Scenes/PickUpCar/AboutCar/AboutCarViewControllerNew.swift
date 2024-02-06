@@ -184,6 +184,7 @@ class AboutCarViewControllerNew: AboutCarBaseViewController, AboutCarDisplayLogi
     @IBOutlet weak var briefCheckTitleLabel2: UILabel!
     @IBOutlet weak var briefNoteTextField: CustomTextField!
     @IBOutlet weak var briefNoteStackView: UIStackView!
+    @IBOutlet weak var briefStackView: UIStackView!
     
     var isMakeCarLunch = false
     var isGetColorLunch = false
@@ -1028,10 +1029,12 @@ class AboutCarViewControllerNew: AboutCarBaseViewController, AboutCarDisplayLogi
             gasInstallationStackView.isHidden = true
             manuTipButton.isHidden = true
             regisTipButton.isHidden = true
+            briefStackView.isHidden = true
         } else {
             gasInstallationStackView.isHidden = false
             manuTipButton.isHidden = false
             regisTipButton.isHidden = false
+            briefStackView.isHidden = false
         }
 
 //        manuCheckButton.check = model.isInValidManuYear ?? false

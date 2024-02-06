@@ -156,7 +156,7 @@ class PickUpCarViewController: ViewController, PickUpCarDisplayLogic
         pickUpDateLabel.text = String.localized("pick_up_date_title")
         
         if DataController.shared.bookInType == .MBIKE || DataController.shared.bookInType == .MBIKEWRECK  {
-            bookinItem1Height = usedBookinItem1Height - 130
+            bookinItem1Height = usedBookinItem1Height - 230
         } else {
             bookinItem1Height = usedBookinItem1Height
         }

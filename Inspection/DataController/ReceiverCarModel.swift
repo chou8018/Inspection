@@ -354,6 +354,7 @@ class ReceiverCarModel {
     var validGasNumber:Bool?
     var validRoofType:Bool?
     var validGasOption:Bool?
+    var validBriefCondition:Bool?
 
     var description : [String : Any] {
         return [:]

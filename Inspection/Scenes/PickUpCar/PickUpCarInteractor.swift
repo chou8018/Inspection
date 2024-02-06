@@ -302,6 +302,7 @@ class PickUpCarInteractor: PickUpCarBusinessLogic, PickUpCarDataStore
         let gasNumber = model.gasNumber
         let roofTypeId = model.roofTypeId
         let gasOption = model.gasOption
+        let briefConditionId = model.briefConditionOptionId
 
         print(receiverPlace)
         print(storePlace)
@@ -352,6 +353,11 @@ class PickUpCarInteractor: PickUpCarBusinessLogic, PickUpCarDataStore
             validRoofType = roofTypeId != nil && (roofTypeId ?? 0 > 0)
         }
         
+        var validBriefCondition = true
+        if DataController.shared.isCarType() ==  true {
+            validBriefCondition = briefConditionId != nil && (briefConditionId ?? 0 > 0)
+        }
+        
         let string_not_correct = String.localized("login_not_correct_label")
         
         var message : String = ""
@@ -383,6 +389,8 @@ class PickUpCarInteractor: PickUpCarBusinessLogic, PickUpCarDataStore
         
         message += validRoofType ? "" : "\(String.localized("car_exterior_roof_type_label")) \(string_not_correct)"
         
+        message += validBriefCondition ? "" : "\(String.localized("car_detail_brief_condition_title_label")) \(string_not_correct)"
+        
         DataController.shared.receiverCarModel.validReceiver = validReceiver
         DataController.shared.receiverCarModel.validStore = validStore
         DataController.shared.receiverCarModel.validSellCate = validSellCate
@@ -410,6 +418,7 @@ class PickUpCarInteractor: PickUpCarBusinessLogic, PickUpCarDataStore
         DataController.shared.receiverCarModel.validGasNumber = validGasNumber
         DataController.shared.receiverCarModel.validRoofType = validRoofType
         DataController.shared.receiverCarModel.validGasOption = validGasOption
+        DataController.shared.receiverCarModel.validBriefCondition = validBriefCondition
 
         NotificationCenter.default.post(name: NSNotification.Name("updateUI"), object: nil)
         

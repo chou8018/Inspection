@@ -154,6 +154,13 @@ class DataController {
         return false
     }
     
+    func isCarType() -> Bool {
+        if bookInType == .CAR || bookInType == .CARWRECK {
+            return true
+        }
+        return false
+    }
+    
     func showTipView(sender: UIView, superView: UIView? , message: String, textAlignment: NSTextAlignment = .center) {
         var preferences = EasyTipView.Preferences()
         preferences.drawing.font = UIFont.systemFont(ofSize: 13)

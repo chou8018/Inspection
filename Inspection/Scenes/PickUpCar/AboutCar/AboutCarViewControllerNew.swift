@@ -1115,7 +1115,7 @@ class AboutCarViewControllerNew: AboutCarBaseViewController, AboutCarDisplayLogi
         gasNumberLineView.validateLineView(model.validGasNumber)
         gasOptionLineView.validateLineView(model.validGasOption)
         gasKeyLabel.validateLabel(model.validGasOption)
-
+        briefTitleLabel.validateLabel(model.validBriefCondition)
     }
     
     override func isHideNoteView(isHide: Bool) {

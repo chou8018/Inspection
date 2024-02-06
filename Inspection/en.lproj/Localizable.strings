@@ -106,14 +106,17 @@
 "car_detail_engine_size_label" = "Engine size";
 "car_detail_year_manu_label" = "Manu.";
 "car_detail_year_manu_unable_label" = "Unable to verify manufacturing year";
-"car_detail_year_manu_tip_message" = "Manufacturing Year can always be identifiable";
-"car_detail_year_regis_label" = "Regis.";
-"car_detail_year_regis_tip_message" = "How to inspect Registration year
+"car_detail_year_manu_tip_message" = "How to inspect Manufacturing year
 1. Car plate
 2. Vin no.
 3. Safety belt
 4. Door window mirror
 5. Vehicle document i.e. registration book, warranty book
+NEVER COPY FROM OA DOCUMENT
+If you are unsure, please contact supervisor";
+"car_detail_year_regis_label" = "Regis.";
+"car_detail_year_regis_tip_message" = "Please check registration year from Title book document
+If the car has no title book document or reliable reference document, please select \"Unable to verify\"
 If you are unsure, please contact supervisor";
 "car_detail_year_regis_unable_label" = "Unable to verify";
 "car_detail_year_placeholder_label" = "Year";

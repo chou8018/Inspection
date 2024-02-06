@@ -218,7 +218,7 @@ class AboutCarViewController: ViewController, AboutCarDisplayLogic
     @IBOutlet weak var briefNoteTextField: CustomTextField!
     @IBOutlet weak var briefNoteStackView: UIStackView!
     @IBOutlet weak var briefStackView: UIStackView!
-    
+
     var isMakeCarLunch = false
     var isGetColorLunch = false
     var isGetProvinceLunch = false
@@ -437,6 +437,8 @@ class AboutCarViewController: ViewController, AboutCarDisplayLogic
                 DataController.shared.receiverCarModel.briefConditionOptionId = -1
             }
             self?.briefNoteStackView.isHidden = true
+            self?.yearTextField.isEnabled = true
+            self?.yearRegisterTextField.isEnabled = true
         }
     }
     
@@ -450,6 +452,8 @@ class AboutCarViewController: ViewController, AboutCarDisplayLogic
                 DataController.shared.receiverCarModel.briefConditionOptionId = -1
             }
             self?.briefNoteStackView.isHidden = !check
+            self?.yearTextField.isEnabled = true
+            self?.yearRegisterTextField.isEnabled = true
         }
     }
     
@@ -459,8 +463,12 @@ class AboutCarViewController: ViewController, AboutCarDisplayLogic
                 self?.briefCheckBox0.check = false
                 self?.briefCheckBox1.check = false
                 DataController.shared.receiverCarModel.briefConditionOptionId = 3
+                self?.yearTextField.isEnabled = false
+                self?.yearRegisterTextField.isEnabled = false
             }else{
                 DataController.shared.receiverCarModel.briefConditionOptionId = -1
+                self?.yearTextField.isEnabled = true
+                self?.yearRegisterTextField.isEnabled = true
             }
             self?.briefNoteStackView.isHidden = !check
         }
@@ -1117,8 +1125,6 @@ class AboutCarViewController: ViewController, AboutCarDisplayLogic
         subModelCarTextField.setEnableView(isEnable: isEnabled)
         capacityTextField.setEnableView(isEnable: isEnabled)
         
-        
-        
         //MARK: Validation
         brandLineView.validateLineView(model.validMake)
         typeCarLineView.validateLineView(model.validTypeCar)
@@ -1152,6 +1158,14 @@ class AboutCarViewController: ViewController, AboutCarDisplayLogic
         gasOptionLineView.validateLineView(model.validGasOption)
         gasKeyLabel.validateLabel(model.validGasOption)
         briefTitleLabel.validateLabel(model.validBriefCondition)
+        
+        if let briefId = model.briefConditionOptionId , briefId == 3 {
+            yearTextField.isEnabled = false
+            yearRegisterTextField.isEnabled = false
+        } else {
+            yearTextField.isEnabled = true
+            yearRegisterTextField.isEnabled = true
+        }
     }
 }
 // MARK: UITextFieldDelegate

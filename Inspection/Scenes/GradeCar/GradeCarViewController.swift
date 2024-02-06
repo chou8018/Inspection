@@ -361,7 +361,12 @@ class GradeCarViewController: ViewController, GradeCarDisplayLogic
     @IBAction func p9checkTapped(_ sender: Any) { p9Chehck.toggle { [weak self] in self?.interactor?.p9Chehck(request: GradeCar.Something.Request(p9Chehck: $0))} }
     
     //MARK: CheckBox X
-    @IBAction func x1checkTapped(_ sender: Any) { x1Chehck.toggle { [weak self] in self?.interactor?.x1Chehck(request: GradeCar.Something.Request(x1Chehck: $0))} }
+    @IBAction func x1checkTapped(_ sender: Any) {
+        if hasDefaultBriefCondition() {
+            return
+        }
+        x1Chehck.toggle { [weak self] in self?.interactor?.x1Chehck(request: GradeCar.Something.Request(x1Chehck: $0))}
+    }
     
     //MARK: CheckBox Y
     @IBAction func y1checkTapped(_ sender: Any) { y1Chehck.toggle { [weak self] in self?.interactor?.y1Chehck(request: GradeCar.Something.Request(y1Chehck: $0))} }
@@ -533,6 +538,12 @@ class GradeCarViewController: ViewController, GradeCarDisplayLogic
         } else {
             DataController.shared.inspectionCarModel.f9Chehck = false
         }
+        
+        if let briefId = DataController.shared.receiverCarModel.briefConditionOptionId , briefId > 1 {
+            DataController.shared.inspectionCarModel.x1Chehck = true
+        } else {
+            DataController.shared.inspectionCarModel.x1Chehck = false
+        }
     }
     
     func hasDefaultMileage() -> Bool {
@@ -552,6 +563,14 @@ class GradeCarViewController: ViewController, GradeCarDisplayLogic
     func hasDefaultGasInstalled() -> Bool {
         
         if DataController.shared.receiverCarModel.isGasTank == true , let gasNumber = DataController.shared.receiverCarModel.gasNumber , gasNumber.count > 0 {
+            return true
+        }
+        return false
+    }
+    
+    func hasDefaultBriefCondition() -> Bool {
+        
+        if let briefId = DataController.shared.receiverCarModel.briefConditionOptionId , briefId > 1 {
             return true
         }
         return false

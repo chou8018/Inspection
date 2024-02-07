@@ -1722,7 +1722,7 @@
                                         </connections>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7A8-2y-MjI" customClass="RadioGroup" customModule="RadioGroup">
-                                        <rect key="frame" x="190" y="370" width="418" height="46"/>
+                                        <rect key="frame" x="180" y="370" width="418" height="46"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" name="primary_color"/>
                                         <constraints>
@@ -1743,7 +1743,7 @@
                                                 <color key="value" name="primary_color"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="itemSpacing">
-                                                <real key="value" value="10"/>
+                                                <real key="value" value="6"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="spacing">
                                                 <real key="value" value="20"/>
@@ -1772,10 +1772,10 @@
                                                 <color key="value" name="primary_color"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="itemSpacing">
-                                                <real key="value" value="10"/>
+                                                <real key="value" value="6"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="spacing">
-                                                <real key="value" value="20"/>
+                                                <real key="value" value="12"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
@@ -1801,7 +1801,7 @@
                                                 <color key="value" name="primary_color"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="itemSpacing">
-                                                <real key="value" value="10"/>
+                                                <real key="value" value="6"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="spacing">
                                                 <real key="value" value="20"/>
@@ -1833,10 +1833,10 @@
                                                 <color key="value" name="primary_color"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="itemSpacing">
-                                                <real key="value" value="10"/>
+                                                <real key="value" value="6"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="spacing">
-                                                <real key="value" value="20"/>
+                                                <real key="value" value="12"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
@@ -1853,18 +1853,18 @@
                                     <constraint firstAttribute="trailing" secondItem="5F6-W3-eMP" secondAttribute="trailing" constant="50" id="HCR-fA-60n"/>
                                     <constraint firstItem="2ZC-8g-Zsn" firstAttribute="leading" secondItem="ewV-bx-NMX" secondAttribute="leading" constant="230" id="NHD-Sx-tBA"/>
                                     <constraint firstItem="2ZC-8g-Zsn" firstAttribute="top" secondItem="APA-NU-qQq" secondAttribute="top" constant="57" id="OMO-cz-yj6"/>
-                                    <constraint firstItem="5F6-W3-eMP" firstAttribute="leading" secondItem="bWD-8v-CL3" secondAttribute="leading" constant="80" id="OQp-Tg-8Xw"/>
+                                    <constraint firstItem="VGE-he-HNH" firstAttribute="leading" secondItem="7A8-2y-MjI" secondAttribute="leading" id="SE0-mp-ymB"/>
                                     <constraint firstItem="knz-5q-7fB" firstAttribute="top" secondItem="VGE-he-HNH" secondAttribute="bottom" constant="35" id="Udv-SL-7fd"/>
-                                    <constraint firstItem="7A8-2y-MjI" firstAttribute="leading" secondItem="8jR-h9-H93" secondAttribute="leading" constant="140" id="Uyn-lk-V7Q"/>
-                                    <constraint firstItem="knz-5q-7fB" firstAttribute="leading" secondItem="sJP-k9-hko" secondAttribute="leading" constant="140" id="afs-zt-aSA"/>
+                                    <constraint firstItem="7A8-2y-MjI" firstAttribute="leading" secondItem="8jR-h9-H93" secondAttribute="leading" constant="130" id="Uyn-lk-V7Q"/>
                                     <constraint firstItem="7A8-2y-MjI" firstAttribute="centerY" secondItem="8jR-h9-H93" secondAttribute="centerY" id="b7L-S7-YJu"/>
                                     <constraint firstItem="VGE-he-HNH" firstAttribute="top" secondItem="7A8-2y-MjI" secondAttribute="bottom" constant="35" id="bTK-5K-yQ9"/>
                                     <constraint firstItem="f8x-Rz-85m" firstAttribute="top" secondItem="APA-NU-qQq" secondAttribute="top" constant="50" id="bda-Bp-f5k"/>
                                     <constraint firstItem="f8x-Rz-85m" firstAttribute="centerX" secondItem="APA-NU-qQq" secondAttribute="centerX" id="hmU-i5-4wI"/>
                                     <constraint firstItem="2ZC-8g-Zsn" firstAttribute="centerY" secondItem="ewV-bx-NMX" secondAttribute="centerY" id="kif-Mm-kg8"/>
+                                    <constraint firstItem="5F6-W3-eMP" firstAttribute="leading" secondItem="knz-5q-7fB" secondAttribute="leading" id="mQ2-Qn-ARf"/>
                                     <constraint firstAttribute="bottom" secondItem="f8x-Rz-85m" secondAttribute="bottom" constant="300" id="o1G-XW-CZR"/>
-                                    <constraint firstItem="VGE-he-HNH" firstAttribute="leading" secondItem="8jR-h9-H93" secondAttribute="leading" constant="140" id="ozU-qJ-4m8"/>
                                     <constraint firstItem="VGE-he-HNH" firstAttribute="centerY" secondItem="WSP-GE-ds1" secondAttribute="centerY" id="q6K-5l-C18"/>
+                                    <constraint firstItem="knz-5q-7fB" firstAttribute="leading" secondItem="VGE-he-HNH" secondAttribute="leading" id="xSd-ij-f7d"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
@@ -3945,10 +3945,10 @@
                                                 <color key="value" name="primary_color"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="itemSpacing">
-                                                <real key="value" value="10"/>
+                                                <real key="value" value="6"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="spacing">
-                                                <real key="value" value="20"/>
+                                                <real key="value" value="12"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
@@ -3996,7 +3996,7 @@
                                     <constraint firstItem="ejn-rZ-nz9" firstAttribute="leading" secondItem="o6k-WB-nuT" secondAttribute="leading" constant="160" id="XCV-SU-iRO"/>
                                     <constraint firstItem="ejn-rZ-nz9" firstAttribute="top" secondItem="LRr-be-nEx" secondAttribute="bottom" constant="35" id="YEZ-HQ-BhB"/>
                                     <constraint firstItem="LRr-be-nEx" firstAttribute="centerY" secondItem="AxS-5j-gSd" secondAttribute="centerY" id="h5v-7q-6qo"/>
-                                    <constraint firstItem="LRr-be-nEx" firstAttribute="leading" secondItem="AxS-5j-gSd" secondAttribute="leading" constant="230" id="ie9-UR-7DJ"/>
+                                    <constraint firstItem="LRr-be-nEx" firstAttribute="leading" secondItem="AxS-5j-gSd" secondAttribute="leading" constant="200" id="ie9-UR-7DJ"/>
                                     <constraint firstItem="ejn-rZ-nz9" firstAttribute="centerY" secondItem="o6k-WB-nuT" secondAttribute="centerY" id="kqr-wX-Hf5"/>
                                     <constraint firstItem="amn-Ta-9IV" firstAttribute="centerX" secondItem="kBq-Uq-YeP" secondAttribute="centerX" id="mo9-Ag-4LC"/>
                                     <constraint firstItem="amn-Ta-9IV" firstAttribute="leading" secondItem="kBq-Uq-YeP" secondAttribute="leading" constant="50" id="nB1-Jv-1XT"/>
@@ -8511,6 +8511,8 @@
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="30" id="Btf-4y-cbE"/>
                                                                     <constraint firstAttribute="width" secondItem="kLB-0o-YZ5" secondAttribute="height" multiplier="1:1" id="KZv-bk-wNF"/>
+                                                                    <constraint firstAttribute="width" secondItem="kLB-0o-YZ5" secondAttribute="height" multiplier="1:1" id="T49-eY-DvW"/>
+                                                                    <constraint firstAttribute="width" secondItem="kLB-0o-YZ5" secondAttribute="height" multiplier="1:1" id="TCe-EZ-cTD"/>
                                                                     <constraint firstAttribute="width" secondItem="kLB-0o-YZ5" secondAttribute="height" multiplier="1:1" id="U2I-Dq-MFm"/>
                                                                 </constraints>
                                                                 <state key="normal" backgroundImage="icon-check-outline"/>
@@ -8556,8 +8558,6 @@
                                                             </stackView>
                                                         </subviews>
                                                         <constraints>
-                                                            <constraint firstItem="kLB-0o-YZ5" firstAttribute="width" secondItem="kLB-0o-YZ5" secondAttribute="height" multiplier="1:1" id="T49-eY-DvW"/>
-                                                            <constraint firstItem="kLB-0o-YZ5" firstAttribute="width" secondItem="kLB-0o-YZ5" secondAttribute="height" multiplier="1:1" id="TCe-EZ-cTD"/>
                                                             <constraint firstAttribute="height" constant="49" id="cSt-2f-RDB"/>
                                                         </constraints>
                                                     </stackView>
@@ -9875,7 +9875,7 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGreenColor">
-            <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

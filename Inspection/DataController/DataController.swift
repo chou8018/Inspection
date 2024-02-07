@@ -148,7 +148,7 @@ class DataController {
     }
     
     func hasRoofType() -> Bool {
-        if DataController.shared.receiverCarModel.sellingCategory?.trimWhiteSpace == "PU" {
+        if DataController.shared.receiverCarModel.sellingCategory?.trimWhiteSpace == "PU" , isCarType() {
             return true
         }
         return false

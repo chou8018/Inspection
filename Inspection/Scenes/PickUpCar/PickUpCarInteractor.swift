@@ -341,7 +341,10 @@ class PickUpCarInteractor: PickUpCarBusinessLogic, PickUpCarDataStore
         
         let validModelCode = modelCode != nil && !(modelCode?.isEmpty ?? false)
         
-        let validGasOption = gasOption != nil && !(gasOption?.isEmpty ?? false)
+        var validGasOption = true
+        if DataController.shared.isCarType() {
+            validGasOption = gasOption != nil && !(gasOption?.isEmpty ?? false)
+        }
         
         var validGasNumber = true
         if model.isGasTank == true {
@@ -387,7 +390,7 @@ class PickUpCarInteractor: PickUpCarBusinessLogic, PickUpCarDataStore
         message += validGasOption ? "" : "\(String.localized("car_detail_gas_title_label")) \(string_not_correct)\n"
         message += validGasNumber ? "" : "\(String.localized("car_detail_gas_number_placeholder")) \(string_not_correct)\n"
         
-        message += validRoofType ? "" : "\(String.localized("car_exterior_roof_type_label")) \(string_not_correct)"
+        message += validRoofType ? "" : "\(String.localized("car_exterior_roof_type_label")) \(string_not_correct)\n"
         
         message += validBriefCondition ? "" : "\(String.localized("car_detail_brief_condition_title_label")) \(string_not_correct)"
         

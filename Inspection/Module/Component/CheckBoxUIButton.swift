@@ -54,8 +54,9 @@ class CheckBoxUIButton : UIButton {
         self.isEnabled = isEnable
     }
     
-    func setEaableClick(isEnable : Bool){
-        isDisable = isEnable
+    func isDisableClick(disable : Bool){
+        isDisable = disable
+        self.setBackgroundImage(disable ? disableImage : outlineImage , for: .normal)
     }
 }
  

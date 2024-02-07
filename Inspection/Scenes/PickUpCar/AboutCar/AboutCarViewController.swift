@@ -437,8 +437,7 @@ class AboutCarViewController: ViewController, AboutCarDisplayLogic
                 DataController.shared.receiverCarModel.briefConditionOptionId = -1
             }
             self?.briefNoteStackView.isHidden = true
-            self?.yearTextField.isEnabled = true
-            self?.yearRegisterTextField.isEnabled = true
+            self?.enableYearView()
         }
     }
     
@@ -448,12 +447,15 @@ class AboutCarViewController: ViewController, AboutCarDisplayLogic
                 self?.briefCheckBox0.check = false
                 self?.briefCheckBox2.check = false
                 DataController.shared.receiverCarModel.briefConditionOptionId = 2
+                self?.enableYearView(isEnableRegis: false)
+                self?.regisCheckButton.check = true
+                DataController.shared.receiverCarModel.isInValidRegistrationYear = true
+
             }else{
                 DataController.shared.receiverCarModel.briefConditionOptionId = -1
+                self?.enableYearView()
             }
             self?.briefNoteStackView.isHidden = !check
-            self?.yearTextField.isEnabled = true
-            self?.yearRegisterTextField.isEnabled = true
         }
     }
     
@@ -463,12 +465,12 @@ class AboutCarViewController: ViewController, AboutCarDisplayLogic
                 self?.briefCheckBox0.check = false
                 self?.briefCheckBox1.check = false
                 DataController.shared.receiverCarModel.briefConditionOptionId = 3
-                self?.yearTextField.isEnabled = false
-                self?.yearRegisterTextField.isEnabled = false
+                self?.enableYearView(isEnableManu: false, isEnableRegis: false, disable: true)
+
             }else{
                 DataController.shared.receiverCarModel.briefConditionOptionId = -1
-                self?.yearTextField.isEnabled = true
-                self?.yearRegisterTextField.isEnabled = true
+                self?.enableYearView()
+
             }
             self?.briefNoteStackView.isHidden = !check
         }
@@ -1160,12 +1162,29 @@ class AboutCarViewController: ViewController, AboutCarDisplayLogic
         briefTitleLabel.validateLabel(model.validBriefCondition)
         
         if let briefId = model.briefConditionOptionId , briefId == 3 {
-            yearTextField.isEnabled = false
-            yearRegisterTextField.isEnabled = false
+            enableYearView(isEnableManu: false, isEnableRegis: false, disable: true)
+        } else if let briefId = model.briefConditionOptionId , briefId == 2 {
+            enableYearView(isEnableRegis: false)
+            regisCheckButton.check = true
+            DataController.shared.receiverCarModel.isInValidRegistrationYear = true
+
         } else {
-            yearTextField.isEnabled = true
-            yearRegisterTextField.isEnabled = true
+           enableYearView()
         }
+    }
+    
+    func enableYearView(isEnableManu: Bool = true , isEnableRegis: Bool = true, disable: Bool = false) {
+        
+        yearTextField.isEnabled = isEnableManu
+        yearTextField.backgroundColor = isEnableManu ? .white : .galleryColor
+        yearTextField.cornerRadius = isEnableManu ? 10 : 0
+
+        yearRegisterTextField.isEnabled = isEnableRegis
+        yearRegisterTextField.backgroundColor =  isEnableRegis ? .white : .galleryColor
+        yearRegisterTextField.cornerRadius = isEnableRegis ? 10 : 0
+
+        regisCheckButton.isDisableClick(disable: disable)
+
     }
 }
 // MARK: UITextFieldDelegate
@@ -1198,10 +1217,10 @@ extension AboutCarViewController : UITextFieldDelegate {
             DataController.shared.receiverCarModel.variants = textField.text
             
         case yearRegisterTextField:
-            DataController.shared.receiverCarModel.registrationYear = textField.text
+            DataController.shared.receiverCarModel.registrationYear = textField.text?.trimWhiteSpace
             
         case yearTextField:
-            DataController.shared.receiverCarModel.year = textField.text
+            DataController.shared.receiverCarModel.year = textField.text?.trimWhiteSpace
             
         case provinceTextField:
             DataController.shared.receiverCarModel.province = textField.text

@@ -283,8 +283,8 @@ class PickUpCarInteractor: PickUpCarBusinessLogic, PickUpCarDataStore
         let variantsCar = model.variants
         let typeCar = model.body
         let capacityCar = model.engineCapacity
-        let yearMake = model.year
-        let yearRegister = model.registrationYear
+        let yearMake = model.year?.trimWhiteSpace
+        let yearRegister = model.registrationYear?.trimWhiteSpace
         let registration = model.registration
         let province = model.province
         let colorCar = model.colorCar
@@ -325,11 +325,17 @@ class PickUpCarInteractor: PickUpCarBusinessLogic, PickUpCarDataStore
         let validVariantsCar = variantsCar != nil && !(variantsCar?.isEmpty ?? false)
         let validCapacityCar = capacityCar != nil && !(capacityCar?.isEmpty ?? false)
         var validYearMake = yearMake != nil && !(yearMake?.isEmpty ?? false)
-        if DataController.shared.receiverCarModel.isInValidManuYear == true {
+        if model.isInValidManuYear == true {
             validYearMake = true
         }
+  
         var validYearRegister = yearRegister != nil && !(yearRegister?.isEmpty ?? false)
-        if DataController.shared.receiverCarModel.isInValidRegistrationYear == true {
+        if model.isInValidRegistrationYear == true {
+            validYearRegister = true
+        }
+        
+        if briefConditionId ?? 0 == 3 {
+            validYearMake = true
             validYearRegister = true
         }
         let validRegistration = registration != nil && !(registration?.isEmpty ?? false)

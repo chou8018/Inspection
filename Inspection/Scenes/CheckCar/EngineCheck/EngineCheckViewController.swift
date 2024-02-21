@@ -208,12 +208,15 @@ class EngineCheckViewController: ViewController, EngineCheckDisplayLogic
             NSAttributedString(string: string_inspection_oil_lacking, attributes: attributedString),
             NSAttributedString(string: string_inspection_oil_not_lacking, attributes: attributedString)
         ]
-        fuelSystemRadio.attributedTitles = [
-            NSAttributedString(string: string_injector, attributes: attributedString),
-            NSAttributedString(string: string_carburetor, attributes: attributedString),
-            NSAttributedString(string: "Direct Injection", attributes: attributedString)
-            
-        ]
+//        fuelSystemRadio.attributedTitles = [
+//            NSAttributedString(string: string_injector, attributes: attributedString),
+//            NSAttributedString(string: string_carburetor, attributes: attributedString),
+//            NSAttributedString(string: "Direct Injection", attributes: attributedString)
+//            
+//        ]
+        
+        fuelSystemRadio.titles = DataController.shared.getFuelSystemTitles()
+        
         gasSystemRadio.attributedTitles = [
             NSAttributedString(string: string_lpg_sequential_injection, attributes: attributedString),
             NSAttributedString(string: string_lpg_fumigation_system, attributes: attributedString),
@@ -257,8 +260,12 @@ class EngineCheckViewController: ViewController, EngineCheckDisplayLogic
     }
     
     @IBAction func fuelSystemValueChanged(_ sender: Any) {
-        let value = getRadioValue(from: [string_injector, string_carburetor, "Direct Injection"],
+//        let value = getRadioValue(from: [string_injector, string_carburetor, "Direct Injection"],
+//                                  selectIndex: fuelSystemRadio.selectedIndex)
+        
+        let value = getRadioValue(from: DataController.shared.getFuelSystemTitles(),
                                   selectIndex: fuelSystemRadio.selectedIndex)
+        
         DataController.shared.inspectionCarModel.fuelSystem = value
         
         let fuelSystemId = fuelSystemRadio.selectedIndex + 1
@@ -347,7 +354,9 @@ class EngineCheckViewController: ViewController, EngineCheckDisplayLogic
         gasSystemRadio.selectedIndex = getRadioIndexByValue(from : [string_lpg_sequential_injection, string_lpg_fumigation_system,
                                                                     string_cng_sequential_injection, string_cng_fumigation_system], value: model.gasSystem)
         
-        fuelSystemRadio.selectedIndex = getRadioIndexByValue(from : [string_injector, string_carburetor, "Direct Injection"], value: model.fuelSystem)
+//        fuelSystemRadio.selectedIndex = getRadioIndexByValue(from : [string_injector, string_carburetor, "Direct Injection"], value: model.fuelSystem)
+        
+        fuelSystemRadio.selectedIndex = getRadioIndexByValue(from : DataController.shared.getFuelSystemTitles(), value: model.fuelSystem)
         
         haveOilRadio.selectedIndex = getRadioIndexByValue(from : [string_inspection_oil_lacking, string_inspection_oil_not_lacking], value: model.oilEngine)
         
@@ -362,21 +371,10 @@ class EngineCheckViewController: ViewController, EngineCheckDisplayLogic
         if let engineTypeIndex = DataController.shared.receiverCarModel.fuelSystemId , engineTypeIndex > 0 {
             typeEngineRadio.selectedIndex = engineTypeIndex - 1
         }
-        if let fuelDelivery = DataController.shared.receiverCarModel.fuelDelivery {
-            var index = -1
-            switch fuelDelivery {
-            case "I":
-                index = 0
-            case "N":
-                index = 1
-            case "D":
-                index = 2
-            case "1":
-                index = 3
-            default:
-                index = -1
-            }
-            fuelSystemRadio.selectedIndex = index
+        
+        let fuelSystemIndex = DataController.shared.getFuelSystemIndex()
+        if fuelSystemIndex > -1 {
+            fuelSystemRadio.selectedIndex = fuelSystemIndex
         }
     }
     

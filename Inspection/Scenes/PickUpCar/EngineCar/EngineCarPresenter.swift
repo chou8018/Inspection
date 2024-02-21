@@ -14,7 +14,9 @@ import UIKit
 
 protocol EngineCarPresentationLogic
 {
-  func presentSomething(response: EngineCar.Something.Response)
+    func presentSomething(response: EngineCar.Something.Response)
+    func presentFuelDeliveryList(response: EngineCar.Something.Response)
+    
 }
 
 class EngineCarPresenter: EngineCarPresentationLogic
@@ -28,4 +30,23 @@ class EngineCarPresenter: EngineCarPresentationLogic
     let viewModel = EngineCar.Something.ViewModel()
     viewController?.displaySomething(viewModel: viewModel)
   }
+    
+    func presentFuelDeliveryList(response: EngineCar.Something.Response) {
+        if let kError = response.error {
+            let message = kError.message
+            let viewModel = EngineCar.Something.ViewModel(errorMessage: message)
+            viewController?.displayFuelDeliveryListError(viewModel: viewModel)
+        }else{
+            guard let result = response.fuelDeliveryList else { return }
+            var values = result.map({ ("\($0.desc_LO ?? "")") })
+            
+            if !DataController.shared.isThaiLanguage() {
+                values = result.map({ ("\($0.desc_BU ?? "")") })
+            }
+            
+//            values = values.sorted(by: { $0 < $1 })
+            let viewModel = EngineCar.Something.ViewModel(fuelDeliveryList: values)
+            viewController?.displayFuelDeliveryList(viewModel: viewModel)
+        }
+    }
 }

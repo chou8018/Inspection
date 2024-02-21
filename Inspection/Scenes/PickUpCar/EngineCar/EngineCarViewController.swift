@@ -16,12 +16,21 @@ import RadioGroup
 protocol EngineCarDisplayLogic: AnyObject
 {
     func displaySomething(viewModel: EngineCar.Something.ViewModel)
+    
+    // add on 2/21/2024
+    func displayFuelDeliveryList(viewModel: EngineCar.Something.ViewModel)
+    func displayFuelDeliveryListError(viewModel: EngineCar.Something.ViewModel)
 }
 
 class EngineCarViewController: ViewController, EngineCarDisplayLogic
 {
     var interactor: EngineCarBusinessLogic?
     var router: (NSObjectProtocol & EngineCarRoutingLogic & EngineCarDataPassing)?
+    
+    var isGetFuelSystem = false
+    var fuelDeliveryList : [String]?
+    var localFuelDeliveryList: [String] = [string_direct_injection, string_injector,
+                                           string_naturally, string_turbo, "N/A", string_electric]
     
     // MARK: Object lifecycle
     
@@ -62,6 +71,32 @@ class EngineCarViewController: ViewController, EngineCarDisplayLogic
             if let router = router, router.responds(to: selector) {
                 router.perform(selector, with: segue)
             }
+        }
+    }
+    
+    func loadRetryApi() {
+         if !isGetFuelSystem {
+             getFuelSystem()
+        }
+    }
+    
+    //MARK: catalyticOption
+    func getFuelSystem(){
+        let request = EngineCar.Something.Request()
+        interactor?.getFuelSystem(request: request)
+    }
+    
+    func displayFuelDeliveryList(viewModel: EngineCar.Something.ViewModel) {
+        guard let values = viewModel.fuelDeliveryList else { return }
+        fuelDeliveryList = values
+        fuelSystemRadio.titles = values
+        isGetFuelSystem = true
+        DataController.shared.receiverCarModel.fuelSystemTitles = values
+    }
+    func displayFuelDeliveryListError(viewModel: EngineCar.Something.ViewModel) {
+        guard let errorMessage = viewModel.errorMessage else { return }
+        alertErrorMessage(message: errorMessage) { [weak self] in
+            self?.loadRetryApi()
         }
     }
     
@@ -219,12 +254,12 @@ class EngineCarViewController: ViewController, EngineCarDisplayLogic
             NSAttributedString(string: string_cng_fumigation_system, attributes: attributedString)
         ]
         
-        fuelSystemRadio.attributedTitles = [
-            NSAttributedString(string: string_injector, attributes: attributedString),
-            NSAttributedString(string: string_carburetor, attributes: attributedString),
-            NSAttributedString(string: "Direct Injection", attributes: attributedString),
-            NSAttributedString(string: "N/A", attributes: attributedString)
-        ]
+//        fuelSystemRadio.attributedTitles = [
+//            NSAttributedString(string: string_injector, attributes: attributedString),
+//            NSAttributedString(string: string_carburetor, attributes: attributedString),
+//            NSAttributedString(string: "Direct Injection", attributes: attributedString),
+//            NSAttributedString(string: "N/A", attributes: attributedString)
+//        ]
     }
     
     //MARK: Engine OverAll
@@ -283,24 +318,50 @@ class EngineCarViewController: ViewController, EngineCarDisplayLogic
 //            if value == string_phev_diesel {
 //                DataController.shared.showTipView(sender: selectItem, superView: self.view, message: String.localized("car_engine_tip_electric_internal_label"))
 //            }
-//        }
+//      yst  }
+    }
+    
+    private func fuelSystems() -> [String] {
+        if let fuelDeliveryList = fuelDeliveryList {
+            return fuelDeliveryList
+        } else {
+            return localFuelDeliveryList
+        }
     }
     
     @IBAction func fuelSystemValueChanged(_ sender: Any) {
-        let value = getRadioValue(from: [string_injector, string_carburetor, "Direct Injection", "N/A"],
+//        let value = getRadioValue(from: [string_injector, string_carburetor, "Direct Injection", "N/A"],
+//                                  selectIndex: fuelSystemRadio.selectedIndex)
+        
+        let value = getRadioValue(from: fuelSystems(),
                                   selectIndex: fuelSystemRadio.selectedIndex)
         DataController.shared.receiverCarModel.fuelDeliveryName = value
         
         var fuelDelivery = ""
         switch fuelSystemRadio.selectedIndex {
+//        case 0:
+//            fuelDelivery = "I"
+//        case 1:
+//            fuelDelivery = "N"
+//        case 2:
+//            fuelDelivery = "D"
+//        case 3:
+//            fuelDelivery = "1"
+//        default:
+//            fuelDelivery = "1"
+//        }
         case 0:
-            fuelDelivery = "I"
-        case 1:
-            fuelDelivery = "N"
-        case 2:
             fuelDelivery = "D"
+        case 1:
+            fuelDelivery = "I"
+        case 2:
+            fuelDelivery = "N"
         case 3:
+            fuelDelivery = "T"
+        case 4:
             fuelDelivery = "1"
+        case 5:
+            fuelDelivery = "E"
         default:
             fuelDelivery = "1"
         }
@@ -430,7 +491,23 @@ class EngineCarViewController: ViewController, EngineCarDisplayLogic
         gasCheckBox.check = model.isGas ?? false
         
         
-        fuelSystemRadio.selectedIndex = getRadioIndexByValue(from : [string_injector, string_carburetor, "Direct Injection", "N/A"], value: DataController.shared.receiverCarModel.fuelDeliveryName)
+//        fuelSystemRadio.selectedIndex = getRadioIndexByValue(from : [string_injector, string_carburetor, "Direct Injection", "N/A"], value: DataController.shared.receiverCarModel.fuelDeliveryName)
+        
+   
+        var driveSelectedIndex = -1
+        switch model.drive?.trimWhiteSpace {
+        case "F":
+            driveSelectedIndex = 0
+        case "R":
+            driveSelectedIndex = 1
+        case "4":
+            driveSelectedIndex = 2
+        case "A":
+            driveSelectedIndex = 3
+        default:
+            driveSelectedIndex = -1
+        }
+        deiverSystemRadio.selectedIndex = driveSelectedIndex
     }
     
     @objc func updateView(){
@@ -466,6 +543,10 @@ class EngineCarViewController: ViewController, EngineCarDisplayLogic
         } else if value == string_phev_diesel {
             DataController.shared.showTipView(sender: sender, superView: self.view, message: String.localized("car_engine_tip_electric_internal_label"))
         }
+    }
+    
+    @objc func updateDataFromSelectMode(noti: NSNotification){
+        prepareData()
     }
 }
 
@@ -507,13 +588,15 @@ extension EngineCarViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         scrollView.registKeyboardNotification()
-        
+        loadRetryApi()
         prepareData()
         updateView()
         
         NotificationCenter.default.addObserver(self, selector: #selector(updateView), name: NSNotification.Name("updateUI"), object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(tipButtonSelected(noti:)), name: NSNotification.Name("tipButtondSelect"), object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(updateDataFromSelectMode(noti:)), name: NSNotification.Name("modelHasSelected"), object: nil)
     }
     
     override func viewDidDisappear(_ animated: Bool) {

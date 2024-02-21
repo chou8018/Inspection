@@ -234,6 +234,10 @@
 "car_engine_fuel_system_label" = "ระบบเชื้อเพลิง";
 "car_engine_injector_label" = "หัวฉีด";
 "car_engine_carburetor_label" = "คาร์บูเรเตอร์";
+"car_engine_naturally_label" = "คาบูเรเตอร์";
+"car_engine_turbo_label" = "เทอร์โบ";
+"car_engine_electric_label" = "ไฟฟ้า";
+"car_engine_direct_injection_label" = "Direct Injection";
 "car_engine_gas_label" = "แก๊ส";
 "car_engine_lpg_sequential_injection_label" = "LPG ระบบหัวฉีด";
 "car_engine_lpg_fumigation_system_label" = "LPG ระบบดูด";

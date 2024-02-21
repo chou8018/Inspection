@@ -161,6 +161,69 @@ class DataController {
         return false
     }
     
+    func getGearIndex() -> Int {
+        var index = -1
+        switch receiverCarModel.gearbox?.trimWhiteSpace {
+        case "1":
+            index = 0
+        case "A":
+            index = 1
+        case "M":
+            index = 2
+        default:
+            index = -1
+        }
+        return index
+    }
+    
+    func getFuelSystemIndex() -> Int {
+        var index = -1
+        switch receiverCarModel.fuelDelivery?.trimWhiteSpace {
+            
+        case "D":
+            index = 0
+        case "I":
+            index = 1
+        case "N":
+            index = 2
+        case "T":
+            index = 3
+        case "1":
+            index = 4
+        case "E":
+            index = 5
+        default:
+            index = -1
+        }
+//        case "I":
+//            index = 0
+//        case "N":
+//            index = 1
+//        case "D":
+//            index = 2
+//        case "1":
+//            index = 3
+//        default:
+//            index = -1
+//        }
+        return index
+    }
+    
+    func getFuelSystemTitles() -> [String] {
+        let localFuelDeliveryList: [String] = [string_direct_injection, string_injector,
+                                               string_naturally, string_turbo, "N/A", string_electric]
+        
+        if let fuelDeliveryList = receiverCarModel.fuelSystemTitles {
+            return fuelDeliveryList
+        } else {
+            return localFuelDeliveryList
+        }
+    }
+    
+    func getFuelSystemSelectedTitle() -> String {
+        return getFuelSystemTitles()[getFuelSystemIndex()]
+    }
+    
     func showTipView(sender: UIView, superView: UIView? , message: String, textAlignment: NSTextAlignment = .center) {
         var preferences = EasyTipView.Preferences()
         preferences.drawing.font = UIFont.systemFont(ofSize: 13)

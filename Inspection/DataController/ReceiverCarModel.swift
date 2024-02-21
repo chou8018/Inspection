@@ -262,7 +262,7 @@ class ReceiverCarModel {
     var isGas : Bool? { didSet { setEdit(oldValue, value: &isEditEngine) }}
     var gasSystem: String?
     var assetInCar: String? { didSet { setEdit(oldValue, value: &isEditEngine) }}
-    
+    var fuelSystemTitles: [String]? { didSet { setEdit(oldValue, value: &isEditEngine) }}
     
     
     //MARK: MotorCycle

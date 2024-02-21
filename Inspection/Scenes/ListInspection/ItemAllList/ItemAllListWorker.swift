@@ -275,14 +275,30 @@ class ItemAllListWorker
                 if let fuelDelivery = vehicleType?.fuelDelivery {
                     var fuelDeliveryName = ""
                     switch  fuelDelivery {
+//                    case "D":
+//                        fuelDeliveryName = "Direct Injection" // direct injection
+//                    case "I":
+//                        fuelDeliveryName = string_injector // injection
+//                    case "N":
+//                        fuelDeliveryName = string_carburetor // naturally aspirated
+//                    case "T":
+//                        fuelDeliveryName = String.localized("car_engine_turbocharger_label") // turbo
+//                    default:
+//                        fuelDeliveryName = "N/A"
+//                    }
+                        
                     case "D":
-                        fuelDeliveryName = "Direct Injection" // direct injection
+                        fuelDeliveryName = string_direct_injection // direct injection
                     case "I":
-                        fuelDeliveryName = string_injector // injection
+                        fuelDeliveryName = string_injector // direct injection
                     case "N":
-                        fuelDeliveryName = string_carburetor // naturally aspirated
+                        fuelDeliveryName = string_naturally // direct injection
                     case "T":
-                        fuelDeliveryName = String.localized("car_engine_turbocharger_label") // turbo
+                        fuelDeliveryName = string_turbo // direct injection
+                    case "1":
+                        fuelDeliveryName = "N/A" // direct injection
+                    case "E":
+                        fuelDeliveryName = string_electric // direct injection
                     default:
                         fuelDeliveryName = "N/A"
                     }
@@ -740,7 +756,8 @@ class ItemAllListWorker
                 model.oilEngine = isLubricatorLow ? String.localized("inspection_engine_oil_lacking_label") : String.localized("inspection_engine_oil_notlacking_label")
                 model.isLubricatorLow = isLubricatorLow
 
-                let fuelSystemValue = [nil, string_injector, string_carburetor, "Direct Injection"]
+//                let fuelSystemValue = [nil, string_injector, string_carburetor, "Direct Injection"]
+                let fuelSystemValue = DataController.shared.getFuelSystemTitles()
                 let fuelSystemId = carInspectionType?.fuelSystemId ?? 0
                 model.fuelSystem =  (fuelSystemId <= 3) ? fuelSystemValue[fuelSystemId] : ""
                 model.fuelSystemId = fuelSystemId

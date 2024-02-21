@@ -30,6 +30,11 @@ var string_phev_diesel = String.localized("car_engine_phev_label")
 
 var string_injector = String.localized("car_engine_injector_label")
 var string_carburetor = String.localized("car_engine_carburetor_label")
+var string_naturally = String.localized("car_engine_naturally_label")
+var string_turbo = String.localized("car_engine_turbo_label")
+var string_electric = String.localized("car_engine_electric_label")
+var string_direct_injection = String.localized("car_engine_direct_injection_label")
+
 var string_lpg_sequential_injection = String.localized("car_engine_lpg_sequential_injection_label")
 var string_lpg_fumigation_system = String.localized("car_engine_lpg_fumigation_system_label")
 var string_cng_sequential_injection = String.localized("car_engine_cng_sequential_injection_label")

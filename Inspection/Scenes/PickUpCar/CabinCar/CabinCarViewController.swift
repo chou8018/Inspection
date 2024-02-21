@@ -1045,6 +1045,13 @@ class CabinCarViewController: ViewController, CabinCarDisplayLogic
         isInvalidMilesCheckBox.check = (model.isInvalidMileage ?? false)
         reasonMileageStackView.isHidden = !(model.isInvalidMileage ?? false)
         reasonMileageTextField.text = model.invalidMileageReason
+        
+        let gearIndex = DataController.shared.getGearIndex()
+        if gearIndex > -1 {
+            gearboxDropDown.selectedIndex = gearIndex
+            gearboxDropDown.text = gearboxListPart[gearIndex]
+        }
+ 
     }
     
     @objc func updateView(){
@@ -1109,6 +1116,9 @@ class CabinCarViewController: ViewController, CabinCarDisplayLogic
         //------------------------------------------------------------//
     }
     
+    @objc func updateDataFromSelectMode(noti: NSNotification){
+        prepareData()
+    }
     
     //MARK: fetch GearBox
     var isGearBox = false
@@ -1223,6 +1233,8 @@ extension CabinCarViewController {
         updateView()
         
         NotificationCenter.default.addObserver(self, selector: #selector(updateView), name: NSNotification.Name("updateUI"), object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(updateDataFromSelectMode(noti:)), name: NSNotification.Name("modelHasSelected"), object: nil)
     }
     
     override func viewDidDisappear(_ animated: Bool) {

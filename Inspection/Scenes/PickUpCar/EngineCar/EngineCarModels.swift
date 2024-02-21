@@ -23,9 +23,14 @@ enum EngineCar
     }
     struct Response
     {
+        var fuelDeliveryList : [FuelDeliveryModel]?
+        var error : KErrorMessage?
+
     }
     struct ViewModel
     {
+        var fuelDeliveryList : [String]?
+        var errorMessage: String?
     }
   }
 }

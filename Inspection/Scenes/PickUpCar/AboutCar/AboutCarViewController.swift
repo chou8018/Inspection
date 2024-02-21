@@ -631,19 +631,20 @@ class AboutCarViewController: ViewController, AboutCarDisplayLogic
         
         
         if let fuelDelivery = viewModel.fuelDelivery {
-            var fuelDeliveryName = ""
-            switch  fuelDelivery {
-            case "D":
-                fuelDeliveryName = "Direct Injection" // direct injection
-            case "I":
-                fuelDeliveryName = String.localized("car_engine_injector_label") // injection
-            case "N":
-                fuelDeliveryName = String.localized("car_engine_carburetor_label") // naturally aspirated
-            case "T":
-                fuelDeliveryName = String.localized("car_engine_turbocharger_label") // turbo
-            default:
-                fuelDeliveryName = "N/A"
-            }
+//            var fuelDeliveryName = ""
+//            switch  fuelDelivery {
+//            case "D":
+//                fuelDeliveryName = "Direct Injection" // direct injection
+//            case "I":
+//                fuelDeliveryName = String.localized("car_engine_injector_label") // injection
+//            case "N":
+//                fuelDeliveryName = String.localized("car_engine_carburetor_label") // naturally aspirated
+//            case "T":
+//                fuelDeliveryName = String.localized("car_engine_turbocharger_label") // turbo
+//            default:
+//                fuelDeliveryName = "N/A"
+//            }
+            let fuelDeliveryName = DataController.shared.getFuelSystemSelectedTitle()
             DataController.shared.receiverCarModel.fuelDeliveryName = fuelDeliveryName
             
             DataController.shared.inspectionCarModel.fuelDeliveryType = fuelDeliveryName
@@ -651,6 +652,8 @@ class AboutCarViewController: ViewController, AboutCarDisplayLogic
         
         //vinNumberTextField.text = viewModel.chassisNumber
         //DataController.shared.receiverCarModel.vinNumber = viewModel.chassisNumber
+        
+        NotificationCenter.default.post(name: NSNotification.Name("modelHasSelected"), object: nil)
     }
     
     func displayfillMakeSelected(viewModel: AboutCar.Something.ViewModel) {

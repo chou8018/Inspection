@@ -706,27 +706,31 @@ class SummaryCarPDFWorker {
             
             //MARK: FuelSystem
             
-            let fuelSystem = [string_injector,
-                              string_carburetor,
-                              "Direct Injection"]
-
+//            let fuelSystem = [string_injector,
+//                              string_carburetor,
+//                              "Direct Injection"]
+            let fuelSystem = DataController.shared.getFuelSystemTitles()
             var fuelSystemValue = "-"
-            if let fuelDelivery = DataController.shared.receiverCarModel.fuelDelivery {
-                var index = -1
-                switch fuelDelivery {
-                case "I":
-                    index = 0
-                case "N":
-                    index = 1
-                case "D":
-                    index = 2
-                case "1":
-                    index = 3
-                default:
-                    index = -1
-                }
-                fuelSystemValue = fuelSystem[index].pdfValidateString
-            }
+            
+            let fuelIndex = DataController.shared.getFuelSystemIndex()
+            fuelSystemValue = fuelSystem[fuelIndex].pdfValidateString
+
+//            if let fuelDelivery = DataController.shared.receiverCarModel.fuelDelivery {
+//                var index = -1
+//                switch fuelDelivery {
+//                case "I":
+//                    index = 0
+//                case "N":
+//                    index = 1
+//                case "D":
+//                    index = 2
+//                case "1":
+//                    index = 3
+//                default:
+//                    index = -1
+//                }
+//                fuelSystemValue = fuelSystem[index].pdfValidateString
+//            }
             
             let fuelSystemMainString = "\(String.localized("car_engine_fuel_system_label"))  \(fuelSystemValue)"
             let attrFuelSystemValuePDF = weakself.getTitle(mainString: fuelSystemMainString,

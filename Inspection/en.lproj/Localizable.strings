@@ -235,6 +235,10 @@ Please inspect deeply on which part makes the car undriveable again in inspectio
 "car_engine_fuel_system_label" = "Fuel system";
 "car_engine_injector_label" = "Injector";
 "car_engine_carburetor_label" = "Carburetor";
+"car_engine_naturally_label" = "Naturally Aspirated";
+"car_engine_turbo_label" = "Turbo";
+"car_engine_electric_label" = "Electric";
+"car_engine_direct_injection_label" = "Direct Injection";
 "car_engine_gas_label" = "Gas";
 "car_engine_lpg_sequential_injection_label" = "LPG Sequential Injection";
 "car_engine_lpg_fumigation_system_label" = "LPG Fumigation System";

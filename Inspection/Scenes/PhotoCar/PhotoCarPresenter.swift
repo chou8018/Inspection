@@ -29,6 +29,10 @@ protocol PhotoCarPresentationLogic
     
     func presentDisplayImageView(response: PhotoCar.Something.Response)
     func presentValidateSendToIMAT(response: PhotoCar.Something.Response)
+    
+    // add on 11/03/2024
+    func presentDetailImage(response: PhotoCar.Something.Response)
+
 }
 
 class PhotoCarPresenter: PhotoCarPresentationLogic
@@ -155,5 +159,17 @@ class PhotoCarPresenter: PhotoCarPresentationLogic
     func presentValidateSendToIMAT(response: PhotoCar.Something.Response) {
         let viewModel = PhotoCar.Something.ViewModel(isEnableSendToIMAP: response.isEnableSendToIMAP)
         viewController?.displayActionEventSuccess(viewModel: viewModel)
+    }
+    
+    // add on 11/03/2024
+    func presentDetailImage(response: PhotoCar.Something.Response) {
+        
+        if let error = response.error {
+            let viewModel = PhotoCar.Something.ViewModel(errorMessage : error.message)
+            viewController?.displayErrorFetchDetail(viewModel: viewModel)
+        }else{
+            let viewModel = PhotoCar.Something.ViewModel(detailImage: response.detailImage)
+            viewController?.displayImageDetail(viewModel: viewModel)
+        }
     }
 }

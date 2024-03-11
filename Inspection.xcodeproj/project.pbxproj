@@ -10,6 +10,10 @@
 		1E42BEC439AF142146721869 /* Pods_InspectionTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED7F01EFBE20F1FF79AD3938 /* Pods_InspectionTests.framework */; };
 		7B7F1EB825A89CFD60F730D4 /* Pods_Inspection_InspectionUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 450FEF54378985C29D64B3B3 /* Pods_Inspection_InspectionUITests.framework */; };
 		BC4F3FB54F9E0571C9BB828C /* Pods_Inspection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF5A5BE48DF744DDCA6FF8D6 /* Pods_Inspection.framework */; };
+		C22675FD2B9B0B410098089B /* InspectionImageDetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22675FB2B9B0B410098089B /* InspectionImageDetailResponse.swift */; };
+		C22675FE2B9B0B410098089B /* InspectionImageDetailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22675FB2B9B0B410098089B /* InspectionImageDetailResponse.swift */; };
+		C22675FF2B9B0B410098089B /* InspectionImageDetailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22675FC2B9B0B410098089B /* InspectionImageDetailService.swift */; };
+		C22676002B9B0B410098089B /* InspectionImageDetailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22675FC2B9B0B410098089B /* InspectionImageDetailService.swift */; };
 		C25786362A94A26100F295C4 /* Userdefault+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C25786352A94A26100F295C4 /* Userdefault+Helper.swift */; };
 		C26136D02B47EAE0004650BA /* WindowOptionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26136CE2B47EAE0004650BA /* WindowOptionService.swift */; };
 		C26136D12B47EAE0004650BA /* WindowOptionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C26136CE2B47EAE0004650BA /* WindowOptionService.swift */; };
@@ -549,6 +553,8 @@
 		C2B8897F2A6A69D400ED3A60 /* ConstraintMakerRelatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B8895A2A6A69D400ED3A60 /* ConstraintMakerRelatable.swift */; };
 		C2DB1B712B70C69A00244F2A /* AboutCarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DB1B702B70C69A00244F2A /* AboutCarViewController.swift */; };
 		C2DB1B722B70C69A00244F2A /* AboutCarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2DB1B702B70C69A00244F2A /* AboutCarViewController.swift */; };
+		C2F0E0452B9EA1580060F9FE /* InspectionImageDetailRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F0E0442B9EA1580060F9FE /* InspectionImageDetailRequest.swift */; };
+		C2F0E0462B9EA1580060F9FE /* InspectionImageDetailRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F0E0442B9EA1580060F9FE /* InspectionImageDetailRequest.swift */; };
 		CE0CBFD72664CE8B00A31068 /* UILabel+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0CBFD62664CE8B00A31068 /* UILabel+extension.swift */; };
 		CE0CBFD926676C5D00A31068 /* UpdateVehicleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0CBFD826676C5D00A31068 /* UpdateVehicleService.swift */; };
 		CE0CBFE1266DC8B700A31068 /* DamagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0CBFDB266DC8B700A31068 /* DamagePresenter.swift */; };
@@ -1010,6 +1016,8 @@
 		4F3C49B3781456D4F9A64D4D /* Pods-Inspection-InspectionUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Inspection-InspectionUITests.debug.xcconfig"; path = "Target Support Files/Pods-Inspection-InspectionUITests/Pods-Inspection-InspectionUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		55C98B93E31756AF096E1F58 /* Pods-Inspection.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Inspection.release.xcconfig"; path = "Target Support Files/Pods-Inspection/Pods-Inspection.release.xcconfig"; sourceTree = "<group>"; };
 		58D757F7839D6F069EBBF157 /* Pods-Inspection-InspectionUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Inspection-InspectionUITests.release.xcconfig"; path = "Target Support Files/Pods-Inspection-InspectionUITests/Pods-Inspection-InspectionUITests.release.xcconfig"; sourceTree = "<group>"; };
+		C22675FB2B9B0B410098089B /* InspectionImageDetailResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InspectionImageDetailResponse.swift; sourceTree = "<group>"; };
+		C22675FC2B9B0B410098089B /* InspectionImageDetailService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InspectionImageDetailService.swift; sourceTree = "<group>"; };
 		C25786352A94A26100F295C4 /* Userdefault+Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Userdefault+Helper.swift"; sourceTree = "<group>"; };
 		C26136CE2B47EAE0004650BA /* WindowOptionService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowOptionService.swift; sourceTree = "<group>"; };
 		C26136CF2B47EAE0004650BA /* WindowOptionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowOptionModel.swift; sourceTree = "<group>"; };
@@ -1067,6 +1075,7 @@
 		C2B889592A6A69D400ED3A60 /* ConstraintLayoutSupportDSL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintLayoutSupportDSL.swift; sourceTree = "<group>"; };
 		C2B8895A2A6A69D400ED3A60 /* ConstraintMakerRelatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintMakerRelatable.swift; sourceTree = "<group>"; };
 		C2DB1B702B70C69A00244F2A /* AboutCarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutCarViewController.swift; sourceTree = "<group>"; };
+		C2F0E0442B9EA1580060F9FE /* InspectionImageDetailRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InspectionImageDetailRequest.swift; sourceTree = "<group>"; };
 		CE0CBFD62664CE8B00A31068 /* UILabel+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+extension.swift"; sourceTree = "<group>"; };
 		CE0CBFD826676C5D00A31068 /* UpdateVehicleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateVehicleService.swift; sourceTree = "<group>"; };
 		CE0CBFDB266DC8B700A31068 /* DamagePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DamagePresenter.swift; sourceTree = "<group>"; };
@@ -1573,6 +1582,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C22675FA2B9B0AF30098089B /* PhoteDetail */ = {
+			isa = PBXGroup;
+			children = (
+				C2F0E0442B9EA1580060F9FE /* InspectionImageDetailRequest.swift */,
+				C22675FB2B9B0B410098089B /* InspectionImageDetailResponse.swift */,
+				C22675FC2B9B0B410098089B /* InspectionImageDetailService.swift */,
+			);
+			path = PhoteDetail;
+			sourceTree = "<group>";
+		};
 		C26136CD2B47EAE0004650BA /* WindowOption */ = {
 			isa = PBXGroup;
 			children = (
@@ -2042,6 +2061,7 @@
 				CEF1BCF5270FF0AE0079252C /* InspectionMotorBike */,
 				F90BA8C4262EDE2300D5C3FB /* Inspection */,
 				F97CD16326201287003CED13 /* PhotoList */,
+				C22675FA2B9B0AF30098089B /* PhoteDetail */,
 				F9AAF982261AA79400A88C14 /* BookInList */,
 				F94924D22615C52500E60E17 /* BookIn */,
 				F965DF3D260C230300CE91E7 /* Receiver */,
@@ -3289,6 +3309,7 @@
 				C289FFB02AC5536A003C2F1A /* InspectionDetailResponse.swift in Sources */,
 				C289FFB12AC5536A003C2F1A /* MotorbikeInspecPDFWorker.swift in Sources */,
 				C289FFB22AC5536A003C2F1A /* ModelCodeWorker.swift in Sources */,
+				C22675FE2B9B0B410098089B /* InspectionImageDetailResponse.swift in Sources */,
 				C289FFB32AC5536A003C2F1A /* PhotoCell.swift in Sources */,
 				C289FFB42AC5536A003C2F1A /* SearchModelCodeRequest.swift in Sources */,
 				C289FFB52AC5536A003C2F1A /* ConstraintConstantTarget.swift in Sources */,
@@ -3351,6 +3372,7 @@
 				C289FFEE2AC5536A003C2F1A /* BookInMotorcycle2ViewController.swift in Sources */,
 				C289FFEF2AC5536A003C2F1A /* InspectionUpdateService.swift in Sources */,
 				C289FFF02AC5536A003C2F1A /* DetailWorker.swift in Sources */,
+				C22676002B9B0B410098089B /* InspectionImageDetailService.swift in Sources */,
 				C289FFF12AC5536A003C2F1A /* LayoutConstraintItem.swift in Sources */,
 				C289FFF22AC5536A003C2F1A /* ReceiverCarWorker.swift in Sources */,
 				C289FFF32AC5536A003C2F1A /* SearchByInteractor.swift in Sources */,
@@ -3618,6 +3640,7 @@
 				C28900F42AC5536A003C2F1A /* SummaryCarPDFWorker.swift in Sources */,
 				C28900F52AC5536A003C2F1A /* VehicleGetDocumentRequest.swift in Sources */,
 				C28900F62AC5536A003C2F1A /* DateTimeModels.swift in Sources */,
+				C2F0E0462B9EA1580060F9FE /* InspectionImageDetailRequest.swift in Sources */,
 				C28900F72AC5536A003C2F1A /* ModelCodeRouter.swift in Sources */,
 				C28900F82AC5536A003C2F1A /* LandingPageRouter.swift in Sources */,
 				C28900F92AC5536A003C2F1A /* ModelCodeNotFoundCell.swift in Sources */,
@@ -3767,6 +3790,7 @@
 				F90BA917262FFE7000D5C3FB /* InspectionDetailResponse.swift in Sources */,
 				CEF1BCEB270BF9D30079252C /* MotorbikeInspecPDFWorker.swift in Sources */,
 				F931492F25F76B1D004E5F7A /* ModelCodeWorker.swift in Sources */,
+				C22675FD2B9B0B410098089B /* InspectionImageDetailResponse.swift in Sources */,
 				F93F2A6325EF5D91003BEB60 /* PhotoCell.swift in Sources */,
 				CE53401C26846CFE006D0AC6 /* SearchModelCodeRequest.swift in Sources */,
 				C2B889702A6A69D400ED3A60 /* ConstraintConstantTarget.swift in Sources */,
@@ -3829,6 +3853,7 @@
 				CE20498A26D348E50073A528 /* BookInMotorcycle2ViewController.swift in Sources */,
 				F90BA93626301F2E00D5C3FB /* InspectionUpdateService.swift in Sources */,
 				F9A46FB225CAAADE00D3732E /* DetailWorker.swift in Sources */,
+				C22675FF2B9B0B410098089B /* InspectionImageDetailService.swift in Sources */,
 				C2B8895C2A6A69D400ED3A60 /* LayoutConstraintItem.swift in Sources */,
 				F96F537F25D0DFF300317ED0 /* ReceiverCarWorker.swift in Sources */,
 				F957B84B25CA5BB400B8FB3C /* SearchByInteractor.swift in Sources */,
@@ -4096,6 +4121,7 @@
 				F90BA8DE262FC09600D5C3FB /* SummaryCarPDFWorker.swift in Sources */,
 				F989FD86265F858500342895 /* VehicleGetDocumentRequest.swift in Sources */,
 				F9075E7825DCB3FE004D4765 /* DateTimeModels.swift in Sources */,
+				C2F0E0452B9EA1580060F9FE /* InspectionImageDetailRequest.swift in Sources */,
 				F931493025F76B1D004E5F7A /* ModelCodeRouter.swift in Sources */,
 				F99DB20025C8003F0069F32E /* LandingPageRouter.swift in Sources */,
 				F931494F25F781D8004E5F7A /* ModelCodeNotFoundCell.swift in Sources */,

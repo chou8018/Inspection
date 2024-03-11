@@ -33,6 +33,10 @@ protocol PhotoCarBusinessLogic
     
     func showImageViewer(request: PhotoCar.Something.Request)
     func showImageBySection()
+    
+    // add on 11/03/2024
+    func fetchPhotoDetail(request: PhotoCar.Something.Request)
+
 }
 
 protocol PhotoCarDataStore
@@ -368,7 +372,7 @@ class PhotoCarInteractor: PhotoCarBusinessLogic, PhotoCarDataStore
                                              url: nil,
                                              name: spitName,
                                              base64String: model.imageData,
-                                             idPhoto: 1,
+                                             idPhoto: model.damageId,
                                              damageDesc: model.damageDesc,
                                              damageSize: model.damageSize,
                                              damageType: model.damageType)
@@ -385,6 +389,19 @@ class PhotoCarInteractor: PhotoCarBusinessLogic, PhotoCarDataStore
                 
                 weakself.presenter?.presentImageBySection(response: response)
             }
+            
+        })
+    }
+    
+    func fetchPhotoDetail(request: PhotoCar.Something.Request) {
+        guard let bookInNumber = DataController.shared.receiverCarModel.bookinNo else { return }
+        guard let photoId = request.idphoto else { return }
+        
+        worker = PhotoCarWorker()
+        worker?.fetchInspectionImageDetail(from: bookInNumber, imageId: photoId, completion: {[weak self] (response) in
+            guard let weakself = self else { return }
+
+            weakself.presenter?.presentDetailImage(response: response)
             
         })
     }
@@ -491,7 +508,7 @@ class PhotoCarInteractor: PhotoCarBusinessLogic, PhotoCarDataStore
             imageViewer = imageViewerModel.base64String?.base64StringToImage()
         }
  
-        let response = PhotoCar.Something.Response()
+        let response = PhotoCar.Something.Response(image:imageViewer)
         presenter?.presentDisplayImageView(response: response)
     }
     

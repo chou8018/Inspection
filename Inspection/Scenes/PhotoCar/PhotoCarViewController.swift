@@ -33,6 +33,10 @@ protocol PhotoCarDisplayLogic: AnyObject
     func displayShowImageView(viewModel: PhotoCar.Something.ViewModel)
     
     func displayActionEventSuccess(viewModel: PhotoCar.Something.ViewModel)
+    
+    // add on 11/03/2024
+    func displayErrorFetchDetail(viewModel: PhotoCar.Something.ViewModel)
+    func displayImageDetail(viewModel: PhotoCar.Something.ViewModel)
 }
 
 class PhotoCarViewController: ViewController, PhotoCarDisplayLogic
@@ -629,6 +633,8 @@ class PhotoCarViewController: ViewController, PhotoCarDisplayLogic
             guard let model = model else { return }
             let request = PhotoCar.Something.Request(imageViewerModel: model)
             self?.interactor?.showImageViewer(request: request)
+            
+            self?.fetchPhotoDetail(idPhoto: model.idPhoto)
         }
     }
     
@@ -689,6 +695,28 @@ class PhotoCarViewController: ViewController, PhotoCarDisplayLogic
         let request = PhotoCar.Something.Request()
         interactor?.prepareDataSection(request: request)
     }
+    
+    func fetchPhotoDetail(idPhoto: Int?){
+        let request = PhotoCar.Something.Request(idphoto: idPhoto)
+        interactor?.fetchPhotoDetail(request: request)
+    }
+    
+    func displayErrorFetchDetail(viewModel: PhotoCar.Something.ViewModel) {
+        guard let errorMessage = viewModel.errorMessage else { return }
+        
+        DispatchQueue.main.async { [weak self] in
+            self?.alertErrorMessage(message: errorMessage) { [weak self] in
+                self?.fetchPhotoList()
+            }
+        }
+    }
+    
+    func displayImageDetail(viewModel: PhotoCar.Something.ViewModel) {
+        guard let image = viewModel.detailImage?.base64String?.base64StringToImage() else { return }
+        
+        NotificationCenter.default.post(name: NSNotification.Name("detailImageUpdated"), object: image)
+    }
+
     func fetchPhotoList(){
         let request = PhotoCar.Something.Request()
         interactor?.fetchPhotoList(request: request)

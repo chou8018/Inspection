@@ -53,6 +53,8 @@ enum Router {
     
     // inspection image
     case listInspectionImage(_ parameter:Parameters,_  bookInNumber:String)
+    // add on 11/03/2024
+    case inspectionDetailImage(_ imageId: Int , _ bookinNo: String)
     case deleteInspectionImage(_ parameter:Parameters)
     
     // imat
@@ -201,6 +203,9 @@ enum Router {
         //MARK: Image list
         case .listInspectionImage(_ , let bookinNo):
             return ApiModel(path: "inspection/api/inspectionimage/images/\(bookinNo)", method: .post)
+            
+        case .inspectionDetailImage(let imageId , let bookinNo):
+            return ApiModel(path: "inspection/api/inspectionImage/single/\(bookinNo)/\(imageId)", method: .get)
             
         case .deleteInspectionImage(let params):
             return ApiModel(path: "inspection/api/inspectionimage/delete/model", method: .delete, param: params)

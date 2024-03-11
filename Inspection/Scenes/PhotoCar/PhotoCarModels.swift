@@ -26,7 +26,7 @@ enum PhotoCar
         var damageSize: String?
         var damageType: String?
         
-        init(image:UIImage?, url:URL? , name: String?, base64String: String? = nil, idPhoto: Int? = nil, damageDesc: String?, damageSize: String?, damageType: String?) {
+        init(image:UIImage? = nil, url:URL? = nil , name: String? = nil, base64String: String? = nil, idPhoto: Int? = nil, damageDesc: String? = nil, damageSize: String? = nil, damageType: String? = nil) {
             
             self.image = image
             self.url = url
@@ -54,6 +54,9 @@ enum PhotoCar
         
         var isSkip:Bool?
         var damageModel: Damage.DamageImage?
+        
+        // add on 11/03/2024
+        var idphoto: Int?
     }
     struct Response
     {
@@ -70,6 +73,9 @@ enum PhotoCar
         
         var isEnableSendToIMAP : Bool?
         var error: KErrorMessage?
+        var detailImage: InspectionImageDetailResponse?
+        var image : UIImage?
+
     }
     struct ViewModel
     {
@@ -83,6 +89,9 @@ enum PhotoCar
         
         var isEnableSendToIMAP : Bool?
         var errorMessage:String?
+        
+        // add on 11/03/2024
+        var detailImage: InspectionImageDetailResponse?
     }
   }
 }

@@ -23,9 +23,13 @@ enum ElectronicDeviceCheck
     }
     struct Response
     {
+        var windowOptions : [WindowOptionModel]?
+        var error : KErrorMessage?
     }
     struct ViewModel
     {
+        var windowOptions : [String]?
+        var errorMessage: String?
     }
   }
 }

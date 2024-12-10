@@ -14,89 +14,103 @@ import UIKit
 
 protocol DateTimeDisplayLogic: AnyObject
 {
-  func displaySomething(viewModel: DateTime.Something.ViewModel)
+    func displaySomething(viewModel: DateTime.Something.ViewModel)
     func displayDateFormatOnValueChanged(viewModel: DateTime.Something.ViewModel)
     func displayCurrentDateToPicker(viewModel: DateTime.Something.ViewModel)
     var didSelectedDateTimePicker : ( (Date) -> Void)? { get set }
 }
 
 
-class DateTimeViewController: UIViewController, DateTimeDisplayLogic
+class DateTimeViewController: ViewController, DateTimeDisplayLogic
 {
     var didSelectedDateTimePicker: ((Date) -> Void)?
     
-  var interactor: DateTimeBusinessLogic?
-  var router: (NSObjectProtocol & DateTimeRoutingLogic & DateTimeDataPassing)?
-
-  // MARK: Object lifecycle
-  
-  override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
-  {
-    super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-    setup()
-  }
-  
-  required init?(coder aDecoder: NSCoder)
-  {
-    super.init(coder: aDecoder)
-    setup()
-  }
-  
-  // MARK: Setup
-  
-  private func setup()
-  {
-    let viewController = self
-    let interactor = DateTimeInteractor()
-    let presenter = DateTimePresenter()
-    let router = DateTimeRouter()
-    viewController.interactor = interactor
-    viewController.router = router
-    interactor.presenter = presenter
-    presenter.viewController = viewController
-    router.viewController = viewController
-    router.dataStore = interactor
-  }
-  
-  // MARK: Routing
-  
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-  {
-    if let scene = segue.identifier {
-      let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
-      if let router = router, router.responds(to: selector) {
-        router.perform(selector, with: segue)
-      }
-    }
-  }
-  
-  // MARK: View lifecycle
-  
-  override func viewDidLoad()
-  {
-    super.viewDidLoad()
-    setDateTime()
-    doSomething()
-  }
-  
-  // MARK: Do something
-  
-  //@IBOutlet weak var nameTextField: UITextField!
-    @IBOutlet weak var datePicker: UIDatePicker!
+    var interactor: DateTimeBusinessLogic?
+    var router: (NSObjectProtocol & DateTimeRoutingLogic & DateTimeDataPassing)?
     
-  func doSomething()
-  {
-    let request = DateTime.Something.Request()
-    interactor?.doSomething(request: request)
-  }
-  
-  func displaySomething(viewModel: DateTime.Something.ViewModel)
-  {
-    //nameTextField.text = viewModel.name
-  }
+    // MARK: Object lifecycle
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
+    {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        setup()
+    }
+    
+    required init?(coder aDecoder: NSCoder)
+    {
+        super.init(coder: aDecoder)
+        setup()
+    }
+    
+    // MARK: Setup
+    
+    private func setup()
+    {
+        let viewController = self
+        let interactor = DateTimeInteractor()
+        let presenter = DateTimePresenter()
+        let router = DateTimeRouter()
+        viewController.interactor = interactor
+        viewController.router = router
+        interactor.presenter = presenter
+        presenter.viewController = viewController
+        router.viewController = viewController
+        router.dataStore = interactor
+    }
+    
+    // MARK: Routing
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if let scene = segue.identifier {
+            let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
+            if let router = router, router.responds(to: selector) {
+                router.perform(selector, with: segue)
+            }
+        }
+    }
+    
+    // MARK: View lifecycle
+    
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
+        setDateTime()
+        doSomething()
+    }
+    
+    // MARK: Do something
+    
+    //@IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var datePicker: UIDatePicker!
+
+    // local strings
+    @IBOutlet weak var currentTimeButton: CustomUIButton!
+    @IBOutlet weak var confirmButton: CustomUIButton!
+    
+    override func initLocalString() {
+        super.initLocalString()
+        
+        currentTimeButton.setTitle(String.localized("car_date_time_current_button_title"), for: .normal)
+        confirmButton.setTitle(String.localized("select_inspection_dialog_yes"), for: .normal)
+
+    }
+    
+    func doSomething()
+    {
+        let request = DateTime.Something.Request()
+        interactor?.doSomething(request: request)
+    }
+    
+    func displaySomething(viewModel: DateTime.Something.ViewModel)
+    {
+        //nameTextField.text = viewModel.name
+    }
     func setDateTime(){
         datePicker.calendar = Calendar(identifier: .buddhist)
-        
+        if let languageCode = Locale.current.languageCode {
+            datePicker.locale = Locale(identifier: languageCode)
+        }
         let request = DateTime.Something.Request()
         interactor?.setDatePicker(request: request)
     }
@@ -106,14 +120,14 @@ class DateTimeViewController: UIViewController, DateTimeDisplayLogic
         print(viewModel.dateString ?? "")
     }
     
-   
+    
     
     
     
     func displayCurrentDateToPicker(viewModel: DateTime.Something.ViewModel) {
         guard let date = viewModel.currentDate else { return }
         datePicker.date = date
-
+        
         print(date)
     }
     

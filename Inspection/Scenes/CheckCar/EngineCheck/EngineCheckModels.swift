@@ -23,9 +23,13 @@ enum EngineCheck
     }
     struct Response
     {
+        var catalyticOptions : [CatalyticOptionModel]?
+        var error : KErrorMessage?
     }
     struct ViewModel
     {
+        var catalyticOptions : [String]?
+        var errorMessage: String?
     }
   }
 }

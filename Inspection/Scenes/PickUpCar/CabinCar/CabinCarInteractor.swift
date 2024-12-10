@@ -124,8 +124,6 @@ class CabinCarInteractor: CabinCarBusinessLogic, CabinCarDataStore
                                                             error: response.error)
             
             self?.presenter?.presentGearBoxList(response: responseCabin)
-            
-              
         })
     }
     

@@ -14,7 +14,7 @@ import UIKit
 
 protocol ModelCodeDisplayLogic: AnyObject
 {
-  func displaySomething(viewModel: ModelCode.Something.ViewModel)
+    func displaySomething(viewModel: ModelCode.Something.ViewModel)
     func displayReloadTableView(viewModel: ModelCode.Something.ViewModel)
     func displayYearCarDropDown(viewModel: ModelCode.Something.ViewModel)
     func displayMakeCarDropDown(viewModel: ModelCode.Something.ViewModel)
@@ -27,74 +27,74 @@ protocol ModelCodeDisplayLogic: AnyObject
     
     func displayToEditModelCode(viewModel: ModelCode.Something.ViewModel)
     //var callbackDidSelectModelCode: ((SearchCodeModel)->Void)? { get set }
-
+    
 }
 
-class ModelCodeViewController: UIViewController, ModelCodeDisplayLogic
+class ModelCodeViewController: ViewController, ModelCodeDisplayLogic
 {
     //var callbackDidSelectModelCode: ((SearchCodeModel) -> Void)?
     
-  var interactor: ModelCodeBusinessLogic?
-  var router: (NSObjectProtocol & ModelCodeRoutingLogic & ModelCodeDataPassing)?
-
-  // MARK: Object lifecycle
-  
-  override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
-  {
-    super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-    setup()
-  }
-  
-  required init?(coder aDecoder: NSCoder)
-  {
-    super.init(coder: aDecoder)
-    setup()
-  }
-  
-  // MARK: Setup
-  
-  private func setup()
-  {
-    let viewController = self
-    let interactor = ModelCodeInteractor()
-    let presenter = ModelCodePresenter()
-    let router = ModelCodeRouter()
-    viewController.interactor = interactor
-    viewController.router = router
-    interactor.presenter = presenter
-    presenter.viewController = viewController
-    router.viewController = viewController
-    router.dataStore = interactor
-  }
-  
-  // MARK: Routing
-  
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-  {
-    if let scene = segue.identifier {
-      let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
-      if let router = router, router.responds(to: selector) {
-        router.perform(selector, with: segue)
-      }
+    var interactor: ModelCodeBusinessLogic?
+    var router: (NSObjectProtocol & ModelCodeRoutingLogic & ModelCodeDataPassing)?
+    
+    // MARK: Object lifecycle
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
+    {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        setup()
     }
-  }
-  
-  // MARK: View lifecycle
-  
-  override func viewDidLoad()
-  {
-    super.viewDidLoad()
-    isModalInPresentation = true
-    doSomething()
-    setUpTableView()
-    setUpDropdown()
     
+    required init?(coder aDecoder: NSCoder)
+    {
+        super.init(coder: aDecoder)
+        setup()
+    }
     
-  }
-  
-  // MARK: Do something
-  
-  //@IBOutlet weak var nameTextField: UITextField!
+    // MARK: Setup
+    
+    private func setup()
+    {
+        let viewController = self
+        let interactor = ModelCodeInteractor()
+        let presenter = ModelCodePresenter()
+        let router = ModelCodeRouter()
+        viewController.interactor = interactor
+        viewController.router = router
+        interactor.presenter = presenter
+        presenter.viewController = viewController
+        router.viewController = viewController
+        router.dataStore = interactor
+    }
+    
+    // MARK: Routing
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if let scene = segue.identifier {
+            let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
+            if let router = router, router.responds(to: selector) {
+                router.perform(selector, with: segue)
+            }
+        }
+    }
+    
+    // MARK: View lifecycle
+    
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
+        isModalInPresentation = true
+        doSomething()
+        setUpTableView()
+        setUpDropdown()
+        
+        
+    }
+    
+    // MARK: Do something
+    
+    //@IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var yearDropDown: DropDown!
     @IBOutlet weak var makeDropDown: DropDown!
@@ -106,20 +106,37 @@ class ModelCodeViewController: UIViewController, ModelCodeDisplayLogic
     
     let codeModelDataSource = CodeModelDataSource()
     
-  func doSomething()
-  {
-    let request = ModelCode.Something.Request()
-    interactor?.doSomething(request: request)
-  }
-  
+    // local strings
+    @IBOutlet weak var searchChassisLabel: UILabel!
+    @IBOutlet weak var chassisTitleLabel: UILabel!
+    @IBOutlet weak var detailTitleLabel: UILabel!
+    @IBOutlet weak var backButtonItem: UIBarButtonItem!
+    
+    override func initLocalString() {
+        super.initLocalString()
+        
+        self.title = String.localized("mode_code_title_label")
+        searchChassisLabel.text = String.localized("mode_code_search_chassis_label")
+        chassisCustomTextField.placeholder = searchChassisLabel.text
+        chassisTitleLabel.text = String.localized("inspection_body_chassis_label")
+        detailTitleLabel.text = String.localized("inspection_gauges_details_placeholder_label")
+        backButtonItem.title = String.localized("create_model_back_label")
+    }
+    
+    func doSomething()
+    {
+        let request = ModelCode.Something.Request()
+        interactor?.doSomething(request: request)
+    }
+    
     @IBAction func dismissTaped(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
     
-  func displaySomething(viewModel: ModelCode.Something.ViewModel)
-  {
-    //nameTextField.text = viewModel.name
-  }
+    func displaySomething(viewModel: ModelCode.Something.ViewModel)
+    {
+        //nameTextField.text = viewModel.name
+    }
     
     //MARK: Presenter
     
@@ -137,7 +154,7 @@ class ModelCodeViewController: UIViewController, ModelCodeDisplayLogic
         self.interactor?.validateKey(request: request)
     }
     func getModelCarList(){
-       
+        
         let request = ModelCode.Something.Request()
         self.interactor?.getModelCode(request: request)
     }
@@ -183,9 +200,9 @@ class ModelCodeViewController: UIViewController, ModelCodeDisplayLogic
     }
     
     
-   
     
-  
+    
+    
     func displayErrorMakeMessage(viewModel: ModelCode.Something.ViewModel){
         guard let errorMessage = viewModel.errorMessage else { return }
         alertErrorMessage(message: errorMessage) { [weak self] in
@@ -201,7 +218,7 @@ class ModelCodeViewController: UIViewController, ModelCodeDisplayLogic
     func displayErrorSearchMessage(viewModel: ModelCode.Something.ViewModel){
         guard let errorMessage = viewModel.errorMessage else { return }
         alertErrorMessageOKAction(message: errorMessage) {
-            //ignored            
+            //ignored
         }
     }
     
@@ -210,7 +227,7 @@ class ModelCodeViewController: UIViewController, ModelCodeDisplayLogic
     func setUpTableView(){
         codeModelDataSource.didSelectRowAt = { [weak self] item in
             let desc = item.description_BU ?? ""
-            self?.alert(message: "คุณต้องการเลือก\n\(desc) ไหม", { [weak self] in
+            self?.alert(message: "\(String.localized("mode_code_want_choose_label"))\n\(desc) \(String.localized("photos_delete_tail_title"))", { [weak self] in
                 guard let weakself =  self else { return }
                 
                 //self?.callbackDidSelectModelCode?(item)
@@ -228,13 +245,13 @@ class ModelCodeViewController: UIViewController, ModelCodeDisplayLogic
         tableView.delegate = codeModelDataSource
     }
     func setUpDropdown(){
-//        yearDropDown.autocorrectionType = .no
-//        makeDropDown.autocorrectionType = .no
-//        modelDropDown.autocorrectionType = .no
-//
-//        addTarget(from: yearDropDown)
-//        addTarget(from: makeDropDown)
-//        addTarget(from: modelDropDown)
+        //        yearDropDown.autocorrectionType = .no
+        //        makeDropDown.autocorrectionType = .no
+        //        modelDropDown.autocorrectionType = .no
+        //
+        //        addTarget(from: yearDropDown)
+        //        addTarget(from: makeDropDown)
+        //        addTarget(from: modelDropDown)
         
         mottoModelCodeCustomTextField.autocorrectionType = .no
         modelCodeCustomTextField.autocorrectionType = .no

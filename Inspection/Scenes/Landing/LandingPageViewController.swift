@@ -12,13 +12,53 @@
 
 import UIKit
 
+var string_excellent = String.localized("car_exterior_excellent_label")
+var string_good = String.localized("car_exterior_good_label")
+var string_good_first = String.localized("car_exterior_good_first_label")
+var string_average = String.localized("car_exterior_average_label")
+var string_fair = String.localized("car_exterior_fair_label")
+var string_poor = String.localized("car_exterior_poor_label")
+var string_as_is = String.localized("car_exterior_as_is_label")
+var string_salvage = String.localized("car_exterior_salvage_label")
+
+var string_benzine = String.localized("car_engine_benzine_label")
+var string_diesel = String.localized("car_engine_diesel_label")
+var string_hybrid_benzine = String.localized("car_engine_hybrid_benzine_label")
+var string_hybrid_diesel = String.localized("car_engine_hybrid_diesel_label")
+var string_bev_diesel = String.localized("car_engine_bev_label")
+var string_phev_diesel = String.localized("car_engine_phev_label")
+
+var string_injector = String.localized("car_engine_injector_label")
+var string_carburetor = String.localized("car_engine_carburetor_label")
+var string_naturally = String.localized("car_engine_naturally_label")
+var string_turbo = String.localized("car_engine_turbo_label")
+var string_electric = String.localized("car_engine_electric_label")
+var string_direct_injection = String.localized("car_engine_direct_injection_label")
+
+var string_lpg_sequential_injection = String.localized("car_engine_lpg_sequential_injection_label")
+var string_lpg_fumigation_system = String.localized("car_engine_lpg_fumigation_system_label")
+var string_cng_sequential_injection = String.localized("car_engine_cng_sequential_injection_label")
+var string_cng_fumigation_system = String.localized("car_engine_cng_fumigation_system_label")
+
+var string_inspection_engine_working = String.localized("inspection_engine_working_label")
+var string_inspection_engine_not_working = String.localized("inspection_engine_not_working_label")
+
+var string_key_label = String.localized("car_interior_key_label")
+var string_remote_key_label = String.localized("car_interior_remote_key_label")
+var string_remote_control_key_label = String.localized("car_interior_remote_control_label")
+var string_immobilizer_key_label = String.localized("car_interior_key_immobilizer_label")
+var string_keyless_label = String.localized("car_interior_keyless_label")
+
+var string_pdf_yes = String.localized("car_pdf_yes_label")
+var string_pdf_no = String.localized("car_pdf_no_label")
+
 protocol LandingPageDisplayLogic: AnyObject
 {
-  func displaySomething(viewModel: LandingPage.Something.ViewModel)
+    func displaySomething(viewModel: LandingPage.Something.ViewModel)
     func displayErrorMessage(viewModel: LandingPage.Something.ViewModel)
 }
 
-class LandingPageViewController: UIViewController, LandingPageDisplayLogic
+class LandingPageViewController: ViewController, LandingPageDisplayLogic
 {
   var interactor: LandingPageBusinessLogic?
   var router: (NSObjectProtocol & LandingPageRoutingLogic & LandingPageDataPassing)?
@@ -72,22 +112,67 @@ class LandingPageViewController: UIViewController, LandingPageDisplayLogic
     super.viewDidLoad()
     
     setUp()
-    
     fetchStandardMake()
-    
   }
   
   // MARK: Do something
   
-  
-
-    
     @IBOutlet weak var helloNameLabel: UILabel!
     @IBOutlet weak var startInspectionView: CustomUIView!
-    
     @IBOutlet weak var listInspectionView: CustomUIView!
-  
     @IBOutlet weak var versionLabel: UILabel!
+    
+    // translate
+    @IBOutlet weak var inspectionLabel: UILabel!
+    @IBOutlet weak var listInspectionLabel: UILabel!
+    @IBOutlet weak var logOutButton: CustomUIButton!
+    @IBOutlet weak var switchLanguageButton: CustomUIButton!
+
+    override func initLocalString() {
+        super.initLocalString()
+        inspectionLabel.text = String.localized("select_inspection_label")
+        listInspectionLabel.text = String.localized("select_inspection_list_label")
+        logOutButton.setTitle(String.localized("select_inspection_log_out"), for: .normal)
+        updateUI()
+        
+        string_excellent = String.localized("car_exterior_excellent_label")
+        string_good = String.localized("car_exterior_good_label")
+        string_good_first = String.localized("car_exterior_good_first_label")
+        string_average = String.localized("car_exterior_average_label")
+        string_fair = String.localized("car_exterior_fair_label")
+        string_poor = String.localized("car_exterior_poor_label")
+        string_as_is = String.localized("car_exterior_as_is_label")
+        string_salvage = String.localized("car_exterior_salvage_label")
+
+        string_benzine = String.localized("car_engine_benzine_label")
+        string_diesel = String.localized("car_engine_diesel_label")
+        string_hybrid_benzine = String.localized("car_engine_hybrid_benzine_label")
+        string_hybrid_diesel = String.localized("car_engine_hybrid_diesel_label")
+
+        string_injector = String.localized("car_engine_injector_label")
+        string_carburetor = String.localized("car_engine_carburetor_label")
+        string_lpg_sequential_injection = String.localized("car_engine_lpg_sequential_injection_label")
+        string_lpg_fumigation_system = String.localized("car_engine_lpg_fumigation_system_label")
+        string_cng_sequential_injection = String.localized("car_engine_cng_sequential_injection_label")
+        string_cng_fumigation_system = String.localized("car_engine_cng_fumigation_system_label")
+
+        string_inspection_engine_working = String.localized("inspection_engine_working_label")
+        string_inspection_engine_not_working = String.localized("inspection_engine_not_working_label")
+        
+        string_key_label = String.localized("car_interior_key_label")
+        string_remote_key_label = String.localized("car_interior_remote_key_label")
+        string_remote_control_key_label = String.localized("car_interior_remote_control_label")
+        string_immobilizer_key_label = String.localized("car_interior_key_immobilizer_label")
+        string_keyless_label = String.localized("car_interior_keyless_label")
+        string_pdf_yes = String.localized("car_pdf_yes_label")
+        string_pdf_no = String.localized("car_pdf_no_label")
+        
+        if DataController.shared.isThaiLanguage() {
+            switchLanguageButton.setTitle("TH", for: .normal)
+        } else {
+            switchLanguageButton.setTitle("EN", for: .normal)
+        }
+    }
     
     func fetchStandardMake(){
         
@@ -108,13 +193,13 @@ class LandingPageViewController: UIViewController, LandingPageDisplayLogic
     print("get standard list success")
   }
     @IBAction func logoutTapped(_ sender: Any) {
-        let message = "คุณต้องการลงชื่อออกไหม"
-        let alertController = UIAlertController(title: "ลงชื่อออก", message: message, preferredStyle: .alert)
-        let confirmAction = UIAlertAction(title: "ยืนยัน", style: .destructive, handler: {[weak self]  _ in
+        let message = String.localized("select_inspection_log_out_dialog_message")
+        let alertController = UIAlertController(title: String.localized("select_inspection_log_out_dialog_title"), message: message, preferredStyle: .alert)
+        let confirmAction = UIAlertAction(title: String.localized("select_inspection_dialog_yes"), style: .destructive, handler: {[weak self]  _ in
             DataController.shared.clearLogin()
             self?.performLogin()
         })
-        let cancelAction = UIAlertAction(title: "ยกเลิก", style: .default, handler: {  _ in
+        let cancelAction = UIAlertAction(title: String.localized("select_inspection_dialog_no"), style: .default, handler: {  _ in
 
         })
         
@@ -126,7 +211,7 @@ class LandingPageViewController: UIViewController, LandingPageDisplayLogic
     }
     
     func updateUI(){
-        helloNameLabel.text = "สวัสดี \(DataController.shared.getFullName())"
+        helloNameLabel.text = "\(String.localized("select_inspection_hello_label")) \(DataController.shared.getFullName())"
     }
     func setUp(){
         versionLabel.text = DataController.shared.getVersion()
@@ -147,6 +232,20 @@ class LandingPageViewController: UIViewController, LandingPageDisplayLogic
 
     func performLogin(){
         performSegue(withIdentifier: "performLogin", sender: nil)
+    }
+    
+    @IBAction func switchLanguage(_ sender: CustomUIButton) {
+        
+        var showText = ""
+        if DataController.shared.isThaiLanguage() {
+            UserDefaults.saveCurrentLanguage(value: "EN")
+            showText = "EN"
+        } else {
+            UserDefaults.saveCurrentLanguage(value: "TH")
+            showText = "TH"
+        }
+        sender.setTitle(showText, for: .normal)
+        initLocalString()
     }
 }
 

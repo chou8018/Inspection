@@ -15,79 +15,86 @@ import RadioGroup
 
 protocol EngineCheckDisplayLogic: AnyObject
 {
-  func displaySomething(viewModel: EngineCheck.Something.ViewModel)
+    func displaySomething(viewModel: EngineCheck.Something.ViewModel)
+    
+    // add on 12/22/2023
+    func displayCatalyticOption(viewModel: EngineCheck.Something.ViewModel)
+    func displayCatalyticOptionError(viewModel: EngineCheck.Something.ViewModel)
 }
 
-class EngineCheckViewController: UIViewController, EngineCheckDisplayLogic
+class EngineCheckViewController: ViewController, EngineCheckDisplayLogic
 {
-  var interactor: EngineCheckBusinessLogic?
-  var router: (NSObjectProtocol & EngineCheckRoutingLogic & EngineCheckDataPassing)?
-
-  // MARK: Object lifecycle
-  
-  override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
-  {
-    super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-    setup()
-  }
-  
-  required init?(coder aDecoder: NSCoder)
-  {
-    super.init(coder: aDecoder)
-    setup()
-  }
-  
-  // MARK: Setup
-  
-  private func setup()
-  {
-    let viewController = self
-    let interactor = EngineCheckInteractor()
-    let presenter = EngineCheckPresenter()
-    let router = EngineCheckRouter()
-    viewController.interactor = interactor
-    viewController.router = router
-    interactor.presenter = presenter
-    presenter.viewController = viewController
-    router.viewController = viewController
-    router.dataStore = interactor
-  }
-  
-  // MARK: Routing
-  
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-  {
-    if let scene = segue.identifier {
-      let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
-      if let router = router, router.responds(to: selector) {
-        router.perform(selector, with: segue)
-      }
+    var interactor: EngineCheckBusinessLogic?
+    var router: (NSObjectProtocol & EngineCheckRoutingLogic & EngineCheckDataPassing)?
+    
+    // MARK: Object lifecycle
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
+    {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        setup()
     }
-  }
-  
-  // MARK: View lifecycle
-  
-  override func viewDidLoad()
-  {
-    super.viewDidLoad()
-    setUIView()
-    setRadio()
-    doSomething()
-  }
-  
-  // MARK: Do something
-  
-  //@IBOutlet weak var nameTextField: UITextField!
+    
+    required init?(coder aDecoder: NSCoder)
+    {
+        super.init(coder: aDecoder)
+        setup()
+    }
+    
+    // MARK: Setup
+    
+    private func setup()
+    {
+        let viewController = self
+        let interactor = EngineCheckInteractor()
+        let presenter = EngineCheckPresenter()
+        let router = EngineCheckRouter()
+        viewController.interactor = interactor
+        viewController.router = router
+        interactor.presenter = presenter
+        presenter.viewController = viewController
+        router.viewController = viewController
+        router.dataStore = interactor
+    }
+    
+    // MARK: Routing
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if let scene = segue.identifier {
+            let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
+            if let router = router, router.responds(to: selector) {
+                router.perform(selector, with: segue)
+            }
+        }
+    }
+    
+    func loadRetryApi() {
+         if !isGetCatalyticOption {
+            getCatalyticOptions()
+        }
+    }
+    
+    // MARK: View lifecycle
+    
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
+        setUIView()
+        setRadio()
+        doSomething()
+    }
+    
+    // MARK: Do something
+    
+    //@IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var scrollView: UIScrollView!
-    
     @IBOutlet weak var summaryEngineTextField: MultilineTextField!
-    
     @IBOutlet weak var summaryEngineRadio: RadioGroup!
     @IBOutlet weak var typeEngineRadio: RadioGroup!
     @IBOutlet weak var haveOilRadio: RadioGroup!
     @IBOutlet weak var fuelSystemRadio: RadioGroup!
     @IBOutlet weak var gasSystemRadio: RadioGroup!
-  
     @IBOutlet weak var useableGeneralCheckBox: CheckBoxUIButton!
     @IBOutlet weak var soundAbnormalGeneralCheckBox: CheckBoxUIButton!
     @IBOutlet weak var leakFuelGeneralCheckBox: CheckBoxUIButton!
@@ -96,17 +103,84 @@ class EngineCheckViewController: UIViewController, EngineCheckDisplayLogic
     @IBOutlet weak var engineAbnormalGeneralCheckBox: CheckBoxUIButton!
     @IBOutlet weak var needRepairGeneralCheckBox: CheckBoxUIButton!
     
-  func doSomething()
-  {
-    let request = EngineCheck.Something.Request()
-    interactor?.doSomething(request: request)
-  }
-  
+    // local strings
+    @IBOutlet weak var bodyEngineLabel: UILabel!
+    @IBOutlet weak var engineTypeLabel: UILabel!
+    @IBOutlet weak var engineOilLabel: UILabel!
+    @IBOutlet weak var fuleLabel: UILabel!
+    @IBOutlet weak var generalConditionLabel: UILabel!
+    @IBOutlet weak var functionLabel: UILabel!
+    @IBOutlet weak var loudNoiceLabel: UILabel!
+    @IBOutlet weak var oilLeakLabel: UILabel!
+    @IBOutlet weak var waterStainLabel: UILabel!
+    @IBOutlet weak var oilLightLabel: UILabel!
+    @IBOutlet weak var engineNotSmoothlyLabel: UILabel!
+    @IBOutlet weak var needRepairLabel: UILabel!
+    @IBOutlet weak var summaryLabel: UILabel!
+    @IBOutlet weak var gasLabel: UILabel!
+    @IBOutlet weak var catalyticLabel: UILabel!
+    @IBOutlet weak var catalyticRadio: RadioGroup!
+
+    let string_inspection_oil_lacking = String.localized("inspection_engine_oil_lacking_label")
+    let string_inspection_oil_not_lacking = String.localized("inspection_engine_oil_notlacking_label")
+    
+    var isGetCatalyticOption = false
+    var catalyticOptions: [String]?
+    var localCatalyticOptions: [String] = [String.localized("inspection_engine_with_label"), String.localized("inspection_engine_without_label"),
+                                           String.localized("car_detail_unable_to_verified_label")]
+
+    override func initLocalString() {
+        super.initLocalString()
+        
+        bodyEngineLabel.text = String.localized("inspection_engine_label")
+        engineTypeLabel.text = String.localized("inspection_engine_type_label")
+        engineOilLabel.text = String.localized("inspection_engine_oil_label")
+        fuleLabel.text = String.localized("car_engine_fuel_system_label")
+        generalConditionLabel.text = String.localized("inspection_engine_general_label")
+        functionLabel.text = String.localized("inspection_engine_function_label")
+        loudNoiceLabel.text = String.localized("inspection_engine_loud_label")
+        oilLeakLabel.text = String.localized("inspection_engine_oil_leak_label")
+        waterStainLabel.text = String.localized("inspection_engine_water_stain_label")
+        oilLightLabel.text = String.localized("inspection_engine_oil_light_label")
+        engineNotSmoothlyLabel.text = String.localized("inspection_engine_not_smoothly_label")
+        needRepairLabel.text = String.localized("inspection_engine_nedd_repair_label")
+        summaryLabel.text = String.localized("inspection_engine_summary_label")
+        summaryEngineTextField.placeholder = summaryLabel.text
+        gasLabel.text = String.localized("inspection_engine_gas_label")
+        catalyticLabel.text = String.localized("inspection_engine_catalytic_label")
+
+    }
+    
+    //MARK: catalyticOption
+    func getCatalyticOptions(){
+        let request = EngineCheck.Something.Request()
+        interactor?.getCatalyticOptions(request: request)
+    }
+    func displayCatalyticOptionError(viewModel: EngineCheck.Something.ViewModel) {
+        guard let errorMessage = viewModel.errorMessage else { return }
+        alertErrorMessage(message: errorMessage) { [weak self] in
+            self?.loadRetryApi()
+        }
+    }
+    func displayCatalyticOption(viewModel: EngineCheck.Something.ViewModel) {
+        
+        guard let values = viewModel.catalyticOptions else { return }
+        catalyticOptions = values
+        catalyticRadio.titles = values
+        isGetCatalyticOption = true
+    }
+    
+    func doSomething()
+    {
+        let request = EngineCheck.Something.Request()
+        interactor?.doSomething(request: request)
+    }
+    
     //MARK: Presenter
-  func displaySomething(viewModel: EngineCheck.Something.ViewModel)
-  {
-    //nameTextField.text = viewModel.name
-  }
+    func displaySomething(viewModel: EngineCheck.Something.ViewModel)
+    {
+        //nameTextField.text = viewModel.name
+    }
     
     //MARK: UIView
     func setUIView(){
@@ -117,39 +191,49 @@ class EngineCheckViewController: UIViewController, EngineCheckDisplayLogic
     //MARK: Radio
     func setRadio(){
         let attributedString = [NSAttributedString.Key.foregroundColor : UIColor.appPrimaryColor]
-         
+        
         summaryEngineRadio.attributedTitles = [
-            NSAttributedString(string: "ใช้งานได้", attributes: attributedString),
-            NSAttributedString(string: "ใช้งานไม่ได้", attributes: attributedString)
+            NSAttributedString(string: string_inspection_engine_working, attributes: attributedString),
+            NSAttributedString(string: string_inspection_engine_not_working, attributes: attributedString)
         ]
         typeEngineRadio.attributedTitles = [
-            NSAttributedString(string: "เบนซิน", attributes: attributedString),
-            NSAttributedString(string: "ดีเซล", attributes: attributedString),
-            NSAttributedString(string: "EV", attributes: attributedString),
-            NSAttributedString(string: "Hybrid / เบนซิน", attributes: attributedString),
-            NSAttributedString(string: "Hybrid / ดีเซล", attributes: attributedString)
+            NSAttributedString(string: string_benzine, attributes: attributedString),
+            NSAttributedString(string: string_diesel, attributes: attributedString),
+            NSAttributedString(string: string_hybrid_benzine, attributes: attributedString),
+            NSAttributedString(string: string_hybrid_diesel, attributes: attributedString),
+            NSAttributedString(string: string_bev_diesel, attributes: attributedString),
+            NSAttributedString(string: string_phev_diesel, attributes: attributedString)
         ]
         haveOilRadio.attributedTitles = [
-            NSAttributedString(string: "ขาด", attributes: attributedString),
-            NSAttributedString(string: "ไม่ขาด", attributes: attributedString)
+            NSAttributedString(string: string_inspection_oil_lacking, attributes: attributedString),
+            NSAttributedString(string: string_inspection_oil_not_lacking, attributes: attributedString)
         ]
-        fuelSystemRadio.attributedTitles = [
-            NSAttributedString(string: "หัวฉีด", attributes: attributedString),
-            NSAttributedString(string: "คาร์บูเรเตอร์", attributes: attributedString),
-            NSAttributedString(string: "Direct Injection", attributes: attributedString)
-
-        ]
+//        fuelSystemRadio.attributedTitles = [
+//            NSAttributedString(string: string_injector, attributes: attributedString),
+//            NSAttributedString(string: string_carburetor, attributes: attributedString),
+//            NSAttributedString(string: "Direct Injection", attributes: attributedString)
+//            
+//        ]
+        
+        fuelSystemRadio.titles = DataController.shared.getFuelSystemTitles()
+        
         gasSystemRadio.attributedTitles = [
-            NSAttributedString(string: "LPG ระบบหัวฉีด", attributes: attributedString),
-            NSAttributedString(string: "LPG ระบบดูด", attributes: attributedString),
-            NSAttributedString(string: "CNG/NGV ระบบหัวฉีด", attributes: attributedString),
-            NSAttributedString(string: "CNG/NGV ระบบดูด", attributes: attributedString)
+            NSAttributedString(string: string_lpg_sequential_injection, attributes: attributedString),
+            NSAttributedString(string: string_lpg_fumigation_system, attributes: attributedString),
+            NSAttributedString(string: string_cng_sequential_injection, attributes: attributedString),
+            NSAttributedString(string: string_cng_fumigation_system, attributes: attributedString)
         ]
-
+        
+//        catalyticRadio.attributedTitles = [
+//            NSAttributedString(string: String.localized("inspection_engine_with_label"), attributes: attributedString),
+//            NSAttributedString(string: String.localized("inspection_engine_without_label"), attributes: attributedString),
+//            NSAttributedString(string: String.localized("car_detail_unable_to_verified_label"), attributes: attributedString),
+//        ]
+        
     }
     //MARK: Radio ValueChange
     @IBAction func summaryEngineValueChanged(_ sender: Any) {
-        let value = getRadioValue(from: ["ใช้งานได้", "ใช้งานไม่ได้"],
+        let value = getRadioValue(from: [string_inspection_engine_working, string_inspection_engine_not_working],
                                   selectIndex: summaryEngineRadio.selectedIndex)
         DataController.shared.inspectionCarModel.engineOverall = value
         
@@ -158,7 +242,7 @@ class EngineCheckViewController: UIViewController, EngineCheckDisplayLogic
     }
     
     @IBAction func typeEngineValueChanged(_ sender: Any) {
-        let value = getRadioValue(from: ["เบนซิน", "ดีเซล", "EV", "Hybrid / เบนซิน", "Hybrid / ดีเซล"],
+        let value = getRadioValue(from: [string_benzine, string_diesel, string_hybrid_benzine, string_hybrid_diesel, string_bev_diesel, string_phev_diesel],
                                   selectIndex: typeEngineRadio.selectedIndex)
         DataController.shared.inspectionCarModel.typeEngine = value
         
@@ -167,7 +251,7 @@ class EngineCheckViewController: UIViewController, EngineCheckDisplayLogic
     }
     
     @IBAction func haveOilValueChanged(_ sender: Any) {
-        let value = getRadioValue(from: ["ขาด", "ไม่ขาด"],
+        let value = getRadioValue(from: [string_inspection_oil_lacking, string_inspection_oil_not_lacking],
                                   selectIndex: haveOilRadio.selectedIndex)
         DataController.shared.inspectionCarModel.oilEngine = value
         
@@ -176,8 +260,12 @@ class EngineCheckViewController: UIViewController, EngineCheckDisplayLogic
     }
     
     @IBAction func fuelSystemValueChanged(_ sender: Any) {
-        let value = getRadioValue(from: ["หัวฉีด", "คาร์บูเรเตอร์", "Direct Injection"],
+//        let value = getRadioValue(from: [string_injector, string_carburetor, "Direct Injection"],
+//                                  selectIndex: fuelSystemRadio.selectedIndex)
+        
+        let value = getRadioValue(from: DataController.shared.getFuelSystemTitles(),
                                   selectIndex: fuelSystemRadio.selectedIndex)
+        
         DataController.shared.inspectionCarModel.fuelSystem = value
         
         let fuelSystemId = fuelSystemRadio.selectedIndex + 1
@@ -187,8 +275,8 @@ class EngineCheckViewController: UIViewController, EngineCheckDisplayLogic
     fileprivate var defautValue = -1
     fileprivate var oldValue = -1
     @IBAction func gasSystemValueChanged(_ sender: Any) {
-        let value =  getRadioValue(from : ["LPG ระบบหัวฉีด", "LPG ระบบดูด",
-                                           "CNG/NGV ระบบหัวฉีด", "CNG/NGV ระบบดูด"],
+        let value =  getRadioValue(from : [string_lpg_sequential_injection, string_lpg_fumigation_system,
+                                           string_cng_sequential_injection, string_cng_fumigation_system],
                                    selectIndex: gasSystemRadio.selectedIndex)
         
         let select = gasSystemRadio.selectedIndex
@@ -200,7 +288,20 @@ class EngineCheckViewController: UIViewController, EngineCheckDisplayLogic
         
         oldValue = defautValue != gasSystemRadio.selectedIndex ? select : defautValue
     }
-  
+    
+    @IBAction func catalyticValueChanged(_ sender: Any) {
+        
+//        var value = ""
+//        if let catalyticOptions = catalyticOptions {
+//            value =  getRadioValue(from : catalyticOptions,
+//                                       selectIndex: catalyticRadio.selectedIndex)
+//        } else {
+//            value =  getRadioValue(from : localCatalyticOptions,
+//                                       selectIndex: catalyticRadio.selectedIndex)
+//        }
+        DataController.shared.inspectionCarModel.catalyticOptionId = catalyticRadio.selectedIndex + 1
+
+    }
     
     //MARK: CheckBox
     @IBAction func useableTapped(_ sender: Any) {
@@ -250,16 +351,31 @@ class EngineCheckViewController: UIViewController, EngineCheckDisplayLogic
         soundAbnormalGeneralCheckBox.check = model.soundAbnormalGeneral
         useableGeneralCheckBox.check = model.useableGeneral
         
-        gasSystemRadio.selectedIndex = getRadioIndexByValue(from : ["LPG ระบบหัวฉีด", "LPG ระบบดูด",
-                                                                    "CNG/NGV ระบบหัวฉีด", "CNG/NGV ระบบดูด"], value: model.gasSystem)
+        gasSystemRadio.selectedIndex = getRadioIndexByValue(from : [string_lpg_sequential_injection, string_lpg_fumigation_system,
+                                                                    string_cng_sequential_injection, string_cng_fumigation_system], value: model.gasSystem)
         
-        fuelSystemRadio.selectedIndex = getRadioIndexByValue(from : ["หัวฉีด", "คาร์บูเรเตอร์", "Direct Injection"], value: model.fuelSystem)
+//        fuelSystemRadio.selectedIndex = getRadioIndexByValue(from : [string_injector, string_carburetor, "Direct Injection"], value: model.fuelSystem)
         
-        haveOilRadio.selectedIndex = getRadioIndexByValue(from : ["ขาด", "ไม่ขาด"], value: model.oilEngine)
+        fuelSystemRadio.selectedIndex = getRadioIndexByValue(from : DataController.shared.getFuelSystemTitles(), value: model.fuelSystem)
         
-        typeEngineRadio.selectedIndex = getRadioIndexByValue(from : ["เบนซิน", "ดีเซล", "EV", "Hybrid / เบนซิน", "Hybrid / ดีเซล"], value: model.typeEngine)
+        haveOilRadio.selectedIndex = getRadioIndexByValue(from : [string_inspection_oil_lacking, string_inspection_oil_not_lacking], value: model.oilEngine)
         
-        summaryEngineRadio.selectedIndex = getRadioIndexByValue(from: ["ใช้งานได้", "ใช้งานไม่ได้"], value: model.engineOverall)
+        typeEngineRadio.selectedIndex = getRadioIndexByValue(from : [string_benzine, string_diesel, string_hybrid_benzine, string_hybrid_diesel, string_bev_diesel, string_phev_diesel], value: model.typeEngine)
+        
+        summaryEngineRadio.selectedIndex = getRadioIndexByValue(from: [string_inspection_engine_working, string_inspection_engine_not_working], value: model.engineOverall)
+        
+        if let catalyticOptionId = model.catalyticOptionId {
+            catalyticRadio.selectedIndex = catalyticOptionId - 1
+        }
+ 
+        if let engineTypeIndex = DataController.shared.receiverCarModel.fuelSystemId , engineTypeIndex > 0 {
+            typeEngineRadio.selectedIndex = engineTypeIndex - 1
+        }
+        
+        let fuelSystemIndex = DataController.shared.getFuelSystemIndex()
+        if fuelSystemIndex > -1 {
+            fuelSystemRadio.selectedIndex = fuelSystemIndex
+        }
     }
     
 }
@@ -271,7 +387,7 @@ extension EngineCheckViewController : UITextViewDelegate {
     }
 }
 
- 
+
 extension EngineCheckViewController {
     
     
@@ -279,7 +395,7 @@ extension EngineCheckViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         scrollView.registKeyboardNotification()
-        
+        loadRetryApi()
         prepareData()
     }
     

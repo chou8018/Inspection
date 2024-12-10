@@ -180,11 +180,11 @@ class ItemAllListWorker
                 
                 model.isKeys = (numberOfKey > 0) || (numberOfRemote > 0) || (numberOfKeyRemote > 0) || (numberOfImmobilizer > 0) || (numberOfKeyless > 0)
                 
-                model.addKeys(type: "กุญแจ", amount: numberOfKey.toString())
-                model.addKeys(type: "กุญแจรีโมท", amount: numberOfKeyRemote.toString())
-                model.addKeys(type: "รีโมท", amount: numberOfRemote.toString())
-                model.addKeys(type: "กุญแจ Immobilizer", amount: numberOfImmobilizer.toString())
-                model.addKeys(type: "กุญแจ Keyless", amount: numberOfKeyless.toString())
+                model.addKeys(type: String.localized("car_interior_key_label"), amount: numberOfKey.toString())
+                model.addKeys(type: String.localized("car_interior_remote_key_label"), amount: numberOfKeyRemote.toString())
+                model.addKeys(type: String.localized("car_interior_remote_control_label"), amount: numberOfRemote.toString())
+                model.addKeys(type: String.localized("car_interior_key_immobilizer_label"), amount: numberOfImmobilizer.toString())
+                model.addKeys(type: String.localized("car_interior_keyless_label"), amount: numberOfKeyless.toString())
                 
                 //MARK: receiver car
                 let dateString = vehicleType?.bookedDate ?? ""
@@ -208,12 +208,12 @@ class ItemAllListWorker
                 model.redBookCondition = vehicleType?.redBookCondition
                 
                 //MARK: External
-                let gradeOverallValue = [nil,"เยี่ยม", "ดีมาก", "ปานกลาง", "พอใช้", "แย่", "ตามสภาพ" ,"ซาก"]
+                let gradeOverallValue = [nil,string_excellent, string_good, string_average, string_fair, string_poor, string_as_is ,string_salvage]
                 let gradeOverallId = externalType?.gradeOverallId ?? 0
                 model.gradeOverallId = externalType?.gradeOverallId
                 model.externalOverall = gradeOverallValue[gradeOverallId] /// value grade id
                 
-                let colorOverallValue = [nil, "ดี", "ปานกลาง", "พอใช้" ,"แย่"]
+                let colorOverallValue = [nil, string_good_first, string_average, string_fair ,string_poor]
                 let colorOverallId = externalType?.colorOverallId ?? 0
                 model.colorOverallId  = externalType?.colorOverallId
                 model.colorOverall = colorOverallValue[colorOverallId] /// value color id
@@ -231,9 +231,14 @@ class ItemAllListWorker
                 model.tireQuality = externalType?.tyreQuality.toString()
                 model.brandTire = externalType?.tyreBrand
                 model.damageDetail = externalType?.damageDesc
-                
+                model.roofType = externalType?.roofType
+                model.roofTypeId = externalType?.roofTypeId
+//                DataController.shared.inspectionCarModel.roofType = model.roofType
+
+                DataController.shared.receiverCarModel.roofTypeId = model.roofTypeId
+
                 //MARK: SparePart
-                let spareOverAllValue = [nil, "ดี", "ไม่ดี"]
+                let spareOverAllValue = [nil, string_good_first, String.localized("inspection_list_not_good_label")]
                 let spareOverAllId = spareType?.spareOverAllId ?? 0
                 model.spareOverAllId = spareType?.spareOverAllId
                 model.spareOverAll = spareOverAllValue[spareOverAllId] /// value spare id
@@ -247,7 +252,7 @@ class ItemAllListWorker
                 model.accessoriesNote = spareType?.accessoriesNote
                 
                 //MARK: engineType
-                let engineRoomOverAllValue = [nil, "ดี", "ปานกลาง", "พอใช้", "ไม่ดี"]
+                let engineRoomOverAllValue = [nil, string_good_first, string_average, string_fair, String.localized("inspection_list_not_good_label")]
                 let engineRoomOverAllId = engineType?.engineRoomOverAllId ?? 0
                 model.engineOverAllId = engineType?.engineRoomOverAllId
                 model.engineOverAll = engineRoomOverAllValue[engineRoomOverAllId]
@@ -258,7 +263,9 @@ class ItemAllListWorker
                 model.driverSystemId = engineType?.driverSystemId
                 model.driverSystem = driverSystemValue[driverSystemId]
                 
-                let fuelSystemValue = [nil, "เบนซิน", "ดีเซล", "EV", "Hybrid / เบนซิน", "Hybrid / ดีเซล"]
+//                let fuelSystemValue = [nil, string_benzine, string_diesel, "EV", string_hybrid_benzine, string_hybrid_diesel]
+                let fuelSystemValue = [nil, string_benzine, string_diesel, string_hybrid_benzine, string_hybrid_diesel, string_bev_diesel, string_phev_diesel]
+                
                 let fuelSystemId = engineType?.fuelSystemId ?? 0
                 model.fuelSystemId = engineType?.fuelSystemId
                 model.oilSystem = fuelSystemValue[fuelSystemId]
@@ -268,31 +275,44 @@ class ItemAllListWorker
                 if let fuelDelivery = vehicleType?.fuelDelivery {
                     var fuelDeliveryName = ""
                     switch  fuelDelivery {
+//                    case "D":
+//                        fuelDeliveryName = "Direct Injection" // direct injection
+//                    case "I":
+//                        fuelDeliveryName = string_injector // injection
+//                    case "N":
+//                        fuelDeliveryName = string_carburetor // naturally aspirated
+//                    case "T":
+//                        fuelDeliveryName = String.localized("car_engine_turbocharger_label") // turbo
+//                    default:
+//                        fuelDeliveryName = "N/A"
+//                    }
+                        
                     case "D":
-                        fuelDeliveryName = "Direct Injection" // direct injection
+                        fuelDeliveryName = string_direct_injection // direct injection
                     case "I":
-                        fuelDeliveryName = "หัวฉีด" // injection
+                        fuelDeliveryName = string_injector // direct injection
                     case "N":
-                        fuelDeliveryName = "คาร์บูเรเตอร์" // naturally aspirated
+                        fuelDeliveryName = string_naturally // direct injection
                     case "T":
-                        fuelDeliveryName = "เทอร์โบ" // turbo
+                        fuelDeliveryName = string_turbo // direct injection
+                    case "1":
+                        fuelDeliveryName = "N/A" // direct injection
+                    case "E":
+                        fuelDeliveryName = string_electric // direct injection
                     default:
                         fuelDeliveryName = "N/A"
                     }
                     model.fuelDeliveryName = fuelDeliveryName
                     model.fuelDelivery = fuelDelivery
                     
-                    DataController.shared.inspectionCarModel.fuelDeliveryType = fuelDeliveryName
+                    DataController.shared.inspectionCarModel.fuelSystem = fuelDeliveryName
+                    DataController.shared.inspectionCarModel.typeEngine = model.oilSystem
                 }
                 
                 
-
-                
-
-                
 //                let gasTypeValue = [nil, "LPG", "CNG / NGV"]
-                let gasTypeValue = [nil, "LPG ระบบหัวฉีด", "LPG ระบบดูด",
-                                      "CNG/NGV ระบบหัวฉีด", "CNG/NGV ระบบดูด"]
+                let gasTypeValue = [nil, string_lpg_sequential_injection, string_lpg_fumigation_system,
+                                    string_cng_sequential_injection, string_cng_fumigation_system]
                 let gasTypeId = engineType?.gasTypeId ?? 0
                 model.gasTypeId = engineType?.gasTypeId
                 model.gasSystem = gasTypeValue[gasTypeId]
@@ -304,14 +324,15 @@ class ItemAllListWorker
                 model.isGas = engineType?.isFuelGas
                 model.assetInCar = engineType?.insideAssetNote
                 
+                DataController.shared.inspectionCarModel.gasSystem = model.gasSystem
                 
                 //MARK: cabinType
-                let cabinOverallValue = [nil, "ดี", "ปานกลาง", "พอใช้", "ไม่ดี"]
+                let cabinOverallValue = [nil, string_good_first, string_average, string_fair, String.localized("inspection_list_not_good_label")]
                 let cabinOverAllId = cabinType?.cabinOverAllId ?? 0
                 model.cabinOverAllId = cabinType?.cabinOverAllId
                 model.cabinOverall = cabinOverallValue[cabinOverAllId]
                 
-                let typeMilesValue = [nil, "กิโลเมตร", "ไมล์"]
+                let typeMilesValue = [nil, String.localized("motorbike_inspection_engine_kilometer_label"), String.localized("motorbike_inspection_engine_mile_label")]
                 let mileageTypeId = cabinType?.mileageTypeId ?? 0
                 model.mileageTypeId = cabinType?.mileageTypeId
                 model.typeMiles = typeMilesValue[mileageTypeId]
@@ -425,9 +446,19 @@ class ItemAllListWorker
                 model.reasonInValidVinNumber = vehicleType?.reasonInValidVinNumber
                 model.reasonInValidGasNumber =  vehicleType?.reasonInValidGasNumber
                 
+                DataController.shared.receiverCarModel.gasOption = vehicleType?.gasOption
+
                 model.registrationPlate = vehicleType?.registrationPlate
                 model.registrationNote = vehicleType?.registrationNote
                 model.isRegistrationMismatch = vehicleType?.isRegistrationMismatch
+                
+                model.isRegistrationAuction = vehicleType?.isRegistrationAuction
+                
+                model.isInValidRegistrationYear = vehicleType?.isInValidRegistrationYear
+                model.isInValidManuYear = vehicleType?.isInValidManuYear
+                
+                model.briefConditionOptionId = vehicleType?.briefConditionOptionId
+                model.briefNote = vehicleType?.briefNote
                 
                 //print("🔸🐶 Registration Plate \(model.registrationPlate)")
                 //print("🔸🐶 Mismatch: \(model.isRegistrationMismatch), noteRegistration: \(model.registrationNote))")
@@ -473,7 +504,10 @@ class ItemAllListWorker
             case .success(let colorModel):
                 let model = DataController.shared.receiverCarModel
                 
-                let colorCar = "\(colorModel.colour_BU ?? "") \(colorModel.colour_LO ?? "")"
+                var colorCar = "\(colorModel.colour_BU ?? "") \(colorModel.colour_LO ?? "")"
+                if !DataController.shared.isThaiLanguage() {
+                    colorCar = "\(colorModel.colour_BU ?? "")"
+                }
                 model.colorCar = colorCar
                 model.colour_BU = colorModel.colour_BU
                 model.colour_LO = colorModel.colour_LO
@@ -514,6 +548,9 @@ class ItemAllListWorker
                     let model = DataController.shared.receiverCarModel
                     model.sellerCode = sellerModel.sellerCode
                     model.companyName = sellerModel.sellerNameTh
+                    if !DataController.shared.isThaiLanguage() {
+                        model.companyName = sellerModel.sellerNameEn
+                    }
                     model.companyNameEn = sellerModel.sellerNameEn
 
                     switch DataController.shared.bookInType {
@@ -701,27 +738,33 @@ class ItemAllListWorker
                 
                 //MARK: Engine Inspection
                 let isEngineWorks = carInspectionType?.isEngineWorks ?? false
-                model.engineOverall = isEngineWorks ? "ใช้งานได้" : "ใช้งานไม่ได้"
+                model.engineOverall = isEngineWorks ? string_inspection_engine_working : string_inspection_engine_not_working
                 model.isEngineWorks = isEngineWorks
                 
 
-                let typeEngineVelue = [nil, "เบนซิน", "ดีเซล", "EV", "Hybrid / เบนซิน", "Hybrid / ดีเซล"]
+                let typeEngineVelue = [nil, string_benzine,
+                                       string_diesel,
+                                       string_hybrid_benzine,
+                                       string_hybrid_diesel,
+                                       string_bev_diesel,
+                                       string_phev_diesel]
                 let engineSystemId = carInspectionType?.engineSystemId ?? 0
                 model.typeEngine = typeEngineVelue[engineSystemId]
                 model.engineSystemId = engineSystemId
 
                 let isLubricatorLow = carInspectionType?.isLubricatorLow ?? false
-                model.oilEngine = isLubricatorLow ? "ขาด" : "ไม่ขาด"
+                model.oilEngine = isLubricatorLow ? String.localized("inspection_engine_oil_lacking_label") : String.localized("inspection_engine_oil_notlacking_label")
                 model.isLubricatorLow = isLubricatorLow
 
-                let fuelSystemValue = [nil, "หัวฉีด", "คาร์บูเรเตอร์", "Direct Injection"]
+//                let fuelSystemValue = [nil, string_injector, string_carburetor, "Direct Injection"]
+                let fuelSystemValue = DataController.shared.getFuelSystemTitles()
                 let fuelSystemId = carInspectionType?.fuelSystemId ?? 0
                 model.fuelSystem =  (fuelSystemId <= 3) ? fuelSystemValue[fuelSystemId] : ""
                 model.fuelSystemId = fuelSystemId
 
 //                let gasSystemValue = [nil, "LPG", "CNG / NGV"]
-                let gasSystemValue = [nil, "LPG ระบบหัวฉีด", "LPG ระบบดูด",
-                                      "CNG/NGV ระบบหัวฉีด", "CNG/NGV ระบบดูด"]
+                let gasSystemValue = [nil, string_lpg_sequential_injection, string_lpg_fumigation_system,
+                                      string_cng_sequential_injection, string_cng_fumigation_system]
                 let gasTypeId = carInspectionType?.gearTypeId ?? 0
                 model.gasSystem = gasSystemValue[gasTypeId]
                 model.gasTypeId = gasTypeId
@@ -738,13 +781,13 @@ class ItemAllListWorker
                 //MARK: Under Inspection
                 model.summaryUnderCarriage = carInspectionType?.suspensionSummary
                 
-                let underCarriageValue = [nil, "ใช้งานได้", "ใช้งานไม่ได้", "รั่วซึม", "อื่นๆ"]
+                let underCarriageValue = [nil, string_inspection_engine_working, string_inspection_engine_not_working, String.localized("inspection_suspension_leakage_label"), String.localized("car_interior_others_label")]
                 let suspensionConditionId = carInspectionType?.suspensionConditionId ?? 0
                 model.underCarriage = underCarriageValue[suspensionConditionId]
                 model.suspensionConditionId = suspensionConditionId
                 model.underCarriageNoteOther = carInspectionType?.suspensionConditionNote
                 
-                let driveShaftValue = [nil, "ใช้งานได้", "ใช้งานไม่ได้", "รั่วซึม", "อื่นๆ"]
+                let driveShaftValue = [nil, string_inspection_engine_working, string_inspection_engine_not_working, String.localized("inspection_suspension_leakage_label"), String.localized("car_interior_others_label")]
                 let driveShaftConditionId = carInspectionType?.driveShaftConditionId ?? 0
                 model.driveShaft = driveShaftValue[driveShaftConditionId]
                 model.driveShaftConditionId = driveShaftConditionId
@@ -757,12 +800,12 @@ class ItemAllListWorker
                 model.gearSystem =  gearSystemValue[gearSystemId]
                 model.gearSystemId = gearSystemId
 
-                let statisGearValue = [nil, "ขับได้", "ชำรุดขับไม่ได้"]
+                let statisGearValue = [nil, String.localized("inspection_gear_working_label"), String.localized("inspection_gear_not_working_label")]
                 let gearConditionId = carInspectionType?.gearConditionId ?? 0
                 model.statusGear = statisGearValue[gearConditionId]
                 model.gearConditionId = gearConditionId
 
-                let driveShaftGearValue = [nil, "ครบ", "ไม่ครบ", "ไม่มีเพลาขับ"]
+                let driveShaftGearValue = [nil, String.localized("inspection_gear_complete_label"), String.localized("inspection_gear_incomplete_label"), String.localized("inspection_gear_no_drive_shaft_label")]
                 let driveShaftId = carInspectionType?.driveShaftId ?? 0
                 model.driveShaftGear = driveShaftGearValue[driveShaftId]
                 model.driveShaftId = driveShaftId
@@ -774,7 +817,7 @@ class ItemAllListWorker
                 model.isSteerWheelPower = carInspectionType?.isPowerSteering ?? false
 
                 let isUseableSteerWheel = carInspectionType?.isUseableSteerWheel ?? false
-                model.steerWheelSystem = isUseableSteerWheel ? "ใช้งานได้" : "ใช้งานไม่ได้"
+                model.steerWheelSystem = isUseableSteerWheel ? string_inspection_engine_working : string_inspection_engine_not_working
                 model.isUseableSteerWheel = isUseableSteerWheel
                 
                 model.summarySteerWheelSystem = carInspectionType?.steeringSummary
@@ -783,7 +826,7 @@ class ItemAllListWorker
                 model.summarysBrakeSystem = carInspectionType?.breakSystemSumary
                 
                 let isUseableBrake = carInspectionType?.isUseableBrake ?? false
-                model.brakeSystem = isUseableBrake ? "ใช้งานได้" : "ใช้งานไม่ได้"
+                model.brakeSystem = isUseableBrake ? string_inspection_engine_working : string_inspection_engine_not_working
                 model.isUseableBrake = isUseableBrake
                 
                 //MARK: AirCheck
@@ -791,12 +834,12 @@ class ItemAllListWorker
                 model.isCompresser = carInspectionType?.isCompressorAir ?? false
                 
                 let isAirCool = carInspectionType?.isAirCool ?? false
-                model.airSystem = isAirCool ? "เย็น" : "ไม่เย็น"
+                model.airSystem = isAirCool ? String.localized("inspection_air_cool_label") : String.localized("inspection_air_not_cool_label")
                 model.isAirCool = isAirCool
                 
                 //MARK: GaugeCheck
                 let isUseableGuage = carInspectionType?.isUseableGuage ?? false
-                model.gaugeSystem = isUseableGuage ? "ใช้งานได้" : "ใช้งานไม่ได้"
+                model.gaugeSystem = isUseableGuage ? string_inspection_engine_working : string_inspection_engine_not_working
                 model.isUseableGuage = isUseableGuage
                 
                 model.summaryGaugeSystem = carInspectionType?.gaugeSummary
@@ -819,6 +862,18 @@ class ItemAllListWorker
                 model.isNoSdCard = carInspectionType?.isNavigatorNoSdcard ?? false
                 model.isNoCd = carInspectionType?.isNavigatorNoCD ?? false
                 
+                //add 26/10/23
+                model.isSideMirror1 = carInspectionType?.isSideMirror1Working ?? false
+                model.isSideMirror2 = carInspectionType?.isSideMirror2Working ?? false
+                model.isSideMirror3 = carInspectionType?.isSideMirror3Working ?? false
+                model.isSideMirror4 = carInspectionType?.isSideMirror4Working ?? false
+                model.catalyticOptionId = carInspectionType?.catalyticOptionId
+                
+                model.sideMirror1 = carInspectionType?.sideMirror1
+                model.sideMirror2 = carInspectionType?.sideMirror2
+                model.sideMirror3 = carInspectionType?.sideMirror3
+                model.sideMirror4 = carInspectionType?.sideMirror4
+
                 //found book-in number
                 model.isCreate = true
                 self?.getGrade(from: bookInNumber, completion: completion)

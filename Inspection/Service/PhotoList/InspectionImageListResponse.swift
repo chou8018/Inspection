@@ -14,6 +14,9 @@ struct InspectionImageListResponse : Mappable {
     var damageDesc: String?
     var damageSize: String?
     var damageType: String?
+    
+    // add on 11/03/2024
+    var damageId: Int?
 
     init?(map: Map) {
 
@@ -25,6 +28,7 @@ struct InspectionImageListResponse : Mappable {
         damageDesc <- map["damageDesc"]
         damageSize <- map["damageSize"]
         damageType <- map["damageType"]
+        damageId <- map["imageId"]
     }
 
     

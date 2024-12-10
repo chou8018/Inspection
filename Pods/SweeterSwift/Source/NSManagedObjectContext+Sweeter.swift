@@ -8,6 +8,7 @@ import CoreData
 
 extension NSManagedObjectContext {
     /// Sweeter: Dump contents to console - for debugging
+    @available(iOS 15.0, *)
     public func printAllObjects() {
         guard let entityDescriptions = persistentStoreCoordinator?.managedObjectModel.entities else { return }
         for entity in entityDescriptions {

@@ -8,10 +8,14 @@
 import UIKit
 
 class NotFoundCell: UITableViewCell {
-
+    
+    @IBOutlet weak var noDataLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        noDataLabel.text = String.localized("inspection_list_pending_no_data_label")
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

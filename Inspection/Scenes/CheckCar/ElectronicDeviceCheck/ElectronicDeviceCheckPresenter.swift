@@ -14,18 +14,38 @@ import UIKit
 
 protocol ElectronicDeviceCheckPresentationLogic
 {
-  func presentSomething(response: ElectronicDeviceCheck.Something.Response)
+    func presentSomething(response: ElectronicDeviceCheck.Something.Response)
+    // add on 12/22/2023
+    func presentWindowOptions(response: ElectronicDeviceCheck.Something.Response)
 }
 
 class ElectronicDeviceCheckPresenter: ElectronicDeviceCheckPresentationLogic
 {
-  weak var viewController: ElectronicDeviceCheckDisplayLogic?
-  
-  // MARK: Do something
-  
-  func presentSomething(response: ElectronicDeviceCheck.Something.Response)
-  {
-    let viewModel = ElectronicDeviceCheck.Something.ViewModel()
-    viewController?.displaySomething(viewModel: viewModel)
-  }
+    weak var viewController: ElectronicDeviceCheckDisplayLogic?
+    
+    // MARK: Do something
+    
+    func presentSomething(response: ElectronicDeviceCheck.Something.Response)
+    {
+        let viewModel = ElectronicDeviceCheck.Something.ViewModel()
+        viewController?.displaySomething(viewModel: viewModel)
+    }
+    
+    func presentWindowOptions(response: ElectronicDeviceCheck.Something.Response) {
+        if let kError = response.error {
+            let message = kError.message
+            let viewModel = ElectronicDeviceCheck.Something.ViewModel(errorMessage: message)
+            viewController?.displayWindowOptionError(viewModel: viewModel)
+        }else{
+            guard let result = response.windowOptions else { return }
+            var values = result.map({ ("\($0.desc_LO ?? "")") })
+            
+            if !DataController.shared.isThaiLanguage() {
+                values = result.map({ ("\($0.desc_BU ?? "")") })
+            }
+            
+            let viewModel = ElectronicDeviceCheck.Something.ViewModel(windowOptions: values)
+            viewController?.displayWindowOption(viewModel: viewModel)
+        }
+    }
 }

@@ -32,11 +32,15 @@ enum SelectInspection
         var storageList : [StorageLocationModel]?
         var plantLocationList : [PlantResponse]?
         var error : KErrorMessage?
+        var locationName : String?
+        var isCanSelect: Bool = true
+
     }
     struct ViewModel
     {
         var resultTextPlace : NSMutableAttributedString?
         var errorMessage : String?
+        var isCanSelect: Bool = true
     }
   }
 }

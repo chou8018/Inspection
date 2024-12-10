@@ -15,6 +15,9 @@ import UIKit
 protocol EngineCheckPresentationLogic
 {
   func presentSomething(response: EngineCheck.Something.Response)
+    
+    // add on 12/22/2023
+    func presentCatalyticOptions(response: EngineCheck.Something.Response)
 }
 
 class EngineCheckPresenter: EngineCheckPresentationLogic
@@ -28,4 +31,23 @@ class EngineCheckPresenter: EngineCheckPresentationLogic
     let viewModel = EngineCheck.Something.ViewModel()
     viewController?.displaySomething(viewModel: viewModel)
   }
+    
+    func presentCatalyticOptions(response: EngineCheck.Something.Response) {
+        if let kError = response.error {
+            let message = kError.message
+            let viewModel = EngineCheck.Something.ViewModel(errorMessage: message)
+            viewController?.displayCatalyticOptionError(viewModel: viewModel)
+        }else{
+            guard let result = response.catalyticOptions else { return }
+            var values = result.map({ ("\($0.desc_LO ?? "")") })
+            
+            if !DataController.shared.isThaiLanguage() {
+                values = result.map({ ("\($0.desc_BU ?? "")") })
+            }
+            
+//            values = values.sorted(by: { $0 < $1 })
+            let viewModel = EngineCheck.Something.ViewModel(catalyticOptions: values)
+            viewController?.displayCatalyticOption(viewModel: viewModel)
+        }
+    }
 }

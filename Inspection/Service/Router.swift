@@ -53,6 +53,8 @@ enum Router {
     
     // inspection image
     case listInspectionImage(_ parameter:Parameters,_  bookInNumber:String)
+    // add on 11/03/2024
+    case inspectionDetailImage(_ imageId: Int , _ bookinNo: String)
     case deleteInspectionImage(_ parameter:Parameters)
     
     // imat
@@ -91,6 +93,12 @@ enum Router {
     case createInspecMotorBike(_ parameter:Parameters)
     case updateInspecMotorBike(_ parameter:Parameters, _ bookInNumber:String)
     
+    // roofType, gasType , catalyticOption
+    case getRoofTypes(_ parameter:Parameters)
+    case getGasTypes(_ parameter:Parameters)
+    case getCatalyticOptions(_ parameter:Parameters)
+    case getWindowOptions(_ parameter:Parameters)
+
     var apiModel : ApiModel {
         switch self {
         
@@ -146,6 +154,13 @@ enum Router {
         
         case .bookInDetail(_, let bookInNumber):
             return ApiModel(path: "inspection/api/MotorbikeBookIn/BookinSingle/\(bookInNumber)", method: .get)
+
+//            var api = "inspection/api/MotorbikeBookIn/BookinSingle/"
+//            if DataController.shared.bookInType == .CAR || DataController.shared.bookInType == .CARWRECK {
+//                api = "inspection/api/BookIn/Single/"
+//            }
+            
+//            return ApiModel(path: "\(api)\(bookInNumber)", method: .get)
         ///inspection/api/MotorbikeBookIn/BookinSingle/
         ///inspection/api/bookin/single/
         
@@ -188,6 +203,9 @@ enum Router {
         //MARK: Image list
         case .listInspectionImage(_ , let bookinNo):
             return ApiModel(path: "inspection/api/inspectionimage/images/\(bookinNo)", method: .post)
+            
+        case .inspectionDetailImage(let imageId , let bookinNo):
+            return ApiModel(path: "inspection/api/inspectionImage/single/\(bookinNo)/\(imageId)", method: .get)
             
         case .deleteInspectionImage(let params):
             return ApiModel(path: "inspection/api/inspectionimage/delete/model", method: .delete, param: params)
@@ -243,10 +261,10 @@ enum Router {
             return ApiModel(path: "auction/api/standard/modeltemplate/modelupdate/model", method: .put, param: param)
             
         case .getJatoVaraints(_ , let model_BU):
-            return ApiModel(path: "auction/api/standard/jatoVariant/\(model_BU)", method: .get)
+            return ApiModel(path: "auction/api/standard/matVariant/\(model_BU)", method: .get)
             
         case .getJatoModel(_ ):
-            return ApiModel(path: "auction/api/standard/jatomodel", method: .get)
+            return ApiModel(path: "auction/api/standard/matModel", method: .get)
             
         case .bookInMotorBike(let param):
             return ApiModel(path: "inspection/api/MotorbikeBookIns/Create/model", method: .post, param: param)
@@ -262,10 +280,19 @@ enum Router {
          
         case .updateInspecMotorBike(let param, let bookinNo):
             return ApiModel(path: "inspection/api/MotorBikeInspections/Edit/\(bookinNo)/model", method: .put, param: param)
+          
+        // add on 12/22/2023
+        case .getRoofTypes(_):
+            return ApiModel(path: "inspection/api/bookin/roofType", method: .get)
+        case .getGasTypes(_):
+            return ApiModel(path: "inspection/api/bookin/gasType", method: .get)
+        case .getCatalyticOptions(_):
+            return ApiModel(path: "inspection/api/bookin/catalyticOption", method: .get)
             
+        // add on 01/05/2024
+        case .getWindowOptions(_):
+            return ApiModel(path: "inspection/api/bookIn/windowOption", method: .get)
         }
-        
-    
         
     }
 
@@ -277,7 +304,7 @@ struct ApiModel:URLRequestConvertible {
         UAT  http://mapapi-uat.mottoauction.com/
         PROD https://api.mottoauction.com/
      */
-    let base:String = "https://api.mottoauction.com/"
+//    let base:String = "http://mapapi-uat.mottoauction.com/"
     let apiKey = "e9ab5c97-019e-4a83-ad6f-b1d571b24d5d"
     
     var path:String
@@ -296,8 +323,8 @@ struct ApiModel:URLRequestConvertible {
 
     func asURLRequest() throws -> URLRequest {
         let model = self
-        let isFullpath = path.contains("https://api.mottoauction.com/")
-        let url = URL(string: isFullpath ? path : base + path )!
+        let isFullpath = path.contains(AppConfig.currentBaseUrl)
+        let url = URL(string: isFullpath ? path : AppConfig.currentBaseUrl + path )!
         var mutableURLRequest = URLRequest(url: url)
        
         mutableURLRequest.httpMethod = model.method.rawValue

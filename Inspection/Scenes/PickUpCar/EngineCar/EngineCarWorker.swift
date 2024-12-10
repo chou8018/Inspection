@@ -12,9 +12,32 @@
 
 import UIKit
 
+typealias engineCarHandler = (EngineCar.Something.Response) -> ()
+
 class EngineCarWorker
 {
   func doSomeWork()
   {
   }
+    
+    //MARK: FuelDelivery
+    func getFuelDelivery(completion: @escaping engineCarHandler){
+        showLoading()
+        
+        let request = BaseRequest()
+        FuelDeliveryService().callServiceArray(request: request) { results in
+            
+            hideLoading()
+            
+            switch results {
+            
+            case .success(let modelList):
+                let response = EngineCar.Something.Response(fuelDeliveryList: modelList)
+                completion(response)
+            case .failure(let error):
+                let response = EngineCar.Something.Response(error: error.getMessage)
+                completion(response)
+            }
+        }
+    }
 }

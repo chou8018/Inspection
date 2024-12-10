@@ -12,9 +12,32 @@
 
 import UIKit
 
+typealias engineCheckCarHandler = (EngineCheck.Something.Response) -> ()
+
 class EngineCheckWorker
 {
-  func doSomeWork()
-  {
-  }
+    func doSomeWork()
+    {
+    }
+    
+    func fetchCatalyticOptions(completion: @escaping engineCheckCarHandler){
+        
+        showLoading()
+        
+        let request = BaseRequest()
+        CatalyticOptionService().callServiceArray(request: request) { (result) in
+            
+            hideLoading()
+            
+            switch result {
+                
+            case .success(let values):
+                let response = EngineCheck.Something.Response(catalyticOptions: values)
+                completion(response)
+            case .failure(let error):
+                let response = EngineCheck.Something.Response(error: error.getMessage)
+                completion(response)
+            }
+        }
+    }
 }

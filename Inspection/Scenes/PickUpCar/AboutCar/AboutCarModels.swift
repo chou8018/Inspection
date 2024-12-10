@@ -61,6 +61,9 @@ enum AboutCar
         var error : KErrorMessage?
         
         var resultRegistration: String?
+        
+        var gasOption : [GasTypeModel]?
+
     }
     struct ViewModel
     {
@@ -101,8 +104,9 @@ enum AboutCar
         var chassisNumber:String?
         var modelCodeId:Int?
         
-        
         var resultRegistration: String?
+        var gasOption : [String]?
+
     }
   }
 }

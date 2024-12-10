@@ -14,7 +14,7 @@ import UIKit
 
 protocol PlaceDisplayLogic: AnyObject
 {
-  func presentUpdatePicker(viewModel: Place.Picker.ViewModel)
+    func presentUpdatePicker(viewModel: Place.Picker.ViewModel)
     func presentSelectProvincePicker(viewModel: Place.Picker.ViewModel)
     
     func displayReceiverPicker(viewModel: Place.Picker.ViewModel)
@@ -23,66 +23,66 @@ protocol PlaceDisplayLogic: AnyObject
     var confirmPlace : ((_ receivePlace : PlantResponse , _ storePlace : StorageLocationModel) -> Void)? { get set }
 }
 
-class PlaceViewController: UIViewController, PlaceDisplayLogic
+class PlaceViewController: ViewController, PlaceDisplayLogic
 {
-  
     
-  var interactor: PlaceBusinessLogic?
-  var router: (NSObjectProtocol & PlaceRoutingLogic & PlaceDataPassing)?
-
-  // MARK: Object lifecycle
-  
-  override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
-  {
-    super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-    setup()
-  }
-  
-  required init?(coder aDecoder: NSCoder)
-  {
-    super.init(coder: aDecoder)
-    setup()
-  }
-  
-  // MARK: Setup
-  
-  private func setup()
-  {
-    let viewController = self
-    let interactor = PlaceInteractor()
-    let presenter = PlacePresenter()
-    let router = PlaceRouter()
-    viewController.interactor = interactor
-    viewController.router = router
-    interactor.presenter = presenter
-    presenter.viewController = viewController
-    router.viewController = viewController
-    router.dataStore = interactor
-  }
-  
-  // MARK: Routing
-  
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-  {
-    if let scene = segue.identifier {
-      let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
-      if let router = router, router.responds(to: selector) {
-        router.perform(selector, with: segue)
-      }
+    
+    var interactor: PlaceBusinessLogic?
+    var router: (NSObjectProtocol & PlaceRoutingLogic & PlaceDataPassing)?
+    
+    // MARK: Object lifecycle
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
+    {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        setup()
     }
-  }
-  
-  // MARK: View lifecycle
-  
-  override func viewDidLoad()
-  {
-    super.viewDidLoad()
-    setUpPicker()
-  }
-  
-  // MARK: Do something
-  
-  //@IBOutlet weak var nameTextField: UITextField!
+    
+    required init?(coder aDecoder: NSCoder)
+    {
+        super.init(coder: aDecoder)
+        setup()
+    }
+    
+    // MARK: Setup
+    
+    private func setup()
+    {
+        let viewController = self
+        let interactor = PlaceInteractor()
+        let presenter = PlacePresenter()
+        let router = PlaceRouter()
+        viewController.interactor = interactor
+        viewController.router = router
+        interactor.presenter = presenter
+        presenter.viewController = viewController
+        router.viewController = viewController
+        router.dataStore = interactor
+    }
+    
+    // MARK: Routing
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if let scene = segue.identifier {
+            let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
+            if let router = router, router.responds(to: selector) {
+                router.perform(selector, with: segue)
+            }
+        }
+    }
+    
+    // MARK: View lifecycle
+    
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
+        setUpPicker()
+    }
+    
+    // MARK: Do something
+    
+    //@IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var placeReceivePicker: UIPickerView!
     @IBOutlet weak var placeStorePicker: UIPickerView!
     
@@ -93,11 +93,29 @@ class PlaceViewController: UIViewController, PlaceDisplayLogic
     @IBOutlet weak var searchBarReceiver: UISearchBar!
     @IBOutlet weak var searchBarStorage: UISearchBar!
     
+    // local strings
+    @IBOutlet weak var receiveLocationTitleLabel: UILabel!
+    @IBOutlet weak var storeLocationTitleLabel: UILabel!
+    @IBOutlet weak var cancelButton: CustomUIButton!
+    @IBOutlet weak var okButton: CustomUIButton!
+    
+    override func initLocalString() {
+        super.initLocalString()
+        
+        receiveLocationTitleLabel.text = String.localized("receiver_car_plant_location_label")
+        storeLocationTitleLabel.text = String.localized("receiver_car_storage_location_label")
+        cancelButton.setTitle(String.localized("select_inspection_dialog_no"), for: .normal)
+        okButton.setTitle(String.localized("select_inspection_dialog_yes"), for: .normal)
+        searchBarReceiver.placeholder = String.localized("inspection_list_search_label")
+        searchBarStorage.placeholder = String.localized("inspection_list_search_label")
+
+    }
+    
     func setUpPicker()
-  {
+    {
         placeReceivePicker.delegate = datasourceReceiver
         placeReceivePicker.dataSource = datasourceReceiver
-
+        
         placeStorePicker.delegate  = datasourceStorage
         placeStorePicker.dataSource = datasourceStorage
         
@@ -109,25 +127,25 @@ class PlaceViewController: UIViewController, PlaceDisplayLogic
         interactor?.fetchDataPicker(request: request)
         
         addSearch()
-  }
+    }
     
     func addSearch(){
         searchBarReceiver.delegate = self
         searchBarStorage.delegate = self
-          
+        
     }
-  
-  func presentUpdatePicker(viewModel: Place.Picker.ViewModel)
-  {
-    datasourceReceiver.plantLocationList = viewModel.plantLocationList
-    datasourceStorage.locationList = viewModel.locationList
     
-    placeStorePicker.selectRow(viewModel.selectStoreValue ?? 0, inComponent: 0, animated: true)
-    placeReceivePicker.selectRow(viewModel.selectReceiveValue ?? 0, inComponent: 0, animated: true)
-
-    placeReceivePicker.reloadAllComponents()
-    placeStorePicker.reloadAllComponents()
-  }
+    func presentUpdatePicker(viewModel: Place.Picker.ViewModel)
+    {
+        datasourceReceiver.plantLocationList = viewModel.plantLocationList
+        datasourceStorage.locationList = viewModel.locationList
+        
+        placeStorePicker.selectRow(viewModel.selectStoreValue ?? 0, inComponent: 0, animated: true)
+        placeReceivePicker.selectRow(viewModel.selectReceiveValue ?? 0, inComponent: 0, animated: true)
+        
+        placeReceivePicker.reloadAllComponents()
+        placeStorePicker.reloadAllComponents()
+    }
     
     func presentSelectProvincePicker(viewModel: Place.Picker.ViewModel){
         
@@ -161,7 +179,7 @@ class PlaceViewController: UIViewController, PlaceDisplayLogic
                 selectReceiveRow = value
             }
         }
-     
+        
         for (key , value) in datasourceStorage.didSelectRow {
             if key == placeStorePicker {
                 selectStoreRow = value

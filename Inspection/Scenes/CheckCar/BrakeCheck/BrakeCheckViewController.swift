@@ -15,86 +15,97 @@ import RadioGroup
 
 protocol BrakeCheckDisplayLogic: AnyObject
 {
-  func displaySomething(viewModel: BrakeCheck.Something.ViewModel)
+    func displaySomething(viewModel: BrakeCheck.Something.ViewModel)
 }
 
-class BrakeCheckViewController: UIViewController, BrakeCheckDisplayLogic
+class BrakeCheckViewController: ViewController, BrakeCheckDisplayLogic
 {
-  var interactor: BrakeCheckBusinessLogic?
-  var router: (NSObjectProtocol & BrakeCheckRoutingLogic & BrakeCheckDataPassing)?
-
-  // MARK: Object lifecycle
-  
-  override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
-  {
-    super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-    setup()
-  }
-  
-  required init?(coder aDecoder: NSCoder)
-  {
-    super.init(coder: aDecoder)
-    setup()
-  }
-  
-  // MARK: Setup
-  
-  private func setup()
-  {
-    let viewController = self
-    let interactor = BrakeCheckInteractor()
-    let presenter = BrakeCheckPresenter()
-    let router = BrakeCheckRouter()
-    viewController.interactor = interactor
-    viewController.router = router
-    interactor.presenter = presenter
-    presenter.viewController = viewController
-    router.viewController = viewController
-    router.dataStore = interactor
-  }
-  
-  // MARK: Routing
-  
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-  {
-    if let scene = segue.identifier {
-      let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
-      if let router = router, router.responds(to: selector) {
-        router.perform(selector, with: segue)
-      }
+    var interactor: BrakeCheckBusinessLogic?
+    var router: (NSObjectProtocol & BrakeCheckRoutingLogic & BrakeCheckDataPassing)?
+    
+    // MARK: Object lifecycle
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
+    {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        setup()
     }
-  }
-  
-  // MARK: View lifecycle
-  
-  override func viewDidLoad()
-  {
-    super.viewDidLoad()
-    setUIView()
-    setRadio()
-    doSomething()
-  }
-  
-  // MARK: Do something
-  
-  //@IBOutlet weak var nameTextField: UITextField!
+    
+    required init?(coder aDecoder: NSCoder)
+    {
+        super.init(coder: aDecoder)
+        setup()
+    }
+    
+    // MARK: Setup
+    
+    private func setup()
+    {
+        let viewController = self
+        let interactor = BrakeCheckInteractor()
+        let presenter = BrakeCheckPresenter()
+        let router = BrakeCheckRouter()
+        viewController.interactor = interactor
+        viewController.router = router
+        interactor.presenter = presenter
+        presenter.viewController = viewController
+        router.viewController = viewController
+        router.dataStore = interactor
+    }
+    
+    // MARK: Routing
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if let scene = segue.identifier {
+            let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
+            if let router = router, router.responds(to: selector) {
+                router.perform(selector, with: segue)
+            }
+        }
+    }
+    
+    // MARK: View lifecycle
+    
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
+        setUIView()
+        setRadio()
+        doSomething()
+    }
+    
+    // MARK: Do something
+    
+    //@IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var scrollView: UIScrollView!
-    
     @IBOutlet weak var  summarysBrakeSystemTextField: MultilineTextField!
-    
-    
     @IBOutlet weak var brakeSystemRadio: RadioGroup!
-    func doSomething()
-  {
-    let request = BrakeCheck.Something.Request()
-    interactor?.doSomething(request: request)
-  }
     
-  //MARK: Presenter
-  func displaySomething(viewModel: BrakeCheck.Something.ViewModel)
-  {
-    //nameTextField.text = viewModel.name
-  }
+    // local strings
+    @IBOutlet weak var brakeSystemLabel: UILabel!
+    @IBOutlet weak var summaryLabel: UILabel!
+
+    override func initLocalString() {
+        super.initLocalString()
+        
+        brakeSystemLabel.text = String.localized("inspection_brake_system_label")
+        summaryLabel.text = String.localized("inspection_brake_summary_label")
+        summarysBrakeSystemTextField.placeholder = summaryLabel.text
+
+    }
+    
+    func doSomething()
+    {
+        let request = BrakeCheck.Something.Request()
+        interactor?.doSomething(request: request)
+    }
+    
+    //MARK: Presenter
+    func displaySomething(viewModel: BrakeCheck.Something.ViewModel)
+    {
+        //nameTextField.text = viewModel.name
+    }
     
     
     //MARK: UIView
@@ -108,16 +119,16 @@ class BrakeCheckViewController: UIViewController, BrakeCheckDisplayLogic
     //MARK: Radio
     func setRadio(){
         let attributedString = [NSAttributedString.Key.foregroundColor : UIColor.appPrimaryColor]
-         
+        
         brakeSystemRadio.attributedTitles = [
             NSAttributedString(
-                string: "ใช้งานได้", attributes: attributedString),
+                string: string_inspection_engine_working, attributes: attributedString),
             NSAttributedString(
-                string: "ใช้งานไม่ได้", attributes: attributedString)
+                string: string_inspection_engine_not_working, attributes: attributedString)
         ]
     }
     @IBAction func brakeSystemValueChanged(_ sender: Any) {
-        let value = getRadioValue(from: ["ใช้งานได้", "ใช้งานไม่ได้"], selectIndex: brakeSystemRadio.selectedIndex)
+        let value = getRadioValue(from: [string_inspection_engine_working, string_inspection_engine_not_working], selectIndex: brakeSystemRadio.selectedIndex)
         DataController.shared.inspectionCarModel.brakeSystem = value
         
         let isUseableBrake = brakeSystemRadio.selectedIndex == 0 ? true : false
@@ -128,7 +139,7 @@ class BrakeCheckViewController: UIViewController, BrakeCheckDisplayLogic
     func prepareData(){
         let model = DataController.shared.inspectionCarModel
         summarysBrakeSystemTextField.text = model.summarysBrakeSystem
-        brakeSystemRadio.selectedIndex = getRadioIndexByValue(from: ["ใช้งานได้", "ใช้งานไม่ได้"],
+        brakeSystemRadio.selectedIndex = getRadioIndexByValue(from: [string_inspection_engine_working, string_inspection_engine_not_working],
                                                               value: model.brakeSystem)
     }
 }
@@ -144,7 +155,7 @@ extension BrakeCheckViewController : UITextViewDelegate {
     }
 }
 
- 
+
 extension BrakeCheckViewController {
     
     override func viewWillAppear(_ animated: Bool) {

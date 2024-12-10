@@ -67,12 +67,20 @@ class ImageViewerViewController: UIViewController, ImageViewerDisplayLogic
   
   // MARK: View lifecycle
   
-  override func viewDidLoad()
-  {
-    super.viewDidLoad()
-    doSomething()
-    setUp()
-  }
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
+        doSomething()
+        setUp()
+        
+        // add on 11/03/2024
+        NotificationCenter.default.addObserver(self, selector: #selector(updateDataFromDetailImage(noti:)), name: NSNotification.Name("detailImageUpdated"), object: nil)
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)        
+        NotificationCenter.default.removeObserver(self)
+    }
   
   // MARK: Do something
   
@@ -113,5 +121,11 @@ extension ImageViewerViewController  {
         
         let request = ImageViewer.Something.Request()
         interactor?.showImageViewer(request: request)
+    }
+    
+    @objc func updateDataFromDetailImage(noti: NSNotification){
+        guard let image = noti.object as? UIImage else { return }
+        
+        imageView.image = image
     }
 }

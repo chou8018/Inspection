@@ -124,7 +124,18 @@ class InspectionCarModel {
     var isNoSdCard = false
     var isNoCd = false
     
+    // add 26/10/23
+    var isSideMirror1 = false
+    var isSideMirror2 = false
+    var isSideMirror3 = false
+    var isSideMirror4 = false
+    var catalyticOptionId: Int?
     
+    var sideMirror1: Int?
+    var sideMirror2: Int?
+    var sideMirror3: Int?
+    var sideMirror4: Int?
+
     var registrationProvince: String?
     var registration: String?
     
@@ -207,8 +218,10 @@ class InspectionCarModel {
     // y
     var y1Chehck : Bool = false
     
-    
-    
+    // roof type and gas
+    var roofType: String?
+    var roofTypeId: Int?
+    var gasOptions: String?
     
     var description : [String : Any]  {
         return [:]

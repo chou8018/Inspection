@@ -8,10 +8,14 @@
 import UIKit
 
 class DefaultItemCell: UITableViewCell {
-
+    
+    @IBOutlet weak var tipsMessageLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        tipsMessageLabel.text = String.localized("inspection_list_tip_message_label")
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

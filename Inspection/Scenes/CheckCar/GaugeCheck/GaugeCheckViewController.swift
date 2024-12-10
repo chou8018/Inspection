@@ -15,85 +15,101 @@ import RadioGroup
 
 protocol GaugeCheckDisplayLogic: AnyObject
 {
-  func displaySomething(viewModel: GaugeCheck.Something.ViewModel)
+    func displaySomething(viewModel: GaugeCheck.Something.ViewModel)
 }
 
-class GaugeCheckViewController: UIViewController, GaugeCheckDisplayLogic
+class GaugeCheckViewController: ViewController, GaugeCheckDisplayLogic
 {
-  var interactor: GaugeCheckBusinessLogic?
-  var router: (NSObjectProtocol & GaugeCheckRoutingLogic & GaugeCheckDataPassing)?
-
-  // MARK: Object lifecycle
-  
-  override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
-  {
-    super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-    setup()
-  }
-  
-  required init?(coder aDecoder: NSCoder)
-  {
-    super.init(coder: aDecoder)
-    setup()
-  }
-  
-  // MARK: Setup
-  
-  private func setup()
-  {
-    let viewController = self
-    let interactor = GaugeCheckInteractor()
-    let presenter = GaugeCheckPresenter()
-    let router = GaugeCheckRouter()
-    viewController.interactor = interactor
-    viewController.router = router
-    interactor.presenter = presenter
-    presenter.viewController = viewController
-    router.viewController = viewController
-    router.dataStore = interactor
-  }
-  
-  // MARK: Routing
-  
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-  {
-    if let scene = segue.identifier {
-      let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
-      if let router = router, router.responds(to: selector) {
-        router.perform(selector, with: segue)
-      }
+    var interactor: GaugeCheckBusinessLogic?
+    var router: (NSObjectProtocol & GaugeCheckRoutingLogic & GaugeCheckDataPassing)?
+    
+    // MARK: Object lifecycle
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
+    {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        setup()
     }
-  }
-  
-  // MARK: View lifecycle
-  
-  override func viewDidLoad()
-  {
-    super.viewDidLoad()
-    setUIView()
-    setRadio()
-    doSomething()
-  }
-  
-  // MARK: Do something
-  
-  //@IBOutlet weak var nameTextField: UITextField!
+    
+    required init?(coder aDecoder: NSCoder)
+    {
+        super.init(coder: aDecoder)
+        setup()
+    }
+    
+    // MARK: Setup
+    
+    private func setup()
+    {
+        let viewController = self
+        let interactor = GaugeCheckInteractor()
+        let presenter = GaugeCheckPresenter()
+        let router = GaugeCheckRouter()
+        viewController.interactor = interactor
+        viewController.router = router
+        interactor.presenter = presenter
+        presenter.viewController = viewController
+        router.viewController = viewController
+        router.dataStore = interactor
+    }
+    
+    // MARK: Routing
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if let scene = segue.identifier {
+            let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
+            if let router = router, router.responds(to: selector) {
+                router.perform(selector, with: segue)
+            }
+        }
+    }
+    
+    // MARK: View lifecycle
+    
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
+        setUIView()
+        setRadio()
+        doSomething()
+    }
+    
+    // MARK: Do something
+    
+    //@IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var gaugeSystemRadio: RadioGroup!
-  
     @IBOutlet weak var summaryGaugeSystemTextField: MultilineTextField!
     @IBOutlet weak var machineLightShowTextField: CustomTextField!
     
-  func doSomething()
-  {
-    let request = GaugeCheck.Something.Request()
-    interactor?.doSomething(request: request)
-  }
-  
-  func displaySomething(viewModel: GaugeCheck.Something.ViewModel)
-  {
-    //nameTextField.text = viewModel.name
-  }
+    // local strings
+    
+    @IBOutlet weak var gaugeSystemLabel: UILabel!
+    @IBOutlet weak var lightLabel: UILabel!
+    @IBOutlet weak var summaryLabel: UILabel!
+
+    override func initLocalString() {
+        super.initLocalString()
+        
+        gaugeSystemLabel.text = String.localized("inspection_gauges_system_label")
+        lightLabel.text = String.localized("inspection_gauges_light_label")
+        machineLightShowTextField.placeholder = String.localized("inspection_gauges_details_placeholder_label")
+        summaryLabel.text = String.localized("inspection_gauges_summary_label")
+        summaryGaugeSystemTextField.placeholder = summaryLabel.text
+
+    }
+    
+    func doSomething()
+    {
+        let request = GaugeCheck.Something.Request()
+        interactor?.doSomething(request: request)
+    }
+    
+    func displaySomething(viewModel: GaugeCheck.Something.ViewModel)
+    {
+        //nameTextField.text = viewModel.name
+    }
     
     //MARK UIView
     func setUIView(){
@@ -103,7 +119,7 @@ class GaugeCheckViewController: UIViewController, GaugeCheckDisplayLogic
         summaryGaugeSystemTextField.delegate = self
         machineLightShowTextField.delegate = self
         
-
+        
         addTarget(from: machineLightShowTextField)
     }
     fileprivate func addTarget(from textfield: UITextField ){
@@ -114,16 +130,16 @@ class GaugeCheckViewController: UIViewController, GaugeCheckDisplayLogic
     //MARK: radio
     func setRadio(){
         let attributedString = [NSAttributedString.Key.foregroundColor : UIColor.appPrimaryColor]
-         
+        
         gaugeSystemRadio.attributedTitles = [
             NSAttributedString(
-                string: "ใช้งานได้", attributes: attributedString),
+                string: string_inspection_engine_working, attributes: attributedString),
             NSAttributedString(
-                string: "ใช้งานไม่ได้", attributes: attributedString)
+                string: string_inspection_engine_not_working, attributes: attributedString)
         ]
     }
     @IBAction func gaugeSystemValueChanged(_ sender: Any) {
-        let value = getRadioValue(from: ["ใช้งานได้", "ใช้งานไม่ได้"], selectIndex: gaugeSystemRadio.selectedIndex)
+        let value = getRadioValue(from: [string_inspection_engine_working, string_inspection_engine_not_working], selectIndex: gaugeSystemRadio.selectedIndex)
         DataController.shared.inspectionCarModel.gaugeSystem = value
         
         let isUseableGuage = gaugeSystemRadio.selectedIndex == 0 ? true : false
@@ -134,7 +150,7 @@ class GaugeCheckViewController: UIViewController, GaugeCheckDisplayLogic
         let model = DataController.shared.inspectionCarModel
         summaryGaugeSystemTextField.text = model.summaryGaugeSystem
         machineLightShowTextField.text = model.machineLightShow
-        gaugeSystemRadio.selectedIndex = getRadioIndexByValue(from: ["ใช้งานได้", "ใช้งานไม่ได้"], value: model.gaugeSystem)
+        gaugeSystemRadio.selectedIndex = getRadioIndexByValue(from: [string_inspection_engine_working, string_inspection_engine_not_working], value: model.gaugeSystem)
     }
 }
 
@@ -167,7 +183,7 @@ extension GaugeCheckViewController : UITextFieldDelegate {
         return true
     }
 }
- 
+
 extension GaugeCheckViewController {
     
     

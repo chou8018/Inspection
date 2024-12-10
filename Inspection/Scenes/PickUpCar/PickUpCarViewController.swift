@@ -12,12 +12,22 @@
 
 import UIKit
 
+let usedBookinItem1Height = 1600.0
+let bookinItem0Height = 1240.0
+var bookinItem1Height = usedBookinItem1Height
+let bookinItem2Height = 850.0
+let bookinItem2MBHeight = 1900.0
+let bookinItem3Height = 800.0
+let bookinItem3MBHeight = 1220.0
+let bookinItem4Height = 1400.0
+let bookinItem5Height = 930.0
+
 protocol PickUpCarDisplayLogic: AnyObject
 {
-  func displaySomething(viewModel: PickUpCar.Something.ViewModel)
+    func displaySomething(viewModel: PickUpCar.Something.ViewModel)
     func displayReceiverDayTime(viewModel: PickUpCar.Something.ViewModel)
     func displayDPF(viewModel: PickUpCar.Something.ViewModel)
-   
+    
     func displayErrorReceiverBookIn(viewModel: PickUpCar.Something.ViewModel)
     func displaySuccessReceiverBookIn(viewModel: PickUpCar.Something.ViewModel)
     func displayRequiteFieldSuccess(viewModel: PickUpCar.Something.ViewModel)
@@ -28,112 +38,153 @@ protocol PickUpCarDisplayLogic: AnyObject
     func displayIMATError(viewModel: PickUpCar.Something.ViewModel)
     func displayIMATSuccess(viewModel: PickUpCar.Something.ViewModel)
     
-
+    
 }
 
-class PickUpCarViewController: UIViewController, PickUpCarDisplayLogic
+class PickUpCarViewController: ViewController, PickUpCarDisplayLogic
 {
-  var interactor: PickUpCarBusinessLogic?
-  var router: (NSObjectProtocol & PickUpCarRoutingLogic & PickUpCarDataPassing)?
-
-  // MARK: Object lifecycle
-  
-  override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
-  {
-    super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-    setup()
-  }
-  
-  required init?(coder aDecoder: NSCoder)
-  {
-    super.init(coder: aDecoder)
-    setup()
-  }
-  
-  // MARK: Setup
-  
-  private func setup()
-  {
-    let viewController = self
-    let interactor = PickUpCarInteractor()
-    let presenter = PickUpCarPresenter()
-    let router = PickUpCarRouter()
-    viewController.interactor = interactor
-    viewController.router = router
-    interactor.presenter = presenter
-    presenter.viewController = viewController
-    router.viewController = viewController
-    router.dataStore = interactor
-  }
-  
-  // MARK: Routing
-  
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-  {
-    if let scene = segue.identifier {
-      let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
-      if let router = router, router.responds(to: selector) {
-        router.perform(selector, with: segue)
-      }
-        
-        if let dateTimePicker = segue.destination as? DateTimeViewController {
-            dateTimePicker.didSelectedDateTimePicker = { [weak self] (dateReceiver) in
-                let request = PickUpCar.Something.Request(dateReceiver: dateReceiver)
-                self?.interactor?.setReceiverDateTime(request: request, isEdit: false)
-            }
-        }
-        
-    }
-  }
-  
-  // MARK: View lifecycle
-  
-  override func viewDidLoad()
-  {
-    super.viewDidLoad()
-    setTitleName()
-    setUpTab()
-    segmentSetUp()
-    setUpDateTime()
+    var interactor: PickUpCarBusinessLogic?
+    var router: (NSObjectProtocol & PickUpCarRoutingLogic & PickUpCarDataPassing)?
     
-    doSomething()
-  }
-  
-  // MARK: Do something
+    // MARK: Object lifecycle
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
+    {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        setup()
+    }
+    
+    required init?(coder aDecoder: NSCoder)
+    {
+        super.init(coder: aDecoder)
+        setup()
+    }
+    
+    // MARK: Setup
+    
+    private func setup()
+    {
+        let viewController = self
+        let interactor = PickUpCarInteractor()
+        let presenter = PickUpCarPresenter()
+        let router = PickUpCarRouter()
+        viewController.interactor = interactor
+        viewController.router = router
+        interactor.presenter = presenter
+        presenter.viewController = viewController
+        router.viewController = viewController
+        router.dataStore = interactor
+    }
+    
+    // MARK: Routing
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if let scene = segue.identifier {
+            let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
+            if let router = router, router.responds(to: selector) {
+                router.perform(selector, with: segue)
+            }
+            
+            if let dateTimePicker = segue.destination as? DateTimeViewController {
+                dateTimePicker.didSelectedDateTimePicker = { [weak self] (dateReceiver) in
+                    let request = PickUpCar.Something.Request(dateReceiver: dateReceiver)
+                    self?.interactor?.setReceiverDateTime(request: request, isEdit: false)
+                }
+            }
+            
+        }
+    }
+    
+    // MARK: View lifecycle
+    
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
+        setTitleName()
+        setUpTab()
+        segmentSetUp()
+        setUpDateTime()
+        
+        doSomething()
+    }
+    
+    // MARK: Do something
     @IBOutlet weak var fullName:UILabel!
     @IBOutlet weak var pickUpStackView: UIView!
     @IBOutlet weak var checkStackView: UIView!
     @IBOutlet weak var photoStackView: UIView!
-    
     @IBOutlet weak var sendButton: UIBarButtonItem!
     @IBOutlet weak var saveButton: UIBarButtonItem!
-    
     @IBOutlet weak var segmentView: UIView!
-    
     @IBOutlet weak var segmentWidthConstraint: NSLayoutConstraint!
-    
     @IBOutlet weak var lineview: UIView!
-    
     @IBOutlet weak var containerView: UIView!
-    
     @IBOutlet weak var scrollView: UIScrollView!
-
     @IBOutlet weak var dateTimeView: UIView!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     
+    // local string
+    @IBOutlet weak var mainButton: UIBarButtonItem!
+    @IBOutlet weak var pickupCarLabel: UILabel!
+    @IBOutlet weak var inspectionLabel: UILabel!
+    @IBOutlet weak var photosLabel: UILabel!
+    @IBOutlet weak var pickUpDateLabel: UILabel!
+    
+    @IBOutlet weak var mainScrollview: UIScrollView!
+
+    var isClickedTopItem = false
+
+    var lastFrame = CGRectZero
+    let item0OffsetY = 0.0
+    var item1OffsetY = 0.0
+    var item2OffsetY = 0.0
+    var item2MotorbikeOffsetY = 0.0
+    var item3OffsetY = 0.0
+    var item3MotorbikeOffsetY = 0.0
+    var item4OffsetY = 0.0
+    var item5OffsetY = 0.0
+    
+    override func initLocalString() {
+        super.initLocalString()
+        saveButton.title = String.localized("main_inspection_save_button_title")
+        mainButton.title = String.localized("main_inspection_bar_button_main_title")
+        pickupCarLabel.text = String.localized("main_inspection_item_book_in_title")
+        inspectionLabel.text = String.localized("main_inspection_item_inspection_title")
+        photosLabel.text = String.localized("main_inspection_item_photos_title")
+        pickUpDateLabel.text = String.localized("pick_up_date_title")
+        
+        if DataController.shared.bookInType == .MBIKE || DataController.shared.bookInType == .MBIKEWRECK  {
+            bookinItem1Height = usedBookinItem1Height - 230
+        } else {
+            bookinItem1Height = usedBookinItem1Height
+        }
+        
+        item1OffsetY = bookinItem0Height
+        item2OffsetY = bookinItem0Height + bookinItem1Height
+        item2MotorbikeOffsetY = bookinItem0Height + bookinItem1Height
+        item3OffsetY = bookinItem0Height + bookinItem1Height + bookinItem2Height
+        item3MotorbikeOffsetY = bookinItem0Height + bookinItem1Height + bookinItem2MBHeight
+        item4OffsetY = bookinItem0Height + bookinItem1Height + bookinItem2Height + bookinItem3Height
+        item5OffsetY = bookinItem0Height + bookinItem1Height + bookinItem2Height + bookinItem3Height + bookinItem4Height
+
+    }
+    
     func doSomething()
-  {
-    let request = PickUpCar.Something.Request()
-    interactor?.doSomething(request: request)
-  }
+    {
+        let request = PickUpCar.Something.Request()
+        interactor?.doSomething(request: request)
+    }
     
-  //MARK: Presenter
-  func displaySomething(viewModel: PickUpCar.Something.ViewModel)
-  {
-    
-  }
+    //MARK: Presenter
+    func displaySomething(viewModel: PickUpCar.Something.ViewModel)
+    {
+        
+    }
     func displayRequiteFieldError(viewModel: PickUpCar.Something.ViewModel) {
+        
+        aboutCarViewController?.isHideNoteView(isHide: true)
         guard let errorMessage = viewModel.errorMessage else { return }
         alertErrorMessageOKAction(message: errorMessage) {
             print("alertErrorMessage", "OKAction")
@@ -141,7 +192,7 @@ class PickUpCarViewController: UIViewController, PickUpCarDisplayLogic
     }
     func displayRequiteFieldSuccess(viewModel: PickUpCar.Something.ViewModel) {
         let fromEdit = DataController.shared.isFromEditView
-        let message = fromEdit ? "คุณต้องการแก้ไขรายการไหม" : "คุณต้องการบันทึกรายการรับมอบรถไหม"
+        let message = fromEdit ? String.localized("main_inspection_edit_list_title") : String.localized("main_inspection_save_vehicle_title")
         alert(message: message) { [weak self] in
             //send to server
             self?.confirmSendDataReceiver()
@@ -183,17 +234,17 @@ class PickUpCarViewController: UIViewController, PickUpCarDisplayLogic
         interactor?.validateRequiteField(request: request)
         
         print("🔸Book-in Type: (\(DataController.shared.bookInType.nameValue))🔸")
-
+        
     }
-   
+    
     @IBAction func saveToIMAT(_ sender: Any){
         print("🔶 save to IMAT")
-        alert(message: "คุณต้องการส่ง\nBook-In to IMAT ไหม") { [weak self] in
+        alert(message: String.localized("pick_up_send_book_in_confirm_title")) { [weak self] in
             self?.sendToIMAT()
         }
-       
+        
     }
-     
+    
     func displayActionEventSuccess(viewModel: PickUpCar.Something.ViewModel) {
         sendButton.isEnabled = viewModel.isEnableSendToIMAP ?? false
         saveButton.isEnabled = viewModel.isEnableSave ?? false
@@ -223,25 +274,17 @@ class PickUpCarViewController: UIViewController, PickUpCarDisplayLogic
     }
     func displayIMATSuccess(viewModel: PickUpCar.Something.ViewModel) {
         print("❤️🐶 displayIMATSuccess for updateUI")
-        alert(message: "ต้องการปริ้น IMAT QRCode ไหม", title: "Book-In สำเร็จ") { [weak self] in
+        alert(message: String.localized("pick_up_send_book_in_succeeded_subtitle"), title: String.localized("pick_up_send_book_in_succeeded_title")) { [weak self] in
             self?.createIMATQRCode()
         } cancel: {
             // cacel
         }
-
-
+        
+        
         validateSendIMAT()
         NotificationCenter.default.post(name: NSNotification.Name("updateUI"), object: nil)
-
+        
     }
-    
-  
-    
-    
-    
-    
-    
-    
     
     func confirmSendDataReceiver(){
         let request = PickUpCar.Something.Request(methodReceiver: .POST)
@@ -250,29 +293,41 @@ class PickUpCarViewController: UIViewController, PickUpCarDisplayLogic
     
     
     func segmentSetUp(){
-
+        
         segmentView.addSubview(codeSegmented)
         codeSegmented.delegate = self
-        updateUIView(from: 0)
+//        updateUIView(from: 0)
+        
+        switch DataController.shared.bookInType {
+        case .CAR, .CARWRECK:
+            for i in 0..<6 {
+                updateUIView(from: i)
+            }
+        case .MBIKE, .MBIKEWRECK:
+            for i in 0..<4 {
+                updateUIView(from: i)
+            }
+        }
+        
+        self.mainScrollview.delegate = self
     }
     
-
+    
     lazy var codeSegmented:SegmentControlCustom  =  {
-
+        
         let value = DataController.shared.bookInType.bookInValue
         let codeSegmented = SegmentControlCustom(buttonTitle: value, fontSize: 25.0)
-
+        
         codeSegmented.bgColor = .clear
         codeSegmented.selectorTextColor = UIColor.orangeColor
         codeSegmented.selectorViewColor = UIColor.orangeColor
         codeSegmented.textColor = UIColor.lightGray
-
+        
         return codeSegmented
     }()
     
     func setUpTab(){
-        fullName.text = "ผู้ตรวจสภาพ \(DataController.shared.getFullName())"
-       
+        fullName.text = "\(String.localized("select_inspection_inspector_label")) \(DataController.shared.getFullName())"
         
         pickUpStackView.isUserInteractionEnabled = true
         pickUpStackView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(toPickUpCar)))
@@ -292,16 +347,23 @@ class PickUpCarViewController: UIViewController, PickUpCarDisplayLogic
         
         // Add View Controller as Child View Controller
         //self.add(asChildViewController: viewController)
-
+        
         return viewController
     }()
     private lazy var aboutCarViewController: AboutCarViewController? = {
         
-        var viewController = getViewCOntroller(identifier: "AboutCarViewController") as! AboutCarViewController
+        let viewController = getViewCOntroller(identifier: "AboutCarViewController") as! AboutCarViewController
+        
+//        var viewController: AboutCarBaseViewController
+//        if DataController.shared.bookInType == .MBIKE || DataController.shared.bookInType == .MBIKEWRECK  {
+//            viewController = getViewCOntroller(identifier: "AboutCarViewController") as! AboutCarViewController
+//        } else {
+//            viewController = getViewCOntroller(identifier: "AboutCarViewControllerNew") as! AboutCarViewControllerNew
+//        }
         
         // Add View Controller as Child View Controller
         //self.add(asChildViewController: viewController)
-
+        
         return viewController
     }()
     private lazy var externalCarViewController: ExternalCarViewController? = {
@@ -310,7 +372,7 @@ class PickUpCarViewController: UIViewController, PickUpCarDisplayLogic
         
         // Add View Controller as Child View Controller
         //self.add(asChildViewController: viewController)
-
+        
         return viewController
     }()
     private lazy var sparePartsCarViewController: SparePartsCarViewController? = {
@@ -319,7 +381,7 @@ class PickUpCarViewController: UIViewController, PickUpCarDisplayLogic
         
         // Add View Controller as Child View Controller
         //self.add(asChildViewController: viewController)
-
+        
         return viewController
     }()
     private lazy var cabinCarViewController: CabinCarViewController? = {
@@ -328,7 +390,7 @@ class PickUpCarViewController: UIViewController, PickUpCarDisplayLogic
         
         // Add View Controller as Child View Controller
         //self.add(asChildViewController: viewController)
-
+        
         return viewController
     }()
     private lazy var engineCarViewController: EngineCarViewController? = {
@@ -337,7 +399,7 @@ class PickUpCarViewController: UIViewController, PickUpCarDisplayLogic
         
         // Add View Controller as Child View Controller
         //self.add(asChildViewController: viewController)
-
+        
         return viewController
     }()
     
@@ -348,7 +410,7 @@ class PickUpCarViewController: UIViewController, PickUpCarDisplayLogic
         
         // Add View Controller as Child View Controller
         //self.add(asChildViewController: viewController)
-
+        
         return viewController
     }()
     private lazy var bookInMotorcycle2ViewController: BookInMotorcycle2ViewController? = {
@@ -357,7 +419,7 @@ class PickUpCarViewController: UIViewController, PickUpCarDisplayLogic
         
         // Add View Controller as Child View Controller
         //self.add(asChildViewController: viewController)
-
+        
         return viewController
     }()
     
@@ -365,13 +427,13 @@ class PickUpCarViewController: UIViewController, PickUpCarDisplayLogic
     func setTitleName(){
         switch DataController.shared.bookInType {
         case .CAR:
-            title = "รับมอบ - รถยนต์"
+            title = String.localized("main_inspection_title")
         case .MBIKE:
-            title = "รับมอบ - รถจักรยานยนต์"
+            title = String.localized("motorbike_pick_up_navigation_title")
         case  .CARWRECK:
-            title = "รับมอบ - ซากรถยนต์"
+            title = String.localized("car_salvage_pick_up_navigation_title")
         case  .MBIKEWRECK:
-            title = "รับมอบ - ซากรถจักรยานต์"
+            title = String.localized("motorbike_salvage_pick_up_navigation_title")
         }
     }
     
@@ -381,13 +443,12 @@ class PickUpCarViewController: UIViewController, PickUpCarDisplayLogic
         dateTimeView.isUserInteractionEnabled = true
         dateTimeView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(showDateTime)))
         
-       
+        
     }
     
     @objc func showDateTime(){
         performSegue(withIdentifier: "showDateTime", sender: nil)
     }
-    
     
     deinit {
         print("🔸🐶 deinit PickUpCarViewController ")
@@ -398,6 +459,7 @@ class PickUpCarViewController: UIViewController, PickUpCarDisplayLogic
         cabinCarViewController = nil
         engineCarViewController = nil
     }
+    
 }
 //MARK: ViewCOntroller Lift Cycle
 
@@ -421,14 +483,11 @@ extension PickUpCarViewController {
         
         validateSendIMAT()
     }
-   
+    
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-    
-        
     }
-    
     
 }
 
@@ -448,13 +507,43 @@ extension PickUpCarViewController {
     
 }
 
-
-
 extension PickUpCarViewController : CustomSegmentedControlDelegate  {
     func change(to index: Int , button : UIButton) {
-        updateUIView(from: index)
-        
-        scrollView.scrollToView(view: button, animated: true)
+//        updateUIView(from: index)
+//        scrollView.scrollToView(view: button, animated: true)
+        isClickedTopItem = true
+
+        var offsetY = 0.0
+        switch index {
+        case 0:
+            offsetY = 0
+        case 1:
+            offsetY = item1OffsetY
+        case 2:
+            switch DataController.shared.bookInType {
+            case .CAR, .CARWRECK:
+                offsetY = item2OffsetY
+            case .MBIKE, .MBIKEWRECK:
+                offsetY = item2MotorbikeOffsetY
+            }
+            
+        case 3:
+            switch DataController.shared.bookInType {
+            case .CAR, .CARWRECK:
+                offsetY = item3OffsetY
+            case .MBIKE, .MBIKEWRECK:
+                offsetY = item3MotorbikeOffsetY
+            }
+            
+        case 4:
+            offsetY = item4OffsetY
+        case 5:
+            offsetY = item5OffsetY
+        default:
+            return
+            
+        }
+        mainScrollview.setContentOffset(CGPoint(x: 0, y: offsetY), animated: true)
     }
     
     
@@ -472,16 +561,16 @@ extension PickUpCarViewController : CustomSegmentedControlDelegate  {
                 add(asChildViewController: externalCarViewController)
             case .MBIKE, .MBIKEWRECK:
                 add(asChildViewController: bookInMotorcycle1ViewController)
-
+                
             }
-           
+            
         case 3:
             switch DataController.shared.bookInType {
             case .CAR, .CARWRECK:
                 add(asChildViewController: sparePartsCarViewController)
             case .MBIKE, .MBIKEWRECK:
                 add(asChildViewController: bookInMotorcycle2ViewController)
-
+                
             }
             
         case 4:
@@ -498,39 +587,120 @@ extension PickUpCarViewController : CustomSegmentedControlDelegate  {
     
     private func add(asChildViewController viewController: UIViewController?) {
         guard let viewController = viewController else { return }
-        if let last = children.last {
-            last.willMove(toParent: nil)
-            last.view.removeFromSuperview()
-            last.removeFromParent()
-        }
-        // Add Child View Controller
+        
         addChild(viewController)
+        
+        mainScrollview.addSubview(viewController.view)
+        let spaceHeight = 0.0
+        if viewController is ReceiverCarViewController {
+            lastFrame = CGRect(x: 0, y: 0, width: mainScrollview.width, height: bookinItem0Height - spaceHeight)
+        } else if viewController is AboutCarViewController {
+            lastFrame = CGRect(x: 0, y: lastFrame.maxY, width: mainScrollview.width, height: bookinItem1Height - spaceHeight)
+        } else if viewController is ExternalCarViewController {
+            lastFrame = CGRect(x: 0, y: lastFrame.maxY, width: mainScrollview.width, height: bookinItem2Height - spaceHeight)
+        } else if viewController is BookInMotorcycle1ViewController {
+            lastFrame = CGRect(x: 0, y: lastFrame.maxY, width: mainScrollview.width, height: bookinItem2MBHeight - spaceHeight)
+        } else if viewController is SparePartsCarViewController {
+            lastFrame = CGRect(x: 0, y: lastFrame.maxY, width: mainScrollview.width, height: bookinItem3Height - spaceHeight)
+        } else if viewController is BookInMotorcycle2ViewController {
+            lastFrame = CGRect(x: 0, y: lastFrame.maxY, width: mainScrollview.width, height: bookinItem3MBHeight - spaceHeight)
+        } else if viewController is CabinCarViewController {
+            lastFrame = CGRect(x: 0, y: lastFrame.maxY, width: mainScrollview.width, height: bookinItem4Height - spaceHeight)
+        } else if viewController is EngineCarViewController {
+            lastFrame = CGRect(x: 0, y: lastFrame.maxY, width: mainScrollview.width, height: bookinItem5Height - spaceHeight)
+        }
+        mainScrollview.contentSize = CGSize(width: containerView.width, height: lastFrame.maxY)
 
-        // Add Child View as Subview
-        containerView.addSubview(viewController.view)
-
-        // Configure Child View
-        viewController.view.frame = containerView.bounds
-        viewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-
-        // Notify Child View Controller
-        viewController.didMove(toParent: self)
+        viewController.view.frame = CGRect(x: 0, y: lastFrame.minY, width: containerView.width, height: lastFrame.height)
     }
-//    private func remove(asChildViewController viewController: UIViewController) {
+    
+//    private func add(asChildViewController viewController: UIViewController?) {
+//        guard let viewController = viewController else { return }
+//        if let last = children.last {
+//            last.willMove(toPar1ent: nil)
+//            last.view.removeFromSuperview()
+//            last.removeFromParent()
+//        }
+//        // Add Child View Controller
+//        addChild(viewController)
+//        
+//        // Add Child View as Subview
+//        containerView.addSubview(viewController.view)
+//        
+//        // Configure Child View
+//        viewController.view.frame = containerView.bounds
+//        viewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+//        
 //        // Notify Child View Controller
-//        viewController.willMove(toParent: nil)
-//
-//        // Remove Child View From Superview
-//        viewController.view.removeFromSuperview()
-//
-//        // Notify Child View Controller
-//        viewController.removeFromParent()
+//        viewController.didMove(toParent: self)
 //    }
-
+    //    private func remove(asChildViewController viewController: UIViewController) {
+    //        // Notify Child View Controller
+    //        viewController.willMove(toParent: nil)
+    //
+    //        // Remove Child View From Superview
+    //        viewController.view.removeFromSuperview()
+    //
+    //        // Notify Child View Controller
+    //        viewController.removeFromParent()
+    //    }
+    
     private func getViewCOntroller(identifier : String) -> UIViewController {
         // Load Storyboard
         let storyboard = UIStoryboard(name: "PickUpCar", bundle: Bundle.main)
         // Instantiate View Controller
         return storyboard.instantiateViewController(withIdentifier: identifier)
+    }
+}
+
+extension PickUpCarViewController: UIScrollViewDelegate {
+    
+    func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
+        isClickedTopItem = false
+    }
+        
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        
+        if isClickedTopItem {
+            return
+        }
+        
+        let offsetY = scrollView.contentOffset.y
+        if offsetY < 0 {
+            return
+        }
+        
+        var index = 0
+        
+        if DataController.shared.bookInType == .MBIKE || DataController.shared.bookInType == .MBIKEWRECK {
+            
+            if offsetY >= 0 ,offsetY < item1OffsetY {
+                index = 0
+            } else if offsetY >= item1OffsetY , offsetY < item2MotorbikeOffsetY {
+                index = 1
+            } else if offsetY >= item2MotorbikeOffsetY , offsetY < item3MotorbikeOffsetY {
+                index = 2
+            } else {
+                index = 3
+            }
+            
+        } else {
+            if offsetY >= 0 ,offsetY < item1OffsetY {
+                index = 0
+            } else if offsetY >= item1OffsetY , offsetY < item2OffsetY {
+                index = 1
+            } else if offsetY >= item2OffsetY , offsetY < item3OffsetY {
+                index = 2
+            } else if offsetY >= item3OffsetY , offsetY < item4OffsetY {
+                index = 3
+            } else if offsetY >= item4OffsetY , offsetY < item5OffsetY {
+                index = 4
+            } else {
+                index = 5
+            }
+        }
+          
+        let button = self.codeSegmented.buttons[index]
+        self.codeSegmented.buttonAction(sender: button , isCombine: true)
     }
 }

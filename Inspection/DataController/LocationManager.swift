@@ -12,9 +12,9 @@ class LocationManager : NSObject {
     static let shared = LocationManager()
     
     let manager = CLLocationManager()
-    var completion: ((String?)-> Void)?
+    var completion: ((String?,CLLocation)-> Void)?
     
-    public func getLocationName(completion: @escaping ((String?)-> Void)){
+    public func getLocationName(completion: @escaping ((String?,CLLocation)-> Void)){
         self.completion = completion
         manager.requestWhenInUseAuthorization()
         manager.delegate = self
@@ -38,7 +38,7 @@ class LocationManager : NSObject {
         geocoder.reverseGeocodeLocation(location, preferredLocale: .current) {[weak self] placeMark, error in
             guard let weakself = self else { return }
             guard let place = placeMark?.first, error == nil else {
-                weakself.completion?(nil)
+                weakself.completion?(nil, location)
                 return
             }
             var name = ""
@@ -48,7 +48,7 @@ class LocationManager : NSObject {
             if let administrativeArea = place.administrativeArea {
                 name += "\(administrativeArea)"
             }
-            weakself.completion?(name)
+            weakself.completion?(name, location)
         }
     }
 }

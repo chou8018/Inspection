@@ -283,8 +283,8 @@ class PickUpCarInteractor: PickUpCarBusinessLogic, PickUpCarDataStore
         let variantsCar = model.variants
         let typeCar = model.body
         let capacityCar = model.engineCapacity
-        let yearMake = model.year
-        let yearRegister = model.registrationYear
+        let yearMake = model.year?.trimWhiteSpace
+        let yearRegister = model.registrationYear?.trimWhiteSpace
         let registration = model.registration
         let province = model.province
         let colorCar = model.colorCar
@@ -299,6 +299,11 @@ class PickUpCarInteractor: PickUpCarBusinessLogic, PickUpCarDataStore
         
         let noteRegistration = model.registrationNote ?? ""
         
+        let gasNumber = model.gasNumber
+        let roofTypeId = model.roofTypeId
+        let gasOption = model.gasOption
+        let briefConditionId = model.briefConditionOptionId
+
         print(receiverPlace)
         print(storePlace)
         
@@ -319,8 +324,20 @@ class PickUpCarInteractor: PickUpCarBusinessLogic, PickUpCarDataStore
         let validModelCar = modelCar != nil && !(modelCar?.isEmpty ?? false)
         let validVariantsCar = variantsCar != nil && !(variantsCar?.isEmpty ?? false)
         let validCapacityCar = capacityCar != nil && !(capacityCar?.isEmpty ?? false)
-        let validYearMake = yearMake != nil && !(yearMake?.isEmpty ?? false)
-        let validYearRegister = yearRegister != nil && !(yearRegister?.isEmpty ?? false)
+        var validYearMake = yearMake != nil && !(yearMake?.isEmpty ?? false)
+        if model.isInValidManuYear == true {
+            validYearMake = true
+        }
+  
+        var validYearRegister = yearRegister != nil && !(yearRegister?.isEmpty ?? false)
+        if model.isInValidRegistrationYear == true {
+            validYearRegister = true
+        }
+        
+        if briefConditionId ?? 0 == 3 {
+            validYearMake = true
+            validYearRegister = true
+        }
         let validRegistration = registration != nil && !(registration?.isEmpty ?? false)
         let validProvince = province != nil && !(province?.isEmpty ?? false)
         let validColorCar = colorCar != nil && !(colorCar?.isEmpty ?? false)
@@ -330,30 +347,58 @@ class PickUpCarInteractor: PickUpCarBusinessLogic, PickUpCarDataStore
         
         let validModelCode = modelCode != nil && !(modelCode?.isEmpty ?? false)
         
-        var message : String = ""
-        message += validSenderName ? "" : "ชื่อผู้ส่ง ไม่ถูกต้อง\n"
-        message += validContractNumber ? "" : "เลขที่สัญญา ไม่ถูกต้อง\n"
-//        message += validMobile ? "" : "หมายเลขโทรศัพท์ ไม่ถูกต้อง\n"
-        message += validSellerCode ? "" : "ชื่อบริษัท ไม่ถูกต้อง\n"
-        message += validPlant ? "" : "สถานที่ ไม่ถูกต้อง\n"
-        message += validReceiver ? "" : "สถานที่รับรถ ไม่ถูกต้อง\n"
-        message += validStore ? "" : "สถานที่เก็บรถ ไม่ถูกต้อง\n"
-        message += validSellCate ? "" : "sell. category ไม่ถูกต้อง\n"
-        message += validModelCode ? "" : "Model Code ไม่ถูกต้อง\n"
-        message += validMake ? "" : "ยี่ห้อรถยนต์ ไม่ถูกต้อง\n"
-        message += validTypeCar ? "" : "ประเภทรถยนต์ ไม่ถูกต้อง\n"
-        message += validModelCar ? "" : "รุ่นรถยนต์ ไม่ถูกต้อง\n"
-        message += validVariantsCar ? "" : "รุ่นย่อยรถยนต์ ไม่ถูกต้อง\n"
-        message += validCapacityCar ? "" : "ขนาดเครื่องยนต์ ไม่ถูกต้อง\n"
-        message += validYearMake ? "" : "ปีผลิต ไม่ถูกต้อง\n"
-        message += validYearRegister ? "" : "ปีจดทะเบียน ไม่ถูกต้อง\n"
-        message += validRegistration ? "" : "ทะเบียน ไม่ถูกต้อง\n"
-        message += validProvince ? "" : "จังหวัด ไม่ถูกต้อง\n"
-        message += validColorCar ? "" : "สี ไม่ถูกต้อง\n"
-        message += validGearBox ? "" : "เกียร์ ไม่ถูกต้อง\n"
-        message += validFuelType ? "" : "ระบบเชื้อเพลิง ไม่ถูกต้อง\n"
-        message += validNoteRegistration ? "" : "หมายเหตุป้ายทะเบียน ความยาวเกินกำหนด 100 ตัวอักษร \n"
+        var validGasOption = true
+        if DataController.shared.isCarType() {
+            validGasOption = gasOption != nil && !(gasOption?.isEmpty ?? false)
+        }
         
+        var validGasNumber = true
+        if model.isGasTank == true {
+            validGasNumber = gasNumber != nil && !(gasNumber?.isEmpty ?? false)
+        }
+        
+        var validRoofType = true
+        if DataController.shared.hasRoofType() == true {
+            validRoofType = roofTypeId != nil && (roofTypeId ?? 0 > 0)
+        }
+        
+        var validBriefCondition = true
+        if DataController.shared.isCarType() ==  true {
+            validBriefCondition = briefConditionId != nil && (briefConditionId ?? 0 > 0)
+        }
+        
+        let string_not_correct = String.localized("login_not_correct_label")
+        
+        var message : String = ""
+        message += validSenderName ? "" : "\(String.localized("car_pick_up_valid_field_sender_name_label")) \(string_not_correct)\n"
+        message += validContractNumber ? "" : "\(String.localized("receiver_car_contract_number_label")) \(string_not_correct)\n"
+//        message += validMobile ? "" : "หมายเลขโทรศัพท์ \(string_not_correct)\n"
+        message += validSellerCode ? "" : "\(String.localized("receiver_car_seller_name_placeholder_label")) \(string_not_correct)\n"
+        message += validPlant ? "" : "\(String.localized("receiver_car_plant_location_label")) \(string_not_correct)\n"
+        message += validReceiver ? "" : "\(String.localized("receiver_car_receive_location_label")) \(string_not_correct)\n"
+        message += validStore ? "" : "\(String.localized("receiver_car_storage_location_label")) \(string_not_correct)\n"
+        message += validSellCate ? "" : "sell. category \(string_not_correct)\n"
+        message += validModelCode ? "" : "Model Code \(string_not_correct)\n"
+        message += validMake ? "" : "\(String.localized("car_pick_up_valid_field_brand_label")) \(string_not_correct)\n"
+        message += validTypeCar ? "" : "\(String.localized("car_pick_up_valid_field_type_label")) \(string_not_correct)\n"
+        message += validModelCar ? "" : "\(String.localized("car_pick_up_valid_field_model_label")) \(string_not_correct)\n"
+        message += validVariantsCar ? "" : "\(String.localized("car_pick_up_valid_field_submodel_label")) \(string_not_correct)\n"
+        message += validCapacityCar ? "" : "\(String.localized("create_model_engine_capacity_label")) \(string_not_correct)\n"
+        message += validYearMake ? "" : "\(String.localized("car_detail_year_manu_label")) \(string_not_correct)\n"
+        message += validYearRegister ? "" : "\(String.localized("car_detail_year_regis_label")) \(string_not_correct)\n"
+        message += validRegistration ? "" : "\(String.localized("inspection_list_registration_number_label")) \(string_not_correct)\n"
+        message += validProvince ? "" : "\(String.localized("car_detail_province_label")) \(string_not_correct)\n"
+        message += validColorCar ? "" : "\(String.localized("car_pick_up_valid_field_color_label")) \(string_not_correct)\n"
+        message += validGearBox ? "" : "\(String.localized("create_model_gearbox_label")) \(string_not_correct)\n"
+        message += validFuelType ? "" : "\(String.localized("create_model_fuel_delivery_label")) \(string_not_correct)\n"
+        message += validNoteRegistration ? "" : "\(String.localized("car_pick_up_valid_field_remark_tips_label")) \(string_not_correct)\n"
+        
+        message += validGasOption ? "" : "\(String.localized("car_detail_gas_title_label")) \(string_not_correct)\n"
+        message += validGasNumber ? "" : "\(String.localized("car_detail_gas_number_placeholder")) \(string_not_correct)\n"
+        
+        message += validRoofType ? "" : "\(String.localized("car_exterior_roof_type_label")) \(string_not_correct)\n"
+        
+        message += validBriefCondition ? "" : "\(String.localized("car_detail_brief_condition_title_label")) \(string_not_correct)"
         
         DataController.shared.receiverCarModel.validReceiver = validReceiver
         DataController.shared.receiverCarModel.validStore = validStore
@@ -379,7 +424,11 @@ class PickUpCarInteractor: PickUpCarBusinessLogic, PickUpCarDataStore
         DataController.shared.receiverCarModel.validGearBox = validGearBox
         DataController.shared.receiverCarModel.validFuelType = validFuelType
         DataController.shared.receiverCarModel.validNoteRegistration = validNoteRegistration
-        
+        DataController.shared.receiverCarModel.validGasNumber = validGasNumber
+        DataController.shared.receiverCarModel.validRoofType = validRoofType
+        DataController.shared.receiverCarModel.validGasOption = validGasOption
+        DataController.shared.receiverCarModel.validBriefCondition = validBriefCondition
+
         NotificationCenter.default.post(name: NSNotification.Name("updateUI"), object: nil)
         
         let validateRequiteFieldError = message.isEmpty ? nil : message

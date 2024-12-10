@@ -23,7 +23,7 @@ struct GearBoxModel : Mappable {
     var gearBox1: String?
     var desc_BU: String?
     var desc_LO: String?
-    
+
     init?(map: Map) {
         
     }
@@ -32,8 +32,5 @@ struct GearBoxModel : Mappable {
         self.gearBox1 <- map["gearBox1"]
         self.desc_BU <- map["desc_BU"]
         self.desc_LO <- map["desc_LO"]
-        
     }
-    
-    
 }

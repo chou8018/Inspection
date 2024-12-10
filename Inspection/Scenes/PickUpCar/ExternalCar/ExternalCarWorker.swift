@@ -12,9 +12,32 @@
 
 import UIKit
 
+typealias externalCarHandler = (ExternalCar.Something.Response) -> ()
+
 class ExternalCarWorker
 {
-  func doSomeWork()
-  {
-  }
+    func doSomeWork()
+    {
+    }
+    
+    func fetchRoofType(completion: @escaping externalCarHandler){
+        
+        showLoading()
+        
+        let request = BaseRequest()
+        RoofTypeService().callServiceArray(request: request) { (result) in
+            
+            hideLoading()
+            
+            switch result {
+                
+            case .success(let values):
+                let response = ExternalCar.Something.Response(roofTypes: values)
+                completion(response)
+            case .failure(let error):
+                let response = ExternalCar.Something.Response(error: error.getMessage)
+                completion(response)
+            }
+        }
+    }
 }

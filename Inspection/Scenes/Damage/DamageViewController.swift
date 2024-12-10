@@ -258,6 +258,9 @@ class DamageViewController: UIViewController, DamageDisplayLogic
 
 
 extension DamageViewController : ImagePickerPresenter {
+    func pickImagesCallback(images: [UIImage]?) {
+    }
+    
 
     func didSelectCallback() {
         showLoading()

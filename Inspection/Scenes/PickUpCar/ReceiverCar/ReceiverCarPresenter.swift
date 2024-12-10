@@ -66,14 +66,14 @@ class ReceiverCarPresenter: ReceiverCarPresentationLogic
       
         let viewModel = ReceiverCar.Something.ViewModel(
             validPhoneNumber10Digit: response.validPhoneNumber10Digit,
-            errorValidatePhoneNumber: "เบอร์โทรศัพท์ไม่ถูกต้อง")
+            errorValidatePhoneNumber: String.localized("receiver_car_phone_number_is_incorrect_label"))
         
         viewController?.displayMessageErrorValidatePhoneNummber(viewModel: viewModel)
     }
     
     func errorNotMatchCompany(response: ReceiverCar.Something.Response) {
         guard let match = response.isMatchCompany else { return }
-        let errorMessage = match ? "" : "ชื่อบริษัทไม่มีในรายการ"
+        let errorMessage = match ? "" : String.localized("receiver_car_company_no_list_label")
         let viewModel = ReceiverCar.Something.ViewModel(isMatchCompany: match,
                                                         errorNotMatchCompanyName: errorMessage)
         viewController?.displayMessageErrorNotMatchCompany(viewModel: viewModel)

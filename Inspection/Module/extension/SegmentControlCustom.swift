@@ -14,7 +14,7 @@ protocol CustomSegmentedControlDelegate:AnyObject {
 
 class SegmentControlCustom: UIView {
     private var buttonTitles:[String]!
-    private var buttons: [UIButton]!
+    var buttons: [UIButton]!
     private var labels: [UILabel]!
     private var selectorView: UIView!
     
@@ -62,13 +62,15 @@ class SegmentControlCustom: UIView {
         }
     }
     
-    @objc func buttonAction(sender:UIButton) {
+    @objc func buttonAction(sender:UIButton , isCombine:Bool = false) {
         for (buttonIndex, btn) in buttons.enumerated() {
             btn.setTitleColor(textColor, for: .normal)
             if btn == sender {
                 let selectorPosition = frame.width/CGFloat(buttonTitles.count) * CGFloat(buttonIndex)
                 if selectedIndex != buttonIndex {
-                    delegate?.change(to: buttonIndex, button: btn)
+                    if !isCombine {
+                        delegate?.change(to: buttonIndex, button: btn)
+                    }
                     selectedIndex = buttonIndex
                 }
                 UIView.animate(withDuration: 0.3) {
@@ -78,6 +80,7 @@ class SegmentControlCustom: UIView {
             }
         }
     }
+
 }
 
 //Configuration View
@@ -143,12 +146,12 @@ extension SegmentControlCustom {
                                                      attributes: [NSAttributedString.Key.font : UIFont.systemFont(ofSize: self.fontSize)])
             
             button.setAttributedTitle(attributeString, for: .normal)
-            button.addTarget(self, action:#selector(SegmentControlCustom.buttonAction(sender:)), for: .touchDown)
+            button.addTarget(self, action:#selector(SegmentControlCustom.buttonAction(sender: isCombine:)), for: .touchDown)
             button.setTitleColor(textColor, for: .normal)
+            var tag = 100
+            button.tag = tag
             buttons.append(button)
-            
-            
-            
+            tag += 1
         }
 //        buttons[0].setTitleColor(selectorTextColor, for: .normal)
         

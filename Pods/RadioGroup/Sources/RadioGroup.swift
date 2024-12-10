@@ -179,6 +179,7 @@ class RadioGroupItem: UIView {
     let titleLabel = UILabel()
     let radioButton = RadioButton()
     let stackView = UIStackView()
+    let tipButton = UIButton()
 
     unowned var group: RadioGroup
 
@@ -199,8 +200,23 @@ class RadioGroupItem: UIView {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    func addTipButton() {
+//        tipButton.setTitle("?", for: .normal)
+        tipButton.setImage(UIImage(named: "icons-help"), for: .normal)
+        tipButton.setTitleColor(.black, for: .normal)
+        tipButton.isHidden = true
+        tipButton.addTarget(self, action: #selector(tipButtondSelect), for: .touchUpInside)
+    }
+    
+    @objc func tipButtondSelect() {
+        NotificationCenter.default.post(name: NSNotification.Name("tipButtondSelect"), object: tipButton , userInfo: ["text": titleLabel.text ?? ""])
+    }
 
     private func setup() {
+        
+        addTipButton()
+        
         titleLabel.numberOfLines = 0
         titleLabel.lineBreakMode = .byWordWrapping
         if let titleFont = group.titleFont {
@@ -213,7 +229,18 @@ class RadioGroupItem: UIView {
         wrapper.addConstrainedSubview(titleLabel, constrain: .top, .bottom, .left, .right)
 
         addConstrainedSubview(stackView, constrain: .left, .right, .top, .bottom)
-        stackView.addArrangedSubviews([radioButton, wrapper])
+        stackView.addArrangedSubviews([radioButton, wrapper, tipButton])
+        if titleLabel.text == "Book-in-BEV" {
+            titleLabel.text = "BEV"
+            tipButton.isHidden = false
+            stackView.setCustomSpacing(0, after: wrapper)
+        } else if titleLabel.text == "Book-in-PHEV" {
+            titleLabel.text = "PHEV"
+            tipButton.isHidden = false
+            stackView.setCustomSpacing(0, after: wrapper)
+        } else {
+            tipButton.isHidden = true
+        }
         stackView.alignment = .center
         setContentCompressionResistancePriority(.required, for: .vertical)
 

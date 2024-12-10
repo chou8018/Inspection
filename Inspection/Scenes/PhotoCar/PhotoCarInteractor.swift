@@ -32,6 +32,11 @@ protocol PhotoCarBusinessLogic
     func validateActionSendToInspectionIMAT(request: PhotoCar.Something.Request)
     
     func showImageViewer(request: PhotoCar.Something.Request)
+    func showImageBySection()
+    
+    // add on 11/03/2024
+    func fetchPhotoDetail(request: PhotoCar.Something.Request)
+
 }
 
 protocol PhotoCarDataStore
@@ -57,7 +62,7 @@ class PhotoCarInteractor: PhotoCarBusinessLogic, PhotoCarDataStore
     var hasSection:[(String,Int)] = []
     var hasCheckSection:[String:Bool] = [:]
     let sn = ["Front_B", "Engine_B", "Plate_B", "Chassis_B", "Interior_B",
-              "Tray_B", "Side_B", "Back_B", "Gas_B", "Asset", "Damage"]
+              "Tray_B", "Side_B", "Back_B", "Gas_B", "Asset", "Damage", "Roof_B", "Dashboard_B", "Catalytic_B"]
     
     func getSectionNumbe(_ name:String) -> Int {
         return sn.firstIndex(of: name) ?? 0
@@ -100,16 +105,16 @@ class PhotoCarInteractor: PhotoCarBusinessLogic, PhotoCarDataStore
     
     
     func addPhoto(request: PhotoCar.Something.Request) {
-        DispatchQueue.global().async { [weak self] in
+        DispatchQueue.global().sync { [weak self] in
             guard let weakself = self else { return }
             guard  let image = request.image else { return }
             var imageResized = image
             if var size = imageResized.getFileSize() {
                 print("🔸 filesize \(size), \(type(of: size))")
-                let maxSize = 2 * (1000 * 1000)
+                let maxSize = 3 * (1024 * 1024)
                 while size > maxSize {
 
-                    imageResized = imageResized.resized(withPercentage: 0.5)!
+                    imageResized = imageResized.resized(withPercentage: 0.65)!
                     size = imageResized.getFileSize()!
 
                     print("🔻 resize \(size), \(type(of: size))")
@@ -117,10 +122,12 @@ class PhotoCarInteractor: PhotoCarBusinessLogic, PhotoCarDataStore
                 let sectionName = weakself.sectionName
 
                 //result
+                #if DEBUG
                 print("✅ sectionName = \(sectionName) ✅ ")
                 print("✅ fileName =  \(request.url?.lastPathComponent ?? "-") ✅ ")
-                print("✅ image size =  \(size), \(type(of: size)) ✅ ")
+//                print("✅ image size =  \(size), \(type(of: size)) ✅ ")
                 print("✅ image =  \(imageResized) ✅ ")
+                 #endif
                 
                 weakself.hasSection.append((sectionName, weakself.getSectionNumbe(sectionName)))
             
@@ -141,11 +148,16 @@ class PhotoCarInteractor: PhotoCarBusinessLogic, PhotoCarDataStore
                 DataController.shared.photoCarModel.itemList = weakself.itemList
                 DataController.shared.photoCarModel.hasSection = weakself.hasSection
                 
-                let response = PhotoCar.Something.Response(imageList: weakself.itemList[sectionName])
-                weakself.presenter?.presentImageBySection(response: response)
+//                let response = PhotoCar.Something.Response(imageList: weakself.itemList[sectionName])
+//                weakself.presenter?.presentImageBySection(response: response)
             }
         }
       
+    }
+    
+    func showImageBySection() {
+        let response = PhotoCar.Something.Response(imageList: self.itemList[sectionName])
+        self.presenter?.presentImageBySection(response: response)
     }
     
     func ignoredSection(request: PhotoCar.Something.Request) {
@@ -180,12 +192,6 @@ class PhotoCarInteractor: PhotoCarBusinessLogic, PhotoCarDataStore
                         let response = PhotoCar.Something.Response(updateSection: getSectionNumbe(sectionName), isSkip: isSkip)
                         presenter?.presentUpdateRequireSection(response: response)
                     }
-                    
-                    
-                    
-                    
-                    
-                    
                     
                 }
             }
@@ -306,7 +312,7 @@ class PhotoCarInteractor: PhotoCarBusinessLogic, PhotoCarDataStore
             dic[sectionName] = sectionPosition
         }
         
-        if dic.count >= 11 {
+        if dic.count >= sn.count {
             /// check new image
             isPhoto = itemList.filter({ $0.value.filter({ $0.image != nil }).count > 0 })
                 .reduce(0) { $0 + $1.value.count } > 0
@@ -356,6 +362,7 @@ class PhotoCarInteractor: PhotoCarBusinessLogic, PhotoCarDataStore
                             spitName = String(name.split(separator: ".")[0])
                             section = "Asset"
                         }
+                        
                         if !section.isEmpty {
                             weakself.hasSection.append((section, weakself.getSectionNumbe(section)))
                            
@@ -365,7 +372,7 @@ class PhotoCarInteractor: PhotoCarBusinessLogic, PhotoCarDataStore
                                              url: nil,
                                              name: spitName,
                                              base64String: model.imageData,
-                                             idPhoto: 1,
+                                             idPhoto: model.damageId,
                                              damageDesc: model.damageDesc,
                                              damageSize: model.damageSize,
                                              damageType: model.damageType)
@@ -382,6 +389,19 @@ class PhotoCarInteractor: PhotoCarBusinessLogic, PhotoCarDataStore
                 
                 weakself.presenter?.presentImageBySection(response: response)
             }
+            
+        })
+    }
+    
+    func fetchPhotoDetail(request: PhotoCar.Something.Request) {
+        guard let bookInNumber = DataController.shared.receiverCarModel.bookinNo else { return }
+        guard let photoId = request.idphoto else { return }
+        
+        worker = PhotoCarWorker()
+        worker?.fetchInspectionImageDetail(from: bookInNumber, imageId: photoId, completion: {[weak self] (response) in
+            guard let weakself = self else { return }
+
+            weakself.presenter?.presentDetailImage(response: response)
             
         })
     }
@@ -488,7 +508,7 @@ class PhotoCarInteractor: PhotoCarBusinessLogic, PhotoCarDataStore
             imageViewer = imageViewerModel.base64String?.base64StringToImage()
         }
  
-        let response = PhotoCar.Something.Response()
+        let response = PhotoCar.Something.Response(image:imageViewer)
         presenter?.presentDisplayImageView(response: response)
     }
     

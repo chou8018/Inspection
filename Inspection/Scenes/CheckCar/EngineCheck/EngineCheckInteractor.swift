@@ -14,7 +14,9 @@ import UIKit
 
 protocol EngineCheckBusinessLogic
 {
-  func doSomething(request: EngineCheck.Something.Request)
+    func doSomething(request: EngineCheck.Something.Request)
+    // add on 12/22/2023
+    func getCatalyticOptions(request: EngineCheck.Something.Request)
 }
 
 protocol EngineCheckDataStore
@@ -24,10 +26,13 @@ protocol EngineCheckDataStore
 
 class EngineCheckInteractor: EngineCheckBusinessLogic, EngineCheckDataStore
 {
+    
   var presenter: EngineCheckPresentationLogic?
   var worker: EngineCheckWorker?
   //var name: String = ""
   
+  var catalyticOptions: [CatalyticOptionModel]?
+
   // MARK: Do something
   
   func doSomething(request: EngineCheck.Something.Request)
@@ -38,4 +43,17 @@ class EngineCheckInteractor: EngineCheckBusinessLogic, EngineCheckDataStore
     let response = EngineCheck.Something.Response()
     presenter?.presentSomething(response: response)
   }
+    
+    //MARK: Get roofType
+    func getCatalyticOptions(request: EngineCheck.Something.Request) {
+        worker = EngineCheckWorker()
+        worker?.fetchCatalyticOptions(completion: { [weak self] (response) in
+            self?.presenter?.presentCatalyticOptions(response: response)
+            
+            if let values = response.catalyticOptions {
+                self?.catalyticOptions = values
+            }
+            
+        })
+    }
 }

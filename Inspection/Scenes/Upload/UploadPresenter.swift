@@ -59,7 +59,7 @@ class UploadPresenter: UploadPresentationLogic
             let viewModel = Upload.Something.ViewModel(errorMessage : error.message)
             viewController?.displayErrorUpdateStatus(viewModel: viewModel)
         }else{
-            let viewModel = Upload.Something.ViewModel(uploadSuccessMessage : "อัพโหลดสำเร็จ")
+            let viewModel = Upload.Something.ViewModel(uploadSuccessMessage : String.localized("car_upload_successful_label"))
             viewController?.displayUploadSuccess(viewModel: viewModel)
         }
         

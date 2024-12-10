@@ -14,75 +14,78 @@ import UIKit
 
 protocol ElectronicDeviceCheckDisplayLogic: AnyObject
 {
-  func displaySomething(viewModel: ElectronicDeviceCheck.Something.ViewModel)
+    func displaySomething(viewModel: ElectronicDeviceCheck.Something.ViewModel)
+    // add on 12/22/2023
+    func displayWindowOption(viewModel: ElectronicDeviceCheck.Something.ViewModel)
+    func displayWindowOptionError(viewModel: ElectronicDeviceCheck.Something.ViewModel)
 }
 
-class ElectronicDeviceCheckViewController: UIViewController, ElectronicDeviceCheckDisplayLogic
+class ElectronicDeviceCheckViewController: ViewController, ElectronicDeviceCheckDisplayLogic
 {
-  var interactor: ElectronicDeviceCheckBusinessLogic?
-  var router: (NSObjectProtocol & ElectronicDeviceCheckRoutingLogic & ElectronicDeviceCheckDataPassing)?
-
-  // MARK: Object lifecycle
-  
-  override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
-  {
-    super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-    setup()
-  }
-  
-  required init?(coder aDecoder: NSCoder)
-  {
-    super.init(coder: aDecoder)
-    setup()
-  }
-  
-  // MARK: Setup
-  
-  private func setup()
-  {
-    let viewController = self
-    let interactor = ElectronicDeviceCheckInteractor()
-    let presenter = ElectronicDeviceCheckPresenter()
-    let router = ElectronicDeviceCheckRouter()
-    viewController.interactor = interactor
-    viewController.router = router
-    interactor.presenter = presenter
-    presenter.viewController = viewController
-    router.viewController = viewController
-    router.dataStore = interactor
-  }
-  
-  // MARK: Routing
-  
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-  {
-    if let scene = segue.identifier {
-      let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
-      if let router = router, router.responds(to: selector) {
-        router.perform(selector, with: segue)
-      }
+    var interactor: ElectronicDeviceCheckBusinessLogic?
+    var router: (NSObjectProtocol & ElectronicDeviceCheckRoutingLogic & ElectronicDeviceCheckDataPassing)?
+    
+    // MARK: Object lifecycle
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
+    {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        setup()
     }
-  }
-  
-  // MARK: View lifecycle
-  
-  override func viewDidLoad()
-  {
-    super.viewDidLoad()
-    setUIView()
-    setCheckBox()
-    doSomething()
-  }
-  
-  // MARK: Do something
-  
-  //@IBOutlet weak var nameTextField: UITextField!
+    
+    required init?(coder aDecoder: NSCoder)
+    {
+        super.init(coder: aDecoder)
+        setup()
+    }
+    
+    // MARK: Setup
+    
+    private func setup()
+    {
+        let viewController = self
+        let interactor = ElectronicDeviceCheckInteractor()
+        let presenter = ElectronicDeviceCheckPresenter()
+        let router = ElectronicDeviceCheckRouter()
+        viewController.interactor = interactor
+        viewController.router = router
+        interactor.presenter = presenter
+        presenter.viewController = viewController
+        router.viewController = viewController
+        router.dataStore = interactor
+    }
+    
+    // MARK: Routing
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if let scene = segue.identifier {
+            let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
+            if let router = router, router.responds(to: selector) {
+                router.perform(selector, with: segue)
+            }
+        }
+    }
+    
+    // MARK: View lifecycle
+    
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
+        setUIView()
+        setCheckBox()
+        doSomething()
+    }
+    
+    // MARK: Do something
+    
+    //@IBOutlet weak var nameTextField: UITextField!
     
     @IBOutlet weak var scrollView: UIScrollView!
     
     @IBOutlet weak var summaryElectronicDeviceTextField: MultilineTextField!
     @IBOutlet weak var noteTextField: CustomTextField!
-  
+    
     @IBOutlet weak var frontLightCheckBox: CheckBoxUIButton!
     @IBOutlet weak var turnLightCheckBox: CheckBoxUIButton!
     @IBOutlet weak var backLightCheckBox: CheckBoxUIButton!
@@ -91,24 +94,177 @@ class ElectronicDeviceCheckViewController: UIViewController, ElectronicDeviceChe
     @IBOutlet weak var hooterCheckBox: CheckBoxUIButton!
     @IBOutlet weak var roundGaugeCheckBox: CheckBoxUIButton!
     
-
     @IBOutlet weak var navigatorCheckBox: CheckBoxUIButton!
     @IBOutlet weak var navigatorOnCarCheckBox: CheckBoxUIButton!
     @IBOutlet weak var cdCheckBox: CheckBoxUIButton!
     @IBOutlet weak var noSdCardCheckBox: CheckBoxUIButton!
     @IBOutlet weak var noCdCheckBox: CheckBoxUIButton!
     @IBOutlet weak var sdCardCheckBox: CheckBoxUIButton!
-  
-  func doSomething()
-  {
-    let request = ElectronicDeviceCheck.Something.Request()
-    interactor?.doSomething(request: request)
-  }
-  
-  func displaySomething(viewModel: ElectronicDeviceCheck.Something.ViewModel)
-  {
-    //nameTextField.text = viewModel.name
-  }
+    
+    // local strings
+
+    @IBOutlet weak var headLightLabel: UILabel!
+    @IBOutlet weak var turnLightLabel: UILabel!
+    @IBOutlet weak var tailLightLabel: UILabel!
+    @IBOutlet weak var brakeLabel: UILabel!
+    @IBOutlet weak var batteryLabel: UILabel!
+    @IBOutlet weak var hornLabel: UILabel!
+    @IBOutlet weak var dashboardLabel: UILabel!
+    @IBOutlet weak var navigatorLabel: UILabel!
+    @IBOutlet weak var navigatorInLabel: UILabel!
+    @IBOutlet weak var otherRemarksLabel: UILabel!
+    @IBOutlet weak var summaryLabel: UILabel!
+    @IBOutlet weak var sideMirror1Label: UILabel!
+    @IBOutlet weak var sideMirror2Label: UILabel!
+    @IBOutlet weak var sideMirror3Label: UILabel!
+    @IBOutlet weak var sideMirror4Label: UILabel!
+    @IBOutlet weak var sideMirror1CheckBox: CheckBoxUIButton!
+    @IBOutlet weak var sideMirror2CheckBox: CheckBoxUIButton!
+    @IBOutlet weak var sideMirror3CheckBox: CheckBoxUIButton!
+    @IBOutlet weak var sideMirror4CheckBox: CheckBoxUIButton!
+    @IBOutlet weak var window1DropDown: DropDown!
+    @IBOutlet weak var window2DropDown: DropDown!
+    @IBOutlet weak var window3DropDown: DropDown!
+    @IBOutlet weak var window4DropDown: DropDown!
+    
+    var isGetWindowOption = false
+    var windowOptionsFront: [String]?
+    var windowOptionsBack: [String]?
+
+    var localWindowticOptionsFront: [String] = [
+        String.localized("motorbike_inspection_engine_working_label"),
+        String.localized("motorbike_inspection_engine_not_working_label"),
+        String.localized("motorbike_inspection_engine_unverified_label"),
+    ]
+    
+    var localWindowticOptionsBack: [String] = [
+        String.localized("motorbike_inspection_engine_working_label"),
+        String.localized("motorbike_inspection_engine_not_working_label"),
+        String.localized("motorbike_inspection_engine_unverified_label"),
+        String.localized("motorbike_inspection_engine_non_exist_label"),
+    ]
+
+    override func initLocalString() {
+        super.initLocalString()
+    
+        headLightLabel.text = String.localized("inspection_electrical_head_light_label")
+        turnLightLabel.text = String.localized("inspection_electrical_turn_light_label")
+        tailLightLabel.text = String.localized("inspection_electrical_tail_light_label")
+        brakeLabel.text = String.localized("inspection_electrical_brake_light_label")
+        batteryLabel.text = String.localized("inspection_electrical_battery_label")
+        hornLabel.text = String.localized("inspection_electrical_horn_label")
+        dashboardLabel.text = String.localized("inspection_electrical_dashboard_label")
+        navigatorLabel.text = String.localized("car_interior_navigator_label")
+        navigatorInLabel.text = String.localized("car_interior_navigator_in_label")
+        otherRemarksLabel.text = String.localized("inspection_electrical_other_remarks_label")
+        noteTextField.placeholder = otherRemarksLabel.text
+        summaryLabel.text = String.localized("inspection_electrical_summary_label")
+        summaryElectronicDeviceTextField.placeholder = summaryLabel.text
+        noCdCheckBox.setTitle(String.localized("car_interior_no_cd_label"), for: .normal)
+        noSdCardCheckBox.setTitle(String.localized("car_interior_no_cd_card_label"), for: .normal)
+        
+        sideMirror1Label.text = String.localized("inspection_electrical_side_mirror1_label")
+        sideMirror2Label.text = String.localized("inspection_electrical_side_mirror2_label")
+        sideMirror3Label.text = String.localized("inspection_electrical_side_mirror3_label")
+        sideMirror4Label.text = String.localized("inspection_electrical_side_mirror4_label")
+        window1DropDown.placeholder = sideMirror1Label.text
+        window2DropDown.placeholder = sideMirror2Label.text
+        window3DropDown.placeholder = sideMirror3Label.text
+        window4DropDown.placeholder = sideMirror4Label.text
+        
+    }
+    
+    private func setupWindowData(arrayFront: [String] , arrayBack: [String]) {
+        
+        window1DropDown.optionArray = arrayFront
+        if let sideMirror1 = DataController.shared.inspectionCarModel.sideMirror1, sideMirror1 > 0 {
+            window1DropDown.selectedIndex = sideMirror1 - 1
+            window1DropDown.text = window1DropDown.optionArray[sideMirror1 - 1]
+        }
+        
+        window1DropDown.didSelect { [weak self] (selected, index, _) in
+            self?.window1DropDown.text = selected
+            DataController.shared.inspectionCarModel.sideMirror1 = index + 1
+        }
+        
+        window2DropDown.optionArray = arrayFront
+        if let sideMirror2 = DataController.shared.inspectionCarModel.sideMirror2, sideMirror2 > 0 {
+            window2DropDown.selectedIndex = sideMirror2 - 1
+            window2DropDown.text = window2DropDown.optionArray[sideMirror2 - 1]
+        }
+        window2DropDown.didSelect { [weak self] (selected, index, _) in
+            self?.window2DropDown.text = selected
+            DataController.shared.inspectionCarModel.sideMirror2 = index + 1
+        }
+        
+        window3DropDown.optionArray = arrayBack
+        if let sideMirror3 = DataController.shared.inspectionCarModel.sideMirror3, sideMirror3 > 0 {
+            window3DropDown.selectedIndex = sideMirror3 - 1
+            window3DropDown.text = window3DropDown.optionArray[sideMirror3 - 1]
+        }
+        window3DropDown.didSelect { [weak self] (selected, index, _) in
+            self?.window3DropDown.text = selected
+            DataController.shared.inspectionCarModel.sideMirror3 = index + 1
+        }
+        
+        window4DropDown.optionArray = arrayBack
+        if let sideMirror4 = DataController.shared.inspectionCarModel.sideMirror4, sideMirror4 > 0 {
+            window4DropDown.selectedIndex = sideMirror4 - 1
+            window4DropDown.text = window4DropDown.optionArray[sideMirror4 - 1]
+        }
+        window4DropDown.didSelect { [weak self] (selected, index, _) in
+            self?.window4DropDown.text = selected
+            DataController.shared.inspectionCarModel.sideMirror4 = index + 1
+        }
+        
+    }
+    
+    func loadRetryApi() {
+         if !isGetWindowOption {
+             getWindowOptions()
+        }
+    }
+    
+    //MARK: windowOption
+    func getWindowOptions(){
+        let request = ElectronicDeviceCheck.Something.Request()
+        interactor?.getWindowOptions(request: request)
+    }
+    func displayWindowOptionError(viewModel: ElectronicDeviceCheck.Something.ViewModel) {
+        guard let errorMessage = viewModel.errorMessage else { return }
+        alertErrorMessage(message: errorMessage) { [weak self] in
+            self?.loadRetryApi()
+        }
+    }
+    func displayWindowOption(viewModel: ElectronicDeviceCheck.Something.ViewModel) {
+        
+        guard var values = viewModel.windowOptions , values.count > 0 else { return }
+        windowOptionsBack = values
+        
+        var arrayFront: [String] = []
+        for i in 0..<values.count {
+            if i == values.count - 1 {
+                continue
+            }
+            let value = values[i]
+            arrayFront.append(value)
+        }
+        windowOptionsFront = arrayFront
+        isGetWindowOption = true
+        
+        setupWindowData(arrayFront: arrayFront, arrayBack: values)
+    }
+    
+    func doSomething()
+    {
+        let request = ElectronicDeviceCheck.Something.Request()
+        interactor?.doSomething(request: request)
+    }
+    
+    func displaySomething(viewModel: ElectronicDeviceCheck.Something.ViewModel)
+    {
+        //nameTextField.text = viewModel.name
+    }
     
     //MARK: UIView
     func setUIView(){
@@ -119,6 +275,8 @@ class ElectronicDeviceCheckViewController: UIViewController, ElectronicDeviceChe
         noteTextField.delegate = self
         
         addTarget(from: noteTextField)
+        
+//        setupWindowData(arrayFront: localWindowticOptionsFront, arrayBack: localWindowticOptionsBack)
     }
     
     fileprivate func addTarget(from textfield: UITextField ){
@@ -214,7 +372,31 @@ class ElectronicDeviceCheckViewController: UIViewController, ElectronicDeviceChe
             weakself.navigationCheck(checkBox: weakself.noCdCheckBox , check: check)
         }
     }
-   
+    
+    @IBAction func mirror1Tapped(_ sender: Any) {
+        sideMirror1CheckBox.toggle { check in
+            DataController.shared.inspectionCarModel.isSideMirror1 = check
+        }
+    }
+    
+    @IBAction func mirror2Tapped(_ sender: Any) {
+        sideMirror2CheckBox.toggle { check in
+            DataController.shared.inspectionCarModel.isSideMirror2 = check
+        }
+    }
+    
+    @IBAction func mirror3Tapped(_ sender: Any) {
+        sideMirror3CheckBox.toggle { check in
+            DataController.shared.inspectionCarModel.isSideMirror3 = check
+        }
+    }
+    
+    @IBAction func mirror4Tapped(_ sender: Any) {
+        sideMirror4CheckBox.toggle { check in
+            DataController.shared.inspectionCarModel.isSideMirror4 = check
+        }
+    }
+    
     func uncheckNavigator(){
         guard !cdCheckBox.check,
               !sdCardCheckBox.check,
@@ -375,6 +557,12 @@ class ElectronicDeviceCheckViewController: UIViewController, ElectronicDeviceChe
         noCdCheckBox.check = model.isNoCd
         summaryElectronicDeviceTextField.text = model.summaryElectronicDevice
         noteTextField.text = model.note
+        
+//        sideMirror1CheckBox.check = model.isSideMirror1
+//        sideMirror2CheckBox.check = model.isSideMirror2
+//        sideMirror3CheckBox.check = model.isSideMirror3
+//        sideMirror4CheckBox.check = model.isSideMirror4
+
     }
 }
 
@@ -387,7 +575,7 @@ extension ElectronicDeviceCheckViewController : UITextViewDelegate {
         DataController.shared.inspectionCarModel.summaryElectronicDevice = textView.text
     }
 }
- 
+
 
 extension  ElectronicDeviceCheckViewController : UITextFieldDelegate {
     @objc func textFieldDidChange(_ textField: UITextField) {
@@ -409,13 +597,12 @@ extension  ElectronicDeviceCheckViewController : UITextFieldDelegate {
 }
 
 extension ElectronicDeviceCheckViewController {
-   
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         scrollView.registKeyboardNotification()
-        
-        
+        loadRetryApi()
         prepareData()
     }
     

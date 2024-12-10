@@ -84,6 +84,7 @@ class CabinCarPresenter: CabinCarPresentationLogic
         }else{
             guard let gearBoxList = response.gearBoxList else { return }
             let gearBoxList_bu = gearBoxList.compactMap({ $0.desc_BU })
+
             let viewModel = CabinCar.Something.ViewModel(gearBoxList_bu: gearBoxList_bu)
             viewController?.displayGearBoxList(viewModel: viewModel)
         }

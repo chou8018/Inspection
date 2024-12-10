@@ -24,11 +24,11 @@ enum SearchBy
         var model : (Int, String, String) {
             switch self {
             case .REGISTRATION_CAR:
-                return (0, "ทะเบียนรถ", "registration")
+                return (0, String.localized("inspection_list_car_registration_label"), "registration")
             case .VIN:
                 return (1, "VIN", "vin")
             case .ENGINE_NUMBER:
-                return (2, "หมายเลขเครื่องยนต์", "engineno")
+                return (2, String.localized("car_detail_engine_number_label"), "engineno")
 
             }
         }

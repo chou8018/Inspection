@@ -126,26 +126,42 @@ class ReceiverCarModel {
     var engineCapacityUnit : String?
     var year : String? { didSet { setEdit(oldValue, value: &isEditVehicle) }}
     var registrationYear : String? { didSet { setEdit(oldValue, value: &isEditVehicle) }}
+    
     var registration: String? { didSet { setEdit(oldValue, value: &isEditVehicle) }}
     var province : String? { didSet { setEdit(oldValue, value: &isEditVehicle) }}
     var colorCar : String? { didSet { setEdit(oldValue, value: &isEditVehicle) }}
     var engineNumber : String? { didSet { setEdit(oldValue, value: &isEditVehicle) }}
     var vinNumber : String? { didSet { setEdit(oldValue, value: &isEditVehicle) }}
     var gasNumber : String? { didSet { setEdit(oldValue, value: &isEditVehicle) }}
+    // add-on 02/02/2024
+    var isInValidRegistrationYear : Bool? { didSet { setEdit(oldValue, value: &isEditVehicle) }}
+    var isInValidManuYear : Bool? { didSet { setEdit(oldValue, value: &isEditVehicle) }}
     
     var isInValidEngineNumber : Bool? { didSet { setEdit(oldValue, value: &isEditVehicle) }}
     var isInValidVinNumber : Bool? { didSet { setEdit(oldValue, value: &isEditVehicle) }}
     var isInValidGasNumber : Bool? { didSet { setEdit(oldValue, value: &isEditVehicle) }}
     var isRegistrationMismatch : Bool? { didSet { setEdit(oldValue, value: &isEditVehicle) }}
     
+    // add-on 26/10/2023
+    var isRegistrationAuction : Bool? { didSet { setEdit(oldValue, value: &isEditVehicle) }}
+    
+    // add-on 05/02/2024
+    var briefConditionOptionId : Int? { didSet { setEdit(oldValue, value: &isEditVehicle) }}
+    var briefNote : String? { didSet { setEdit(oldValue, value: &isEditVehicle) }}
+
     var reasonInValidEngineNumber : String? { didSet { setEdit(oldValue, value: &isEditVehicle) }}
     var reasonInValidVinNumber : String? { didSet { setEdit(oldValue, value: &isEditVehicle) }}
     var reasonInValidGasNumber : String? { didSet { setEdit(oldValue, value: &isEditVehicle) }}
+    var gasOption : String? { didSet { setEdit(oldValue, value: &isEditVehicle) }}
+    var gasOptionId : Int? { didSet { setEdit(oldValue, value: &isEditVehicle) }}
+
     var registrationNote : String? { didSet { setEdit(oldValue, value: &isEditVehicle) }}
     var registrationPlate : String? { didSet { setEdit(oldValue, value: &isEditVehicle) }}
     
     var gearbox:String? { didSet { setEdit(oldValue, value: &isEditVehicle) }}//require
     var gear:String? { didSet { setEdit(oldValue, value: &isEditVehicle) }}
+    var gearboxListPart:[String] = [String]() { didSet { setEdit(oldValue, value: &isEditVehicle) }}
+    var gearboxListAll:[String] = [String]() { didSet { setEdit(oldValue, value: &isEditVehicle) }}
     var fuelType:String?  { didSet { setEdit(oldValue, value: &isEditVehicle) }}//require
     var fuelDelivery:String?  { didSet { setEdit(oldValue, value: &isEditVehicle) }}
     var fuelDeliveryName:String? { didSet { setEdit(oldValue, value: &isEditVehicle) }}
@@ -166,7 +182,9 @@ class ReceiverCarModel {
     var tireQuality : String?  { didSet { setEdit(oldValue, value: &isEditExternal) }}
     var brandTire : String? { didSet { setEdit(oldValue, value: &isEditExternal) }}
     var damageDetail : String? { didSet { setEdit(oldValue, value: &isEditExternal) }}
-    
+    var roofType: String? { didSet { setEdit(oldValue, value: &isEditExternal) }}
+    var roofTypeId: Int? { didSet { setEdit(oldValue, value: &isEditExternal) }}
+
     //MARK: Cabin
     var cabinOverAllId : Int? { didSet { setEdit(oldValue, value: &isEditCabin) }}
     var mileageTypeId : Int? { didSet { isEditCabin = (mileageTypeId==1) ? false : (oldValue != nil) }}
@@ -244,7 +262,7 @@ class ReceiverCarModel {
     var isGas : Bool? { didSet { setEdit(oldValue, value: &isEditEngine) }}
     var gasSystem: String?
     var assetInCar: String? { didSet { setEdit(oldValue, value: &isEditEngine) }}
-    
+    var fuelSystemTitles: [String]? { didSet { setEdit(oldValue, value: &isEditEngine) }}
     
     
     //MARK: MotorCycle
@@ -333,9 +351,15 @@ class ReceiverCarModel {
     
     var validNoteRegistration:Bool?
     
+    var validGasNumber:Bool?
+    var validRoofType:Bool?
+    var validGasOption:Bool?
+    var validBriefCondition:Bool?
+
     var description : [String : Any] {
         return [:]
     }
+    
 }
 
 
@@ -355,7 +379,7 @@ extension ReceiverCarModel {
         guard let item = mapKeys, item.count > 0 else { return "" }
         return item.reduce("", { (result, item) -> String in
             if let value = item.value as? String , value.toInt() > 0{
-                return result + "  • \(item.key) \(item.value) ดอก"
+                return result + "  • \(item.key) \(item.value) \(String.localized("motorbike_pdf_flower_label"))"
             }else{
                 return result
             }

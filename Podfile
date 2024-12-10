@@ -14,7 +14,8 @@ target 'Inspection' do
   #pod 'Firebase/Analytics'
   #pod 'Firebase/Messaging'
   #pod 'SDWebImageWebPCoder'
-  
+  pod 'ZLPhotoBrowser'
+
   target 'InspectionTests' do
     inherit! :search_paths
     # Pods for testing

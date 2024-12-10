@@ -14,11 +14,11 @@ class ModelCodeCell: UITableViewCell {
     @IBOutlet weak var chassisLabel: UILabel!
     @IBOutlet weak var desc: UILabel!
     
-    
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

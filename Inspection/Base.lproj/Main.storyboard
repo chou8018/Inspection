@@ -167,8 +167,11 @@
                     <connections>
                         <outlet property="errorLabel" destination="VbD-2V-ID3" id="V2X-JY-wll"/>
                         <outlet property="eyeImageView" destination="U39-CS-Uya" id="mMQ-Wx-uUv"/>
+                        <outlet property="loginButton" destination="QuH-IZ-Oy5" id="Oes-hh-xIp"/>
+                        <outlet property="loginTitleLabel" destination="MRe-vw-krS" id="YJC-Td-sbn"/>
                         <outlet property="passwordTextField" destination="qa3-br-uIL" id="vKe-6P-QcP"/>
                         <outlet property="scrollView" destination="6hy-iU-ipH" id="476-kT-QXM"/>
+                        <outlet property="tipsMessageLabel" destination="lY8-y6-TPM" id="uU1-wp-b7N"/>
                         <outlet property="usernameTextField" destination="N0f-Rk-KqG" id="Sdv-JV-4rf"/>
                         <outlet property="versionLabel" destination="haf-qL-5Kn" id="Tcx-VR-je4"/>
                     </connections>
@@ -305,9 +308,37 @@
                                             <action selector="logoutTapped:" destination="Da4-Bi-DDH" eventType="touchUpInside" id="DMH-bL-hnS"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eUi-Qb-i1X" customClass="CustomUIButton" customModule="Inspection" customModuleProvider="target">
+                                        <rect key="frame" x="1216" y="15" width="100" height="60"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="72s-9T-8bY"/>
+                                            <constraint firstAttribute="height" constant="60" id="szC-aS-1oG"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <state key="normal" title="EN">
+                                            <color key="titleColor" name="bittersweet"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" name="bittersweet"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="switchLanguage:" destination="Da4-Bi-DDH" eventType="touchUpInside" id="nIb-8Z-Tew"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="eUi-Qb-i1X" firstAttribute="top" secondItem="wAE-v4-b2x" secondAttribute="top" constant="15" id="30A-wQ-bOG"/>
                                     <constraint firstItem="ELA-FY-b1p" firstAttribute="centerX" secondItem="wAE-v4-b2x" secondAttribute="centerX" id="Ecz-0G-F6m"/>
+                                    <constraint firstItem="eUi-Qb-i1X" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="H3x-q8-F9R" secondAttribute="trailing" constant="8" symbolic="YES" id="Qhu-xR-9nK"/>
                                     <constraint firstAttribute="trailing" secondItem="Kak-EJ-Ta6" secondAttribute="trailing" constant="100" id="UMz-CJ-jhq"/>
                                     <constraint firstAttribute="bottom" secondItem="ELA-FY-b1p" secondAttribute="bottom" constant="100" id="YrA-OJ-Xtv"/>
                                     <constraint firstItem="Kak-EJ-Ta6" firstAttribute="centerX" secondItem="wAE-v4-b2x" secondAttribute="centerX" id="Yrb-43-xmS"/>
@@ -330,7 +361,9 @@
                             <constraint firstItem="NuH-BN-OGg" firstAttribute="bottom" secondItem="wAE-v4-b2x" secondAttribute="bottom" id="0gU-Av-Jo9"/>
                             <constraint firstItem="NuH-BN-OGg" firstAttribute="bottom" secondItem="gpT-Ad-NYl" secondAttribute="bottom" constant="50" id="864-Hk-plo"/>
                             <constraint firstItem="NuH-BN-OGg" firstAttribute="trailing" secondItem="gpT-Ad-NYl" secondAttribute="trailing" constant="50" id="Cbe-5m-iig"/>
+                            <constraint firstItem="gpT-Ad-NYl" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="NuH-BN-OGg" secondAttribute="leading" symbolic="YES" id="GAo-xp-g49"/>
                             <constraint firstItem="wAE-v4-b2x" firstAttribute="leading" secondItem="NuH-BN-OGg" secondAttribute="leading" id="Hah-ku-t60"/>
+                            <constraint firstItem="eUi-Qb-i1X" firstAttribute="trailing" secondItem="gpT-Ad-NYl" secondAttribute="trailing" id="ZtA-u2-jc2"/>
                             <constraint firstItem="NuH-BN-OGg" firstAttribute="trailing" secondItem="wAE-v4-b2x" secondAttribute="trailing" id="ka8-Qg-9zD"/>
                             <constraint firstItem="wAE-v4-b2x" firstAttribute="top" secondItem="NuH-BN-OGg" secondAttribute="top" id="rOG-jQ-lWY"/>
                         </constraints>
@@ -346,8 +379,12 @@
                     <navigationItem key="navigationItem" id="Zeg-ju-gVK"/>
                     <connections>
                         <outlet property="helloNameLabel" destination="mJr-We-4uM" id="OkA-X3-gFF"/>
+                        <outlet property="inspectionLabel" destination="h5r-xU-0MM" id="mwi-if-yVM"/>
+                        <outlet property="listInspectionLabel" destination="OHz-VC-2a5" id="PK0-Uw-iTq"/>
                         <outlet property="listInspectionView" destination="H2l-pA-S4v" id="AHY-eA-SH4"/>
+                        <outlet property="logOutButton" destination="ELA-FY-b1p" id="O1l-f1-wfH"/>
                         <outlet property="startInspectionView" destination="rYx-Ql-njd" id="8xA-fw-hFh"/>
+                        <outlet property="switchLanguageButton" destination="eUi-Qb-i1X" id="o9j-Ek-2uP"/>
                         <outlet property="versionLabel" destination="gpT-Ad-NYl" id="6hy-sp-dYr"/>
                         <segue destination="QFF-Yi-Dey" kind="show" identifier="selectInspectionSegue" id="fXa-f3-aXa"/>
                         <segue destination="9pd-GF-F6h" kind="show" identifier="inspectionListSegue" id="XAh-Am-A8C"/>
@@ -398,6 +435,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="backButtonItem" destination="3Ow-Jx-gQJ" id="HMW-kM-G1R"/>
                         <outlet property="containerView" destination="0vQ-pe-oOs" id="ovx-wc-w3Z"/>
                         <outlet property="segmentView" destination="s98-uN-FUj" id="H88-JH-lMV"/>
                     </connections>
@@ -754,15 +792,22 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="backButton" destination="cmJ-0X-ybA" id="Nc0-xl-Y4F"/>
+                        <outlet property="carAccidentLable" destination="YjU-kN-a4p" id="3rO-lD-T5o"/>
+                        <outlet property="carLable" destination="TP6-Ub-EP2" id="e5r-2d-5fY"/>
                         <outlet property="carSelectView" destination="Nit-Jd-WE4" id="VkC-a6-8uj"/>
                         <outlet property="destroyCarSelectView" destination="Xkd-ZZ-w4c" id="fjB-C1-KwS"/>
                         <outlet property="destroyMBSelectView" destination="hOy-K3-Ejp" id="u3H-jv-C5j"/>
                         <outlet property="fullName" destination="7Te-r4-q8r" id="PSs-Bq-MzP"/>
                         <outlet property="loadingStackView" destination="9jd-8M-wmw" id="io4-cE-BOu"/>
+                        <outlet property="mainItem" destination="krH-ZN-UVN" id="4Cp-DX-SV1"/>
+                        <outlet property="motobikeAccidentLable" destination="bsK-UW-0Yt" id="pct-0u-Fbj"/>
+                        <outlet property="motobikeLable" destination="lnN-wR-t4T" id="0Rj-aM-EbS"/>
                         <outlet property="motorbikeSelectView" destination="8BE-4i-ttF" id="3ud-MZ-dMc"/>
                         <outlet property="placeImageView" destination="xLe-Aj-Jmu" id="Uyy-XQ-t2J"/>
                         <outlet property="placeLabel" destination="All-l3-9bZ" id="vyd-zn-06H"/>
                         <outlet property="plantLabel" destination="7tx-5C-dGb" id="5YJ-cU-CKk"/>
+                        <outlet property="selectionVCTitleLable" destination="WRH-ub-7Ym" id="24Y-Px-PRJ"/>
                         <segue destination="zVx-Rw-vae" kind="popoverPresentation" identifier="showPlaceSegue" popoverAnchorView="hAD-1s-qMp" id="kbX-dH-Uob">
                             <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                         </segue>
@@ -935,10 +980,14 @@
                     </view>
                     <value key="contentSizeForViewInPopover" type="size" width="700" height="460"/>
                     <connections>
+                        <outlet property="cancelButton" destination="XQR-fC-qe8" id="fg5-Uh-Djt"/>
+                        <outlet property="okButton" destination="PnP-6B-OR2" id="qdE-dO-Zm0"/>
                         <outlet property="placeReceivePicker" destination="qxp-t9-g5r" id="eGz-wg-7Sr"/>
                         <outlet property="placeStorePicker" destination="UCK-by-Vxp" id="UXR-eE-r5G"/>
+                        <outlet property="receiveLocationTitleLabel" destination="NuD-bb-F8u" id="tuL-DB-DYl"/>
                         <outlet property="searchBarReceiver" destination="aag-ue-ctT" id="1Ut-cr-5Pp"/>
                         <outlet property="searchBarStorage" destination="fmR-eu-xNX" id="WLi-7C-Hb5"/>
+                        <outlet property="storeLocationTitleLabel" destination="uuO-17-Sa2" id="7Fp-dM-FxD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lbv-Mn-8UK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1133,6 +1182,9 @@
                                                 <constraint firstItem="Ybn-7p-bfB" firstAttribute="centerX" secondItem="xet-Mm-k2u" secondAttribute="centerX" id="ukP-5t-cHy"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="noDataLabel" destination="Ybn-7p-bfB" id="ZwN-TC-iXz"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -1155,7 +1207,13 @@
                     <connections>
                         <outlet property="fullName" destination="GRE-NV-ff8" id="m4a-6A-3o2"/>
                         <outlet property="headerRowView" destination="D5p-gS-TcL" id="5b4-vH-4UK"/>
+                        <outlet property="makeTitleLabel" destination="t9C-38-4la" id="moX-VE-wl6"/>
+                        <outlet property="modelTitleLabel" destination="C1h-Iz-MoU" id="FhK-aB-hWo"/>
+                        <outlet property="registrationNumberTitleLabel" destination="bMB-dT-usw" id="O34-Q5-wR1"/>
+                        <outlet property="statusTitleLabel" destination="Bf8-7e-w7r" id="aS8-UO-cPV"/>
                         <outlet property="tableView" destination="JuB-v8-s1J" id="jYR-ha-hwZ"/>
+                        <outlet property="variantTitleLabel" destination="t88-g3-ha5" id="cyK-qa-PZd"/>
+                        <outlet property="yearTitleLabel" destination="1Rl-9u-kPj" id="oad-3a-4Pn"/>
                         <segue destination="nVK-1l-4CN" kind="show" identifier="EditView" id="BPD-Q3-H2P"/>
                         <segue destination="EeE-1u-Q6x" kind="presentation" identifier="descriptionSegue" modalPresentationStyle="formSheet" id="w7d-3F-FcD"/>
                         <segue destination="D9w-oN-SLN" kind="show" identifier="ViewPDF" id="2TK-C2-p0l"/>
@@ -1404,7 +1462,9 @@ PDF</string>
                         <outlet property="closeImageView" destination="DCI-gn-pXc" id="vYn-tB-sw0"/>
                         <outlet property="detailLabel" destination="TQm-35-Kfw" id="QE6-TX-XlB"/>
                         <outlet property="editButton" destination="7KX-vG-jHx" id="DY1-QJ-SCf"/>
+                        <outlet property="engineKeyLabel" destination="MN8-nQ-461" id="aU6-zy-ZXy"/>
                         <outlet property="imageView" destination="evn-vS-18z" id="Piy-X0-0Ld"/>
+                        <outlet property="vinKeyLabel" destination="H0C-q5-zCT" id="vg1-sp-tzr"/>
                         <outlet property="vinLabel" destination="QwV-PF-9AV" id="A8A-XZ-ECF"/>
                     </connections>
                 </viewController>
@@ -1677,6 +1737,9 @@ PDF</string>
                                                 <constraint firstItem="a7M-eq-Qen" firstAttribute="centerX" secondItem="28u-0a-VzU" secondAttribute="centerX" id="kTV-U3-tBB"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="tipsMessageLabel" destination="a7M-eq-Qen" id="8IS-7B-bbG"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="NotFoundCell" id="cMC-NN-N7W" customClass="NotFoundCell" customModule="Inspection" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="153.5" width="1366" height="43.5"/>
@@ -1771,12 +1834,16 @@ PDF</string>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bookInNumberTitleLabel" destination="NTA-bH-QiH" id="3zR-rr-7yd"/>
+                        <outlet property="detailsTitleLabel" destination="6pU-eH-vOn" id="eM3-06-geR"/>
                         <outlet property="headerRowView" destination="Fhr-dQ-Y6f" id="Vgb-SN-81a"/>
                         <outlet property="qrcodeButtonView" destination="FjT-rI-isf" id="3fm-se-pSO"/>
+                        <outlet property="registrationNumberTitleLabel" destination="dBA-bp-h0c" id="syd-xt-S1V"/>
                         <outlet property="searchButtonView" destination="994-71-eFu" id="ydg-Q4-Oj5"/>
                         <outlet property="searchByLabel" destination="jUe-ea-Mxw" id="7CR-tg-fVX"/>
                         <outlet property="searchByView" destination="h6r-2T-Kty" id="hoc-ve-YAg"/>
                         <outlet property="searchImageView" destination="oLh-fc-IAW" id="Kwx-P5-g3B"/>
+                        <outlet property="searchLabel" destination="UE1-Nh-z9t" id="8Ux-Hj-VJt"/>
                         <outlet property="searchTextField" destination="2ub-LT-mx7" id="toV-XF-BsK"/>
                         <outlet property="searchView" destination="TCm-n0-77O" id="sxt-xc-xWw"/>
                         <outlet property="tableView" destination="wio-5B-FtD" id="ohu-gP-V2Z"/>
@@ -1842,6 +1909,9 @@ PDF</string>
         <designable name="cmJ-0X-ybA">
             <size key="intrinsicContentSize" width="106" height="36"/>
         </designable>
+        <designable name="eUi-Qb-i1X">
+            <size key="intrinsicContentSize" width="30" height="36"/>
+        </designable>
         <designable name="enR-G0-8RK">
             <size key="intrinsicContentSize" width="66" height="48"/>
         </designable>
@@ -1852,7 +1922,7 @@ PDF</string>
     <inferredMetricsTieBreakers>
         <segue reference="2t1-mN-E54"/>
         <segue reference="KDj-tG-aBP"/>
-        <segue reference="w7d-3F-FcD"/>
+        <segue reference="kEF-ac-3NC"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="car-icon" width="150" height="57.5"/>

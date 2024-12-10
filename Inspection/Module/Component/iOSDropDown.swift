@@ -8,6 +8,8 @@
 //
 import UIKit
 
+let GearboxSelected = Notification.Name(rawValue: "gearboxSelected")
+
 open class DropDown : UITextField{
 
     var isPrefix = false
@@ -614,5 +616,77 @@ extension UIView {
         }
         return nil
     }
+}
+
+class GearDropDown: DropDown {
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cellIdentifier = "DropDownCell"
+
+        var cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier)
+
+        if cell == nil {
+            cell = UITableViewCell(style: .default, reuseIdentifier: cellIdentifier)
+        }
+
+        if indexPath.row != selectedIndex{
+            cell!.backgroundColor = rowBackgroundColor
+        }else {
+            cell?.backgroundColor = selectedRowColor
+        }
+
+        if self.imageArray.count > indexPath.row {
+            cell!.imageView!.image = UIImage(named: imageArray[indexPath.row])
+        }
+        let rowText = dataArray[indexPath.row]
+        if rowText == "N/A" || rowText == String.localized("gearbox_automatic_label") || rowText == String.localized("gearbox_manual_label") {
+            cell!.textLabel!.text = rowText
+        } else {
+            cell!.textLabel!.text = "  \(rowText)"
+        }
+        cell!.accessoryType = (indexPath.row == selectedIndex) && checkMarkEnabled  ? .checkmark : .none
+        cell!.selectionStyle = .none
+        cell?.textLabel?.font = self.font
+        cell?.textLabel?.textAlignment = self.textAlignment
+        return cell!
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        selectedIndex = (indexPath as NSIndexPath).row
+        let selectedText = self.dataArray[self.selectedIndex!]
+        tableView.cellForRow(at: indexPath)?.alpha = 0
+        UIView.animate(withDuration: 0.1,
+                       animations: {[weak self] () -> Void in
+                        guard let weakself = self else { return }
+                        
+                        tableView.cellForRow(at: indexPath)?.alpha = 1.0
+                        tableView.cellForRow(at: indexPath)?.backgroundColor = weakself.selectedRowColor
+        } ,
+                       completion: {(didFinish) -> Void in
+                        
+                        //self.text = "\(selectedText)"
+
+                        tableView.reloadData()
+        })
+        if hideOptionsWhenSelect , selectedText != String.localized("gearbox_automatic_label") {
+            touchAction()
+            self.endEditing(true)
+        } else {
+            self.endEditing(true)
+        }
+        if let selected = optionArray.firstIndex(where: {$0 == selectedText}) {
+            if let id = optionIds?[selected] {
+                didSelectCompletion(selectedText, selected , id )
+            }else{
+                didSelectCompletion(selectedText, selected , 0)
+            }
+            if selectedText == String.localized("gearbox_automatic_label") {
+                NotificationCenter.default.post(name: GearboxSelected, object: selectedText,userInfo: ["array":optionArray])
+            }
+            
+        }
+    }
+
 }
 

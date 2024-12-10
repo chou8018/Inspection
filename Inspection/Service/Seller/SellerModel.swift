@@ -32,6 +32,11 @@ struct SellerModel : Mappable {
 	}
 
     var name : String {
-        return "\(sellerNameTh ?? "") \(sellerNameEn ?? "")"
+//        return "\(sellerNameTh ?? "") \(sellerNameEn ?? "")"
+
+        if DataController.shared.isThaiLanguage() {
+            return "\(sellerNameTh ?? "") \(sellerNameEn ?? "")"
+        }
+        return sellerNameEn ?? ""
     }
 }

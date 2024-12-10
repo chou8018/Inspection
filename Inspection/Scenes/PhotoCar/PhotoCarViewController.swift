@@ -14,7 +14,7 @@ import UIKit
 
 protocol PhotoCarDisplayLogic: AnyObject
 {
-  func displaySomething(viewModel: PhotoCar.Something.ViewModel)
+    func displaySomething(viewModel: PhotoCar.Something.ViewModel)
     func displayReceiverDayTimeInspection(viewModel: PhotoCar.Something.ViewModel)
     func displayCollectionImageBySection(viewModel: PhotoCar.Something.ViewModel)
     func displayUploadProgress(viewModel: PhotoCar.Something.ViewModel)
@@ -33,96 +33,100 @@ protocol PhotoCarDisplayLogic: AnyObject
     func displayShowImageView(viewModel: PhotoCar.Something.ViewModel)
     
     func displayActionEventSuccess(viewModel: PhotoCar.Something.ViewModel)
+    
+    // add on 11/03/2024
+    func displayErrorFetchDetail(viewModel: PhotoCar.Something.ViewModel)
+    func displayImageDetail(viewModel: PhotoCar.Something.ViewModel)
 }
 
-class PhotoCarViewController: UIViewController, PhotoCarDisplayLogic
+class PhotoCarViewController: ViewController, PhotoCarDisplayLogic
 {
-  var interactor: PhotoCarBusinessLogic?
-  var router: (NSObjectProtocol & PhotoCarRoutingLogic & PhotoCarDataPassing)?
-
-  // MARK: Object lifecycle
-  
-  override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
-  {
-    super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-    setup()
-  }
-  
-  required init?(coder aDecoder: NSCoder)
-  {
-    super.init(coder: aDecoder)
-    setup()
-  }
-  
-  // MARK: Setup
-  
-  private func setup()
-  {
-    let viewController = self
-    let interactor = PhotoCarInteractor()
-    let presenter = PhotoCarPresenter()
-    let router = PhotoCarRouter()
-    viewController.interactor = interactor
-    viewController.router = router
-    interactor.presenter = presenter
-    presenter.viewController = viewController
-    router.viewController = viewController
-    router.dataStore = interactor
-  }
-  
-  // MARK: Routing
-  
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-  {
-    if let scene = segue.identifier {
-      let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
-      if let router = router, router.responds(to: selector) {
-        router.perform(selector, with: segue)
-      }
-        
-        if let dateTimePicker = segue.destination as? DateTimeViewController {
-            dateTimePicker.didSelectedDateTimePicker = { [weak self] (dateInspection) in
-                
-                let request = PhotoCar.Something.Request(dateInspection: dateInspection)
-                self?.interactor?.setReceiverDateTimeInspection(request: request)
-            }
-        }
-//        if let damageVc = segue.destination as? DamageViewController {
-//            damageVc.callbackDamageImage = { [weak self] (damageImageModel) in
-//                print("🔸🐶 \(damageImageModel)")
-//
-//                let image = damageImageModel.image
-//                let url = URL(string: "https://inspecfakeurl.com/image/\(Date().DateToServerFormatString()).jpeg")
-//
-//                let request = PhotoCar.Something.Request(image: image,
-//                                                         url: url,
-//                                                         damageModel: damageImageModel)
-//                self?.interactor?.addPhoto(request: request)
-//            }
-//        }
+    var interactor: PhotoCarBusinessLogic?
+    var router: (NSObjectProtocol & PhotoCarRoutingLogic & PhotoCarDataPassing)?
+    
+    // MARK: Object lifecycle
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
+    {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        setup()
     }
-  }
-  
-  // MARK: View lifecycle
-  override func viewDidLoad()
-  {
-    super.viewDidLoad()
-    setTitleName()
-    setImagePicker()
-    setUpTab()
-    setUpDateTime()
-    setUpCollectionView()
-    setUpCheckButton()
-    doSomething()
-  }
-  
-  // MARK: Do something
+    
+    required init?(coder aDecoder: NSCoder)
+    {
+        super.init(coder: aDecoder)
+        setup()
+    }
+    
+    // MARK: Setup
+    
+    private func setup()
+    {
+        let viewController = self
+        let interactor = PhotoCarInteractor()
+        let presenter = PhotoCarPresenter()
+        let router = PhotoCarRouter()
+        viewController.interactor = interactor
+        viewController.router = router
+        interactor.presenter = presenter
+        presenter.viewController = viewController
+        router.viewController = viewController
+        router.dataStore = interactor
+    }
+    
+    // MARK: Routing
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if let scene = segue.identifier {
+            let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
+            if let router = router, router.responds(to: selector) {
+                router.perform(selector, with: segue)
+            }
+            
+            if let dateTimePicker = segue.destination as? DateTimeViewController {
+                dateTimePicker.didSelectedDateTimePicker = { [weak self] (dateInspection) in
+                    
+                    let request = PhotoCar.Something.Request(dateInspection: dateInspection)
+                    self?.interactor?.setReceiverDateTimeInspection(request: request)
+                }
+            }
+            //        if let damageVc = segue.destination as? DamageViewController {
+            //            damageVc.callbackDamageImage = { [weak self] (damageImageModel) in
+            //                print("🔸🐶 \(damageImageModel)")
+            //
+            //                let image = damageImageModel.image
+            //                let url = URL(string: "https://inspecfakeurl.com/image/\(Date().DateToServerFormatString()).jpeg")
+            //
+            //                let request = PhotoCar.Something.Request(image: image,
+            //                                                         url: url,
+            //                                                         damageModel: damageImageModel)
+            //                self?.interactor?.addPhoto(request: request)
+            //            }
+            //        }
+        }
+    }
+    
+    // MARK: View lifecycle
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
+        setTitleName()
+        setImagePicker()
+        setUpTab()
+        setUpDateTime()
+        setUpCollectionView()
+        setUpCheckButton()
+        doSomething()
+    }
+    
+    // MARK: Do something
     @IBOutlet weak var fullName:UILabel!
     @IBOutlet weak var pickUpStackView: UIView!
     @IBOutlet weak var checkStackView: UIView!
     @IBOutlet weak var photoStackView: UIView!
-  
-  
+    
+    
     @IBOutlet weak var saveButton: UIBarButtonItem!
     @IBOutlet weak var sendInspectionButton: UIBarButtonItem!
     
@@ -130,7 +134,7 @@ class PhotoCarViewController: UIViewController, PhotoCarDisplayLogic
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     
-
+    
     @IBOutlet weak var frontCheckBox: CheckBoxUIButton!
     @IBOutlet weak var engineCheckBox: CheckBoxUIButton!
     @IBOutlet weak var plateCheckBox: CheckBoxUIButton!
@@ -144,29 +148,83 @@ class PhotoCarViewController: UIViewController, PhotoCarDisplayLogic
     @IBOutlet weak var assetCheckBox: CheckBoxUIButton!
     @IBOutlet weak var amountLabel: UILabel!
     @IBOutlet weak var addPhotoView: CustomUIView!
-    
     @IBOutlet weak var collectionView: UICollectionView!
-    
     @IBOutlet weak var skipCheckBox:CheckBoxUIButton!
     
     var dataSource = DataSourceCollectionView()
     var imagePicker: ImagePicker!
     
+    // local strings
+    @IBOutlet weak var mainButton: UIBarButtonItem!
+    @IBOutlet weak var pickupCarLabel: UILabel!
+    @IBOutlet weak var inspectionLabel: UILabel!
+    @IBOutlet weak var photosLabel: UILabel!
+    @IBOutlet weak var numberPhotosLabel: UILabel!
+    @IBOutlet weak var dateTitleLabel: UILabel!
+    
+    @IBOutlet weak var carRoofCheckBox: CheckBoxUIButton!
+    @IBOutlet weak var dashboardCheckBox: CheckBoxUIButton!
+    @IBOutlet weak var catalyticCheckBox: CheckBoxUIButton!
+    @IBOutlet weak var skipView: CustomUIView!
+    @IBOutlet weak var catalyticMessageLabel: UILabel!
+    @IBOutlet weak var carRoofBottomView: UIView!
+    @IBOutlet weak var catalyticBottomView: UIView!
+    
+    override func initLocalString() {
+        super.initLocalString()
+        
+        saveButton.title = String.localized("main_inspection_save_button_title")
+        mainButton.title = String.localized("main_inspection_bar_button_main_title")
+        pickupCarLabel.text = String.localized("main_inspection_item_book_in_title")
+        inspectionLabel.text = String.localized("main_inspection_item_inspection_title")
+        photosLabel.text = String.localized("main_inspection_item_photos_title")
+        numberPhotosLabel.text = String.localized("photos_numbers_label")
+        frontCheckBox.setTitle(String.localized("photos_front_button_title"), for: .normal)
+        engineCheckBox.setTitle(String.localized("photos_engine_button_title"), for: .normal)
+        plateCheckBox.setTitle(String.localized("photos_plate_button_title"), for: .normal)
+        chassisCheckBox.setTitle(String.localized("photos_chassis_button_title"), for: .normal)
+        interiorCheckBox.setTitle(String.localized("photos_interior_button_title"), for: .normal)
+        trayCheckBox.setTitle(String.localized("photos_tray_button_title"), for: .normal)
+        sideCheckBox.setTitle(String.localized("photos_side_button_title"), for: .normal)
+        backCheckBox.setTitle(String.localized("photos_back_button_title"), for: .normal)
+        gasTankCheckBox.setTitle(String.localized("photos_gas_tank_button_title"), for: .normal)
+        assetCheckBox.setTitle(String.localized("photos_asset_button_title"), for: .normal)
+        damageCheckBox.setTitle(String.localized("photos_damage_button_title"), for: .normal)
+        dateTitleLabel.text = String.localized("inspection_date_title")
+        
+        carRoofCheckBox.setTitle(String.localized("photos_car_roof_button_title"), for: .normal)
+        dashboardCheckBox.setTitle(String.localized("photos_car_dashboard_button_title"), for: .normal)
+        catalyticCheckBox.setTitle(String.localized("photos_car_catalytic_button_title"), for: .normal)
+        
+        catalyticCheckBox.titleLabel!.lineBreakMode = NSLineBreakMode.byWordWrapping
+        catalyticCheckBox.titleLabel!.numberOfLines = 2
+        catalyticCheckBox.titleLabel!.textAlignment = NSTextAlignment.center
+        
+        catalyticMessageLabel.text = String.localized("photos_car_catalytic_comment_title")
+        
+        if DataController.shared.bookInType == .MBIKE || DataController.shared.bookInType == .MBIKEWRECK  {
+            carRoofCheckBox.isHidden = true
+            carRoofBottomView.isHidden = true
+            catalyticCheckBox.isHidden = true
+            catalyticBottomView.isHidden = true
+        }
+
+    }
     
     var sourceSectionName : [(name:String, cb: CheckBoxUIButton)] = []
     
     
     
-  func doSomething()
-  {
-    let request = PhotoCar.Something.Request()
-    interactor?.doSomething(request: request)
-  }
-  
-  func displaySomething(viewModel: PhotoCar.Something.ViewModel)
-  {
-    //nameTextField.text = viewModel.name
-  }
+    func doSomething()
+    {
+        let request = PhotoCar.Something.Request()
+        interactor?.doSomething(request: request)
+    }
+    
+    func displaySomething(viewModel: PhotoCar.Something.ViewModel)
+    {
+        //nameTextField.text = viewModel.name
+    }
     
     
     //MARK: DateTime
@@ -174,7 +232,7 @@ class PhotoCarViewController: UIViewController, PhotoCarDisplayLogic
         dateTimeView.isUserInteractionEnabled = true
         dateTimeView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(showDateTime)))
     }
-
+    
     func displayReceiverDayTimeInspection(viewModel: PhotoCar.Something.ViewModel) {
         guard let dayTime = viewModel.dayTime else { return }
         self.dateLabel.text = dayTime.day
@@ -184,7 +242,7 @@ class PhotoCarViewController: UIViewController, PhotoCarDisplayLogic
     @objc func showDateTime(){
         performSegue(withIdentifier: "showDateTime", sender: nil)
     }
-  
+    
     //MARK: IBAction
     @IBAction func toBackView(_ sender: Any) {
         navigationController?.popViewController(animated: true)
@@ -193,7 +251,7 @@ class PhotoCarViewController: UIViewController, PhotoCarDisplayLogic
         popToRootViewController(confirm: true)
     }
     @IBAction func saveTapped(_ sender: Any) {
-        alert(message: "คุณต้องการบันทึกรูปถ่ายไหม") { [weak self] in
+        alert(message: String.localized("photos_save_confirm_title")) { [weak self] in
             let request = PhotoCar.Something.Request()
             self?.interactor?.confirmPhotoInspection(request: request)
         }
@@ -201,11 +259,11 @@ class PhotoCarViewController: UIViewController, PhotoCarDisplayLogic
     
     @IBAction func saveToIMAT(_ sender: Any){
         print("🔶 save to IMAT")
-        alert(message: "คุณต้องการส่ง\nInspection to IMAT ไหม") { [weak self] in
+        alert(message: String.localized("car_grade_send_inspection_title")) { [weak self] in
             self?.sendToIMAT()
         }
     }
-   
+    
     //MARK: send to IMAT
     func sendToIMAT(){
         let request = PhotoCar.Something.Request()
@@ -222,13 +280,13 @@ class PhotoCarViewController: UIViewController, PhotoCarDisplayLogic
     func displaySendInsectionIMATSuccess(viewModel: PhotoCar.Something.ViewModel) {
         print("🔶 photo displaySendInsectionIMATSuccess")
         //self.updateVehicleId()
-        alertErrorMessageOKAction(message: "Inspection สำเร็จ") {
+        alertErrorMessageOKAction(message: "Inspection \(String.localized("pick_up_send_book_in_succeeded"))") {
             //ignored
         }
     }
     
     func displayShowImageView(viewModel: PhotoCar.Something.ViewModel) {
-       
+        
         //
         //
         //   show imageviewer
@@ -245,7 +303,7 @@ class PhotoCarViewController: UIViewController, PhotoCarDisplayLogic
     
     func displayActionEventSuccess(viewModel: PhotoCar.Something.ViewModel) {
         sendInspectionButton.isEnabled = viewModel.isEnableSendToIMAP ?? false
-
+        
     }
     
     
@@ -264,7 +322,7 @@ class PhotoCarViewController: UIViewController, PhotoCarDisplayLogic
     func setImagePicker(){
         imagePicker = ImagePicker(presentationController: self)
         imagePicker.delegateImage = self
-
+        
         addPhotoView.isUserInteractionEnabled = true
         addPhotoView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(addPhotoViewTap)))
     }
@@ -272,21 +330,21 @@ class PhotoCarViewController: UIViewController, PhotoCarDisplayLogic
     @objc func addPhotoViewTap() {
         self.addPhotoView.fadeIn { [weak self] in
             guard let weakself = self else { return }
-//            let index = DataController.shared.photoCarModel.indexSection
-//            if index == 10 {
-//                //photo damage
-//                weakself.performDamageView()
-//            }else{
-//                //default photo book-in
-//                weakself.imagePicker.present(from: weakself.addPhotoView)
-//            }
+            //            let index = DataController.shared.photoCarModel.indexSection
+            //            if index == 10 {
+            //                //photo damage
+            //                weakself.performDamageView()
+            //            }else{
+            //                //default photo book-in
+            //                weakself.imagePicker.present(from: weakself.addPhotoView)
+            //            }
             
             weakself.imagePicker.present(from: weakself.addPhotoView)        }
     }
     
     //MARK: SetupTab
     func setUpTab(){
-        fullName.text = "ผู้ตรวจสภาพ \(DataController.shared.getFullName())"
+        fullName.text = "\(String.localized("select_inspection_inspector_label")) \(DataController.shared.getFullName())"
         
         pickUpStackView.isUserInteractionEnabled = true
         pickUpStackView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(toPickUpCar)))
@@ -304,17 +362,17 @@ class PhotoCarViewController: UIViewController, PhotoCarDisplayLogic
     func setTitleName(){
         switch DataController.shared.bookInType {
         case .CAR:
-            title = "ถ่ายรูป - รถยนต์"
+            title = String.localized("main_inspection_car_navigation_photos_title")
         case .MBIKE:
-            title = "ถ่ายรูป - รถจักรยานยนต์"
+            title = String.localized("motorbike_photos_navigation_title")
         case  .CARWRECK:
-            title = "ถ่ายรูป - ซากรถยนต์"
+            title = String.localized("car_salvage_photos_navigation_title")
         case  .MBIKEWRECK:
-            title = "ถ่ายรูป - ซากรถจักรยานยนต์"
+            title = String.localized("motorbike_salvage_photos_navigation_title")
         }
     }
     
-
+    
     //MARK: SetUp Check
     func setUpCheckButton(){
         frontCheckBox.typecheck = .BACKGROUND
@@ -328,31 +386,36 @@ class PhotoCarViewController: UIViewController, PhotoCarDisplayLogic
         gasTankCheckBox.typecheck = .BACKGROUND
         damageCheckBox.typecheck = .BACKGROUND
         assetCheckBox.typecheck = .BACKGROUND
-        
-       
-        sourceSectionName = [(name: "Front(ด้านหน้า) *", cb: frontCheckBox),
-                             (name: "Engine(เครื่องยนต์) *", cb: engineCheckBox),
-                             (name: "Plate(แผ่นป้าย) *", cb: plateCheckBox),
-                             (name: "Chassis(เลขแชสซี) *", cb: chassisCheckBox),
-                             (name: "Interior(ภายใน) *", cb: interiorCheckBox),
-                             (name: "Tray(ห้องท้าย) *", cb: trayCheckBox),
-                             (name: "Side(ด้านข้าง) *", cb: sideCheckBox),
-                             (name: "Back(ด้านหลัง) *", cb: backCheckBox),
-                             (name: "Gas tank(ถังแก๊ส) *", cb: gasTankCheckBox),
-                             (name: "Asset(ทรัพย์สิน) *", cb: assetCheckBox),
-                             (name: "Damage(ความเสียหาย) *", cb: damageCheckBox)
-                             ]
+        carRoofCheckBox.typecheck = .BACKGROUND
+        dashboardCheckBox.typecheck = .BACKGROUND
+        catalyticCheckBox.typecheck = .BACKGROUND
+
+        sourceSectionName = [(name: "\(String.localized("photos_front_button_title")) *", cb: frontCheckBox),
+                             (name: "\(String.localized("photos_engine_button_title")) *", cb: engineCheckBox),
+                             (name: "\(String.localized("photos_plate_button_title")) *", cb: plateCheckBox),
+                             (name: "\(String.localized("photos_chassis_button_title")) *", cb: chassisCheckBox),
+                             (name: "\(String.localized("photos_interior_button_title")) *", cb: interiorCheckBox),
+                             (name: "\(String.localized("photos_tray_button_title")) *", cb: trayCheckBox),
+                             (name: "\(String.localized("photos_side_button_title")) *", cb: sideCheckBox),
+                             (name: "\(String.localized("photos_back_button_title")) *", cb: backCheckBox),
+                             (name: "\(String.localized("photos_gas_tank_button_title")) *", cb: gasTankCheckBox),
+                             (name: "\(String.localized("photos_asset_button_title")) *", cb: assetCheckBox),
+                             (name: "\(String.localized("photos_damage_button_title")) *", cb: damageCheckBox),
+                             (name: "\(String.localized("photos_car_roof_button_title")) *", cb: carRoofCheckBox),
+                             (name: "\(String.localized("photos_car_dashboard_button_title")) *", cb: dashboardCheckBox),
+                             (name: "\(String.localized("photos_car_catalytic_button_title")) *", cb: catalyticCheckBox)
+        ]
         
         for item in sourceSectionName {
             setTitleCheckBox(item.name, cb: item.cb)
         }
-       
+        
         
     }
     
     @IBAction func skipTapped(_ sender: Any) {
         skipCheckBox.toggle { [weak self] check in
-           print("🔸 \(check)")
+            print("🔸 \(check)")
             let request =  PhotoCar.Something.Request(isSkip: check)
             self?.interactor?.ignoredSection(request: request)
             
@@ -367,12 +430,28 @@ class PhotoCarViewController: UIViewController, PhotoCarDisplayLogic
         let range = (title as NSString).range(of: "*")
         let attr = NSMutableAttributedString(string: title)
         attr.addAttribute(.foregroundColor, value: UIColor.red, range: range)
+        
+//        if cb == catalyticCheckBox {
+//            let comment = String.localized("photos_car_catalytic_comment_title")
+//            let commentRange = (title as NSString).range(of: comment)
+//            attr.addAttribute(.font, value: UIFont.systemFont(ofSize: 10), range: commentRange)
+//        }
         cb.setAttributedTitle(attr, for: .normal)
+
     }
     
-    func setTitleFieldRequired(_ model:(name:String, cb: CheckBoxUIButton)){        
-        let name = model.name.split(separator: "*")[0]
+    func setTitleFieldRequired(_ model:(name:String, cb: CheckBoxUIButton)){
+        var name = model.name.split(separator: "*")[0]
+        
+//        if model.cb == catalyticCheckBox {
+//            name += "\n\(String.localized("photos_car_catalytic_comment_title"))"
+//        }
         self.setTitleCheckBox(String(name), cb: model.cb)
+    }
+    
+    private func skipViewShowOrNot(isShow: Bool) {
+        skipView.isHidden = !isShow
+        catalyticMessageLabel.isHidden = isShow
     }
     
     @IBAction func frontCheckBoxTapped(_ sender: Any) {
@@ -380,78 +459,114 @@ class PhotoCarViewController: UIViewController, PhotoCarDisplayLogic
             guard let weakself = self else { return }
             weakself.selectButton(selectView: weakself.frontCheckBox)
         }
+        skipViewShowOrNot(isShow: true)
     }
     @IBAction func engineCheckBoxTapped(_ sender: Any) {
         engineCheckBox.toggle { [weak self] check in
             guard let weakself = self else { return }
             weakself.selectButton(selectView: weakself.engineCheckBox)
         }
+        skipViewShowOrNot(isShow: true)
     }
     @IBAction func plateCheckBoxTapped(_ sender: Any) {
         plateCheckBox.toggle { [weak self] check in
             guard let weakself = self else { return }
             weakself.selectButton(selectView: weakself.plateCheckBox)
         }
+        skipViewShowOrNot(isShow: true)
     }
     @IBAction func chassisCheckBoxTapped(_ sender: Any) {
         chassisCheckBox.toggle { [weak self] check in
             guard let weakself = self else { return }
             weakself.selectButton(selectView: weakself.chassisCheckBox)
         }
+        skipViewShowOrNot(isShow: true)
     }
     @IBAction func interiorCheckBoxTapped(_ sender: Any) {
         interiorCheckBox.toggle { [weak self] check in
             guard let weakself = self else { return }
             weakself.selectButton(selectView: weakself.interiorCheckBox)
         }
+        skipViewShowOrNot(isShow: true)
     }
     @IBAction func trayCheckBoxTapped(_ sender: Any) {
         trayCheckBox.toggle { [weak self] check in
             guard let weakself = self else { return }
             weakself.selectButton(selectView: weakself.trayCheckBox)
         }
+        skipViewShowOrNot(isShow: true)
     }
     @IBAction func sideCheckBoxTapped(_ sender: Any) {
         sideCheckBox.toggle { [weak self] check in
             guard let weakself = self else { return }
             weakself.selectButton(selectView: weakself.sideCheckBox)
         }
+        skipViewShowOrNot(isShow: true)
     }
     @IBAction func backCheckBoxTapped(_ sender: Any) {
         backCheckBox.toggle { [weak self] check in
             guard let weakself = self else { return }
             weakself.selectButton(selectView: weakself.backCheckBox)
         }
+        skipViewShowOrNot(isShow: true)
     }
     @IBAction func gasTankCheckBoxTapped(_ sender: Any) {
         gasTankCheckBox.toggle { [weak self] check in
             guard let weakself = self else { return }
             weakself.selectButton(selectView: weakself.gasTankCheckBox)
         }
+        skipViewShowOrNot(isShow: true)
     }
     @IBAction func damageCheckBoxTapped(_ sender: Any) {
         damageCheckBox.toggle { [weak self] check in
             guard let weakself = self else { return }
             weakself.selectButton(selectView: weakself.damageCheckBox)
         }
+        skipViewShowOrNot(isShow: true)
     }
     @IBAction func assetCheckBoxTapped(_ sender: Any) {
         assetCheckBox.toggle { [weak self] check in
             guard let weakself = self else { return }
             weakself.selectButton(selectView: weakself.assetCheckBox)
         }
+        skipViewShowOrNot(isShow: true)
     }
+    
+    @IBAction func carRoofBoxTapped(_ sender: Any) {
+        carRoofCheckBox.toggle { [weak self] check in
+            guard let weakself = self else { return }
+            weakself.selectButton(selectView: weakself.carRoofCheckBox)
+        }
+        skipViewShowOrNot(isShow: true)
+    }
+    
+    @IBAction func dashboardCheckBoxTapped(_ sender: Any) {
+        dashboardCheckBox.toggle { [weak self] check in
+            guard let weakself = self else { return }
+            weakself.selectButton(selectView: weakself.dashboardCheckBox)
+        }
+        skipViewShowOrNot(isShow: true)
+    }
+    
+    @IBAction func catalyticCheckBoxTapped(_ sender: Any) {
+        catalyticCheckBox.toggle { [weak self] check in
+            guard let weakself = self else { return }
+            weakself.selectButton(selectView: weakself.catalyticCheckBox)
+        }
+        skipViewShowOrNot(isShow: false)
+    }
+    
     //MARK: Damage
-//    func performDamageView(){
-//        performSegue(withIdentifier: "damageSegue", sender: nil)
-//    }
+    //    func performDamageView(){
+    //        performSegue(withIdentifier: "damageSegue", sender: nil)
+    //    }
     
     //MARK: Select Section
     func selectButton(selectView: CheckBoxUIButton?){
         guard let _  = selectView else { return }
         
- 
-        let viewList = [frontCheckBox, engineCheckBox, plateCheckBox, chassisCheckBox, interiorCheckBox, trayCheckBox, sideCheckBox, backCheckBox, gasTankCheckBox, assetCheckBox, damageCheckBox]
+        
+        let viewList = [frontCheckBox, engineCheckBox, plateCheckBox, chassisCheckBox, interiorCheckBox, trayCheckBox, sideCheckBox, backCheckBox, gasTankCheckBox, assetCheckBox, damageCheckBox, carRoofCheckBox, dashboardCheckBox, catalyticCheckBox]
         
         let selectionList = viewList.map { (view) -> String in
             view?.check = view == selectView
@@ -477,6 +592,12 @@ class PhotoCarViewController: UIViewController, PhotoCarDisplayLogic
                 name = "Gas_B"
             case damageCheckBox:
                 name = "Damage"
+            case carRoofCheckBox:
+                name = "Roof_B"
+            case dashboardCheckBox:
+                name = "Dashboard_B"
+            case catalyticCheckBox:
+                name = "Catalytic_B"
             case assetCheckBox:
                 name = "Asset"
             default:
@@ -502,7 +623,7 @@ class PhotoCarViewController: UIViewController, PhotoCarDisplayLogic
         
         dataSource.didTapImageDelete = {[weak self] model in
             guard let model = model else { return }
-            self?.alert(message: "คุณต้องการลบ \(model.name ?? "") ไหม", { [weak self] in
+            self?.alert(message: "\(String.localized("photos_delete_head_title")) \(model.name ?? "") \(String.localized("photos_delete_tail_title"))", { [weak self] in
                 let request = PhotoCar.Something.Request(deleteModel: model)
                 self?.interactor?.deletePhotoModel(request: request)
             })
@@ -512,44 +633,49 @@ class PhotoCarViewController: UIViewController, PhotoCarDisplayLogic
             guard let model = model else { return }
             let request = PhotoCar.Something.Request(imageViewerModel: model)
             self?.interactor?.showImageViewer(request: request)
+            
+            self?.fetchPhotoDetail(idPhoto: model.idPhoto)
         }
     }
     
     //MARK: Presenter
     func displayCollectionImageBySection(viewModel: PhotoCar.Something.ViewModel) {
         //print("Reload Collection View")
-        hideLoading()
         
-        let viewList = [frontCheckBox, engineCheckBox, plateCheckBox, chassisCheckBox, interiorCheckBox, trayCheckBox, sideCheckBox, backCheckBox, gasTankCheckBox, assetCheckBox, damageCheckBox]
+        hideLoading()
+
+        let viewList = [frontCheckBox, engineCheckBox, plateCheckBox, chassisCheckBox, interiorCheckBox, trayCheckBox, sideCheckBox, backCheckBox, gasTankCheckBox, assetCheckBox, damageCheckBox, carRoofCheckBox, dashboardCheckBox , catalyticCheckBox]
         
         DispatchQueue.main.async { [weak self] in
-           
 
             let indexSection = DataController.shared.photoCarModel.indexSection
+            if indexSection == viewList.count - 1 {
+                self?.skipViewShowOrNot(isShow: false)
+            } else {
+                self?.skipViewShowOrNot(isShow: true)
+            }
             if let selectView = viewList[indexSection] {
                 selectView.check = true
             }
-            
+
             if let count = viewModel.imageList?.count , count > 0,
                let model = self?.sourceSectionName[indexSection] {
                 self?.setTitleFieldRequired(model)
             }
-            
+
             if let requiredSection = viewModel.requiredSection ,
                let sourceSectionName = self?.sourceSectionName {
                 for i in requiredSection {
                     self?.setTitleFieldRequired(sourceSectionName[i])
                 }
             }
-            
-            
+
+
             self?.amountLabel.text = "\(viewModel.imageList?.count ?? 0)"
             //self?.dataSource.styleCell = (indexSection == 10) ? .DAMAGE : .NORMAL
             self?.dataSource.itemList = viewModel.imageList ?? []
             self?.collectionView.reloadData()
         }
-        
-       
     }
     
     func displayUpdateRequiredButton(viewModel: PhotoCar.Something.ViewModel) {
@@ -569,6 +695,28 @@ class PhotoCarViewController: UIViewController, PhotoCarDisplayLogic
         let request = PhotoCar.Something.Request()
         interactor?.prepareDataSection(request: request)
     }
+    
+    func fetchPhotoDetail(idPhoto: Int?){
+        let request = PhotoCar.Something.Request(idphoto: idPhoto)
+        interactor?.fetchPhotoDetail(request: request)
+    }
+    
+    func displayErrorFetchDetail(viewModel: PhotoCar.Something.ViewModel) {
+        guard let errorMessage = viewModel.errorMessage else { return }
+        
+        DispatchQueue.main.async { [weak self] in
+            self?.alertErrorMessage(message: errorMessage) { [weak self] in
+                self?.fetchPhotoList()
+            }
+        }
+    }
+    
+    func displayImageDetail(viewModel: PhotoCar.Something.ViewModel) {
+        guard let image = viewModel.detailImage?.base64String?.base64StringToImage() else { return }
+        
+        NotificationCenter.default.post(name: NSNotification.Name("detailImageUpdated"), object: image)
+    }
+
     func fetchPhotoList(){
         let request = PhotoCar.Something.Request()
         interactor?.fetchPhotoList(request: request)
@@ -578,7 +726,7 @@ class PhotoCarViewController: UIViewController, PhotoCarDisplayLogic
         guard let errorMessage = viewModel.errorMessage else { return }
         
         DispatchQueue.main.async { [weak self] in
-            self?.alertErrorMessage(message: errorMessage) { [weak self] in 
+            self?.alertErrorMessage(message: errorMessage) { [weak self] in
                 self?.fetchPhotoList()
             }
         }
@@ -612,7 +760,7 @@ extension PhotoCarViewController {
         super.viewDidLayoutSubviews()
         collectionView.collectionViewLayout.invalidateLayout()
     }
-
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
@@ -645,7 +793,7 @@ extension PhotoCarViewController  {
     @objc func toPhotoCar() {
     }
 }
- 
+
 extension PhotoCarViewController : ImagePickerPresenter {
     func didSelectCallback() {
         showLoading()
@@ -653,10 +801,21 @@ extension PhotoCarViewController : ImagePickerPresenter {
     
     func pickImageCallback(image: UIImage?, url: URL?) {
         guard let image =  image  else { return }
-
-         let request = PhotoCar.Something.Request(image: image, url: url)
-         interactor?.addPhoto(request: request)
+        
+        let request = PhotoCar.Something.Request(image: image, url: url)
+        interactor?.addPhoto(request: request)
     }
     
-    
+    func pickImagesCallback(images: [UIImage]?) {
+        
+        guard let images =  images  else { return }
+        images.forEach { (image) in
+            let url = URL(string: "https://inspecfakeurl.com/image/\(Date().DateToServerFormatString()).jpeg")
+            
+            let request = PhotoCar.Something.Request(image: image, url: url)
+            interactor?.addPhoto(request: request)
+        }
+        interactor?.showImageBySection()
+    }
+
 }

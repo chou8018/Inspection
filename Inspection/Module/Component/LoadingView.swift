@@ -43,9 +43,8 @@ class LoadingView  {
             }
         }
         
-        
-        
     }
+    
     func hide(){
         showNumber -= 1
         showNumber = (showNumber <= 0) ? 0 : showNumber
@@ -54,12 +53,9 @@ class LoadingView  {
             if weakself.showNumber == 0 {
                 weakself.view.removeFromSuperview()
             }
-            
-            
         }
-        
     }
-    
+
 }
  
 func showLoading(){

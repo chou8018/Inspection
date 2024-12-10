@@ -15,77 +15,77 @@ import RadioGroup
 
 protocol MotorcycleCheckDisplayLogic: AnyObject
 {
-  func displaySomething(viewModel: MotorcycleCheck.Something.ViewModel)
+    func displaySomething(viewModel: MotorcycleCheck.Something.ViewModel)
     func displayProvinceDropdown(viewModel: MotorcycleCheck.Something.ViewModel)
     func displayShowProvinceError(viewModel: MotorcycleCheck.Something.ViewModel)
-
+    
     func displayFrontTreadDepthValidNumber(viewModel: MotorcycleCheck.Something.ViewModel)
     func displayRearTreadDepthValidNumber(viewModel: MotorcycleCheck.Something.ViewModel)
     
 }
 
-class MotorcycleCheckViewController: UIViewController, MotorcycleCheckDisplayLogic
+class MotorcycleCheckViewController: ViewController, MotorcycleCheckDisplayLogic
 {
-  var interactor: MotorcycleCheckBusinessLogic?
-  var router: (NSObjectProtocol & MotorcycleCheckRoutingLogic & MotorcycleCheckDataPassing)?
-
-  // MARK: Object lifecycle
-  
-  override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
-  {
-    super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-    setup()
-  }
-  
-  required init?(coder aDecoder: NSCoder)
-  {
-    super.init(coder: aDecoder)
-    setup()
-  }
-  
-  // MARK: Setup
-  
-  private func setup()
-  {
-    let viewController = self
-    let interactor = MotorcycleCheckInteractor()
-    let presenter = MotorcycleCheckPresenter()
-    let router = MotorcycleCheckRouter()
-    viewController.interactor = interactor
-    viewController.router = router
-    interactor.presenter = presenter
-    presenter.viewController = viewController
-    router.viewController = viewController
-    router.dataStore = interactor
-  }
-  
-  // MARK: Routing
-  
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-  {
-    if let scene = segue.identifier {
-      let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
-      if let router = router, router.responds(to: selector) {
-        router.perform(selector, with: segue)
-      }
+    var interactor: MotorcycleCheckBusinessLogic?
+    var router: (NSObjectProtocol & MotorcycleCheckRoutingLogic & MotorcycleCheckDataPassing)?
+    
+    // MARK: Object lifecycle
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
+    {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        setup()
     }
-  }
-  
-  // MARK: View lifecycle
-  
-  override func viewDidLoad()
-  {
-    super.viewDidLoad()
-    doSomething()
-    setRadio()
-    setUIView()
-  }
-  
-  // MARK: Do something
-  
-  //@IBOutlet weak var nameTextField: UITextField!
+    
+    required init?(coder aDecoder: NSCoder)
+    {
+        super.init(coder: aDecoder)
+        setup()
+    }
+    
+    // MARK: Setup
+    
+    private func setup()
+    {
+        let viewController = self
+        let interactor = MotorcycleCheckInteractor()
+        let presenter = MotorcycleCheckPresenter()
+        let router = MotorcycleCheckRouter()
+        viewController.interactor = interactor
+        viewController.router = router
+        interactor.presenter = presenter
+        presenter.viewController = viewController
+        router.viewController = viewController
+        router.dataStore = interactor
+    }
+    
+    // MARK: Routing
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if let scene = segue.identifier {
+            let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
+            if let router = router, router.responds(to: selector) {
+                router.perform(selector, with: segue)
+            }
+        }
+    }
+    
+    // MARK: View lifecycle
+    
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
+        doSomething()
+        setRadio()
+        setUIView()
+    }
+    
+    // MARK: Do something
+    
+    //@IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var exteriorDamageTextView : UITextView!
+    @IBOutlet weak var exteriorDamageTextView : MultilineTextField!
     
     @IBOutlet weak var provinceTextField: DropDown!
     @IBOutlet weak var registrationTextField: CustomTextField!
@@ -130,29 +130,92 @@ class MotorcycleCheckViewController: UIViewController, MotorcycleCheckDisplayLog
     @IBOutlet weak var isRequireAttention: CheckBoxUIButton!
     @IBOutlet weak var isMissing: CheckBoxUIButton!
     
-    
     var isGetProvinceLunch = false
     
     
+    // local strings
     
+    @IBOutlet weak var registrationNumberLabel: UILabel!
+    @IBOutlet weak var fuelSystemLabel: UILabel!
+    @IBOutlet weak var batteryLabel: UILabel!
+    @IBOutlet weak var cdiLabel: UILabel!
+    @IBOutlet weak var electricLabel: UILabel!
+    @IBOutlet weak var startPedalLabel: UILabel!
+    @IBOutlet weak var odometerLabel: UILabel!
+    @IBOutlet weak var plateLabel: UILabel!
+    @IBOutlet weak var tyreLabel: UILabel!
+    @IBOutlet weak var tyreFlabel: UILabel!
+    @IBOutlet weak var tyreRLabel: UILabel!
+    @IBOutlet weak var underTyreLabel: UILabel!
+    @IBOutlet weak var keyLabel: UILabel!
+    @IBOutlet weak var key1Label: UILabel!
+    @IBOutlet weak var key2Label: UILabel!
+    @IBOutlet weak var key3Label: UILabel!
+    @IBOutlet weak var key4Label: UILabel!
+    @IBOutlet weak var engineTypeLabel: UILabel!
+    @IBOutlet weak var engineType1Label: UILabel!
+    @IBOutlet weak var engineType2Label: UILabel!
+    @IBOutlet weak var engineType3Label: UILabel!
+    @IBOutlet weak var engineType4Label: UILabel!
+    @IBOutlet weak var summaryLabel: UILabel!
     
-  func doSomething()
-  {
-    let request = MotorcycleCheck.Something.Request()
-    interactor?.doSomething(request: request)
-  }
-  
-  func displaySomething(viewModel: MotorcycleCheck.Something.ViewModel)
-  {
-    //nameTextField.text = viewModel.name
-  }
+    let strings_motorbike_inspection_exterior_injector_carburetor = [String.localized("car_engine_injector_label"), String.localized("car_engine_carburetor_label")]
+
+    override func initLocalString() {
+        super.initLocalString()
+        
+        let headPlaceholder = String.localized("motorbike_inspection_exterior_head_placeholder_label")
+        registrationNumberLabel.text = String.localized("inspection_body_registration_number_label")
+        provinceTextField.placeholder = String.localized("car_detail_province_label")
+        fuelSystemLabel.text = String.localized("car_engine_fuel_system_label")
+        fuelDeliveryDamageTextField.placeholder = headPlaceholder + String.localized("car_engine_fuel_system_label")
+        batteryLabel.text = String.localized("motorbike_inspection_exterior_battery_label")
+        batteryDamageTextField.placeholder = headPlaceholder + String.localized("motorbike_inspection_exterior_battery_label")
+        cdiLabel.text = String.localized("motorbike_inspection_exterior_cdi_label")
+        cdiDamageTextField.placeholder = headPlaceholder + String.localized("motorbike_inspection_exterior_cdi_label")
+        electricLabel.text = String.localized("motorbike_inspection_exterior_electric_label")
+        electricStartDamageTextField.placeholder = headPlaceholder + String.localized("motorbike_inspection_exterior_electric_label")
+        startPedalLabel.text = String.localized("motorbike_inspection_exterior_pedal_label")
+        pedelStartDamageTextField.placeholder = headPlaceholder + String.localized("motorbike_inspection_exterior_pedal_label")
+        odometerLabel.text = String.localized("motorbike_inspection_exterior_odometer_label")
+        odometerDamageTextField.placeholder = headPlaceholder + String.localized("motorbike_inspection_exterior_odometer_label")
+        plateLabel.text = String.localized("motorbike_inspection_exterior_plate_label")
+        plateDamageTextField.placeholder = headPlaceholder + String.localized("motorbike_inspection_exterior_plate_label")
+        tyreLabel.text = String.localized("motorbike_inspection_exterior_tyre_label")
+        tyreFlabel.text = String.localized("motorbike_inspection_exterior_tyre_f_label")
+        tyreRLabel.text = String.localized("motorbike_inspection_exterior_tyre_r_label")
+        underTyreLabel.text = String.localized("motorbike_inspection_exterior_under_tyre_label")
+        keyLabel.text = String.localized("car_interior_key_label")
+        key1Label.text = String.localized("car_interior_key_label")
+        key2Label.text = String.localized("car_interior_remote_control_label")
+        key3Label.text = String.localized("car_interior_remote_key_label")
+        key4Label.text = String.localized("car_interior_key_immobilizer_label")
+        engineTypeLabel.text = String.localized("motorbike_inspection_exterior_engine_type_label")
+        engineType1Label.text = String.localized("motorbike_inspection_exterior_serviced_label")
+        engineType2Label.text = String.localized("motorbike_inspection_exterior_not_working_label")
+        engineType3Label.text = String.localized("motorbike_inspection_exterior_need_repair_label")
+        engineType4Label.text = String.localized("motorbike_inspection_exterior_missing_label")
+        summaryLabel.text = String.localized("motorbike_inspection_exterior_damage_summary_label")
+        exteriorDamageTextView.placeholder = String.localized("inspection_body_summary_label")
+    }
+    
+    func doSomething()
+    {
+        let request = MotorcycleCheck.Something.Request()
+        interactor?.doSomething(request: request)
+    }
+    
+    func displaySomething(viewModel: MotorcycleCheck.Something.ViewModel)
+    {
+        //nameTextField.text = viewModel.name
+    }
     
     func setRadio(){
         let attributedString = [NSAttributedString.Key.foregroundColor : UIColor.appPrimaryColor]
         
         fuelDeliveryRadio.attributedTitles = [
-            NSAttributedString(string: "หัวฉีด", attributes: attributedString),
-            NSAttributedString(string: "คาร์บูเรเตอร์", attributes: attributedString),
+            NSAttributedString(string: strings_motorbike_inspection_exterior_injector_carburetor[0], attributes: attributedString),
+            NSAttributedString(string: strings_motorbike_inspection_exterior_injector_carburetor[1], attributes: attributedString),
             NSAttributedString(string: "N/A", attributes: attributedString)
         ]
     }
@@ -162,9 +225,9 @@ class MotorcycleCheckViewController: UIViewController, MotorcycleCheckDisplayLog
         var fuelDeliveryTuple : (String,String)  = ("","")
         switch fuelDeliveryRadio.selectedIndex {
         case 0:
-            fuelDeliveryTuple = ("I","หัวฉีด")
+            fuelDeliveryTuple = ("I",strings_motorbike_inspection_exterior_injector_carburetor[0])
         case 1:
-            fuelDeliveryTuple = ("N","คาร์บูเรเตอร์")
+            fuelDeliveryTuple = ("N",strings_motorbike_inspection_exterior_injector_carburetor[1])
         case 2:
             fuelDeliveryTuple = ("1","N/A")
         default:
@@ -172,7 +235,7 @@ class MotorcycleCheckViewController: UIViewController, MotorcycleCheckDisplayLog
         }
         print("🔸 fuelDelivery: \(fuelDeliveryTuple.0) , value: \(fuelDeliveryTuple.1)")
         DataController.shared.inspectionCarModel.fuelDeliveryType = fuelDeliveryTuple.1
-
+        
     }
     
     //MARK: UIView
@@ -181,7 +244,7 @@ class MotorcycleCheckViewController: UIViewController, MotorcycleCheckDisplayLog
         exteriorDamageTextView.delegate = self
         
         provinceTextField.autocorrectionType = .no
-
+        
         
         registrationTextField.autocorrectionType = .no
         registrationTextField.delegate = self
@@ -209,9 +272,9 @@ class MotorcycleCheckViewController: UIViewController, MotorcycleCheckDisplayLog
         fuelDeliveryDamageTextField.delegate = self
         pedelStartDamageTextField.delegate = self
         plateDamageTextField.delegate = self
-    
         
-       
+        
+        
         addTarget(from: batteryDamageTextField)
         addTarget(from: cdiDamageTextField)
         addTarget(from: electricStartDamageTextField)
@@ -222,7 +285,7 @@ class MotorcycleCheckViewController: UIViewController, MotorcycleCheckDisplayLog
         
         addTarget(from: provinceTextField)
         addTarget(from: registrationTextField)
-       
+        
         addTarget(from: frontTreadDepth)
         addTarget(from: rearTreadDepth)
         
@@ -417,7 +480,7 @@ class MotorcycleCheckViewController: UIViewController, MotorcycleCheckDisplayLog
         
         
         
-
+        
         //MARK: MotorBike
         
         batteryDamageTextField.text = model.batteryDamage
@@ -436,14 +499,14 @@ class MotorcycleCheckViewController: UIViewController, MotorcycleCheckDisplayLog
         isOdometerCheckBox.check = model.isOdometer ?? false
         
         
-        fuelDeliveryRadio.selectedIndex = getRadioIndexByValue(from : ["หัวฉีด", "คาร์บูเรเตอร์", "N/A"], value: model.fuelDeliveryType)
+        fuelDeliveryRadio.selectedIndex = getRadioIndexByValue(from : [strings_motorbike_inspection_exterior_injector_carburetor[0], strings_motorbike_inspection_exterior_injector_carburetor[1], "N/A"], value: model.fuelDeliveryType)
         
         
         keyCheckBox.check = model.isKey ?? false
         remoteKeyCheckBox.check = model.isRemoteKey ?? false
         remoteCheckBox.check = model.isRemote ?? false
         immobilizarKeyCheckBox.check = model.isImmobilizarKey ?? false
-       
+        
         
         isServiceable.check = model.isServiceable ?? false
         isWillNotStart.check = model.isWillNotStart ?? false
@@ -479,18 +542,18 @@ extension MotorcycleCheckViewController : UITextViewDelegate {
         DataController.shared.inspectionCarModel.exteriorDamage = textView.text
     }
 }
- 
+
 extension MotorcycleCheckViewController : UITextFieldDelegate {
     @objc func textFieldDidChange(_ textField: UITextField) {
         
         switch textField {
-         
+            
         case provinceTextField:
             DataController.shared.inspectionCarModel.registrationProvince = textField.text
-        
+            
         case registrationTextField:
             DataController.shared.inspectionCarModel.registration = textField.text
-           
+            
         case batteryDamageTextField:
             DataController.shared.inspectionCarModel.batteryDamage = textField.text
             
@@ -511,7 +574,7 @@ extension MotorcycleCheckViewController : UITextFieldDelegate {
             
         case plateDamageTextField:
             DataController.shared.inspectionCarModel.plateDamage = textField.text
-                
+            
             
         case frontTreadDepth:
             let request = MotorcycleCheck.Something.Request(decimalNumber: textField.text)
@@ -520,7 +583,7 @@ extension MotorcycleCheckViewController : UITextFieldDelegate {
         case rearTreadDepth:
             let request = MotorcycleCheck.Something.Request(decimalNumber: textField.text)
             interactor?.validationRearTreadDepthDecimal(request: request)
-                
+            
         default:
             break
         }
@@ -535,7 +598,7 @@ extension MotorcycleCheckViewController : UITextFieldDelegate {
 
 
 extension MotorcycleCheckViewController {
-   
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         scrollView.registKeyboardNotification()

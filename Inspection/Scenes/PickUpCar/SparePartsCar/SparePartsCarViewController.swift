@@ -15,98 +15,117 @@ import RadioGroup
 
 protocol SparePartsCarDisplayLogic: AnyObject
 {
-  func displaySomething(viewModel: SparePartsCar.Something.ViewModel)
+    func displaySomething(viewModel: SparePartsCar.Something.ViewModel)
     func displayCheckBoxTireSpare(viewModel: SparePartsCar.Something.ViewModel)
 }
 
-class SparePartsCarViewController: UIViewController, SparePartsCarDisplayLogic
+class SparePartsCarViewController: ViewController, SparePartsCarDisplayLogic
 {
-  var interactor: SparePartsCarBusinessLogic?
-  var router: (NSObjectProtocol & SparePartsCarRoutingLogic & SparePartsCarDataPassing)?
-
-  // MARK: Object lifecycle
-  
-  override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
-  {
-    super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-    setup()
-  }
-  
-  required init?(coder aDecoder: NSCoder)
-  {
-    super.init(coder: aDecoder)
-    setup()
-  }
-  
-  // MARK: Setup
-  
-  private func setup()
-  {
-    let viewController = self
-    let interactor = SparePartsCarInteractor()
-    let presenter = SparePartsCarPresenter()
-    let router = SparePartsCarRouter()
-    viewController.interactor = interactor
-    viewController.router = router
-    interactor.presenter = presenter
-    presenter.viewController = viewController
-    router.viewController = viewController
-    router.dataStore = interactor
-  }
-  
-  // MARK: Routing
-  
-  override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-  {
-    if let scene = segue.identifier {
-      let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
-      if let router = router, router.responds(to: selector) {
-        router.perform(selector, with: segue)
-      }
+    var interactor: SparePartsCarBusinessLogic?
+    var router: (NSObjectProtocol & SparePartsCarRoutingLogic & SparePartsCarDataPassing)?
+    
+    // MARK: Object lifecycle
+    
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?)
+    {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        setup()
     }
-  }
-  
-  // MARK: View lifecycle
-  
-  override func viewDidLoad()
-  {
-    super.viewDidLoad()
-    setUIView()
-    setUpRadioGroup()
-    doSomething()
-  }
-  
-  // MARK: Do something
-  
-  //@IBOutlet weak var nameTextField: UITextField!
+    
+    required init?(coder aDecoder: NSCoder)
+    {
+        super.init(coder: aDecoder)
+        setup()
+    }
+    
+    // MARK: Setup
+    
+    private func setup()
+    {
+        let viewController = self
+        let interactor = SparePartsCarInteractor()
+        let presenter = SparePartsCarPresenter()
+        let router = SparePartsCarRouter()
+        viewController.interactor = interactor
+        viewController.router = router
+        interactor.presenter = presenter
+        presenter.viewController = viewController
+        router.viewController = viewController
+        router.dataStore = interactor
+    }
+    
+    // MARK: Routing
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if let scene = segue.identifier {
+            let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
+            if let router = router, router.responds(to: selector) {
+                router.perform(selector, with: segue)
+            }
+        }
+    }
+    
+    // MARK: View lifecycle
+    
+    override func viewDidLoad()
+    {
+        super.viewDidLoad()
+        setUIView()
+        setUpRadioGroup()
+        doSomething()
+    }
+    
+    // MARK: Do something
+    
+    //@IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var SparePartOverAllRadio: RadioGroup!
-    
     @IBOutlet weak var scrollView: UIScrollView!
-    
-
     @IBOutlet weak var noteSparePartOverAllTextField: UITextField!
     @IBOutlet weak var decorationTextField: MultilineTextField!
-    
-    
     @IBOutlet weak var tireSpareCheckBox: CheckBoxUIButton!
     @IBOutlet weak var toolSpareCheckBox: CheckBoxUIButton!
     @IBOutlet weak var maxlinerCheckBox: CheckBoxUIButton!
     @IBOutlet weak var roofreckCheckBox: CheckBoxUIButton!
     @IBOutlet weak var craneCheckBox: CheckBoxUIButton!
-    
     @IBOutlet weak var cableChargeEVCheckBox: CheckBoxUIButton!
     
-  func doSomething()
-  {
-    let request = SparePartsCar.Something.Request()
-    interactor?.doSomething(request: request)
-  }
-  
+    // local strings
+    
+    @IBOutlet weak var luggageTitleLabel: UILabel!
+    @IBOutlet weak var spareTireTitleLabel: UILabel!
+    @IBOutlet weak var toolsLabel: UILabel!
+    @IBOutlet weak var maglinerLabel: UILabel!
+    @IBOutlet weak var roofRagLabel: UILabel!
+    @IBOutlet weak var jackLabel: UILabel!
+    @IBOutlet weak var evChargerLabel: UILabel!
+    @IBOutlet weak var otherAccessariesLabel: UILabel!
 
+    override func initLocalString() {
+        super.initLocalString()
+        luggageTitleLabel.text = String.localized("car_trunk_luggage_label")
+        noteSparePartOverAllTextField.placeholder = String.localized("car_trunk_remarks_placeholder")
+        spareTireTitleLabel.text = String.localized("car_trunk_spare_tire_label")
+        toolsLabel.text = String.localized("car_trunk_tools_label")
+        maglinerLabel.text = String.localized("car_trunk_magliner_label")
+        roofRagLabel.text = String.localized("car_trunk_roof_rag_label")
+        jackLabel.text = String.localized("car_trunk_jack_label")
+        evChargerLabel.text = String.localized("car_trunk_ev_charger_label")
+        otherAccessariesLabel.text = String.localized("car_trunk_other_accessaries_label")
+        decorationTextField.placeholder = otherAccessariesLabel.text
+    }
+    
+    func doSomething()
+    {
+        let request = SparePartsCar.Something.Request()
+        interactor?.doSomething(request: request)
+    }
+    
+    
     func displaySomething(viewModel: SparePartsCar.Something.ViewModel)
-  {
-    //nameTextField.text = viewModel.name
-  }
+    {
+        //nameTextField.text = viewModel.name
+    }
     
     
     //MARK: UIView
@@ -137,9 +156,9 @@ class SparePartsCarViewController: UIViewController, SparePartsCarDisplayLogic
         
         //Color
         SparePartOverAllRadio.attributedTitles = [
-            NSAttributedString(string: "ดี",
+            NSAttributedString(string: string_good_first,
                                attributes: attributedString),
-            NSAttributedString(string: "ไม่ดี",
+            NSAttributedString(string: string_poor,
                                attributes: attributedString)
         ]
     }
@@ -148,9 +167,9 @@ class SparePartsCarViewController: UIViewController, SparePartsCarDisplayLogic
         var selectString:String? = nil
         switch SparePartOverAllRadio.selectedIndex {
         case 0:
-            selectString = "ดี"
+            selectString = string_good_first
         case 1:
-            selectString = "ไม่ดี"
+            selectString = string_poor
         default:
             return
         }
@@ -166,11 +185,11 @@ class SparePartsCarViewController: UIViewController, SparePartsCarDisplayLogic
         tireSpareCheckBox.toggle { check in
             DataController.shared.receiverCarModel.isSpareTire = check
         }
-//        tireSpareCheckBox.toggle { [weak self] check in
-//            if !check {
-//                self?.tireSpareTextField.text = ""
-//            }
-//        }
+        //        tireSpareCheckBox.toggle { [weak self] check in
+        //            if !check {
+        //                self?.tireSpareTextField.text = ""
+        //            }
+        //        }
     }
     
     @IBAction func toolSpareTapped(_ sender: Any) {
@@ -199,7 +218,7 @@ class SparePartsCarViewController: UIViewController, SparePartsCarDisplayLogic
             DataController.shared.receiverCarModel.isCableChargeEV = check
         }
     }
-  
+    
     
     func displayCheckBoxTireSpare(viewModel: SparePartsCar.Something.ViewModel) {
         tireSpareCheckBox.check = viewModel.isTireSpare ?? false
@@ -209,8 +228,7 @@ class SparePartsCarViewController: UIViewController, SparePartsCarDisplayLogic
     @objc func prepareData(){
         let model = DataController.shared.receiverCarModel
         
-        let spareOverAllValue = ["ดี", "ไม่ดี"]
-      
+        let spareOverAllValue = [string_good_first, string_poor]
         
         SparePartOverAllRadio.selectedIndex = getRadioIndexByValue(from: spareOverAllValue, value: model.spareOverAll)
         noteSparePartOverAllTextField.text = model.spareOverAllNote
@@ -255,7 +273,7 @@ extension SparePartsCarViewController : UITextFieldDelegate {
     @objc func textFieldDidChange(_ textField: UITextField) {
         //print(textField.text)
         
-    
+        
         switch textField {
         case noteSparePartOverAllTextField:
             DataController.shared.receiverCarModel.spareOverAllNote = textField.text
@@ -269,27 +287,27 @@ extension SparePartsCarViewController : UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
-         
-      
+        
+        
         return true
     }
 }
 //MARK: keyboard
 extension SparePartsCarViewController {
-   override func viewWillAppear(_ animated: Bool) {
-       super.viewWillAppear(animated)
-       scrollView.registKeyboardNotification()
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        scrollView.registKeyboardNotification()
+        
         prepareData()
         updateView()
         
-    NotificationCenter.default.addObserver(self, selector: #selector(updateView), name: NSNotification.Name("updateUI"), object: nil)
-   }
-   
-   override func viewDidDisappear(_ animated: Bool) {
-       super.viewDidDisappear(animated)
-       scrollView.resignKeyboardNotification()
+        NotificationCenter.default.addObserver(self, selector: #selector(updateView), name: NSNotification.Name("updateUI"), object: nil)
+    }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        scrollView.resignKeyboardNotification()
+        
         NotificationCenter.default.removeObserver(self)
-   }
+    }
 }

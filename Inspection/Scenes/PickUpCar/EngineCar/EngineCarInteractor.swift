@@ -14,7 +14,8 @@ import UIKit
 
 protocol EngineCarBusinessLogic
 {
-  func doSomething(request: EngineCar.Something.Request)
+    func doSomething(request: EngineCar.Something.Request)
+    func getFuelSystem(request: EngineCar.Something.Request)
 }
 
 protocol EngineCarDataStore
@@ -24,9 +25,13 @@ protocol EngineCarDataStore
 
 class EngineCarInteractor: EngineCarBusinessLogic, EngineCarDataStore
 {
+
+    
   var presenter: EngineCarPresentationLogic?
   var worker: EngineCarWorker?
   //var name: String = ""
+    
+    var fuelDeliveryList: [FuelDeliveryModel]?
   
   // MARK: Do something
   
@@ -38,4 +43,16 @@ class EngineCarInteractor: EngineCarBusinessLogic, EngineCarDataStore
     let response = EngineCar.Something.Response()
     presenter?.presentSomething(response: response)
   }
+    
+    func getFuelSystem(request: EngineCar.Something.Request) {
+        worker = EngineCarWorker()
+        
+        worker?.getFuelDelivery(completion: {[weak self] response  in
+            if let modelList = response.fuelDeliveryList {
+                self?.fuelDeliveryList = modelList
+            }
+            self?.presenter?.presentFuelDeliveryList(response: response)
+        })
+
+    }
 }

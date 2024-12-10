@@ -12,9 +12,32 @@
 
 import UIKit
 
+typealias electronicDeviceCheckCarHandler = (ElectronicDeviceCheck.Something.Response) -> ()
+
 class ElectronicDeviceCheckWorker
 {
-  func doSomeWork()
-  {
-  }
+    func doSomeWork()
+    {
+    }
+    
+    func fetchWindowOptions(completion: @escaping electronicDeviceCheckCarHandler){
+        
+        showLoading()
+        
+        let request = BaseRequest()
+        WindowOptionService().callServiceArray(request: request) { (result) in
+            
+            hideLoading()
+            
+            switch result {
+                
+            case .success(let values):
+                let response = ElectronicDeviceCheck.Something.Response(windowOptions: values)
+                completion(response)
+            case .failure(let error):
+                let response = ElectronicDeviceCheck.Something.Response(error: error.getMessage)
+                completion(response)
+            }
+        }
+    }
 }

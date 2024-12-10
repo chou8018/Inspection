@@ -9,8 +9,12 @@ import UIKit
 
 class ModelCodeNoItemCell: UITableViewCell {
     
+    @IBOutlet weak var contentPlaceholderLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        contentPlaceholderLabel.text = "\(String.localized("mode_code_fill_information_label")) motto code/ model code/ chassis number \(String.localized("mode_code_conduct_search_label"))"
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

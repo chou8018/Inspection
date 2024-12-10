@@ -87,4 +87,35 @@ class PhotoCarWorker
             }
         }
     }
+    
+    // add on 11/03/2024
+    func fetchInspectionImageDetail(from bookInNumber:String? , imageId: Int?, completion: @escaping photoCarWorkerHandler){
+        guard let bookInNumber = bookInNumber?.trimWhiteSpace else { return }
+        guard let imageId = imageId else { return }
+
+        showLoading()
+        let request = InspectionImageDetailRequest(bookInNumber: bookInNumber, imageId: imageId)
+        InspectionImageDetailService().callServiceObject(request: request) { (results) in
+            
+            hideLoading()
+            
+            switch results {
+            
+            case .success(let result):
+                print("image = \(result)")
+                let response = PhotoCar.Something.Response(detailImage: result)
+                completion(response)
+                
+            case .failure(let error):
+                if let errorCode = error.getMessage.errorCode , errorCode == 404 {
+                    //ignored
+                    let response = PhotoCar.Something.Response()
+                    completion(response)
+                }else{
+                    let response = PhotoCar.Something.Response(error: error.getMessage)
+                    completion(response)
+                }
+            }
+        }
+    }
 }

@@ -86,6 +86,19 @@ struct CarInspectionType : Mappable {
     var registrationProvince: String?
     var regisration: String?
     
+    // add 26/10/23
+    var isSideMirror1Working: Bool?
+    var isSideMirror2Working: Bool?
+    var isSideMirror3Working: Bool?
+    var isSideMirror4Working: Bool?
+    var catalyticOptionId: Int?
+    
+    // add 05/01/24
+    var sideMirror1: Int?
+    var sideMirror2: Int?
+    var sideMirror3: Int?
+    var sideMirror4: Int?
+    
 	init?(map: Map) {
 
 	}
@@ -160,6 +173,17 @@ struct CarInspectionType : Mappable {
         
         registrationProvince <- map["registrationProvince"]
         regisration <- map["regisration"]
+        
+        isSideMirror1Working <- map["isSideMirror_1_Working"]
+        isSideMirror2Working <- map["isSideMirror_2_Working"]
+        isSideMirror3Working <- map["isSideMirror_3_Working"]
+        isSideMirror4Working <- map["isSideMirror_4_Working"]
+        catalyticOptionId <- map["catalyticOption"]
+        
+        sideMirror1 <- map["sideMirror_1"]
+        sideMirror2 <- map["sideMirror_2"]
+        sideMirror3 <- map["sideMirror_3"]
+        sideMirror4 <- map["sideMirror_4"]
 	}
 
 }

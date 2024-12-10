@@ -390,7 +390,8 @@ extension PickUpCarWorker {
                                          isTyre: model.isTire,
                                          tyreBrand: model.brandTire,
                                          tyreQuality: model.tireQuality?.toInt(),
-                                         damageDesc: model.damageDetail)
+                                         damageDesc: model.damageDetail,
+                                         roofTypeId: model.roofTypeId)
         
         //MARK: SpareType Model
         let spareType = SpareType(spareOverAllId: model.spareOverAllId,
@@ -459,14 +460,14 @@ extension PickUpCarWorker {
                                       reasonInValidGasNumber: model.reasonInValidGasNumber,
                                       registrationPlate: model.registrationPlate,
                                       isRegistrationMismatch: model.isRegistrationMismatch,
-                                      registrationNote: model.registrationNote)
+                                      registrationNote: model.registrationNote, isRegistrationAuction: model.isRegistrationAuction, gasOption: model.gasOption, gasOptionId: model.gasOptionId, isInValidRegistrationYear: model.isInValidRegistrationYear, isInValidManuYear: model.isInValidManuYear, briefConditionOptionId: model.briefConditionOptionId , briefNote: model.briefNote)
         print(vehicleType.toJSON())
 
-        let numberOfKey = model.mapKeys?["กุญแจ"] as? String
-        let numberOfKeyRemote = model.mapKeys?["กุญแจรีโมท"] as? String
-        let numberOfRemote = model.mapKeys?["รีโมท"] as? String
-        let numberOfImmobilizer = model.mapKeys?["กุญแจ Immobilizer"] as? String
-        let numberOfKeyless = model.mapKeys?["กุญแจ Keyless"] as? String
+        let numberOfKey = model.mapKeys?[String.localized("car_interior_key_label")] as? String
+        let numberOfKeyRemote = model.mapKeys?[String.localized("car_interior_remote_key_label")] as? String
+        let numberOfRemote = model.mapKeys?[String.localized("car_interior_remote_control_label")] as? String
+        let numberOfImmobilizer = model.mapKeys?[String.localized("car_interior_key_immobilizer_label")] as? String
+        let numberOfKeyless = model.mapKeys?[String.localized("car_interior_keyless_label")] as? String
         let keyOptionType = KeyOptionType(numberOfKey: numberOfKey?.toInt(),
                                           numberOfRemote: numberOfRemote?.toInt(),
                                           numberOfKeyRemote: numberOfKeyRemote?.toInt(),

@@ -136,23 +136,33 @@ class GradeCarInteractor: GradeCarBusinessLogic, GradeCarDataStore
     presenter?.presentSomething(response: response)
   }
     
-    
     func evaluateGrade() {
         
         var grade = "-"
         
-        if e1Chehck && e2Chehck && e3Chehck && e4Chehck && e5Chehck {
+//        if e1Chehck && e2Chehck && e3Chehck && e4Chehck && e5Chehck {
+//            grade = "E"
+//        }
+//        if g1Chehck && g2Chehck && g3Chehck && g4Chehck {
+//            grade = "G"
+//        }
+//        if a1Chehck && a2Chehck && a4Chehck && g4Chehck {
+//            grade = "A"
+//        }
+//        if a1Chehck && a2Chehck && a3Chehck && a4Chehck {
+//            grade = "A"
+//        }
+        
+        if e1Chehck && e2Chehck {
             grade = "E"
         }
-        if g1Chehck && g2Chehck && g3Chehck && g4Chehck {
+        if g1Chehck || g2Chehck || g3Chehck || g4Chehck  {
             grade = "G"
         }
-        if a1Chehck && a2Chehck && a4Chehck && g4Chehck {
+        if a1Chehck || a2Chehck || a3Chehck || a4Chehck {
             grade = "A"
         }
-        if a1Chehck && a2Chehck && a3Chehck && a4Chehck {
-            grade = "A"
-        }
+        
         if f1Chehck || f2Chehck || f3Chehck || f4Chehck || f5Chehck || f6Chehck || f7Chehck || f8Chehck || f9Chehck || f10Chehck || f11Chehck {
             grade = "F"
         }

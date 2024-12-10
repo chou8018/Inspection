@@ -3057,12 +3057,11 @@
 				CURRENT_PROJECT_VERSION = 37;
 				DEVELOPMENT_TEAM = EMFZ5F9LY3;
 				INFOPLIST_FILE = Inspection/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-
 				MARKETING_VERSION = 1.4.6;
 				PRODUCT_BUNDLE_IDENTIFIER = com.motto.auction.inspec;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -3084,13 +3083,12 @@
 				CURRENT_PROJECT_VERSION = 37;
 				DEVELOPMENT_TEAM = EMFZ5F9LY3;
 				INFOPLIST_FILE = Inspection/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.4.6;
-
 				PRODUCT_BUNDLE_IDENTIFIER = com.motto.auction.inspec;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
